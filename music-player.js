@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 音乐文件列表 - 请根据您的实际文件修改这些路径
     const songs = [
-        { title: "Stay with Me Lofi", artist: "Momo Roth", src: "audio/Momo Roth - Stay with Me Lofi.mp3" },
+        { title: "Stay with Me Lofi", artist: "Momo Roth", src: "audio/Stay with Me Lofi.mp3" },
         { title: "Умри, если меня не любишь", artist: "Dakooka", src: "audio/Умри, если меня не любишь.mp3" },
         { title: "I Really Want to stay at Your House", artist: "任舒瞳", src: "audio/I Really Want to stay at Your House.mp3"}, 
     ];
