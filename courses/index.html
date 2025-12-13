@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛博课程中心 - 技术教程</title>
+    <link rel="stylesheet" href="../cyber-sidebar.css">
+    <style>
+        /* 课程首页特有样式 */
+        body {
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+            color: #fff;
+            font-family: 'Courier New', '等宽字体', monospace;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .cyber-header {
+            text-align: center;
+            padding: 60px 20px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cyber-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #0ff0fc, #ff00ff, transparent);
+        }
+        
+        .main-title {
+            font-size: 3.5em;
+            color: #0ff0fc;
+            text-shadow: 0 0 20px #0ff0fc,
+                         0 0 40px #0ff0fc,
+                         0 0 60px #0ff0fc;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+        
+        .subtitle {
+            color: #a0a0ff;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            color: #ff00ff;
+            font-weight: bold;
+            text-shadow: 0 0 15px #ff00ff;
+        }
+        
+        .stat-label {
+            color: #0ff0fc;
+            font-size: 0.9em;
+        }
+        
+        .featured-courses {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            color: #ff00ff;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #0ff0fc, #ff00ff);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .course-category {
+            margin: 50px 0;
+        }
+        
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+        
+        .category-title {
+            color: #0ff0fc;
+            font-size: 1.5em;
+        }
+        
+        .view-all {
+            color: #ff00ff;
+            text-decoration: none;
+            border-bottom: 1px solid #ff00ff;
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .view-all:hover {
+            text-shadow: 0 0 10px #ff00ff;
+        }
+        
+        .cyber-footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 0, 255, 0.3);
+        }
+        
+        .copyright {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .glitch-text {
+            position: relative;
+            display: inline-block;
+            animation: glitch 3s infinite linear alternate;
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            2% { transform: translate(-2px, 1px) }
+            4% { transform: translate(-1px, -1px) }
+            6% { transform: translate(2px, 2px) }
+            8% { transform: translate(1px, -2px) }
+            10% { transform: translate(0) }
+        }
+    </style>
+</head>
+<body>
+    <!-- 侧边栏容器（与主站保持一致） -->
+    <div id="cyber-sidebar"></div>
+    
+    <div class="cyber-header">
+        <h1 class="main-title glitch-text">赛博课程中心</h1>
+        <p class="subtitle">探索前沿技术，掌握未来技能</p>
+        
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">精品课程</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">技术要点</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">实战内容</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="featured-courses">
+        <h2 class="section-title">精选课程</h2>
+        
+        <!--Arduino课程 -->
+        <div class="courses-grid">
+            <div class="course-card" onclick="location.href='arduino-basics.html'">
+    <div class="course-image">
+        <i>Aduino</i>
+    </div>
+    <div class="course-content">
+        <h3>Arduino 入门到精通</h3>
+        <div class="course-tags">
+            <span class="tag">硬件</span>
+            <span class="tag">嵌入式</span>
+            <span class="tag">实战</span>
+        </div>
+        <p>学习Arduino硬件编程基础，掌握传感器、执行器的控制和物联网应用开发。</p>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 60%"></div>
+        </div>
+        <div class="course-stats">
+            <span>🔢 10个章节</span>
+            <span>⏱️ 12小时</span>
+        </div>
+    </div>
+</div>
+
+            <!-- HTML5课程 -->
+            <div class="course-card" onclick="location.href='html5-basics.html'">
+                <div class="course-image">
+                    <i>HTML5</i>
+                </div>
+                <div class="course-content">
+                    <h3>HTML5 入门到精通</h3>
+                    <div class="course-tags">
+                        <span class="tag">前端</span>
+                        <span class="tag">基础</span>
+                        <span class="tag">实战</span>
+                    </div>
+                    <p>学习现代网页开发的基础语言，掌握HTML5的新特性和语义化标签。</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%"></div>
+                    </div>
+                    <div class="course-stats">
+                        <span>🔢 12个章节</span>
+                        <span>⏱️ 8小时</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CSS3课程 -->
+            <div class="course-card" onclick="location.href='css3-advanced.html'">
+                <div class="course-image">
+                    <i>CSS</i>
+                </div>
+                <div class="course-content">
+                    <h3>CSS3 高级特效</h3>
+                    <div class="course-tags">
+                        <span class="tag">样式</span>
+                        <span class="tag">动画</span>
+                        <span class="tag">响应式</span>
+                    </div>
+                    <p>掌握CSS3高级特性，包括Flexbox、Grid、动画和过渡效果。</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%"></div>
+                    </div>
+                    <div class="course-stats">
+                        <span>🔢 15个章节</span>
+                        <span>⏱️ 10小时</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- JavaScript课程 -->
+            <div class="course-card" onclick="location.href='js-practical.html'">
+                <div class="course-image">
+                    <i>JS</i>
+                </div>
+                <div class="course-content">
+                    <h3>JavaScript 实战编程</h3>
+                    <div class="course-tags">
+                        <span class="tag">编程</span>
+                        <span class="tag">交互</span>
+                        <span class="tag">项目</span>
+                    </div>
+                    <p>通过实际项目学习JavaScript编程，掌握DOM操作和异步编程。</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%"></div>
+                    </div>
+                    <div class="course-stats">
+                        <span>🔢 20个章节</span>
+                        <span>⏱️ 15小时</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    <div class="cyber-footer">
+        <p class="copyright">© 2025 YOCIM-SPACE | 未来已来，学习不止</p>
+    </div>
+    
+    <!-- 引入侧边栏脚本 -->
+    <script src="../cyber-sidebar.js"></script>
+</body>
+</html>
