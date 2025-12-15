@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>星际突击队 - 横板动作游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #0c0c2e, #1a1a3e);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            padding: 10px;
+        }
+        
+        .game-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 5px;
+            margin-bottom: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        
+        .game-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4deeea;
+            text-shadow: 0 0 10px rgba(77, 238, 234, 0.7);
+        }
+        
+        .stats {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .stat-value {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffea00;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+        
+        .game-canvas-container {
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 25px rgba(0, 150, 255, 0.3);
+        }
+        
+        #gameCanvas {
+            display: block;
+            width: 100%;
+            background-color: #111;
+        }
+        
+        .controls-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 15px;
+            padding: 15px 10px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+        }
+        
+        .left-controls, .right-controls {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 8px;
+            width: 48%;
+        }
+        
+        .control-btn {
+            width: 100%;
+            height: 70px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, #333, #222);
+            color: white;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 0 #111;
+            transition: all 0.1s;
+            user-select: none;
+            cursor: pointer;
+        }
+        
+        .control-btn:active {
+            transform: translateY(5px);
+            box-shadow: none;
+        }
+        
+        .move-up {
+            grid-column: 2;
+            grid-row: 1;
+            background: linear-gradient(to bottom, #4d79ff, #1a53ff);
+        }
+        
+        .move-left {
+            grid-column: 1;
+            grid-row: 2;
+            background: linear-gradient(to bottom, #4d79ff, #1a53ff);
+        }
+        
+        .move-right {
+            grid-column: 3;
+            grid-row: 2;
+            background: linear-gradient(to bottom, #4d79ff, #1a53ff);
+        }
+        
+        .move-down {
+            grid-column: 2;
+            grid-row: 2;
+            background: linear-gradient(to bottom, #4d79ff, #1a53ff);
+        }
+        
+        .action-btn {
+            background: linear-gradient(to bottom, #ff4d4d, #e60000);
+        }
+        
+        .jump-btn {
+            background: linear-gradient(to bottom, #4dff88, #00cc44);
+        }
+        
+        .game-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 10;
+            border-radius: 10px;
+        }
+        
+        .overlay-content {
+            text-align: center;
+            padding: 20px;
+            max-width: 90%;
+        }
+        
+        .overlay-title {
+            font-size: 2.5rem;
+            color: #ffea00;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 234, 0, 0.7);
+        }
+        
+        .overlay-text {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            color: #ddd;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background: linear-gradient(to bottom, #4d79ff, #1a53ff);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            margin: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn-start {
+            background: linear-gradient(to bottom, #4dff88, #00cc44);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .instructions {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+            text-align: center;
+            line-height: 1.4;
+            max-width: 800px;
+        }
+        
+        .mobile-note {
+            display: none;
+            color: #4deeea;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-note {
+                display: block;
+            }
+            
+            .control-btn {
+                height: 60px;
+                font-size: 1.3rem;
+            }
+            
+            .game-title {
+                font-size: 1.2rem;
+            }
+            
+            .stat-value {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .control-btn {
+                height: 50px;
+                font-size: 1.1rem;
+            }
+            
+            .overlay-title {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="game-title">星际突击队</div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value" id="score">0</div>
+                    <div class="stat-label">分数</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="lives">3</div>
+                    <div class="stat-label">生命</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="level">1</div>
+                    <div class="stat-label">关卡</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-canvas-container">
+            <canvas id="gameCanvas" width="800" height="400"></canvas>
+            
+            <div id="startScreen" class="game-overlay">
+                <div class="overlay-content">
+                    <h1 class="overlay-title">星际突击队</h1>
+                    <p class="overlay-text">你是一名星际突击队员，任务是清除外星威胁！<br>使用控制按钮移动、跳跃和射击，击败所有敌人并存活下来！</p>
+                    <button id="startBtn" class="btn btn-start">开始任务</button>
+                    <p class="mobile-note">使用屏幕下方的虚拟按钮控制角色</p>
+                </div>
+            </div>
+            
+            <div id="gameOverScreen" class="game-overlay hidden">
+                <div class="overlay-content">
+                    <h1 class="overlay-title">任务失败</h1>
+                    <p class="overlay-text">你的最终得分：<span id="finalScore">0</span></p>
+                    <button id="restartBtn" class="btn btn-start">重新开始</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls-container">
+            <div class="left-controls">
+                <button class="control-btn move-up" id="upBtn">↑</button>
+                <button class="control-btn move-left" id="leftBtn">←</button>
+                <button class="control-btn move-down" id="downBtn">↓</button>
+                <button class="control-btn move-right" id="rightBtn">→</button>
+            </div>
+            
+            <div class="right-controls">
+                <button class="control-btn action-btn" id="actionBtn">射击</button>
+                <button class="control-btn jump-btn" id="jumpBtn">跳跃</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="instructions">
+        <p>游戏说明：使用方向按钮移动角色，跳跃按钮躲避障碍，射击按钮攻击敌人。每击败一个敌人获得100分，每通过一个关卡增加难度。避免掉落平台或被敌人击中！</p>
+    </div>
+
+    <script>
+        // 游戏元素
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const startScreen = document.getElementById('startScreen');
+        const gameOverScreen = document.getElementById('gameOverScreen');
+        const startBtn = document.getElementById('startBtn');
+        const restartBtn = document.getElementById('restartBtn');
+        const scoreElement = document.getElementById('score');
+        const livesElement = document.getElementById('lives');
+        const levelElement = document.getElementById('level');
+        const finalScoreElement = document.getElementById('finalScore');
+        
+        // 控制按钮
+        const upBtn = document.getElementById('upBtn');
+        const downBtn = document.getElementById('downBtn');
+        const leftBtn = document.getElementById('leftBtn');
+        const rightBtn = document.getElementById('rightBtn');
+        const actionBtn = document.getElementById('actionBtn');
+        const jumpBtn = document.getElementById('jumpBtn');
+        
+        // 游戏状态
+        let game = {
+            running: false,
+            score: 0,
+            lives: 3,
+            level: 1,
+            gameOver: false
+        };
+        
+        // 玩家属性
+        const player = {
+            x: 100,
+            y: 300,
+            width: 40,
+            height: 60,
+            speed: 5,
+            jumpPower: 15,
+            velX: 0,
+            velY: 0,
+            isJumping: false,
+            color: '#4d79ff',
+            facing: 'right',
+            lastShot: 0,
+            shotDelay: 300 // 射击延迟(毫秒)
+        };
+        
+        // 平台
+        const platforms = [
+            {x: 0, y: 360, width: 300, height: 40},
+            {x: 350, y: 320, width: 200, height: 40},
+            {x: 600, y: 280, width: 200, height: 40},
+            {x: 0, y: 200, width: 250, height: 40},
+            {x: 300, y: 160, width: 200, height: 40},
+            {x: 550, y: 120, width: 250, height: 40},
+            {x: 0, y: 80, width: 150, height: 40},
+            {x: 200, y: 40, width: 200, height: 40},
+            {x: 450, y: 0, width: 350, height: 40}
+        ];
+        
+        // 子弹数组
+        let bullets = [];
+        
+        // 敌人数组
+        let enemies = [];
+        
+        // 粒子效果数组
+        let particles = [];
+        
+        // 控制状态
+        const controls = {
+            left: false,
+            right: false,
+            up: false,
+            down: false,
+            jump: false,
+            action: false
+        };
+        
+        // 初始化游戏
+        function initGame() {
+            game.running = true;
+            game.score = 0;
+            game.lives = 3;
+            game.level = 1;
+            game.gameOver = false;
+            
+            player.x = 100;
+            player.y = 300;
+            player.velX = 0;
+            player.velY = 0;
+            player.isJumping = false;
+            
+            bullets = [];
+            enemies = [];
+            particles = [];
+            
+            // 创建初始敌人
+            createEnemiesForLevel();
+            
+            // 隐藏开始和结束屏幕
+            startScreen.classList.add('hidden');
+            gameOverScreen.classList.add('hidden');
+            
+            // 更新UI
+            updateUI();
+            
+            // 开始游戏循环
+            gameLoop();
+        }
+        
+        // 为当前关卡创建敌人
+        function createEnemiesForLevel() {
+            enemies = [];
+            
+            // 根据关卡增加敌人数量和类型
+            const enemyCount = 3 + game.level;
+            
+            for (let i = 0; i < enemyCount; i++) {
+                const platformIndex = Math.floor(Math.random() * platforms.length);
+                const platform = platforms[platformIndex];
+                
+                let enemyType = 'basic';
+                if (game.level >= 3 && Math.random() > 0.7) enemyType = 'fast';
+                if (game.level >= 5 && Math.random() > 0.8) enemyType = 'tank';
+                
+                enemies.push({
+                    x: platform.x + Math.random() * (platform.width - 40),
+                    y: platform.y - 40,
+                    width: 40,
+                    height: 40,
+                    speed: enemyType === 'fast' ? 3 : enemyType === 'tank' ? 1 : 2,
+                    color: enemyType === 'fast' ? '#ff4d4d' : enemyType === 'tank' ? '#ff9900' : '#cc33ff',
+                    type: enemyType,
+                    health: enemyType === 'tank' ? 3 : 1,
+                    direction: Math.random() > 0.5 ? 1 : -1,
+                    lastDirectionChange: 0
+                });
+            }
+        }
+        
+        // 游戏主循环
+        function gameLoop() {
+            if (!game.running) return;
+            
+            // 清除画布
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // 绘制背景
+            drawBackground();
+            
+            // 更新和绘制平台
+            drawPlatforms();
+            
+            // 处理玩家输入
+            handleControls();
+            
+            // 应用重力
+            player.velY += 0.8;
+            
+            // 更新玩家位置
+            player.x += player.velX;
+            player.y += player.velY;
+            
+            // 玩家边界检查
+            if (player.x < 0) player.x = 0;
+            if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
+            if (player.y > canvas.height) {
+                // 玩家掉落屏幕
+                playerHit();
+                player.x = 100;
+                player.y = 300;
+                player.velY = 0;
+            }
+            
+            // 玩家与平台碰撞检测
+            handlePlayerPlatformCollision();
+            
+            // 更新子弹
+            updateBullets();
+            
+            // 更新敌人
+            updateEnemies();
+            
+            // 更新粒子效果
+            updateParticles();
+            
+            // 绘制玩家
+            drawPlayer();
+            
+            // 绘制子弹
+            drawBullets();
+            
+            // 绘制敌人
+            drawEnemies();
+            
+            // 绘制粒子效果
+            drawParticles();
+            
+            // 检查是否进入下一关
+            if (enemies.length === 0) {
+                game.level++;
+                game.score += 500 * game.level; // 关卡奖励
+                createEnemiesForLevel();
+                updateUI();
+                
+                // 显示关卡提示
+                showLevelUpMessage();
+            }
+            
+            // 继续游戏循环
+            requestAnimationFrame(gameLoop);
+        }
+        
+        // 绘制背景
+        function drawBackground() {
+            // 渐变背景
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            gradient.addColorStop(0, '#0a0a2a');
+            gradient.addColorStop(1, '#1a1a40');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // 绘制星星
+            ctx.fillStyle = 'white';
+            for (let i = 0; i < 100; i++) {
+                const x = (i * 13) % canvas.width;
+                const y = (i * 7) % canvas.height;
+                const size = Math.random() * 2;
+                ctx.fillRect(x, y, size, size);
+            }
+            
+            // 绘制远处行星
+            ctx.fillStyle = 'rgba(100, 100, 200, 0.3)';
+            ctx.beginPath();
+            ctx.arc(700, 80, 50, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        
+        // 绘制平台
+        function drawPlatforms() {
+            platforms.forEach(platform => {
+                // 平台阴影
+                ctx.fillStyle = '#333';
+                ctx.fillRect(platform.x + 3, platform.y + 3, platform.width, platform.height);
+                
+                // 平台主体
+                const gradient = ctx.createLinearGradient(platform.x, platform.y, platform.x, platform.y + platform.height);
+                gradient.addColorStop(0, '#666');
+                gradient.addColorStop(1, '#444');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
+                
+                // 平台顶部高光
+                ctx.fillStyle = '#888';
+                ctx.fillRect(platform.x, platform.y, platform.width, 5);
+            });
+        }
+        
+        // 处理控制输入
+        function handleControls() {
+            // 水平移动
+            if (controls.left) {
+                player.velX = -player.speed;
+                player.facing = 'left';
+            } else if (controls.right) {
+                player.velX = player.speed;
+                player.facing = 'right';
+            } else {
+                player.velX *= 0.8; // 摩擦力
+            }
+            
+            // 跳跃
+            if (controls.jump && !player.isJumping) {
+                player.velY = -player.jumpPower;
+                player.isJumping = true;
+                
+                // 跳跃粒子效果
+                createParticles(player.x + player.width/2, player.y + player.height, 10, '#4dff88');
+            }
+            
+            // 射击
+            if (controls.action) {
+                const currentTime = Date.now();
+                if (currentTime - player.lastShot > player.shotDelay) {
+                    shootBullet();
+                    player.lastShot = currentTime;
+                }
+            }
+        }
+        
+        // 玩家与平台碰撞检测
+        function handlePlayerPlatformCollision() {
+            player.isJumping = true;
+            
+            platforms.forEach(platform => {
+                // 碰撞检测
+                if (player.x < platform.x + platform.width &&
+                    player.x + player.width > platform.x &&
+                    player.y < platform.y + platform.height &&
+                    player.y + player.height > platform.y) {
+                    
+                    // 确定从哪个方向碰撞
+                    const bottomCollision = player.y + player.height - player.velY <= platform.y;
+                    const topCollision = player.y - player.velY >= platform.y + platform.height;
+                    const leftCollision = player.x + player.width - player.velX <= platform.x;
+                    const rightCollision = player.x - player.velX >= platform.x + platform.width;
+                    
+                    // 从顶部碰撞（站在平台上）
+                    if (bottomCollision && player.velY > 0) {
+                        player.y = platform.y - player.height;
+                        player.velY = 0;
+                        player.isJumping = false;
+                    }
+                    // 从底部碰撞
+                    else if (topCollision && player.velY < 0) {
+                        player.y = platform.y + platform.height;
+                        player.velY = 0;
+                    }
+                    // 从左侧碰撞
+                    else if (rightCollision && player.velX < 0) {
+                        player.x = platform.x + platform.width;
+                        player.velX = 0;
+                    }
+                    // 从右侧碰撞
+                    else if (leftCollision && player.velX > 0) {
+                        player.x = platform.x - player.width;
+                        player.velX = 0;
+                    }
+                }
+            });
+        }
+        
+        // 绘制玩家
+        function drawPlayer() {
+            // 玩家阴影
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+            ctx.fillRect(player.x + 3, player.y + 5, player.width, player.height);
+            
+            // 玩家身体
+            const gradient = ctx.createLinearGradient(
+                player.x, player.y, 
+                player.x, player.y + player.height
+            );
+            gradient.addColorStop(0, player.color);
+            gradient.addColorStop(1, '#1a53ff');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(player.x, player.y, player.width, player.height);
+            
+            // 玩家头盔
+            ctx.fillStyle = '#333';
+            ctx.fillRect(player.x + 10, player.y + 5, player.width - 20, 15);
+            
+            // 玩家面部（根据方向）
+            ctx.fillStyle = '#4deeea';
+            if (player.facing === 'right') {
+                ctx.fillRect(player.x + player.width - 15, player.y + 10, 5, 5);
+            } else {
+                ctx.fillRect(player.x + 10, player.y + 10, 5, 5);
+            }
+            
+            // 玩家武器
+            ctx.fillStyle = '#666';
+            if (player.facing === 'right') {
+                ctx.fillRect(player.x + player.width - 5, player.y + 25, 15, 5);
+            } else {
+                ctx.fillRect(player.x - 10, player.y + 25, 15, 5);
+            }
+        }
+        
+        // 发射子弹
+        function shootBullet() {
+            const bulletX = player.facing === 'right' ? 
+                player.x + player.width : player.x - 10;
+            const bulletY = player.y + 25;
+            
+            bullets.push({
+                x: bulletX,
+                y: bulletY,
+                width: 10,
+                height: 5,
+                speed: player.facing === 'right' ? 10 : -10,
+                color: '#ffea00'
+            });
+            
+            // 射击粒子效果
+            createParticles(bulletX, bulletY, 5, '#ffea00');
+        }
+        
+        // 更新子弹
+        function updateBullets() {
+            for (let i = bullets.length - 1; i >= 0; i--) {
+                const bullet = bullets[i];
+                bullet.x += bullet.speed;
+                
+                // 移除屏幕外的子弹
+                if (bullet.x < 0 || bullet.x > canvas.width) {
+                    bullets.splice(i, 1);
+                    continue;
+                }
+                
+                // 检查子弹与敌人的碰撞
+                for (let j = enemies.length - 1; j >= 0; j--) {
+                    const enemy = enemies[j];
+                    
+                    if (bullet.x < enemy.x + enemy.width &&
+                        bullet.x + bullet.width > enemy.x &&
+                        bullet.y < enemy.y + enemy.height &&
+                        bullet.y + bullet.height > enemy.y) {
+                        
+                        // 击中敌人
+                        enemy.health--;
+                        
+                        // 击中粒子效果
+                        createParticles(enemy.x + enemy.width/2, enemy.y + enemy.height/2, 15, enemy.color);
+                        
+                        // 移除子弹
+                        bullets.splice(i, 1);
+                        
+                        // 如果敌人生命值为0，移除敌人并增加分数
+                        if (enemy.health <= 0) {
+                            game.score += 100;
+                            enemies.splice(j, 1);
+                            
+                            // 爆炸粒子效果
+                            createParticles(enemy.x + enemy.width/2, enemy.y + enemy.height/2, 30, '#ff3333');
+                        }
+                        
+                        updateUI();
+                        break;
+                    }
+                }
+            }
+        }
+        
+        // 绘制子弹
+        function drawBullets() {
+            bullets.forEach(bullet => {
+                // 子弹发光效果
+                ctx.shadowColor = bullet.color;
+                ctx.shadowBlur = 10;
+                ctx.fillStyle = bullet.color;
+                ctx.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
+                ctx.shadowBlur = 0;
+            });
+        }
+        
+        // 更新敌人
+        function updateEnemies() {
+            const currentTime = Date.now();
+            
+            enemies.forEach(enemy => {
+                // 敌人移动
+                enemy.x += enemy.speed * enemy.direction;
+                
+                // 敌人平台边界检查
+                let onPlatform = false;
+                platforms.forEach(platform => {
+                    if (enemy.x >= platform.x && 
+                        enemy.x + enemy.width <= platform.x + platform.width &&
+                        enemy.y + enemy.height >= platform.y - 5 &&
+                        enemy.y + enemy.height <= platform.y + 5) {
+                        
+                        onPlatform = true;
+                        
+                        // 到达平台边缘时改变方向
+                        if (enemy.x <= platform.x || enemy.x + enemy.width >= platform.x + platform.width) {
+                            if (currentTime - enemy.lastDirectionChange > 1000) {
+                                enemy.direction *= -1;
+                                enemy.lastDirectionChange = currentTime;
+                            }
+                        }
+                    }
+                });
+                
+                // 如果不在平台上，尝试寻找平台
+                if (!onPlatform) {
+                    // 简单AI：改变方向并希望找到平台
+                    if (currentTime - enemy.lastDirectionChange > 500) {
+                        enemy.direction *= -1;
+                        enemy.lastDirectionChange = currentTime;
+                    }
+                }
+                
+                // 敌人与玩家碰撞检测
+                if (player.x < enemy.x + enemy.width &&
+                    player.x + player.width > enemy.x &&
+                    player.y < enemy.y + enemy.height &&
+                    player.y + player.height > enemy.y) {
+                    
+                    playerHit();
+                }
+            });
+        }
+        
+        // 绘制敌人
+        function drawEnemies() {
+            enemies.forEach(enemy => {
+                // 敌人阴影
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+                ctx.fillRect(enemy.x + 3, enemy.y + 5, enemy.width, enemy.height);
+                
+                // 敌人身体
+                ctx.fillStyle = enemy.color;
+                ctx.fillRect(enemy.x, enemy.y, enemy.width, enemy.height);
+                
+                // 敌人眼睛
+                ctx.fillStyle = 'white';
+                if (enemy.direction > 0) {
+                    // 向右看
+                    ctx.fillRect(enemy.x + enemy.width - 15, enemy.y + 10, 8, 8);
+                } else {
+                    // 向左看
+                    ctx.fillRect(enemy.x + 7, enemy.y + 10, 8, 8);
+                }
+                
+                // 坦克型敌人有额外装甲
+                if (enemy.type === 'tank') {
+                    ctx.fillStyle = '#996600';
+                    ctx.fillRect(enemy.x + 5, enemy.y - 5, enemy.width - 10, 5);
+                    ctx.fillRect(enemy.x + 5, enemy.y + enemy.height, enemy.width - 10, 5);
+                    ctx.fillRect(enemy.x - 5, enemy.y + 5, 5, enemy.height - 10);
+                    ctx.fillRect(enemy.x + enemy.width, enemy.y + 5, 5, enemy.height - 10);
+                }
+            });
+        }
+        
+        // 玩家被击中
+        function playerHit() {
+            game.lives--;
+            updateUI();
+            
+            // 击中粒子效果
+            createParticles(player.x + player.width/2, player.y + player.height/2, 20, '#ff3333');
+            
+            if (game.lives <= 0) {
+                gameOver();
+            }
+        }
+        
+        // 游戏结束
+        function gameOver() {
+            game.running = false;
+            game.gameOver = true;
+            
+            finalScoreElement.textContent = game.score;
+            gameOverScreen.classList.remove('hidden');
+        }
+        
+        // 创建粒子效果
+        function createParticles(x, y, count, color) {
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: x,
+                    y: y,
+                    size: Math.random() * 5 + 2,
+                    speedX: (Math.random() - 0.5) * 10,
+                    speedY: (Math.random() - 0.5) * 10,
+                    color: color,
+                    life: 30 + Math.random() * 30,
+                    fade: 0.05 + Math.random() * 0.05
+                });
+            }
+        }
+        
+        // 更新粒子效果
+        function updateParticles() {
+            for (let i = particles.length - 1; i >= 0; i--) {
+                const p = particles[i];
+                
+                p.x += p.speedX;
+                p.y += p.speedY;
+                p.life -= 1;
+                p.speedX *= 0.95;
+                p.speedY *= 0.95;
+                
+                if (p.life <= 0) {
+                    particles.splice(i, 1);
+                }
+            }
+        }
+        
+        // 绘制粒子效果
+        function drawParticles() {
+            particles.forEach(p => {
+                ctx.globalAlpha = p.life / 60;
+                ctx.fillStyle = p.color;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            ctx.globalAlpha = 1.0;
+        }
+        
+        // 显示关卡提升消息
+        function showLevelUpMessage() {
+            // 创建临时文本显示
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+            ctx.fillRect(canvas.width/2 - 150, canvas.height/2 - 40, 300, 80);
+            
+            ctx.fillStyle = '#ffea00';
+            ctx.font = 'bold 28px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(`关卡 ${game.level}`, canvas.width/2, canvas.height/2);
+            ctx.font = '18px Arial';
+            ctx.fillStyle = 'white';
+            ctx.fillText('敌人变得更加强大了！', canvas.width/2, canvas.height/2 + 30);
+            ctx.textAlign = 'left';
+            
+            // 3秒后消失
+            setTimeout(() => {
+                // 重绘游戏区域
+            }, 3000);
+        }
+        
+        // 更新UI
+        function updateUI() {
+            scoreElement.textContent = game.score;
+            livesElement.textContent = game.lives;
+            levelElement.textContent = game.level;
+        }
+        
+        // 事件监听器
+        startBtn.addEventListener('click', initGame);
+        restartBtn.addEventListener('click', initGame);
+        
+        // 控制按钮事件 - 按下
+        leftBtn.addEventListener('mousedown', () => controls.left = true);
+        leftBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            controls.left = true;
+        });
+        
+        rightBtn.addEventListener('mousedown', () => controls.right = true);
+        rightBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            controls.right = true;
+        });
+        
+        upBtn.addEventListener('mousedown', () => controls.up = true);
+        upBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            controls.up = true;
+        });
+        
+        downBtn.addEventListener('mousedown', () => controls.down = true);
+        downBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            controls.down = true;
+        });
+        
+        jumpBtn.addEventListener('mousedown', () => controls.jump = true);
+        jumpBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            controls.jump = true;
+        });
+        
+        actionBtn.addEventListener('mousedown', () => controls.action = true);
+        actionBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            controls.action = true;
+        });
+        
+        // 控制按钮事件 - 释放
+        leftBtn.addEventListener('mouseup', () => controls.left = false);
+        leftBtn.addEventListener('mouseleave', () => controls.left = false);
+        leftBtn.addEventListener('touchend', () => controls.left = false);
+        
+        rightBtn.addEventListener('mouseup', () => controls.right = false);
+        rightBtn.addEventListener('mouseleave', () => controls.right = false);
+        rightBtn.addEventListener('touchend', () => controls.right = false);
+        
+        upBtn.addEventListener('mouseup', () => controls.up = false);
+        upBtn.addEventListener('mouseleave', () => controls.up = false);
+        upBtn.addEventListener('touchend', () => controls.up = false);
+        
+        downBtn.addEventListener('mouseup', () => controls.down = false);
+        downBtn.addEventListener('mouseleave', () => controls.down = false);
+        downBtn.addEventListener('touchend', () => controls.down = false);
+        
+        jumpBtn.addEventListener('mouseup', () => controls.jump = false);
+        jumpBtn.addEventListener('mouseleave', () => controls.jump = false);
+        jumpBtn.addEventListener('touchend', () => controls.jump = false);
+        
+        actionBtn.addEventListener('mouseup', () => controls.action = false);
+        actionBtn.addEventListener('mouseleave', () => controls.action = false);
+        actionBtn.addEventListener('touchend', () => controls.action = false);
+        
+        // 键盘控制支持（可选）
+        document.addEventListener('keydown', (e) => {
+            switch(e.key) {
+                case 'ArrowLeft':
+                case 'a':
+                case 'A':
+                    controls.left = true;
+                    break;
+                case 'ArrowRight':
+                case 'd':
+                case 'D':
+                    controls.right = true;
+                    break;
+                case 'ArrowUp':
+                case 'w':
+                case 'W':
+                    controls.up = true;
+                    break;
+                case 'ArrowDown':
+                case 's':
+                case 'S':
+                    controls.down = true;
+                    break;
+                case ' ':
+                    controls.jump = true;
+                    break;
+                case 'Enter':
+                    controls.action = true;
+                    break;
+            }
+        });
+        
+        document.addEventListener('keyup', (e) => {
+            switch(e.key) {
+                case 'ArrowLeft':
+                case 'a':
+                case 'A':
+                    controls.left = false;
+                    break;
+                case 'ArrowRight':
+                case 'd':
+                case 'D':
+                    controls.right = false;
+                    break;
+                case 'ArrowUp':
+                case 'w':
+                case 'W':
+                    controls.up = false;
+                    break;
+                case 'ArrowDown':
+                case 's':
+                case 'S':
+                    controls.down = false;
+                    break;
+                case ' ':
+                    controls.jump = false;
+                    break;
+                case 'Enter':
+                    controls.action = false;
+                    break;
+            }
+        });
+        
+        // 防止移动端页面滚动
+        document.addEventListener('touchmove', (e) => {
+            if (e.target.classList.contains('control-btn')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        // 初始UI更新
+        updateUI();
+    </script>
+</body>
+</html>

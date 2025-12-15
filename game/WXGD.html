@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外星人格斗</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a2a, #1a1a40);
+            color: #00ffea;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #00ffea, 0 0 20px #0080ff;
+            letter-spacing: 2px;
+        }
+        
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 20px;
+            background: rgba(0, 20, 40, 0.7);
+            border: 2px solid #00aaff;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        
+        .level-info, .time-info, .combo-info {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .game-container {
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .stage {
+            height: 400px;
+            background: linear-gradient(to bottom, #001122, #003355);
+            border: 4px solid #00aaff;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 170, 255, 0.5);
+        }
+        
+        .stage-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%2300aaff" opacity="0.6"/><circle cx="50" cy="40" r="1.5" fill="%2300aaff" opacity="0.5"/><circle cx="80" cy="60" r="1" fill="%2300aaff" opacity="0.4"/><circle cx="30" cy="70" r="1.2" fill="%2300aaff" opacity="0.5"/><circle cx="70" cy="20" r="1.8" fill="%2300aaff" opacity="0.6"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .fighter {
+            position: absolute;
+            width: 120px;
+            height: 180px;
+            bottom: 50px;
+            transition: left 0.1s;
+        }
+        
+        #player {
+            left: 150px;
+            z-index: 10;
+        }
+        
+        #enemy {
+            right: 150px;
+            transform: scaleX(-1);
+            z-index: 9;
+        }
+        
+        .fighter-body {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .player-body {
+            background: radial-gradient(circle at 30% 40%, #00ffaa, #008855);
+            border-radius: 50% 50% 40% 40%;
+            box-shadow: 0 0 20px #00ffaa;
+        }
+        
+        .enemy-body {
+            background: radial-gradient(circle at 30% 40%, #ff5500, #882200);
+            border-radius: 50% 50% 40% 40%;
+            box-shadow: 0 0 20px #ff5500;
+        }
+        
+        .fighter-head {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            top: -20px;
+            left: 25px;
+            border-radius: 50%;
+        }
+        
+        .player-head {
+            background: radial-gradient(circle at 30% 30%, #aaff00, #558800);
+            box-shadow: 0 0 15px #aaff00;
+        }
+        
+        .enemy-head {
+            background: radial-gradient(circle at 30% 30%, #ff00aa, #880055);
+            box-shadow: 0 0 15px #ff00aa;
+        }
+        
+        .fighter-eye {
+            position: absolute;
+            width: 15px;
+            height: 25px;
+            background-color: #000;
+            border-radius: 50%;
+            top: 20px;
+        }
+        
+        .player-eye-left {
+            left: 15px;
+        }
+        
+        .player-eye-right {
+            right: 15px;
+        }
+        
+        .enemy-eye-left {
+            left: 15px;
+        }
+        
+        .enemy-eye-right {
+            right: 15px;
+        }
+        
+        .health-bar-container {
+            position: absolute;
+            top: 20px;
+            width: 40%;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #00aaff;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        #player-health-container {
+            left: 20px;
+        }
+        
+        #enemy-health-container {
+            right: 20px;
+        }
+        
+        .health-bar {
+            height: 100%;
+            transition: width 0.3s;
+        }
+        
+        #player-health {
+            width: 100%;
+            background: linear-gradient(to right, #00ff00, #ffff00);
+        }
+        
+        #enemy-health {
+            width: 100%;
+            background: linear-gradient(to right, #00ff00, #ffff00);
+        }
+        
+        .energy-bar-container {
+            position: absolute;
+            top: 60px;
+            width: 40%;
+            height: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #00aaff;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        #player-energy-container {
+            left: 20px;
+        }
+        
+        #enemy-energy-container {
+            right: 20px;
+        }
+        
+        .energy-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, #00aaff, #00ffff);
+            transition: width 0.3s;
+        }
+        
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            width: 100%;
+            max-width: 900px;
+            margin-top: 20px;
+        }
+        
+        .control-btn {
+            padding: 15px 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            background: linear-gradient(to bottom, #0055aa, #003377);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-shadow: 0 0 5px #00aaff;
+            box-shadow: 0 4px 0 #002244, 0 0 10px rgba(0, 170, 255, 0.5);
+        }
+        
+        .control-btn:hover {
+            background: linear-gradient(to bottom, #0066cc, #004488);
+            transform: translateY(-2px);
+        }
+        
+        .control-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #002244, 0 0 10px rgba(0, 170, 255, 0.5);
+        }
+        
+        .special-btn {
+            background: linear-gradient(to bottom, #aa5500, #773300);
+            box-shadow: 0 4px 0 #442200, 0 0 10px rgba(255, 170, 0, 0.5);
+        }
+        
+        .special-btn:hover {
+            background: linear-gradient(to bottom, #cc6600, #995500);
+        }
+        
+        .move-info {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #aaffff;
+        }
+        
+        .message-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 10, 30, 0.9);
+            border: 3px solid #00ffea;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            z-index: 100;
+            display: none;
+            box-shadow: 0 0 30px #00ffea;
+            width: 80%;
+            max-width: 500px;
+        }
+        
+        .message-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #00ffea;
+            text-shadow: 0 0 10px #00ffea;
+        }
+        
+        .message-text {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #aaffff;
+        }
+        
+        .message-btn {
+            padding: 15px 30px;
+            font-size: 1.3rem;
+            background: linear-gradient(to bottom, #00aaff, #0055aa);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: bold;
+        }
+        
+        .message-btn:hover {
+            background: linear-gradient(to bottom, #00ccff, #0066cc);
+            transform: scale(1.05);
+        }
+        
+        .damage-effect {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 0, 0, 0.3);
+            z-index: 50;
+            pointer-events: none;
+            opacity: 0;
+        }
+        
+        .combo-display {
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            color: #ffaa00;
+            text-shadow: 0 0 10px #ff5500;
+            z-index: 20;
+            opacity: 0;
+            font-weight: bold;
+        }
+        
+        .attack-effect {
+            position: absolute;
+            width: 80px;
+            height: 40px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,0,0.8) 0%, rgba(255,100,0,0) 70%);
+            z-index: 5;
+            opacity: 0;
+        }
+        
+        .level-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .level-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #005588;
+            border: 2px solid #00aaff;
+        }
+        
+        .level-dot.active {
+            background-color: #00ffea;
+            box-shadow: 0 0 10px #00ffea;
+        }
+        
+        .instructions {
+            max-width: 900px;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0, 20, 40, 0.7);
+            border: 2px solid #00aaff;
+            border-radius: 10px;
+        }
+        
+        .instructions h3 {
+            margin-bottom: 10px;
+            color: #00ffea;
+        }
+        
+        .instructions ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+            color: #aaffff;
+        }
+        
+        @media (max-width: 768px) {
+            .controls {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .control-btn {
+                padding: 12px 8px;
+                font-size: 1rem;
+            }
+            
+            .fighter {
+                width: 100px;
+                height: 150px;
+            }
+            
+            .stage {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>外星人格斗</h1>
+        <p>击败所有外星敌人，拯救地球！</p>
+    </div>
+    
+    <div class="game-info">
+        <div class="level-info">
+            <h3>关卡: <span id="level">1</span>/3</h3>
+        </div>
+        <div class="time-info">
+            <h3>时间: <span id="time">60</span>秒</h3>
+        </div>
+        <div class="combo-info">
+            <h3>连击: <span id="combo-count">0</span></h3>
+        </div>
+    </div>
+    
+    <div class="game-container">
+        <div class="stage">
+            <div class="stage-background"></div>
+            
+            <div class="level-indicator">
+                <div class="level-dot active" id="level-dot-1"></div>
+                <div class="level-dot" id="level-dot-2"></div>
+                <div class="level-dot" id="level-dot-3"></div>
+            </div>
+            
+            <div class="health-bar-container" id="player-health-container">
+                <div class="health-bar" id="player-health"></div>
+            </div>
+            <div class="health-bar-container" id="enemy-health-container">
+                <div class="health-bar" id="enemy-health"></div>
+            </div>
+            
+            <div class="energy-bar-container" id="player-energy-container">
+                <div class="energy-bar" id="player-energy"></div>
+            </div>
+            <div class="energy-bar-container" id="enemy-energy-container">
+                <div class="energy-bar" id="enemy-energy"></div>
+            </div>
+            
+            <div class="fighter" id="player">
+                <div class="fighter-body player-body"></div>
+                <div class="fighter-head player-head">
+                    <div class="fighter-eye player-eye-left"></div>
+                    <div class="fighter-eye player-eye-right"></div>
+                </div>
+            </div>
+            
+            <div class="fighter" id="enemy">
+                <div class="fighter-body enemy-body"></div>
+                <div class="fighter-head enemy-head">
+                    <div class="fighter-eye enemy-eye-left"></div>
+                    <div class="fighter-eye enemy-eye-right"></div>
+                </div>
+            </div>
+            
+            <div class="damage-effect" id="player-damage"></div>
+            <div class="damage-effect" id="enemy-damage"></div>
+            
+            <div class="combo-display" id="combo-display"></div>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button class="control-btn" id="move-left">
+            左移
+            <div class="move-info">← 移动</div>
+        </button>
+        <button class="control-btn" id="move-right">
+            右移
+            <div class="move-info">→ 移动</div>
+        </button>
+        <button class="control-btn" id="punch">
+            重拳
+            <div class="move-info">伤害: 15</div>
+        </button>
+        <button class="control-btn" id="kick">
+            重踢
+            <div class="move-info">伤害: 20</div>
+        </button>
+        <button class="control-btn special-btn" id="special-1">
+            激光眼
+            <div class="move-info">能量: 30</div>
+        </button>
+        
+        <button class="control-btn" id="jump">
+            跳跃
+            <div class="move-info">躲避攻击</div>
+        </button>
+        <button class="control-btn" id="crouch">
+            蹲下
+            <div class="move-info">防御下段</div>
+        </button>
+        <button class="control-btn" id="block">
+            防御
+            <div class="move-info">减少伤害</div>
+        </button>
+        <button class="control-btn" id="quick-punch">
+            快拳
+            <div class="move-info">伤害: 10</div>
+        </button>
+        <button class="control-btn special-btn" id="special-2">
+            能量波
+            <div class="move-info">能量: 40</div>
+        </button>
+    </div>
+    
+    <div class="instructions">
+        <h3>游戏说明:</h3>
+        <ul>
+            <li><strong>目标:</strong> 击败三关的外星敌人</li>
+            <li><strong>操作:</strong> 使用屏幕按钮控制你的外星人进行攻击和防御</li>
+            <li><strong>招式:</strong> 快拳/重拳/重踢/跳跃/蹲下/防御/激光眼/能量波</li>
+            <li><strong>能量:</strong> 攻击命中会积累能量，用于特殊技能</li>
+            <li><strong>连击:</strong> 连续攻击会增加伤害</li>
+            <li><strong>提示:</strong> 每关敌人更强，合理使用特殊技能</li>
+        </ul>
+    </div>
+    
+    <div class="message-box" id="message-box">
+        <div class="message-title" id="message-title">游戏开始!</div>
+        <div class="message-text" id="message-text">准备与外星敌人战斗!</div>
+        <button class="message-btn" id="message-btn">开始战斗</button>
+    </div>
+
+    <script>
+        // 游戏状态变量
+        let gameState = {
+            level: 1,
+            timeLeft: 60,
+            playerHealth: 100,
+            enemyHealth: 100,
+            playerEnergy: 0,
+            enemyEnergy: 0,
+            playerPosition: 150,
+            enemyPosition: 150,
+            isPlayerBlocking: false,
+            isEnemyBlocking: false,
+            comboCount: 0,
+            comboTimeout: null,
+            gameActive: false,
+            gameTimer: null,
+            enemyActionInterval: null,
+            enemyActions: ['attack', 'block', 'move'],
+            enemyAttackChance: 0.3,
+            enemyBlockChance: 0.2,
+            enemyMoveChance: 0.5
+        };
+        
+        // DOM元素
+        const player = document.getElementById('player');
+        const enemy = document.getElementById('enemy');
+        const playerHealth = document.getElementById('player-health');
+        const enemyHealth = document.getElementById('enemy-health');
+        const playerEnergy = document.getElementById('player-energy');
+        const enemyEnergy = document.getElementById('enemy-energy');
+        const levelElement = document.getElementById('level');
+        const timeElement = document.getElementById('time');
+        const comboCountElement = document.getElementById('combo-count');
+        const comboDisplay = document.getElementById('combo-display');
+        const messageBox = document.getElementById('message-box');
+        const messageTitle = document.getElementById('message-title');
+        const messageText = document.getElementById('message-text');
+        const messageBtn = document.getElementById('message-btn');
+        
+        // 更新显示
+        function updateDisplay() {
+            playerHealth.style.width = `${gameState.playerHealth}%`;
+            enemyHealth.style.width = `${gameState.enemyHealth}%`;
+            playerEnergy.style.width = `${gameState.playerEnergy}%`;
+            enemyEnergy.style.width = `${gameState.enemyEnergy}%`;
+            levelElement.textContent = gameState.level;
+            timeElement.textContent = gameState.timeLeft;
+            comboCountElement.textContent = gameState.comboCount;
+            
+            // 更新关卡指示器
+            for (let i = 1; i <= 3; i++) {
+                const dot = document.getElementById(`level-dot-${i}`);
+                if (i === gameState.level) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            }
+            
+            // 更新角色位置
+            player.style.left = `${gameState.playerPosition}px`;
+            enemy.style.right = `${gameState.enemyPosition}px`;
+        }
+        
+        // 显示消息
+        function showMessage(title, text, buttonText, callback) {
+            messageTitle.textContent = title;
+            messageText.textContent = text;
+            messageBtn.textContent = buttonText;
+            messageBox.style.display = 'block';
+            
+            // 移除旧的事件监听器
+            const newMessageBtn = messageBtn.cloneNode(true);
+            messageBtn.parentNode.replaceChild(newMessageBtn, messageBtn);
+            messageBtn = newMessageBtn;
+            
+            messageBtn.addEventListener('click', function() {
+                messageBox.style.display = 'none';
+                if (callback) callback();
+            });
+        }
+        
+        // 开始游戏
+        function startGame() {
+            resetGameState();
+            gameState.gameActive = true;
+            
+            // 开始游戏计时器
+            gameState.gameTimer = setInterval(function() {
+                gameState.timeLeft--;
+                updateDisplay();
+                
+                if (gameState.timeLeft <= 0) {
+                    endGame(false, "时间到了!");
+                }
+            }, 1000);
+            
+            // 敌人AI
+            startEnemyAI();
+            
+            // 更新显示
+            updateDisplay();
+        }
+        
+        // 重置游戏状态
+        function resetGameState() {
+            gameState.playerHealth = 100;
+            gameState.enemyHealth = 100;
+            gameState.playerEnergy = 0;
+            gameState.enemyEnergy = 0;
+            gameState.playerPosition = 150;
+            gameState.enemyPosition = 150;
+            gameState.timeLeft = 60;
+            gameState.comboCount = 0;
+            gameState.isPlayerBlocking = false;
+            gameState.isEnemyBlocking = false;
+            
+            // 根据关卡调整敌人难度
+            if (gameState.level === 2) {
+                gameState.enemyHealth = 120;
+                gameState.enemyAttackChance = 0.4;
+                gameState.enemyBlockChance = 0.3;
+            } else if (gameState.level === 3) {
+                gameState.enemyHealth = 150;
+                gameState.enemyAttackChance = 0.5;
+                gameState.enemyBlockChance = 0.4;
+            }
+        }
+        
+        // 开始敌人AI
+        function startEnemyAI() {
+            if (gameState.enemyActionInterval) {
+                clearInterval(gameState.enemyActionInterval);
+            }
+            
+            // 根据关卡调整AI频率
+            const interval = gameState.level === 1 ? 2000 : (gameState.level === 2 ? 1500 : 1000);
+            
+            gameState.enemyActionInterval = setInterval(function() {
+                if (!gameState.gameActive) return;
+                
+                const action = getRandomEnemyAction();
+                
+                switch(action) {
+                    case 'attack':
+                        performEnemyAttack();
+                        break;
+                    case 'block':
+                        gameState.isEnemyBlocking = true;
+                        setTimeout(() => gameState.isEnemyBlocking = false, 1000);
+                        break;
+                    case 'move':
+                        moveEnemy();
+                        break;
+                }
+            }, interval);
+        }
+        
+        // 获取随机敌人动作
+        function getRandomEnemyAction() {
+            const rand = Math.random();
+            if (rand < gameState.enemyAttackChance) return 'attack';
+            if (rand < gameState.enemyAttackChance + gameState.enemyBlockChance) return 'block';
+            return 'move';
+        }
+        
+        // 执行敌人攻击
+        function performEnemyAttack() {
+            const attackTypes = ['punch', 'kick', 'special'];
+            const attackType = attackTypes[Math.floor(Math.random() * attackTypes.length)];
+            
+            // 检查能量是否足够使用特殊攻击
+            if (attackType === 'special' && gameState.enemyEnergy < 30) {
+                // 能量不足，改用普通攻击
+                performBasicEnemyAttack();
+                return;
+            }
+            
+            switch(attackType) {
+                case 'punch':
+                    performBasicEnemyAttack();
+                    break;
+                case 'kick':
+                    performEnemyKick();
+                    break;
+                case 'special':
+                    performEnemySpecial();
+                    break;
+            }
+        }
+        
+        // 执行基本敌人攻击
+        function performBasicEnemyAttack() {
+            // 检查是否在攻击范围内
+            if (Math.abs(gameState.playerPosition - (900 - gameState.enemyPosition - 150)) > 100) {
+                return; // 不在攻击范围
+            }
+            
+            // 创建攻击效果
+            createAttackEffect(enemy, 'left');
+            
+            // 计算伤害
+            let damage = 10;
+            if (gameState.isPlayerBlocking) {
+                damage = Math.floor(damage * 0.3); // 防御减少伤害
+                showDamageEffect(player, false);
+            } else {
+                showDamageEffect(player, true);
+            }
+            
+            // 应用伤害
+            gameState.playerHealth = Math.max(0, gameState.playerHealth - damage);
+            
+            // 敌人获得能量
+            gameState.enemyEnergy = Math.min(100, gameState.enemyEnergy + 10);
+            
+            // 检查玩家是否被击败
+            if (gameState.playerHealth <= 0) {
+                endGame(false, "你被击败了!");
+            }
+            
+            updateDisplay();
+        }
+        
+        // 执行敌人踢击
+        function performEnemyKick() {
+            // 检查是否在攻击范围内
+            if (Math.abs(gameState.playerPosition - (900 - gameState.enemyPosition - 150)) > 100) {
+                return; // 不在攻击范围
+            }
+            
+            // 创建攻击效果
+            createAttackEffect(enemy, 'left', 'kick');
+            
+            // 计算伤害
+            let damage = 15;
+            if (gameState.isPlayerBlocking) {
+                damage = Math.floor(damage * 0.3); // 防御减少伤害
+                showDamageEffect(player, false);
+            } else {
+                showDamageEffect(player, true);
+            }
+            
+            // 应用伤害
+            gameState.playerHealth = Math.max(0, gameState.playerHealth - damage);
+            
+            // 敌人获得能量
+            gameState.enemyEnergy = Math.min(100, gameState.enemyEnergy + 15);
+            
+            // 检查玩家是否被击败
+            if (gameState.playerHealth <= 0) {
+                endGame(false, "你被击败了!");
+            }
+            
+            updateDisplay();
+        }
+        
+        // 执行敌人特殊攻击
+        function performEnemySpecial() {
+            // 检查能量是否足够
+            if (gameState.enemyEnergy < 30) return;
+            
+            // 创建攻击效果
+            createAttackEffect(enemy, 'left', 'special');
+            
+            // 计算伤害
+            let damage = 25;
+            if (gameState.isPlayerBlocking) {
+                damage = Math.floor(damage * 0.5); // 防御减少特殊攻击伤害较少
+                showDamageEffect(player, false);
+            } else {
+                showDamageEffect(player, true);
+            }
+            
+            // 应用伤害
+            gameState.playerHealth = Math.max(0, gameState.playerHealth - damage);
+            
+            // 消耗能量
+            gameState.enemyEnergy = Math.max(0, gameState.enemyEnergy - 30);
+            
+            // 检查玩家是否被击败
+            if (gameState.playerHealth <= 0) {
+                endGame(false, "你被击败了!");
+            }
+            
+            updateDisplay();
+        }
+        
+        // 移动敌人
+        function moveEnemy() {
+            // 决定移动方向
+            const direction = Math.random() > 0.5 ? 'left' : 'right';
+            const distance = Math.floor(Math.random() * 30) + 20;
+            
+            if (direction === 'left') {
+                gameState.enemyPosition = Math.min(300, gameState.enemyPosition + distance);
+            } else {
+                gameState.enemyPosition = Math.max(50, gameState.enemyPosition - distance);
+            }
+            
+            updateDisplay();
+        }
+        
+        // 创建攻击效果
+        function createAttackEffect(attacker, direction, type = 'punch') {
+            const effect = document.createElement('div');
+            effect.className = 'attack-effect';
+            
+            // 设置效果位置
+            const attackerRect = attacker.getBoundingClientRect();
+            const stageRect = document.querySelector('.stage').getBoundingClientRect();
+            
+            let left, top;
+            if (direction === 'right') {
+                left = attackerRect.right - stageRect.left + 20;
+            } else {
+                left = attackerRect.left - stageRect.left - 80;
+            }
+            
+            top = attackerRect.top - stageRect.top + 60;
+            
+            effect.style.left = `${left}px`;
+            effect.style.top = `${top}px`;
+            
+            // 根据攻击类型调整效果
+            if (type === 'kick') {
+                effect.style.background = 'radial-gradient(circle, rgba(255,150,0,0.8) 0%, rgba(255,50,0,0) 70%)';
+                effect.style.width = '100px';
+                effect.style.height = '30px';
+            } else if (type === 'special') {
+                effect.style.background = 'radial-gradient(circle, rgba(0,255,255,0.8) 0%, rgba(0,100,255,0) 70%)';
+                effect.style.width = '120px';
+                effect.style.height = '60px';
+            }
+            
+            document.querySelector('.stage').appendChild(effect);
+            
+            // 显示效果
+            setTimeout(() => {
+                effect.style.opacity = '1';
+            }, 10);
+            
+            // 移除效果
+            setTimeout(() => {
+                effect.style.opacity = '0';
+                setTimeout(() => {
+                    if (effect.parentNode) {
+                        effect.parentNode.removeChild(effect);
+                    }
+                }, 300);
+            }, 300);
+        }
+        
+        // 显示伤害效果
+        function showDamageEffect(target, isDamaged) {
+            const damageEffect = target.id === 'player' ? 
+                document.getElementById('player-damage') : 
+                document.getElementById('enemy-damage');
+            
+            if (isDamaged) {
+                damageEffect.style.backgroundColor = 'rgba(255, 0, 0, 0.5)';
+            } else {
+                damageEffect.style.backgroundColor = 'rgba(0, 0, 255, 0.3)';
+            }
+            
+            damageEffect.style.opacity = '1';
+            
+            setTimeout(() => {
+                damageEffect.style.opacity = '0';
+            }, 300);
+        }
+        
+        // 增加连击
+        function addCombo() {
+            gameState.comboCount++;
+            
+            // 显示连击数
+            comboDisplay.textContent = `${gameState.comboCount} 连击!`;
+            comboDisplay.style.opacity = '1';
+            
+            // 清除之前的连击超时
+            if (gameState.comboTimeout) {
+                clearTimeout(gameState.comboTimeout);
+            }
+            
+            // 设置连击超时
+            gameState.comboTimeout = setTimeout(() => {
+                comboDisplay.style.opacity = '0';
+                gameState.comboCount = 0;
+                updateDisplay();
+            }, 2000);
+            
+            updateDisplay();
+        }
+        
+        // 执行玩家攻击
+        function performPlayerAttack(damage, energyCost = 0, type = 'punch') {
+            if (!gameState.gameActive) return;
+            
+            // 检查能量是否足够
+            if (gameState.playerEnergy < energyCost) {
+                showMessage("能量不足", "你的能量不足以使用此技能", "确定", null);
+                return;
+            }
+            
+            // 检查是否在攻击范围内
+            if (Math.abs(gameState.playerPosition - (900 - gameState.enemyPosition - 150)) > 100) {
+                showMessage("攻击落空", "敌人不在攻击范围内", "确定", null);
+                return;
+            }
+            
+            // 创建攻击效果
+            createAttackEffect(player, 'right', type);
+            
+            // 计算伤害
+            let finalDamage = damage;
+            if (gameState.comboCount > 0) {
+                finalDamage += Math.floor(damage * gameState.comboCount * 0.1); // 连击增加伤害
+            }
+            
+            if (gameState.isEnemyBlocking) {
+                finalDamage = Math.floor(finalDamage * 0.3); // 防御减少伤害
+                showDamageEffect(enemy, false);
+            } else {
+                showDamageEffect(enemy, true);
+            }
+            
+            // 应用伤害
+            gameState.enemyHealth = Math.max(0, gameState.enemyHealth - finalDamage);
+            
+            // 消耗能量
+            gameState.playerEnergy = Math.max(0, gameState.playerEnergy - energyCost);
+            
+            // 增加能量（普通攻击）
+            if (energyCost === 0) {
+                gameState.playerEnergy = Math.min(100, gameState.playerEnergy + damage);
+            }
+            
+            // 增加连击
+            addCombo();
+            
+            // 检查敌人是否被击败
+            if (gameState.enemyHealth <= 0) {
+                if (gameState.level === 3) {
+                    endGame(true, "恭喜你击败了所有敌人!");
+                } else {
+                    nextLevel();
+                }
+            }
+            
+            updateDisplay();
+        }
+        
+        // 移动到下一关
+        function nextLevel() {
+            gameState.gameActive = false;
+            gameState.level++;
+            
+            showMessage(
+                `关卡 ${gameState.level}`, 
+                `你击败了第${gameState.level-1}关的敌人! 准备迎接更强大的对手!`,
+                "进入下一关",
+                function() {
+                    resetGameState();
+                    gameState.gameActive = true;
+                    startEnemyAI();
+                    updateDisplay();
+                }
+            );
+        }
+        
+        // 结束游戏
+        function endGame(isWin, message) {
+            gameState.gameActive = false;
+            
+            // 清除计时器
+            clearInterval(gameState.gameTimer);
+            clearInterval(gameState.enemyActionInterval);
+            
+            if (isWin) {
+                showMessage("胜利!", message, "重新开始", function() {
+                    gameState.level = 1;
+                    startGame();
+                });
+            } else {
+                showMessage("失败!", message, "重新开始", function() {
+                    gameState.level = 1;
+                    startGame();
+                });
+            }
+        }
+        
+        // 初始化游戏
+        function initGame() {
+            // 显示开始消息
+            showMessage("外星人格斗", "击败三关的外星敌人，拯救地球!", "开始游戏", startGame);
+            
+            // 按钮事件监听
+            document.getElementById('move-left').addEventListener('click', function() {
+                if (!gameState.gameActive) return;
+                gameState.playerPosition = Math.max(50, gameState.playerPosition - 30);
+                updateDisplay();
+            });
+            
+            document.getElementById('move-right').addEventListener('click', function() {
+                if (!gameState.gameActive) return;
+                gameState.playerPosition = Math.min(300, gameState.playerPosition + 30);
+                updateDisplay();
+            });
+            
+            document.getElementById('punch').addEventListener('click', function() {
+                performPlayerAttack(15, 0, 'punch');
+            });
+            
+            document.getElementById('kick').addEventListener('click', function() {
+                performPlayerAttack(20, 0, 'kick');
+            });
+            
+            document.getElementById('quick-punch').addEventListener('click', function() {
+                performPlayerAttack(10, 0, 'punch');
+            });
+            
+            document.getElementById('special-1').addEventListener('click', function() {
+                performPlayerAttack(30, 30, 'special');
+            });
+            
+            document.getElementById('special-2').addEventListener('click', function() {
+                performPlayerAttack(40, 40, 'special');
+            });
+            
+            document.getElementById('jump').addEventListener('click', function() {
+                if (!gameState.gameActive) return;
+                // 简单的跳跃效果
+                player.style.bottom = '100px';
+                setTimeout(() => {
+                    player.style.bottom = '50px';
+                }, 300);
+            });
+            
+            document.getElementById('crouch').addEventListener('click', function() {
+                if (!gameState.gameActive) return;
+                // 简单的蹲下效果
+                player.style.height = '140px';
+                setTimeout(() => {
+                    player.style.height = '180px';
+                }, 500);
+            });
+            
+            document.getElementById('block').addEventListener('click', function() {
+                if (!gameState.gameActive) return;
+                gameState.isPlayerBlocking = true;
+                setTimeout(() => {
+                    gameState.isPlayerBlocking = false;
+                }, 1000);
+            });
+            
+            // 初始更新显示
+            updateDisplay();
+        }
+        
+        // 页面加载完成后初始化游戏
+        window.addEventListener('DOMContentLoaded', initGame);
+    </script>
+</body>
+</html>
