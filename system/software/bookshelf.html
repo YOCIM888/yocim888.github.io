@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复古书架</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        :root {
+            --primary-color: #8b4513;
+            --secondary-color: #d2b48c;
+            --accent-color: #a0522d;
+            --paper-color: #f5e9d6;
+            --dark-color: #3d2b1f;
+            --light-color: #e8dfca;
+            --shadow-color: rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            background-color: #3a2c1a;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%235d4021' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: var(--dark-color);
+            border: 8px solid var(--primary-color);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            position: relative;
+        }
+
+        header h1 {
+            color: var(--secondary-color);
+            font-size: 3.5rem;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: var(--light-color);
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        .bookshelf-container {
+            background-color: var(--primary-color);
+            border: 12px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5), 0 10px 30px var(--shadow-color);
+            position: relative;
+        }
+
+        .bookshelf-container:before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(to bottom, #6b3a1a, #8b4513);
+            border-radius: 5px;
+        }
+
+        .shelf-title {
+            color: var(--light-color);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .book-item {
+            background: linear-gradient(145deg, var(--secondary-color), #b89a7a);
+            border-radius: 8px;
+            padding: 20px 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 2px solid #a9845c;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(145deg, #e0c9a6, #c7ad87);
+        }
+
+        .book-item.active {
+            border-color: #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+        }
+
+        .book-spine {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 15px;
+            background: linear-gradient(to right, var(--accent-color), #8b5a2b);
+            border-right: 2px solid #6b3a1a;
+        }
+
+        .book-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--dark-color);
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .book-author {
+            font-size: 0.9rem;
+            color: #5a4a3a;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .book-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #5a4a3a;
+            margin-top: 10px;
+        }
+
+        .reader-container {
+            display: none;
+            background-color: var(--paper-color);
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            border: 1px solid #c9b18a;
+            position: relative;
+            min-height: 600px;
+        }
+
+        .reader-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .reader-title {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            font-weight: bold;
+        }
+
+        .reader-controls {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-bookmark {
+            background-color: #2e8b57;
+        }
+
+        .btn-bookmark:hover {
+            background-color: #3cb371;
+        }
+
+        .reader-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            height: 450px;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: #fffef7;
+            border-radius: 4px;
+            border: 1px solid #e0d4b5;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .page-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .page-info {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            font-weight: bold;
+        }
+
+        .bookmark-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: #ffd700;
+            border-radius: 50%;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        .bookmarks-panel {
+            display: none;
+            background-color: #f8f4e9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #d4c9ac;
+        }
+
+        .bookmarks-title {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 8px;
+        }
+
+        .bookmarks-list {
+            list-style-type: none;
+        }
+
+        .bookmark-item {
+            padding: 12px 15px;
+            background-color: white;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border-left: 5px solid #2e8b57;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bookmark-item:hover {
+            background-color: #f0f0f0;
+            transform: translateX(5px);
+        }
+
+        .delete-bookmark {
+            color: #8b0000;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .settings-panel {
+            display: none;
+            background-color: #f8f4e9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #d4c9ac;
+        }
+
+        .settings-title {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 8px;
+        }
+
+        .setting-item {
+            margin-bottom: 15px;
+        }
+
+        .setting-item label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--light-color);
+            font-style: italic;
+            padding-top: 20px;
+            border-top: 2px solid var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            }
+            
+            .reader-header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .reader-controls {
+                flex-wrap: wrap;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>复古书架</h1>
+            <p>一个充满怀旧气息的私人阅读空间</p>
+        </header>
+        
+        <div class="bookshelf-container">
+            <h2 class="shelf-title">我的藏书</h2>
+            <div class="books-grid" id="bookshelf">
+                <!-- 书籍将通过JavaScript动态生成 -->
+            </div>
+        </div>
+        
+        <div class="reader-container" id="reader">
+            <div class="reader-header">
+                <h2 class="reader-title" id="book-title">书籍标题</h2>
+                <div class="reader-controls">
+                    <button class="btn" id="back-to-shelf">
+                        <i class="fas fa-arrow-left"></i> 返回书架
+                    </button>
+                    <button class="btn btn-bookmark" id="toggle-bookmark">
+                        <i class="fas fa-bookmark"></i> 添加书签
+                    </button>
+                    <button class="btn" id="show-bookmarks">
+                        <i class="fas fa-list"></i> 书签列表
+                    </button>
+                    <button class="btn" id="show-settings">
+                        <i class="fas fa-cog"></i> 设置
+                    </button>
+                </div>
+            </div>
+            
+            <div class="reader-content" id="book-content">
+                <!-- 书籍内容将通过JavaScript加载 -->
+            </div>
+            
+            <div class="page-controls">
+                <button class="btn" id="prev-page">
+                    <i class="fas fa-chevron-left"></i> 上一页
+                </button>
+                
+                <div class="page-info">
+                    第 <span id="current-page">1</span> 页 / 共 <span id="total-pages">1</span> 页
+                    <span id="bookmark-indicator" class="bookmark-indicator" style="display: none;"></span>
+                    <span id="progress-text" style="margin-left: 10px;">阅读进度: <span id="progress-percent">0</span>%</span>
+                </div>
+                
+                <button class="btn" id="next-page">
+                    下一页 <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-bar"></div>
+            </div>
+        </div>
+        
+        <div class="bookmarks-panel" id="bookmarks-panel">
+            <h3 class="bookmarks-title">书签列表</h3>
+            <ul class="bookmarks-list" id="bookmarks-list">
+                <!-- 书签将通过JavaScript动态生成 -->
+            </ul>
+        </div>
+        
+        <div class="settings-panel" id="settings-panel">
+            <h3 class="settings-title">阅读设置</h3>
+            <div class="setting-item">
+                <label for="font-size">字体大小</label>
+                <input type="range" id="font-size" min="14" max="24" value="18">
+                <span id="font-size-value">18px</span>
+            </div>
+            <div class="setting-item">
+                <label for="line-height">行高</label>
+                <input type="range" id="line-height" min="1.4" max="2.2" step="0.1" value="1.8">
+                <span id="line-height-value">1.8</span>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="night-mode"> 夜间模式
+                </label>
+            </div>
+            <button class="btn" id="close-settings">关闭设置</button>
+        </div>
+        
+        <div class="footer">
+            <p>复古书架阅读器 © 2023 | 共收藏12部文学作品</p>
+        </div>
+    </div>
+
+    <script>
+        // 书籍数据
+        const books = [
+            { id: 1, title: "时间的侧影", author: "时光旅人", color: "#8b4513", pages: 120 },
+            { id: 2, title: "万物在低语", author: "自然观察者", color: "#2e8b57", pages: 95 },
+            { id: 3, title: "夜色折叠", author: "夜行者", color: "#4b0082", pages: 110 },
+            { id: 4, title: "在深海之上", author: "海洋学者", color: "#1e90ff", pages: 150 },
+            { id: 5, title: "写给未来的三封信", author: "时空信使", color: "#dc143c", pages: 80 },
+            { id: 6, title: "无人知晓的星辰", author: "星空守望者", color: "#4682b4", pages: 130 },
+            { id: 7, title: "风吹过旧时光", author: "怀旧诗人", color: "#daa520", pages: 100 },
+            { id: 8, title: "沉默的建筑师", author: "城市记录者", color: "#696969", pages: 115 },
+            { id: 9, title: "星河尽头的回声", author: "宇宙漫游者", color: "#8a2be2", pages: 140 },
+            { id: 10, title: "你与世界之间", author: "心灵探索者", color: "#20b2aa", pages: 90 },
+            { id: 11, title: "雾中的第七层", author: "迷雾侦探", color: "#778899", pages: 105 },
+            { id: 12, title: "当光遇见尘埃", author: "光影诗人", color: "#d2691e", pages: 125 }
+        ];
+
+        // 模拟书籍内容（实际应用中应从服务器获取）
+        const bookContents = {
+            1: `《时间的侧影》
+第一章：时光的裂痕
+时间，这个宇宙中最神秘的力量，总是在我们不经意间留下深深的痕迹。有人曾说，时间是一条河流，永远向前流淌，从不停歇。但我更愿意相信，时间是片片重叠的侧影，每一片都承载着不同的故事和可能。
+
+在那个深秋的午后，我第一次发现了时间的秘密。阳光透过古老的梧桐树叶，在地上投下斑驳的光影。我注意到，同一片叶子，在不同时间的光线下，竟然投下了完全不同的影子。就像时间本身，在不同的人生阶段，展现着截然不同的面貌。
+
+科学家们告诉我们，时间是一种线性的存在，从过去流向未来。但在我的观察中，时间更像是无数个瞬间的叠加，每一个瞬间都有其独特的价值和意义。就像书架上那些泛黄的书页，每一页都记录着特定时刻的思想和情感。
+
+记忆中的祖母总是说：“孩子，时间会治愈一切创伤。”如今，当我步入中年，我才真正理解这句话的含义。时间不是简单的治愈者，而是一位睿智的雕塑家，它慢慢磨平了痛苦的棱角，同时加深了幸福的痕迹。
+
+在城市的喧嚣中，我们常常忘记了时间的流逝。我们被各种计划和目标驱使着，从一个任务奔向另一个任务，很少停下来思考时间的本质。然而，当我们终于停下脚步，回望过去时，才会发现时间已经在我们身上留下了不可磨灭的印记。
+
+这本书试图探索时间的多个维度——不仅仅是物理意义上的时间，还有心理时间、文化时间、历史时间等等。每一章都将从一个不同的角度审视这个永恒的话题，希望能为读者提供一些新的思考视角。
+
+时间的侧影，或许就是我们生活的每一个瞬间，是我们存在的证明，也是我们通往未来的桥梁。`,
+            2: `《万物在低语》
+第一章：自然的声音
+清晨的第一缕阳光穿透薄雾，森林开始苏醒。这不是突然的喧嚣，而是缓慢的、几乎听不见的低语。树叶轻轻摩擦，发出沙沙的声响；远处溪流潺潺，像是大地的脉搏；昆虫们开始它们日复一日的鸣唱——这一切构成了自然的交响乐。
+
+我们人类已经习惯了大声说话，用高分贝的声音表达自己，以至于我们忘记了如何倾听那些微弱的声音。但如果你静下心来，你会发现整个世界都在以某种方式交流。树木通过根系网络传递信息；动物用气味、声音和姿态表达情感；甚至岩石和流水，也在用它们独特的方式讲述着古老的故事。
+
+生物学家莉莉安·沃克曾经说过：“每一种生命形式都有其语言，只是我们尚未学会解读。”她的研究揭示了植物在面对威胁时会释放特定的化学物质警告周围的同伴。这不是人类意义上的语言，却是一种有效的交流方式。
+
+在城市中，自然的声音被机器的轰鸣和人类的喧嚣所淹没。但即使在这里，如果你仔细聆听，仍然能听到自然的低语——风吹过建筑物缝隙的声音，雨滴敲打窗户的节奏，甚至城市公园里鸟儿的鸣叫。
+
+这本书将带你踏上一段聆听之旅，重新发现那些被我们忽略的声音。我们将探索不同生态系统中的声音景观，了解各种生物如何通过声音交流，并思考这对我们人类的意义。
+
+在第二章中，我们将深入海洋，聆听鲸鱼的歌声和海浪的节奏；第三章将带我们到沙漠，感受风声如何在沙丘间雕刻出奇妙的图案；第四章则聚焦于微观世界，探索微生物之间神秘的信息交换。
+
+万物在低语，只是我们需要学会倾听。这不仅是对自然的尊重，也是对我们自身本质的探索——因为人类也是这宏大对话的一部分。`,
+            3: `《夜色折叠》
+第一章：夜幕降临
+城市在日落时分开始变换它的面貌。白天的喧嚣逐渐消退，取而代之的是另一种节奏——更缓慢，更隐秘，更神秘。路灯一盏盏亮起，像是大地对天空的回应；建筑物的窗户透出温暖的光，每一扇窗后都有一个故事正在发生。
+
+夜色有一种神奇的力量，它折叠了时间和空间。在黑暗中，距离变得模糊，过去和现在的界限也不再清晰。这就是为什么夜晚总是激发人们的想象力——它提供了白天所没有的自由。
+
+摄影师马克斯·雷诺阿以他的夜间摄影闻名，他说：“夜晚不是白天的反面，而是另一个维度。在黑暗中，事物显露出它们真正的本质。”他的作品捕捉了城市在夜色中的另一面——空旷的街道、孤独的身影、被遗忘的角落。
+
+夜色也折叠了记忆。多少往事在深夜浮现在脑海中，清晰得仿佛就发生在昨天。心理学家认为，这是因为夜晚减少了外界刺激，使我们能够更专注于内心世界。在黑暗中，我们与自己对话，整理思绪，处理情感。
+
+这本书将探索夜色的多个层面。我们将跟随夜班工人、艺术家、失眠者和夜行生物，了解夜晚如何影响他们的生活和创作。我们也将探讨不同文化对夜晚的理解——从古代的星空神话到现代的夜生活文化。
+
+夜色是一块画布，我们在上面投射自己的恐惧、欲望和梦想。它既可以是庇护所，也可以是挑战场；既可以是创造力的源泉，也可以是孤独的深渊。如何折叠这片夜色，取决于我们自己的选择。
+
+在接下来的章节中，我们将一起探索夜色中的城市、自然、艺术和心灵，发现黑暗中隐藏的光明。`,
+            4: `《在深海之上》
+第一章：水面之下
+海洋覆盖了地球表面的百分之七十以上，但我们对它的了解却少得可怜。每当我凝视着广阔的海面，我都会想起那些隐藏在水下的神秘世界——一个比陆地更加古老、更加多样的领域。
+
+海面是一个边界，分隔了两个截然不同的世界。之上是我们熟悉的空气、阳光和人类活动；之下是另一个宇宙，有着自己的规则、节奏和居民。然而，这个边界并非绝对，两者之间存在着持续的互动和交换。
+
+海洋生物学家艾琳娜·莫拉莱斯博士一生致力于研究海洋生态系统，她说：“海洋不是我们的资源库，而是我们的摇篮。生命起源于这里，我们的命运也与这里紧密相连。”她的研究揭示了海洋如何调节地球的气候，为无数生物提供家园，并为人类提供食物和氧气。
+
+然而，人类活动正在对这个脆弱的环境造成前所未有的压力。塑料污染、过度捕捞、气候变化——这些问题威胁着海洋的健康，也威胁着我们自己的未来。但希望依然存在，世界各地的人们正在采取行动保护这片蓝色星球。
+
+这本书将带你深入海洋的世界，从阳光照射的表层水域到黑暗的深海深渊。我们将结识奇特的海洋生物，探索失落的沉船和海底火山，了解海洋科学的最新发现。
+
+同时，我们也将关注那些生活在海洋之上的人们——渔民、水手、科学家和海岸社区居民。他们的生活与海洋紧密相连，他们的故事反映了人类与海洋之间复杂的关系。
+
+海洋教会我们谦卑和敬畏。它提醒我们，在这个星球上，我们只是众多居民中的一种，我们的生存依赖于整个生态系统的健康。在深海之上，我们找到了自己的位置——不是主宰者，而是守护者。`,
+            5: `《写给未来的三封信》
+第一封信：致50年后的自己
+亲爱的未来之我：
+
+当我写下这些文字时，是2023年的一个春日午后。窗外的樱花正在盛开，粉白色的花瓣随风飘落，像是时间本身在轻轻叹息。我不知道当你读到这封信时，世界会变成什么样子，但我想象着，你坐在一个或许更先进、或许更简单的房间里，阳光以同样的角度照射进来。
+
+此刻的我，正处在人生的中途。已经经历了一些风雨，也积累了一些智慧，但前方仍有太多未知。我有梦想——写一本真正有价值的书，去那些只在梦中出现过的地方旅行，学会平静地接受生活的起伏。我不知道这些梦想有多少会实现，但我希望你没有放弃追求。
+
+我想问你几个问题：你还在写作吗？你是否找到了内心的平静？你原谅了那些需要原谅的人和事吗？最重要的是，你是否成为了一个更好的人——更善良、更勇敢、更真实？
+
+科技一定进步了很多。也许你已经习惯了空中飞车、智能机器人或虚拟现实。但我想知道，人类的心灵是否也同步进步了？我们是否学会了更好地相处，更公平地分享资源，更尊重这个赋予我们生命的星球？
+
+请记住这一刻的我：一个仍然相信文字力量的人，一个仍然会被美丽日落感动的人，一个仍然在努力理解这个复杂世界的人。无论你变成了谁，请不要忘记这些本质。
+
+希望你在回望过去时，不会感到遗憾，只有感激。感激每一次跌倒后的站起，每一次失去后的获得，每一次困惑后的领悟。
+
+带着爱和期待，
+现在的你
+2023年4月15日`
+        };
+
+        // 为其他书籍生成模拟内容
+        for (let i = 6; i <= 12; i++) {
+            bookContents[i] = `《${books[i-1].title}》
+第一章：故事的开始
+
+这是${books[i-1].title}的第一章内容。在这个数字化时代，纸质书籍逐渐被电子书取代，但阅读的本质从未改变——它仍然是我们与伟大思想对话的方式，是穿越时空的旅行，是理解人类经验的窗口。
+
+每一本书都是一个世界，作者是这个世界的主宰。他们创造人物，构建情节，探索主题，试图通过文字捕捉生命的某些真相。而读者，则是这个世界的探险家，带着自己的经验和情感，解读文本，发现意义。
+
+${books[i-1].author}在这部作品中探讨了一个永恒的主题：${i % 2 === 0 ? '人与自然的关系' : '人类内心的复杂性'}。通过细腻的描写和深刻的洞察，作者带领我们进入一个既熟悉又陌生的领域，挑战我们的认知，触动我们的情感。
+
+阅读不仅仅是消遣，它是一种修炼。它要求我们集中注意力，运用批判性思维，培养同理心。在信息爆炸的时代，深度阅读变得尤为珍贵——它让我们慢下来，思考，反思，与自己对话。
+
+这本书的每一页都充满了智慧和美感。作者的文字如诗般优美，思想如刀般锐利。无论你是第一次阅读，还是重温经典，都能从中获得新的启示。
+
+在接下来的章节中，我们将跟随主人公的脚步，经历冒险，面对挑战，见证成长。我们将看到爱如何战胜恨，勇气如何克服恐惧，希望如何在黑暗中闪耀。
+
+请找一个舒适的角落，泡一杯茶，让这本书带你进入一个全新的世界。`;
+        }
+
+        // 全局变量
+        let currentBookId = null;
+        let currentPage = 1;
+        let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || {};
+        const pagesPerView = 3; // 每页显示的页数
+
+        // DOM元素
+        const bookshelfEl = document.getElementById('bookshelf');
+        const readerEl = document.getElementById('reader');
+        const bookTitleEl = document.getElementById('book-title');
+        const bookContentEl = document.getElementById('book-content');
+        const currentPageEl = document.getElementById('current-page');
+        const totalPagesEl = document.getElementById('total-pages');
+        const prevPageBtn = document.getElementById('prev-page');
+        const nextPageBtn = document.getElementById('next-page');
+        const backToShelfBtn = document.getElementById('back-to-shelf');
+        const toggleBookmarkBtn = document.getElementById('toggle-bookmark');
+        const bookmarkIndicator = document.getElementById('bookmark-indicator');
+        const showBookmarksBtn = document.getElementById('show-bookmarks');
+        const bookmarksPanel = document.getElementById('bookmarks-panel');
+        const bookmarksList = document.getElementById('bookmarks-list');
+        const showSettingsBtn = document.getElementById('show-settings');
+        const settingsPanel = document.getElementById('settings-panel');
+        const closeSettingsBtn = document.getElementById('close-settings');
+        const fontSizeSlider = document.getElementById('font-size');
+        const fontSizeValue = document.getElementById('font-size-value');
+        const lineHeightSlider = document.getElementById('line-height');
+        const lineHeightValue = document.getElementById('line-height-value');
+        const nightModeToggle = document.getElementById('night-mode');
+        const progressBar = document.getElementById('progress-bar');
+        const progressPercent = document.getElementById('progress-percent');
+        const progressText = document.getElementById('progress-text');
+
+        // 初始化书架
+        function initBookshelf() {
+            bookshelfEl.innerHTML = '';
+            
+            books.forEach(book => {
+                const bookItem = document.createElement('div');
+                bookItem.className = 'book-item';
+                bookItem.dataset.id = book.id;
+                
+                // 检查是否有书签
+                const hasBookmark = bookmarks[book.id] && bookmarks[book.id].length > 0;
+                
+                bookItem.innerHTML = `
+                    <div class="book-spine" style="background: linear-gradient(to right, ${book.color}, ${adjustColor(book.color, -30)})"></div>
+                    <h3 class="book-title">${book.title}</h3>
+                    <p class="book-author">${book.author}</p>
+                    <div class="book-meta">
+                        <span>${book.pages}页</span>
+                        <span>${hasBookmark ? '<i class="fas fa-bookmark" style="color:#2e8b57;"></i>' : ''}</span>
+                    </div>
+                `;
+                
+                bookItem.addEventListener('click', () => openBook(book.id));
+                bookshelfEl.appendChild(bookItem);
+            });
+        }
+
+        // 调整颜色亮度
+        function adjustColor(color, amount) {
+            let usePound = false;
+            if (color[0] === "#") {
+                color = color.slice(1);
+                usePound = true;
+            }
+            const num = parseInt(color, 16);
+            let r = (num >> 16) + amount;
+            if (r > 255) r = 255;
+            else if (r < 0) r = 0;
+            let b = ((num >> 8) & 0x00FF) + amount;
+            if (b > 255) b = 255;
+            else if (b < 0) b = 0;
+            let g = (num & 0x0000FF) + amount;
+            if (g > 255) g = 255;
+            else if (g < 0) g = 0;
+            return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16).padStart(6, '0');
+        }
+
+        // 打开书籍
+        function openBook(bookId) {
+            currentBookId = bookId;
+            currentPage = 1;
+            
+            const book = books.find(b => b.id === bookId);
+            bookTitleEl.textContent = book.title;
+            
+            // 更新书架上的活动书籍
+            document.querySelectorAll('.book-item').forEach(item => {
+                item.classList.remove('active');
+                if (parseInt(item.dataset.id) === bookId) {
+                    item.classList.add('active');
+                }
+            });
+            
+            // 显示阅读器，隐藏其他面板
+            readerEl.style.display = 'block';
+            bookmarksPanel.style.display = 'none';
+            settingsPanel.style.display = 'none';
+            
+            // 更新书签按钮状态
+            updateBookmarkButton();
+            
+            // 加载书籍内容
+            loadBookContent();
+            
+            // 更新进度
+            updateProgress();
+            
+            // 滚动到阅读器
+            readerEl.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 加载书籍内容
+        function loadBookContent() {
+            if (!currentBookId) return;
+            
+            const content = bookContents[currentBookId];
+            const book = books.find(b => b.id === currentBookId);
+            const totalPages = Math.ceil(content.length / 1500); // 每页约1500字符
+            totalPagesEl.textContent = totalPages;
+            
+            // 计算当前页的内容
+            const startIndex = (currentPage - 1) * 1500;
+            const endIndex = startIndex + 1500;
+            const pageContent = content.substring(startIndex, endIndex);
+            
+            // 显示内容
+            bookContentEl.innerHTML = `<p>${pageContent.replace(/\n/g, '</p><p>')}</p>`;
+            
+            // 更新页面信息
+            currentPageEl.textContent = currentPage;
+            
+            // 更新按钮状态
+            prevPageBtn.disabled = currentPage === 1;
+            nextPageBtn.disabled = currentPage === totalPages;
+            
+            // 检查当前页是否有书签
+            const hasBookmarkOnPage = bookmarks[currentBookId] && 
+                                     bookmarks[currentBookId].some(b => b.page === currentPage);
+            bookmarkIndicator.style.display = hasBookmarkOnPage ? 'inline-block' : 'none';
+            
+            // 更新进度
+            updateProgress();
+        }
+
+        // 更新进度条
+        function updateProgress() {
+            if (!currentBookId) return;
+            
+            const book = books.find(b => b.id === currentBookId);
+            const content = bookContents[currentBookId];
+            const totalPages = Math.ceil(content.length / 1500);
+            const progress = (currentPage / totalPages) * 100;
+            
+            progressBar.style.width = `${progress}%`;
+            progressPercent.textContent = Math.round(progress);
+        }
+
+        // 更新书签按钮状态
+        function updateBookmarkButton() {
+            if (!currentBookId) return;
+            
+            const hasBookmarkOnPage = bookmarks[currentBookId] && 
+                                     bookmarks[currentBookId].some(b => b.page === currentPage);
+            
+            if (hasBookmarkOnPage) {
+                toggleBookmarkBtn.innerHTML = '<i class="fas fa-bookmark"></i> 移除书签';
+                toggleBookmarkBtn.classList.add('btn-bookmark');
+            } else {
+                toggleBookmarkBtn.innerHTML = '<i class="far fa-bookmark"></i> 添加书签';
+                toggleBookmarkBtn.classList.remove('btn-bookmark');
+            }
+        }
+
+        // 切换书签
+        function toggleBookmark() {
+            if (!currentBookId) return;
+            
+            const book = books.find(b => b.id === currentBookId);
+            
+            // 初始化书签数组
+            if (!bookmarks[currentBookId]) {
+                bookmarks[currentBookId] = [];
+            }
+            
+            const existingBookmarkIndex = bookmarks[currentBookId].findIndex(b => b.page === currentPage);
+            
+            if (existingBookmarkIndex >= 0) {
+                // 移除书签
+                bookmarks[currentBookId].splice(existingBookmarkIndex, 1);
+                bookmarkIndicator.style.display = 'none';
+            } else {
+                // 添加书签
+                const note = prompt('为这个书签添加备注（可选）:', `第${currentPage}页`);
+                bookmarks[currentBookId].push({
+                    page: currentPage,
+                    note: note || `第${currentPage}页`,
+                    date: new Date().toLocaleDateString(),
+                    bookTitle: book.title
+                });
+                bookmarkIndicator.style.display = 'inline-block';
+            }
+            
+            // 保存到本地存储
+            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+            
+            // 更新按钮状态
+            updateBookmarkButton();
+            
+            // 更新书架显示
+            initBookshelf();
+        }
+
+        // 显示书签列表
+        function showBookmarks() {
+            bookmarksList.innerHTML = '';
+            
+            let hasBookmarks = false;
+            
+            for (const bookId in bookmarks) {
+                if (bookmarks[bookId].length > 0) {
+                    hasBookmarks = true;
+                    const book = books.find(b => b.id === parseInt(bookId));
+                    
+                    bookmarks[bookId].forEach(bookmark => {
+                        const bookmarkItem = document.createElement('li');
+                        bookmarkItem.className = 'bookmark-item';
+                        bookmarkItem.innerHTML = `
+                            <div>
+                                <strong>${book.title}</strong> - 第${bookmark.page}页
+                                <div style="font-size:0.9rem;color:#666;">${bookmark.note} (${bookmark.date})</div>
+                            </div>
+                            <div>
+                                <span class="delete-bookmark" data-bookid="${bookId}" data-page="${bookmark.page}">
+                                    <i class="fas fa-trash-alt"></i>
+                                </span>
+                            </div>
+                        `;
+                        
+                        // 点击书签跳转到该页
+                        bookmarkItem.addEventListener('click', (e) => {
+                            if (!e.target.classList.contains('delete-bookmark')) {
+                                openBook(parseInt(bookId));
+                                currentPage = bookmark.page;
+                                loadBookContent();
+                                bookmarksPanel.style.display = 'none';
+                            }
+                        });
+                        
+                        bookmarksList.appendChild(bookmarkItem);
+                    });
+                }
+            }
+            
+            if (!hasBookmarks) {
+                bookmarksList.innerHTML = '<li style="text-align:center;padding:20px;color:#666;">暂无书签</li>';
+            }
+            
+            // 添加删除书签功能
+            document.querySelectorAll('.delete-bookmark').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const bookId = this.dataset.bookid;
+                    const page = parseInt(this.dataset.page);
+                    
+                    if (bookmarks[bookId]) {
+                        const index = bookmarks[bookId].findIndex(b => b.page === page);
+                        if (index >= 0) {
+                            bookmarks[bookId].splice(index, 1);
+                            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+                            showBookmarks();
+                            initBookshelf();
+                            
+                            // 如果当前正在阅读这本书，更新书签按钮状态
+                            if (currentBookId === parseInt(bookId) && currentPage === page) {
+                                updateBookmarkButton();
+                                bookmarkIndicator.style.display = 'none';
+                            }
+                        }
+                    }
+                });
+            });
+            
+            bookmarksPanel.style.display = 'block';
+            settingsPanel.style.display = 'none';
+        }
+
+        // 初始化设置
+        function initSettings() {
+            // 字体大小
+            const savedFontSize = localStorage.getItem('fontSize') || 18;
+            fontSizeSlider.value = savedFontSize;
+            fontSizeValue.textContent = `${savedFontSize}px`;
+            bookContentEl.style.fontSize = `${savedFontSize}px`;
+            
+            // 行高
+            const savedLineHeight = localStorage.getItem('lineHeight') || 1.8;
+            lineHeightSlider.value = savedLineHeight;
+            lineHeightValue.textContent = savedLineHeight;
+            bookContentEl.style.lineHeight = savedLineHeight;
+            
+            // 夜间模式
+            const savedNightMode = localStorage.getItem('nightMode') === 'true';
+            nightModeToggle.checked = savedNightMode;
+            if (savedNightMode) {
+                document.body.classList.add('night-mode');
+                readerEl.style.backgroundColor = '#2c2c2c';
+                readerEl.style.color = '#f0f0f0';
+                bookContentEl.style.backgroundColor = '#3a3a3a';
+                bookContentEl.style.color = '#f0f0f0';
+            }
+            
+            // 事件监听
+            fontSizeSlider.addEventListener('input', function() {
+                const size = this.value;
+                fontSizeValue.textContent = `${size}px`;
+                bookContentEl.style.fontSize = `${size}px`;
+                localStorage.setItem('fontSize', size);
+            });
+            
+            lineHeightSlider.addEventListener('input', function() {
+                const height = this.value;
+                lineHeightValue.textContent = height;
+                bookContentEl.style.lineHeight = height;
+                localStorage.setItem('lineHeight', height);
+            });
+            
+            nightModeToggle.addEventListener('change', function() {
+                if (this.checked) {
+                    document.body.classList.add('night-mode');
+                    readerEl.style.backgroundColor = '#2c2c2c';
+                    readerEl.style.color = '#f0f0f0';
+                    bookContentEl.style.backgroundColor = '#3a3a3a';
+                    bookContentEl.style.color = '#f0f0f0';
+                } else {
+                    document.body.classList.remove('night-mode');
+                    readerEl.style.backgroundColor = '';
+                    readerEl.style.color = '';
+                    bookContentEl.style.backgroundColor = '';
+                    bookContentEl.style.color = '';
+                }
+                localStorage.setItem('nightMode', this.checked);
+            });
+        }
+
+        // 事件监听
+        prevPageBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                loadBookContent();
+            }
+        });
+
+        nextPageBtn.addEventListener('click', () => {
+            const content = bookContents[currentBookId];
+            const totalPages = Math.ceil(content.length / 1500);
+            
+            if (currentPage < totalPages) {
+                currentPage++;
+                loadBookContent();
+            }
+        });
+
+        backToShelfBtn.addEventListener('click', () => {
+            readerEl.style.display = 'none';
+            bookmarksPanel.style.display = 'none';
+            settingsPanel.style.display = 'none';
+            
+            // 滚动到书架
+            document.querySelector('.bookshelf-container').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        toggleBookmarkBtn.addEventListener('click', toggleBookmark);
+        
+        showBookmarksBtn.addEventListener('click', showBookmarks);
+        
+        showSettingsBtn.addEventListener('click', () => {
+            settingsPanel.style.display = 'block';
+            bookmarksPanel.style.display = 'none';
+        });
+        
+        closeSettingsBtn.addEventListener('click', () => {
+            settingsPanel.style.display = 'none';
+        });
+
+        // 键盘快捷键
+        document.addEventListener('keydown', (e) => {
+            // 左右箭头翻页
+            if (readerEl.style.display === 'block') {
+                if (e.key === 'ArrowLeft') {
+                    prevPageBtn.click();
+                } else if (e.key === 'ArrowRight') {
+                    nextPageBtn.click();
+                } else if (e.key === 'b' || e.key === 'B') {
+                    toggleBookmarkBtn.click();
+                } else if (e.key === 'Escape') {
+                    backToShelfBtn.click();
+                }
+            }
+        });
+
+        // 初始化
+        function init() {
+            initBookshelf();
+            initSettings();
+            
+            // 默认打开第一本书
+            setTimeout(() => {
+                document.querySelector('.book-item').click();
+            }, 500);
+        }
+
+        // 启动应用
+        init();
+    </script>
+</body>
+</html>
