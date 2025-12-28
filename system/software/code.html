@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛博代码库</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS & JS/code.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- 左侧语言面板 -->
+        <div id="language-panel">
+            <div class="panel-header">代码库</div>
+            <div class="language-list">
+                <!-- 语言列表将由JavaScript动态生成 -->
+            </div>
+        </div>
+
+        <!-- 中间代码编辑区 -->
+        <div id="code-panel">
+            <div class="code-header">
+                <div class="code-title" id="current-language">Python 示例</div>
+                <div class="code-actions">
+                    <button class="btn" id="copy-btn"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="btn" id="save-btn"><i class="fas fa-save"></i> 保存</button>
+                    <button class="btn" id="clear-btn"><i class="fas fa-broom"></i> 清空</button>
+                </div>
+            </div>
+            <div class="code-editor-container">
+                <textarea class="code-editor" id="code-editor" spellcheck="false"></textarea>
+            </div>
+        </div>
+
+        <!-- 右侧功能面板 -->
+        <div id="utility-panel">
+            <div class="panel-header">工具面板</div>
+            
+            <div class="utility-section">
+                <div class="section-title">主题选择</div>
+                <div class="theme-selector">
+                    <div class="theme-btn theme-cyber active" data-theme="cyber">赛博蓝</div>
+                    <div class="theme-btn theme-matrix" data-theme="matrix">矩阵绿</div>
+                    <div class="theme-btn theme-neon" data-theme="neon">霓虹紫</div>
+                    <div class="theme-btn theme-terminal" data-theme="terminal">终端白</div>
+                </div>
+            </div>
+            
+            <div class="utility-section">
+                <div class="section-title">代码信息</div>
+                <div class="info-item">
+                    <span class="info-label">当前语言:</span>
+                    <span class="info-value" id="info-language">Python</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">代码行数:</span>
+                    <span class="info-value" id="info-lines">0</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">字符数量:</span>
+                    <span class="info-value" id="info-chars">0</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">最后保存:</span>
+                    <span class="info-value" id="info-last-save">从未</span>
+                </div>
+            </div>
+            
+            <div class="utility-section">
+                <div class="section-title">快速操作</div>
+                <button class="btn" id="export-btn" style="width:100%; margin-bottom:10px;">
+                    <i class="fas fa-file-export"></i> 导出代码
+                </button>
+                <button class="btn" id="new-btn" style="width:100%; margin-bottom:10px;">
+                    <i class="fas fa-file-code"></i> 新建代码文件
+                </button>
+                <button class="btn" id="theme-toggle-btn" style="width:100%;">
+                    <i class="fas fa-adjust"></i> 切换亮色模式
+                </button>
+            </div>
+        </div>
+
+        <!-- 科幻装饰元素 -->
+        <div class="cyber-grid"></div>
+        <div class="scan-line"></div>
+        <div class="corner-decoration corner-tl"></div>
+        <div class="corner-decoration corner-tr"></div>
+        <div class="corner-decoration corner-bl"></div>
+        <div class="corner-decoration corner-br"></div>
+    </div>
+
+    <script src="CSS & JS/code.js"></script>
+</body>
+</html>

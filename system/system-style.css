@@ -1,0 +1,536 @@
+/* system-style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Orbitron', 'Rajdhani', sans-serif;
+}
+
+body {
+    background: #0a0a16;
+    color: #e0e0ff;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.desktop {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 背景效果 */
+.grid-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 100, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 100, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 1;
+}
+
+.scanlines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(0, 255, 255, 0.03) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 2;
+    pointer-events: none;
+    animation: scanline 10s linear infinite;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100%); }
+}
+
+/* 顶部状态栏 */
+.top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(10, 15, 35, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 200, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(0, 150, 255, 0.2);
+}
+
+.time-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.time {
+    font-family: 'Orbitron', monospace;
+    font-size: 28px;
+    font-weight: 700;
+    color: #00f3ff;
+    text-shadow: 0 0 10px #00f3ff;
+    letter-spacing: 2px;
+}
+
+.date {
+    font-size: 14px;
+    color: #a0a0ff;
+    margin-top: 2px;
+}
+
+.system-status {
+    display: flex;
+    gap: 25px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    background: rgba(0, 50, 100, 0.3);
+    border: 1px solid rgba(0, 150, 255, 0.2);
+}
+
+.status-item i {
+    color: #00f3ff;
+}
+
+/* 星痕能量指示器 */
+.energy-indicator {
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    width: 320px;
+    background: rgba(10, 20, 40, 0.8);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(0, 200, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0, 150, 255, 0.2);
+    z-index: 5;
+    backdrop-filter: blur(5px);
+}
+
+.indicator-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.indicator-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    color: #a0a0ff;
+}
+
+.indicator-header h3 i {
+    color: #ff00ff;
+}
+
+.energy-level {
+    font-family: 'Orbitron', monospace;
+    font-size: 24px;
+    font-weight: 700;
+    color: #00ffaa;
+    text-shadow: 0 0 8px #00ffaa;
+}
+
+.energy-bar {
+    height: 20px;
+    background: rgba(0, 30, 60, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 150, 255, 0.2);
+}
+
+.energy-fill {
+    height: 100%;
+    width: 87%;
+    background: linear-gradient(90deg, #0066ff, #00ffaa);
+    border-radius: 10px;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.energy-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 170, 0.4), transparent);
+    animation: glowMove 3s infinite linear;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; }
+}
+
+@keyframes glowMove {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.energy-stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat span {
+    font-size: 12px;
+    color: #a0a0ff;
+    margin-bottom: 5px;
+}
+
+.stat strong {
+    font-family: 'Orbitron', monospace;
+    font-size: 16px;
+    color: #00f3ff;
+}
+
+/* 系统监视器 */
+.system-monitor {
+    position: absolute;
+    bottom: 100px;
+    right: 30px;
+    width: 280px;
+    background: rgba(10, 20, 40, 0.8);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(0, 200, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0, 150, 255, 0.2);
+    z-index: 5;
+    backdrop-filter: blur(5px);
+}
+
+.monitor-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #a0a0ff;
+    font-size: 16px;
+}
+
+.monitor-title i {
+    color: #ff9900;
+}
+
+.monitor-data {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.data-row span {
+    font-size: 14px;
+    color: #a0a0ff;
+}
+
+.data-value {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 60%;
+}
+
+.data-bar {
+    height: 8px;
+    background: linear-gradient(90deg, #0066ff, #00ffaa);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.data-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    animation: barGlow 2s infinite linear;
+}
+
+@keyframes barGlow {
+    0% { left: -20px; }
+    100% { left: 100%; }
+}
+
+.data-value span {
+    font-family: 'Orbitron', monospace;
+    font-size: 12px;
+    min-width: 40px;
+    text-align: right;
+}
+
+/* 图标区域 */
+.icon-area {
+    position: absolute;
+    top: 80px;
+    left: 30px;
+    right: 380px;
+    bottom: 80px;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-auto-rows: 100px;
+    gap: 20px;
+    padding: 20px;
+    overflow: auto;
+}
+
+/* 任务栏 */
+.taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(10, 15, 35, 0.9);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0, 200, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(0, 150, 255, 0.2);
+}
+
+.taskbar-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.start-btn {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #0066ff, #ff00ff);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(0, 102, 255, 0.5);
+}
+
+.start-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 102, 255, 0.8);
+}
+
+.taskbar-items {
+    display: flex;
+    gap: 10px;
+}
+
+.taskbar-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background: rgba(0, 30, 60, 0.5);
+    border-radius: 6px;
+    border: 1px solid rgba(0, 150, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.taskbar-item.active {
+    background: rgba(0, 100, 255, 0.3);
+    border-color: #00f3ff;
+}
+
+.taskbar-item:hover {
+    background: rgba(0, 100, 255, 0.4);
+}
+
+.taskbar-item i {
+    color: #00f3ff;
+}
+
+.taskbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.notification {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 30, 60, 0.5);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 150, 255, 0.2);
+    cursor: pointer;
+    font-size: 18px;
+    color: #ff9900;
+    transition: all 0.3s;
+}
+
+.notification:hover {
+    background: rgba(0, 100, 255, 0.4);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 15px;
+    background: rgba(0, 30, 60, 0.5);
+    border-radius: 6px;
+    border: 1px solid rgba(0, 150, 255, 0.2);
+}
+
+.user i {
+    color: #00ffaa;
+}
+
+/* 电源菜单 */
+.power-menu {
+    position: absolute;
+    bottom: 70px;
+    right: 20px;
+    z-index: 11;
+}
+
+.power-btn {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff3366, #ff00ff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    color: white;
+}
+
+.power-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.8);
+}
+
+.power-options {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background: rgba(10, 20, 40, 0.95);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 0, 255, 0.3);
+    padding: 10px 0;
+    min-width: 150px;
+    display: none;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+.power-options.show {
+    display: block;
+}
+
+.power-option {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.power-option:hover {
+    background: rgba(255, 0, 255, 0.2);
+}
+
+.power-option i {
+    color: #ff00ff;
+    width: 20px;
+}
+
+/* 滚动条样式 */
+.icon-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.icon-area::-webkit-scrollbar-track {
+    background: rgba(0, 30, 60, 0.3);
+    border-radius: 4px;
+}
+
+.icon-area::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #0066ff, #00ffaa);
+    border-radius: 4px;
+}
+
+/* 响应式调整 */
+@media (max-width: 1200px) {
+    .icon-area {
+        right: 350px;
+    }
+}
+
+@media (max-width: 992px) {
+    .energy-indicator, .system-monitor {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: calc(50% - 20px);
+        margin: 20px 10px;
+        float: left;
+    }
+    
+    .icon-area {
+        clear: both;
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        height: 400px;
+        margin: 20px;
+    }
+}

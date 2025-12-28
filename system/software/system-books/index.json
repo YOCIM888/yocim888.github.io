@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "title": "暗黑天际线",
+    "author": "YOCIM",
+    "filename": "暗黑天际线.txt",
+    "description": "未来都市的黑暗幻想故事",
+    "tags": ["科幻", "黑暗", "都市", "赛博朋克"],
+    "created": "2024-01-15",
+    "color": "#2a0a4a",
+    "wordCount": 45230
+  },
+  {
+    "id": 2,
+    "title": "沉默的低语",
+    "author": "YOCIM",
+    "filename": "沉默的低语.txt",
+    "description": "关于心灵与宇宙的神秘对话",
+    "tags": ["哲学", "心灵", "神秘"],
+    "created": "2024-02-03",
+    "color": "#1a3a5f",
+    "wordCount": 32150
+  },
+  {
+    "id": 3,
+    "title": "当光芒遇见尘埃",
+    "author": "YOCIM",
+    "filename": "当光芒遇见尘埃.txt",
+    "description": "光与影的诗意对话",
+    "tags": ["诗歌", "哲理", "光影"],
+    "created": "2024-02-10",
+    "color": "#d4af37",
+    "wordCount": 28500
+  },
+  {
+    "id": 4,
+    "title": "风吹过她的发梢",
+    "author": "YOCIM",
+    "filename": "风吹过她的发梢.txt",
+    "description": "温柔的风与记忆的故事",
+    "tags": ["爱情", "青春", "回忆"],
+    "created": "2024-02-18",
+    "color": "#8a9a5b",
+    "wordCount": 37800
+  },
+  {
+    "id": 5,
+    "title": "黑暗幻想",
+    "author": "YOCIM",
+    "filename": "黑暗幻想.txt",
+    "description": "黑暗中的奇幻冒险",
+    "tags": ["奇幻", "冒险", "黑暗"],
+    "created": "2024-03-05",
+    "color": "#301934",
+    "wordCount": 56700
+  },
+  {
+    "id": 6,
+    "title": "凛冬下的夜城",
+    "author": "YOCIM",
+    "filename": "凛冬下的夜城.txt",
+    "description": "冰雪覆盖的未来城市故事",
+    "tags": ["科幻", "冬季", "城市"],
+    "created": "2024-03-12",
+    "color": "#2c3e50",
+    "wordCount": 41200
+  },
+  {
+    "id": 7,
+    "title": "群星闪耀之时",
+    "author": "YOCIM",
+    "filename": "群星闪耀之时.txt",
+    "description": "宇宙与生命的宏大叙事",
+    "tags": ["宇宙", "哲学", "生命"],
+    "created": "2024-03-20",
+    "color": "#0f3460",
+    "wordCount": 49800
+  },
+  {
+    "id": 8,
+    "title": "所以我放弃了写作",
+    "author": "YOCIM",
+    "filename": "所以我放弃了写作.txt",
+    "description": "关于创作与放弃的内心独白",
+    "tags": ["自传", "创作", "哲理"],
+    "created": "2024-03-25",
+    "color": "#6d6875",
+    "wordCount": 25600
+  },
+  {
+    "id": 9,
+    "title": "写给未来的三封信",
+    "author": "YOCIM",
+    "filename": "写给未来的三封信.txt",
+    "description": "跨越时空的信件与思考",
+    "tags": ["时光", "信件", "未来"],
+    "created": "2024-04-01",
+    "color": "#9d4edd",
+    "wordCount": 32400
+  },
+  {
+    "id": 10,
+    "title": "星辰中的维纳斯",
+    "author": "YOCIM",
+    "filename": "星辰中的维纳斯.txt",
+    "description": "宇宙中的爱与美的故事",
+    "tags": ["爱情", "宇宙", "诗歌"],
+    "created": "2024-04-08",
+    "color": "#ff6b6b",
+    "wordCount": 28700
+  },
+  {
+    "id": 11,
+    "title": "源界转生",
+    "author": "YOCIM",
+    "filename": "源界转生.txt",
+    "description": "异世界转生与冒险",
+    "tags": ["转生", "异世界", "冒险"],
+    "created": "2024-04-15",
+    "color": "#06d6a0",
+    "wordCount": 125300
+  },
+  {
+    "id": 12,
+    "title": "在深海之下",
+    "author": "YOCIM",
+    "filename": "在深海之下.txt",
+    "description": "深海探险与未知生物",
+    "tags": ["深海", "探险", "科幻"],
+    "created": "2024-04-22",
+    "color": "#0077b6",
+    "wordCount": 39800
+  }
+]

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛博书架</title>
+    <link rel="stylesheet" href="../../system/css/cyber-ui.css">
+    <link rel="stylesheet" href="CSS & JS/software-bookshelf.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="cyber-theme">
+    <div class="cyber-container">
+        <div class="cyber-header">
+            <div class="header-left">
+                <h1 class="cyber-title"><i class="fas fa-books"></i> 赛博书架</h1>
+                <div class="cyber-subtitle">个人数字图书馆 v1.0</div>
+            </div>
+            <div class="header-right">
+                <div class="cyber-stats">
+                    <span class="stat-item"><i class="fas fa-book"></i> <span id="total-books">0</span> 本</span>
+                    <span class="stat-item"><i class="fas fa-bookmark"></i> <span id="total-bookmarks">0</span> 书签</span>
+                    <span class="stat-item"><i class="fas fa-clock"></i> <span id="reading-time">0h</span> 阅读</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- 左侧：书架 -->
+            <div class="shelf-panel">
+                <div class="panel-header">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-books" placeholder="搜索书籍..." autocomplete="off">
+                        <button class="cyber-btn small" id="refresh-books">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    <div class="view-controls">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-grid"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                        <button class="view-btn" data-view="compact">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="books-container" id="books-container">
+                    <!-- 书籍将动态加载 -->
+                </div>
+
+                <div class="panel-footer">
+                    <div class="info-text" id="book-info">
+                        选择一本书开始阅读
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧：阅读器 -->
+            <div class="reader-panel" id="reader-panel">
+                <div class="reader-header">
+                    <div class="reader-title">
+                        <h2 id="current-book-title">请选择一本书</h2>
+                        <div class="book-meta" id="current-book-meta">
+                            <span id="current-book-author"></span>
+                            <span class="sep">•</span>
+                            <span id="current-book-length">0 字</span>
+                        </div>
+                    </div>
+                    <div class="reader-controls">
+                        <button class="cyber-btn secondary" id="close-reader">
+                            <i class="fas fa-times"></i> 关闭
+                        </button>
+                        <button class="cyber-btn accent" id="toggle-bookmark">
+                            <i class="far fa-bookmark"></i> 书签
+                        </button>
+                        <button class="cyber-btn" id="export-book">
+                            <i class="fas fa-download"></i> 导出
+                        </button>
+                    </div>
+                </div>
+
+                <div class="reader-content">
+                    <div class="content-controls">
+                        <div class="font-controls">
+                            <button class="ctrl-btn" id="font-decrease">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <span class="font-size-label" id="font-size">16px</span>
+                            <button class="ctrl-btn" id="font-increase">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="mode-controls">
+                            <button class="ctrl-btn" id="toggle-night">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                            <button class="ctrl-btn" id="toggle-fullscreen">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="text-display" id="book-text">
+                        <div class="empty-state">
+                            <i class="fas fa-book-open"></i>
+                            <p>从左侧书架选择一本书开始阅读</p>
+                        </div>
+                    </div>
+
+                    <div class="reader-footer">
+                        <div class="navigation">
+                            <button class="nav-btn" id="prev-chapter">
+                                <i class="fas fa-chevron-left"></i> 上一章
+                            </button>
+                            <div class="progress-info">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="reading-progress"></div>
+                                </div>
+                                <div class="page-info">
+                                    <span id="current-position">第 0 章</span>
+                                    <span class="progress-percent" id="progress-percent">0%</span>
+                                </div>
+                            </div>
+                            <button class="nav-btn" id="next-chapter">
+                                下一章 <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 书签面板 -->
+        <div class="side-panel" id="bookmarks-panel">
+            <div class="side-header">
+                <h3><i class="fas fa-bookmarks"></i> 我的书签</h3>
+                <button class="close-panel" id="close-bookmarks">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="side-content">
+                <div id="bookmarks-list">
+                    <!-- 书签列表 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 设置面板 -->
+        <div class="side-panel" id="settings-panel">
+            <div class="side-header">
+                <h3><i class="fas fa-cog"></i> 阅读设置</h3>
+                <button class="close-panel" id="close-settings">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="side-content">
+                <div class="setting-group">
+                    <label>字体大小</label>
+                    <input type="range" id="font-slider" min="12" max="24" value="16">
+                </div>
+                <div class="setting-group">
+                    <label>行高</label>
+                    <input type="range" id="line-height-slider" min="1.2" max="2.5" step="0.1" value="1.8">
+                </div>
+                <div class="setting-group">
+                    <label>页边距</label>
+                    <input type="range" id="margin-slider" min="0" max="100" value="20">
+                </div>
+                <div class="setting-group">
+                    <label class="switch">
+                        <input type="checkbox" id="auto-scroll">
+                        <span class="slider"></span>
+                        <span class="switch-label">自动滚动</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="CSS & JS/software-bookshelf.js"></script>
+</body>
+</html>

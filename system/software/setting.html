@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统设置 - 赛博控制中心</title>
+    <link rel="stylesheet" href="CSS & JS/setting.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cyber-grid"></div>
+    <div class="scan-line"></div>
+    
+    <div class="cyber-terminal">
+        <div class="terminal-header">
+            <div class="terminal-title">
+                <i class="fas fa-server"></i>
+                <span>SYSTEM CONTROL CENTER</span>
+                <div class="status-indicator">
+                    <span class="status-dot active"></span>
+                    <span>在线</span>
+                </div>
+            </div>
+            <div class="terminal-time" id="current-time">--:--:--</div>
+        </div>
+        
+        <div class="access-denied-banner" id="access-banner">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span>非管理员，权限不足！访问级别：GUEST</span>
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        
+        <div class="settings-container">
+            <div class="settings-sidebar">
+                <div class="user-profile">
+                    <div class="avatar">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <div class="user-info">
+                        <h3>访客用户</h3>
+                        <p>ID: GUEST-7B92A4</p>
+                        <div class="access-level">
+                            <div class="level-bar">
+                                <div class="level-fill" style="width: 25%;"></div>
+                            </div>
+                            <span>权限等级: 1/4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="system-status">
+                    <h4><i class="fas fa-chart-bar"></i> 系统状态</h4>
+                    <div class="status-item">
+                        <span>核心温度</span>
+                        <span class="status-value">42°C <i class="fas fa-thermometer-half"></i></span>
+                    </div>
+                    <div class="status-item">
+                        <span>内存使用</span>
+                        <span class="status-value">67% <i class="fas fa-microchip"></i></span>
+                    </div>
+                    <div class="status-item">
+                        <span>网络延迟</span>
+                        <span class="status-value">12ms <i class="fas fa-bolt"></i></span>
+                    </div>
+                    <div class="status-item">
+                        <span>安全状态</span>
+                        <span class="status-value active">受保护 <i class="fas fa-shield-alt"></i></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="settings-main">
+                <h2 class="section-title"><i class="fas fa-cogs"></i> 系统设置</h2>
+                
+                <div class="settings-grid">
+                    <div class="setting-card" data-category="system">
+                        <div class="setting-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="setting-content">
+                            <h3>显示设置</h3>
+                            <p>分辨率、亮度、多显示器配置</p>
+                            <div class="setting-status">当前：4K @ 144Hz</div>
+                        </div>
+                        <div class="setting-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-card" data-category="network">
+                        <div class="setting-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <div class="setting-content">
+                            <h3>网络配置</h3>
+                            <p>Wi-Fi、以太网、VPN设置</p>
+                            <div class="setting-status">连接：NeuraLink_5G</div>
+                        </div>
+                        <div class="setting-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-card" data-category="security">
+                        <div class="setting-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="setting-content">
+                            <h3>安全设置</h3>
+                            <p>防火墙、生物识别、访问控制</p>
+                            <div class="setting-status">等级：最高</div>
+                        </div>
+                        <div class="setting-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-card" data-category="device">
+                        <div class="setting-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="setting-content">
+                            <h3>设备管理</h3>
+                            <p>外设、驱动程序、权限管理</p>
+                            <div class="setting-status">12个设备连接</div>
+                        </div>
+                        <div class="setting-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-card" data-category="audio">
+                        <div class="setting-icon">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <div class="setting-content">
+                            <h3>音频设置</h3>
+                            <p>输出/输入设备、音效、通信</p>
+                            <div class="setting-status">输出：Neural Audio 7.1</div>
+                        </div>
+                        <div class="setting-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-card" data-category="performance">
+                        <div class="setting-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="setting-content">
+                            <h3>性能调节</h3>
+                            <p>超频、功耗、散热配置</p>
+                            <div class="setting-status">模式：平衡</div>
+                        </div>
+                        <div class="setting-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-card" data-category="neural">
+                        <div class="setting-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="setting-content">
+                            <h3>神经接口</h3>
+                            <p>脑机连接、意识上传、记忆管理</p>
+                            <div class="setting-status">连接：未配对</div>
+                        </div>
+                        <div class="setting-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-card" data-category="ai">
+                        <div class="setting-icon">
+                            <i class="fas fa-ai"></i>
+                        </div>
+                        <div class="setting-content">
+                            <h3>AI助手设置</h3>
+                            <p>个性、权限、学习模式</p>
+                            <div class="setting-status">版本：SynthOS v3.2</div>
+                        </div>
+                        <div class="setting-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-card" data-category="update">
+                        <div class="setting-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="setting-content">
+                            <h3>系统更新</h3>
+                            <p>固件、软件、安全补丁</p>
+                            <div class="setting-status">可用：3个更新</div>
+                        </div>
+                        <div class="setting-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-card" data-category="privacy">
+                        <div class="setting-icon">
+                            <i class="fas fa-user-lock"></i>
+                        </div>
+                        <div class="setting-content">
+                            <h3>隐私与数据</h3>
+                            <p>数据收集、共享、清除</p>
+                            <div class="setting-status">跟踪：已限制</div>
+                        </div>
+                        <div class="setting-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-card" data-category="accessibility">
+                        <div class="setting-icon">
+                            <i class="fas fa-universal-access"></i>
+                        </div>
+                        <div class="setting-content">
+                            <h3>辅助功能</h3>
+                            <p>视觉、听觉、运动辅助</p>
+                            <div class="setting-status">2个功能启用</div>
+                        </div>
+                        <div class="setting-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-card" data-category="developer">
+                        <div class="setting-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="setting-content">
+                            <h3>开发者选项</h3>
+                            <p>调试、日志、高级设置</p>
+                            <div class="setting-status">访问：受限</div>
+                        </div>
+                        <div class="setting-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="terminal-footer">
+            <div class="footer-info">
+                <span><i class="fas fa-hashtag"></i> SYNTHOS v3.2.1</span>
+                <span><i class="fas fa-cube"></i> 量子处理器在线</span>
+                <span><i class="fas fa-satellite"></i> 同步轨道连接</span>
+            </div>
+            <div class="footer-warning">
+                <i class="fas fa-exclamation-circle"></i>
+                警告：未经授权的设置更改可能导致系统不稳定
+            </div>
+        </div>
+    </div>
+    
+    <div class="cyber-glitch"></div>
+    
+    <script src="CSS & JS/setting.js"></script>
+</body>
+</html>

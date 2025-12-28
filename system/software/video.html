@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberPlex - 视频播放器</title>
+    <link rel="stylesheet" href="CSS & JS/vedio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cyber-background">
+        <div class="scanline"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <div class="container">
+        <!-- 主播放器区域 -->
+        <div class="player-container">
+            <div class="player-header">
+                <div class="cyber-text">
+                    <span class="cyberpunk-glitch">CYBERPLEX</span>
+                    <span class="cyber-subtitle">NEURAL VIDEO INTERFACE v3.14</span>
+                </div>
+                <div class="system-status">
+                    <span class="status-indicator active"></span>
+                    <span class="status-text">ONLINE</span>
+                </div>
+            </div>
+            
+            <div class="video-wrapper">
+                <video id="mainVideo" class="video-player">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+                
+                <!-- 科幻风格叠加层 -->
+                <div class="video-overlay">
+                    <div class="hud-element top-left">
+                        <div class="hud-line"></div>
+                        <div class="hud-text">NEURAL FEED</div>
+                    </div>
+                    <div class="hud-element top-right">
+                        <div class="hud-text">CYBERPLEX CORE</div>
+                        <div class="hud-line"></div>
+                    </div>
+                    <div class="hud-element bottom-left">
+                        <div class="data-readout">
+                            <span class="data-label">BUFFER:</span>
+                            <span class="data-value">0%</span>
+                        </div>
+                    </div>
+                    <div class="hud-element bottom-right">
+                        <div class="data-readout">
+                            <span class="data-label">SIGNAL:</span>
+                            <span class="data-value">100%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 播放器控制 -->
+            <div class="player-controls">
+                <div class="control-group left-controls">
+                    <button id="playPause" class="cyber-button">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="skipBack" class="cyber-button">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button id="skipForward" class="cyber-button">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                    
+                    <div class="volume-control">
+                        <button id="muteToggle" class="cyber-button small">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <input type="range" id="volumeSlider" min="0" max="100" value="80" class="cyber-slider">
+                    </div>
+                    
+                    <div class="time-display">
+                        <span id="currentTime">00:00</span> / <span id="totalTime">00:00</span>
+                    </div>
+                </div>
+                
+                <div class="control-group center-controls">
+                    <div class="progress-container">
+                        <input type="range" id="progressBar" min="0" max="100" value="0" class="cyber-slider progress">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+                
+                <div class="control-group right-controls">
+                    <button id="speedControl" class="cyber-button">
+                        <span>1.0x</span>
+                    </button>
+                    <button id="pipButton" class="cyber-button">
+                        <i class="fas fa-clone"></i>
+                    </button>
+                    <button id="fullscreenButton" class="cyber-button">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <button id="settingsButton" class="cyber-button">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 侧边栏 -->
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <h3>视频源</h3>
+                </div>
+                
+                <div class="source-buttons">
+                    <button id="folderBtn" class="cyber-button large">
+                        <i class="fas fa-folder-open"></i>
+                        <span>选择本地文件夹</span>
+                    </button>
+                    <input type="file" id="fileInput" multiple accept="video/*" style="display: none;">
+                    
+                    <button id="localFileBtn" class="cyber-button large">
+                        <i class="fas fa-file-video"></i>
+                        <span>选择视频文件</span>
+                    </button>
+                </div>
+                
+                <div class="playlist-container">
+                    <div class="playlist-header">
+                        <h4>播放列表 <span id="playlistCount">(0)</span></h4>
+                        <button id="clearPlaylist" class="cyber-button small">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    <div id="playlist" class="playlist">
+                        <!-- 动态生成的播放列表项 -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3>样例视频流</h3>
+                </div>
+                
+                <div class="sample-videos">
+                    <div class="sample-item" data-url="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" data-title="Big Buck Bunny">
+                        <div class="sample-thumb">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="sample-info">
+                            <div class="sample-title">Big Buck Bunny</div>
+                            <div class="sample-desc">动画短片</div>
+                        </div>
+                    </div>
+                    
+                    <div class="sample-item" data-url="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" data-title="Elephants Dream">
+                        <div class="sample-thumb">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="sample-info">
+                            <div class="sample-title">Elephants Dream</div>
+                            <div class="sample-desc">开源电影</div>
+                        </div>
+                    </div>
+                    
+                    <div class="sample-item" data-url="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" data-title="For Bigger Blazes">
+                        <div class="sample-thumb">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="sample-info">
+                            <div class="sample-title">For Bigger Blazes</div>
+                            <div class="sample-desc">演示视频</div>
+                        </div>
+                    </div>
+                    
+                    <div class="sample-item" data-url="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" data-title="For Bigger Escapes">
+                        <div class="sample-thumb">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="sample-info">
+                            <div class="sample-title">For Bigger Escapes</div>
+                            <div class="sample-desc">演示视频</div>
+                        </div>
+                    </div>
+                    
+                    <div class="sample-item" data-url="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" data-title="For Bigger Fun">
+                        <div class="sample-thumb">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="sample-info">
+                            <div class="sample-title">For Bigger Fun</div>
+                            <div class="sample-desc">演示视频</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="system-info">
+                <div class="info-item">
+                    <span class="info-label">播放器状态:</span>
+                    <span class="info-value" id="playerStatus">就绪</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">视频格式:</span>
+                    <span class="info-value" id="videoFormat">MP4</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">分辨率:</span>
+                    <span class="info-value" id="videoResolution">1920x1080</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 设置面板 -->
+    <div id="settingsPanel" class="settings-panel">
+        <div class="settings-header">
+            <h3><i class="fas fa-cog"></i> 播放器设置</h3>
+            <button id="closeSettings" class="cyber-button small">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="settings-content">
+            <div class="setting-item">
+                <label for="themeSelect">界面主题</label>
+                <select id="themeSelect" class="cyber-select">
+                    <option value="cyber">赛博核心</option>
+                    <option value="matrix">矩阵绿</option>
+                    <option value="neon">霓虹紫</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label for="autoplayToggle">自动播放下一首</label>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="autoplayToggle" checked>
+                    <span class="toggle-slider"></span>
+                </div>
+            </div>
+            <div class="setting-item">
+                <label for="defaultVolume">默认音量 (%)</label>
+                <input type="range" id="defaultVolume" min="0" max="100" value="80" class="cyber-slider">
+                <span id="volumeValue">80</span>
+            </div>
+            <div class="setting-item">
+                <label for="playbackRate">默认播放速度</label>
+                <input type="range" id="playbackRate" min="5" max="30" value="10" class="cyber-slider" step="5">
+                <span id="rateValue">1.0x</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="CSS & JS/vedio.js"></script>
+</body>
+</html>
