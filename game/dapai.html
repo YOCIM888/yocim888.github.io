@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>经典扑克牌游戏 - 21点</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a472a 0%, #0d2818 100%);
+            color: #f0f0f0;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #FFD700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .info-box {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin: 5px;
+            min-width: 150px;
+        }
+        
+        .info-box h3 {
+            color: #FFD700;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .game-area {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .player-area {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .player-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .player-title h2 {
+            font-size: 1.8rem;
+            color: #FFD700;
+        }
+        
+        .player-title i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            min-height: 160px;
+        }
+        
+        .card {
+            width: 100px;
+            height: 140px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+        
+        .card-front {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            color: #333;
+        }
+        
+        .card-back {
+            background: linear-gradient(135deg, #8B0000 0%, #B22222 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card-back i {
+            font-size: 2.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .card-top, .card-bottom {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .card-bottom {
+            transform: rotate(180deg);
+        }
+        
+        .card-center {
+            font-size: 2.5rem;
+            text-align: center;
+            margin: auto;
+        }
+        
+        .heart, .diamond {
+            color: #e74c3c;
+        }
+        
+        .spade, .club {
+            color: #2c3e50;
+        }
+        
+        .player-points {
+            margin-top: 20px;
+            font-size: 1.3rem;
+            color: #FFD700;
+            font-weight: bold;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn-hit {
+            background: linear-gradient(to right, #27ae60, #2ecc71);
+            color: white;
+        }
+        
+        .btn-stand {
+            background: linear-gradient(to right, #e74c3c, #c0392b);
+            color: white;
+        }
+        
+        .btn-new-game {
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+        }
+        
+        .btn-deal {
+            background: linear-gradient(to right, #9b59b6, #8e44ad);
+            color: white;
+        }
+        
+        .message-area {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .message-title {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .message-content {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .game-result {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FFD700;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.4);
+            margin-top: 10px;
+        }
+        
+        .rules {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .rules h3 {
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .rules ul {
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+        
+        .rules li {
+            margin-bottom: 8px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .game-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .info-box {
+                width: 100%;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .card {
+                width: 80px;
+                height: 112px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-crown"></i> 经典扑克牌游戏</h1>
+            <p class="subtitle">玩家 vs 电脑 - 21点挑战赛</p>
+        </header>
+        
+        <div class="game-info">
+            <div class="info-box">
+                <h3>游戏状态</h3>
+                <div id="game-status">准备开始</div>
+            </div>
+            <div class="info-box">
+                <h3>当前回合</h3>
+                <div id="current-turn">玩家</div>
+            </div>
+            <div class="info-box">
+                <h3>剩余牌数</h3>
+                <div id="remaining-cards">52</div>
+            </div>
+            <div class="info-box">
+                <h3>获胜局数</h3>
+                <div id="win-count">玩家: 0 | 电脑1: 0 | 电脑2: 0</div>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <!-- 电脑1区域 -->
+            <div class="player-area">
+                <div class="player-title">
+                    <i class="fas fa-robot"></i>
+                    <h2>电脑玩家 1</h2>
+                </div>
+                <div class="cards-container" id="computer1-cards">
+                    <!-- 电脑1的牌将通过JavaScript动态添加 -->
+                </div>
+                <div class="player-points">点数: <span id="computer1-points">0</span></div>
+            </div>
+            
+            <!-- 电脑2区域 -->
+            <div class="player-area">
+                <div class="player-title">
+                    <i class="fas fa-robot"></i>
+                    <h2>电脑玩家 2</h2>
+                </div>
+                <div class="cards-container" id="computer2-cards">
+                    <!-- 电脑2的牌将通过JavaScript动态添加 -->
+                </div>
+                <div class="player-points">点数: <span id="computer2-points">0</span></div>
+            </div>
+            
+            <!-- 玩家区域 -->
+            <div class="player-area">
+                <div class="player-title">
+                    <i class="fas fa-user"></i>
+                    <h2>玩家</h2>
+                </div>
+                <div class="cards-container" id="player-cards">
+                    <!-- 玩家的牌将通过JavaScript动态添加 -->
+                </div>
+                <div class="player-points">点数: <span id="player-points">0</span></div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="btn btn-hit" id="hit-btn">
+                <i class="fas fa-plus-circle"></i> 要牌
+            </button>
+            <button class="btn btn-stand" id="stand-btn">
+                <i class="fas fa-hand-paper"></i> 停牌
+            </button>
+            <button class="btn btn-deal" id="deal-btn">
+                <i class="fas fa-share"></i> 发牌
+            </button>
+            <button class="btn btn-new-game" id="new-game-btn">
+                <i class="fas fa-redo"></i> 新游戏
+            </button>
+        </div>
+        
+        <div class="message-area">
+            <div class="message-title">游戏信息</div>
+            <div class="message-content" id="message">
+                欢迎来到21点游戏！点击"发牌"按钮开始游戏。
+            </div>
+            <div class="game-result" id="game-result"></div>
+        </div>
+        
+        <div class="rules">
+            <h3><i class="fas fa-info-circle"></i> 游戏规则</h3>
+            <ul>
+                <li>游戏目标是使手中的牌点数总和尽可能接近21点，但不能超过21点。</li>
+                <li>数字牌按面值计点，J、Q、K计为10点，A可计为1点或11点。</li>
+                <li>玩家先行动，可以选择"要牌"获得新牌，或"停牌"结束自己的回合。</li>
+                <li>玩家停牌后，电脑玩家将按照策略自动要牌或停牌。</li>
+                <li>最接近21点且未爆牌的玩家获胜。如果点数相同，则为平局。</li>
+                <li>点击"新游戏"按钮可以重置游戏并开始新的一局。</li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>© 2023 经典扑克牌游戏 | 使用HTML、CSS和JavaScript创建</p>
+        </footer>
+    </div>
+
+    <script>
+        // 游戏状态变量
+        let deck = [];
+        let playerHand = [];
+        let computer1Hand = [];
+        let computer2Hand = [];
+        let gameOver = false;
+        let playerTurn = true;
+        let wins = { player: 0, computer1: 0, computer2: 0 };
+        
+        // 扑克牌花色和点数
+        const suits = ['heart', 'diamond', 'spade', 'club'];
+        const values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+        
+        // DOM元素
+        const playerCardsEl = document.getElementById('player-cards');
+        const computer1CardsEl = document.getElementById('computer1-cards');
+        const computer2CardsEl = document.getElementById('computer2-cards');
+        const playerPointsEl = document.getElementById('player-points');
+        const computer1PointsEl = document.getElementById('computer1-points');
+        const computer2PointsEl = document.getElementById('computer2-points');
+        const gameStatusEl = document.getElementById('game-status');
+        const currentTurnEl = document.getElementById('current-turn');
+        const remainingCardsEl = document.getElementById('remaining-cards');
+        const winCountEl = document.getElementById('win-count');
+        const messageEl = document.getElementById('message');
+        const gameResultEl = document.getElementById('game-result');
+        
+        // 按钮
+        const hitBtn = document.getElementById('hit-btn');
+        const standBtn = document.getElementById('stand-btn');
+        const dealBtn = document.getElementById('deal-btn');
+        const newGameBtn = document.getElementById('new-game-btn');
+        
+        // 初始化游戏
+        function initGame() {
+            createDeck();
+            shuffleDeck();
+            playerHand = [];
+            computer1Hand = [];
+            computer2Hand = [];
+            gameOver = false;
+            playerTurn = true;
+            
+            // 清空牌桌
+            playerCardsEl.innerHTML = '';
+            computer1CardsEl.innerHTML = '';
+            computer2CardsEl.innerHTML = '';
+            
+            // 更新界面
+            updatePoints();
+            updateGameInfo();
+            gameResultEl.textContent = '';
+            messageEl.textContent = '游戏已初始化！点击"发牌"按钮开始游戏。';
+            
+            // 启用/禁用按钮
+            hitBtn.disabled = true;
+            standBtn.disabled = true;
+            dealBtn.disabled = false;
+            
+            console.log('游戏初始化完成');
+        }
+        
+        // 创建一副牌
+        function createDeck() {
+            deck = [];
+            for (let suit of suits) {
+                for (let value of values) {
+                    deck.push({ suit, value });
+                }
+            }
+        }
+        
+        // 洗牌
+        function shuffleDeck() {
+            for (let i = deck.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [deck[i], deck[j]] = [deck[j], deck[i]];
+            }
+        }
+        
+        // 发牌
+        function dealCards() {
+            // 每个玩家发两张牌
+            playerHand.push(drawCard());
+            playerHand.push(drawCard());
+            
+            computer1Hand.push(drawCard());
+            computer1Hand.push(drawCard());
+            
+            computer2Hand.push(drawCard());
+            computer2Hand.push(drawCard());
+            
+            // 显示玩家的牌和电脑的第一张牌
+            displayCards();
+            updatePoints();
+            
+            // 检查玩家是否直接得到21点
+            if (calculatePoints(playerHand) === 21) {
+                messageEl.textContent = '恭喜！您拿到了21点！';
+                playerTurn = false;
+                setTimeout(computerTurns, 1000);
+            } else {
+                messageEl.textContent = '您的回合，请选择"要牌"或"停牌"。';
+            }
+            
+            // 更新游戏状态
+            gameStatusEl.textContent = '进行中';
+            currentTurnEl.textContent = '玩家';
+            
+            // 启用/禁用按钮
+            hitBtn.disabled = false;
+            standBtn.disabled = false;
+            dealBtn.disabled = true;
+        }
+        
+        // 从牌堆中抽一张牌
+        function drawCard() {
+            if (deck.length === 0) {
+                messageEl.textContent = '牌堆已空，重新洗牌！';
+                createDeck();
+                shuffleDeck();
+            }
+            return deck.pop();
+        }
+        
+        // 显示所有玩家的牌
+        function displayCards() {
+            // 显示玩家的牌
+            playerCardsEl.innerHTML = '';
+            playerHand.forEach(card => {
+                playerCardsEl.appendChild(createCardElement(card));
+            });
+            
+            // 显示电脑1的牌（第一张隐藏）
+            computer1CardsEl.innerHTML = '';
+            computer1Hand.forEach((card, index) => {
+                if (index === 0 && playerTurn) {
+                    computer1CardsEl.appendChild(createCardBackElement());
+                } else {
+                    computer1CardsEl.appendChild(createCardElement(card));
+                }
+            });
+            
+            // 显示电脑2的牌（第一张隐藏）
+            computer2CardsEl.innerHTML = '';
+            computer2Hand.forEach((card, index) => {
+                if (index === 0 && playerTurn) {
+                    computer2CardsEl.appendChild(createCardBackElement());
+                } else {
+                    computer2CardsEl.appendChild(createCardElement(card));
+                }
+            });
+        }
+        
+        // 创建牌正面元素
+        function createCardElement(card) {
+            const cardEl = document.createElement('div');
+            cardEl.className = 'card card-front';
+            
+            // 确定花色对应的图标和颜色
+            let suitIcon, suitClass;
+            switch(card.suit) {
+                case 'heart':
+                    suitIcon = '♥';
+                    suitClass = 'heart';
+                    break;
+                case 'diamond':
+                    suitIcon = '♦';
+                    suitClass = 'diamond';
+                    break;
+                case 'spade':
+                    suitIcon = '♠';
+                    suitClass = 'spade';
+                    break;
+                case 'club':
+                    suitIcon = '♣';
+                    suitClass = 'club';
+                    break;
+            }
+            
+            cardEl.innerHTML = `
+                <div class="card-top ${suitClass}">${card.value} ${suitIcon}</div>
+                <div class="card-center ${suitClass}">${suitIcon}</div>
+                <div class="card-bottom ${suitClass}">${card.value} ${suitIcon}</div>
+            `;
+            
+            return cardEl;
+        }
+        
+        // 创建牌背面元素
+        function createCardBackElement() {
+            const cardEl = document.createElement('div');
+            cardEl.className = 'card card-back';
+            cardEl.innerHTML = '<i class="fas fa-question"></i>';
+            return cardEl;
+        }
+        
+        // 计算手牌点数
+        function calculatePoints(hand) {
+            let points = 0;
+            let aceCount = 0;
+            
+            for (let card of hand) {
+                if (card.value === 'A') {
+                    aceCount++;
+                    points += 11;
+                } else if (['K', 'Q', 'J'].includes(card.value)) {
+                    points += 10;
+                } else {
+                    points += parseInt(card.value);
+                }
+            }
+            
+            // 处理Ace可以当作1点的情况
+            while (points > 21 && aceCount > 0) {
+                points -= 10;
+                aceCount--;
+            }
+            
+            return points;
+        }
+        
+        // 更新点数显示
+        function updatePoints() {
+            const playerPoints = calculatePoints(playerHand);
+            const computer1Points = calculatePoints(computer1Hand);
+            const computer2Points = calculatePoints(computer2Hand);
+            
+            playerPointsEl.textContent = playerPoints;
+            computer1PointsEl.textContent = playerTurn ? '?' : computer1Points;
+            computer2PointsEl.textContent = playerTurn ? '?' : computer2Points;
+            
+            // 更新剩余牌数
+            remainingCardsEl.textContent = deck.length;
+            
+            // 更新获胜局数
+            winCountEl.textContent = `玩家: ${wins.player} | 电脑1: ${wins.computer1} | 电脑2: ${wins.computer2}`;
+        }
+        
+        // 更新游戏信息
+        function updateGameInfo() {
+            currentTurnEl.textContent = playerTurn ? '玩家' : '电脑';
+            gameStatusEl.textContent = gameOver ? '结束' : '进行中';
+        }
+        
+        // 玩家要牌
+        function playerHit() {
+            if (!playerTurn || gameOver) return;
+            
+            playerHand.push(drawCard());
+            displayCards();
+            updatePoints();
+            
+            const playerPoints = calculatePoints(playerHand);
+            
+            if (playerPoints > 21) {
+                messageEl.textContent = '爆牌了！点数超过21点。';
+                playerTurn = false;
+                gameOver = true;
+                setTimeout(computerTurns, 1000);
+            } else if (playerPoints === 21) {
+                messageEl.textContent = '恭喜！您拿到了21点！';
+                playerTurn = false;
+                setTimeout(computerTurns, 1000);
+            } else {
+                messageEl.textContent = '您的回合，请选择"要牌"或"停牌"。';
+            }
+            
+            updateGameInfo();
+        }
+        
+        // 玩家停牌
+        function playerStand() {
+            if (!playerTurn || gameOver) return;
+            
+            messageEl.textContent = '您选择了停牌。现在轮到电脑玩家行动。';
+            playerTurn = false;
+            updateGameInfo();
+            
+            setTimeout(computerTurns, 1000);
+        }
+        
+        // 电脑回合
+        function computerTurns() {
+            // 显示所有电脑的牌
+            displayCards();
+            updatePoints();
+            
+            // 电脑1行动
+            messageEl.textContent = '电脑玩家1正在思考...';
+            
+            setTimeout(() => {
+                computerAction('computer1', computer1Hand);
+                
+                // 电脑2行动
+                messageEl.textContent = '电脑玩家2正在思考...';
+                
+                setTimeout(() => {
+                    computerAction('computer2', computer2Hand);
+                    
+                    // 所有玩家行动结束，判断胜负
+                    setTimeout(determineWinner, 1000);
+                }, 1500);
+            }, 1500);
+        }
+        
+        // 电脑行动逻辑
+        function computerAction(computerName, hand) {
+            let points = calculatePoints(hand);
+            
+            // 电脑策略：点数小于17则要牌
+            while (points < 17) {
+                hand.push(drawCard());
+                points = calculatePoints(hand);
+                
+                // 如果爆牌则停止要牌
+                if (points > 21) break;
+            }
+            
+            // 更新显示
+            displayCards();
+            updatePoints();
+            
+            const message = `${computerName === 'computer1' ? '电脑玩家1' : '电脑玩家2'} ${points > 21 ? '爆牌了！' : `停牌了，点数为${points}`}`;
+            console.log(message);
+        }
+        
+        // 判断获胜者
+        function determineWinner() {
+            const playerPoints = calculatePoints(playerHand);
+            const computer1Points = calculatePoints(computer1Hand);
+            const computer2Points = calculatePoints(computer2Hand);
+            
+            let result = '';
+            let winner = '';
+            
+            // 检查所有玩家是否都爆牌
+            const allBusted = playerPoints > 21 && computer1Points > 21 && computer2Points > 21;
+            
+            if (allBusted) {
+                result = '所有玩家都爆牌了！本局平局。';
+            } else {
+                // 找出未爆牌且点数最高的玩家
+                const players = [
+                    { name: '玩家', points: playerPoints, key: 'player' },
+                    { name: '电脑玩家1', points: computer1Points, key: 'computer1' },
+                    { name: '电脑玩家2', points: computer2Points, key: 'computer2' }
+                ];
+                
+                // 过滤掉爆牌的玩家
+                const validPlayers = players.filter(p => p.points <= 21);
+                
+                if (validPlayers.length === 0) {
+                    result = '所有玩家都爆牌了！本局平局。';
+                } else {
+                    // 找出点数最高的玩家
+                    let maxPoints = -1;
+                    let winners = [];
+                    
+                    for (let player of validPlayers) {
+                        if (player.points > maxPoints) {
+                            maxPoints = player.points;
+                            winners = [player];
+                        } else if (player.points === maxPoints) {
+                            winners.push(player);
+                        }
+                    }
+                    
+                    if (winners.length > 1) {
+                        // 平局
+                        const winnerNames = winners.map(w => w.name).join(' 和 ');
+                        result = `${winnerNames} 平局，点数均为 ${maxPoints} 点！`;
+                    } else {
+                        // 单一获胜者
+                        winner = winners[0].key;
+                        wins[winner]++;
+                        result = `${winners[0].name} 获胜，点数为 ${maxPoints} 点！`;
+                    }
+                }
+            }
+            
+            // 显示结果
+            gameResultEl.textContent = result;
+            messageEl.textContent = '游戏结束！点击"新游戏"按钮开始新的一局。';
+            
+            // 更新获胜计数
+            updatePoints();
+            
+            // 游戏结束
+            gameOver = true;
+            updateGameInfo();
+            
+            // 禁用行动按钮
+            hitBtn.disabled = true;
+            standBtn.disabled = true;
+            dealBtn.disabled = true;
+        }
+        
+        // 事件监听
+        hitBtn.addEventListener('click', playerHit);
+        standBtn.addEventListener('click', playerStand);
+        
+        dealBtn.addEventListener('click', () => {
+            dealCards();
+        });
+        
+        newGameBtn.addEventListener('click', initGame);
+        
+        // 初始化游戏
+        initGame();
+    </script>
+</body>
+</html>
