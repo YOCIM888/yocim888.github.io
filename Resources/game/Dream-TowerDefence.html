@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梦幻塔防</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Game-CSS&JS/Dream-TowerDefence.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="game-title">
+                <i class="fas fa-carrot"></i> 梦幻塔防
+            </div>
+            <div class="game-stats">
+                <div class="stat">
+                    <i class="fas fa-coins" style="color: #FFD700;"></i>
+                    <span id="gold">100</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-heart" style="color: #FF5252;"></i>
+                    <span id="lives">20</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-flag" style="color: #4CAF50;"></i>
+                    <span id="wave">0/10</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-content">
+            <div class="game-board">
+                <div class="level-selector">
+                    <button class="level-btn active" data-level="1">森林关卡</button>
+                    <button class="level-btn" data-level="2">沙漠关卡</button>
+                    <button class="level-btn" data-level="3">雪地关卡</button>
+                </div>
+                
+                <div class="game-map" id="game-map">
+                    <!-- 游戏地图将通过JavaScript动态生成 -->
+                </div>
+                
+                <div class="game-buttons">
+                    <button class="btn btn-start" id="start-wave">
+                        <i class="fas fa-play"></i> 开始波次
+                    </button>
+                    <button class="btn btn-pause" id="pause-game">
+                        <i class="fas fa-pause"></i> 暂停游戏
+                    </button>
+                    <button class="btn btn-restart" id="restart-game">
+                        <i class="fas fa-redo"></i> 重新开始
+                    </button>
+                </div>
+            </div>
+            
+            <div class="game-controls">
+                <div class="tower-shop">
+                    <h3 class="section-title">防御塔商店</h3>
+                    <div class="tower-list" id="tower-list">
+                        <!-- 防御塔列表将通过JavaScript动态生成 -->
+                    </div>
+                </div>
+                
+                <div class="wave-info">
+                    <h3 class="section-title">波次信息</h3>
+                    <div class="wave-text" id="wave-text">准备开始游戏</div>
+                    <div class="wave-progress">
+                        <div class="wave-progress-bar" id="wave-progress"></div>
+                    </div>
+                    <div id="next-wave-info">点击开始波次按钮开始游戏</div>
+                </div>
+                
+                <div class="monster-info">
+                    <h3 class="section-title">怪物图鉴</h3>
+                    <div class="monster-list" id="monster-list">
+                        <!-- 怪物列表将通过JavaScript动态生成 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="game-message" id="game-message">
+        <h2 class="message-title" id="message-title">游戏胜利!</h2>
+        <p class="message-text" id="message-text">恭喜你成功防御了所有怪物!</p>
+        <div class="message-buttons">
+            <button class="btn-close" id="close-message">确认</button>
+            <button class="btn-close btn-remove" id="remove-tower-btn" style="display:none;">拆除炮台</button>
+            <button class="btn-close btn-cancel" id="cancel-remove-btn" style="display:none;">取消</button>
+        </div>
+    </div>
+
+    <script src="Game-CSS&JS/Dream-TowerDefence.js"></script>
+</body>
+</html>

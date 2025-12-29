@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>无尽战机 - 增强版</title>
+    <link rel="stylesheet" href="Game-CSS&JS/Endless-Warplane.css">
+</head>
+<body>
+    <div class="game-container" id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- 游戏顶部信息 -->
+        <div class="game-header">
+            <div class="info-panel">
+                <div class="score-panel">
+                    <div class="panel-label">得分</div>
+                    <div class="panel-value" id="score">0</div>
+                </div>
+                <div class="lives-panel">
+                    <div class="panel-label">生命</div>
+                    <div class="panel-value" id="lives">❤❤❤</div>
+                </div>
+                <div class="level-panel">
+                    <div class="panel-label">关卡</div>
+                    <div class="panel-value" id="level">1</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 技能面板 -->
+        <div class="skills-panel">
+            <div class="skill-item">
+                <span class="skill-icon">💥</span>
+                <div class="skill-info">
+                    <span class="skill-name">导弹 [Q]</span>
+                    <div class="skill-cooldown">
+                        <div class="skill-cooldown-bar" id="missileCooldown"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-icon">🛡️</span>
+                <div class="skill-info">
+                    <span class="skill-name">护盾 [E]</span>
+                    <div class="skill-cooldown">
+                        <div class="skill-cooldown-bar" id="shieldCooldown"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-icon">⚡</span>
+                <div class="skill-info">
+                    <span class="skill-name">闪电 [R]</span>
+                    <div class="skill-cooldown">
+                        <div class="skill-cooldown-bar" id="lightningCooldown"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-icon">💣</span>
+                <div class="skill-info">
+                    <span class="skill-name">炸弹 [B]</span>
+                    <div class="skill-cooldown">
+                        <div class="skill-cooldown-bar" id="bombCooldown"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 道具激活指示器 -->
+        <div class="powerup-indicator" id="powerupIndicator">
+            <div class="powerup-type">
+                <span class="powerup-icon" id="powerupIcon">🔥</span>
+                <span id="powerupName">火力增强</span>
+            </div>
+            <div class="powerup-timer">
+                <div class="powerup-timer-bar" id="powerupTimerBar"></div>
+            </div>
+        </div>
+        
+        <!-- Boss血条 -->
+        <div class="boss-health-container" id="bossHealthContainer">
+            <div class="boss-name" id="bossName">BOSS</div>
+            <div class="boss-health-bar">
+                <div class="boss-health-fill" id="bossHealthFill"></div>
+            </div>
+            <div class="boss-phase" id="bossPhase"></div>
+        </div>
+        
+        <!-- 连击显示 -->
+        <div class="combo-display" id="comboDisplay">
+            <span id="comboCount">0</span>x 连击
+        </div>
+        
+        <!-- 游戏标题 -->
+        <div class="game-title" id="gameTitle">
+            <div class="main-title">无尽战机</div>
+            <div class="subtitle">ENDLESS WARPLANE</div>
+            <div class="start-hint">按 ENTER 键开始游戏</div>
+        </div>
+        
+        <!-- 暂停界面 -->
+        <div class="pause-overlay" id="pauseOverlay">
+            <div class="pause-text">游戏暂停</div>
+        </div>
+        
+        <!-- 通知提示 -->
+        <div class="notification" id="notification"></div>
+        
+        <!-- 操作说明 - 自动消失 -->
+<div class="instructions" id="instructions">
+    <div class="instructions-header">
+        <div class="instructions-title">操作指南</div>
+        <!-- 移除关闭按钮 -->
+    </div>
+    <div class="controls-grid">
+        <div class="control-item">
+            <span class="key-badge">↑↓←→</span>
+            <span>移动战机</span>
+        </div>
+        <div class="control-item">
+            <span class="key-badge">空格</span>
+            <span>发射子弹</span>
+        </div>
+        <div class="control-item">
+            <span class="key-badge">Q</span>
+            <span>追踪导弹</span>
+        </div>
+        <div class="control-item">
+            <span class="key-badge">E</span>
+            <span>能量护盾</span>
+        </div>
+        <div class="control-item">
+            <span class="key-badge">R</span>
+            <span>闪电攻击</span>
+        </div>
+        <div class="control-item">
+            <span class="key-badge">B</span>
+            <span>超级炸弹</span>
+        </div>
+        <div class="control-item">
+            <span class="key-badge">P</span>
+            <span>暂停游戏</span>
+        </div>
+    </div>
+</div>
+        
+        <!-- 游戏结束界面 -->
+        <div class="game-over" id="gameOverScreen">
+            <h1>游戏结束</h1>
+            <div class="final-stats">
+                <div class="stat-item">最终得分: <span class="stat-value" id="finalScore">0</span></div>
+                <div class="stat-item">到达关卡: <span class="stat-value" id="finalLevel">1</span></div>
+                <div class="stat-item">消灭敌机: <span class="stat-value" id="enemiesDestroyed">0</span></div>
+                <div class="stat-item">最高连击: <span class="stat-value" id="maxCombo">0</span></div>
+            </div>
+            <div class="grade-display" id="gradeDisplay"></div>
+            <button class="btn" id="restartBtn">重新开始</button>
+            <button class="btn btn-secondary" id="continueBtn" style="display: none;">继续游戏</button>
+        </div>
+        
+        <!-- 虚拟摇杆 -->
+        <div class="virtual-joystick" id="virtualJoystick">
+            <div class="joystick-base">
+                <div class="joystick-knob" id="joystickKnob"></div>
+            </div>
+        </div>
+        
+        <!-- 虚拟控制按钮 -->
+        <div class="virtual-controls" id="virtualControls">
+            <button class="virtual-btn fire-btn" id="fireBtn">
+                <span class="btn-icon">🔥</span>
+                <span class="btn-text">开火</span>
+            </button>
+            <button class="virtual-btn missile-btn" id="missileBtn">
+                <span class="btn-icon">💥</span>
+                <span class="btn-text">导弹</span>
+            </button>
+            <button class="virtual-btn shield-btn" id="shieldBtn">
+                <span class="btn-icon">🛡️</span>
+                <span class="btn-text">护盾</span>
+            </button>
+            <button class="virtual-btn lightning-btn" id="lightningBtn">
+                <span class="btn-icon">⚡</span>
+                <span class="btn-text">闪电</span>
+            </button>
+            <button class="virtual-btn bomb-btn" id="bombBtn">
+                <span class="btn-icon">💣</span>
+                <span class="btn-text">炸弹</span>
+            </button>
+        </div>
+        
+        <!-- 炸弹数量显示 -->
+        <div class="bombs-display" id="bombsDisplay">
+            <span class="bombs-label">炸弹:</span>
+            <span class="bombs-count" id="bombs">3</span>
+        </div>
+    </div>
+
+    <script src="Game-CSS&JS/Endless-Warplane.js"></script>
+    <script src="Game-CSS&JS/Endless-Warplane-virtual-controls.js"></script>
+</body>
+</html>

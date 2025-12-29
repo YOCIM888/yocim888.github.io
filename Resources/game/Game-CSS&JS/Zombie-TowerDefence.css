@@ -1,0 +1,654 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Orbitron', 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0a2a 0%, #1a0033 50%, #0a0a2a 100%);
+    color: #fff;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.neon-header {
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 15px;
+    background: rgba(10, 10, 42, 0.8);
+    border-radius: 10px;
+    border: 2px solid #00ffff;
+    box-shadow: 
+        0 0 15px rgba(0, 255, 255, 0.3),
+        inset 0 0 15px rgba(0, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.neon-text {
+    color: #00ffff;
+    font-size: 3rem;
+    text-shadow: 
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 30px #00ffff;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    position: relative;
+    display: inline-block;
+}
+
+.neon-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.7;
+}
+
+.neon-sub {
+    color: #ff00ff;
+    font-size: 1rem;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.game-stats {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+    background: rgba(20, 20, 60, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+.sun-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffff00;
+    gap: 10px;
+}
+
+.sun-icon {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle at 30% 30%, #ffff00, #ffaa00);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 0 15px #ffff00,
+        inset 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.level-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.level {
+    font-size: 1.5rem;
+    color: #00ffff;
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+.wave-container {
+    width: 100%;
+    max-width: 300px;
+}
+
+.wave-indicator {
+    height: 10px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #00ffff;
+}
+
+.wave-progress {
+    height: 100%;
+    width: 20%;
+    background: linear-gradient(90deg, #00ffff, #0088ff);
+    border-radius: 5px;
+    transition: width 0.5s;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+.wave-text {
+    margin-top: 5px;
+    color: #ff00ff;
+    font-size: 0.9rem;
+}
+
+.stats-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.zombies-remaining {
+    font-size: 1.2rem;
+    color: #ff5555;
+    text-shadow: 0 0 5px #ff5555;
+}
+
+.shovel-container {
+    display: flex;
+    justify-content: center;
+}
+
+.shovel-option {
+    background: rgba(255, 100, 0, 0.2);
+    border: 2px solid #ff6600;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    color: #ff6600;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    min-width: 80px;
+}
+
+.shovel-option:hover {
+    background: rgba(255, 100, 0, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px #ff6600;
+}
+
+.shovel-option.active {
+    background: rgba(255, 100, 0, 0.6);
+    border-color: #ffff00;
+    box-shadow: 0 0 15px #ffff00;
+}
+
+.shovel-cost {
+    font-size: 0.8rem;
+    color: #ffff00;
+}
+
+.game-area {
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.lawn {
+    flex: 3;
+    background: rgba(0, 30, 20, 0.8);
+    border: 3px solid #00ff00;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 0, 0.3),
+        inset 0 0 30px rgba(0, 255, 0, 0.1);
+}
+
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.lawn-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 2px;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.lawn-cell {
+    background: rgba(0, 255, 100, 0.05);
+    border: 1px solid rgba(0, 255, 100, 0.3);
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.lawn-cell:hover {
+    background: rgba(0, 255, 100, 0.15);
+    border-color: #00ffff;
+}
+
+.lawn-cell.highlight {
+    background: rgba(255, 255, 0, 0.3);
+    border-color: #ffff00;
+    box-shadow: 0 0 10px #ffff00;
+}
+
+.plants-panel {
+    flex: 1;
+    background: rgba(20, 20, 60, 0.9);
+    border-radius: 10px;
+    padding: 15px;
+    border: 2px solid #ff00ff;
+    min-width: 220px;
+    overflow-y: auto;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.plants-panel h2 {
+    color: #ff00ff;
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #00ffff;
+    font-size: 1.4rem;
+    text-shadow: 0 0 5px #ff00ff;
+}
+
+.plant-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.plant-option {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plant-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.plant-option.selected {
+    border-color: #00ffff;
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 15px #00ffff;
+}
+
+.plant-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 
+        0 0 15px currentColor,
+        inset 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.plant-sunflower .plant-icon {
+    background: radial-gradient(circle at 30% 30%, #ffff00, #ffaa00);
+    color: #ff8800;
+}
+
+.plant-peashooter .plant-icon {
+    background: radial-gradient(circle at 30% 30%, #00ff00, #008800);
+    color: #00ff00;
+}
+
+.plant-wallnut .plant-icon {
+    background: radial-gradient(circle at 30% 30%, #ff6600, #cc4400);
+    color: #ff8800;
+}
+
+.plant-cherrybomb .plant-icon {
+    background: radial-gradient(circle at 30% 30%, #ff0000, #880000);
+    color: #ff5555;
+}
+
+.plant-cost {
+    color: #ffff00;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.plant-name {
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 3px;
+    font-size: 1rem;
+}
+
+.plant-desc {
+    font-size: 0.8rem;
+    color: #aaaaaa;
+    text-align: center;
+}
+
+.game-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.neon-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.start-btn {
+    background: linear-gradient(to bottom, #00ff00, #008800);
+    color: #ffffff;
+    border: 2px solid #00ff00;
+}
+
+.start-btn:hover {
+    background: linear-gradient(to bottom, #00cc00, #006600);
+    box-shadow: 0 0 15px #00ff00;
+    transform: translateY(-2px);
+}
+
+.restart-btn {
+    background: linear-gradient(to bottom, #ff00ff, #880088);
+    color: #ffffff;
+    border: 2px solid #ff00ff;
+}
+
+.restart-btn:hover {
+    background: linear-gradient(to bottom, #cc00cc, #660066);
+    box-shadow: 0 0 15px #ff00ff;
+    transform: translateY(-2px);
+}
+
+.instructions {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #00ffff;
+}
+
+.instructions h3 {
+    color: #00ffff;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.instructions p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #cccccc;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.plant {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    z-index: 10;
+    transition: transform 0.2s;
+    user-select: none;
+    box-shadow: 
+        0 0 15px currentColor,
+        inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.zombie {
+    position: absolute;
+    width: 65px;
+    height: 85px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    z-index: 5;
+    transition: left 0.1s linear;
+    filter: drop-shadow(0 0 5px currentColor);
+}
+
+.projectile {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    z-index: 8;
+    background: #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+.sun {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffff00, #ffaa00);
+    z-index: 7;
+    cursor: pointer;
+    animation: float 4s infinite ease-in-out;
+    box-shadow: 0 0 10px #ffff00;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(120deg); }
+    66% { transform: translateY(-5px) rotate(240deg); }
+}
+
+.message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.message-content {
+    background: linear-gradient(135deg, #0a0a2a, #1a0033);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    border: 3px solid #00ffff;
+    box-shadow: 
+        0 0 30px #00ffff,
+        inset 0 0 30px rgba(0, 255, 255, 0.1);
+    max-width: 500px;
+    width: 90%;
+}
+
+.message h2 {
+    color: #00ffff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.message p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.message button {
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: linear-gradient(to bottom, #ff00ff, #880088);
+    border: 2px solid #ff00ff;
+}
+
+.message button:hover {
+    background: linear-gradient(to bottom, #cc00cc, #660066);
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .lawn-grid {
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+    
+    .neon-text {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .game-area {
+        flex-direction: column;
+    }
+    
+    .plants-panel {
+        min-width: 100%;
+        max-height: 250px;
+    }
+    
+    .lawn {
+        min-height: 400px;
+    }
+    
+    .lawn-grid {
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .game-stats {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .stats-right {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .neon-text {
+        font-size: 2rem;
+    }
+    
+    .lawn-grid {
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+    
+    .plant {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .zombie {
+        width: 45px;
+        height: 65px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-height: 700px) {
+    .container {
+        padding: 5px;
+    }
+    
+    .neon-header {
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+    
+    .neon-text {
+        font-size: 2rem;
+    }
+    
+    .game-stats {
+        padding: 8px;
+        margin-bottom: 5px;
+    }
+}

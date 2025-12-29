@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛博霓虹21点 | Cyber Blackjack</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Game-CSS&JS/Poker-blackjack.css">
+</head>
+<body>
+    <div class="cyber-grid">
+        <!-- 左侧玩家区域 -->
+        <div class="player-section player-human">
+            <div class="cyber-header">
+                <div class="cyber-icon"><i class="fas fa-user"></i></div>
+                <h2 class="neon-text blue">玩家</h2>
+                <div class="cyber-level">LV. 01</div>
+            </div>
+            
+            <div class="cards-display" id="player-cards">
+                <!-- 玩家牌将通过JS动态添加 -->
+            </div>
+            
+            <div class="stats-panel">
+                <div class="stat-item">
+                    <span class="stat-label">点数</span>
+                    <span class="stat-value" id="player-points">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">胜局</span>
+                    <span class="stat-value" id="player-wins">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">状态</span>
+                    <span class="stat-label" id="player-status">等待中</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 中间游戏控制区 -->
+        <div class="center-panel">
+            <div class="game-title">
+                <h1 class="neon-title">
+                    <span class="neon-flicker">CYBER</span>
+                    <span>21</span>
+                    <span class="neon-flicker">BLACKJACK</span>
+                </h1>
+                <div class="subtitle">NEON POKER CHALLENGE</div>
+            </div>
+            
+            <div class="game-info">
+                <div class="info-grid">
+                    <div class="cyber-card">
+                        <div class="cyber-card-title">
+                            <i class="fas fa-microchip"></i>
+                            <span>牌库状态</span>
+                        </div>
+                        <div class="cyber-card-content">
+                            <div class="deck-progress">
+                                <div class="progress-bar" id="deck-progress"></div>
+                            </div>
+                            <div class="deck-count">
+                                <span id="remaining-cards">52</span>/52
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cyber-card">
+                        <div class="cyber-card-title">
+                            <i class="fas fa-gamepad"></i>
+                            <span>游戏状态</span>
+                        </div>
+                        <div class="cyber-card-content">
+                            <div class="status-indicator" id="game-status-indicator"></div>
+                            <div class="status-text" id="game-status">准备开始</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="control-panel">
+                <div class="control-grid">
+                    <button class="cyber-btn hit-btn" id="hit-btn">
+                        <div class="btn-content">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>要牌</span>
+                            <div class="btn-hint">HIT</div>
+                        </div>
+                    </button>
+                    
+                    <button class="cyber-btn stand-btn" id="stand-btn">
+                        <div class="btn-content">
+                            <i class="fas fa-hand-paper"></i>
+                            <span>停牌</span>
+                            <div class="btn-hint">STAND</div>
+                        </div>
+                    </button>
+                    
+                    <button class="cyber-btn deal-btn" id="deal-btn">
+                        <div class="btn-content">
+                            <i class="fas fa-play"></i>
+                            <span>发牌</span>
+                            <div class="btn-hint">DEAL</div>
+                        </div>
+                    </button>
+                    
+                    <button class="cyber-btn newgame-btn" id="new-game-btn">
+                        <div class="btn-content">
+                            <i class="fas fa-redo"></i>
+                            <span>新游戏</span>
+                            <div class="btn-hint">NEW GAME</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="message-panel">
+                <div class="message-header">
+                    <i class="fas fa-terminal"></i>
+                    <span>系统终端</span>
+                    <div class="terminal-blink"></div>
+                </div>
+                <div class="message-content" id="message">
+                    系统启动完成... 等待玩家指令
+                </div>
+                <div class="result-display" id="game-result"></div>
+            </div>
+        </div>
+        
+        <!-- 右侧电脑玩家区域 -->
+        <div class="player-section computer-section">
+            <div class="cyber-header">
+                <div class="cyber-icon"><i class="fas fa-robot"></i></div>
+                <h2 class="neon-text pink">AI玩家</h2>
+                <div class="cyber-level">LV. 99</div>
+            </div>
+            
+            <div class="ai-players">
+                <!-- 电脑1 -->
+                <div class="ai-player">
+                    <div class="ai-header">
+                        <span class="ai-name">AI-01</span>
+                        <span class="ai-points">点数: <span id="computer1-points">?</span></span>
+                    </div>
+                    <div class="cards-display ai-cards" id="computer1-cards">
+                        <!-- 电脑1的牌将通过JS动态添加 -->
+                    </div>
+                    <div class="ai-status" id="computer1-status">待机中</div>
+                </div>
+                
+                <!-- 电脑2 -->
+                <div class="ai-player">
+                    <div class="ai-header">
+                        <span class="ai-name">AI-02</span>
+                        <span class="ai-points">点数: <span id="computer2-points">?</span></span>
+                    </div>
+                    <div class="cards-display ai-cards" id="computer2-cards">
+                        <!-- 电脑2的牌将通过JS动态添加 -->
+                    </div>
+                    <div class="ai-status" id="computer2-status">待机中</div>
+                </div>
+            </div>
+            
+            <div class="stats-panel">
+                <div class="stat-item">
+                    <span class="stat-label">AI胜局</span>
+                    <span class="stat-value" id="ai-wins">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">平局</span>
+                    <span class="stat-value" id="draws">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">总回合</span>
+                    <span class="stat-value" id="total-rounds">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 装饰性霓虹元素 -->
+    <div class="neon-line horizontal top"></div>
+    <div class="neon-line horizontal bottom"></div>
+    <div class="neon-line vertical left"></div>
+    <div class="neon-line vertical right"></div>
+    
+    <div class="scan-line"></div>
+    
+    <script src="Game-CSS&JS/Poker-blackjack.js"></script>
+</body>
+</html>
