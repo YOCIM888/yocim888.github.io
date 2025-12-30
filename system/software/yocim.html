@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOCIM助手 - 赛博AI助手</title>
+    <link rel="stylesheet" href="CSS & JS/yocim.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 主标题 -->
+        <header class="main-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h1>YOCIM助手</h1>
+                <div class="status-indicator">
+                    <span class="pulse"></span>
+                    <span>在线</span>
+                </div>
+            </div>
+            <div class="system-time" id="systemTime">--:--:--</div>
+        </header>
+
+        <main class="main-content">
+            <!-- 左侧聊天区 -->
+            <section class="chat-section">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <h2><i class="fas fa-comment-dots"></i> 对话界面</h2>
+                        <div class="chat-controls">
+                            <button id="clearChat" class="btn-small"><i class="fas fa-trash"></i> 清空</button>
+                            <button id="voiceToggle" class="btn-small"><i class="fas fa-microphone"></i> 语音</button>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- 初始消息 -->
+                        <div class="message ai-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-sender">YOCIM助手</div>
+                                <div class="message-text">您好！我是YOCIM助手，一个赛博风格的AI助手。我可以回答您的问题，也可以使用右侧的工具为您提供帮助。请告诉我您需要什么？</div>
+                                <div class="message-time">现在</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-area">
+                        <div class="input-wrapper">
+                            <input type="text" id="userInput" placeholder="输入您的问题或指令... (按Enter发送)" autocomplete="off">
+                            <button id="sendMessage" class="send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="quick-btn" data-action="time">当前时间</button>
+                            <button class="quick-btn" data-action="calc">快速计算</button>
+                            <button class="quick-btn" data-action="weather">天气查询</button>
+                            <button class="quick-btn" data-action="translate">翻译</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 右侧工具区 -->
+            <section class="tools-section">
+                <div class="tools-container">
+                    <div class="tools-header">
+                        <h2><i class="fas fa-tools"></i> 工具集</h2>
+                        <div class="system-stats">
+                            <div class="stat">
+                                <i class="fas fa-microchip"></i>
+                                <span>CPU: 34%</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-memory"></i>
+                                <span>内存: 68%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tools-grid">
+                        <!-- 工具卡片 -->
+                        <div class="tool-card" id="calculatorTool">
+                            <div class="tool-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h3>计算器</h3>
+                            <p>执行数学计算和单位转换</p>
+                        </div>
+                        
+                        <div class="tool-card" id="converterTool">
+                            <div class="tool-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h3>单位转换</h3>
+                            <p>长度、重量、温度等转换</p>
+                        </div>
+                        
+                        <div class="tool-card" id="timeTool">
+                            <div class="tool-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>世界时钟</h3>
+                            <p>查看世界各地时间</p>
+                        </div>
+                        
+                        <div class="tool-card" id="noteTool">
+                            <div class="tool-icon">
+                                <i class="fas fa-sticky-note"></i>
+                            </div>
+                            <h3>便签</h3>
+                            <p>记录重要信息</p>
+                        </div>
+                        
+                        <div class="tool-card" id="codeTool">
+                            <div class="tool-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>代码格式化</h3>
+                            <p>格式化编程代码</p>
+                        </div>
+                        
+                        <div class="tool-card" id="passwordTool">
+                            <div class="tool-icon">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <h3>密码生成</h3>
+                            <p>生成安全密码</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 工具输出区 -->
+                    <div class="tool-output">
+                        <div class="tool-output-header">
+                            <h3><i class="fas fa-terminal"></i> 工具输出</h3>
+                            <button id="clearOutput" class="btn-small"><i class="fas fa-broom"></i> 清空</button>
+                        </div>
+                        <div class="tool-output-content" id="toolOutput">
+                            <div class="output-message">
+                                <div class="output-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="output-text">
+                                    <strong>YOCIM助手工具区已就绪</strong><br>
+                                    点击上方工具卡片以使用对应功能
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- 底部状态栏 -->
+        <footer class="status-bar">
+            <div class="connection-status">
+                <span class="led led-active"></span>
+                <span>连接稳定</span>
+            </div>
+            <div class="status-message" id="statusMessage">系统已就绪 - 等待用户输入</div>
+            <div class="network-stats">
+                <i class="fas fa-wifi"></i>
+                <span>延迟: 24ms</span>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- 工具模态框 -->
+    <div class="modal" id="toolModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">工具</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- 动态内容 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="CSS & JS/yocim.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛博旅行者 - 全球景点推荐</title>
+    <link rel="stylesheet" href="CSS & JS/travel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 背景元素 -->
+    <div class="cyber-grid"></div>
+    <div class="scan-line"></div>
+    
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 头部 -->
+        <header class="cyber-header">
+            <div class="logo">
+                <span class="neon-text"><i class="fas fa-globe-americas"></i> CYBER</span>
+                <span class="neon-text-accent">TRAVELER</span>
+            </div>
+            <div class="header-controls">
+                <button class="cyber-button" id="themeToggle">
+                    <span class="btn-text">切换模式</span>
+                    <span class="btn-glow"></span>
+                </button>
+                <button class="cyber-button" id="audioToggle">
+                    <span class="btn-text">音频</span>
+                    <span class="btn-glow"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <div class="hero-section">
+                <div class="hero-title">
+                    <h1 class="neon-title">探索 <span class="neon-accent">2077</span></h1>
+                    <h2 class="neon-subtitle">全球顶级景点数字档案</h2>
+                    <p class="hero-description">
+                        欢迎来到赛博旅行者档案库。这里存储着全球最值得体验的旅行目的地数据。
+                        选择下方目的地以获取详细数据档案。
+                    </p>
+                </div>
+                
+                <div class="search-section">
+                    <div class="cyber-input">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="输入目的地关键词...">
+                        <div class="input-glow"></div>
+                    </div>
+                    <button class="cyber-button" id="searchBtn">
+                        <span class="btn-text">扫描</span>
+                        <span class="btn-glow"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 筛选器 -->
+            <div class="filter-section">
+                <div class="filter-tags">
+                    <button class="filter-tag active" data-filter="all">全部</button>
+                    <button class="filter-tag" data-filter="asia">亚洲</button>
+                    <button class="filter-tag" data-filter="europe">欧洲</button>
+                    <button class="filter-tag" data-filter="america">美洲</button>
+                    <button class="filter-tag" data-filter="africa">非洲</button>
+                    <button class="filter-tag" data-filter="oceania">大洋洲</button>
+                </div>
+            </div>
+
+            <!-- 目的地卡片容器 -->
+            <div class="destinations-grid" id="destinationsGrid">
+                <!-- 卡片将通过JavaScript动态生成 -->
+            </div>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="cyber-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="neon-text">CYBER TRAVEL SYSTEMS</span>
+                    <span class="footer-sub">© YOCIM 数字旅行档案库 v3.2.1</span>
+                </div>
+                <div class="footer-links">
+                    <button class="footer-link" id="aboutBtn">关于系统</button>
+                    <button class="footer-link" id="contactBtn">联系管理员</button>
+                    <button class="footer-link" id="dataBtn">数据源</button>
+                </div>
+            </div>
+            <div class="system-status">
+                <div class="status-indicator active"></div>
+                <span class="status-text">系统状态：在线 | 目的地档案：<span id="destinationCount">12</span> | 最后更新：今天 20:47</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 音频元素 -->
+    <audio id="bgAudio" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- 模态框 -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="cyber-modal">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">目的地详情</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-content" id="modalContent">
+                <!-- 模态框内容将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="CSS & JS/travel.js"></script>
+</body>
+</html>

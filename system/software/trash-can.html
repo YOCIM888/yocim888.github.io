@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛博回收站 v2.1.7</title>
+    <link rel="stylesheet" href="CSS & JS/trash-can.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cyber-terminal">
+        <!-- 头部状态栏 -->
+        <div class="status-bar">
+            <div class="system-info">
+                <span class="cyberpunk-text">SYSTEM: NEURAL_NET_RECYCLE</span>
+                <span class="status-indicator active"></span>
+            </div>
+            <div class="time-display">
+                <span id="current-time">23:61:07</span>
+            </div>
+        </div>
+
+        <!-- 主内容区 -->
+        <div class="main-container">
+            <!-- 左侧控制面板 -->
+            <div class="control-panel">
+                <div class="panel-header">
+                    <i class="fas fa-microchip"></i>
+                    <span>控制面板</span>
+                </div>
+                <div class="panel-content">
+                    <button class="cyber-btn" id="empty-trash">
+                        <i class="fas fa-trash"></i>
+                        <span>清空回收站</span>
+                    </button>
+                    <button class="cyber-btn" id="refresh">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>刷新</span>
+                    </button>
+                    <button class="cyber-btn" id="properties">
+                        <i class="fas fa-cog"></i>
+                        <span>属性</span>
+                    </button>
+                    <div class="stats-display">
+                        <div class="stat-item">
+                            <span class="stat-label">文件数量</span>
+                            <span class="stat-value" id="file-count">30</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">占用空间</span>
+                            <span class="stat-value" id="used-space">47.3 GB</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">最后清理</span>
+                            <span class="stat-value">2077-10-23</span>
+                        </div>
+                    </div>
+                    <div class="neon-line"></div>
+                    <div class="system-status">
+                        <h3><i class="fas fa-server"></i> 系统状态</h3>
+                        <div class="status-bar cyber-bg">
+                            <div class="status-fill" style="width: 73%;"></div>
+                        </div>
+                        <p class="status-text">存储完整性: 73%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧文件列表区 -->
+            <div class="file-container">
+                <div class="file-header">
+                    <h1 class="cyberpunk-title">
+                        <i class="fas fa-trash-alt"></i>
+                        回收站
+                    </h1>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="在回收站中搜索..." id="search-input">
+                    </div>
+                </div>
+
+                <!-- 文件列表 -->
+                <div class="file-list">
+                    <div class="file-list-header">
+                        <div class="header-cell name-cell">
+                            <input type="checkbox" id="select-all">
+                            <span>名称</span>
+                        </div>
+                        <div class="header-cell">原位置</div>
+                        <div class="header-cell">删除日期</div>
+                        <div class="header-cell">大小</div>
+                        <div class="header-cell">类型</div>
+                        <div class="header-cell action-cell">操作</div>
+                    </div>
+
+                    <div class="file-list-body" id="file-list-body">
+                        <!-- 文件将通过JavaScript动态生成 -->
+                    </div>
+                </div>
+
+                <!-- 底部信息栏 -->
+                <div class="footer-info">
+                    <div class="selected-info">
+                        <span id="selected-count">0</span> 个对象被选中
+                    </div>
+                    <div class="hint">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        提示：恢复文件需要管理员权限
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 全屏扫描线效果 -->
+        <div class="scanlines"></div>
+        
+        <!-- 闪烁的故障效果 -->
+        <div class="glitch-effect"></div>
+    </div>
+
+    <!-- 对话框容器 -->
+    <div class="dialog-overlay" id="dialog-overlay">
+        <div class="cyber-dialog" id="permission-dialog">
+            <div class="dialog-header">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>权限不足</h3>
+                <button class="close-dialog" id="close-dialog">&times;</button>
+            </div>
+            <div class="dialog-body">
+                <p>访问被拒绝：需要管理员权限才能恢复文件。</p>
+                <p class="error-code">错误代码: 0x00A1F7C3</p>
+                <p class="error-message">请联系系统管理员或使用特权帐户重试。</p>
+            </div>
+            <div class="dialog-footer">
+                <button class="cyber-btn" id="confirm-dialog">确认</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="CSS & JS/trash-can.js"></script>
+</body>
+</html>

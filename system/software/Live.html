@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛博直播 | CYBER STREAM</title>
+    <link rel="stylesheet" href="CSS & JS/Live.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 动态网格背景 -->
+    <div class="grid-background"></div>
+    
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 头部区域 -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i class="fas fa-satellite-dish"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>CYBER<span>STREAM</span></h1>
+                    <p class="logo-subtitle">NEURAL INTERFACE BROADCAST SYSTEM</p>
+                </div>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat">
+                    <div class="stat-value">2,847</div>
+                    <div class="stat-label">在线观众</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">87</div>
+                    <div class="stat-label">活跃频道</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">实时直播</div>
+                </div>
+            </div>
+            
+            <div class="user-container">
+                <div class="user-avatar">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                <div class="user-info">
+                    <div class="user-name">GUEST_USER_04</div>
+                    <div class="user-status">
+                        <span class="status-indicator"></span>
+                        <span class="status-text">访问权限: 基础</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <div class="section-title">
+                <h2><span class="title-highlight">直播频道</span></h2>
+                <p class="section-subtitle">SELECT A NEURAL STREAM TO CONNECT</p>
+            </div>
+            
+            <!-- 直播卡片容器 -->
+            <div class="streams-container">
+                <!-- 直播卡片将通过JavaScript动态生成 -->
+            </div>
+            
+            <!-- 权限提示弹窗 -->
+            <div class="permission-modal" id="permissionModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3><i class="fas fa-exclamation-triangle"></i> 访问被拒绝</h3>
+                        <button class="modal-close" id="closeModal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h4>权限不足，无法观看</h4>
+                        <p>此频道需要<strong>高级神经接入权限</strong>或<strong>企业级订阅</strong>。</p>
+                        <p>您的当前访问级别：<span class="access-level">基础用户</span></p>
+                        <div class="permission-options">
+                            <div class="option">
+                                <i class="fas fa-credit-card"></i>
+                                <span>升级订阅</span>
+                            </div>
+                            <div class="option">
+                                <i class="fas fa-user-shield"></i>
+                                <span>申请权限</span>
+                            </div>
+                            <div class="option">
+                                <i class="fas fa-question-circle"></i>
+                                <span>查看帮助</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-secondary" id="dismissBtn">确认</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- 底部信息 -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>系统状态</h4>
+                    <div class="system-status">
+                        <div class="status-item">
+                            <span class="status-dot online"></span>
+                            <span>核心服务器</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot online"></span>
+                            <span>数据流</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot offline"></span>
+                            <span>神经接口</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>连接信息</h4>
+                    <div class="connection-info">
+                        <div class="info-item">
+                            <span>延迟:</span>
+                            <span class="info-value">23ms</span>
+                        </div>
+                        <div class="info-item">
+                            <span>带宽:</span>
+                            <span class="info-value">1.2 Gbps</span>
+                        </div>
+                        <div class="info-item">
+                            <span>加密:</span>
+                            <span class="info-value">AES-256</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <div class="quick-links">
+                        <a href="#"><i class="fas fa-broadcast-tower"></i> 频道列表</a>
+                        <a href="#"><i class="fas fa-user-friends"></i> 社区</a>
+                        <a href="#"><i class="fas fa-cog"></i> 设置</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2077 CYBERSTREAM NETWORK • 神经接口协议 v3.2 • 所有内容受数字版权保护</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- 音频元素用于播放点击声音 -->
+    <audio id="clickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3" preload="auto"></audio>
+    
+    <script src="CSS & JS/Live.js"></script>
+</body>
+</html>

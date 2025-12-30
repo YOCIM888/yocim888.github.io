@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOCIM 卫星控制台</title>
+    <link rel="stylesheet" href="system-user-setting-files/satellite.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部标题栏 -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-satellite"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>YOCIM 卫星控制台</h1>
+                    <p class="subtitle">轨道控制系统 v2.7.3</p>
+                </div>
+            </div>
+            <div class="status-indicators">
+                <div class="status-item">
+                    <span class="status-label">连接状态</span>
+                    <div class="status active">
+                        <div class="status-light"></div>
+                        <span>已连接</span>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">当前权限</span>
+                    <div class="status warning">
+                        <div class="status-light"></div>
+                        <span>访客</span>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">网络延迟</span>
+                    <div class="status">
+                        <div class="status-light"></div>
+                        <span>47ms</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主控制面板区域 -->
+        <main class="dashboard">
+            <!-- 近地轨道卫星 -->
+            <div class="satellite-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-globe-americas"></i> 近地轨道卫星</h2>
+                    <div class="panel-status online">
+                        <span class="status-text">在线</span>
+                        <div class="pulse"></div>
+                    </div>
+                </div>
+                <div class="panel-content">
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-label">轨道高度</div>
+                            <div class="metric-value">408 km</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 62%"></div>
+                            </div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">能量水平</div>
+                            <div class="metric-value">87%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">数据传输</div>
+                            <div class="metric-value">2.4 Gbps</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button class="control-btn" data-satellite="leo" data-action="diagnostic">
+                            <i class="fas fa-stethoscope"></i> 系统诊断
+                        </button>
+                        <button class="control-btn" data-satellite="leo" data-action="adjust">
+                            <i class="fas fa-compass"></i> 轨道调整
+                        </button>
+                        <button class="control-btn warning" data-satellite="leo" data-action="imaging">
+                            <i class="fas fa-camera"></i> 高分辨率成像
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="satellite-id">ID: LEO-247</div>
+                    <div class="temp">温度: 23°C</div>
+                </div>
+            </div>
+
+            <!-- 激光打击卫星 -->
+            <div class="satellite-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-crosshairs"></i> 激光打击卫星</h2>
+                    <div class="panel-status standby">
+                        <span class="status-text">待命</span>
+                        <div class="pulse"></div>
+                    </div>
+                </div>
+                <div class="panel-content">
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-label">武器能量</div>
+                            <div class="metric-value">100%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">瞄准精度</div>
+                            <div class="metric-value">0.002°</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">冷却系统</div>
+                            <div class="metric-value">正常</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button class="control-btn" data-satellite="laser" data-action="calibrate">
+                            <i class="fas fa-bullseye"></i> 校准系统
+                        </button>
+                        <button class="control-btn warning" data-satellite="laser" data-action="test">
+                            <i class="fas fa-bolt"></i> 测试射击
+                        </button>
+                        <button class="control-btn danger" data-satellite="laser" data-action="engage">
+                            <i class="fas fa-fire"></i> 作战部署
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="satellite-id">ID: LAS-9</div>
+                    <div class="temp">温度: -12°C</div>
+                </div>
+            </div>
+
+            <!-- 陨石拦截卫星 -->
+            <div class="satellite-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-meteor"></i> 陨石拦截卫星</h2>
+                    <div class="panel-status active">
+                        <span class="status-text">扫描中</span>
+                        <div class="pulse"></div>
+                    </div>
+                </div>
+                <div class="panel-content">
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-label">拦截弹数量</div>
+                            <div class="metric-value">24/24</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">威胁检测</div>
+                            <div class="metric-value">3个目标</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">防御范围</div>
+                            <div class="metric-value">12,000 km</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button class="control-btn" data-satellite="intercept" data-action="scan">
+                            <i class="fas fa-search"></i> 深度扫描
+                        </button>
+                        <button class="control-btn warning" data-satellite="intercept" data-action="intercept">
+                            <i class="fas fa-shield-alt"></i> 启动拦截
+                        </button>
+                        <button class="control-btn danger" data-satellite="intercept" data-action="evasive">
+                            <i class="fas fa-random"></i> 规避机动
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="satellite-id">ID: INT-13</div>
+                    <div class="temp">温度: 18°C</div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 系统日志 -->
+        <div class="log-panel">
+            <div class="log-header">
+                <h3><i class="fas fa-terminal"></i> 系统日志</h3>
+                <button id="clear-log"><i class="fas fa-trash-alt"></i> 清空</button>
+            </div>
+            <div class="log-content" id="log-content">
+                <div class="log-entry"><span class="log-time">[12:47:33]</span> 系统初始化完成</div>
+                <div class="log-entry"><span class="log-time">[12:48:01]</span> 连接到所有卫星</div>
+                <div class="log-entry"><span class="log-time">[12:49:22]</span> 检测到访客权限登录</div>
+                <div class="log-entry"><span class="log-time">[12:50:15]</span> 激光打击卫星冷却系统检查正常</div>
+                <div class="log-entry"><span class="log-time">[12:51:47]</span> 检测到3个潜在陨石威胁</div>
+            </div>
+        </div>
+
+        <!-- 权限验证模态框 -->
+        <div class="modal" id="auth-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><i class="fas fa-lock"></i> 权限验证</h3>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span id="alert-text">您的权限不足，无法执行此操作</span>
+                    </div>
+                    <div class="auth-form">
+                        <label for="key-input">请输入访问密钥：</label>
+                        <div class="input-group">
+                            <input type="password" id="key-input" placeholder="输入密钥">
+                            <button id="submit-key"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                        <p class="hint">系统提示：密钥格式为 大写英文字母加数字</p>
+                    </div>
+                    <div class="queue-info hidden" id="queue-info">
+                        <div class="loading">
+                            <div class="spinner"></div>
+                            <span>请求排队中...</span>
+                        </div>
+                        <p>预计等待时间: <span class="highlight">6367年268天</span></p>
+                        <p class="small">您的请求已加入队列，位置: #9,472,185</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 背景装饰元素 -->
+        <div class="cyber-grid"></div>
+        <div class="scanline"></div>
+        <div class="glitch-text">YOCIM</div>
+    </div>
+
+    <script src="system-user-setting-files/satellite.js"></script>
+</body>
+</html>
