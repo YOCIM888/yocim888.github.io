@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统界面</title>
+    <link rel="stylesheet" href="system/system-style.css">
+    <link rel="stylesheet" href="system/system-button.css">
+    <link rel="stylesheet" href="system/software.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+    <div class="desktop">
+        <!-- 背景效果 -->
+        <div class="grid-bg"></div>
+        <div class="scanlines"></div>
+
+        <!-- 系统切换按钮容器 -->
+<div id="system-toggle-container">
+  <button id="system-toggle-btn" class="cyber-toggle">
+    <span class="cyber-text">用户界面</span>
+    <span class="cyber-subtext"></span>
+    <div class="cyber-glitch"></div>
+    <div class="cyber-shine"></div>
+    <div class="cyber-border">
+      <div class="cyber-border-inner"></div>
+    </div>
+    <div class="cyber-loader">
+      <div class="cyber-loader-inner"></div>
+    </div>
+    <div class="cyber-particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+  </button>
+
+  <!-- 状态指示器 -->
+  <div class="status-indicator">
+    <div class="status-led"></div>
+    <span class="status-text"></span>
+  </div>
+</div>
+        
+        <!-- 顶部状态栏 -->
+        <div class="top-bar">
+            <div class="time-date">
+                <div class="time">00:00:00</div>
+                <div class="date">2087年11月5日 星期五</div>
+            </div>
+            <div class="system-status">
+                <div class="status-item network">
+                    <i class="fas fa-satellite-dish"></i>
+                    <span>量子网络: 已连接</span>
+                </div>
+                <div class="status-item security">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>防火墙: 激活</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 记事本图标 -->
+<div class="notebook-icon-container">
+    <a href="system/software/notepad.html" class="future-notebook-icon" id="futureNotebookIcon">
+        <div class="icon-shape">
+            <div class="icon-line top-line"></div>
+            <div class="icon-line middle-line"></div>
+            <div class="icon-line bottom-line"></div>
+            <div class="icon-corner"></div>
+        </div>
+        <span class="icon-label">记事本</span>
+    </a>
+</div>
+<!-- 音乐播放器图标 -->
+<div class="music-player-icon-container" id="musicPlayerIconContainer">
+    <a href="system/software/music-palyer.html" class="future-music-player-icon" id="futureMusicPlayerIcon">
+        <div class="music-icon-shape">
+            <div class="music-note note1">♫</div>
+            <div class="music-note note2">♪</div>
+            <div class="music-wave wave1"></div>
+            <div class="music-wave wave2"></div>
+            <div class="music-wave wave3"></div>
+            <div class="play-circle">
+                <div class="play-triangle"></div>
+            </div>
+        </div>
+        <span class="music-icon-label">音乐播放器</span>
+    </a>
+</div>
+<!-- 书架图标 -->
+<div class="bookshelf-icon-container" id="bookshelfIconContainer">
+    <a href="system/software/bookshelf.html" class="future-bookshelf-icon" id="futureBookshelfIcon">
+        <div class="bookshelf-icon-shape">
+            <div class="shelf"></div>
+            <div class="book book1"></div>
+            <div class="book book2"></div>
+            <div class="book book3"></div>
+            <div class="book book4"></div>
+            <div class="book-spine spine1"></div>
+            <div class="book-spine spine2"></div>
+            <div class="book-spine spine3"></div>
+            <div class="book-spine spine4"></div>
+            <div class="shelf-glow"></div>
+        </div>
+        <span class="bookshelf-icon-label">书架</span>
+    </a>
+</div>
+<!-- 画板图标 -->
+<div class="drawing-board-icon-container" id="drawingBoardIconContainer">
+    <a href="system/software/Drawing-board.html" class="future-drawing-board-icon" id="futureDrawingBoardIcon">
+        <div class="drawing-board-icon-shape">
+            <div class="board-surface"></div>
+            <div class="brush-handle"></div>
+            <div class="brush-bristles"></div>
+            <div class="paint-dot dot1"></div>
+            <div class="paint-dot dot2"></div>
+            <div class="paint-dot dot3"></div>
+            <div class="color-palette">
+                <div class="color-chip chip1"></div>
+                <div class="color-chip chip2"></div>
+                <div class="color-chip chip3"></div>
+            </div>
+        </div>
+        <span class="drawing-board-icon-label">画板</span>
+    </a>
+</div>
+<!-- 视频图标 -->
+<div class="video-icon-container" id="videoIconContainer">
+    <a href="system/software/video.html" class="future-video-icon" id="futureVideoIcon">
+        <div class="video-icon-shape">
+            <div class="video-screen"></div>
+            <div class="play-button-triangle"></div>
+            <div class="play-button-circle"></div>
+            <div class="signal-wave wave1"></div>
+            <div class="signal-wave wave2"></div>
+            <div class="signal-wave wave3"></div>
+            <div class="screen-glow"></div>
+        </div>
+        <span class="video-icon-label">视频</span>
+    </a>
+</div>
+<!-- 代码库图标 -->   
+<div class="code-icon-container" id="codeIconContainer">
+    <a href="system/software/code.html" class="future-code-icon" id="futureCodeIcon">
+        <div class="code-icon-shape">
+            <div class="code-bracket left-bracket">{</div>
+            <div class="code-bracket right-bracket">}</div>
+            <div class="code-line line1"></div>
+            <div class="code-line line2"></div>
+            <div class="code-line line3"></div>
+            <div class="code-dot dot1"></div>
+            <div class="code-dot dot2"></div>
+            <div class="code-dot dot3"></div>
+            <div class="code-glow"></div>
+        </div>
+        <span class="code-icon-label">代码库</span>
+    </a>
+</div>
+<!-- 商城图标 --> 
+<div class="shop-icon-container" id="shopIconContainer">
+    <a href="system/software/shop.html" class="future-shop-icon" id="futureShopIcon">
+        <div class="shop-icon-shape">
+            <div class="shop-bag"></div>
+            <div class="shop-handle"></div>
+            <div class="shop-item item1"></div>
+            <div class="shop-item item2"></div>
+            <div class="shop-item item3"></div>
+            <div class="price-tag">¥</div>
+            <div class="shop-glow"></div>
+        </div>
+        <span class="shop-icon-label">商城</span>
+    </a>
+</div>
+<!-- 今日运势图标 -->
+<div class="luck-icon-container" id="luckIconContainer">
+    <a href="system/software/Luck.html" class="future-luck-icon" id="futureLuckIcon">
+        <div class="luck-icon-shape">
+            <div class="crystal-ball"></div>
+            <div class="crystal-glow"></div>
+            <div class="fortune-star star1">★</div>
+            <div class="fortune-star star2">☆</div>
+            <div class="fortune-star star3">★</div>
+            <div class="zodiac-symbol">♋</div>
+            <div class="sparkle sparkle1"></div>
+            <div class="sparkle sparkle2"></div>
+            <div class="sparkle sparkle3"></div>
+        </div>
+        <span class="luck-icon-label">今日运势</span>
+    </a>
+</div>
+<!-- 计算器图标 -->
+<div class="computer-icon-container" id="computerIconContainer">
+    <a href="system/software/computer.html" class="future-computer-icon" id="futureComputerIcon">
+        <div class="computer-icon-shape">
+            <div class="cpu-chip"></div>
+            <div class="chip-core core1"></div>
+            <div class="chip-core core2"></div>
+            <div class="chip-core core3"></div>
+            <div class="chip-core core4"></div>
+            <div class="data-line line1"></div>
+            <div class="data-line line2"></div>
+            <div class="data-line line3"></div>
+            <div class="binary-digit digit1">1</div>
+            <div class="binary-digit digit2">0</div>
+            <div class="binary-digit digit3">1</div>
+            <div class="chip-glow"></div>
+        </div>
+        <span class="computer-icon-label">超级计算</span>
+    </a>
+</div>
+<!-- 网址导航图标 -->
+<div class="link-station-icon-container" id="linkStationIconContainer">
+    <a href="system/software/link-station.html" class="future-link-station-icon" id="futureLinkStationIcon">
+        <div class="link-station-icon-shape">
+            <div class="global-icon"></div>
+            <div class="link-node node1"></div>
+            <div class="link-node node2"></div>
+            <div class="link-node node3"></div>
+            <div class="link-line line1"></div>
+            <div class="link-line line2"></div>
+            <div class="link-line line3"></div>
+            <div class="link-arrow"></div>
+            <div class="network-glow"></div>
+        </div>
+        <span class="link-station-icon-label">网址导航</span>
+    </a>
+</div>
+<!-- YOCIM助手图标 -->
+<div class="yocim-icon-container" id="yocimIconContainer">
+    <a href="system/software/yocim.html" class="future-yocim-icon" id="futureYocimIcon">
+        <div class="yocim-icon-shape">
+            <div class="assistant-head"></div>
+            <div class="assistant-eye left-eye"></div>
+            <div class="assistant-eye right-eye"></div>
+            <div class="assistant-mouth"></div>
+            <div class="speech-bubble">AI</div>
+            <div class="circuit-line line1"></div>
+            <div class="circuit-line line2"></div>
+            <div class="circuit-line line3"></div>
+            <div class="circuit-dot dot1"></div>
+            <div class="circuit-dot dot2"></div>
+            <div class="circuit-dot dot3"></div>
+            <div class="ai-glow"></div>
+        </div>
+        <span class="yocim-icon-label">YOCIM助手</span>
+    </a>
+</div>
+<!-- CSS特效库图标 -->
+<div class="css-icon-container" id="cssIconContainer">
+    <a href="system/software/CSS.html" class="future-css-icon" id="futureCssIcon">
+        <div class="css-icon-shape">
+            <div class="css-layer layer1"></div>
+            <div class="css-layer layer2"></div>
+            <div class="css-layer layer3"></div>
+            <div class="css-brace left-brace">{</div>
+            <div class="css-brace right-brace">}</div>
+            <div class="animation-circle"></div>
+            <div class="gradient-line line1"></div>
+            <div class="gradient-line line2"></div>
+            <div class="gradient-line line3"></div>
+            <div class="css-glow"></div>
+        </div>
+        <span class="css-icon-label">CSS特效</span>
+    </a>
+</div>
+
+<!-- 直播图标 -->
+<div class="live-icon-container" id="liveIconContainer">
+    <a href="system/software/Live.html" class="future-live-icon" id="futureLiveIcon">
+        <div class="live-icon-shape">
+            <div class="camera-body"></div>
+            <div class="camera-lens"></div>
+            <div class="camera-light"></div>
+            <div class="signal-wave wave1"></div>
+            <div class="signal-wave wave2"></div>
+            <div class="signal-wave wave3"></div>
+            <div class="live-dot"></div>
+            <div class="live-text">LIVE</div>
+            <div class="live-glow"></div>
+        </div>
+        <span class="live-icon-label">直播</span>
+    </a>
+</div>
+
+<!-- 旅行图标 -->
+<div class="travel-icon-container" id="travelIconContainer">
+    <a href="system/software/travel.html" class="future-travel-icon" id="futureTravelIcon">
+        <div class="travel-icon-shape">
+            <div class="earth-globe"></div>
+            <div class="flight-plane"></div>
+            <div class="flight-path"></div>
+            <div class="destination-dot dot1"></div>
+            <div class="destination-dot dot2"></div>
+            <div class="compass-pointer"></div>
+            <div class="travel-glow"></div>
+        </div>
+        <span class="travel-icon-label">旅行</span>
+    </a>
+</div>
+
+<!-- 回收站图标 -->
+<div class="trash-icon-container" id="trashIconContainer">
+    <a href="system/software/trash-can.html" class="future-trash-icon" id="futureTrashIcon">
+        <div class="trash-icon-shape">
+            <div class="trash-can"></div>
+            <div class="trash-lid"></div>
+            <div class="trash-item item1"></div>
+            <div class="trash-item item2"></div>
+            <div class="trash-item item3"></div>
+            <div class="delete-line line1"></div>
+            <div class="delete-line line2"></div>
+            <div class="delete-symbol">×</div>
+            <div class="trash-glow"></div>
+        </div>
+        <span class="trash-icon-label">回收站</span>
+    </a>
+</div>
+        <!-- 星痕能量指示器 -->
+        <div class="energy-indicator">
+            <div class="indicator-header">
+                <h3><i class="fas fa-bolt"></i> 能量核心</h3>
+                <div class="energy-level">87%</div>
+            </div>
+            <div class="energy-bar">
+                <div class="energy-fill"></div>
+                <div class="energy-glow"></div>
+            </div>
+            <div class="energy-stats">
+                <div class="stat">
+                    <span>输出功率</span>
+                    <strong>4.2 GW</strong>
+                </div>
+                <div class="stat">
+                    <span>稳定性</span>
+                    <strong>94%</strong>
+                </div>
+                <div class="stat">
+                    <span>温度</span>
+                    <strong>240°C</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右下角系统状态 -->
+        <div class="system-monitor">
+            <div class="monitor-title">
+                <i class="fas fa-microchip"></i>
+                <span>神经接口状态</span>
+            </div>
+            <div class="monitor-data">
+                <div class="data-row">
+                    <span>带宽</span>
+                    <div class="data-value">
+                        <div class="data-bar" style="width: 75%"></div>
+                        <span>75%</span>
+                    </div>
+                </div>
+                <div class="data-row">
+                    <span>延迟</span>
+                    <div class="data-value">
+                        <div class="data-bar" style="width: 30%"></div>
+                        <span>3ms</span>
+                    </div>
+                </div>
+                <div class="data-row">
+                    <span>加密等级</span>
+                    <div class="data-value">
+                        <div class="data-bar" style="width: 100%"></div>
+                        <span>AES-512</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部任务栏 -->
+        <div class="taskbar">
+            <div class="taskbar-left">
+                <div class="start-btn">
+                    <i class="fas fa-infinity"></i>
+                </div>
+                <div class="user">
+                    <i class="fas fa-user-astronaut"></i>
+                    <span>管理员: YOCIM</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 卫星控制盘 -->
+        <div class="satellite-control-container">
+    <a href="system/system-bottom/satellite.html" class="satellite-control-btn" id="satelliteControlBtn">
+        <span class="rocket-icon">
+            <!-- 火箭SVG图标 -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2.5c0 0 4.5 2.12 4.5 10.5 0 2.13-1.05 4.22-1.05 4.22L12 18l-3.45-1.78S7.5 15.13 7.5 13C7.5 4.62 12 2.5 12 2.5zm0 6a2 2 0 100 4 2 2 0 000-4z"/>
+                <path d="M12 2.5c0 0-4.5 2.12-4.5 10.5 0 2.13 1.05 4.22 1.05 4.22L12 18l3.45-1.78S16.5 15.13 16.5 13c0-8.38-4.5-10.5-4.5-10.5z" opacity="0.3"/>
+            </svg>
+        </span>
+        <span class="btn-text">卫星控制盘</span>
+        <span class="pulse-ring"></span>
+        <span class="hover-glow"></span>
+    </a>
+</div>
+        
+        <!-- 电源菜单 -->
+        <div class="power-menu">
+            <div class="power-btn" id="powerBtn">
+                <i class="fas fa-power-off"></i>
+            </div>
+            <div class="power-options" id="powerOptions">
+                <div class="power-option"><i class="fas fa-moon"></i> 睡眠</div>
+                <div class="power-option"><i class="fas fa-redo"></i> 重启</div>
+                <div class="power-option"><i class="fas fa-times"></i> 关机</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="system/system-script.js"></script>
+    <script src="system/system-button.js"></script>
+    <script src="system/software.js"></script>
+</body>
+</html>
