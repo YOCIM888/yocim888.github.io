@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛博商城 - 幻界购物平台</title>
+    <link rel="stylesheet" href="CSS & JS/shop.css">
+</head>
+<body>
+    <div class="cyber-container">
+        <!-- 顶部状态栏 -->
+        <div class="status-bar">
+            <div class="status-item">
+                <span class="status-label">系统时间:</span>
+                <span id="cyber-time" class="status-value">2199-05-21 23:47:36</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">用户权限:</span>
+                <span class="status-value warning">LEVEL-2 (访客)</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">网络状态:</span>
+                <span class="status-value connected">● 已连接</span>
+            </div>
+        </div>
+
+        <!-- 主标题和余额 -->
+        <div class="header-section">
+            <h1 class="cyber-title">赛博商城 <span class="cyber-subtitle">// 幻界购物平台</span></h1>
+            <div class="balance-section">
+                <div class="balance-display">
+                    <span class="balance-label">幻界币余额:</span>
+                    <span id="balance" class="balance-amount">68000</span>
+                    <span class="currency-unit">CR</span>
+                </div>
+                <button id="recharge-btn" class="cyber-button recharge-btn">
+                    <span class="button-text">充值接口</span>
+                    <span class="button-glow"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 商品列表容器 -->
+        <div class="products-container">
+            <div class="products-header">
+                <h2 class="section-title">商品列表 <span class="section-subtitle">// 滑动选择</span></h2>
+                <div class="selection-indicator">
+                    <span class="indicator-text">已选择: </span>
+                    <span id="selected-product" class="indicator-value">无</span>
+                </div>
+            </div>
+            
+            <div class="product-list-container">
+                <div class="product-list" id="product-list">
+                    <!-- 商品将通过JavaScript动态生成 -->
+                </div>
+            </div>
+            
+            <div class="list-controls">
+                <button id="scroll-up-btn" class="cyber-button control-btn">
+                    <span class="button-text">↑ 向上滚动</span>
+                </button>
+                <button id="scroll-down-btn" class="cyber-button control-btn">
+                    <span class="button-text">↓ 向下滚动</span>
+                </button>
+                <button id="buy-selected-btn" class="cyber-button buy-selected-btn" disabled>
+                    <span class="button-text">购买选中商品</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 购物车/交易记录 -->
+        <div class="transaction-section">
+            <h2 class="section-title">交易记录 <span class="section-subtitle">// 最近操作</span></h2>
+            <div class="transaction-log" id="transaction-log">
+                <div class="log-entry system">
+                    <span class="log-time">[23:42:05]</span>
+                    <span class="log-text">系统: 欢迎访问赛博商城，您当前余额为68000幻界币</span>
+                </div>
+                <div class="log-entry system">
+                    <span class="log-time">[23:42:10]</span>
+                    <span class="log-text">系统: 使用方向键或滚动按钮浏览商品，点击选择</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 通知弹窗 -->
+        <div id="notification" class="cyber-notification">
+            <div class="notification-content">
+                <span class="notification-text"></span>
+                <div class="notification-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="CSS & JS/shop.js"></script>
+</body>
+</html>

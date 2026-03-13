@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛博超级计算器</title>
+    <link rel="stylesheet" href="CSS & JS/computer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cyber-container">
+        <!-- 头部显示屏 -->
+        <div class="cyber-display">
+            <div class="display-main" id="display">0</div>
+            <div class="display-history" id="history"></div>
+            <div class="display-mode">
+                <span class="mode-active" id="modeBasic">基本</span>
+                <span id="modeScientific">科学</span>
+                <span id="modeMatrix">矩阵</span>
+                <span id="modeGraph">图形</span>
+                <span id="modeStats">统计</span>
+            </div>
+        </div>
+
+        <!-- 主计算器区域 -->
+        <div class="cyber-calculator">
+            <!-- 左侧高级函数面板 -->
+            <div class="advanced-panel" id="advancedPanel">
+                <div class="panel-title"><i class="fas fa-function"></i> 高等函数</div>
+                <div class="function-buttons">
+                    <button class="cyber-btn func-btn" data-func="sin">sin(x)</button>
+                    <button class="cyber-btn func-btn" data-func="cos">cos(x)</button>
+                    <button class="cyber-btn func-btn" data-func="tan">tan(x)</button>
+                    <button class="cyber-btn func-btn" data-func="ln">ln(x)</button>
+                    <button class="cyber-btn func-btn" data-func="log">log10(x)</button>
+                    <button class="cyber-btn func-btn" data-func="exp">e^x</button>
+                    <button class="cyber-btn func-btn" data-func="sqrt">√x</button>
+                    <button class="cyber-btn func-btn" data-func="fact">x!</button>
+                    <button class="cyber-btn func-btn" data-func="integral">∫dx</button>
+                    <button class="cyber-btn func-btn" data-func="derivative">d/dx</button>
+                    <button class="cyber-btn func-btn" data-func="pi">π</button>
+                    <button class="cyber-btn func-btn" data-func="e">e</button>
+                    <button class="cyber-btn func-btn" data-func="abs">|x|</button>
+                    <button class="cyber-btn func-btn" data-func="pow">x^y</button>
+                    <button class="cyber-btn func-btn" data-func="complex">a+bi</button>
+                    <button class="cyber-btn func-btn" data-func="matrix">矩阵</button>
+                </div>
+            </div>
+
+            <!-- 中央输入面板 -->
+            <div class="input-panel">
+                <!-- 数字和基本运算 -->
+                <div class="basic-buttons">
+                    <button class="cyber-btn op-btn" data-op="clear">C</button>
+                    <button class="cyber-btn op-btn" data-op="backspace"><i class="fas fa-backspace"></i></button>
+                    <button class="cyber-btn op-btn" data-op="(">(</button>
+                    <button class="cyber-btn op-btn" data-op=")">)</button>
+                    
+                    <button class="cyber-btn num-btn" data-num="7">7</button>
+                    <button class="cyber-btn num-btn" data-num="8">8</button>
+                    <button class="cyber-btn num-btn" data-num="9">9</button>
+                    <button class="cyber-btn op-btn" data-op="/">/</button>
+                    
+                    <button class="cyber-btn num-btn" data-num="4">4</button>
+                    <button class="cyber-btn num-btn" data-num="5">5</button>
+                    <button class="cyber-btn num-btn" data-num="6">6</button>
+                    <button class="cyber-btn op-btn" data-op="*">×</button>
+                    
+                    <button class="cyber-btn num-btn" data-num="1">1</button>
+                    <button class="cyber-btn num-btn" data-num="2">2</button>
+                    <button class="cyber-btn num-btn" data-num="3">3</button>
+                    <button class="cyber-btn op-btn" data-op="-">-</button>
+                    
+                    <button class="cyber-btn num-btn" data-num="0">0</button>
+                    <button class="cyber-btn" data-op=".">.</button>
+                    <button class="cyber-btn op-btn equals" data-op="=">=</button>
+                    <button class="cyber-btn op-btn" data-op="+">+</button>
+                </div>
+                
+                <!-- 状态栏 -->
+                <div class="status-bar">
+                    <div class="status-item"><i class="fas fa-microchip"></i> 量子模式: <span id="quantumStatus">就绪</span></div>
+                    <div class="status-item"><i class="fas fa-bolt"></i> 计算单元: <span id="calcUnit">超频中</span></div>
+                    <div class="status-item"><i class="fas fa-database"></i> 内存: <span id="memoryStatus">0 条记录</span></div>
+                </div>
+            </div>
+            
+            <!-- 右侧存储和常数面板 -->
+            <div class="memory-panel">
+                <div class="panel-title"><i class="fas fa-memory"></i> 存储/常数</div>
+                <div class="memory-buttons">
+                    <button class="cyber-btn mem-btn" data-mem="store">STO</button>
+                    <button class="cyber-btn mem-btn" data-mem="recall">RCL</button>
+                    <button class="cyber-btn mem-btn" data-mem="clearMem">MC</button>
+                    <button class="cyber-btn mem-btn" data-mem="addMem">M+</button>
+                    
+                    <div class="constant-buttons">
+                        <button class="cyber-btn const-btn" data-const="c">c (光速)</button>
+                        <button class="cyber-btn const-btn" data-const="g">g (重力)</button>
+                        <button class="cyber-btn const-btn" data-const="h">h (普朗克)</button>
+                        <button class="cyber-btn const-btn" data-const="G">G (引力)</button>
+                        <button class="cyber-btn const-btn" data-const="phi">φ (黄金比)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 底部矩阵/图形控制面板 -->
+        <div class="control-panel" id="controlPanel">
+            <div class="panel-title"><i class="fas fa-sliders-h"></i> 高级控制</div>
+            <div class="controls">
+                <div class="control-group">
+                    <label for="precision">计算精度:</label>
+                    <select id="precision">
+                        <option value="2">2 位小数</option>
+                        <option value="4">4 位小数</option>
+                        <option value="6" selected>6 位小数</option>
+                        <option value="8">8 位小数</option>
+                        <option value="10">10 位小数</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="angleUnit">角度单位:</label>
+                    <select id="angleUnit">
+                        <option value="deg">度</option>
+                        <option value="rad" selected>弧度</option>
+                        <option value="grad">百分度</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <button class="cyber-btn control-btn" id="graphToggle"><i class="fas fa-chart-line"></i> 图形模式</button>
+                    <button class="cyber-btn control-btn" id="matrixToggle"><i class="fas fa-th"></i> 矩阵编辑器</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 矩阵编辑器模态框 -->
+    <div class="modal" id="matrixModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-th"></i> 矩阵编辑器</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="matrix-size-selector">
+                    <label>行: <input type="number" id="matrixRows" min="1" max="6" value="3"></label>
+                    <label>列: <input type="number" id="matrixCols" min="1" max="6" value="3"></label>
+                    <button id="updateMatrixSize">更新</button>
+                </div>
+                <div class="matrix-input-container" id="matrixInputContainer">
+                    <!-- 矩阵输入框将通过JS动态生成 -->
+                </div>
+                <div class="matrix-actions">
+                    <button class="cyber-btn" id="matrixDet">行列式</button>
+                    <button class="cyber-btn" id="matrixInv">逆矩阵</button>
+                    <button class="cyber-btn" id="matrixTranspose">转置</button>
+                    <button class="cyber-btn" id="matrixEigen">特征值</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="CSS & JS/computer.js"></script>
+</body>
+</html>

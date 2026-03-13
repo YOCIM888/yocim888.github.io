@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高级绘图工具</title>
+    <link rel="stylesheet" href="CSS & JS/Drawing-board.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧工具栏 -->
+        <div class="toolbar left-toolbar">
+            <div class="tool-section">
+                <h3 class="section-title"><i class="fas fa-brush"></i> 绘画工具</h3>
+                <div class="tool-buttons">
+                    <button id="pencil" class="tool-btn active" title="铅笔">
+                        <i class="fas fa-pencil-alt"></i>
+                        <span>铅笔</span>
+                    </button>
+                    <button id="eraser" class="tool-btn" title="橡皮擦">
+                        <i class="fas fa-eraser"></i>
+                        <span>橡皮擦</span>
+                    </button>
+                    <button id="line" class="tool-btn" title="直线">
+                        <i class="fas fa-minus"></i>
+                        <span>直线</span>
+                    </button>
+                    <button id="rectangle" class="tool-btn" title="矩形">
+                        <i class="fas fa-square"></i>
+                        <span>矩形</span>
+                    </button>
+                    <button id="circle" class="tool-btn" title="圆形">
+                        <i class="fas fa-circle"></i>
+                        <span>圆形</span>
+                    </button>
+                    <button id="text" class="tool-btn" title="文字">
+                        <i class="fas fa-font"></i>
+                        <span>文字</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="tool-section">
+                <h3 class="section-title"><i class="fas fa-sliders-h"></i> 画笔设置</h3>
+                <div class="tool-controls">
+                    <div class="control-group">
+                        <label for="brushSize">笔刷大小: <span id="brushSizeValue">5</span>px</label>
+                        <input type="range" id="brushSize" min="1" max="50" value="5">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="brushOpacity">不透明度: <span id="opacityValue">100</span>%</label>
+                        <input type="range" id="brushOpacity" min="1" max="100" value="100">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="brushBlend">混合模式</label>
+                        <select id="brushBlend">
+                            <option value="source-over">正常</option>
+                            <option value="multiply">正片叠底</option>
+                            <option value="screen">滤色</option>
+                            <option value="overlay">叠加</option>
+                            <option value="difference">差值</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tool-section">
+                <h3 class="section-title"><i class="fas fa-palette"></i> 颜色面板</h3>
+                <div class="color-palette">
+                    <div class="color-swatch neon-blue active" data-color="#0ff"></div>
+                    <div class="color-swatch neon-pink" data-color="#f0f"></div>
+                    <div class="color-swatch neon-green" data-color="#0f0"></div>
+                    <div class="color-swatch neon-yellow" data-color="#ff0"></div>
+                    <div class="color-swatch neon-purple" data-color="#90f"></div>
+                    <div class="color-swatch white" data-color="#fff"></div>
+                    <div class="color-swatch black" data-color="#000"></div>
+                </div>
+                <div class="custom-color">
+                    <input type="color" id="customColorPicker" value="#00ffff">
+                    <label for="customColorPicker">自定义颜色</label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 中间画布区域 -->
+        <div class="canvas-container">
+            <div class="canvas-header">
+                <div class="canvas-controls">
+                    <button id="clearCanvas" class="control-btn danger" title="清除画布">
+                        <i class="fas fa-trash-alt"></i> 清除
+                    </button>
+                    <button id="undo" class="control-btn" title="撤销">
+                        <i class="fas fa-undo"></i> 撤销
+                    </button>
+                    <button id="redo" class="control-btn" title="重做">
+                        <i class="fas fa-redo"></i> 重做
+                    </button>
+                    <button id="saveImage" class="control-btn success" title="保存图片">
+                        <i class="fas fa-download"></i> 保存
+                    </button>
+                </div>
+                
+                <div class="canvas-info">
+                    <div class="coordinates">坐标: <span id="coords">0, 0</span></div>
+                    <div class="tool-indicator">当前工具: <span id="currentTool">铅笔</span></div>
+                </div>
+            </div>
+            
+            <canvas id="drawingCanvas">
+                您的浏览器不支持Canvas，请升级浏览器以使用此工具。
+            </canvas>
+            
+            <div class="canvas-footer">
+                <div class="hint">
+                    <i class="fas fa-lightbulb"></i> 提示: 使用鼠标或触摸屏进行绘制，Ctrl+Z撤销，Ctrl+Y重做
+                </div>
+            </div>
+        </div>
+        
+        <!-- 右侧高级功能面板 -->
+        <div class="toolbar right-toolbar">
+            <div class="tool-section">
+                <h3 class="section-title"><i class="fas fa-magic"></i> 高级功能</h3>
+                <div class="advanced-buttons">
+                    <button id="spray" class="adv-btn" title="喷雾效果">
+                        <i class="fas fa-spray-can"></i>
+                        <span>喷雾工具</span>
+                    </button>
+                    <button id="gradient" class="adv-btn" title="渐变填充">
+                        <i class="fas fa-fill-drip"></i>
+                        <span>渐变填充</span>
+                    </button>
+                    <button id="pattern" class="adv-btn" title="图案填充">
+                        <i class="fas fa-th-large"></i>
+                        <span>图案填充</span>
+                    </button>
+                    <button id="blur" class="adv-btn" title="模糊效果">
+                        <i class="fas fa-blur"></i>
+                        <span>模糊效果</span>
+                    </button>
+                    <button id="symmetry" class="adv-btn" title="对称绘图">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>对称模式</span>
+                    </button>
+                    <button id="grid" class="adv-btn" title="显示网格">
+                        <i class="fas fa-th"></i>
+                        <span>显示网格</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="tool-section">
+                <h3 class="section-title"><i class="fas fa-cog"></i> 画布设置</h3>
+                <div class="canvas-controls">
+                    <div class="control-group">
+                        <label for="canvasBg">背景颜色</label>
+                        <input type="color" id="canvasBg" value="#0a0a1a">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="gridSize">网格大小: <span id="gridSizeValue">20</span>px</label>
+                        <input type="range" id="gridSize" min="5" max="100" value="20">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="gridOpacity">网格不透明度</label>
+                        <input type="range" id="gridOpacity" min="0" max="100" value="30">
+                    </div>
+                    
+                    <div class="control-group">
+                        <button id="toggleGrid" class="toggle-btn">
+                            <i class="fas fa-eye"></i> 显示网格
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tool-section">
+                <h3 class="section-title"><i class="fas fa-layer-group"></i> 图层管理</h3>
+                <div class="layer-controls">
+                    <div class="layer-list">
+                        <div class="layer-item active">
+                            <i class="fas fa-layer-group"></i>
+                            <span>图层 1</span>
+                            <div class="layer-actions">
+                                <button class="layer-btn" title="可见"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="layer-item">
+                            <i class="fas fa-layer-group"></i>
+                            <span>图层 2</span>
+                            <div class="layer-actions">
+                                <button class="layer-btn" title="可见"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layer-buttons">
+                        <button id="addLayer" class="layer-action-btn">
+                            <i class="fas fa-plus"></i> 添加图层
+                        </button>
+                        <button id="mergeLayers" class="layer-action-btn">
+                            <i class="fas fa-compress-alt"></i> 合并图层
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tool-section">
+                <h3 class="section-title"><i class="fas fa-history"></i> 历史记录</h3>
+                <div class="history-list">
+                    <div class="history-item">初始状态</div>
+                    <div class="history-item">绘制直线</div>
+                    <div class="history-item">添加矩形</div>
+                </div>
+                <div class="history-info">
+                    操作记录: <span id="historyCount">3</span> 步
+                </div>
+            </div>
+        </div>
+        
+        <!-- 文字输入模态框 -->
+        <div id="textModal" class="modal">
+            <div class="modal-content">
+                <h3><i class="fas fa-font"></i> 添加文字</h3>
+                <input type="text" id="textInput" placeholder="输入要添加的文字..." maxlength="50">
+                <div class="modal-buttons">
+                    <button id="confirmText" class="modal-btn confirm">确认</button>
+                    <button id="cancelText" class="modal-btn cancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 加载JavaScript文件 -->
+    <script src="CSS & JS/Drawing-board.js"></script>
+</body>
+</html>

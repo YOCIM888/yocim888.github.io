@@ -1,0 +1,729 @@
+<!-- system-user-setting.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统设置（管理员）</title>
+    <link rel="stylesheet" href="system-user-setting-files/system-user-setting.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 返回按钮 -->
+        <button id="back-btn" class="back-btn">
+            <i class="fas fa-chevron-left"></i> 返回
+        </button>
+        
+        <!-- 左侧导航栏 -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1><i class="fas fa-cog"></i> 系统设置</h1>
+                <div class="glitch" data-text="CYBER SETTINGS">SYSTEM SETTINGS</div>
+            </div>
+            
+            <nav class="nav-menu">
+                <div class="nav-section">
+                    <h2 class="nav-title"><i class="fas fa-home"></i> 主页</h2>
+                </div>
+                
+                <div class="nav-section">
+                    <h2 class="nav-title"><i class="fas fa-server"></i> 系统</h2>
+                    <ul class="nav-list">
+                        <li class="nav-item active" data-id="bluetooth">
+                            <i class="fas fa-bluetooth"></i> 蓝牙和其他设备
+                        </li>
+                        <li class="nav-item" data-id="network">
+                            <i class="fas fa-wifi"></i> 网络和 Internet
+                        </li>
+                        <li class="nav-item" data-id="personalization">
+                            <i class="fas fa-palette"></i> 个性化
+                        </li>
+                        <li class="nav-item" data-id="apps">
+                            <i class="fas fa-th"></i> 应用
+                        </li>
+                        <li class="nav-item" data-id="accounts">
+                            <i class="fas fa-user"></i> 帐户
+                        </li>
+                        <li class="nav-item" data-id="time">
+                            <i class="fas fa-clock"></i> 时间和语言
+                        </li>
+                        <li class="nav-item" data-id="gaming">
+                            <i class="fas fa-gamepad"></i> 游戏
+                        </li>
+                        <li class="nav-item" data-id="accessibility">
+                            <i class="fas fa-universal-access"></i> 辅助功能
+                        </li>
+                        <li class="nav-item" data-id="privacy">
+                            <i class="fas fa-shield-alt"></i> 隐私和安全性
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h2 class="nav-title"><i class="fas fa-sync-alt"></i> 更新</h2>
+                    <ul class="nav-list">
+                        <li class="nav-item" data-id="updates">
+                            <i class="fas fa-cloud-download-alt"></i> system 更新
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="system-status">
+                <div class="status-line">
+                    <span>系统状态:</span>
+                    <span class="status-online">在线</span>
+                </div>
+                <div class="status-line">
+                    <span>安全级别:</span>
+                    <span class="status-secure">高度安全</span>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- 右侧内容区域 -->
+        <main class="content">
+            <header class="content-header">
+                <h2 id="content-title">蓝牙和其他设备</h2>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="搜索设置...">
+                </div>
+            </header>
+            
+            <div class="content-body" id="content-body">
+                <!-- 默认内容：蓝牙设备 -->
+                <div class="content-section active" id="bluetooth-content">
+                    <h3><i class="fas fa-bluetooth-b"></i> 蓝牙设备管理</h3>
+                    <div class="card-grid">
+                        <div class="card">
+                            <div class="card-header">
+                                <i class="fas fa-headphones"></i>
+                                <h4>音频设备</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>已连接: CyberPunk 耳机</p>
+                                <p>电池: 85%</p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="card-btn">管理</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <i class="fas fa-keyboard"></i>
+                                <h4>输入设备</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>已连接: 机械键盘</p>
+                                <p>鼠标: CyberMouse X</p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="card-btn">配置</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h4>移动设备</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>已配对: Neural Phone</p>
+                                <p>状态: 同步中</p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="card-btn">连接</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-panel">
+                        <h4>蓝牙设置</h4>
+                        <div class="setting-item">
+                            <span>蓝牙开关</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>设备可见性</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>自动连接</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 网络设置 -->
+                <div class="content-section" id="network-content">
+                    <h3><i class="fas fa-wifi"></i> 网络和 Internet</h3>
+                    <div class="connection-status">
+                        <div class="status-indicator connected">
+                            <div class="pulse"></div>
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <div class="status-info">
+                            <h4>已连接至 NeuralNet</h4>
+                            <p>速度: 2.4 Gbps | 安全: WPA3</p>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-panel">
+                        <h4>网络设置</h4>
+                        <div class="setting-item">
+                            <span>Wi-Fi</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>飞行模式</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>VPN</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="available-networks">
+                        <h4>可用网络</h4>
+                        <div class="network-list">
+                            <div class="network-item">
+                                <i class="fas fa-wifi strong"></i>
+                                <div>
+                                    <h5>NeuralNet</h5>
+                                    <p>已连接 | 信号强度: 强</p>
+                                </div>
+                            </div>
+                            <div class="network-item">
+                                <i class="fas fa-wifi medium"></i>
+                                <div>
+                                    <h5>CyberHub</h5>
+                                    <p>开放 | 信号强度: 中</p>
+                                </div>
+                            </div>
+                            <div class="network-item">
+                                <i class="fas fa-wifi weak"></i>
+                                <div>
+                                    <h5>PublicNet</h5>
+                                    <p>受保护 | 信号强度: 弱</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 个性化设置 -->
+                <div class="content-section" id="personalization-content">
+                    <h3><i class="fas fa-palette"></i> 个性化</h3>
+                    <div class="theme-selector">
+                        <h4>主题颜色</h4>
+                        <div class="color-options">
+                            <div class="color-option active" style="background-color: #0ff;">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="color-option" style="background-color: #f0f;"></div>
+                            <div class="color-option" style="background-color: #ff0;"></div>
+                            <div class="color-option" style="background-color: #0f0;"></div>
+                            <div class="color-option" style="background-color: #00f;"></div>
+                            <div class="color-option" style="background-color: #f00;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="wallpaper-grid">
+                        <h4>壁纸选择</h4>
+                        <div class="wallpaper-options">
+                            <div class="wallpaper-option active" style="background-image: linear-gradient(135deg, #0f0f1a, #3a0ca3);">
+                                <i class="fas fa-check"></i>
+                                <span>赛博城市</span>
+                            </div>
+                            <div class="wallpaper-option" style="background-image: linear-gradient(135deg, #1a0f0f, #ca6702);">
+                                <span>霓虹日落</span>
+                            </div>
+                            <div class="wallpaper-option" style="background-image: linear-gradient(135deg, #0f1a0f, #38b000);">
+                                <span>矩阵绿</span>
+                            </div>
+                            <div class="wallpaper-option" style="background-image: linear-gradient(135deg, #1a0f1a, #9d4edd);">
+                                <span>紫色代码</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-panel">
+                        <h4>视觉效果</h4>
+                        <div class="setting-item">
+                            <span>透明效果</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>动画效果</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>霓虹边框</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 应用管理 -->
+                <div class="content-section" id="apps-content">
+                    <h3><i class="fas fa-th"></i> 应用管理</h3>
+                    <div class="app-list">
+                        <div class="app-item">
+                            <div class="app-icon" style="background: linear-gradient(135deg, #3a0ca3, #4361ee);">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="app-info">
+                                <h4>神经接口</h4>
+                                <p>版本 2.4.1 | 大小 4.2 GB</p>
+                            </div>
+                            <button class="app-action">卸载</button>
+                        </div>
+                        <div class="app-item">
+                            <div class="app-icon" style="background: linear-gradient(135deg, #f72585, #b5179e);">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="app-info">
+                                <h4>视网膜扫描</h4>
+                                <p>版本 1.8.3 | 大小 2.1 GB</p>
+                            </div>
+                            <button class="app-action">更新</button>
+                        </div>
+                        <div class="app-item">
+                            <div class="app-icon" style="background: linear-gradient(135deg, #4cc9f0, #4895ef);">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="app-info">
+                                <h4>防火墙协议</h4>
+                                <p>版本 5.2.0 | 大小 3.7 GB</p>
+                            </div>
+                            <button class="app-action">配置</button>
+                        </div>
+                        <div class="app-item">
+                            <div class="app-icon" style="background: linear-gradient(135deg, #f8961e, #f3722c);">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="app-info">
+                                <h4>系统加速器</h4>
+                                <p>版本 3.1.4 | 大小 1.9 GB</p>
+                            </div>
+                            <button class="app-action">优化</button>
+                        </div>
+                    </div>
+                    
+                    <div class="storage-info">
+                        <h4>存储使用情况</h4>
+                        <div class="storage-bar">
+                            <div class="storage-fill" style="width: 78%; background-color: #4cc9f0;"></div>
+                        </div>
+                        <p>已用 124 GB / 160 GB</p>
+                    </div>
+                </div>
+                
+                <!-- 帐户设置 -->
+                <div class="content-section" id="accounts-content">
+                    <h3><i class="fas fa-user"></i> 帐户管理</h3>
+                    <div class="account-profile">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h4>YOCIM（陈先生）</h4>
+                            <p>管理员 | 最后登录: 今天 14:32</p>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-panel">
+                        <h4>帐户设置</h4>
+                        <div class="setting-item">
+                            <span>双重验证</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>生物识别登录</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>自动同步</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="linked-accounts">
+                        <h4>关联帐户</h4>
+                        <div class="linked-account">
+                            <i class="fab fa-google" style="color: #DB4437;"></i>
+                            <span>Google</span>
+                            <span class="status-connected">已连接</span>
+                        </div>
+                        <div class="linked-account">
+                            <i class="fab fa-microsoft" style="color: #00a4ef;"></i>
+                            <span>Microsoft</span>
+                            <span class="status-connected">已连接</span>
+                        </div>
+                        <div class="linked-account">
+                            <i class="fab fa-github" style="color: #f5f5f5;"></i>
+                            <span>GitHub</span>
+                            <span class="status-disconnected">未连接</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 时间和语言 -->
+                <div class="content-section" id="time-content">
+                    <h3><i class="fas fa-clock"></i> 时间和语言</h3>
+                    <div class="datetime-display">
+                        <div class="time-display">
+                            <span id="current-time">14:32:45</span>
+                        </div>
+                        <div class="date-display">
+                            <span id="current-date">2077年10月23日</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timezone-selector">
+                        <h4>时区设置</h4>
+                        <div class="select-wrapper">
+                            <select>
+                                <option>亚洲/上海 (UTC+8)</option>
+                                <option>亚洲/东京 (UTC+9)</option>
+                                <option>美国/纽约 (UTC-5)</option>
+                                <option>欧洲/伦敦 (UTC+0)</option>
+                                <option>赛博空间/矩阵时间</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="language-selector">
+                        <h4>语言设置</h4>
+                        <div class="language-options">
+                            <div class="language-option active">
+                                <i class="fas fa-check"></i>
+                                <span>简体中文</span>
+                            </div>
+                            <div class="language-option">
+                                <span>English</span>
+                            </div>
+                            <div class="language-option">
+                                <span>日本語</span>
+                            </div>
+                            <div class="language-option">
+                                <span>Español</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-panel">
+                        <h4>时间格式</h4>
+                        <div class="setting-item">
+                            <span>24小时制</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>自动时间同步</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 游戏设置 -->
+                <div class="content-section" id="gaming-content">
+                    <h3><i class="fas fa-gamepad"></i> 游戏设置</h3>
+                    <div class="gaming-mode">
+                        <h4>游戏模式</h4>
+                        <div class="mode-toggle">
+                            <button class="mode-btn active">性能模式</button>
+                            <button class="mode-btn">平衡模式</button>
+                            <button class="mode-btn">静音模式</button>
+                        </div>
+                    </div>
+                    
+                    <div class="performance-stats">
+                        <h4>性能统计</h4>
+                        <div class="stat-grid">
+                            <div class="stat-item">
+                                <span>GPU 温度</span>
+                                <span class="stat-value">68°C</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>帧率限制</span>
+                                <span class="stat-value">144 FPS</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>延迟</span>
+                                <span class="stat-value">12 ms</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>显存使用</span>
+                                <span class="stat-value">6.2 GB</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-panel">
+                        <h4>游戏增强</h4>
+                        <div class="setting-item">
+                            <span>游戏加速</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>屏幕录制</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>按键宏</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 辅助功能 -->
+                <div class="content-section" id="accessibility-content">
+                    <h3><i class="fas fa-universal-access"></i> 辅助功能</h3>
+                    <div class="accessibility-options">
+                        <div class="accessibility-card">
+                            <i class="fas fa-eye"></i>
+                            <h4>视觉辅助</h4>
+                            <p>高对比度、屏幕放大镜、文本大小调整</p>
+                            <button class="card-btn">配置</button>
+                        </div>
+                        <div class="accessibility-card">
+                            <i class="fas fa-ear"></i>
+                            <h4>听觉辅助</h4>
+                            <p>单声道音频、视觉通知、字幕</p>
+                            <button class="card-btn">配置</button>
+                        </div>
+                        <div class="accessibility-card">
+                            <i class="fas fa-hand-point-up"></i>
+                            <h4>交互辅助</h4>
+                            <p>粘滞键、筛选键、鼠标键</p>
+                            <button class="card-btn">配置</button>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-panel">
+                        <h4>辅助功能设置</h4>
+                        <div class="setting-item">
+                            <span>高对比度模式</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>屏幕阅读器</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>字幕显示</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 隐私和安全性 -->
+                <div class="content-section" id="privacy-content">
+                    <h3><i class="fas fa-shield-alt"></i> 隐私和安全性</h3>
+                    <div class="security-status">
+                        <div class="security-indicator secure">
+                            <i class="fas fa-shield-check"></i>
+                        </div>
+                        <div class="security-info">
+                            <h4>系统安全状态: 受保护</h4>
+                            <p>所有安全功能已启用并正常运行</p>
+                        </div>
+                    </div>
+                    
+                    <div class="security-features">
+                        <div class="feature-item">
+                            <i class="fas fa-virus" style="color: #4cc9f0;"></i>
+                            <div>
+                                <h5>病毒防护</h5>
+                                <p>实时保护已启用</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-firewall" style="color: #f72585;"></i>
+                            <div>
+                                <h5>防火墙</h5>
+                                <p>网络保护已启用</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-lock" style="color: #3a0ca3;"></i>
+                            <div>
+                                <h5>设备加密</h5>
+                                <p>驱动器已加密</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-panel">
+                        <h4>隐私设置</h4>
+                        <div class="setting-item">
+                            <span>位置服务</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>诊断数据</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>广告ID</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- system 更新 -->
+                <div class="content-section" id="updates-content">
+                    <h3><i class="fas fa-cloud-download-alt"></i> system 更新</h3>
+                    <div class="update-status">
+                        <div class="update-indicator">
+                            <i class="fas fa-sync-alt fa-spin"></i>
+                        </div>
+                        <div class="update-info">
+                            <h4>检查更新中...</h4>
+                            <p>正在查找最新的 system 更新</p>
+                        </div>
+                    </div>
+                    
+                    <div class="update-details">
+                        <h4>可用更新</h4>
+                        <div class="update-item">
+                            <div class="update-header">
+                                <h5>System OS 更新 2077.10</h5>
+                                <span class="update-size">2.4 GB</span>
+                            </div>
+                            <p>包含安全增强、性能优化和新功能</p>
+                            <div class="update-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%;"></div>
+                                </div>
+                                <span>65% 已下载</span>
+                            </div>
+                        </div>
+                        
+                        <div class="update-item">
+                            <div class="update-header">
+                                <h5>安全补丁 2077.9</h5>
+                                <span class="update-size">450 MB</span>
+                            </div>
+                            <p>关键安全更新，推荐立即安装</p>
+                            <button class="update-btn">立即安装</button>
+                        </div>
+                        
+                        <div class="update-item">
+                            <div class="update-header">
+                                <h5>驱动程序更新</h5>
+                                <span class="update-size">320 MB</span>
+                            </div>
+                            <p>图形和网络驱动程序更新</p>
+                            <button class="update-btn">下载</button>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-panel">
+                        <h4>更新设置</h4>
+                        <div class="setting-item">
+                            <span>自动下载更新</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>自动安装更新</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <span>更新通知</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- 底部装饰 -->
+    <div class="cyber-line"></div>
+    
+    <script src="system-user-setting-files/system-user-setting.js"></script>
+</body>
+</html>
