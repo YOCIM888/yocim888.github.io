@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>赛博刺客 - 未来城市横版动作游戏</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Game-CSS&JS/cycber-assassin.css">
+</head>
+<body>
+    <!-- 游戏容器 -->
+    <div class="game-container">
+        <div class="game-scene" id="gameScene">
+            <!-- 未来城市背景 -->
+            <div class="city-background">
+                <div class="building"></div>
+                <div class="building"></div>
+                <div class="building"></div>
+                <div class="building"></div>
+                <div class="building"></div>
+                <div class="building"></div>
+                
+                <div class="neon-sign">NEON ZONE</div>
+                <div class="neon-sign">CYBERNETIC</div>
+                <div class="neon-sign">SYNTH CITY</div>
+                
+                <div class="skyline"></div>
+            </div>
+            
+            <!-- 地面 -->
+            <div class="ground">
+                <div class="ground-line"></div>
+            </div>
+            
+            <!-- 玩家 -->
+            <div class="player" id="player">
+                <div class="player-head"></div>
+                <div class="player-helmet"></div>
+                <div class="player-body"></div>
+                <div class="player-arm left"></div>
+                <div class="player-arm right"></div>
+                <div class="player-leg left"></div>
+                <div class="player-leg right"></div>
+                <div class="player-energy-core"></div>
+                
+                <!-- 武器 -->
+                <div class="weapon sword" id="sword"></div>
+                <div class="weapon gun" id="gun">
+                    <div class="gun-barrel"></div>
+                </div>
+            </div>
+            
+            <!-- 敌人和子弹会通过JS动态生成 -->
+        </div>
+        
+        <!-- 游戏UI -->
+        <div class="game-ui">
+            <div class="health-container">
+                <div class="health-bar">
+                    <div class="health-fill" id="healthFill" style="width: 100%"></div>
+                </div>
+                <div class="health-text">生命值: <span id="healthText">10</span>/10</div>
+            </div>
+            
+            <div class="score-container">
+                <div class="score-title">得分</div>
+                <div class="score" id="score">0</div>
+            </div>
+        </div>
+        
+        <!-- 游戏说明 - 可关闭 -->
+        <div class="instructions" id="instructions">
+            <div class="instructions-header">
+                <h3>游戏控制</h3>
+                <button class="close-btn" id="closeInstructions">&times;</button>
+            </div>
+            <p><span class="key">←</span> <span class="key">→</span> 移动角色</p>
+            <p><span class="key">刀</span> 近战攻击 (可挡子弹)</p>
+            <p><span class="key">枪</span> 远程射击</p>
+            <p>敌人: <span style="color:#ff5555">刀兵</span> <span style="color:#55ff55">枪兵</span> <span style="color:#5555ff">盾兵</span></p>
+            <p>难度会随时间增加！</p>
+        </div>
+        
+        <!-- 游戏消息 -->
+        <div class="game-message" id="gameMessage">
+            <h2 id="messageTitle">游戏结束</h2>
+            <p id="messageText">你的得分: <span id="finalScore">0</span></p>
+            <button class="restart-btn" id="restartBtn">重新开始</button>
+        </div>
+    </div>
+
+    <!-- 虚拟控制区域 (由cycber-assassin-virtual-control.js动态生成) -->
+    <div id="virtualControls"></div>
+
+    <!-- 脚本文件 -->
+    <script src="Game-CSS&JS/cycber-assassin.js"></script>
+    <script src="Game-CSS&JS/cycber-assassin-virtual-control.js"></script>
+</body>
+</html>

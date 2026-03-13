@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 | 赛博空间</title>
+    <link rel="stylesheet" href="Game-CSS&JS/2048.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cyber-background">
+        <div class="grid-lines"></div>
+        <div class="particles"></div>
+    </div>
+    
+    <div class="game-wrapper">
+        <header class="cyber-header">
+            <div class="header-content">
+                <h1 class="cyber-title">
+                    <span class="cyber-glitch" data-text="2048">2048</span>
+                    <span class="cyber-subtitle">赛博空间</span>
+                </h1>
+                <div class="header-controls">
+                    <div class="cyber-score-display">
+                        <div class="score-container cyber-panel">
+                            <div class="score-label">SCORE</div>
+                            <div class="score-value" id="current-score">0</div>
+                        </div>
+                        <div class="best-container cyber-panel">
+                            <div class="best-label">BEST</div>
+                            <div class="best-value" id="best-score">0</div>
+                        </div>
+                    </div>
+                    <button class="cyber-button" id="new-game-btn">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>新游戏</span>
+                        <div class="cyber-button-glow"></div>
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <main class="game-main">
+            <div class="game-grid-container">
+                <div class="grid-background cyber-panel">
+                    <div class="grid" id="grid">
+                        <!-- 4x4网格将通过JavaScript动态生成 -->
+                    </div>
+                </div>
+                
+                <div class="tile-container" id="tile-container">
+                    <!-- 方块将通过JavaScript动态添加 -->
+                </div>
+                
+                <div class="game-message cyber-panel" id="game-message">
+                    <div class="message-content">
+                        <h2 class="message-title" id="message-title"></h2>
+                        <p class="message-subtitle" id="message-subtitle"></p>
+                        <button class="cyber-button message-button" id="message-button">
+                            <i class="fas fa-redo"></i>
+                            <span>继续</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="game-controls">
+                <div class="controls-row">
+                    <button class="cyber-control-btn" id="up-btn" data-direction="up">
+                        <i class="fas fa-chevron-up"></i>
+                        <span>上</span>
+                    </button>
+                </div>
+                <div class="controls-row">
+                    <button class="cyber-control-btn" id="left-btn" data-direction="left">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>左</span>
+                    </button>
+                    <button class="cyber-control-btn" id="down-btn" data-direction="down">
+                        <i class="fas fa-chevron-down"></i>
+                        <span>下</span>
+                    </button>
+                    <button class="cyber-control-btn" id="right-btn" data-direction="right">
+                        <i class="fas fa-chevron-right"></i>
+                        <span>右</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="game-instructions">
+                <div class="instructions-container cyber-panel">
+                    <div class="instruction-item">
+                        <i class="fas fa-keyboard"></i>
+                        <span>使用<strong>方向键</strong>或<strong>WASD</strong>移动</span>
+                    </div>
+                    <div class="instruction-item">
+                        <i class="fas fa-mouse-pointer"></i>
+                        <span>点击按钮或滑动屏幕控制</span>
+                    </div>
+                    <div class="instruction-item">
+                        <i class="fas fa-bullseye"></i>
+                        <span>目标：合成<strong>2048</strong>方块</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="cyber-footer">
+            <div class="hacker-text">
+                <span class="cyber-text">SYSTEM: 2048.GAME // STATUS: ACTIVE // PLAYER: [USER]</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="Game-CSS&JS/2048.js"></script>
+</body>
+</html>

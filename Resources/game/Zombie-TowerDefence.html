@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝望防线 - 霓虹赛博版</title>
+    <link rel="stylesheet" href="Game-CSS&JS/Zombie-TowerDefence.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="neon-header">
+            <h1 class="neon-text" data-text="绝望防线">僵尸防线</h1>
+            <p class="subtitle neon-sub">植物大战僵尸 - 霓虹赛博版</p>
+        </header>
+        
+        <div class="game-stats">
+            <div class="sun-counter">
+                <div class="sun-icon">
+                    <i class="fas fa-sun"></i>
+                </div>
+                <span id="sunCount">300</span>
+            </div>
+            
+            <div class="level-info">
+                <div class="level">第 <span id="currentLevel">1</span> 关</div>
+                <div class="wave-container">
+                    <div class="wave-indicator">
+                        <div class="wave-progress" id="waveProgress"></div>
+                    </div>
+                    <div class="wave-text">波次: <span id="waveCount">1/5</span></div>
+                </div>
+            </div>
+            
+            <div class="stats-right">
+                <div class="zombies-remaining">
+                    剩余僵尸: <span id="zombiesLeft">10</span>
+                </div>
+                <div class="shovel-container">
+                    <div class="shovel-option" id="shovelBtn" title="铲车模式 - 点击一行清除该行所有植物">
+                        <i class="fas fa-truck-pickup"></i>
+                        <div class="shovel-cost">能量: 75</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <div class="lawn" id="lawn">
+                <div class="lawn-grid" id="lawnGrid"></div>
+                <div class="grid-overlay"></div>
+            </div>
+            
+            <div class="plants-panel">
+                <h2><i class="fas fa-seedling"></i> 植物选择</h2>
+                <div class="plant-options">
+                    <div class="plant-option plant-sunflower selected" data-plant="sunflower">
+                        <div class="plant-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div class="plant-cost">能量: <span>25</span></div>
+                        <div class="plant-name">能量花</div>
+                        <div class="plant-desc">生产能量</div>
+                    </div>
+                    
+                    <div class="plant-option plant-peashooter" data-plant="peashooter">
+                        <div class="plant-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="plant-cost">能量: <span>50</span></div>
+                        <div class="plant-name">激光射手</div>
+                        <div class="plant-desc">发射激光束</div>
+                    </div>
+                    
+                    <div class="plant-option plant-wallnut" data-plant="wallnut">
+                        <div class="plant-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="plant-cost">能量: <span>25</span></div>
+                        <div class="plant-name">能量盾</div>
+                        <div class="plant-desc">高耐久防御</div>
+                    </div>
+                    
+                    <div class="plant-option plant-cherrybomb" data-plant="cherrybomb">
+                        <div class="plant-icon">
+                            <i class="fas fa-bomb"></i>
+                        </div>
+                        <div class="plant-cost">能量: <span>75</span></div>
+                        <div class="plant-name">电磁脉冲</div>
+                        <div class="plant-desc">爆炸消灭周围僵尸</div>
+                    </div>
+                </div>
+                
+                <div class="game-controls">
+                    <button id="startBtn" class="neon-btn start-btn">
+                        <i class="fas fa-play"></i> 开始游戏
+                    </button>
+                    <button id="restartBtn" class="neon-btn restart-btn">
+                        <i class="fas fa-redo"></i> 重新开始
+                    </button>
+                </div>
+                
+                <div class="instructions">
+                    <h3><i class="fas fa-info-circle"></i> 游戏说明</h3>
+                    <p><i class="fas fa-mouse-pointer"></i> 选择植物，点击网格放置</p>
+                    <p><i class="fas fa-bolt"></i> 收集能量购买植物</p>
+                    <p><i class="fas fa-skull-crossbones"></i> 阻止僵尸到达左侧</p>
+                    <p><i class="fas fa-truck-pickup"></i> 铲车：点击一行清除该行植物</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="message" id="gameOverMessage">
+        <div class="message-content">
+            <h2><i class="fas fa-skull"></i> 系统崩溃</h2>
+            <p>僵尸突破了你的防火墙！</p>
+            <p>安全等级: <span id="finalLevel">1</span></p>
+            <button id="tryAgainBtn" class="neon-btn">
+                <i class="fas fa-sync-alt"></i> 重新启动
+            </button>
+        </div>
+    </div>
+    
+    <div class="message" id="levelCompleteMessage">
+        <div class="message-content">
+            <h2><i class="fas fa-trophy"></i> 入侵阻止</h2>
+            <p>成功清除所有威胁！</p>
+            <p>升级安全系统...</p>
+            <button id="nextLevelBtn" class="neon-btn">
+                <i class="fas fa-arrow-right"></i> 下一关
+            </button>
+        </div>
+    </div>
+
+    <script src="Game-CSS&JS/Zombie-TowerDefence.js"></script>
+</body>
+</html>

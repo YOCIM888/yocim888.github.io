@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>CONTRA 魂斗罗 - Web复刻版</title>
+    <link rel="stylesheet" href="Game-CSS&JS/contra.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- 开始界面 -->
+        <div id="start-screen" class="overlay">
+            <div class="title-container">
+                <h1 class="game-title">CONTRA</h1>
+                <h2 class="game-subtitle">魂斗罗</h2>
+                <div class="game-version">1988 KONAMI</div>
+            </div>
+            <div class="character-preview">
+                <div class="bill"></div>
+                <div class="lance"></div>
+            </div>
+            <div class="start-prompt">
+                <span class="blink">PRESS ENTER TO START</span>
+            </div>
+            <div class="credits">
+                <p>JAMES & BILL - SPECIAL FORCES</p>
+                <p>THE RED FALCON ORGANIZATION MUST BE DESTROYED</p>
+            </div>
+        </div>
+
+        <!-- 游戏结束界面 -->
+        <div id="game-over-screen" class="overlay hidden">
+            <h1 class="game-over-text">GAME OVER</h1>
+            <div class="final-score">
+                <p>FINAL SCORE: <span id="final-score-value">0</span></p>
+                <p>HI-SCORE: <span id="hi-score-value">0</span></p>
+            </div>
+            <div class="continue-prompt">
+                <span class="blink">PRESS ENTER TO RESTART</span>
+            </div>
+        </div>
+
+        <!-- 关卡完成界面 -->
+        <div id="level-clear-screen" class="overlay hidden">
+            <h1 class="stage-clear-text">STAGE CLEAR!</h1>
+            <div class="stage-bonus">
+                <p>LIFE BONUS: × <span id="life-bonus">3</span> × 5000</p>
+                <p>BONUS: <span id="stage-bonus-value">0</span></p>
+            </div>
+            <div class="continue-prompt">
+                <span class="blink">CONTINUE TO NEXT STAGE</span>
+            </div>
+        </div>
+
+        <!-- 继续倒计时界面 -->
+        <div id="continue-screen" class="overlay hidden">
+            <h1 class="continue-text">CONTINUE?</h1>
+            <div class="countdown" id="countdown">9</div>
+        </div>
+
+        <!-- 游戏UI HUD -->
+        <div id="game-hud" class="hidden">
+            <div class="hud-left">
+                <div class="score-container">
+                    <span class="hud-label">1P SCORE</span>
+                    <span class="hud-value" id="score-display">000000</span>
+                </div>
+                <div class="lives-container">
+                    <span class="hud-label">REST</span>
+                    <div class="lives-icons" id="lives-display"></div>
+                </div>
+            </div>
+            <div class="hud-center">
+                <div class="high-score">
+                    <span class="hud-label">HI-SCORE</span>
+                    <span class="hud-value" id="high-score-display">000000</span>
+                </div>
+            </div>
+            <div class="hud-right">
+                <div class="stage-container">
+                    <span class="hud-label" id="stage-name">STAGE 1</span>
+                </div>
+                <div class="weapon-container">
+                    <span class="hud-label">WEAPON</span>
+                    <span class="hud-value" id="weapon-display">RIFLE</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 移动端控制 -->
+        <div id="mobile-controls">
+            <div class="d-pad">
+                <div class="d-pad-center"></div>
+                <div class="d-pad-btn d-pad-up" id="btn-up">▲</div>
+                <div class="d-pad-btn d-pad-down" id="btn-down">▼</div>
+                <div class="d-pad-btn d-pad-left" id="btn-left">◀</div>
+                <div class="d-pad-btn d-pad-right" id="btn-right">▶</div>
+            </div>
+            <div class="action-buttons">
+                <button class="action-btn btn-b" id="btn-shoot">B</button>
+                <button class="action-btn btn-a" id="btn-jump">A</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="Game-CSS&JS/contra.js"></script>
+    <script src="Game-CSS&JS/contra-visual-control.js"></script>
+</body>
+</html>

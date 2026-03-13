@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>星际突击队 - 横板动作游戏</title>
+    <link rel="stylesheet" href="Game-CSS&JS/star-strike-forse.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="game-title">
+                <i class="fas fa-rocket"></i> 星际突击队
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-icon"><i class="fas fa-star"></i></div>
+                    <div class="stat-value" id="score">0</div>
+                    <div class="stat-label">分数</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                    <div class="stat-value" id="lives">3</div>
+                    <div class="stat-label">生命</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon"><i class="fas fa-flag"></i></div>
+                    <div class="stat-value" id="level">1</div>
+                    <div class="stat-label">关卡</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon"><i class="fas fa-bullseye"></i></div>
+                    <div class="stat-value" id="distance">0m</div>
+                    <div class="stat-label">距离</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-canvas-container">
+            <canvas id="gameCanvas"></canvas>
+            
+            <div id="startScreen" class="game-overlay">
+                <div class="overlay-content">
+                    <h1 class="overlay-title">
+                        <i class="fas fa-rocket"></i> 星际突击队
+                    </h1>
+                    <p class="overlay-text">
+                        你是一名星际突击队员，任务是清除外星威胁！<br>
+                        使用控制按钮移动、跳跃和射击，击败所有敌人并到达终点！
+                    </p>
+                    <div class="control-hint">
+                        <div class="hint-item">
+                            <span class="hint-key"><i class="fas fa-arrow-up"></i></span>
+                            <span class="hint-text">向上移动</span>
+                        </div>
+                        <div class="hint-item">
+                            <span class="hint-key"><i class="fas fa-arrow-left"></i></span>
+                            <span class="hint-text">向左移动</span>
+                        </div>
+                        <div class="hint-item">
+                            <span class="hint-key"><i class="fas fa-arrow-right"></i></span>
+                            <span class="hint-text">向右移动</span>
+                        </div>
+                        <div class="hint-item">
+                            <span class="hint-key"><i class="fas fa-bomb"></i></span>
+                            <span class="hint-text">射击攻击</span>
+                        </div>
+                        <div class="hint-item">
+                            <span class="hint-key"><i class="fas fa-arrow-circle-up"></i></span>
+                            <span class="hint-text">跳跃</span>
+                        </div>
+                    </div>
+                    <button id="startBtn" class="btn btn-start">
+                        <i class="fas fa-play"></i> 开始任务
+                    </button>
+                    <p class="mobile-note">使用屏幕下方的虚拟按钮控制角色</p>
+                </div>
+            </div>
+            
+            <div id="gameOverScreen" class="game-overlay hidden">
+                <div class="overlay-content">
+                    <h1 class="overlay-title">
+                        <i class="fas fa-skull-crossbones"></i> 任务失败
+                    </h1>
+                    <p class="overlay-text">你的最终得分：<span id="finalScore">0</span></p>
+                    <p class="overlay-text">到达距离：<span id="finalDistance">0m</span></p>
+                    <button id="restartBtn" class="btn btn-start">
+                        <i class="fas fa-redo"></i> 重新开始
+                    </button>
+                </div>
+            </div>
+            
+            <div id="levelCompleteScreen" class="game-overlay hidden">
+                <div class="overlay-content">
+                    <h1 class="overlay-title">
+                        <i class="fas fa-trophy"></i> 关卡完成！
+                    </h1>
+                    <p class="overlay-text">恭喜你通过了关卡 <span id="completedLevel">1</span>！</p>
+                    <p class="overlay-text">获得奖励：<span id="levelBonus">500</span> 分</p>
+                    <button id="nextLevelBtn" class="btn btn-start">
+                        <i class="fas fa-forward"></i> 下一关
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 虚拟控制按钮 -->
+        <div class="controls-container">
+            <div class="left-controls">
+                <div class="dpad">
+                    <button class="control-btn move-up" id="upBtn">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                    <div class="dpad-horizontal">
+                        <button class="control-btn move-left" id="leftBtn">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <button class="control-btn move-right" id="rightBtn">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <button class="control-btn move-down" id="downBtn">
+                        <i class="fas fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="right-controls">
+                <button class="control-btn action-btn" id="actionBtn">
+                    <i class="fas fa-bomb"></i>
+                    <span class="btn-label">射击</span>
+                </button>
+                <button class="control-btn jump-btn" id="jumpBtn">
+                    <i class="fas fa-arrow-circle-up"></i>
+                    <span class="btn-label">跳跃</span>
+                </button>
+                <button class="control-btn special-btn" id="specialBtn">
+                    <i class="fas fa-bolt"></i>
+                    <span class="btn-label">技能</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 游戏指令提示 -->
+        <div class="game-instructions">
+            <p><i class="fas fa-info-circle"></i> 游戏说明：使用方向按钮移动角色，跳跃按钮躲避障碍，射击按钮攻击敌人。每击败一个敌人获得100分，到达终点完成关卡。</p>
+        </div>
+    </div>
+
+    <script src="Game-CSS&JS/star-strike-forse.js"></script>
+    <script src="Game-CSS&JS/star-strike-forse-visual-control.js"></script>
+</body>
+</html>

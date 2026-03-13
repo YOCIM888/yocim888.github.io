@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛博消消乐</title>
+    <link rel="stylesheet" href="Game-CSS&JS/Kill-BOX.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1><i class="fas fa-gamepad"></i> 赛博消消乐</h1>
+            <p class="subtitle">匹配三个或以上相同方块即可消除</p>
+        </div>
+        
+        <div class="game-main">
+            <div class="game-board-section">
+                <div class="board-container">
+                    <div id="game-grid"></div>
+                </div>
+                <div class="game-status" id="game-status">
+                    游戏准备中...
+                </div>
+            </div>
+            
+            <div class="game-controls-section">
+                <div class="stats-panel">
+                    <h2><i class="fas fa-chart-line"></i> 游戏状态</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label"><i class="fas fa-star"></i> 得分：</span>
+                            <span id="score" class="stat-value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label"><i class="fas fa-clock"></i> 时间：</span>
+                            <span id="time" class="stat-value">300s</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label"><i class="fas fa-shoe-prints"></i> 剩余步数：</span>
+                            <span id="moves" class="stat-value">99</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label"><i class="fas fa-bolt"></i> 连击数：</span>
+                            <span id="combo" class="stat-value">0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="controls-panel">
+                    <h2><i class="fas fa-cogs"></i> 控制面板</h2>
+                    <div class="buttons-grid">
+                        <button id="restart-btn" class="btn-cyber">
+                            <i class="fas fa-redo"></i> 重新开始
+                        </button>
+                        <button id="hint-btn" class="btn-cyber">
+                            <i class="fas fa-lightbulb"></i> 提示 <span id="hint-count">3</span>
+                        </button>
+                        <button id="sound-btn" class="btn-cyber">
+                            <i class="fas fa-volume-up"></i> 音效
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="instructions-panel">
+                    <h2><i class="fas fa-info-circle"></i> 游戏规则</h2>
+                    <ul>
+                        <li><i class="fas fa-mouse-pointer"></i> 点击选择方块，再点击相邻方块交换</li>
+                        <li><i class="fas fa-bullseye"></i> 匹配3个或以上相同方块即可消除</li>
+                        <li><i class="fas fa-tachometer-alt"></i> 每次交换消耗1步数</li>
+                        <li><i class="fas fa-fire"></i> 连击可获得额外分数</li>
+                        <li><i class="fas fa-hourglass-end"></i> 时间或步数用尽则游戏结束</li>
+                    </ul>
+                </div>
+                
+                <div class="color-legend">
+                    <h3><i class="fas fa-palette"></i> 方块颜色</h3>
+                    <div class="colors-grid">
+                        <div class="color-item" data-color="1">
+                            <div class="color-sample neon-red"></div>
+                            <span>火焰红</span>
+                        </div>
+                        <div class="color-item" data-color="2">
+                            <div class="color-sample neon-cyan"></div>
+                            <span>赛博青</span>
+                        </div>
+                        <div class="color-item" data-color="3">
+                            <div class="color-sample neon-yellow"></div>
+                            <span>能量黄</span>
+                        </div>
+                        <div class="color-item" data-color="4">
+                            <div class="color-sample neon-green"></div>
+                            <span>矩阵绿</span>
+                        </div>
+                        <div class="color-item" data-color="5">
+                            <div class="color-sample neon-blue"></div>
+                            <span>科技蓝</span>
+                        </div>
+                        <div class="color-item" data-color="6">
+                            <div class="color-sample neon-purple"></div>
+                            <span>霓虹紫</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-footer">
+            <div class="combo-display" id="combo-display">
+                <span>连击!</span>
+                <div id="combo-value">0</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Game-CSS&JS/Kill-BOX.js"></script>
+</body>
+</html>
