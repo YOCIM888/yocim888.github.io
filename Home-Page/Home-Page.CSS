@@ -11,7 +11,7 @@ html {
 }
 
 body {/* 背景图片的路径（本地或网络图片） */
-            background-image: url('Resources/picture/卡提西亚.png');  
+            background-image: url('Resources/picture/卡提西亚.jpg');  
             /* 让背景覆盖整个页面，不变形 */
             background-size: cover;  
             /* 背景不重复平铺 */
