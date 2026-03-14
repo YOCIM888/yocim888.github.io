@@ -1162,63 +1162,83 @@ body.dark .modal-btn.cancel {
 
 /* 手机 (≤700px) */
 @media (max-width: 700px) {
-    /* ----- 头部压缩 ----- */
+    /* ----- 头部固定高度 ----- */
     .header {
-        padding: 0.5rem 3%;
+        height: 60px;               /* 固定高度 */
+        padding: 0 3%;              /* 上下内边距为0，由内部元素垂直居中 */
         gap: 0.5rem;
+        align-items: center;        /* 垂直居中 */
     }
+
+    /* 左侧logo缩放 */
     .logo {
         font-size: 1.2rem;
+        line-height: 1;             /* 防止撑高 */
     }
     .logo i {
         font-size: 1.5rem;
     }
+
+    /* 导航链接：只保留“首页”，其余隐藏（或改用汉堡菜单） */
     .nav-links {
-        gap: 0.8rem;
+        gap: 0.5rem;
+        flex-shrink: 1;              /* 允许收缩 */
+        min-width: 0;                /* 防止flex项目溢出 */
     }
     .nav-links a {
         font-size: 0.9rem;
         padding: 0.2rem 0;
+        white-space: nowrap;         /* 文字不换行 */
     }
-    /* 搜索框强制在一行 */
+    /* 示例：隐藏除第一个外的所有链接（可自行调整） */
+    .nav-links a:not(:first-child) {
+        display: none;
+    }
+    /* 如果使用汉堡菜单，可在此添加图标样式（需配合HTML） */
+
+    /* 右侧按钮区域 */
+    .header-right {
+        gap: 5px;                    /* 减小间隙 */
+        flex-shrink: 0;              /* 防止被压缩 */
+    }
+
+    /* 统一所有圆形按钮尺寸 */
+    .header-right .avatar-link,
+    .header-right .player-icon,
+    .header-right .theme-toggle {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;             /* 图标大小适当缩小 */
+    }
+
+    /* 头像图片适应 */
+    .header-right .avatar-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* 搜索框调整（保持原样） */
     .search-container {
         flex-wrap: nowrap !important;
-        background: rgba(255,255,255,0.8);
-        backdrop-filter: blur(4px);
-        border-radius: 60px;
         padding: 0.1rem 0.1rem 0.1rem 1rem;
-        width: 100%;
-        max-width: 100%;
         margin: 0;
     }
     .search-input {
         padding: 0.6rem 0.5rem;
         font-size: 0.9rem;
-        width: auto;
-        flex: 1;
-        background: transparent;
-        border: none;
     }
     .search-btn {
         padding: 0.5rem 1.2rem;
         font-size: 0.9rem;
-        white-space: nowrap;
-        width: auto;
-    }
-    .header-right .avatar-link,
-    .player-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 1.1rem;
     }
 
-    /* ----- 侧边栏紧贴 header 下方 ----- */
+    /* ----- 侧边栏紧贴头部下方 ----- */
     .sidebar {
-        top: 70px !important;
-        height: calc(100vh - 70px) !important;
+        top: 60px !important;                /* 与头部高度一致 */
+        height: calc(100vh - 60px) !important; /* 减去头部高度 */
     }
 
-    /* 移动端默认收起侧边栏（宽度70px，仅图标） */
+    /* 移动端默认收起侧边栏（仅图标） */
     .sidebar {
         width: 70px !important;
     }
@@ -1241,7 +1261,7 @@ body.dark .modal-btn.cancel {
         margin-left: 70px !important;
     }
 
-    /* 手动展开侧边栏（通过 JS 切换类）覆盖默认收起 */
+    /* 手动展开侧边栏（通过JS切换类） */
     .sidebar:not(.collapsed) {
         width: 200px !important;
     }
