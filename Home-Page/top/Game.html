@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 2026 游戏大选 · 3A/端游/手游 各10款 (无米哈游)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+
+        body {
+            background: #0d0b1a;
+            background-image: radial-gradient(circle at 30% 10%, #1f1b33 0%, #0b0820 100%);
+            min-height: 100vh;
+            padding: 2rem 1.2rem;
+            color: #f0eaff;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* 头部 */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #b5a9ff, #ffb3e6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+            filter: drop-shadow(0 0 15px #6344c0);
+        }
+
+        .sub-line {
+            color: #ad9fe8;
+            font-size: 1.2rem;
+            margin: 0.8rem 0 2rem;
+            border-bottom: 2px dashed #5f4bbd;
+            padding-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .rule-badge {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 2rem;
+            margin: 2rem 0 1.5rem;
+        }
+
+        .rule-item {
+            background: #1e1840;
+            border-radius: 60px;
+            padding: 0.5rem 1.8rem;
+            border: 1px solid #5f4bc0;
+            color: #cfc2ff;
+            font-weight: 500;
+            font-size: 0.95rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .rule-item strong {
+            color: white;
+            font-weight: 700;
+        }
+
+        /* 三大板块标签切换 (静态) */
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 2.5rem 0 1.5rem;
+        }
+
+        .tab {
+            background: #1d1738;
+            border: 1.5px solid #4f3c9e;
+            border-radius: 50px;
+            padding: 0.8rem 2.8rem;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #b7a8ff;
+            cursor: default;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+            transition: 0.1s;
+        }
+
+        .tab.active {
+            background: linear-gradient(145deg, #523dbe, #352b70);
+            border-color: #a98eff;
+            color: white;
+            box-shadow: 0 0 18px #8b70f5;
+        }
+
+        .tab-small {
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+            opacity: 0.8;
+        }
+
+        /* 卡片网格 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .game-card {
+            background: #16122ed9;
+            backdrop-filter: blur(10px);
+            border-radius: 36px;
+            padding: 1.6rem 1.4rem 1.8rem;
+            border: 1px solid #4f3d9b;
+            box-shadow: 0 20px 30px -12px #00000080, 0 0 0 1px #352d5b inset;
+            transition: all 0.15s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-6px);
+            border-color: #a288ff;
+            background: #1f1946;
+            box-shadow: 0 25px 40px -10px #221c4b;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .platform-tag {
+            background: #2f2666;
+            color: #cfc3ff;
+            border-radius: 40px;
+            padding: 0.2rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid #6e59cf;
+        }
+
+        .badge-3a {
+            background: #b35f2e;
+            color: #fae3d0;
+            border-color: #f8a76b;
+        }
+
+        .badge-pc {
+            background: #306f6f;
+            color: #c8f0f0;
+            border-color: #3dbbbb;
+        }
+
+        .badge-mobile {
+            background: #7b4b9b;
+            color: #f0d9ff;
+            border-color: #bc8cf5;
+        }
+
+        .game-title {
+            font-size: 1.6rem;
+            font-weight: 750;
+            line-height: 1.2;
+            color: #ffffff;
+            margin: 0.2rem 0 0.3rem;
+            letter-spacing: -0.01em;
+        }
+
+        .game-sub {
+            color: #b4a4f0;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            border-left: 3px solid #a183ff;
+            padding-left: 0.7rem;
+        }
+
+        /* 推荐理由框 */
+        .reason-box {
+            background: #221d42;
+            border-radius: 22px;
+            padding: 1rem 1.2rem;
+            margin: 0.6rem 0 1rem;
+            border: 1px solid #51419b;
+            box-shadow: inset 0 1px 4px #6f5ad0;
+        }
+
+        .reason-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #bbaaff;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.6px;
+            margin-bottom: 0.3rem;
+        }
+
+        .reason-label span {
+            background: #3a2f78;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+        }
+
+        .reason-text {
+            color: #ece6ff;
+            font-size: 0.96rem;
+            line-height: 1.5;
+        }
+
+        .extra-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.6rem;
+            font-size: 0.8rem;
+            color: #9485cf;
+        }
+
+        .extra-meta span {
+            background: #2c2552;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            border: 1px solid #5d4baa;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem 0 1rem;
+            border-top: 2px solid #3c2f74;
+            color: #9c8cd9;
+            font-size: 0.95rem;
+        }
+
+        .badge-warn {
+            background: #342b5e;
+            border-radius: 20px;
+            padding: 0.2rem 1.2rem;
+            display: inline-block;
+            border: 1px solid #8974e8;
+        }
+
+        hr {
+            border: 1px dashed #3b2e70;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 2.3rem; }
+            .tab { font-size: 1rem; padding: 0.6rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>⚡ 2026 强势游戏·三十⏐选 ⚡</h1>
+        <div class="sub-line">🎯 3A ⨯ 10 · 端游 ⨯ 10 · 手游 ⨯ 10 （不含米哈游）</div>
+        <div class="rule-badge">
+            <span class="rule-item"><strong>🔥 3A</strong> 殿堂级/续作/全新IP</span>
+            <span class="rule-item"><strong>💻 端游</strong> PC/主机独立或非3A但瞩目</span>
+            <span class="rule-item"><strong>📱 手游</strong> 2026新作/海外大作(无米哈游)</span>
+        </div>
+    </div>
+
+    <!-- 静态分类标签 (示意不可切换) -->
+    <div class="category-tabs">
+        <span class="tab active">🎮 3A 大作 <span class="tab-small">10款</span></span>
+        <span class="tab">🖥️ 端游 (PC/主机) <span class="tab-small">10款</span></span>
+        <span class="tab">📱 手游 <span class="tab-small">10款</span></span>
+    </div>
+
+    <!-- 1️⃣ 3A 大作部分 (10款) 数据来源 [citation:1][citation:5] 等 -->
+    <h2 style="color:#b7a5ff; margin: 0 0 0.5rem 0;">▸ 3A 级 · 年度重磅</h2>
+    <div class="grid">
+        <!-- 1. GTA6 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-3a">PS5/XSX</span><span>Rockstar</span></div>
+            <div class="game-title">侠盗猎车手6</div>
+            <div class="game-sub">Grand Theft Auto VI</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">开放世界天花板，Vice City回归，规模与细节传闻达“5A”级。2026年最受期待，没有之一。[citation:5]</div></div>
+            <div class="extra-meta"><span>2026.11.19</span><span>犯罪·开放世界</span></div>
+        </div>
+        <!-- 2. 生化危机 Requiem -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-3a">全平台</span><span>Capcom</span></div>
+            <div class="game-title">生化危机 Requiem</div>
+            <div class="game-sub">Resident Evil Requiem</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">FBI新主角格蕾丝，可切换第一/三人称，重返浣熊市。经典生存恐怖新章。[citation:1][citation:5]</div></div>
+            <div class="extra-meta"><span>2026.2.27</span><span>恐怖·射击</span></div>
+        </div>
+        <!-- 3. 仁王3 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-3a">PS5/PC</span><span>Team Ninja</span></div>
+            <div class="game-title">仁王3</div>
+            <div class="game-sub">Nioh 3</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">继承前作深度战斗与战国题材，动作系统再进化， Team Ninja 刀剑哲♂学新高度。[citation:5]</div></div>
+            <div class="extra-meta"><span>2026.2.6</span><span>战国·动作RPG</span></div>
+        </div>
+        <!-- 4. 噬血代碼2 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-3a">PS5/XSX/PC</span><span>万代南梦宫</span></div>
+            <div class="game-title">噬血代碼2</div>
+            <div class="game-sub">Code Vein II</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">吸血鬼末日题材“二次元魂系”，全新吸血鬼猎人主角，风格化吸血战斗。[citation:5]</div></div>
+            <div class="extra-meta"><span>2026.1.29</span><span>硬核ARPG</span></div>
+        </div>
+        <!-- 5. 007：初露锋芒 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-3a">PS5/XSX/PC</span><span>IO Interactive</span></div>
+            <div class="game-title">007：初露锋芒</div>
+            <div class="game-sub">007 First Light</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">年轻邦德起源故事，延续《HITMAN》多途径暗杀设计，电影级间谍沙盒。[citation:1]</div></div>
+            <div class="extra-meta"><span>2026.3.27</span><span>潜行·动作</span></div>
+        </div>
+        <!-- 6. 赤血沙漠 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-3a">全平台</span><span>Pearl Abyss</span></div>
+            <div class="game-title">赤血沙漠</div>
+            <div class="game-sub">Crimson Desert</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">开放世界奇幻史诗，佣兵团战斗、攀爬、魔法，多次展会惊艳，3A级韩系新IP。[citation:5]</div></div>
+            <div class="extra-meta"><span>2026.3.19</span><span>奇幻·开放世界</span></div>
+        </div>
+        <!-- 7. 鬼武者：剑之道 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-3a">PS5/XSX/PC</span><span>Capcom</span></div>
+            <div class="game-title">鬼武者：剑之道</div>
+            <div class="game-sub">Onimusha: Way of the Sword</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">宫本武藏为主角，一闪系统回归，江户初期幻魔剑斗，系列重生之作。[citation:5]</div></div>
+            <div class="extra-meta"><span>2026年</span><span>剑戟·战国</span></div>
+        </div>
+        <!-- 8. 控制：共鸣 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-3a">PS5/XSX/PC</span><span>Remedy</span></div>
+            <div class="game-title">控制：共鸣</div>
+            <div class="game-sub">Control Resonant</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">迪伦视角，超自然曼哈顿，变异近战武器“Aberrant”，Remedy式怪诞叙事。[citation:1][citation:5]</div></div>
+            <div class="extra-meta"><span>2026年</span><span>超自然·动作</span></div>
+        </div>
+        <!-- 9. 泰坦之旅2 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-3a">PS5/XSX/PC</span><span>Grimlore Games</span></div>
+            <div class="game-title">泰坦之旅2</div>
+            <div class="game-sub">Titan Quest II</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">神话ARPG经典续作，职业搭配+希腊/埃及神话，刷宝玩法升级。[citation:5]</div></div>
+            <div class="extra-meta"><span>2026年</span><span>神话·刷宝</span></div>
+        </div>
+        <!-- 10. 极限竞速 地平线6 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-3a">PS5/XSX/PC</span><span>Playground Games</span></div>
+            <div class="game-title">极限竞速 地平线6</div>
+            <div class="game-sub">Forza Horizon 6</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">日本虚构地图，风光与改装文化极致融合，地平线嘉年华再临。[citation:5]</div></div>
+            <div class="extra-meta"><span>2026年</span><span>开放世界·赛车</span></div>
+        </div>
+    </div>
+
+    <!-- 2️⃣ 端游 (PC/主机) 10款 (非3A级但也备受关注) 数据源：[citation:2][citation:9][citation:10] -->
+    <h2 style="color:#b7a5ff; margin: 1.5rem 0 0.5rem;">▸ 端游 · 潜力/独立/创意</h2>
+    <div class="grid">
+        <!-- 1. 巧克力与香兰子 世界链接 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-pc">PC/Steam</span><span>NEKO WORKs</span></div>
+            <div class="game-title">巧克力与香兰子 世界链接</div>
+            <div class="game-sub">NEKOPARA 世界链接</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">系列最新作，猫娘新故事+餐车战斗，全语音Live2D，温馨喜剧。[citation:2]</div></div>
+            <div class="extra-meta"><span>2026秋</span><span>恋爱冒险·养成</span></div>
+        </div>
+        <!-- 2. 无尽猎杀 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-pc">PC/XSX/PS5</span><span>Pushka Studios</span></div>
+            <div class="game-title">无尽猎杀</div>
+            <div class="game-sub">Endless Hunt</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">肉鸽+幸存者like，地狱恶魔猎手，武器类型丰富(深渊/炼狱/腥血)，爽快弹幕。[citation:10]</div></div>
+            <div class="extra-meta"><span>2026.3.16</span><span>肉鸽·射击</span></div>
+        </div>
+        <!-- 3. 雪中悍刀行 (3A但端游&移动，腾讯光子) -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-pc">PC/移动</span><span>光子R</span></div>
+            <div class="game-title">雪中悍刀行</div>
+            <div class="game-sub">武侠夺金撤离</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">知名IP改编，武侠撤离玩法+近战系统，UE5打造，PVPVE博弈。[citation:9]</div></div>
+            <div class="extra-meta"><span>待定</span><span>武侠·撤离</span></div>
+        </div>
+        <!-- 4. 剑来 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-pc">PC</span><span>光子R</span></div>
+            <div class="game-title">剑来</div>
+            <div class="game-sub">仙侠单机3A</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">UE5仙侠单机，动作RPG，基于烽火戏诸侯小说，视觉全新演绎。[citation:9]</div></div>
+            <div class="extra-meta"><span>开发中</span><span>仙侠·动作</span></div>
+        </div>
+        <!-- 5. Big Walk -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-pc">PC</span><span>House House</span></div>
+            <div class="game-title">Big Walk</div>
+            <div class="game-sub">(Untitled Goose Game 团队)</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">开放世界合作冒险，与朋友探索解谜、看落日，治愈系社交。[citation:1]</div></div>
+            <div class="extra-meta"><span>2026年</span><span>合作·治愈</span></div>
+        </div>
+        <!-- 6. Mixtape -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-pc">PC/主机</span><span>Beethoven & Dinosaur</span></div>
+            <div class="game-title">Mixtape</div>
+            <div class="game-sub">音乐叙事冒险</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">青少年夜晚冒险，收录Joy Division等金曲，一封给音乐的情书。[citation:1]</div></div>
+            <div class="extra-meta"><span>2026年</span><span>叙事·音乐</span></div>
+        </div>
+        <!-- 7. 英雄传说 界之轨迹 (PC版) -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-pc">PC/PS5</span><span>Falcom</span></div>
+            <div class="game-title">英雄传说 界之轨迹</div>
+            <div class="game-sub">Beyond the Horizon</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">轨迹系列最新作，范恩故事延续，指令战斗进化，塞姆利亚大陆新章。[citation:1]</div></div>
+            <div class="extra-meta"><span>2026.1.15</span><span>JRPG·策略</span></div>
+        </div>
+        <!-- 8. Lords of the Fallen 2 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-pc">PC/PS5/XSX</span><span>CI Games</span></div>
+            <div class="game-title">堕落之主2</div>
+            <div class="game-sub">Lords of the Fallen 2</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">生者与亡者双界切换，魂系风格+更宏大的黑暗奇幻。[citation:1]</div></div>
+            <div class="extra-meta"><span>2026年</span><span>黑暗奇幻·魂系</span></div>
+        </div>
+        <!-- 9. Star Wars: Zero Company -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-pc">PC/主机</span><span>Bit Reactor/Respawn</span></div>
+            <div class="game-title">星球大战：零号连队</div>
+            <div class="game-sub">Star Wars: Zero Company</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">XCOM式战术+星战，回合制策略小队战斗，光剑+爆能枪协同。[citation:1]</div></div>
+            <div class="extra-meta"><span>2026年</span><span>回合战术·星战</span></div>
+        </div>
+        <!-- 10. Super Meat Boy 3D -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-pc">PC/主机</span><span>Team Meat</span></div>
+            <div class="game-title">超级肉肉哥 3D</div>
+            <div class="game-sub">Super Meat Boy 3D</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">经典平台跳跳乐3D化，难度依旧变态，黑暗世界回归。[citation:1]</div></div>
+            <div class="extra-meta"><span>2026年</span><span>硬核平台跳跃</span></div>
+        </div>
+    </div>
+
+    <!-- 3️⃣ 手游 10款  数据：[citation:2][citation:3][citation:4] -->
+    <h2 style="color:#b7a5ff; margin: 1.5rem 0 0.5rem;">▸ 手游 · 新作/热门</h2>
+    <div class="grid">
+        <!-- 1. 全境封锁：曙光 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-mobile">iOS/Android</span><span>Ubisoft</span></div>
+            <div class="game-title">全境封锁：曙光</div>
+            <div class="game-sub">The Division: Dawn</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">开放世界刷宝射击，暗区+PVEvP，填补1代与2代之间的剧情。[citation:7]</div></div>
+            <div class="extra-meta"><span>2026.3.31</span><span>TPS·刷宝</span></div>
+        </div>
+        <!-- 2. 巧克力与香兰子 世界链接 手游版 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-mobile">iOS/Android</span><span>NEKO WORKs</span></div>
+            <div class="game-title">巧克力与香兰子 世界链接</div>
+            <div class="game-sub">手游版</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">猫娘新作，全语音+餐车战斗，世界各地新猫娘登场。[citation:2]</div></div>
+            <div class="extra-meta"><span>2026.4.14</span><span>AVG·休闲</span></div>
+        </div>
+        <!-- 3. 血之继承者 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-mobile">iOS/Android/PC</span><span>网石</span></div>
+            <div class="game-title">血之继承者</div>
+            <div class="game-sub">VAMPIR: Blood Inheritor</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">吸血鬼题材MMO，限制级暗黑风格，PK团战为核心，分阶段保底抽卡。[citation:6]</div></div>
+            <div class="extra-meta"><span>2026.3上线</span><span>MMO·PK</span></div>
+        </div>
+        <!-- 4. 不可思议的刀剑与魔法 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-mobile">iOS/Android</span><span>尤达科技</span></div>
+            <div class="game-title">不可思议的刀剑与魔法</div>
+            <div class="game-sub">Q版竖屏卡牌</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">竖屏放置，孙悟空宙斯同框，送1000抽，真·摸鱼神器。[citation:3]</div></div>
+            <div class="extra-meta"><span>2026.3.19</span><span>卡牌·放置</span></div>
+        </div>
+        <!-- 5. 凡人灵境游 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-mobile">iOS/Android</span><span>未知</span></div>
+            <div class="game-title">凡人灵境游</div>
+            <div class="game-sub">东方仙侠放置</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">竖屏仙侠，赛季制+轮回，云海渲染，佛系修仙首选。[citation:4]</div></div>
+            <div class="extra-meta"><span>2026年</span><span>放置·修真</span></div>
+        </div>
+        <!-- 6. 逆战：未来 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-mobile">iOS/Android</span><span>腾讯</span></div>
+            <div class="game-title">逆战：未来</div>
+            <div class="game-sub">近未来机甲FPS</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">IP续作，时空追猎+大地图射击，赛季更新。[citation:4]</div></div>
+            <div class="extra-meta"><span>2026年</span><span>FPS·机甲</span></div>
+        </div>
+        <!-- 7. 明日方舟：终末地 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-mobile">iOS/Android/PC</span><span>鹰角网络</span></div>
+            <div class="game-title">明日方舟：终末地</div>
+            <div class="game-sub">3D即时策略RPG</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">方舟宇宙续作，3D箱庭探索+实时战术，干员连携。[citation:4][citation:5]</div></div>
+            <div class="extra-meta"><span>2026.1.22</span><span>策略·RPG</span></div>
+        </div>
+        <!-- 8. 热血西游 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-mobile">iOS/Android</span><span>未知</span></div>
+            <div class="game-title">热血西游</div>
+            <div class="game-sub">西游卡牌</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">经典西游+封神元素，跨服魔族讨伐，每日送新英雄。[citation:8]</div></div>
+            <div class="extra-meta"><span>2026年</span><span>卡牌·养成</span></div>
+        </div>
+        <!-- 9. 吉星派对 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-mobile">iOS/Android</span><span>未知</span></div>
+            <div class="game-title">吉星派对</div>
+            <div class="game-sub">多人联机派对</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">骰子驱动关卡，4人同屏互坑，角色技能各异，轻松社交。[citation:8]</div></div>
+            <div class="extra-meta"><span>2026年</span><span>派对·休闲</span></div>
+        </div>
+        <!-- 10. 时尚百货城 -->
+        <div class="game-card">
+            <div class="card-header"><span class="platform-tag badge-mobile">iOS/Android</span><span>未知</span></div>
+            <div class="game-title">时尚百货城</div>
+            <div class="game-sub">模拟经营</div>
+            <div class="reason-box"><div class="reason-label"><span>⭐ 推荐理由</span></div><div class="reason-text">从街角小店到商业体，员工采购/陈列/营销，策略化人才梯队。[citation:4]</div></div>
+            <div class="extra-meta"><span>2026年</span><span>模拟·经营</span></div>
+        </div>
+    </div>
+
+    <!-- 提示 -->
+    <hr>
+    <div style="text-align:center; background: #1e1948; border-radius: 60px; padding: 1rem; width: fit-content; margin: 2rem auto;">
+        <span class="badge-warn">🚫 本页面内容来自于网络收集。</span>
+    </div>
+
+    <div class="footer-note">
+        📆 信息综合自 Epic游戏商城、橘子集团、九游、网易、新浪等 2026年1月-3月前瞻/上线情报。<br>
+        3A参考[citation:1][citation:5]；端游[citation:2][citation:9][citation:10]；手游[citation:3][citation:4][citation:6]。 仅作文化展示。
+    </div>
+</div>
+</body>
+</html>
