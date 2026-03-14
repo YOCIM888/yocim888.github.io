@@ -577,13 +577,28 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('runDays').textContent = runDays;
   document.getElementById('visitCount').textContent = visitCount;
 
-  // ---------- 随机数据流量 ----------
-  function randomTraffic() {
-    const val = (Math.random() * 1000).toFixed(1);      // 0.1 ~ 999.9 MB
-    return val + ' MB';
-  }
-  document.getElementById('dataTraffic').textContent = randomTraffic();
+  // 初始化当前流量值（0.1 ~ 999.9 MB 之间的随机数）
+let currentTraffic = parseFloat((Math.random() * 1000).toFixed(1));
 
+// 获取显示元素
+const trafficElement = document.getElementById('dataTraffic');
+// 立即显示初始值
+trafficElement.textContent = currentTraffic + ' MB';
+
+// 每秒更新一次，每次变化幅度控制在 ±2 MB 以内
+setInterval(() => {
+  // 生成 -2 到 2 之间的随机变化量（保留一位小数精度）
+  const delta = (Math.random() * 4 - 2); 
+  let newVal = currentTraffic + delta;
+
+  // 确保数值仍在合理范围 [0.1, 999.9] 内
+  if (newVal < 0.1) newVal = 0.1;
+  if (newVal > 999.9) newVal = 999.9;
+
+  // 更新当前值并保留一位小数
+  currentTraffic = parseFloat(newVal.toFixed(1));
+  trafficElement.textContent = currentTraffic + ' MB';
+}, 1000);
   // ---------- 关闭状态球 ----------
   const closeBtn = document.getElementById('closeStatusBall');
   const statusBall = document.getElementById('statusBall');
