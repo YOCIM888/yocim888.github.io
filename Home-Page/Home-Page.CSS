@@ -11,7 +11,7 @@ html {
 }
 
 body {/* 背景图片的路径（本地或网络图片） */
-            background-image: url('https://i0.hdslb.com/bfs/new_dyn/2d0a3086a3b36f78a0b6e340aa2de627351139235.png@1192w.avif');  
+            background-image: url('Resources/picture/卡提西亚.png');  
             /* 让背景覆盖整个页面，不变形 */
             background-size: cover;  
             /* 背景不重复平铺 */
