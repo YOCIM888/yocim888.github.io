@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'Resources/audio/Call of Silence.mp3',
         'Resources/audio/I Really Want to stay at Your House.mp3',
         'Resources/audio/Stay with Me Lofi.mp3',
-        'Resources/audio/Умри, если меня не любишь'
+        'Resources/audio/Умри, если меня не любишь.mp3'
     ];
 
     // DOM 元素
