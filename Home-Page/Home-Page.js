@@ -227,7 +227,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e =
         'Resources/audio/Call of Silence.mp3',
         'Resources/audio/I Really Want to stay at Your House.mp3',
         'Resources/audio/Stay with Me Lofi.mp3',
-        'Resources/audio/Умри, если меня не любишь'
+        'Resources/audio/Умри, если меня не любишь.mp3'
     ];
 
     // DOM 元素
@@ -324,7 +324,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e =
         if (isPlaying) {
             audio.pause();
         } else {
-            audio.play().catch(e => alert('无法播放，请检查音乐文件路径'));
+            audio.play().catch(e => alert('歌曲加载失败'));
         }
         isPlaying = !isPlaying;
         updatePlayPauseIcon();
