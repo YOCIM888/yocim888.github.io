@@ -1,0 +1,3115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ YOCIM轻站-导航姬</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/Home-Page.CSS">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-links">
+            <a href="pages/system.html" class="sidebar-item" title="虚拟系统·"><i class="fas fa-server"></i> <span>虚拟系统</span></a>
+            <a href="pages/Game-center.html" class="sidebar-item" title="小游戏"><i class="fas fa-gamepad"></i> <span>小游戏</span></a>
+            <a href="#acgn" class="sidebar-item" title="ACGN推荐"><i class="fas fa-file-alt"></i> <span>ACGN推荐</span></a>
+            <a href="#tools" class="sidebar-item" title="实用工具"><i class="fas fa-tools"></i> <span>实用工具</span></a>
+            <a href="#ai" class="sidebar-item" title="AI模型"><i class="fas fa-robot"></i> <span>AI模型</span></a>
+            <a href="#news" class="sidebar-item" title="新闻资讯"><i class="fas fa-graduation-cap"></i> <span>新闻资讯</span></a>
+            <a href="#shopping" class="sidebar-item" title="购物推荐"><i class="fas fa-database"></i> <span>购物推荐</span></a>
+            <a href="#gallery" class="sidebar-item" title="图库资源"><i class="fas fa-image"></i> <span>图库资源</span></a>
+            <a href="#video" class="sidebar-item" title="视频资源"><i class="fas fa-video"></i> <span>视频资源</span></a>
+            <a href="#forum" class="sidebar-item" title="社区论坛"><i class="fas fa-users"></i> <span>社区论坛</span></a>
+            <a href="#music" class="sidebar-item" title="音乐资源"><i class="fas fa-music"></i> <span>音乐资源</span></a>
+            <a href="#education" class="sidebar-item" title="学习教育"><i class="fas fa-book-reader"></i> <span>学习教育</span></a>
+            <a href="#software" class="sidebar-item" title="软件下载"><i class="fas fa-download"></i> <span>软件下载</span></a>
+            <a href="#programming" class="sidebar-item" title="编程资源"><i class="fas fa-code"></i> <span>编程资源</span></a>
+            <a href="mailto:yocim666@outlook.com" class="sidebar-item" title="联系站长"><i class="fas fa-envelope"></i> <span>联系站长</span></a>
+        </div>
+    <div class="sidebar-bottom">
+        <div class="sidebar-item toggle-btn" id="toggleSidebar">
+            <i class="fas fa-angle-double-left"></i> <span>收起</span>
+        </div>
+    </div>
+</div>
+
+    <!-- 头部导航 -->
+    <header class="header">
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="logo">
+        <i class="fas fa-cat"></i> YOCIM轻站
+    </div>
+    <div class="nav-links">
+        <a href="#top"><i class="fas fa-home"></i> 首页</a>
+        <a href="pages/novel.html"><i class="fas fa-tv"></i> 小说推荐</a>
+        <a href="pages/Comic.html"><i class="fas fa-book-open"></i> 漫画推荐</a>
+        <a href="pages/Game.html"><i class="fas fa-gamepad"></i> 游戏推荐</a>
+        <a href="pages/music.html"><i class="fas fa-music"></i> 音乐推荐</a>
+    </div>
+    <div class="header-right">
+        <div id="mockLoginArea" class="mock-login-area">
+            <button id="mockLoginBtn" class="mock-login-btn">
+                <i class="fab fa-github"></i> 登录
+            </button>
+            <div id="mockUserInfo" class="mock-user-info" style="display: none;">
+                <img id="mockUserAvatar" class="mock-user-avatar" src="" alt="avatar">
+                <span id="mockUserName"></span>
+            </div>
+        </div>
+        <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </div>
+        <div class="player-icon" id="playerIcon">
+            <i class="fas fa-headphones-alt"></i>
+        </div>
+    </div>
+    <div class="status-ball" id="statusBall">
+    <div class="status-item">网站访问次数: <span id="visitCount">0</span></div>
+    <div class="status-item">网站运行天数: <span id="runDays">0</span> 天</div>
+    <div class="status-item">数据流量: <span id="dataTraffic">0 MB</span></div>
+    <button class="close-btn" id="closeStatusBall">关闭状态球</button>
+</div>
+</header>
+
+    <!-- 移动端导航浮窗（初始为空，JS填充） -->
+<div class="mobile-nav" id="mobileNav"></div>
+
+    <!-- 主内容 -->
+    <main>
+        <!-- 英雄区 / 搜索区 -->
+        <section class="hero">
+            <h1>✨ 发现 · 二次元新大陆</h1>
+            <p class="subtitle">网站目前还是测试阶段，会不断完善，感谢支持</p>
+            <form class="search-container" onsubmit="return handleSearchSubmit(event)">
+    <input type="text" class="search-input" placeholder="输入二次元关键词...">
+    <button type="submit" class="search-btn">搜索</button></form>
+            <!-- 用于展示搜索结果 -->
+            <div class="search-results" style="margin-top: 20px;"></div>
+
+            <!-- 随机语录显示区（动态） -->
+            <div class="random-quote">
+                <i class="fas fa-quote-left"></i>
+                <span id="anime-quote">正在加载中二语录...</span>
+                <i class="fas fa-quote-right"></i>
+            </div>
+        </section>
+
+        <section class="category" id="acgn">
+  <h2 class="category-title"><i class="fas fa-fire"></i> ACGN推荐 · 放送中</h2>
+  <div class="card-grid">
+    <div class="card" id="card-acgn-0">
+      <i class="fab fa-bilibili card-icon"></i>
+      <h3>哔哩哔哩</h3>
+      <p>弹幕护体，新番同步</p>
+      <div class="card-footer">
+        <a href="https://www.bilibili.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">番剧</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-1">
+      <i class="fas fa-tv card-icon"></i>
+      <h3>AcFun</h3>
+      <p>弹幕视频网</p>
+      <div class="card-footer">
+        <a href="https://www.acfun.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">新番</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-2">
+      <i class="fab fa-youtube card-icon"></i>
+      <h3>Muse木棉花</h3>
+      <p>官方同步频道</p>
+      <div class="card-footer">
+        <a href="https://www.e-muse.com/cn" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">港澳台</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-3">
+      <i class="fas fa-dragon card-icon"></i>
+      <h3>Niconico</h3>
+      <p>弹幕元祖，生放送</p>
+      <div class="card-footer">
+        <a href="https://www.nicovideo.jp/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">日系</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-4">
+      <i class="fas fa-tv card-icon"></i>
+      <h3>Crunchyroll</h3>
+      <p>全球动漫流媒体</p>
+      <div class="card-footer">
+        <a href="https://www.crunchyroll.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-5">
+      <i class="fas fa-book-open card-icon"></i>
+      <h3>腾讯动漫</h3>
+      <p>经典漫画平台</p>
+      <div class="card-footer">
+        <a href="https://ac.qq.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-6">
+      <i class="fas fa-meteor card-icon"></i>
+      <h3>拷贝漫画</h3>
+      <p>清爽阅读体验</p>
+      <div class="card-footer">
+        <a href="https://www.komica.org/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">多平台</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-7">
+      <i class="fas fa-globe card-icon"></i>
+      <h3>MangaDex</h3>
+      <p>多语言漫画社区</p>
+      <div class="card-footer">
+        <a href="https://www.mangadex.org/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-8">
+      <i class="fas fa-pencil-ruler card-icon"></i>
+      <h3>好多漫</h3>
+      <p>高质量漫画阅读</p>
+      <div class="card-footer">
+        <a href="https://www.haoduoman.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">插画</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-9">
+      <i class="fas fa-tv card-icon"></i>
+      <h3>巴哈姆特动画疯</h3>
+      <p>台湾地区新番同步</p>
+      <div class="card-footer">
+        <a href="https://ani.gamer.com.tw/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">繁中</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-10">
+      <i class="fas fa-list-alt card-icon"></i>
+      <h3>AniList</h3>
+      <p>动漫追踪&数据库</p>
+      <div class="card-footer">
+        <a href="https://anilist.co/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-11">
+      <i class="fas fa-heart card-icon"></i>
+      <h3>MyAnimeList</h3>
+      <p>全球最大动漫社群</p>
+      <div class="card-footer">
+        <a href="https://myanimelist.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-12">
+      <i class="fas fa-book card-icon"></i>
+      <h3>哔哩哔哩漫画</h3>
+      <p>正版日漫国漫全覆盖</p>
+      <div class="card-footer">
+        <a href="https://manga.bilibili.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">正版</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-13">
+      <i class="fas fa-star card-icon"></i>
+      <h3>快看漫画</h3>
+      <p>国漫原创热门平台</p>
+      <div class="card-footer">
+        <a href="https://www.kuaikanmanhua.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国漫</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-14">
+      <i class="fas fa-home card-icon"></i>
+      <h3>动漫之家</h3>
+      <p>漫画资讯一站式</p>
+      <div class="card-footer">
+        <a href="https://www.dmzj.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">资讯</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-15">
+      <i class="fas fa-book-reader card-icon"></i>
+      <h3>漫画柜</h3>
+      <p>高清漫画阅读</p>
+      <div class="card-footer">
+        <a href="https://www.manhuagui.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">漫画</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-16">
+      <i class="fas fa-pen card-icon"></i>
+      <h3>有妖气</h3>
+      <p>老牌原创漫画</p>
+      <div class="card-footer">
+        <a href="https://www.u17.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">原创</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-17">
+      <i class="fas fa-globe-asia card-icon"></i>
+      <h3>LINE WEBTOON</h3>
+      <p>韩漫日漫全球</p>
+      <div class="card-footer">
+        <a href="https://www.webtoons.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">韩漫</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-18">
+      <i class="fas fa-tv card-icon"></i>
+      <h3>HiDive</h3>
+      <p>正版日系流媒体</p>
+      <div class="card-footer">
+        <a href="https://www.hidive.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">正版</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-19">
+      <i class="fas fa-users card-icon"></i>
+      <h3>Bangumi</h3>
+      <p>番剧评分社区</p>
+      <div class="card-footer">
+        <a href="https://bangumi.tv/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">社区</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-20">
+      <i class="fas fa-book-open card-icon"></i>
+      <h3>轻之国度</h3>
+      <p>轻小说资讯</p>
+      <div class="card-footer">
+        <a href="https://www.lightnovel.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">轻小说</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-21">
+      <i class="fas fa-newspaper card-icon"></i>
+      <h3>AnimeNewsNetwork</h3>
+      <p>国际动漫新闻</p>
+      <div class="card-footer">
+        <a href="https://www.animenewsnetwork.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">资讯</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-22">
+      <i class="fas fa-compass card-icon"></i>
+      <h3>Anime-Planet</h3>
+      <p>追番数据库</p>
+      <div class="card-footer">
+        <a href="https://www.anime-planet.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-23">
+      <i class="fas fa-fire card-icon"></i>
+      <h3>漫客栈</h3>
+      <p>国漫经典平台</p>
+      <div class="card-footer">
+        <a href="https://www.mkzhan.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国漫</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-24">
+      <i class="fas fa-palette card-icon"></i>
+      <h3>Pixiv</h3>
+      <p>插画同人社区</p>
+      <div class="card-footer">
+        <a href="https://www.pixiv.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">插画</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-25">
+      <i class="fas fa-book card-icon"></i>
+      <h3>角川ComicWalker</h3>
+      <p>日漫免费正版</p>
+      <div class="card-footer">
+        <a href="https://comic-walker.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">日漫</span>
+      </div>
+    </div>
+    <div class="card" id="card-acgn-26">
+      <i class="fas fa-trophy card-icon"></i>
+      <h3>AnimeKisa</h3>
+      <p>多源番剧速更</p>
+      <div class="card-footer">
+        <a href="https://animekisa.tv/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">速更</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="category" id="tools">
+  <h2 class="category-title"><i class="fas fa-tools"></i> 实用工具 · 便捷高效</h2>
+  <div class="card-grid">
+    <div class="card" id="card-tools-0">
+      <i class="fas fa-language card-icon"></i>
+      <h3>Google翻译</h3>
+      <p>多语言互译</p>
+      <div class="card-footer">
+        <a href="https://translate.google.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">多语言</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-1">
+      <i class="fas fa-qrcode card-icon"></i>
+      <h3>草料二维码</h3>
+      <p>二维码生成/解码</p>
+      <div class="card-footer">
+        <a href="https://cli.im/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">实用</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-2">
+      <i class="fas fa-file-pdf card-icon"></i>
+      <h3>Smallpdf</h3>
+      <p>PDF在线转换</p>
+      <div class="card-footer">
+        <a href="https://smallpdf.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">文档</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-3">
+      <i class="fas fa-brain card-icon"></i>
+      <h3>ProcessOn</h3>
+      <p>思维导图/流程图</p>
+      <div class="card-footer">
+        <a href="https://www.processon.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">协作</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-4">
+      <i class="fas fa-crop-alt card-icon"></i>
+      <h3>Canva</h3>
+      <p>在线设计神器</p>
+      <div class="card-footer">
+        <a href="https://www.canva.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">设计</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-5">
+      <i class="fas fa-file-image card-icon"></i>
+      <h3>Remove.bg</h3>
+      <p>一键智能抠图</p>
+      <div class="card-footer">
+        <a href="https://www.remove.bg/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">抠图</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-6">
+      <i class="fas fa-compress-arrows-alt card-icon"></i>
+      <h3>ILoveIMG</h3>
+      <p>图片压缩编辑</p>
+      <div class="card-footer">
+        <a href="https://www.iloveimg.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">图片</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-7">
+      <i class="fas fa-file-pdf card-icon"></i>
+      <h3>ILovePDF</h3>
+      <p>PDF全能处理</p>
+      <div class="card-footer">
+        <a href="https://www.ilovepdf.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">PDF</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-8">
+      <i class="fas fa-keyboard card-icon"></i>
+      <h3>在线打字测试</h3>
+      <p>打字速度练习</p>
+      <div class="card-footer">
+        <a href="https://dazi.kukuw.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">练习</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-9">
+      <i class="fas fa-music card-icon"></i>
+      <h3>咪咕音乐</h3>
+      <p>正版音乐试听</p>
+      <div class="card-footer">
+        <a href="https://music.migu.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">音乐</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-10">
+      <i class="fas fa-video card-icon"></i>
+      <h3>在线格式转换</h3>
+      <p>音视频格式修改</p>
+      <div class="card-footer">
+        <a href="https://convertio.co/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">转换</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-11">
+      <i class="fas fa-clock card-icon"></i>
+      <h3>在线时间戳</h3>
+      <p>时间戳转换工具</p>
+      <div class="card-footer">
+        <a href="https://tool.lu/timestamp" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">开发</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-12">
+      <i class="fas fa-calculator card-icon"></i>
+      <h3>科学计算器</h3>
+      <p>高级计算工具</p>
+      <div class="card-footer">
+        <a href="https://www.baidu.com/s?wd=%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%99%A8" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">计算</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-13">
+      <i class="fas fa-palette card-icon"></i>
+      <h3>ColorHub</h3>
+      <p>配色方案参考</p>
+      <div class="card-footer">
+        <a href="https://www.colorhub.me/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">配色</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-14">
+      <i class="fas fa-file-alt card-icon"></i>
+      <h3>石墨文档</h3>
+      <p>在线协作文档</p>
+      <div class="card-footer">
+        <a href="https://shimo.im/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">办公</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-15">
+      <i class="fas fa-cloud card-icon"></i>
+      <h3>腾讯文档</h3>
+      <p>云端文档编辑</p>
+      <div class="card-footer">
+        <a href="https://docs.qq.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">协作</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-16">
+      <i class="fas fa-cut card-icon"></i>
+      <h3>在线截图工具</h3>
+      <p>网页截图长图</p>
+      <div class="card-footer">
+        <a href="https://web-capture.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">截图</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-17">
+      <i class="fas fa-globe card-icon"></i>
+      <h3>DeepL翻译</h3>
+      <p>精准翻译工具</p>
+      <div class="card-footer">
+        <a href="https://www.deepl.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">翻译</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-18">
+      <i class="fas fa-list card-icon"></i>
+      <h3>在线待办清单</h3>
+      <p>任务清单管理</p>
+      <div class="card-footer">
+        <a href="https://todoist.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">效率</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-19">
+      <i class="fas fa-code card-icon"></i>
+      <h3>代码格式化</h3>
+      <p>代码美化整理</p>
+      <div class="card-footer">
+        <a href="https://tool.oschina.net/codeformat" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">开发</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-20">
+      <i class="fas fa-image card-icon"></i>
+      <h3>改图鸭</h3>
+      <p>图片编辑处理</p>
+      <div class="card-footer">
+        <a href="https://www.gaituya.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">修图</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-21">
+      <i class="fas fa-wifi card-icon"></i>
+      <h3>WiFi密码查看</h3>
+      <p>密码找回工具</p>
+      <div class="card-footer">
+        <a href="https://www.wifipassword.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">网络</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-22">
+      <i class="fas fa-file-excel card-icon"></i>
+      <h3>Excel表格工具</h3>
+      <p>在线表格处理</p>
+      <div class="card-footer">
+        <a href="https://www.office.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">办公</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-23">
+      <i class="fas fa-microchip card-icon"></i>
+      <h3>CPU性能查询</h3>
+      <p>硬件参数查询</p>
+      <div class="card-footer">
+        <a href="https://www.cpu-monkey.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">硬件</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-24">
+      <i class="fas fa-bell card-icon"></i>
+      <h3>在线倒计时器</h3>
+      <p>定时提醒工具</p>
+      <div class="card-footer">
+        <a href="https://time.is/zh/Countdown" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">时间</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-25">
+      <i class="fas fa-book card-icon"></i>
+      <h3>在线OCR识别</h3>
+      <p>图片文字提取</p>
+      <div class="card-footer">
+        <a href="https://ocr.wdku.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">识别</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-26">
+      <i class="fas fa-pen card-icon"></i>
+      <h3>在线白板</h3>
+      <p>绘图思维导图</p>
+      <div class="card-footer">
+        <a href="https://excalidraw.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">绘图</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-27">
+      <i class="fas fa-film card-icon"></i>
+      <h3>视频去水印</h3>
+      <p>在线视频处理</p>
+      <div class="card-footer">
+        <a href="https://www.shipinxiaocong.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">视频</span>
+      </div>
+    </div>
+    <div class="card" id="card-tools-28">
+      <i class="fas fa-sitemap card-icon"></i>
+      <h3>幕布</h3>
+      <p>大纲笔记工具</p>
+      <div class="card-footer">
+        <a href="https://mubu.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">笔记</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="category" id="ai">
+  <h2 class="category-title"><i class="fas fa-robot"></i> AI模型 · 二次元创作</h2>
+  <div class="card-grid">
+    <div class="card" id="card-ai-0">
+      <i class="fas fa-robot card-icon"></i>
+      <h3>OpenAI GPT</h3>
+      <p>语言生成</p>
+      <div class="card-footer">
+        <a href="https://openai.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-1">
+      <i class="fas fa-palette card-icon"></i>
+      <h3>Stable Diffusion</h3>
+      <p>开源图像生成</p>
+      <div class="card-footer">
+        <a href="https://stablediffusionweb.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">多语言</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-2">
+      <i class="fas fa-image card-icon"></i>
+      <h3>DALL·E</h3>
+      <p>OpenAI图像</p>
+      <div class="card-footer">
+        <a href="https://openai.com/dall-e" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-3">
+      <i class="fas fa-fire card-icon"></i>
+      <h3>Midjourney</h3>
+      <p>高质量AI绘画</p>
+      <div class="card-footer">
+        <a href="https://www.midjourney.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-4">
+      <i class="fas fa-comment-dots card-icon"></i>
+      <h3>Claude</h3>
+      <p>Anthropic对话AI</p>
+      <div class="card-footer">
+        <a href="https://claude.ai/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-5">
+      <i class="fas fa-language card-icon"></i>
+      <h3>文心一言</h3>
+      <p>百度知识增强</p>
+      <div class="card-footer">
+        <a href="https://yiyan.baidu.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-6">
+      <i class="fas fa-star card-icon"></i>
+      <h3>豆包</h3>
+      <p>全能AI智能助手</p>
+      <div class="card-footer">
+        <a href="https://www.doubao.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-7">
+      <i class="fas fa-paint-brush card-icon"></i>
+      <h3>醒图AI</h3>
+      <p>国产AI绘画创作</p>
+      <div class="card-footer">
+        <a href="https://xingtu.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-8">
+      <i class="fas fa-magic card-icon"></i>
+      <h3>通义万相</h3>
+      <p>阿里AI绘画</p>
+      <div class="card-footer">
+        <a href="https://wanxiang.aliyun.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-9">
+      <i class="fas fa-cloud card-icon"></i>
+      <h3>讯飞星火</h3>
+      <p>科大讯飞对话AI</p>
+      <div class="card-footer">
+        <a href="https://xinghuo.xfyun.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-10">
+      <i class="fas fa-image card-icon"></i>
+      <h3>腾讯混元</h3>
+      <p>腾讯AI大模型</p>
+      <div class="card-footer">
+        <a href="https://hunyuan.tencent.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-11">
+      <i class="fas fa-palette card-icon"></i>
+      <h3>NovelAI</h3>
+      <p>二次元专属绘画</p>
+      <div class="card-footer">
+        <a href="https://novelai.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">二次元</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-12">
+      <i class="fas fa-female card-icon"></i>
+      <h3>FaceChain</h3>
+      <p>AI写真角色生成</p>
+      <div class="card-footer">
+        <a href="https://modelscope.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">角色</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-13">
+      <i class="fas fa-video card-icon"></i>
+      <h3>Runway</h3>
+      <p>AI视频生成</p>
+      <div class="card-footer">
+        <a href="https://runwayml.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">视频</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-14">
+      <i class="fas fa-music card-icon"></i>
+      <h3>Suno AI</h3>
+      <p>AI音乐创作</p>
+      <div class="card-footer">
+        <a href="https://suno.ai/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">音乐</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-15">
+      <i class="fas fa-comment card-icon"></i>
+      <h3>Kimi</h3>
+      <p>长文本对话AI</p>
+      <div class="card-footer">
+        <a href="https://kimi.moonshot.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-16">
+      <i class="fas fa-pencil-ruler card-icon"></i>
+      <h3>秘塔写作猫</h3>
+      <p>AI写作润色</p>
+      <div class="card-footer">
+        <a href="https://xiezuocat.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">写作</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-17">
+      <i class="fas fa-rocket card-icon"></i>
+      <h3>幻方AI</h3>
+      <p>二次元模型创作</p>
+      <div class="card-footer">
+        <a href="https://www.myshell.ai/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">二次元</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-18">
+      <i class="fas fa-brain card-icon"></i>
+      <h3>ChatGLM</h3>
+      <p>清华开源大模型</p>
+      <div class="card-footer">
+        <a href="https://chatglm.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">开源</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-19">
+      <i class="fas fa-camera card-icon"></i>
+      <h3>美图AI</h3>
+      <p>AI动漫头像生成</p>
+      <div class="card-footer">
+        <a href="https://www.meitu.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">头像</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-20">
+      <i class="fas fa-microchip card-icon"></i>
+      <h3>Minimax</h3>
+      <p>多模态AI创作</p>
+      <div class="card-footer">
+        <a href="https://www.minimax.chat/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">创作</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-21">
+      <i class="fas fa-picture-o card-icon"></i>
+      <h3>无界AI</h3>
+      <p>国风二次元绘画</p>
+      <div class="card-footer">
+        <a href="https://www.wujieai.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国风</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-22">
+      <i class="fas fa-headphones card-icon"></i>
+      <h3>讯飞配音</h3>
+      <p>AI语音合成</p>
+      <div class="card-footer">
+        <a href="https://peiyin.xunfei.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">语音</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-23">
+      <i class="fas fa-gamepad card-icon"></i>
+      <h3>Civitai</h3>
+      <p>AI模型分享社区</p>
+      <div class="card-footer">
+        <a href="https://civitai.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">模型</span>
+      </div>
+    </div>
+    <div class="card" id="card-ai-24">
+      <i class="fas fa-pen card-icon"></i>
+      <h3>网易有道AI</h3>
+      <p>智能创作翻译</p>
+      <div class="card-footer">
+        <a href="https://ai.youdao.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">工具</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="category" id="news">
+  <h2 class="category-title"><i class="fas fa-newspaper"></i> 新闻资讯 · 时事热点</h2>
+  <div class="card-grid">
+    <div class="card" id="card-news-0">
+      <i class="fas fa-globe-asia card-icon"></i>
+      <h3>新华网</h3>
+      <p>权威报道</p>
+      <div class="card-footer">
+        <a href="https://www.xinhuanet.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国内</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-1">
+      <i class="fas fa-globe-europe card-icon"></i>
+      <h3>BBC News</h3>
+      <p>国际新闻</p>
+      <div class="card-footer">
+        <a href="https://www.bbc.com/news" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-2">
+      <i class="fas fa-globe-americas card-icon"></i>
+      <h3>CNN</h3>
+      <p>美国新闻</p>
+      <div class="card-footer">
+        <a href="https://edition.cnn.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-3">
+      <i class="fas fa-globe card-icon"></i>
+      <h3>NHK</h3>
+      <p>日本放送协会</p>
+      <div class="card-footer">
+        <a href="https://www.nhk.or.jp/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">日语</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-4">
+      <i class="fas fa-newspaper card-icon"></i>
+      <h3>Reuters</h3>
+      <p>路透社</p>
+      <div class="card-footer">
+        <a href="https://www.reuters.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-5">
+      <i class="fas fa-bullhorn card-icon"></i>
+      <h3>人民网</h3>
+      <p>中央重点新闻网站</p>
+      <div class="card-footer">
+        <a href="https://www.people.com.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国内</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-6">
+      <i class="fas fa-rss card-icon"></i>
+      <h3>央视网</h3>
+      <p>央视官方新闻平台</p>
+      <div class="card-footer">
+        <a href="https://www.cctv.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国内</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-7">
+      <i class="fas fa-chart-line card-icon"></i>
+      <h3>财新网</h3>
+      <p>财经深度资讯</p>
+      <div class="card-footer">
+        <a href="https://www.caixin.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">财经</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-8">
+      <i class="fas fa-laptop-code card-icon"></i>
+      <h3>36氪</h3>
+      <p>科技创业资讯</p>
+      <div class="card-footer">
+        <a href="https://36kr.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">科技</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-9">
+      <i class="fas fa-microchip card-icon"></i>
+      <h3>爱范儿</h3>
+      <p>数码科技新闻</p>
+      <div class="card-footer">
+        <a href="https://www.ifanr.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">数码</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-10">
+      <i class="fas fa-globe card-icon"></i>
+      <h3>联合早报</h3>
+      <p>新加坡中文资讯</p>
+      <div class="card-footer">
+        <a href="https://www.zaobao.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-11">
+      <i class="fas fa-newspaper card-icon"></i>
+      <h3>凤凰网</h3>
+      <p>综合资讯门户</p>
+      <div class="card-footer">
+        <a href="https://www.ifeng.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">综合</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-12">
+      <i class="fas fa-brain card-icon"></i>
+      <h3>澎湃新闻</h3>
+      <p>时事深度报道</p>
+      <div class="card-footer">
+        <a href="https://www.thepaper.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">深度</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-13">
+      <i class="fas fa-rss-square card-icon"></i>
+      <h3>新浪新闻</h3>
+      <p>综合实时热点</p>
+      <div class="card-footer">
+        <a href="https://news.sina.com.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">综合</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-14">
+      <i class="fas fa-newspaper card-icon"></i>
+      <h3>网易新闻</h3>
+      <p>热点资讯聚合</p>
+      <div class="card-footer">
+        <a href="https://www.163.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">综合</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-15">
+      <i class="fas fa-bullseye card-icon"></i>
+      <h3>观察者网</h3>
+      <p>时政军事评论</p>
+      <div class="card-footer">
+        <a href="https://www.guancha.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">时政</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-16">
+      <i class="fas fa-globe-europe card-icon"></i>
+      <h3>卫报</h3>
+      <p>英国权威新闻</p>
+      <div class="card-footer">
+        <a href="https://www.theguardian.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-17">
+      <i class="fas fa-newspaper card-icon"></i>
+      <h3>法新社</h3>
+      <p>法国国际新闻</p>
+      <div class="card-footer">
+        <a href="https://www.afp.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-18">
+      <i class="fas fa-gamepad card-icon"></i>
+      <h3>机核网</h3>
+      <p>游戏ACG资讯</p>
+      <div class="card-footer">
+        <a href="https://www.gcores.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">ACG</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-19">
+      <i class="fas fa-fire card-icon"></i>
+      <h3>游民星空</h3>
+      <p>游戏资讯攻略</p>
+      <div class="card-footer">
+        <a href="https://www.gamersky.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-20">
+      <i class="fas fa-palette card-icon"></i>
+      <h3>美术报</h3>
+      <p>艺术文创资讯</p>
+      <div class="card-footer">
+        <a href="https://www.meishubao.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">艺术</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-21">
+      <i class="fas fa-chart-bar card-icon"></i>
+      <h3>第一财经</h3>
+      <p>专业财经资讯</p>
+      <div class="card-footer">
+        <a href="https://www.yicai.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">财经</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-22">
+      <i class="fas fa-globe-asia card-icon"></i>
+      <h3>日经新闻</h3>
+      <p>日本经济资讯</p>
+      <div class="card-footer">
+        <a href="https://www.nikkei.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">日系</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-23">
+      <i class="fas fa-video card-icon"></i>
+      <h3>腾讯新闻</h3>
+      <p>全网热点聚合</p>
+      <div class="card-footer">
+        <a href="https://news.qq.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">综合</span>
+      </div>
+    </div>
+    <div class="card" id="card-news-24">
+      <i class="fas fa-book card-icon"></i>
+      <h3>界面新闻</h3>
+      <p>商业财经资讯</p>
+      <div class="card-footer">
+        <a href="https://www.jiemian.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">商业</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="category" id="shopping">
+  <h2 class="category-title"><i class="fas fa-shopping-cart"></i> 购物推荐 · 官方旗舰</h2>
+  <div class="card-grid">
+    <div class="card" id="card-shopping-0">
+      <i class="fas fa-store card-icon"></i>
+      <h3>天猫旗舰店</h3>
+      <p>正版周边</p>
+      <div class="card-footer">
+        <a href="https://www.tmall.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">淘宝</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-1">
+      <i class="fas fa-store card-icon"></i>
+      <h3>京东自营</h3>
+      <p>快速配送</p>
+      <div class="card-footer">
+        <a href="https://www.jd.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">京东</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-2">
+      <i class="fas fa-store card-icon"></i>
+      <h3>亚马逊中国</h3>
+      <p>全球购</p>
+      <div class="card-footer">
+        <a href="https://www.amazon.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">Amazon</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-3">
+      <i class="fas fa-store card-icon"></i>
+      <h3>苏宁易购</h3>
+      <p>家电数码</p>
+      <div class="card-footer">
+        <a href="https://www.suning.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">苏宁</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-4">
+      <i class="fas fa-gamepad card-icon"></i>
+      <h3>任天堂商店</h3>
+      <p>官方周边</p>
+      <div class="card-footer">
+        <a href="https://store.nintendo.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">日美</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-5">
+      <i class="fab fa-playstation card-icon"></i>
+      <h3>PlayStation商店</h3>
+      <p>游戏/周边</p>
+      <div class="card-footer">
+        <a href="https://www.playstation.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">官方</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-6">
+      <i class="fas fa-store card-icon"></i>
+      <h3>淘宝</h3>
+      <p>综合购物平台</p>
+      <div class="card-footer">
+        <a href="https://www.taobao.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">综合</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-7">
+      <i class="fas fa-store card-icon"></i>
+      <h3>拼多多</h3>
+      <p>高性价比购物</p>
+      <div class="card-footer">
+        <a href="https://www.pinduoduo.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">平价</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-8">
+      <i class="fas fa-store card-icon"></i>
+      <h3>唯品会</h3>
+      <p>品牌特卖</p>
+      <div class="card-footer">
+        <a href="https://www.vip.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">特卖</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-9">
+      <i class="fas fa-store card-icon"></i>
+      <h3>抖音商城</h3>
+      <p>直播购物</p>
+      <div class="card-footer">
+        <a href="https://www.douyin.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">直播</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-10">
+      <i class="fas fa-store card-icon"></i>
+      <h3>小红书商城</h3>
+      <p>好物种草</p>
+      <div class="card-footer">
+        <a href="https://www.xiaohongshu.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">种草</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-11">
+      <i class="fas fa-gamepad card-icon"></i>
+      <h3>Steam商城</h3>
+      <p>PC游戏正版</p>
+      <div class="card-footer">
+        <a href="https://store.steampowered.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-12">
+      <i class="fas fa-gamepad card-icon"></i>
+      <h3>Epic商城</h3>
+      <p>正版游戏平台</p>
+      <div class="card-footer">
+        <a href="https://store.epicgames.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-13">
+      <i class="fas fa-gamepad card-icon"></i>
+      <h3>Xbox商店</h3>
+      <p>微软游戏商城</p>
+      <div class="card-footer">
+        <a href="https://www.xbox.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-14">
+      <i class="fas fa-box card-icon"></i>
+      <h3>B站会员购</h3>
+      <p>手办周边潮玩</p>
+      <div class="card-footer">
+        <a href="https://show.bilibili.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">二次元</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-15">
+      <i class="fas fa-gift card-icon"></i>
+      <h3>萌购</h3>
+      <p>日本代购直邮</p>
+      <div class="card-footer">
+        <a href="https://www.030buy.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">日代</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-16">
+      <i class="fas fa-gift card-icon"></i>
+      <h3>任你购</h3>
+      <p>日版ACG代购</p>
+      <div class="card-footer">
+        <a href="https://www.rennigou.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">日购</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-17">
+      <i class="fas fa-store card-icon"></i>
+      <h3>京东国际</h3>
+      <p>进口商品免税</p>
+      <div class="card-footer">
+        <a href="https://global.jd.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">进口</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-18">
+      <i class="fas fa-store card-icon"></i>
+      <h3>天猫国际</h3>
+      <p>海外直营</p>
+      <div class="card-footer">
+        <a href="https://global.tmall.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">海淘</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-19">
+      <i class="fas fa-pencil-alt card-icon"></i>
+      <h3>文具控</h3>
+      <p>文具手账好物</p>
+      <div class="card-footer">
+        <a href="https://www.wenjukong.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">文具</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-20">
+      <i class="fas fa-camera card-icon"></i>
+      <h3>锐意网</h3>
+      <p>摄影器材商城</p>
+      <div class="card-footer">
+        <a href="https://www.rayi.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">数码</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-21">
+      <i class="fas fa-tshirt card-icon"></i>
+      <h3>有货YOHO</h3>
+      <p>潮流服饰品牌</p>
+      <div class="card-footer">
+        <a href="https://www.yohobuy.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">潮牌</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-22">
+      <i class="fas fa-store card-icon"></i>
+      <h3>考拉海购</h3>
+      <p>网易跨境电商</p>
+      <div class="card-footer">
+        <a href="https://www.kaola.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">海淘</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-23">
+      <i class="fas fa-store card-icon"></i>
+      <h3>1688批发</h3>
+      <p>源头厂家批发</p>
+      <div class="card-footer">
+        <a href="https://www.1688.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">批发</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-24">
+      <i class="fas fa-gift card-icon"></i>
+      <h3>淘宝二次元</h3>
+      <p>动漫周边专区</p>
+      <div class="card-footer">
+        <a href="https://2ciyuan.taobao.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">ACG</span>
+      </div>
+    </div>
+    <div class="card" id="card-shopping-25">
+      <i class="fas fa-store card-icon"></i>
+      <h3>亚马逊全球</h3>
+      <p>海外购物直邮</p>
+      <div class="card-footer">
+        <a href="https://www.amazon.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="category" id="gallery">
+  <h2 class="category-title"><i class="fas fa-images"></i> 图库资源 · 精选合集</h2>
+  <div class="card-grid">
+    <div class="card" id="card-gallery-0">
+      <i class="fas fa-image card-icon"></i>
+      <h3>Pixiv</h3>
+      <p>插画分享</p>
+      <div class="card-footer">
+        <a href="https://www.pixiv.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">日语</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-1">
+      <i class="fas fa-image card-icon"></i>
+      <h3>Wallhaven</h3>
+      <p>壁纸社区</p>
+      <div class="card-footer">
+        <a href="https://wallhaven.cc/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-2">
+      <i class="fas fa-image card-icon"></i>
+      <h3>Unsplash</h3>
+      <p>高清图片</p>
+      <div class="card-footer">
+        <a href="https://unsplash.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-3">
+      <i class="fab fa-deviantart card-icon"></i>
+      <h3>DeviantArt</h3>
+      <p>艺术社区</p>
+      <div class="card-footer">
+        <a href="https://www.deviantart.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-4">
+      <i class="fas fa-camera card-icon"></i>
+      <h3>Pexels</h3>
+      <p>免费素材</p>
+      <div class="card-footer">
+        <a href="https://www.pexels.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-5">
+      <i class="fas fa-image card-icon"></i>
+      <h3>ArtStation</h3>
+      <p>游戏影视CG美术</p>
+      <div class="card-footer">
+        <a href="https://www.artstation.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-6">
+      <i class="fas fa-image card-icon"></i>
+      <h3>Dribbble</h3>
+      <p>设计创意作品</p>
+      <div class="card-footer">
+        <a href="https://dribbble.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-7">
+      <i class="fas fa-image card-icon"></i>
+      <h3>Behance</h3>
+      <p>创意设计作品集</p>
+      <div class="card-footer">
+        <a href="https://www.behance.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-8">
+      <i class="fas fa-image card-icon"></i>
+      <h3>零chan</h3>
+      <p>ACG动漫壁纸</p>
+      <div class="card-footer">
+        <a href="https://www.zerochan.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">二次元</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-9">
+      <i class="fas fa-image card-icon"></i>
+      <h3>Konachan</h3>
+      <p>二次元高清壁纸</p>
+      <div class="card-footer">
+        <a href="https://konachan.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">二次元</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-10">
+      <i class="fas fa-image card-icon"></i>
+      <h3>Yande.re</h3>
+      <p>动漫插画壁纸</p>
+      <div class="card-footer">
+        <a href="https://yande.re/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">二次元</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-11">
+      <i class="fas fa-image card-icon"></i>
+      <h3>壁纸引擎</h3>
+      <p>动态壁纸资源</p>
+      <div class="card-footer">
+        <a href="https://www.wallpaperengine.io/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">壁纸</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-12">
+      <i class="fas fa-image card-icon"></i>
+      <h3>壁纸社</h3>
+      <p>超清电脑壁纸</p>
+      <div class="card-footer">
+        <a href="https://www.wallpapersclub.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">壁纸</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-13">
+      <i class="fas fa-image card-icon"></i>
+      <h3>极简壁纸</h3>
+      <p>简约高清壁纸</p>
+      <div class="card-footer">
+        <a href="https://bz.zzzmh.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-14">
+      <i class="fas fa-image card-icon"></i>
+      <h3>爱给网</h3>
+      <p>免费图片素材</p>
+      <div class="card-footer">
+        <a href="https://www.aigei.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-15">
+      <i class="fas fa-image card-icon"></i>
+      <h3>摄图网</h3>
+      <p>正版商用图库</p>
+      <div class="card-footer">
+        <a href="https://699pic.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">商用</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-16">
+      <i class="fas fa-image card-icon"></i>
+      <h3>千库网</h3>
+      <p>免抠图片素材</p>
+      <div class="card-footer">
+        <a href="https://www.588ku.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">素材</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-17">
+      <i class="fas fa-image card-icon"></i>
+      <h3>包图网</h3>
+      <p>设计图片素材</p>
+      <div class="card-footer">
+        <a href="https://ibaotu.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">商用</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-18">
+      <i class="fas fa-image card-icon"></i>
+      <h3>CC0图片</h3>
+      <p>免费可商用图库</p>
+      <div class="card-footer">
+        <a href="https://cc0.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">免费</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-19">
+      <i class="fas fa-image card-icon"></i>
+      <h3>动漫壁纸</h3>
+      <p>ACG高清壁纸站</p>
+      <div class="card-footer">
+        <a href="https://www.dmoe.cc/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">二次元</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-20">
+      <i class="fas fa-image card-icon"></i>
+      <h3>樱花动漫图库</h3>
+      <p>动漫插画美图</p>
+      <div class="card-footer">
+        <a href="https://img.omegacode.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">二次元</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-21">
+      <i class="fas fa-image card-icon"></i>
+      <h3>VisualHunt</h3>
+      <p>免费CC0图库</p>
+      <div class="card-footer">
+        <a href="https://visualhunt.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-22">
+      <i class="fas fa-image card-icon"></i>
+      <h3>Lifeofpix</h3>
+      <p>欧美摄影美图</p>
+      <div class="card-footer">
+        <a href="https://www.lifeofpix.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-23">
+      <i class="fas fa-image card-icon"></i>
+      <h3>SketchupTexture</h3>
+      <p>PBR材质贴图</p>
+      <div class="card-footer">
+        <a href="https://www.sketchuptextureclub.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">材质</span>
+      </div>
+    </div>
+    <div class="card" id="card-gallery-24">
+      <i class="fas fa-image card-icon"></i>
+      <h3>Texturer</h3>
+      <p>无缝材质纹理</p>
+      <div class="card-footer">
+        <a href="https://www.texturer.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">材质</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="category" id="video">
+  <h2 class="category-title"><i class="fas fa-video"></i> 视频资源 · 影视剪辑</h2>
+  <div class="card-grid">
+    <div class="card" id="card-video-0">
+      <i class="fas fa-film card-icon"></i>
+      <h3>Bilibili</h3>
+      <p>弹幕视频</p>
+      <div class="card-footer">
+        <a href="https://www.bilibili.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-1">
+      <i class="fas fa-film card-icon"></i>
+      <h3>Youku</h3>
+      <p>优酷平台</p>
+      <div class="card-footer">
+        <a href="https://www.youku.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-2">
+      <i class="fas fa-film card-icon"></i>
+      <h3>腾讯视频</h3>
+      <p>v.qq.com</p>
+      <div class="card-footer">
+        <a href="https://v.qq.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-3">
+      <i class="fab fa-netflix card-icon"></i>
+      <h3>Netflix</h3>
+      <p>全球流媒体</p>
+      <div class="card-footer">
+        <a href="https://www.netflix.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">多国</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-4">
+      <i class="fab fa-disney card-icon"></i>
+      <h3>Disney+</h3>
+      <p>迪士尼+</p>
+      <div class="card-footer">
+        <a href="https://www.disneyplus.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">多国</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-5">
+      <i class="fab fa-twitch card-icon"></i>
+      <h3>Twitch</h3>
+      <p>游戏直播</p>
+      <div class="card-footer">
+        <a href="https://www.twitch.tv/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-6">
+      <i class="fas fa-film card-icon"></i>
+      <h3>爱奇艺</h3>
+      <p>高清影视平台</p>
+      <div class="card-footer">
+        <a href="https://www.iqiyi.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-7">
+      <i class="fas fa-film card-icon"></i>
+      <h3>芒果TV</h3>
+      <p>综艺剧集全覆盖</p>
+      <div class="card-footer">
+        <a href="https://www.mgtv.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-8">
+      <i class="fab fa-youtube card-icon"></i>
+      <h3>YouTube</h3>
+      <p>全球最大视频站</p>
+      <div class="card-footer">
+        <a href="https://www.youtube.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-9">
+      <i class="fab fa-tiktok card-icon"></i>
+      <h3>TikTok</h3>
+      <p>海外版抖音</p>
+      <div class="card-footer">
+        <a href="https://www.tiktok.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-10">
+      <i class="fas fa-video card-icon"></i>
+      <h3>抖音</h3>
+      <p>短视频创作</p>
+      <div class="card-footer">
+        <a href="https://www.douyin.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-11">
+      <i class="fas fa-video card-icon"></i>
+      <h3>快手</h3>
+      <p>生活短视频</p>
+      <div class="card-footer">
+        <a href="https://www.kuaishou.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-12">
+      <i class="fas fa-tv card-icon"></i>
+      <h3>央视影音</h3>
+      <p>直播回看平台</p>
+      <div class="card-footer">
+        <a href="https://tv.cctv.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">直播</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-13">
+      <i class="fas fa-film card-icon"></i>
+      <h3>Hulu</h3>
+      <p>美区影视平台</p>
+      <div class="card-footer">
+        <a href="https://www.hulu.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-14">
+      <i class="fas fa-film card-icon"></i>
+      <h3>HBO Max</h3>
+      <p>美剧独家平台</p>
+      <div class="card-footer">
+        <a href="https://www.max.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-15">
+      <i class="fas fa-film card-icon"></i>
+      <h3>Amazon Prime</h3>
+      <p>亚马逊影视</p>
+      <div class="card-footer">
+        <a href="https://prime.amazon.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-16">
+      <i class="fas fa-film card-icon"></i>
+      <h3>LiTV</h3>
+      <p>台剧综艺直播</p>
+      <div class="card-footer">
+        <a href="https://www.litv.tv/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">繁中</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-17">
+      <i class="fas fa-film card-icon"></i>
+      <h3>KKTV</h3>
+      <p>台剧日漫同步</p>
+      <div class="card-footer">
+        <a href="https://www.kktv.me/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">繁中</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-18">
+      <i class="fas fa-film card-icon"></i>
+      <h3>咪咕视频</h3>
+      <p>体育赛事直播</p>
+      <div class="card-footer">
+        <a href="https://www.miguvideo.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">体育</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-19">
+      <i class="fas fa-film card-icon"></i>
+      <h3>新片场</h3>
+      <p>原创影视短片</p>
+      <div class="card-footer">
+        <a href="https://www.xinpianchang.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">创作</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-20">
+      <i class="fas fa-film card-icon"></i>
+      <h3>开眼Eyepetizer</h3>
+      <p>高清创意短片</p>
+      <div class="card-footer">
+        <a href="https://www.eyepetizer.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">短片</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-21">
+      <i class="fas fa-film card-icon"></i>
+      <h3>预告片世界</h3>
+      <p>高清影视预告</p>
+      <div class="card-footer">
+        <a href="https://www.previewworld.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">素材</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-22">
+      <i class="fas fa-film card-icon"></i>
+      <h3>片源网</h3>
+      <p>影视资源索引</p>
+      <div class="card-footer">
+        <a href="https://www.pianyuan.la/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">资源</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-23">
+      <i class="fas fa-film card-icon"></i>
+      <h3>Vimeo</h3>
+      <p>高清创意视频</p>
+      <div class="card-footer">
+        <a href="https://vimeo.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-24">
+      <i class="fas fa-film card-icon"></i>
+      <h3>Dailymotion</h3>
+      <p>欧系视频平台</p>
+      <div class="card-footer">
+        <a href="https://www.dailymotion.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-video-25">
+      <i class="fas fa-film card-icon"></i>
+      <h3>YouTube 影视</h3>
+      <p>正版电影剧集</p>
+      <div class="card-footer">
+        <a href="https://www.youtube.com/store" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="category" id="forum">
+  <h2 class="category-title"><i class="fas fa-comments"></i> 社区论坛 · 交流分享</h2>
+  <div class="card-grid">
+    <div class="card" id="card-forum-0">
+      <i class="fas fa-users card-icon"></i>
+      <h3>贴吧</h3>
+      <p>百度贴吧</p>
+      <div class="card-footer">
+        <a href="https://tieba.baidu.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-1">
+      <i class="fab fa-reddit card-icon"></i>
+      <h3>Reddit</h3>
+      <p>社交新闻</p>
+      <div class="card-footer">
+        <a href="https://www.reddit.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-2">
+      <i class="fab fa-stack-overflow card-icon"></i>
+      <h3>Stack Overflow</h3>
+      <p>程序员问答</p>
+      <div class="card-footer">
+        <a href="https://stackoverflow.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-3">
+      <i class="fas fa-gamepad card-icon"></i>
+      <h3>NGA玩家社区</h3>
+      <p>艾泽拉斯</p>
+      <div class="card-footer">
+        <a href="https://nga.178.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-4">
+      <i class="fas fa-code card-icon"></i>
+      <h3>V2EX</h3>
+      <p>技术创意</p>
+      <div class="card-footer">
+        <a href="https://www.v2ex.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-5">
+      <i class="fas fa-users-cog card-icon"></i>
+      <h3>Stage1st</h3>
+      <p>动漫游戏论坛</p>
+      <div class="card-footer">
+        <a href="https://bbs.saraba1st.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-6">
+      <i class="fas fa-users card-icon"></i>
+      <h3>豆瓣</h3>
+      <p>书评影评兴趣社区</p>
+      <div class="card-footer">
+        <a href="https://www.douban.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-7">
+      <i class="fas fa-users card-icon"></i>
+      <h3>知乎</h3>
+      <p>知识问答社区</p>
+      <div class="card-footer">
+        <a href="https://www.zhihu.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-8">
+      <i class="fas fa-users card-icon"></i>
+      <h3>小红书</h3>
+      <p>生活种草分享</p>
+      <div class="card-footer">
+        <a href="https://www.xiaohongshu.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-9">
+      <i class="fas fa-paw card-icon"></i>
+      <h3>虎扑</h3>
+      <p>体育数码社区</p>
+      <div class="card-footer">
+        <a href="https://bbs.hupu.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-10">
+      <i class="fas fa-gamepad card-icon"></i>
+      <h3>游民星空论坛</h3>
+      <p>游戏玩家交流</p>
+      <div class="card-footer">
+        <a href="https://bbs.gamersky.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-11">
+      <i class="fas fa-gamepad card-icon"></i>
+      <h3>3DM论坛</h3>
+      <p>单机游戏交流</p>
+      <div class="card-footer">
+        <a href="https://bbs.3dmgame.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-12">
+      <i class="fas fa-gamepad card-icon"></i>
+      <h3>TapTap社区</h3>
+      <p>手游玩家交流</p>
+      <div class="card-footer">
+        <a href="https://www.taptap.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">手游</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-13">
+      <i class="fas fa-code card-icon"></i>
+      <h3>掘金</h3>
+      <p>前端技术社区</p>
+      <div class="card-footer">
+        <a href="https://juejin.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">开发</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-14">
+      <i class="fas fa-code card-icon"></i>
+      <h3>CSDN</h3>
+      <p>程序员技术博客</p>
+      <div class="card-footer">
+        <a href="https://www.csdn.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">开发</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-15">
+      <i class="fas fa-code card-icon"></i>
+      <h3>开源中国</h3>
+      <p>开源技术社区</p>
+      <div class="card-footer">
+        <a href="https://www.oschina.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">开发</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-16">
+      <i class="fas fa-palette card-icon"></i>
+      <h3>站酷</h3>
+      <p>设计师交流社区</p>
+      <div class="card-footer">
+        <a href="https://www.zcool.com.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">设计</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-17">
+      <i class="fas fa-palette card-icon"></i>
+      <h3>UI中国</h3>
+      <p>界面设计交流</p>
+      <div class="card-footer">
+        <a href="https://www.ui.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">设计</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-18">
+      <i class="fas fa-users card-icon"></i>
+      <h3>天涯社区</h3>
+      <p>综合老牌论坛</p>
+      <div class="card-footer">
+        <a href="https://www.tianya.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-19">
+      <i class="fas fa-users card-icon"></i>
+      <h3>猫扑</h3>
+      <p>娱乐综合社区</p>
+      <div class="card-footer">
+        <a href="https://www.mop.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-20">
+      <i class="fas fa-users card-icon"></i>
+      <h3>水木社区</h3>
+      <p>高校精英论坛</p>
+      <div class="card-footer">
+        <a href="http://www.newsmth.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-21">
+      <i class="fas fa-users card-icon"></i>
+      <h3>爱卡汽车</h3>
+      <p>汽车车友论坛</p>
+      <div class="card-footer">
+        <a href="https://www.xcar.com.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">汽车</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-22">
+      <i class="fas fa-users card-icon"></i>
+      <h3>汽车之家论坛</h3>
+      <p>汽车交流社区</p>
+      <div class="card-footer">
+        <a href="https://club.autohome.com.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">汽车</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-23">
+      <i class="fas fa-users card-icon"></i>
+      <h3>4chan</h3>
+      <p>海外综合贴图版</p>
+      <div class="card-footer">
+        <a href="https://www.4chan.org/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-24">
+      <i class="fas fa-users card-icon"></i>
+      <h3>Quora</h3>
+      <p>国外知乎问答</p>
+      <div class="card-footer">
+        <a href="https://www.quora.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-25">
+      <i class="fas fa-gamepad card-icon"></i>
+      <h3>Steam社区</h3>
+      <p>玩家讨论组</p>
+      <div class="card-footer">
+        <a href="https://steamcommunity.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-26">
+      <i class="fas fa-users card-icon"></i>
+      <h3>果壳</h3>
+      <p>科技趣味社区</p>
+      <div class="card-footer">
+        <a href="https://www.guokr.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">科普</span>
+      </div>
+    </div>
+    <div class="card" id="card-forum-27">
+      <i class="fas fa-users card-icon"></i>
+      <h3>丁香园</h3>
+      <p>健康医疗交流</p>
+      <div class="card-footer">
+        <a href="https://www.dxy.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">健康</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="category" id="music">
+  <h2 class="category-title"><i class="fas fa-music"></i> 音乐资源 · 无损试听</h2>
+  <div class="card-grid">
+    <div class="card" id="card-music-0">
+      <i class="fas fa-music card-icon"></i>
+      <h3>网易云音乐</h3>
+      <p>歌单评论社区</p>
+      <div class="card-footer">
+        <a href="https://music.163.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-1">
+      <i class="fas fa-music card-icon"></i>
+      <h3>QQ音乐</h3>
+      <p>正版曲库齐全</p>
+      <div class="card-footer">
+        <a href="https://y.qq.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-2">
+      <i class="fas fa-music card-icon"></i>
+      <h3>酷狗音乐</h3>
+      <p>海量乐库</p>
+      <div class="card-footer">
+        <a href="https://www.kugou.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-3">
+      <i class="fas fa-music card-icon"></i>
+      <h3>酷我音乐</h3>
+      <p>高品质试听</p>
+      <div class="card-footer">
+        <a href="https://www.kuwo.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-4">
+      <i class="fas fa-music card-icon"></i>
+      <h3>咪咕音乐</h3>
+      <p>免费正版超多</p>
+      <div class="card-footer">
+        <a href="https://music.migu.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-5">
+      <i class="fas fa-music card-icon"></i>
+      <h3>虾米音乐</h3>
+      <p>复古音乐社区</p>
+      <div class="card-footer">
+        <a href="https://www.xiami.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-6">
+      <i class="fab fa-spotify card-icon"></i>
+      <h3>Spotify</h3>
+      <p>全球流行乐库</p>
+      <div class="card-footer">
+        <a href="https://www.spotify.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-7">
+      <i class="fab fa-apple card-icon"></i>
+      <h3>Apple Music</h3>
+      <p>苹果正版音乐</p>
+      <div class="card-footer">
+        <a href="https://music.apple.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-8">
+      <i class="fas fa-music card-icon"></i>
+      <h3>YouTube Music</h3>
+      <p>视频音乐一体</p>
+      <div class="card-footer">
+        <a href="https://music.youtube.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-9">
+      <i class="fas fa-music card-icon"></i>
+      <h3>SoundCloud</h3>
+      <p>原创音乐人</p>
+      <div class="card-footer">
+        <a href="https://soundcloud.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-10">
+      <i class="fas fa-music card-icon"></i>
+      <h3>Last.fm</h3>
+      <p>音乐数据记录</p>
+      <div class="card-footer">
+        <a href="https://www.last.fm/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-11">
+      <i class="fas fa-music card-icon"></i>
+      <h3>猫耳FM</h3>
+      <p>二次元广播剧</p>
+      <div class="card-footer">
+        <a href="https://www.missevan.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">二次元</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-12">
+      <i class="fas fa-music card-icon"></i>
+      <h3>酷狗繁星</h3>
+      <p>直播音乐</p>
+      <div class="card-footer">
+        <a href="https://fanxing.kugou.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">直播</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-13">
+      <i class="fas fa-music card-icon"></i>
+      <h3>5sing原创</h3>
+      <p>原创音乐基地</p>
+      <div class="card-footer">
+        <a href="https://5sing.kugou.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">原创</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-14">
+      <i class="fas fa-music card-icon"></i>
+      <h3>豆瓣音乐</h3>
+      <p>音乐评分评论</p>
+      <div class="card-footer">
+        <a href="https://music.douban.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">中文</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-15">
+      <i class="fas fa-music card-icon"></i>
+      <h3>无损音乐网</h3>
+      <p>高品质音源</p>
+      <div class="card-footer">
+        <a href="https://www.hifini.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">无损</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-16">
+      <i class="fas fa-music card-icon"></i>
+      <h3>搜韵音乐</h3>
+      <p>古风音乐合集</p>
+      <div class="card-footer">
+        <a href="https://www.souyunmusic.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">古风</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-17">
+      <i class="fas fa-music card-icon"></i>
+      <h3>ANIME MUSIC</h3>
+      <p>动漫音乐合集</p>
+      <div class="card-footer">
+        <a href="https://anime-music.info/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">动漫</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-18">
+      <i class="fas fa-music card-icon"></i>
+      <h3>哔哩哔哩音乐</h3>
+      <p>B站音乐区</p>
+      <div class="card-footer">
+        <a href="https://music.bilibili.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">二次元</span>
+      </div>
+    </div>
+    <div class="card" id="card-music-19">
+      <i class="fas fa-podcast card-icon"></i>
+      <h3>小宇宙</h3>
+      <p>播客泛用型</p>
+      <div class="card-footer">
+        <a href="https://www.xiaoyuzhoufm.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">播客</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="category" id="education">
+  <h2 class="category-title"><i class="fas fa-book-reader"></i> 学习教育 · 知识提升</h2>
+  <div class="card-grid">
+    <div class="card" id="card-education-0">
+      <i class="fas fa-graduation-cap card-icon"></i>
+      <h3>慕课网</h3>
+      <p>IT职业在线学习</p>
+      <div class="card-footer">
+        <a href="https://www.imooc.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">IT</span>
+      </div>
+    </div>
+    <div class="card" id="card-education-1">
+      <i class="fas fa-school card-icon"></i>
+      <h3>中国大学MOOC</h3>
+      <p>名校公开课</p>
+      <div class="card-footer">
+        <a href="https://www.icourse163.org/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">高校</span>
+      </div>
+    </div>
+    <div class="card" id="card-education-2">
+      <i class="fas fa-book card-icon"></i>
+      <h3>网易公开课</h3>
+      <p>全球名校课程</p>
+      <div class="card-footer">
+        <a href="https://open.163.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">综合</span>
+      </div>
+    </div>
+    <div class="card" id="card-education-3">
+      <i class="fas fa-language card-icon"></i>
+      <h3>多邻国</h3>
+      <p>多语言学习</p>
+      <div class="card-footer">
+        <a href="https://www.duolingo.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">语言</span>
+      </div>
+    </div>
+    <div class="card" id="card-education-4">
+      <i class="fas fa-pencil-alt card-icon"></i>
+      <h3>扇贝单词</h3>
+      <p>英语单词记忆</p>
+      <div class="card-footer">
+        <a href="https://www.shanbay.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英语</span>
+      </div>
+    </div>
+    <div class="card" id="card-education-5">
+      <i class="fas fa-flask card-icon"></i>
+      <h3>可汗学院</h3>
+      <p>免费全学科教育</p>
+      <div class="card-footer">
+        <a href="https://www.khanacademy.org/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-education-6">
+      <i class="fas fa-book-open card-icon"></i>
+      <h3>学堂在线</h3>
+      <p>清华慕课平台</p>
+      <div class="card-footer">
+        <a href="https://www.xuetangx.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">高校</span>
+      </div>
+    </div>
+    <div class="card" id="card-education-7">
+      <i class="fas fa-book card-icon"></i>
+      <h3>得到</h3>
+      <p>知识付费平台</p>
+      <div class="card-footer">
+        <a href="https://www.dedao.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">提升</span>
+      </div>
+    </div>
+    <div class="card" id="card-education-8">
+      <i class="fas fa-pen card-icon"></i>
+      <h3>石墨文档</h3>
+      <p>在线学习笔记</p>
+      <div class="card-footer">
+        <a href="https://shimo.im/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">工具</span>
+      </div>
+    </div>
+    <div class="card" id="card-education-9">
+      <i class="fas fa-headphones card-icon"></i>
+      <h3>喜马拉雅</h3>
+      <p>音频知识学习</p>
+      <div class="card-footer">
+        <a href="https://www.ximalaya.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">音频</span>
+      </div>
+    </div>
+    <div class="card" id="card-education-10">
+      <i class="fas fa-book-open card-icon"></i>
+      <h3>学堂在线</h3>
+      <p>清华大学官方慕课平台</p>
+      <div class="card-footer">
+        <a href="https://www.xuetangx.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">高校</span>
+      </div>
+    </div>
+    <div class="card" id="card-education-11">
+      <i class="fas fa-headphones card-icon"></i>
+      <h3>每日英语听力</h3>
+      <p>英语听力口语训练</p>
+      <div class="card-footer">
+        <a href="https://www.eudic.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英语</span>
+      </div>
+    </div>
+    <div class="card" id="card-education-12">
+      <i class="fas fa-comments card-icon"></i>
+      <h3>TED</h3>
+      <p>全球精英思想演讲</p>
+      <div class="card-footer">
+        <a href="https://www.ted.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">提升</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="category" id="software">
+  <h2 class="category-title"><i class="fas fa-download"></i> 软件下载 · 安全纯净</h2>
+  <div class="card-grid">
+    <div class="card" id="card-software-0">
+      <i class="fas fa-laptop card-icon"></i>
+      <h3>微软官网</h3>
+      <p>Windows/Office</p>
+      <div class="card-footer">
+        <a href="https://www.microsoft.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">官方</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-1">
+      <i class="fas fa-palette card-icon"></i>
+      <h3>Adobe官网</h3>
+      <p>设计全家桶</p>
+      <div class="card-footer">
+        <a href="https://www.adobe.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">设计</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-2">
+      <i class="fas fa-windows card-icon"></i>
+      <h3>腾讯软件中心</h3>
+      <p>安全软件下载</p>
+      <div class="card-footer">
+        <a href="https://pc.qq.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">安全</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-3">
+      <i class="fas fa-download card-icon"></i>
+      <h3>360软件宝库</h3>
+      <p>常用软件大全</p>
+      <div class="card-footer">
+        <a href="https://soft.360.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">综合</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-4">
+      <i class="fas fa-file-code card-icon"></i>
+      <h3>FileHippo</h3>
+      <p>国外软件库</p>
+      <div class="card-footer">
+        <a href="https://www.filehippo.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-5">
+      <i class="fas fa-bolt card-icon"></i>
+      <h3>Softonic</h3>
+      <p>安全软件下载</p>
+      <div class="card-footer">
+        <a href="https://softonic.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-6">
+      <i class="fas fa-paint-brush card-icon"></i>
+      <h3>Figma</h3>
+      <p>在线UI设计</p>
+      <div class="card-footer">
+        <a href="https://www.figma.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">设计</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-7">
+      <i class="fas fa-video card-icon"></i>
+      <h3>剪映专业版</h3>
+      <p>桌面视频剪辑</p>
+      <div class="card-footer">
+        <a href="https://www.capcut.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">剪辑</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-8">
+      <i class="fas fa-keyboard card-icon"></i>
+      <h3>Steam</h3>
+      <p>游戏软件平台</p>
+      <div class="card-footer">
+        <a href="https://store.steampowered.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-9">
+      <i class="fas fa-shield-alt card-icon"></i>
+      <h3>火绒安全</h3>
+      <p>纯净杀毒软件</p>
+      <div class="card-footer">
+        <a href="https://www.huorong.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">安全</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-10">
+      <i class="fas fa-leaf card-icon"></i>
+      <h3>果核剥壳</h3>
+      <p>纯净绿色软件下载站，无捆绑无广告</p>
+      <div class="card-footer">
+        <a href="https://www.ghxi.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">纯净</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-11">
+      <i class="fas fa-cloud-download-alt card-icon"></i>
+      <h3>华军软件园</h3>
+      <p>老牌软件下载站，资源丰富安全</p>
+      <div class="card-footer">
+        <a href="https://www.onlinedown.net" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">综合</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-12">
+      <i class="fas fa-desktop card-icon"></i>
+      <h3>ZOL软件下载</h3>
+      <p>中关村在线旗下，软件评测全面</p>
+      <div class="card-footer">
+        <a href="https://xiazai.zol.com.cn" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">综合</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-13">
+      <i class="fas fa-cloud card-icon"></i>
+      <h3>天空下载站</h3>
+      <p>经典软件下载平台，系统工具齐全</p>
+      <div class="card-footer">
+        <a href="https://www.skycn.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">综合</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-14">
+      <i class="fas fa-file-download card-icon"></i>
+      <h3>423下载站</h3>
+      <p>便携版软件资源站，更新快无广告</p>
+      <div class="card-footer">
+        <a href="https://www.423down.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">纯净</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-15">
+      <i class="fas fa-hubspot card-icon"></i>
+      <h3>FossHub</h3>
+      <p>国际纯净开源软件分发平台</p>
+      <div class="card-footer">
+        <a href="https://www.fosshub.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-16">
+      <i class="fab fa-sourcetree card-icon"></i>
+      <h3>SourceForge</h3>
+      <p>全球开源软件托管与下载平台</p>
+      <div class="card-footer">
+        <a href="https://sourceforge.net" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">开源</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-17">
+      <i class="fas fa-globe card-icon"></i>
+      <h3>Softpedia</h3>
+      <p>国外软件百科式下载站，安全检测</p>
+      <div class="card-footer">
+        <a href="https://www.softpedia.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-18">
+      <i class="fas fa-horse card-icon"></i>
+      <h3>FileHorse</h3>
+      <p>国外软件高速下载平台，版本齐全</p>
+      <div class="card-footer">
+        <a href="https://www.filehorse.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">国际</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-19">
+      <i class="fab fa-microsoft card-icon"></i>
+      <h3>Microsoft Store</h3>
+      <p>Windows官方应用商店，纯净安全</p>
+      <div class="card-footer">
+        <a href="https://www.microsoft.com/zh-cn/store" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">官方</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-20">
+      <i class="fab fa-lenovo card-icon"></i>
+      <h3>联想应用商店</h3>
+      <p>联想官方软件平台，系统兼容性好</p>
+      <div class="card-footer">
+        <a href="https://lestore.lenovo.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">官方</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-21">
+      <i class="fab fa-apple card-icon"></i>
+      <h3>MacW</h3>
+      <p>Mac软件下载平台，破解版资源丰富</p>
+      <div class="card-footer">
+        <a href="https://www.macw.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">苹果</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-22">
+      <i class="fab fa-app-store-ios card-icon"></i>
+      <h3>MacX</h3>
+      <p>苹果软件与游戏下载社区</p>
+      <div class="card-footer">
+        <a href="https://www.macx.cn" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">苹果</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-23">
+      <i class="fab fa-qq card-icon"></i>
+      <h3>应用宝</h3>
+      <p>腾讯安卓应用商店，安全检测严格</p>
+      <div class="card-footer">
+        <a href="https://sj.qq.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">安卓</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-24">
+      <i class="fas fa-th-large card-icon"></i>
+      <h3>应用汇</h3>
+      <p>安卓应用商店，小众软件资源多</p>
+      <div class="card-footer">
+        <a href="https://www.appchina.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">安卓</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-25">
+      <i class="fas fa-seedling card-icon"></i>
+      <h3>豌豆荚</h3>
+      <p>经典安卓应用下载与管理平台</p>
+      <div class="card-footer">
+        <a href="https://www.wandoujia.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">安卓</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-26">
+      <i class="fas fa-shield-virus card-icon"></i>
+      <h3>腾讯电脑管家软件中心</h3>
+      <p>安全软件下载，一键安装管理</p>
+      <div class="card-footer">
+        <a href="https://guanjia.qq.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">安全</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-27">
+      <i class="fas fa-microchip card-icon"></i>
+      <h3>驱动精灵</h3>
+      <p>硬件驱动程序下载与更新工具</p>
+      <div class="card-footer">
+        <a href="https://www.drivergenius.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">驱动</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-28">
+      <i class="fas fa-cogs card-icon"></i>
+      <h3>驱动人生</h3>
+      <p>电脑驱动检测、下载与安装平台</p>
+      <div class="card-footer">
+        <a href="https://www.160.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">驱动</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-29">
+      <i class="fab fa-epic-games card-icon"></i>
+      <h3>Epic Games</h3>
+      <p>游戏软件与大作下载平台</p>
+      <div class="card-footer">
+        <a href="https://store.epicgames.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-30">
+      <i class="fab fa-origin card-icon"></i>
+      <h3>Origin</h3>
+      <p>EA游戏平台，正版游戏下载</p>
+      <div class="card-footer">
+        <a href="https://www.origin.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-31">
+      <i class="fab fa-ubisoft card-icon"></i>
+      <h3>Uplay</h3>
+      <p>育碧游戏下载与启动平台</p>
+      <div class="card-footer">
+        <a href="https://ubisoftconnect.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-32">
+      <i class="fas fa-file-alt card-icon"></i>
+      <h3>WPS官网</h3>
+      <p>WPS办公软件官方下载</p>
+      <div class="card-footer">
+        <a href="https://www.wps.cn" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">办公</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-33">
+      <i class="fas fa-sticky-note card-icon"></i>
+      <h3>Notion</h3>
+      <p>笔记与协作工具官方下载</p>
+      <div class="card-footer">
+        <a href="https://www.notion.so" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">办公</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-34">
+      <i class="fas fa-diamond card-icon"></i>
+      <h3>Obsidian</h3>
+      <p>知识管理与笔记软件下载</p>
+      <div class="card-footer">
+        <a href="https://obsidian.md" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">办公</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-35">
+      <i class="fas fa-film card-icon"></i>
+      <h3>达芬奇官网</h3>
+      <p>专业视频剪辑调色软件下载</p>
+      <div class="card-footer">
+        <a href="https://www.blackmagicdesign.com" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">剪辑</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-36">
+      <i class="fas fa-cube card-icon"></i>
+      <h3>Blender</h3>
+      <p>开源3D建模渲染软件下载</p>
+      <div class="card-footer">
+        <a href="https://www.blender.org" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">设计</span>
+      </div>
+    </div>
+    <div class="card" id="card-software-37">
+      <i class="fas fa-paint-brush card-icon"></i>
+      <h3>GIMP</h3>
+      <p>开源图像编辑软件，替代PS</p>
+      <div class="card-footer">
+        <a href="https://www.gimp.org" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">设计</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="category" id="programming">
+  <h2 class="category-title"><i class="fas fa-code"></i> 编程资源 · 开发必备</h2>
+  <div class="card-grid">
+    <div class="card" id="card-programming-0">
+      <i class="fas fa-code card-icon"></i>
+      <h3>GitHub</h3>
+      <p>全球代码托管</p>
+      <div class="card-footer">
+        <a href="https://github.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">开源</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-1">
+      <i class="fas fa-code-branch card-icon"></i>
+      <h3>GitLab</h3>
+      <p>代码托管平台</p>
+      <div class="card-footer">
+        <a href="https://gitlab.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">开源</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-2">
+      <i class="fas fa-laptop-code card-icon"></i>
+      <h3>掘金</h3>
+      <p>前端技术社区</p>
+      <div class="card-footer">
+        <a href="https://juejin.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">前端</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-3">
+      <i class="fas fa-file-code card-icon"></i>
+      <h3>MDN</h3>
+      <p>Web标准文档</p>
+      <div class="card-footer">
+        <a href="https://developer.mozilla.org/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">文档</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-4">
+      <i class="fas fa-code card-icon"></i>
+      <h3>LeetCode</h3>
+      <p>算法刷题平台</p>
+      <div class="card-footer">
+        <a href="https://leetcode.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">算法</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-5">
+      <i class="fas fa-code card-icon"></i>
+      <h3>牛客网</h3>
+      <p>笔试面试题库</p>
+      <div class="card-footer">
+        <a href="https://www.nowcoder.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">面试</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-6">
+      <i class="fas fa-puzzle-piece card-icon"></i>
+      <h3>Stack Overflow</h3>
+      <p>程序员问答</p>
+      <div class="card-footer">
+        <a href="https://stackoverflow.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">英文</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-7">
+      <i class="fas fa-globe card-icon"></i>
+      <h3>CodePen</h3>
+      <p>在线前端演示</p>
+      <div class="card-footer">
+        <a href="https://codepen.io/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">前端</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-8">
+      <i class="fas fa-cogs card-icon"></i>
+      <h3>开源中国</h3>
+      <p>国产开源社区</p>
+      <div class="card-footer">
+        <a href="https://www.oschina.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">开源</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-9">
+      <i class="fas fa-code card-icon"></i>
+      <h3>菜鸟教程</h3>
+      <p>编程入门教程</p>
+      <div class="card-footer">
+        <a href="https://www.runoob.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">入门</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-10">
+      <i class="fas fa-question-circle card-icon"></i>
+      <h3>Stack Overflow</h3>
+      <p>全球程序员问答社区</p>
+      <div class="card-footer">
+        <a href="https://stackoverflow.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">问答</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-11">
+      <i class="fab fa-codepen card-icon"></i>
+      <h3>CSDN</h3>
+      <p>国内老牌IT技术社区</p>
+      <div class="card-footer">
+        <a href="https://www.csdn.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">综合</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-12">
+      <i class="fas fa-newspaper card-icon"></i>
+      <h3>InfoQ</h3>
+      <p>架构与技术实践</p>
+      <div class="card-footer">
+        <a href="https://www.infoq.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">架构</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-13">
+      <i class="fas fa-laptop-code card-icon"></i>
+      <h3>W3School</h3>
+      <p>Web前端入门教程</p>
+      <div class="card-footer">
+        <a href="https://www.w3school.com.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">前端</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-14">
+      <i class="fas fa-user-graduate card-icon"></i>
+      <h3>廖雪峰官方网站</h3>
+      <p>全栈系列教程</p>
+      <div class="card-footer">
+        <a href="https://www.liaoxuefeng.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">入门</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-15">
+      <i class="fas fa-user-tie card-icon"></i>
+      <h3>NowCoder</h3>
+      <p>求职面试刷题</p>
+      <div class="card-footer">
+        <a href="https://www.nowcoder.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">面试</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-16">
+      <i class="fas fa-code card-icon"></i>
+      <h3>LintCode</h3>
+      <p>算法与面试训练</p>
+      <div class="card-footer">
+        <a href="https://www.lintcode.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">算法</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-17">
+      <i class="fas fa-code card-icon"></i>
+      <h3>HackerRank</h3>
+      <p>国外编程刷题平台</p>
+      <div class="card-footer">
+        <a href="https://www.hackerrank.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">算法</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-18">
+      <i class="fas fa-fist-raised card-icon"></i>
+      <h3>Codewars</h3>
+      <p>编程竞技练习</p>
+      <div class="card-footer">
+        <a href="https://www.codewars.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">练习</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-19">
+      <i class="fab fa-js-square card-icon"></i>
+      <h3>JSRun</h3>
+      <p>在线JS运行调试</p>
+      <div class="card-footer">
+        <a href="https://jsrun.net/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">前端</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-20">
+      <i class="fas fa-code card-icon"></i>
+      <h3>CodeSandbox</h3>
+      <p>在线前端项目IDE</p>
+      <div class="card-footer">
+        <a href="https://codesandbox.io/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">前端</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-21">
+      <i class="fas fa-bolt card-icon"></i>
+      <h3>StackBlitz</h3>
+      <p>在线Web IDE</p>
+      <div class="card-footer">
+        <a href="https://stackblitz.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">前端</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-22">
+      <i class="fab fa-github card-icon"></i>
+      <h3>GitHub Docs</h3>
+      <p>GitHub官方文档</p>
+      <div class="card-footer">
+        <a href="https://docs.github.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">文档</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-23">
+      <i class="fas fa-book-open card-icon"></i>
+      <h3>DevDocs</h3>
+      <p>多语言API文档合集</p>
+      <div class="card-footer">
+        <a href="https://devdocs.io/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">文档</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-24">
+      <i class="fab fa-vuejs card-icon"></i>
+      <h3>VuePress</h3>
+      <p>Vue驱动的静态网站</p>
+      <div class="card-footer">
+        <a href="https://vuepress.vuejs.org/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">工具</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-25">
+      <i class="fab fa-reddit card-icon"></i>
+      <h3>V2EX</h3>
+      <p>极客技术社区</p>
+      <div class="card-footer">
+        <a href="https://www.v2ex.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">社区</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-26">
+      <i class="fas fa-bug card-icon"></i>
+      <h3>SegmentFault</h3>
+      <p>思否开发者社区</p>
+      <div class="card-footer">
+        <a href="https://segmentfault.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">问答</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-27">
+      <i class="fab fa-python card-icon"></i>
+      <h3>Python官方文档</h3>
+      <p>Python中文文档</p>
+      <div class="card-footer">
+        <a href="https://docs.python.org/zh-cn/3/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">文档</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-28">
+      <i class="fab fa-golang card-icon"></i>
+      <h3>Go语言中文网</h3>
+      <p>Go学习与资料</p>
+      <div class="card-footer">
+        <a href="https://studygolang.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">后端</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-29">
+      <i class="fas fa-leaf card-icon"></i>
+      <h3>Spring.io</h3>
+      <p>Spring官方文档</p>
+      <div class="card-footer">
+        <a href="https://spring.io/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">后端</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-30">
+      <i class="fas fa-server card-icon"></i>
+      <h3>BootDoc</h3>
+      <p>前端CDN加速</p>
+      <div class="card-footer">
+        <a href="https://bootcdn.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">工具</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-31">
+      <i class="fas fa-check-circle card-icon"></i>
+      <h3>Can I Use</h3>
+      <p>浏览器兼容性查询</p>
+      <div class="card-footer">
+        <a href="https://caniuse.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">前端</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-32">
+      <i class="fas fa-at card-icon"></i>
+      <h3>Regex101</h3>
+      <p>在线正则测试</p>
+      <div class="card-footer">
+        <a href="https://regex101.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">工具</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-33">
+      <i class="fas fa-code card-icon"></i>
+      <h3>JSON.cn</h3>
+      <p>JSON格式化校验</p>
+      <div class="card-footer">
+        <a href="https://www.json.cn/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">工具</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-34">
+      <i class="fab fa-git-alt card-icon"></i>
+      <h3>Git教程</h3>
+      <p>Git官方中文教程</p>
+      <div class="card-footer">
+        <a href="https://git-scm.com/book/zh/v2" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">工具</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-35">
+      <i class="fab fa-docker card-icon"></i>
+      <h3>Docker Docs</h3>
+      <p>Docker官方文档</p>
+      <div class="card-footer">
+        <a href="https://docs.docker.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">运维</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-36">
+      <i class="fas fa-shipping-fast card-icon"></i>
+      <h3>K8s中文文档</h3>
+      <p>Kubernetes中文指南</p>
+      <div class="card-footer">
+        <a href="https://kubernetes.io/zh/docs/home/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">运维</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-37">
+      <i class="fab fa-linux card-icon"></i>
+      <h3>Linux命令大全</h3>
+      <p>Linux常用命令查询</p>
+      <div class="card-footer">
+        <a href="https://www.linuxcool.com/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">运维</span>
+      </div>
+    </div>
+    <div class="card" id="card-programming-38">
+      <i class="fas fa-lightbulb card-icon"></i>
+      <h3>LeetCode 题解</h3>
+      <p>算法题解参考</p>
+      <div class="card-footer">
+        <a href="https://leetcode-cn.com/problem-solving/" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>
+        <span class="tag">算法</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    </main>
+
+    <!-- 登录模态框 -->
+<div id="loginModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="modal-title"><i class="fab fa-github"></i> GitHub 登录</span>
+            <span class="modal-close" id="modalCloseBtn">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p>请输入 GitHub 用户名：</p>
+            <input type="text" id="githubUsernameInput" class="modal-input" placeholder="例如: octocat" autocomplete="off">
+            <div class="modal-error" id="modalErrorMsg" style="display: none;"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-btn cancel" id="modalCancelBtn">取消</button>
+            <button class="modal-btn confirm" id="modalConfirmBtn">登录</button>
+        </div>
+    </div>
+</div>
+
+    <!-- 底部 footer -->
+    <footer class="footer">
+        <div class="footer-quote">
+            <span class="quote-label"><i class="fas fa-heart"></i> 今日语录</span>
+            <span id="anime-quote-footer">—— 用代码编织二次元的梦</span>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2025-<span id="current-year"></span> YOCIM轻站 · 为爱发电 <i class="fas fa-bolt"></i> 如内容有侵权，请联系删除。</p>
+            <p class="footer-links">
+                <a href="https://github.com/YOCIM888"><i class="fab fa-github"></i> GitHub</a> | 
+                <a href="https://mp.weixin.qq.com/s/zPMs_f6EN76Wg98g8hMutQ"><i class="fas fa-rss"></i> 公众号</a> | 
+                <a href="mailto:yocim666@outlook.com"><i class="fas fa-envelope"></i> 反馈</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- 悬浮音乐播放器 -->
+    <div class="music-player" id="musicPlayer">
+        <div class="player-header">
+            <span class="player-title"><i class="fas fa-music"></i> 次元播放器</span>
+            <button class="close-player" id="closePlayer"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="player-content">
+            <div class="song-info">
+                <span class="song-name" id="currentSong">未播放</span>
+            </div>
+            <div class="progress-container">
+                <input type="range" class="progress-bar" id="progressBar" value="0" step="0.1">
+                <div class="time">
+                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                </div>
+            </div>
+            <div class="player-controls">
+                <button id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                <button id="playPauseBtn"><i class="fas fa-play"></i></button>
+                <button id="nextBtn"><i class="fas fa-step-forward"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/Home-Page.js"></script>
+    <script src="scripts/search.js"></script>
+    <script src="scripts/scroll.js"></script>
+</body>
+</html>
