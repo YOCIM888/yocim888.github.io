@@ -1,0 +1,985 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #0a0a1a 100%);
+    font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif;
+    color: #fff;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 
+        0 0 60px rgba(0, 200, 255, 0.3),
+        0 0 100px rgba(0, 150, 255, 0.2),
+        inset 0 0 100px rgba(0, 100, 255, 0.1);
+    background: #000;
+}
+
+#gameCanvas {
+    background: radial-gradient(ellipse at center, #0d1020 0%, #050510 50%, #000 100%);
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 4px solid;
+    border-image: linear-gradient(135deg, #00d4ff, #ff00ff, #00d4ff) 1;
+    box-shadow: 
+        inset 0 0 80px rgba(0, 255, 255, 0.1),
+        0 0 30px rgba(0, 200, 255, 0.5);
+}
+
+/* 游戏顶部信息栏 */
+.game-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
+    z-index: 10;
+    background: linear-gradient(180deg, rgba(0, 20, 40, 0.9) 0%, rgba(0, 20, 40, 0) 100%);
+}
+
+.info-panel {
+    display: flex;
+    gap: 15px;
+}
+
+.score-panel, .lives-panel, .level-panel {
+    background: rgba(0, 30, 60, 0.8);
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 2px solid;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.score-panel {
+    border-color: #00d4ff;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4), inset 0 0 20px rgba(0, 212, 255, 0.1);
+    animation: panelGlow 2s ease-in-out infinite;
+}
+
+.lives-panel {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.4), inset 0 0 20px rgba(255, 107, 107, 0.1);
+}
+
+.level-panel {
+    border-color: #ffd93d;
+    box-shadow: 0 0 20px rgba(255, 217, 61, 0.4), inset 0 0 20px rgba(255, 217, 61, 0.1);
+}
+
+.panel-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.panel-value {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px currentColor;
+}
+
+.score-panel .panel-value { color: #00d4ff; }
+.lives-panel .panel-value { color: #ff6b6b; }
+.level-panel .panel-value { color: #ffd93d; }
+
+/* 技能冷却指示器 */
+.skills-panel {
+    position: absolute;
+    bottom: 120px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 30, 60, 0.8);
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 2px solid #00d4ff;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.skill-icon {
+    font-size: 1.5rem;
+}
+
+.skill-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-name {
+    font-size: 0.8rem;
+    color: #00d4ff;
+}
+
+.skill-cooldown {
+    width: 80px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.skill-cooldown-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #00d4ff, #00ff88);
+    transition: width 0.1s linear;
+}
+
+.skill-cooldown-bar.cooling {
+    background: linear-gradient(90deg, #ff6b6b, #ffd93d);
+}
+
+/* 道具指示器 */
+.powerup-indicator {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    background: rgba(0, 30, 60, 0.9);
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 2px solid #ffd93d;
+    box-shadow: 0 0 25px rgba(255, 217, 61, 0.5);
+    display: none;
+    z-index: 10;
+    animation: panelSlideIn 0.3s ease;
+}
+
+.powerup-indicator.active {
+    display: block;
+}
+
+.powerup-type {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.powerup-icon {
+    font-size: 1.5rem;
+}
+
+.powerup-timer {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.powerup-timer-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ffd93d, #ff6b6b);
+    transition: width 0.1s linear;
+}
+
+/* Boss血条 */
+.boss-health-container {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px;
+    z-index: 10;
+    display: none;
+}
+
+.boss-health-container.active {
+    display: block;
+    animation: bossBarAppear 0.5s ease;
+}
+
+.boss-name {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ff6b6b;
+    text-shadow: 0 0 10px #ff6b6b;
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+}
+
+.boss-health-bar {
+    height: 25px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #ff6b6b;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 
+        0 0 20px rgba(255, 107, 107, 0.5),
+        inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.boss-health-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff0000, #ff6b6b, #ffd93d, #00ff88);
+    background-size: 300% 100%;
+    transition: width 0.3s ease;
+    animation: healthGradient 3s linear infinite;
+    border-radius: 12px;
+}
+
+.boss-phase {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ffd93d;
+    margin-top: 5px;
+}
+
+/* 连击显示 */
+.combo-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffd93d;
+    text-shadow: 
+        0 0 20px #ffd93d,
+        0 0 40px #ff6b6b,
+        0 0 60px #ff0000;
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.combo-display.active {
+    opacity: 1;
+    animation: comboPulse 0.5s ease;
+}
+
+.combo-display.high {
+    font-size: 4rem;
+    color: #ff6b6b;
+    text-shadow: 
+        0 0 30px #ff6b6b,
+        0 0 60px #ff0000,
+        0 0 90px #ff00ff;
+}
+
+.combo-display.max {
+    font-size: 5rem;
+    color: #ff00ff;
+    text-shadow: 
+        0 0 40px #ff00ff,
+        0 0 80px #00d4ff,
+        0 0 120px #00ff88;
+    animation: comboMax 0.3s ease;
+}
+
+/* 游戏标题 */
+.game-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+.game-title.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.main-title {
+    font-size: 4.5rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #00d4ff 0%, #ff00ff 50%, #ffd93d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.8));
+    animation: titleFloat 3s ease-in-out infinite, titleGlow 2s ease-in-out infinite;
+    letter-spacing: 8px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
+    letter-spacing: 5px;
+}
+
+.start-hint {
+    margin-top: 40px;
+    font-size: 1.1rem;
+    color: #00d4ff;
+    animation: blink 1.5s ease-in-out infinite;
+}
+
+/* 操作说明 - 自动消失 */
+.instructions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 20, 40, 0.95);
+    padding: 15px 25px;
+    border-top: 3px solid;
+    border-image: linear-gradient(90deg, transparent, #00d4ff, #ff00ff, #00d4ff, transparent) 1;
+    z-index: 10;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.instructions.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.instructions.hiding {
+    transform: translateY(0);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.instructions-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.instructions-title {
+    font-size: 0.9rem;
+    color: #ffd93d;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* 移除关闭按钮样式 */
+.close-btn {
+    display: none;
+}
+
+/* 控制项网格布局 */
+.controls-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.control-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s ease;
+}
+
+.control-item:hover {
+    transform: translateY(-2px);
+}
+
+.key-badge {
+    background: linear-gradient(180deg, rgba(0, 212, 255, 0.3) 0%, rgba(0, 100, 255, 0.2) 100%);
+    border: 1px solid rgba(0, 212, 255, 0.5);
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #00d4ff;
+    min-width: 40px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.key-badge:hover {
+    background: linear-gradient(180deg, rgba(0, 212, 255, 0.5) 0%, rgba(0, 100, 255, 0.4) 100%);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* 移动端隐藏操作说明 */
+@media (hover: none) and (pointer: coarse) {
+    .instructions {
+        display: none;
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .instructions {
+        padding: 10px 15px;
+    }
+    
+    .controls-grid {
+        gap: 10px;
+    }
+    
+    .control-item {
+        font-size: 0.75rem;
+    }
+    
+    .key-badge {
+        padding: 4px 8px;
+        min-width: 35px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .instructions {
+        padding: 8px 10px;
+    }
+    
+    .controls-grid {
+        gap: 8px;
+    }
+    
+    .control-item {
+        font-size: 0.7rem;
+        flex-direction: column;
+    }
+    
+    .key-badge {
+        padding: 3px 6px;
+        min-width: 30px;
+        font-size: 0.75rem;
+    }
+}
+
+/* 游戏结束界面 */
+.game-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    backdrop-filter: blur(10px);
+}
+
+.game-over.active {
+    display: flex;
+    animation: fadeIn 0.5s ease;
+}
+
+.game-over h1 {
+    font-size: 5rem;
+    background: linear-gradient(135deg, #ff0000 0%, #ff6b6b 50%, #ff0000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 30px rgba(255, 0, 0, 0.8));
+    animation: gameOverPulse 2s ease-in-out infinite;
+    letter-spacing: 10px;
+    margin-bottom: 30px;
+}
+
+.final-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.stat-item {
+    font-size: 1.5rem;
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.stat-value {
+    color: #ffd93d;
+    font-weight: bold;
+}
+
+.grade-display {
+    font-size: 4rem;
+    margin-bottom: 30px;
+    animation: gradeBounce 0.5s ease;
+}
+
+.grade-s { color: #ffd93d; text-shadow: 0 0 30px #ffd93d; }
+.grade-a { color: #00ff88; text-shadow: 0 0 30px #00ff88; }
+.grade-b { color: #00d4ff; text-shadow: 0 0 30px #00d4ff; }
+.grade-c { color: #ff6b6b; text-shadow: 0 0 30px #ff6b6b; }
+
+/* 按钮样式 */
+.btn {
+    background: linear-gradient(135deg, #00d4ff 0%, #0066ff 100%);
+    border: none;
+    color: white;
+    padding: 18px 50px;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 
+        0 5px 20px rgba(0, 212, 255, 0.5),
+        0 0 40px rgba(0, 212, 255, 0.3);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 
+        0 10px 30px rgba(0, 212, 255, 0.7),
+        0 0 60px rgba(0, 212, 255, 0.5);
+}
+
+.btn:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff0000 100%);
+    box-shadow: 
+        0 5px 20px rgba(255, 107, 107, 0.5),
+        0 0 40px rgba(255, 107, 107, 0.3);
+}
+
+.btn-secondary:hover {
+    box-shadow: 
+        0 10px 30px rgba(255, 107, 107, 0.7),
+        0 0 60px rgba(255, 107, 107, 0.5);
+}
+
+/* 暂停界面 */
+.pause-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 150;
+    backdrop-filter: blur(5px);
+}
+
+.pause-overlay.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.pause-text {
+    font-size: 4rem;
+    color: #00d4ff;
+    text-shadow: 
+        0 0 30px #00d4ff,
+        0 0 60px #0066ff;
+    letter-spacing: 15px;
+    animation: pauseFloat 2s ease-in-out infinite;
+}
+
+/* 通知提示 */
+.notification {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 30, 60, 0.95);
+    padding: 15px 30px;
+    border-radius: 12px;
+    border: 2px solid #00d4ff;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+    z-index: 60;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.notification.active {
+    opacity: 1;
+    animation: notifySlide 0.5s ease;
+}
+
+.notification.success {
+    border-color: #00ff88;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+}
+
+.notification.warning {
+    border-color: #ffd93d;
+    box-shadow: 0 0 30px rgba(255, 217, 61, 0.5);
+}
+
+.notification.danger {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
+}
+
+/* 虚拟摇杆 */
+.virtual-joystick {
+    position: absolute;
+    bottom: 120px;
+    left: 20px;
+    width: 120px;
+    height: 120px;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.joystick-base {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 30, 60, 0.8);
+    border: 3px solid #00d4ff;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.joystick-knob {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #00d4ff, #0088cc);
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+        0 0 15px rgba(0, 212, 255, 0.8),
+        inset 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.1s ease;
+}
+
+/* 虚拟控制按钮 */
+.virtual-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    z-index: 20;
+    max-width: 200px;
+    justify-content: flex-end;
+}
+
+.virtual-btn {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 30, 60, 0.8);
+    border: 2px solid #00d4ff;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.virtual-btn:hover,
+.virtual-btn:active {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
+}
+
+.virtual-btn:active {
+    transform: scale(0.95);
+}
+
+.virtual-btn .btn-icon {
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+}
+
+.virtual-btn .btn-text {
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+
+.fire-btn {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+}
+
+.fire-btn:hover,
+.fire-btn:active {
+    box-shadow: 0 0 25px rgba(255, 107, 107, 0.6);
+}
+
+.missile-btn {
+    border-color: #ff6600;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+}
+
+.missile-btn:hover,
+.missile-btn:active {
+    box-shadow: 0 0 25px rgba(255, 102, 0, 0.6);
+}
+
+.shield-btn {
+    border-color: #00ff88;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+.shield-btn:hover,
+.shield-btn:active {
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
+}
+
+.lightning-btn {
+    border-color: #ffd93d;
+    box-shadow: 0 0 15px rgba(255, 217, 61, 0.3);
+}
+
+.lightning-btn:hover,
+.lightning-btn:active {
+    box-shadow: 0 0 25px rgba(255, 217, 61, 0.6);
+}
+
+.bomb-btn {
+    border-color: #ff00ff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+}
+
+.bomb-btn:hover,
+.bomb-btn:active {
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.6);
+}
+
+/* 炸弹显示 */
+.bombs-display {
+    position: absolute;
+    bottom: 120px;
+    right: 160px;
+    background: rgba(0, 30, 60, 0.8);
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+    z-index: 10;
+}
+
+.bombs-label {
+    color: #ff00ff;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+.bombs-count {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* 动画关键帧 */
+@keyframes panelGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.4), inset 0 0 20px rgba(0, 212, 255, 0.1); }
+    50% { box-shadow: 0 0 35px rgba(0, 212, 255, 0.6), inset 0 0 30px rgba(0, 212, 255, 0.2); }
+}
+
+@keyframes panelSlideIn {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes bossBarAppear {
+    from { transform: translateX(-50%) scaleX(0); opacity: 0; }
+    to { transform: translateX(-50%) scaleX(1); opacity: 1; }
+}
+
+@keyframes healthGradient {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+}
+
+@keyframes comboPulse {
+    0% { transform: translate(-50%, -50%) scale(0.5); }
+    50% { transform: translate(-50%, -50%) scale(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes comboMax {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.3) rotate(5deg); }
+    100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+}
+
+@keyframes titleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes titleGlow {
+    0%, 100% { filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.8)); }
+    50% { filter: drop-shadow(0 0 40px rgba(255, 0, 255, 0.8)); }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes gameOverPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes gradeBounce {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.3); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pauseFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes notifySlide {
+    from { transform: translateX(-50%) translateY(-30px); opacity: 0; }
+    to { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+
+@keyframes particleFloat {
+    0% { opacity: 1; transform: translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateY(-50px) scale(0); }
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .main-title { font-size: 3rem; }
+    .controls-grid { gap: 15px; }
+    .control-item { font-size: 0.8rem; }
+    .boss-health-container { width: 80%; }
+    .virtual-joystick { bottom: 100px; left: 15px; }
+    .virtual-controls { bottom: 15px; right: 15px; }
+    .virtual-btn { width: 50px; height: 50px; }
+    .virtual-btn .btn-icon { font-size: 1.2rem; }
+    .virtual-btn .btn-text { font-size: 0.5rem; }
+}
+
+@media (max-width: 600px) {
+    .main-title { font-size: 2rem; letter-spacing: 3px; }
+    .game-header { padding: 10px 15px; }
+    .info-panel { gap: 8px; }
+    .score-panel, .lives-panel, .level-panel { padding: 8px 12px; }
+    .panel-value { font-size: 1rem; }
+    .controls-grid { flex-direction: column; gap: 8px; }
+    .boss-health-container { width: 90%; }
+    .boss-name { font-size: 0.9rem; }
+    .btn { padding: 12px 30px; font-size: 1rem; }
+    .virtual-joystick { 
+        bottom: 80px; 
+        left: 10px; 
+        width: 80px; 
+        height: 80px; 
+    }
+    .virtual-controls { 
+        bottom: 10px; 
+        right: 10px; 
+        gap: 8px; 
+    }
+    .virtual-btn { 
+        width: 45px; 
+        height: 45px; 
+    }
+    .virtual-btn .btn-icon { 
+        font-size: 1rem; 
+    }
+    .virtual-btn .btn-text { 
+        font-size: 0.4rem; 
+    }
+    .skills-panel { 
+        bottom: 90px; 
+        right: 10px; 
+        gap: 8px; 
+    }
+    .skill-item { 
+        padding: 8px 12px; 
+    }
+    .skill-icon { 
+        font-size: 1.2rem; 
+    }
+    .skill-name { 
+        font-size: 0.7rem; 
+    }
+    .skill-cooldown { 
+        width: 60px; 
+        height: 4px; 
+    }
+}
+
+/* 隐藏虚拟控制器在桌面端 */
+@media (hover: hover) and (pointer: fine) {
+    .virtual-joystick,
+    .virtual-controls {
+        display: none;
+    }
+}
+
+/* 移动设备专用 */
+@media (hover: none) and (pointer: coarse) {
+    .virtual-joystick,
+    .virtual-controls {
+        display: block;
+    }
+    
+    .instructions {
+        display: none;
+    }
+    
+    .skills-panel {
+        display: none;
+    }
+}

@@ -1,0 +1,592 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #0a0a1a;
+    color: #00eeff;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+.game-scene {
+    position: relative;
+    width: 4000px; /* 大地图宽度 */
+    height: 100%;
+    background: linear-gradient(to bottom, #0a0a2a 0%, #1a1a3a 30%, #0a0a2a 100%);
+    overflow: hidden;
+    transition: transform 0.1s ease-out; /* 平滑的摄像机移动 */
+}
+
+/* 未来城市背景 */
+.city-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.skyline {
+    position: absolute;
+    bottom: 150px;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(to bottom, transparent, rgba(10, 20, 50, 0.8) 20%, #050520 100%);
+}
+
+.building {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to top, #111133, #222244);
+    border-left: 1px solid #00eeff;
+    border-right: 1px solid #00eeff;
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.3);
+}
+
+.building:nth-child(1) { left: 5%; width: 80px; height: 300px; }
+.building:nth-child(2) { left: 15%; width: 120px; height: 400px; }
+.building:nth-child(3) { left: 30%; width: 100px; height: 350px; }
+.building:nth-child(4) { left: 45%; width: 150px; height: 450px; }
+.building:nth-child(5) { left: 65%; width: 90px; height: 320px; }
+.building:nth-child(6) { left: 80%; width: 130px; height: 380px; }
+
+.neon-sign {
+    position: absolute;
+    color: #ff00ff;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px #ff00ff;
+    animation: neonBlink 2s infinite;
+}
+
+@keyframes neonBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.neon-sign:nth-child(1) { top: 120px; left: 12%; }
+.neon-sign:nth-child(2) { top: 100px; left: 32%; }
+.neon-sign:nth-child(3) { top: 150px; left: 68%; }
+
+/* 地面 */
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, #111122, #222233);
+    border-top: 3px solid #00eeff;
+    box-shadow: 0 -5px 20px rgba(0, 238, 255, 0.5);
+    z-index: 2;
+}
+
+.ground-line {
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    height: 2px;
+    background: repeating-linear-gradient(
+        to right,
+        #00eeff 0px,
+        #00eeff 20px,
+        transparent 20px,
+        transparent 40px
+    );
+    animation: lineMove 1s linear infinite;
+}
+
+@keyframes lineMove {
+    0% { background-position-x: 0; }
+    100% { background-position-x: 40px; }
+}
+
+/* 玩家角色 - 赛博火柴人 */
+.player {
+    position: absolute;
+    left: 500px;
+    bottom: 150px;
+    width: 80px;
+    height: 160px;
+    z-index: 10;
+    transition: left 0.15s ease-out;
+}
+
+.player-body {
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    background: #00eeff;
+    top: 40px;
+    left: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.8);
+}
+
+.player-head {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #00eeff;
+    border-radius: 50%;
+    left: 25px;
+    top: 10px;
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.8);
+}
+
+.player-helmet {
+    position: absolute;
+    width: 36px;
+    height: 20px;
+    background: #111;
+    border-radius: 50% 50% 0 0;
+    left: 22px;
+    top: 8px;
+    border: 2px solid #00eeff;
+}
+
+.player-arm {
+    position: absolute;
+    width: 50px;
+    height: 15px;
+    background: #00eeff;
+    border-radius: 7px;
+    top: 50px;
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.8);
+}
+
+.player-arm.left {
+    left: 5px;
+    transform-origin: right center;
+}
+
+.player-arm.right {
+    right: 5px;
+    transform-origin: left center;
+}
+
+.player-leg {
+    position: absolute;
+    width: 15px;
+    height: 60px;
+    background: #00eeff;
+    border-radius: 7px;
+    bottom: 0;
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.8);
+}
+
+.player-leg.left {
+    left: 25px;
+}
+
+.player-leg.right {
+    right: 25px;
+}
+
+.player-energy-core {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ff00ff;
+    border-radius: 50%;
+    top: 60px;
+    left: 32px;
+    box-shadow: 0 0 10px #ff00ff;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* 武器 */
+.weapon {
+    position: absolute;
+    transition: transform 0.1s;
+    z-index: 11;
+}
+
+.sword {
+    width: 60px;
+    height: 10px;
+    background: linear-gradient(to right, #aaa, #fff);
+    border-radius: 2px;
+    transform-origin: left center;
+    box-shadow: 0 0 10px #fff;
+    display: none;
+}
+
+.gun {
+    width: 40px;
+    height: 15px;
+    background: #333;
+    border-radius: 3px;
+    transform-origin: left center;
+    display: none;
+}
+
+.gun-barrel {
+    position: absolute;
+    width: 20px;
+    height: 8px;
+    background: #555;
+    right: -20px;
+    top: 3px;
+    border-radius: 0 3px 3px 0;
+}
+
+/* 敌人 */
+.enemy {
+    position: absolute;
+    bottom: 150px;
+    width: 70px;
+    height: 140px;
+    z-index: 5;
+    transition: left 0.05s linear;
+}
+
+.enemy-body {
+    position: absolute;
+    width: 18px;
+    height: 50px;
+    border-radius: 9px;
+    top: 40px;
+    left: 26px;
+}
+
+.enemy-head {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    left: 22px;
+    top: 15px;
+}
+
+.enemy-arm {
+    position: absolute;
+    width: 40px;
+    height: 12px;
+    border-radius: 6px;
+    top: 50px;
+}
+
+.enemy-arm.left {
+    left: 0;
+}
+
+.enemy-arm.right {
+    right: 0;
+}
+
+.enemy-leg {
+    position: absolute;
+    width: 12px;
+    height: 50px;
+    border-radius: 6px;
+    bottom: 0;
+}
+
+.enemy-leg.left {
+    left: 20px;
+}
+
+.enemy-leg.right {
+    right: 20px;
+}
+
+.enemy-weapon {
+    position: absolute;
+    z-index: 4;
+}
+
+/* 敌人类型 */
+.sword-enemy .enemy-body,
+.sword-enemy .enemy-head,
+.sword-enemy .enemy-arm,
+.sword-enemy .enemy-leg {
+    background: #ff5555;
+    box-shadow: 0 0 8px rgba(255, 85, 85, 0.8);
+}
+
+.gun-enemy .enemy-body,
+.gun-enemy .enemy-head,
+.gun-enemy .enemy-arm,
+.gun-enemy .enemy-leg {
+    background: #55ff55;
+    box-shadow: 0 0 8px rgba(85, 255, 85, 0.8);
+}
+
+.shield-enemy .enemy-body,
+.shield-enemy .enemy-head,
+.shield-enemy .enemy-arm,
+.shield-enemy .enemy-leg {
+    background: #5555ff;
+    box-shadow: 0 0 8px rgba(85, 85, 255, 0.8);
+}
+
+.shield-enemy .shield {
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    background: rgba(100, 100, 255, 0.7);
+    border: 2px solid #5555ff;
+    left: -15px;
+    top: 30px;
+    border-radius: 5px;
+    z-index: 3;
+}
+
+/* 子弹 */
+.bullet {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: 6;
+}
+
+.player-bullet {
+    background: #ffff00;
+    box-shadow: 0 0 10px #ffff00;
+}
+
+.enemy-bullet {
+    background: #ff5555;
+    box-shadow: 0 0 10px #ff5555;
+}
+
+/* 游戏UI */
+.game-ui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.health-container {
+    background: rgba(0, 10, 30, 0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #00eeff;
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
+}
+
+.health-bar {
+    width: 300px;
+    height: 20px;
+    background: rgba(255, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ff0000;
+}
+
+.health-fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #ff0000, #ff5555);
+    border-radius: 10px;
+    transition: width 0.3s;
+}
+
+.health-text {
+    margin-top: 5px;
+    font-size: 1.2rem;
+    color: #00eeff;
+    text-shadow: 0 0 5px #00eeff;
+    text-align: center;
+}
+
+.score-container {
+    background: rgba(0, 10, 30, 0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+    text-align: center;
+}
+
+.score-title {
+    font-size: 1rem;
+    color: #ff00ff;
+    margin-bottom: 5px;
+}
+
+.score {
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
+}
+
+/* 游戏说明 - 可关闭 */
+.instructions {
+    position: absolute;
+    bottom: 120px;
+    left: 20px;
+    background: rgba(0, 10, 30, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #00eeff;
+    max-width: 300px;
+    z-index: 100;
+    transition: opacity 0.3s;
+}
+
+.instructions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.instructions h3 {
+    color: #00eeff;
+    margin: 0;
+    text-shadow: 0 0 5px #00eeff;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: #00eeff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-btn:hover {
+    background: rgba(0, 238, 255, 0.2);
+}
+
+.instructions p {
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.key {
+    display: inline-block;
+    background: rgba(0, 238, 255, 0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #00eeff;
+    margin: 0 3px;
+}
+
+/* 游戏消息 */
+.game-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 10, 30, 0.95);
+    padding: 30px 50px;
+    border-radius: 15px;
+    border: 3px solid #00eeff;
+    box-shadow: 0 0 30px rgba(0, 238, 255, 0.8);
+    text-align: center;
+    z-index: 200;
+    display: none;
+}
+
+.game-message h2 {
+    font-size: 3rem;
+    color: #00eeff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px #00eeff;
+}
+
+.game-message p {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.restart-btn {
+    background: linear-gradient(to right, #00eeff, #ff00ff);
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    color: #000;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    box-shadow: 0 0 20px rgba(0, 238, 255, 0.7);
+}
+
+.restart-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 238, 255, 0.9);
+}
+
+/* 特效 */
+.hit-effect {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffff00, transparent 70%);
+    pointer-events: none;
+    z-index: 7;
+    animation: hitExpand 0.5s forwards;
+}
+
+@keyframes hitExpand {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+}
+
+.death-effect {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff0000, transparent 70%);
+    pointer-events: none;
+    z-index: 7;
+    animation: deathExpand 0.8s forwards;
+}
+
+@keyframes deathExpand {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(5); opacity: 0; }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .health-bar {
+        width: 200px;
+    }
+    
+    .instructions {
+        max-width: 250px;
+        font-size: 0.8rem;
+    }
+}
