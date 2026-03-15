@@ -71,7 +71,7 @@
         // 敌人初始化 (带随机速度)
         enemies = [];
         for (let i = 0; i < ENEMY_COUNT; i++) {
-            let radius = Math.random() < 0.3 ? rand(40, 175) : rand(12, 40); // 30%大敌人，70%小敌人
+            let radius = Math.random() < 0.3 ? rand(40, 200) : rand(12, 40); // 30%大敌人，70%小敌人
             // 确保不直接生成在玩家身上
             let posX, posY;
             let attempts = 0;
@@ -246,7 +246,7 @@
         }
 
         // 限制玩家最大半径 (防止溢出边界感)
-        if (player.r > 130) player.r = 130;  // 世界边界内保持可玩
+        if (player.r > 300) player.r = 300;  // 世界边界内保持可玩
     }
 
     // --- 绘制赛博朋克风格画面 (带网格, 发光, 故障线) ---
