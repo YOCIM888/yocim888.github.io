@@ -212,17 +212,9 @@ h1 {
     100% { transform: translateX(100%); }
 }
 
-.health-fill.high {
-    background: linear-gradient(90deg, #2ed573, #1dd1a1);
-}
-
-.health-fill.medium {
-    background: linear-gradient(90deg, #ffa502, #ff7f00);
-}
-
-.health-fill.low {
-    background: linear-gradient(90deg, #ff4757, #ff3838);
-}
+.health-fill.high { background: linear-gradient(90deg, #2ed573, #1dd1a1); }
+.health-fill.medium { background: linear-gradient(90deg, #ffa502, #ff7f00); }
+.health-fill.low { background: linear-gradient(90deg, #ff4757, #ff3838); }
 
 .player-stats {
     display: grid;
@@ -368,21 +360,10 @@ h1 {
     letter-spacing: 1px;
 }
 
-.type-profession {
-    background: linear-gradient(135deg, #9b59b6, #8e44ad);
-}
-
-.type-weapon {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-}
-
-.type-equipment {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-}
-
-.type-item {
-    background: linear-gradient(135deg, #2ecc71, #27ae60);
-}
+.type-profession { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+.type-weapon { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.type-equipment { background: linear-gradient(135deg, #3498db, #2980b9); }
+.type-item { background: linear-gradient(135deg, #2ecc71, #27ae60); }
 
 .item-desc {
     color: #ccc;
@@ -410,14 +391,21 @@ h1 {
 
 .log-section {
     flex: 1;
+    max-height: 200px;          /* 限制最大高度，实现小框效果 */
     background: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     padding: 15px;
     border: 1px solid #333;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    min-height: 200px;
+    overflow: hidden;           /* 隐藏超出部分，由内部滚动 */
+    min-height: 200px;          /* 可选，保留最小高度 */
+}
+
+#log-container {
+    flex: 1;
+    overflow-y: auto;           /* 内部可滚动 */
+    padding-right: 5px;
 }
 
 .log-title {
@@ -456,27 +444,11 @@ h1 {
     line-height: 1.4;
 }
 
-.log-entry.player {
-    color: #4a9eff;
-}
-
-.log-entry.computer {
-    color: #ff6b6b;
-}
-
-.log-entry.system {
-    color: #f8c555;
-}
-
-.log-entry.attack {
-    color: #ff6b6b;
-    font-weight: bold;
-}
-
-.log-entry.heal {
-    color: #2ecc71;
-    font-weight: bold;
-}
+.log-entry.player { color: #4a9eff; }
+.log-entry.computer { color: #ff6b6b; }
+.log-entry.system { color: #f8c555; }
+.log-entry.attack { color: #ff6b6b; font-weight: bold; }
+.log-entry.heal { color: #2ecc71; font-weight: bold; }
 
 .winner-section {
     position: fixed;
@@ -553,138 +525,211 @@ h1 {
     box-shadow: 0 12px 30px rgba(45, 138, 255, 0.4);
 }
 
-/* 响应式设计 */
-@media (max-width: 1200px) {
-    .game-area {
-        flex-direction: column;
-    }
-    
-    .auction-section, .players-section {
-        min-width: 100%;
-    }
-    
-    .players-section {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    
-    .player-card {
-        flex: 1;
-        min-width: 300px;
-    }
-}
+/* ========== 移动端优化 (卡片缩略 + 操作区置顶) ========== */
+@media (max-width: 700px) {
+    body { padding: 8px; }
+    .container { height: calc(100vh - 16px); gap: 8px; }
+    h1 { font-size: 1.6rem; padding: 5px 0; }
+    .subtitle { font-size: 0.85rem; margin-bottom: 5px; }
+    .game-info { padding: 6px 10px; font-size: 0.9rem; }
 
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-    
-    .container {
-        height: calc(100vh - 20px);
-    }
-    
-    h1 {
-        font-size: 2rem;
-    }
-    
-    .game-info {
+    .game-area {
         flex-direction: column;
         gap: 8px;
-        text-align: center;
     }
-    
+
+    /* 拍卖区：占据剩余空间，无最大高度限制 */
+    .auction-section {
+        flex: 1;
+        order: 2;
+        max-height: none;
+        padding-bottom: 5px;
+        overflow: hidden;
+    }
+
+    /* 玩家卡片区：在上方 */
     .players-section {
-        flex-direction: column;
-    }
-    
-    .player-card {
-        min-width: 100%;
-    }
-    
-    .bid-controls {
-        flex-direction: column;
-    }
-    
-    .bid-input, .bid-button, .pass-button {
-        width: 100%;
-    }
-    
-    .winner-content {
-        padding: 30px 20px;
-    }
-    
-    .winner-title {
-        font-size: 2rem;
-    }
-    
-    .winner-name {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-    
-    .subtitle {
-        font-size: 0.9rem;
-    }
-    
-    .player-stats {
-        grid-template-columns: 1fr;
-    }
-    
-    .item-bid-info {
-        flex-direction: column;
-        gap: 5px;
-    }
-}
-
-/* 平板优化 */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .game-area {
+        flex: 0 0 auto;
+        order: 1;
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 0;
     }
-    
-    .players-section {
+
+    /* 日志区域：固定最大高度，内部滚动 */
+    .log-section {
+        flex: 0 0 auto;
+        max-height: 180px;
+        min-height: 100px;
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+
+    #log-container {
+        overflow-y: auto;
+        max-height: calc(100% - 40px); /* 40px 约为标题+内边距高度 */
+    }
+
+    /* 其他拍卖元素固定高度，不参与伸缩 */
+    .auction-item,
+    .current-bid,
+    .bid-controls {
+        flex-shrink: 0;
+    }
+
+    /* 卡片样式不变 */
+    .player-card {
+        padding: 6px 4px;
+        min-width: 0;
+        flex: 1 1 30%;
+        border-width: 1px;
+    }
+
+    .player-header {
+        margin-bottom: 4px;
+        padding-bottom: 2px;
+        border-bottom-width: 1px;
         flex-direction: column;
+        align-items: flex-start;
     }
+
+    .player-name { font-size: 0.75rem; }
+    .player-gold { font-size: 0.65rem; padding: 2px 5px; }
+
+    .health-bar { display: none; }
+
+    .player-card > .stat-item:not(.player-stats .stat-item) {
+        display: none;
+    }
+
+    .player-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2px;
+        margin-bottom: 0;
+        grid-template-columns: none;
+        justify-content: center;
+    }
+
+    .player-stats .stat-item {
+        padding: 2px 4px;
+        border-left-width: 2px;
+        background: rgba(0,0,0,0.5);
+        flex: 1 0 auto;
+        min-width: 35px;
+        justify-content: center;
+    }
+
+    .player-stats .stat-item .stat-label {
+        display: none;
+    }
+
+    .player-stats .stat-item .stat-value {
+        font-size: 0.7rem;
+        white-space: nowrap;
+    }
+
+    .player-stats .stat-item:nth-child(1) .stat-value::before { content: "❤️"; margin-right: 2px; font-size: 0.7rem; }
+    .player-stats .stat-item:nth-child(2) .stat-value::before { content: "⚔️"; margin-right: 2px; font-size: 0.7rem; }
+    .player-stats .stat-item:nth-child(3) .stat-value::before { content: "🛡️"; margin-right: 2px; font-size: 0.7rem; }
+    .player-stats .stat-item:nth-child(4) .stat-value::before { content: "💥"; margin-right: 2px; font-size: 0.7rem; }
+
+    .current-bid { padding: 8px; margin: 10px 0; }
+    .bid-controls { flex-wrap: wrap; }
+    .bid-input, .bid-button, .pass-button { min-width: auto; font-size: 0.9rem; padding: 8px; }
+    .item-name { font-size: 1.1rem; }
 }
 
-/* 高分辨率优化 */
-@media (min-width: 1600px) {
-    .container {
-        max-width: 1600px;
-    }
-    
+/* 更小屏 确保三个卡片在一行 */
+@media (max-width: 450px) {
+    .player-card { padding: 4px 2px; }
+    .player-name { font-size: 0.65rem; }
+    .player-gold { font-size: 0.55rem; padding: 1px 3px; }
+    .player-stats .stat-item .stat-value { font-size: 0.6rem; }
+    .player-stats .stat-item:nth-child(1) .stat-value::before,
+    .player-stats .stat-item:nth-child(2) .stat-value::before,
+    .player-stats .stat-item:nth-child(3) .stat-value::before,
+    .player-stats .stat-item:nth-child(4) .stat-value::before { font-size: 0.6rem; }
+}
+
+/* ========== 桌面端卡片紧凑化 (宽度≥701px) ========== */
+@media (min-width: 701px) {
+    /* 卡片整体缩小 */
     .player-card {
-        padding: 25px;
+        padding: 8px 12px;
+        margin-bottom: 8px;
     }
-    
-    .item-name {
-        font-size: 1.6rem;
+
+    .player-header {
+        margin-bottom: 6px;
+        padding-bottom: 4px;
     }
-    
+
     .player-name {
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
-}
 
-/* 夜间模式优化 */
-@media (prefers-color-scheme: dark) {
-    body {
-        background: linear-gradient(135deg, #0a0a14 0%, #050510 100%);
+    .player-gold {
+        font-size: 0.9rem;
+        padding: 3px 8px;
     }
-    
-    .player-card {
-        background: linear-gradient(145deg, rgba(15, 15, 30, 0.95), rgba(5, 5, 15, 0.95));
-    }
-}
 
-/* 打印优化 */
-@media print {
-    .bid-controls, .winner-section, .log-section {
-        display: none !important;
+    .health-bar {
+        height: 16px;
+        margin: 8px 0;
+    }
+
+    .player-stats {
+        gap: 6px;
+        margin-bottom: 6px;
+    }
+
+    .stat-item {
+        padding: 3px 6px;
+    }
+
+    /* 职业、敌人、物品行紧凑显示 */
+    .player-card > .stat-item:not(.player-stats .stat-item) {
+        padding: 3px 6px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        font-size: 0.85rem;
+        border-left-width: 2px;
+    }
+
+    /* 隐藏原有的文字标签（职业、敌人、持有物品） */
+    .player-card > .stat-item:not(.player-stats .stat-item) .stat-label {
+        display: none;
+    }
+
+    /* 职业行：图标 */
+    .player-card .stat-item:has(> .stat-value[id$="-class"]) .stat-value::before {
+        content: "👤 ";
+        font-size: 0.9rem;
+        margin-right: 4px;
+    }
+
+    /* 敌人行：添加靶心图标 */
+    .player-card .stat-item:has(> .stat-value[id$="-enemy"]) .stat-value::before {
+        content: "🎯 ";
+        font-size: 0.9rem;
+        margin-right: 4px;
+    }
+
+    /* 物品行：添加收纳袋图标，并限制长度避免换行 */
+    .player-card .stat-item:has(> .stat-value[id$="-items"]) .stat-value::before {
+        content: "📦 ";
+        font-size: 0.9rem;
+        margin-right: 4px;
+    }
+
+    .player-card .stat-item:has(> .stat-value[id$="-items"]) .stat-value {
+        max-width: 135px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        vertical-align: middle;
     }
 }
