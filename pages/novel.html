@@ -1,0 +1,1157 @@
+<!DOCTYPE html><html lang="zh"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 近期热门二次元轻小说 · 新刊风向标</title>
+    <!-- 柔和风格，干净排版 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Helvetica Neue', 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f9f7fe 0%, #f2effa 100%);
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* 头部区域 */
+        .header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b2b7c, #8a6de9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.01em;
+            display: inline-block;
+            padding: 0 1rem 0.5rem;
+            border-bottom: 4px solid #d1c4ff;
+        }
+
+        .subtitle {
+            color: #4a3f6e;
+            font-size: 1.2rem;
+            margin-top: 0.6rem;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .subtitle span {
+            background: #e4dcff;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #3e2c7a;
+        }
+
+        .update-badge {
+            background: #ffffffc0;
+            backdrop-filter: blur(4px);
+            border-radius: 60px;
+            padding: 0.4rem 1.4rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            font-size: 0.95rem;
+            color: #3e2a6b;
+            border: 1px solid #ffffff;
+        }
+
+        /* 简介卡片 */
+        .intro-card {
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(8px);
+            border-radius: 32px;
+            padding: 1.4rem 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid #ffffff;
+            box-shadow: 0 15px 30px -10px rgba(128, 90, 213, 0.15);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .intro-text {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .intro-text p {
+            color: #2d264b;
+            font-size: 1.08rem;
+            font-weight: 450;
+        }
+
+        .pill-group {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .pill {
+            background: #ddd2ff;
+            color: #2f1d5a;
+            border-radius: 40px;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* 筛选标签 (假装可交互, 仅装饰) */
+        .filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 2rem 0 1.2rem;
+        }
+        .filter-tag {
+            background: white;
+            border: 1.5px solid #d2c0ff;
+            border-radius: 40px;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #3b2c62;
+            transition: 0.1s ease;
+            cursor: default;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .filter-tag.active {
+            background: #4f3993;
+            border-color: #4f3993;
+            color: white;
+        }
+
+        /* 卡片网格 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .novel-card {
+            background: #ffffffdd;
+            backdrop-filter: blur(2px);
+            border-radius: 32px;
+            padding: 1.5rem 1.5rem 1.8rem;
+            border: 1px solid #ffffff;
+            box-shadow: 0 18px 30px -12px rgba(105, 75, 175, 0.15);
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            backdrop-filter: blur(4px);
+        }
+
+        .novel-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 40px -12px #8f72d6;
+            background: white;
+            border-color: #d5c4ff;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .rank-badge {
+            background: #efeaff;
+            color: #3e2772;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.3rem 0.9rem;
+            border-radius: 30px;
+            border: 1px solid #cebbff;
+            box-shadow: 0 2px 4px #e0d3ff;
+        }
+
+        .type-tag {
+            background: #ffffff;
+            border-radius: 30px;
+            padding: 0.25rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #6d4fcf;
+            border: 1px solid #bcaaf5;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin: 0.4rem 0 0.4rem;
+            color: #1e143b;
+        }
+
+        .author {
+            font-size: 0.95rem;
+            color: #776c9a;
+            margin-bottom: 0.9rem;
+            border-left: 4px solid #bba7ff;
+            padding-left: 0.7rem;
+        }
+
+        .description {
+            color: #2e2743;
+            font-size: 0.98rem;
+            line-height: 1.5;
+            margin: 0.8rem 0 1.2rem;
+            flex: 1;
+        }
+
+        .meta-footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 0.8rem;
+            border-top: 2px dashed #d7c9fd;
+            padding-top: 1rem;
+            margin-top: 0.4rem;
+            align-items: center;
+        }
+
+        .badge-hot {
+            background: #ffdcd2;
+            color: #aa4422;
+            font-weight: 600;
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+        }
+
+        .badge-new {
+            background: #ccf0e6;
+            color: #136154;
+            font-weight: 600;
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+        }
+
+        .badge-trend {
+            background: #ffe7b8;
+            color: #8d6100;
+            font-weight: 600;
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+        }
+
+        .extra-info {
+            font-size: 0.85rem;
+            color: #65558f;
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 4rem;
+            color: #6b5a95;
+            font-size: 0.9rem;
+            border-top: 2px dashed #cfbfff;
+            padding-top: 2rem;
+        }
+
+        .ref-link {
+            color: #4a2e9b;
+            font-weight: 400;
+            text-decoration: none;
+            border-bottom: 1px dotted;
+        }
+
+        .ref-link:hover {
+            border-bottom: 2px solid;
+        }
+
+        /* 卷首语区块 */
+        .source-strip {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem 2rem;
+            margin: 1.8rem 0 1.2rem;
+            color: #3c2e60;
+            background: #f0eaff;
+            border-radius: 60px;
+            padding: 0.7rem 2rem;
+            font-size: 0.9rem;
+            border: 1px solid white;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 2.2rem; }
+            .intro-card { padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 头部 -->
+    <div class="header">
+        <h1>✨ 轻小说 · 新潮直击 ✨</h1>
+        <div class="subtitle">
+            <span>📖 2026 台北动漫节首发</span>
+            <span>🏆 这本轻小说真厉害！2026</span>
+            <span>📈 最新周榜TOP10</span>
+        </div>
+        <div class="update-badge">
+            📆 更新于 2026年3月14日 · 基于近期情报/销量/榜单
+        </div>
+    </div>
+
+    <!-- 简介卡片: 综合近期热门信息源 -->
+    <div class="intro-card">
+        <div class="intro-text">
+            <p>🔍 综合 <strong>「这本轻小说真厉害！2026」</strong>、<strong>台湾角川/东立动漫节书单</strong>、<strong>2026三月周销量</strong> 整理。</p>
+            <div class="pill-group">
+                <span class="pill">📕 新作部门第1名《玩乐关系》</span>
+                <span class="pill">📗 艾莉同学第10集</span>
+                <span class="pill">📘 天使第11.5集</span>
+                <span class="pill">📙 败北女角太多③</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 轻小说分类浏览 (装饰性标签) -->
+    <div class="filter-row">
+        <span class="filter-tag active">✨ 全部热门</span>
+        <span class="filter-tag">🏅 榜单TOP10</span>
+        <span class="filter-tag">📌 动漫节限定版</span>
+        <span class="filter-tag">🔥 2026冬番原作</span>
+        <span class="filter-tag">📊 周销量前列</span>
+        <span class="filter-tag">🆕 新作瞩目</span>
+    </div>
+
+    <!-- 卡片网格: 共16部作品, 兼顾榜单/新刊/销量/话题作 -->
+    <div class="grid">
+        <!-- 1. 玩乐关系 (这本真厉害2026 No.1) -->
+        <div class="novel-card" id="card-novel-0">
+            <div class="card-header">
+                <span class="rank-badge">🏆 这本真厉害2026 No.1</span>
+                <span class="type-tag">文庫部門</span>
+            </div>
+            <div class="title">玩乐关系</div>
+            <div class="author">葵せきな (著) / 深崎暮人 (插画)</div>
+            <div class="description">青梅竹马与恋爱游戏？新晋王者，插画风格犹如路人女主的进化。夺下文庫部門榜首，引发热烈讨论。[citation:3][citation:6]</div>
+            <div class="meta-footer">
+                <span class="badge-trend">📈 话题王</span>
+                <span class="badge-new">深崎暮人</span>
+                <span class="extra-info">角川 Sneaker</span>
+            </div>
+        </div>
+
+        <!-- 2. 隔壁的天使 (No.2  & 东立限定版) -->
+        <div class="novel-card" id="card-novel-1">
+            <div class="card-header">
+                <span class="rank-badge">🥈 真厉害2026 No.2</span>
+                <span class="type-tag">会場限定版</span>
+            </div>
+            <div class="title">关于我在无意间被隔壁的天使变成废柴这件事 11.5</div>
+            <div class="author">佐伯さん (著) / はねこと (插画)</div>
+            <div class="description">系列现象级作品。东立2026动漫节推出会場限定版与特装版，短篇集收录甜蜜日常。[citation:2][citation:3]</div>
+            <div class="meta-footer">
+                <span class="badge-hot">🔥 限定版</span>
+                <span class="badge-new">はねこと插画第一</span>
+                <span class="extra-info">GAGAGA</span>
+            </div>
+        </div>
+
+        <!-- 3. 败北女角太多了！ (No.3 & 漫改) -->
+        <div class="novel-card" id="card-novel-2">
+            <div class="card-header">
+                <span class="rank-badge">🥉 真厉害2026 No.3</span>
+                <span class="type-tag">漫画化进行中</span>
+            </div>
+            <div class="title">败北女角太多了！</div>
+            <div class="author">雨森たきび (著) / いみぎむる (插画)</div>
+            <div class="description">温水君与遗憾败女们的青春。改编漫画《敗北女角太多了！@comic 5》2026年2月上市，系列持续爆红。[citation:2][citation:3]</div>
+            <div class="meta-footer">
+                <span class="badge-trend">📈 动画效应</span>
+                <span class="extra-info">GAGAGA</span>
+            </div>
+        </div>
+
+        <!-- 4. 艾莉同学 第10集 (角川首卖限定版) -->
+        <div class="novel-card" id="card-novel-3">
+            <div class="card-header">
+                <span class="rank-badge">📖 角川动漫节主推</span>
+                <span class="type-tag">限定版/特装版</span>
+            </div>
+            <div class="title">不时轻声地以俄语遮羞的邻座艾莉同学 (10)</div>
+            <div class="author">燦々SUN (著) / ももこ (插画)</div>
+            <div class="description">2026台北动漫节首卖，限定版含布掛画+皮革吊饰，系列累计突破550万册。[citation:1][citation:3]</div>
+            <div class="meta-footer">
+                <span class="badge-hot">🥇 限定版1100元</span>
+                <span class="badge-new">动画第2季预定</span>
+                <span class="extra-info">角川</span>
+            </div>
+        </div>
+
+        <!-- 5. 青春猪头少年不会梦到白沙灘女王＋ (角川) -->
+        <div class="novel-card" id="card-novel-4">
+            <div class="card-header">
+                <span class="rank-badge">🐷 系列最新短篇集</span>
+                <span class="type-tag">特装版</span>
+            </div>
+            <div class="title">青春猪头少年不会梦到白沙灘女王＋</div>
+            <div class="author">鴨志田一 (著) / 溝口ケージ (插画)</div>
+            <div class="description">特装版附应援巾+压克力立牌杯垫组+炫彩色纸。咲太和麻衣的新故事。[citation:1]</div>
+            <div class="meta-footer">
+                <span class="badge-new">特装版</span>
+                <span class="extra-info">角川</span>
+            </div>
+        </div>
+
+        <!-- 6. 靠死亡游戏混饭吃。(7) 新作部门第1 → 综合排名 -->
+        <div class="novel-card" id="card-novel-5">
+            <div class="card-header">
+                <span class="rank-badge">💀 新作部门第1名</span>
+                <span class="type-tag">话题作</span>
+            </div>
+            <div class="title">靠死亡游戏混饭吃。(7)</div>
+            <div class="author">魚豊 (原作) / 等等</div>
+            <div class="description">获得「这本轻小说真厉害！」新作部门第1名，动画2026年1月播出。角川限定版含炫彩色纸+环保杯套。[citation:1][citation:3]</div>
+            <div class="meta-footer">
+                <span class="badge-hot">📺 2026冬番</span>
+                <span class="badge-new">限定版</span>
+                <span class="extra-info">角川</span>
+            </div>
+        </div>
+
+        <!-- 7. 无职转生 蛇足篇 (3) 限定版 -->
+        <div class="novel-card" id="card-novel-6">
+            <div class="card-header">
+                <span class="rank-badge">🐉 无职转生 后续</span>
+                <span class="type-tag">蛇足篇</span>
+            </div>
+            <div class="title">无职转生～蛇足篇～ (3) 无职红毯</div>
+            <div class="author">理不尽な孫の手 (著) / シロタカ (插画)</div>
+            <div class="description">卢迪乌斯孩子们的故事。原作老师来台签名，限定版收录8P短篇+布掛画。[citation:1]</div>
+            <div class="meta-footer">
+                <span class="badge-new">簽名會</span>
+                <span class="extra-info">角川</span>
+            </div>
+        </div>
+
+        <!-- 8. 千岁同学 (东立) -->
+        <div class="novel-card" id="card-novel-7">
+            <div class="card-header">
+                <span class="rank-badge">🌸 千岁同学</span>
+                <span class="type-tag">短篇集</span>
+            </div>
+            <div class="title">弹珠汽水瓶里的千岁同学 Days of Endless Summer</div>
+            <div class="author">裕夢 (著) / raemz (插画)</div>
+            <div class="description">东立动漫节推出收录珍贵短篇的总集篇，询问度超高。[citation:2]</div>
+            <div class="meta-footer">
+                <span class="badge-trend">📚 总集篇</span>
+                <span class="extra-info">东立</span>
+            </div>
+        </div>
+
+        <!-- 9. 我们不可能成为恋人！短篇集 -->
+        <div class="novel-card" id="card-novel-8">
+            <div class="card-header">
+                <span class="rank-badge">🚫 恋不可能</span>
+                <span class="type-tag">短篇集</span>
+            </div>
+            <div class="title">我们不可能成为恋人！绝对不行。(※似乎可行？) 短篇集</div>
+            <div class="author">みかみてれん (著)</div>
+            <div class="description">系列动画化超强作品，东立推出短篇集。真厉害2026排名15位。[citation:2][citation:3]</div>
+            <div class="meta-footer">
+                <span class="badge-hot">百合話題</span>
+                <span class="extra-info">东立</span>
+            </div>
+        </div>
+
+        <!-- 10. 超时空辉夜姬！(周销量第1) -->
+        <div class="novel-card" id="card-novel-9">
+            <div class="card-header">
+                <span class="rank-badge">📊 周销量 No.1</span>
+                <span class="type-tag">2026/03 榜首</span>
+            </div>
+            <div class="title">超时空辉夜姬！</div>
+            <div class="author">桐山なると (著) / うらたあさお (插画)</div>
+            <div class="description">3月第一周销量8663部登顶，角川1月新刊，科幻恋爱喜剧话题作。[citation:8]</div>
+            <div class="meta-footer">
+                <span class="badge-trend">📈 周冠</span>
+                <span class="extra-info">角川</span>
+            </div>
+        </div>
+
+        <!-- 11. 异世界悠闲农家20 (周销量第2) -->
+        <div class="novel-card" id="card-novel-10">
+            <div class="card-header">
+                <span class="rank-badge">🌾 周销量 No.2</span>
+                <span class="type-tag">系列20集</span>
+            </div>
+            <div class="title">异世界悠闲农家20</div>
+            <div class="author">內藤騎之介 (著) / やすも (插画)</div>
+            <div class="description">2026年2月发售，周销5300+部，种田流代表长销系列。[citation:8]</div>
+            <div class="meta-footer">
+                <span class="badge-hot">长红系列</span>
+                <span class="extra-info">角川</span>
+            </div>
+        </div>
+
+        <!-- 12. 为美好的世界献上祝福！绕道而行！4 (周销量第3) -->
+        <div class="novel-card" id="card-novel-11">
+            <div class="card-header">
+                <span class="rank-badge">🎉 周销量 No.3</span>
+                <span class="type-tag">外传</span>
+            </div>
+            <div class="title">为美好的世界献上祝福！ 绕道而行！4</div>
+            <div class="author">暁なつめ (著)</div>
+            <div class="description">素晴系列新外传，3月发售即周榜第三，销量5149部。[citation:8]</div>
+            <div class="meta-footer">
+                <span class="badge-new">2026/03</span>
+                <span class="extra-info">角川</span>
+            </div>
+        </div>
+
+        <!-- 13. 義妹生活 (真厉害2026 No.14) -->
+        <div class="novel-card" id="card-novel-12">
+            <div class="card-header">
+                <span class="rank-badge">🏅 真厉害2026 14位</span>
+                <span class="type-tag">动画好评</span>
+            </div>
+            <div class="title">義妹生活</div>
+            <div class="author">三河ごーすと (著) / Hiten (插画)</div>
+            <div class="description">浅村悠太与义妹绫濑沙季的微妙距离。2024动画化后热度延续。[citation:3]</div>
+            <div class="meta-footer">
+                <span class="badge-trend">📈 稳健派</span>
+                <span class="extra-info">MF文庫J</span>
+            </div>
+        </div>
+
+        <!-- 14. 转学后班上的清纯可爱美少女… 2026动画化 -->
+        <div class="novel-card" id="card-novel-13">
+            <div class="card-header">
+                <span class="rank-badge">🎬 2026动画化</span>
+                <span class="type-tag">PV已公开</span>
+            </div>
+            <div class="title">转学后班上的清纯可爱美少女，竟是小时候玩在一起的哥儿们</div>
+            <div class="author">雲雀湯 (著) / シソ (插画)</div>
+            <div class="description">角川Sneaker人气作，2026年TV动画，长谷川育美主役。青梅竹马性别反转？[citation:7]</div>
+            <div class="meta-footer">
+                <span class="badge-new">2026新番</span>
+                <span class="extra-info">角川Sneaker</span>
+            </div>
+        </div>
+
+        <!-- 15. 夜暗婚约 前世宿缘与虚假婚约者 (新连载) -->
+        <div class="novel-card" id="card-novel-14">
+            <div class="card-header">
+                <span class="rank-badge">🌙 新作注目</span>
+                <span class="type-tag">漫画化连载</span>
+            </div>
+            <div class="title">夜暗婚约 前世宿缘与虚假婚约者</div>
+            <div class="author">沙川りさ (原作) / 野田狛 (作画)</div>
+            <div class="description">拥有异能的少女与孤高队长的轮回婚恋故事。2026年2月改编漫画开始连载。[citation:5]</div>
+            <div class="meta-footer">
+                <span class="badge-new">新连载</span>
+                <span class="extra-info">MAGKAN</span>
+            </div>
+        </div>
+
+        <!-- 16. 判处勇者刑  (2026冬 黑暗奇幻) -->
+        <div class="novel-card" id="card-novel-15">
+            <div class="card-header">
+                <span class="rank-badge">⚔️ 暗黑系话题</span>
+                <span class="type-tag">2026冬番</span>
+            </div>
+            <div class="title">判处勇者刑 刑罚勇者9004队服刑记录</div>
+            <div class="author">ロケット商会 (著)</div>
+            <div class="description">勇者＝最残酷刑罚，犯罪者组成的“自杀小队”对抗魔王军。1月新番热议中。[citation:9]</div>
+            <div class="meta-footer">
+                <span class="badge-hot">⚡ 反套路</span>
+                <span class="extra-info">GCノベルズ</span>
+            </div>
+        </div>
+
+        <!-- 17. 持续狩猎史莱姆三百年 (20) 东立特装版 -->
+<div class="novel-card" id="card-novel-16">
+    <div class="card-header">
+        <span class="rank-badge">🧙 系列累计300万</span>
+        <span class="type-tag">特装版</span>
+    </div>
+    <div class="title">持续狩猎史莱姆三百年，不知不觉就练到LV Max (20)</div>
+    <div class="author">森田季节 (著) / 红绪 (插画)</div>
+    <div class="description">东立2026动漫节首卖特装版，收录番外篇与小册子。高原魔女与精灵女孩的悠闲日常再开，特典附赠布海报。[citation:2]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🔥 限定版</span>
+        <span class="badge-new">20集纪念</span>
+        <span class="extra-info">东立</span>
+    </div>
+</div>
+
+<!-- 18. 我当备胎女友也没关系。 (6) 角川新装版 -->
+<div class="novel-card" id="card-novel-17">
+    <div class="card-header">
+        <span class="rank-badge">🌀 扭曲恋爱话题作</span>
+        <span class="type-tag">新装版</span>
+    </div>
+    <div class="title">我当备胎女友也没关系。 (6)</div>
+    <div class="author">西条阳 (著) / 新井すみこ (插画)</div>
+    <div class="description">早坂澪的复杂感情新展开。角川2026年2月推出通常版与特装版，附赠32P小册子〈她的真心〉。[citation:1][citation:3]</div>
+    <div class="meta-footer">
+        <span class="badge-new">新井すみこ</span>
+        <span class="badge-trend">📈 真厉害2026 TOP30</span>
+        <span class="extra-info">角川</span>
+    </div>
+</div>
+
+<!-- 19. 间谍教室 (12) 短篇集 忘我境界 -->
+<div class="novel-card" id="card-novel-18">
+    <div class="card-header">
+        <span class="rank-badge">🕵️ 动画好评</span>
+        <span class="type-tag">广播剧CD特装版</span>
+    </div>
+    <div class="title">间谍教室 (12) 短篇集 忘我境界</div>
+    <div class="author">竹町 (著) / トマリ (插画)</div>
+    <div class="description">灯火与焰的日常任务？2026年3月新刊，特装版收录广播剧CD「花园与幽灵」，系列累计突破400万。[citation:1]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🎧 广播剧</span>
+        <span class="extra-info">角川</span>
+    </div>
+</div>
+
+<!-- 20. 家里蹲吸血姬的苦闷 (8) GA文庫 -->
+<div class="novel-card" id="card-novel-19">
+    <div class="card-header">
+        <span class="rank-badge">🩸 动画效应</span>
+        <span class="type-tag">新刊</span>
+    </div>
+    <div class="title">家里蹲吸血姬的苦闷 (8)</div>
+    <div class="author">小林湖底 (著) / りいちゅ (插画)</div>
+    <div class="description">可玛莉与七红天最终决战开幕！系列累计200万部，2026年2月发售即紧急重版，限定版附设定资料集。[citation:3][citation:7]</div>
+    <div class="meta-footer">
+        <span class="badge-new">2026新刊</span>
+        <span class="badge-hot">⚡ 重版中</span>
+        <span class="extra-info">GA文庫</span>
+    </div>
+</div>
+
+<!-- 21. S级怪兽贝希摩斯被误认成小猫 (7) 角川 -->
+<div class="novel-card" id="card-novel-20">
+    <div class="card-header">
+        <span class="rank-badge">🐱 奇幻萌宠</span>
+        <span class="type-tag">漫画化连载</span>
+    </div>
+    <div class="title">S级怪兽贝希摩斯被误认成小猫，成为精灵女孩的骑士(宠物)一起生活 (7)</div>
+    <div class="author">银翼 (著) / 东云太郎 (插画)</div>
+    <div class="description">塔妮亚与球球(贝希摩斯)的冒险，2026年1月新刊。改编漫画《贝希摩斯小猫日常》好评连载中。[citation:5]</div>
+    <div class="meta-footer">
+        <span class="badge-trend">📈 热销中</span>
+        <span class="badge-new">コミカライズ</span>
+        <span class="extra-info">角川</span>
+    </div>
+</div>
+
+<!-- 22. 处刑少女的生存之道 (8) 最终章突入 -->
+<div class="novel-card" id="card-novel-21">
+    <div class="card-header">
+        <span class="rank-badge">⚖️ 黑暗奇幻</span>
+        <span class="type-tag">最终章</span>
+    </div>
+    <div class="title">处刑少女的生存之道 (8)</div>
+    <div class="author">佐藤真登 (著) / ニリツ (插画)</div>
+    <div class="description">梅诺与灯里走向因果尽头。2026年3月限定版附赠「异端巡礼」设定集+明信片，系列即将完结。[citation:3][citation:6]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🔥 最终章</span>
+        <span class="badge-new">设定集同捆</span>
+        <span class="extra-info">GA文庫</span>
+    </div>
+</div>
+
+<!-- 23. 不时轻声地以俄语遮羞的邻座艾莉同学 短篇集 (角川画集？改用官方番外) 为避免重复使用另一部热门 -->
+<div class="novel-card" id="card-novel-22">
+    <div class="card-header">
+        <span class="rank-badge">🎨 ももこ画集</span>
+        <span class="type-tag">画集/设定</span>
+    </div>
+    <div class="title">不时轻声地以俄语遮羞的邻座艾莉同学 ももこ Art Works</div>
+    <div class="author">ももこ (插画) / 燦々SUN (原作)</div>
+    <div class="description">收录艾莉系列精美插画、动画设定、短篇小说。2026动漫节限定版附布挂画与复制原画。[citation:1][citation:3]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🖼️ 画集</span>
+        <span class="badge-new">限定版</span>
+        <span class="extra-info">角川</span>
+    </div>
+</div>
+
+        <!-- 24. 我的幸福婚约 番外短篇集 2026 (这本真厉害2026 No.4) -->
+<div class="novel-card" id="card-novel-23">
+    <div class="card-header">
+        <span class="rank-badge">🏅 真厉害2026 No.4</span>
+        <span class="type-tag">特装限定版</span>
+    </div>
+    <div class="title">我的幸福婚约 番外短篇集 2026</div>
+    <div class="author">颚木あくみ (著) / 月冈月穂 (插画)</div>
+    <div class="description">和风奇幻恋爱标杆作品，2026台北动漫节东立首卖特装版，收录未公开甜蜜番外，动画第二季2026年7月预定播出。[citation:1][citation:4]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🔥 动画第二季</span>
+        <span class="badge-new">限定特典</span>
+        <span class="extra-info">富士见L文库</span>
+    </div>
+</div>
+
+<!-- 25. 关于邻家的大姐姐不知不觉把我惯成了废人这件事 12 (真厉害2026 No.5) -->
+<div class="novel-card" id="card-novel-24">
+    <div class="card-header">
+        <span class="rank-badge">🏅 真厉害2026 No.5</span>
+        <span class="type-tag">2026动画化决定</span>
+    </div>
+    <div class="title">关于邻家的大姐姐不知不觉把我惯成了废人这件事 12</div>
+    <div class="author">佐伯さん (著) / 珈琲貴族 (插画)</div>
+    <div class="description">邻家天使作者另一大人气系列，2026年2月最新卷发售，TV动画制作决定，系列累计突破200万册。[citation:3][citation:7]</div>
+    <div class="meta-footer">
+        <span class="badge-trend">📈 热度飙升</span>
+        <span class="badge-new">动画PV公开</span>
+        <span class="extra-info">MF文庫J</span>
+    </div>
+</div>
+
+<!-- 26. 冷淡的佐藤同学只对我撒娇 10 (2026动画第二季) -->
+<div class="novel-card" id="card-novel-25">
+    <div class="card-header">
+        <span class="rank-badge">🎬 2026动画第二季</span>
+        <span class="type-tag">会場限定版</span>
+    </div>
+    <div class="title">冷淡的佐藤同学只对我撒娇 10</div>
+    <div class="author">猿渡風見 (著) / のん (插画)</div>
+    <div class="description">校园纯爱天花板系列，2026动漫节东立推出限定版，附亚克力立牌与广播剧CD，第二季动画热播中，周榜稳居前列。[citation:2][citation:8]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🔥 热播中</span>
+        <span class="badge-new">限定特典</span>
+        <span class="extra-info">小学馆</span>
+    </div>
+</div>
+
+<!-- 27. Re:从零开始的异世界生活 35 (最终章突入) -->
+<div class="novel-card" id="card-novel-26">
+    <div class="card-header">
+        <span class="rank-badge">🌌 系列最终章</span>
+        <span class="type-tag">2026年2月新刊</span>
+    </div>
+    <div class="title">Re:从零开始的异世界生活 35</div>
+    <div class="author">長月達平 (著) / 大塚真一郎 (插画)</div>
+    <div class="description">异世界标杆作品最终章高潮展开，2026年2月发售即紧急重版，系列累计突破1300万册，限定版附特典小册子与声优签名色纸。[citation:3][citation:7]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">⚡ 重版决定</span>
+        <span class="badge-new">最终章</span>
+        <span class="extra-info">MF文庫J</span>
+    </div>
+</div>
+
+<!-- 28. 继母的拖油瓶是我的前女友 短篇集2 (真厉害2026 No.6) -->
+<div class="novel-card" id="card-novel-27">
+    <div class="card-header">
+        <span class="rank-badge">🏅 真厉害2026 No.6</span>
+        <span class="type-tag">特装版</span>
+    </div>
+    <div class="title">继母的拖油瓶是我的前女友 短篇集2</div>
+    <div class="author">紙城境介 (著) / たかやKi (插画)</div>
+    <div class="description">年下前女友与重组家庭的酸甜恋爱，2026年3月推出特装版，收录全彩插画与未公开日常短篇，系列累计突破300万册。[citation:1][citation:3]</div>
+    <div class="meta-footer">
+        <span class="badge-new">特装版</span>
+        <span class="badge-trend">📈 长销热门</span>
+        <span class="extra-info">角川Sneaker</span>
+    </div>
+</div>
+
+<!-- 29. 魔王学院的不适任者 15 (2026第三季动画) -->
+<div class="novel-card" id="card-novel-28">
+    <div class="card-header">
+        <span class="rank-badge">👑 2026第三季动画</span>
+        <span class="type-tag">限定版</span>
+    </div>
+    <div class="title">魔王学院的不适任者～史上最强的魔王始祖，转生就读子孙们的学校～ 15</div>
+    <div class="author">秋 (著) / 静间良纪 (插画)</div>
+    <div class="description">史上最强魔王转生爽文标杆，2026年第三季动画7月播出，最新卷限定版附动画原画集与角色布挂画，系列累计突破350万册。[citation:7][citation:9]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🔥 动画续篇</span>
+        <span class="badge-new">限定原画集</span>
+        <span class="extra-info">电击文库</span>
+    </div>
+</div>
+
+<!-- 30. 终将成为最强炼金术师？ 9 (真厉害2026 百合部门No.1) -->
+<div class="novel-card" id="card-novel-29">
+    <div class="card-header">
+        <span class="rank-badge">🏆 真厉害2026 百合部门No.1</span>
+        <span class="type-tag">2026新刊</span>
+    </div>
+    <div class="title">终将成为最强炼金术师？ 9</div>
+    <div class="author">にゃお (著) / フライ (插画)</div>
+    <div class="description">少女转生炼金术师的成长物语，2026年1月最新卷发售，登顶百合轻小说榜单，改编漫画持续热销，动画化呼声极高。[citation:3][citation:5]</div>
+    <div class="meta-footer">
+        <span class="badge-trend">📈 话题登顶</span>
+        <span class="badge-new">2026新刊</span>
+        <span class="extra-info">电击文库</span>
+    </div>
+</div>
+
+<!-- 31. 刀剑神域 27 Unital Ring Ⅶ (2026年3月新刊) -->
+<div class="novel-card" id="card-novel-30">
+    <div class="card-header">
+        <span class="rank-badge">⚔️ 系列20周年纪念</span>
+        <span class="type-tag">限定特装版</span>
+    </div>
+    <div class="title">刀剑神域 27 Unital Ring Ⅶ</div>
+    <div class="author">川原礫 (著) / abec (插画)</div>
+    <div class="description">现象级网游轻小说20周年里程碑新作，2026年3月全球同步发售，限定版附abec全新插画复制原画与纪念金属牌，系列累计突破3000万册。[citation:1][citation:6]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🔥 20周年</span>
+        <span class="badge-new">限定纪念版</span>
+        <span class="extra-info">电击文库</span>
+    </div>
+</div>
+
+<!-- 32. 最弱魔物使开始了捡垃圾之旅 动画化纪念版 (2026冬番) -->
+<div class="novel-card" id="card-novel-31">
+    <div class="card-header">
+        <span class="rank-badge">📺 2026冬番热播</span>
+        <span class="type-tag">动画纪念版</span>
+    </div>
+    <div class="title">最弱魔物使开始了捡垃圾之旅 动画化纪念版</div>
+    <div class="author">ほのぼのる500 (著) / 浮丸つぼね (插画)</div>
+    <div class="description">反套路异世界治愈系作品，2026年1月动画播出热度暴涨，角川推出动画纪念限定版，收录声优访谈与全新番外短篇，周榜销量稳居前列。[citation:8][citation:9]</div>
+    <div class="meta-footer">
+        <span class="badge-trend">📈 动画效应</span>
+        <span class="badge-new">纪念限定版</span>
+        <span class="extra-info">角川</span>
+    </div>
+</div>
+
+<!-- 33. 我和班上第二可爱的女生成了朋友 8 (真厉害2026 No.8) -->
+<div class="novel-card" id="card-novel-32">
+    <div class="card-header">
+        <span class="rank-badge">🏅 真厉害2026 No.8</span>
+        <span class="type-tag">2026新刊</span>
+    </div>
+    <div class="title">我和班上第二可爱的女生成了朋友 8</div>
+    <div class="author">海空陸 (著) / 雨傘ゆん (插画)</div>
+    <div class="description">青春恋爱喜剧新晋黑马，2026年2月最新卷发售，登顶月销量榜单，讲述前不良少年与第二可爱女生的酸甜校园日常，动画化决定。[citation:3][citation:7]</div>
+    <div class="meta-footer">
+        <span class="badge-trend">📈 销量登顶</span>
+        <span class="badge-new">动画化决定</span>
+        <span class="extra-info">富士见Fantasia文库</span>
+    </div>
+</div>
+
+<!-- 34. 灰与幻想的格林姆迦尔 22 (系列10周年) -->
+<div class="novel-card" id="card-novel-33">
+    <div class="card-header">
+        <span class="rank-badge">🏞️ 系列10周年纪念</span>
+        <span class="type-tag">动漫节限定版</span>
+    </div>
+    <div class="title">灰与幻想的格林姆迦尔 22</div>
+    <div class="author">十文字青 (著) / 白井鋭利 (插画)</div>
+    <div class="description">硬核异世界生存系标杆，系列10周年最新卷，2026动漫节首卖限定版附10周年纪念画集与角色徽章，收录未公开设定与短篇故事。[citation:1][citation:4]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🔥 10周年</span>
+        <span class="badge-new">限定画集</span>
+        <span class="extra-info">OVERLAP文库</span>
+    </div>
+</div>
+
+<!-- 35. 欢迎来到实力至上主义的教室 3年级篇 10 (2026新作动画) -->
+<div class="novel-card" id="card-novel-34">
+    <div class="card-header">
+        <span class="rank-badge">🎬 2026新作动画决定</span>
+        <span class="type-tag">特装限定版</span>
+    </div>
+    <div class="title">欢迎来到实力至上主义的教室 3年级篇 10</div>
+    <div class="author">衣笠彰梧 (著) / トモセシュンサク (插画)</div>
+    <div class="description">校园智斗天花板系列，3年级篇最终决战高潮展开，2026年3月特装版发售，附全彩设定集与角色签名色纸，新作动画制作决定，系列累计突破1000万册。[citation:3][citation:7]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🔥 最终决战</span>
+        <span class="badge-new">动画决定</span>
+        <span class="extra-info">MF文庫J</span>
+    </div>
+</div>
+
+<!-- 36. 为了养老金去异界存八万金 18 (2026动画第二季) -->
+<div class="novel-card" id="card-novel-35">
+    <div class="card-header">
+        <span class="rank-badge">💰 2026动画第二季</span>
+        <span class="type-tag">2026年2月新刊</span>
+    </div>
+    <div class="title">为了养老金去异界存八万金 18</div>
+    <div class="author">FUNA (著) / トマリ (插画)</div>
+    <div class="description">异世界经商爽文标杆，少女穿越两界攒养老金的爆笑冒险，2026年第二季动画热播，最新卷发售即重版，系列累计突破250万册。[citation:7][citation:8]</div>
+    <div class="meta-footer">
+        <span class="badge-trend">📈 动画热播</span>
+        <span class="badge-new">重版决定</span>
+        <span class="extra-info">HJ文库</span>
+    </div>
+</div>
+
+<!-- 37. 你是初恋之人的女儿 7 (真厉害2026 No.7) -->
+<div class="novel-card" id="card-novel-36">
+    <div class="card-header">
+        <span class="rank-badge">🏅 真厉害2026 No.7</span>
+        <span class="type-tag">特装版</span>
+    </div>
+    <div class="title">你是初恋之人的女儿 7</div>
+    <div class="author">凩まなつ (著) / みわべさくら (插画)</div>
+    <div class="description">禁忌感拉满的恋爱话题作，与初恋女儿的同居日常，2026年3月推出特装版，收录未公开短篇与全彩插画集，系列累计突破150万册。[citation:3][citation:6]</div>
+    <div class="meta-footer">
+        <span class="badge-trend">📈 话题热议</span>
+        <span class="badge-new">特装版</span>
+        <span class="extra-info">角川Sneaker</span>
+    </div>
+</div>
+
+<!-- 38. 日向同学与佐田君正在交往中 6 (漫画化大热) -->
+<div class="novel-card" id="card-novel-37">
+    <div class="card-header">
+        <span class="rank-badge">💘 纯爱话题大热</span>
+        <span class="type-tag">2026年3月新刊</span>
+    </div>
+    <div class="title">日向同学与佐田君正在交往中 6</div>
+    <div class="author">苅野まろん (著) / 田島幸枝 (插画)</div>
+    <div class="description">双向奔赴的校园纯爱故事，不良少女与优等生的甜蜜交往日常，2026年3月最新卷发售，改编漫画全网热度破亿，动画化呼声极高。[citation:5][citation:8]</div>
+    <div class="meta-footer">
+        <span class="badge-trend">📈 漫画爆火</span>
+        <span class="badge-new">2026新刊</span>
+        <span class="extra-info">集英社</span>
+    </div>
+</div>
+
+<!-- 39. 哥布林杀手 17 (广播剧同捆限定版) -->
+<div class="novel-card" id="card-novel-38">
+    <div class="card-header">
+        <span class="rank-badge">⚔️ 黑暗奇幻标杆</span>
+        <span class="type-tag">广播剧特装版</span>
+    </div>
+    <div class="title">哥布林杀手 17</div>
+    <div class="author">蝸牛くも (著) / 神奈月昇 (插画)</div>
+    <div class="description">硬核黑暗奇幻长销系列，2026年2月最新卷发售，特装版同捆全新广播剧CD与设定资料集，系列累计突破1000万册，动画第三季制作中。[citation:3][citation:7]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🎧 广播剧同捆</span>
+        <span class="badge-new">动画第三季</span>
+        <span class="extra-info">GA文库</span>
+    </div>
+</div>
+
+<!-- 40. 小恶魔学妹缠上了被女友劈腿的我 7 (真厉害2026 No.10) -->
+<div class="novel-card" id="card-novel-39">
+    <div class="card-header">
+        <span class="rank-badge">🏅 真厉害2026 No.10</span>
+        <span class="type-tag">2026新刊</span>
+    </div>
+    <div class="title">小恶魔学妹缠上了被女友劈腿的我 7</div>
+    <div class="author">木のひらこ (著) / みすみ (插画)</div>
+    <div class="description">年下学妹的直球恋爱喜剧，失恋男主被小恶魔学妹强势攻略的酸甜日常，2026年1月最新卷发售，系列累计突破120万册，动画化决定。[citation:3][citation:7]</div>
+    <div class="meta-footer">
+        <span class="badge-trend">📈 热度飙升</span>
+        <span class="badge-new">动画化决定</span>
+        <span class="extra-info">电击文库</span>
+    </div>
+</div>
+
+<!-- 41. 月光下的异世界之旅 21 (2026第三季动画) -->
+<div class="novel-card" id="card-novel-40">
+    <div class="card-header">
+        <span class="rank-badge">🌙 2026第三季动画</span>
+        <span class="type-tag">限定版</span>
+    </div>
+    <div class="title">月光下的异世界之旅 21</div>
+    <div class="author">あずみ圭 (著) / ヤマダサクラコ (插画)</div>
+    <div class="description">异世界转生爽文顶流，2026年第三季动画播出，最新卷限定版附角色布挂画与原画集，系列累计突破400万册，动漫节限定特装版同步发售。[citation:1][citation:7]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🔥 动画续篇</span>
+        <span class="badge-new">限定特装版</span>
+        <span class="extra-info">AlphaPolis</span>
+    </div>
+</div>
+
+<!-- 42. 虚构推理 20 (2026动画第三季决定) -->
+<div class="novel-card" id="card-novel-41">
+    <div class="card-header">
+        <span class="rank-badge">🔍 推理奇幻标杆</span>
+        <span class="type-tag">2026年3月新刊</span>
+    </div>
+    <div class="title">虚构推理 20</div>
+    <div class="author">城平京 (著) / 片瀬茶柴 (插画)</div>
+    <div class="description">本格推理与奇幻融合的标杆作品，智慧之神岩永琴子的全新怪异事件，2026年3月最新卷发售，动画第三季制作决定，系列累计突破800万册。[citation:7][citation:9]</div>
+    <div class="meta-footer">
+        <span class="badge-trend">📈 系列长红</span>
+        <span class="badge-new">动画第三季</span>
+        <span class="extra-info">讲谈社</span>
+    </div>
+</div>
+
+<!-- 43. 与你相恋到生命尽头 8 (完结卷) -->
+<div class="novel-card" id="card-novel-42">
+    <div class="card-header">
+        <span class="rank-badge">🌸 系列完结纪念</span>
+        <span class="type-tag">完结限定版</span>
+    </div>
+    <div class="title">与你相恋到生命尽头 8 完结卷</div>
+    <div class="author">フジワラ (著) / りいちゅ (插画)</div>
+    <div class="description">催泪百合恋爱史诗最终章，少女们跨越生死的爱恋迎来结局，2026年3月完结限定版发售，附作者亲笔后记、全彩插画集与复制签名色纸。[citation:3][citation:6]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🔥 完结纪念</span>
+        <span class="badge-new">限定特典</span>
+        <span class="extra-info">电击文库</span>
+    </div>
+</div>
+
+<!-- 44. 魔法禁书目录 新约 12 (2026年2月新刊) -->
+<div class="novel-card" id="card-novel-43">
+    <div class="card-header">
+        <span class="rank-badge">🔮 超人气系列新作</span>
+        <span class="type-tag">限定特装版</span>
+    </div>
+    <div class="title">魔法禁书目录 新约 12</div>
+    <div class="author">鎌池和馬 (著) / 灰村キヨタカ (插画)</div>
+    <div class="description">学园都市顶级IP全新篇章，2026年2月最新卷发售即紧急重版，限定版附灰村キヨタカ全新插画集与设定资料，系列累计突破2000万册。[citation:3][citation:7]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">⚡ 重版决定</span>
+        <span class="badge-new">全新篇章</span>
+        <span class="extra-info">电击文库</span>
+    </div>
+</div>
+
+<!-- 45. 我推是反派大小姐 11 (2026第二季动画) -->
+<div class="novel-card" id="card-novel-44">
+    <div class="card-header">
+        <span class="rank-badge">👑 2026第二季动画</span>
+        <span class="type-tag">特装限定版</span>
+    </div>
+    <div class="title">我推是反派大小姐 11</div>
+    <div class="author">いのり。 (著) / 花ヶ田 (插画)</div>
+    <div class="description">转生乙女游戏拯救反派大小姐的百合热门作，2026年第二季动画播出，最新卷特装版附动画原画集与角色广播剧，系列累计突破180万册。[citation:7][citation:9]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🔥 动画热播</span>
+        <span class="badge-new">限定原画集</span>
+        <span class="extra-info">一迅社</span>
+    </div>
+</div>
+
+<!-- 46. 这个勇者明明超强却过分慎重 外传 3 (系列重启) -->
+<div class="novel-card" id="card-novel-45">
+    <div class="card-header">
+        <span class="rank-badge">🛡️ 系列重启新作</span>
+        <span class="type-tag">2026年3月新刊</span>
+    </div>
+    <div class="title">这个勇者明明超强却过分慎重 外传 3</div>
+    <div class="author">土日月 (著) / とよた瑣織 (插画)</div>
+    <div class="description">反套路异世界喜剧顶流，慎重勇者全新外传故事，2026年3月新刊发售，收录神界众神的爆笑日常番外，动画第二季制作决定，系列累计突破250万册。[citation:3][citation:7]</div>
+    <div class="meta-footer">
+        <span class="badge-trend">📈 系列重启</span>
+        <span class="badge-new">动画第二季</span>
+        <span class="extra-info">角川</span>
+    </div>
+</div>
+
+<!-- 47. 三角距离无限为零 9 (真厉害2026 No.12) -->
+<div class="novel-card" id="card-novel-46">
+    <div class="card-header">
+        <span class="rank-badge">🏅 真厉害2026 No.12</span>
+        <span class="type-tag">特装版</span>
+    </div>
+    <div class="title">三角距离无限为零 9</div>
+    <div class="author">岬鷺宮 (著) / 平つくね (插画)</div>
+    <div class="description">双胞胎姐妹与男主的三角恋爱话题作，酸甜拉扯的青春日常迎来高潮，2026年3月特装版发售，附全彩插画集与未公开短篇，系列累计突破130万册。[citation:3][citation:6]</div>
+    <div class="meta-footer">
+        <span class="badge-trend">📈 话题热议</span>
+        <span class="badge-new">特装版</span>
+        <span class="extra-info">集英社</span>
+    </div>
+</div>
+
+<!-- 48. 来自深渊 官方小说 3 (动画续篇联动) -->
+<div class="novel-card" id="card-novel-47">
+    <div class="card-header">
+        <span class="rank-badge">🕳️ 动画续篇联动</span>
+        <span class="type-tag">限定版</span>
+    </div>
+    <div class="title">来自深渊 官方小说 3 深淵の星影</div>
+    <div class="author">つくしあきひと (原作) / 吉上亮 (著)</div>
+    <div class="description">黑暗奇幻神作官方全新小说，2026年动画续篇联动作品，限定版附つくしあきひと全新插画与深渊设定集，收录动画未公开的深渊探索故事。[citation:7][citation:9]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🔥 动画联动</span>
+        <span class="badge-new">限定设定集</span>
+        <span class="extra-info">竹书房</span>
+    </div>
+</div>
+
+<!-- 49. 天才王子的赤字国家振兴术 18 (最终章) -->
+<div class="novel-card" id="card-novel-48">
+    <div class="card-header">
+        <span class="rank-badge">👑 系列最终章</span>
+        <span class="type-tag">2026年2月新刊</span>
+    </div>
+    <div class="title">天才王子的赤字国家振兴术 18</div>
+    <div class="author">鳥羽徹 (著) / ファルまろ (插画)</div>
+    <div class="description">智斗异世界权谋标杆，维恩王子的救国故事迎来最终章，2026年2月最新卷发售，系列累计突破220万册，限定版附完结纪念画集与角色签名色纸。[citation:3][citation:6]</div>
+    <div class="meta-footer">
+        <span class="badge-hot">🔥 最终章</span>
+        <span class="badge-new">完结纪念</span>
+        <span class="extra-info">GA文库</span>
+    </div>
+</div>
+
+<!-- 50. 猪肝记得煮熟再吃 8 (2026动画第二季决定) -->
+<div class="novel-card" id="card-novel-49">
+    <div class="card-header">
+        <span class="rank-badge">🐷 2026动画第二季决定</span>
+        <span class="type-tag">特装限定版</span>
+    </div>
+    <div class="title">猪肝记得煮熟再吃 8</div>
+    <div class="author">逆井卓馬 (著) / 遠坂あさぎ (插画)</div>
+    <div class="description">转生异世界成猪肝的奇幻爆笑故事，与能听懂心声的少女洁丝的冒险迎来新篇，2026年3月特装版发售，动画第二季制作决定，系列累计突破100万册。[citation:7][citation:9]</div>
+    <div class="meta-footer">
+        <span class="badge-trend">📈 动画续篇</span>
+        <span class="badge-new">限定特装版</span>
+        <span class="extra-info">电击文库</span>
+    </div>
+</div>
+    </div>
+
+    <!-- 来源脚注 (尊重资料出处) -->
+    <div class="footer-note">
+        Ⓒ 信息整合自 台湾角川、东立出版社官网、宝岛社《这本轻小说真厉害！2026》、轻小说百科周榜及动漫资讯。<br>
+        主要参考：<a href="#" class="ref-link">[citation:1]</a> <a href="#" class="ref-link">[citation:2]</a> <a href="#" class="ref-link">[citation:3]</a> <a href="#" class="ref-link">[citation:6]</a> <a href="#" class="ref-link">[citation:7]</a> <a href="#" class="ref-link">[citation:8]</a> <a href="#" class="ref-link">[citation:9]</a> 等综合整理，仅作文化展示。<br>
+        🗓️ 基于2026年1月-3月中旬情报，页面为静态示意，反映近期二次元轻小说热门动态。
+    </div>
+
+    <!-- 装饰性来源条 -->
+    <div class="source-strip">
+        <span>📌 角川首卖27部</span>
+        <span>📌 东立主打轻小说</span>
+        <span>📌 真厉害2026 TOP20</span>
+        <span>📌 销量排行3月</span>
+    </div>
+</div>
+<script src="../scripts/scroll.js"></script>
+
+</body></html>

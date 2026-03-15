@@ -1,0 +1,535 @@
+<!DOCTYPE html><html lang="zh"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎶 二次元回声 · 30首入坑必听/新曲推荐</title>
+    <!-- 清新风格，卡片式音乐推荐 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Helvetica Neue', 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(165deg, #e9dffc 0%, #d7ccf5 100%);
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* 头部 */
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .header h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(145deg, #3c2a7a, #9f7bf7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 8px 12px #bba6f0);
+            letter-spacing: -0.02em;
+        }
+
+        .sub-badge {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 2.5rem;
+            margin: 1rem 0 1.8rem;
+        }
+
+        .pill {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 60px;
+            padding: 0.5rem 2rem;
+            border: 1px solid white;
+            color: #2b1d55;
+            font-weight: 600;
+            box-shadow: 0 6px 14px rgba(149, 115, 255, 0.2);
+        }
+
+        .intro-note {
+            background: #ffffffc2;
+            backdrop-filter: blur(4px);
+            border-radius: 60px;
+            padding: 1rem 2.2rem;
+            width: fit-content;
+            margin: 0 auto 2.5rem;
+            border: 1px solid white;
+            color: #2d1d60;
+            font-size: 1.05rem;
+        }
+
+        /* 三大板块小标题 */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #271d4b;
+            margin: 2.2rem 0 1.2rem 0;
+            border-left: 10px solid #8c71dd;
+            padding-left: 1.2rem;
+        }
+
+        .section-sub {
+            color: #4f3f82;
+            margin-bottom: 1.8rem;
+            font-size: 1.1rem;
+        }
+
+        /* 网格 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .song-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 36px;
+            padding: 1.5rem 1.5rem 1.8rem;
+            border: 1px solid rgba(255,255,255,0.8);
+            box-shadow: 0 20px 30px -10px #b39beb;
+            transition: 0.15s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .song-card:hover {
+            transform: translateY(-6px);
+            background: #ffffff;
+            border-color: #cbb5ff;
+            box-shadow: 0 28px 40px -12px #836dd6;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.8rem;
+        }
+
+        .song-label {
+            background: #daceff;
+            color: #2d1b6b;
+            font-weight: 700;
+            font-size: 0.7rem;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            border: 1px solid #a282f0;
+        }
+
+        .song-label.gold {
+            background: #ffe4a1;
+            border-color: #c6972c;
+        }
+
+        .song-label.blue {
+            background: #bde1ff;
+            border-color: #3f74b3;
+        }
+
+        .song-title {
+            font-size: 1.5rem;
+            font-weight: 750;
+            line-height: 1.2;
+            color: #180f33;
+        }
+
+        .song-artist {
+            font-size: 0.95rem;
+            color: #5b4996;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid #9a83f2;
+            padding-left: 0.7rem;
+        }
+
+        .anime-source {
+            background: #e7deff;
+            border-radius: 30px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin: 0.2rem 0 0.6rem;
+            color: #3a2a68;
+            font-weight: 500;
+        }
+
+        .recommend-box {
+            background: #f4efff;
+            border-radius: 20px;
+            padding: 0.9rem 1.2rem;
+            margin: 0.8rem 0 0.2rem;
+            border: 1px solid #ffffff;
+        }
+
+        .recommend-label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #5537b3;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+        }
+
+        .recommend-text {
+            color: #251e44;
+            font-size: 0.94rem;
+            line-height: 1.45;
+        }
+
+        .meta-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.8rem;
+        }
+
+        .meta-tags span {
+            background: #ffffff;
+            border-radius: 40px;
+            padding: 0.2rem 1rem;
+            font-size: 0.7rem;
+            border: 1px solid #bda5ff;
+            color: #352668;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 3px dashed #b29cfc;
+            color: #3a2c66;
+            font-size: 0.95rem;
+        }
+
+        .hr-div {
+            opacity: 0.3;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width:600px) {
+            .header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>♪ 30首二次元·珍藏歌单 ♪</h1>
+        <div class="sub-badge">
+            <span class="pill">🔥 现象级神曲</span>
+            <span class="pill">📀 时代经典</span>
+            <span class="pill">✨ 2026春番新曲</span>
+        </div>
+        <div class="intro-note">
+            ⭐ 每首均附「推荐理由」—— 综合公告牌/ORICON/B站收藏/海外口碑
+        </div>
+    </div>
+
+    <!-- 第一部分：现象级神曲 / 近年霸权（10首） 引用美国动画歌曲总结、B站榜、ORICON等 -->
+    <div class="section-title">✨ Part 1 · 现象级爆款 / 近年霸权</div>
+    <div class="grid">
+        <!-- 1. アイドル / YOASOBI — 【我推的孩子】OP -->
+        <div class="song-card" id="card-music-0">
+            <div class="card-header"><span class="song-label gold">🏆 全球爆红</span><span>2023-2026</span></div>
+            <div class="song-title">アイドル</div>
+            <div class="song-artist">YOASOBI</div>
+            <div class="anime-source">【我推的孩子】OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">Billboard Global Excl. U.S. 日音首次夺冠。急速变化的曲风完美演绎演艺圈光与影，跨越语言的现象级神曲 [citation:2]。</div></div>
+            <div class="meta-tags"><span>YOASOBI</span><span> #1 推子</span></div>
+        </div>
+        <!-- 2. Bling-Bang-Bang-Born / Creepy Nuts — MASHLE OP2 -->
+        <div class="song-card" id="card-music-1">
+            <div class="card-header"><span class="song-label gold">🔥 2024年霸</span></div>
+            <div class="song-title">Bling-Bang-Bang-Born</div>
+            <div class="song-artist">Creepy Nuts</div>
+            <div class="anime-source">肌肉魔法使 MASHLE 第二季OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">Billboard Japan 年榜第一，中毒性副歌引发全球BBBB舞蹈，一响就想跟着跳 [citation:2]。</div></div>
+            <div class="meta-tags"><span>说唱摇滚</span><span>肌肉魔法</span></div>
+        </div>
+        <!-- 3. シルエット / KANA-BOON — 火影疾风传OP16 -->
+        <div class="song-card" id="card-music-2">
+            <div class="card-header"><span class="song-label gold">📈 2亿播放</span></div>
+            <div class="song-title">剪影 (シルエット)</div>
+            <div class="song-artist">KANA-BOON</div>
+            <div class="anime-source">火影忍者 疾风传 OP16</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">2026年3月达成自身首次累计2亿播放 [citation:9]。跨越时代的火影国歌，海外粉丝大合唱定番 [citation:2]。</div></div>
+            <div class="meta-tags"><span>NARUTO</span><span>摇滚</span></div>
+        </div>
+        <!-- 4. IRIS / 米津玄师 — 电锯人 蕾塞篇 主题曲 -->
+        <div class="song-card" id="card-music-3">
+            <div class="card-header"><span class="song-label">🎬 剧场版主题曲</span></div>
+            <div class="song-title">IRIS</div>
+            <div class="song-artist">米津玄师</div>
+            <div class="anime-source">电锯人 蕾塞篇</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">米津紧盯原作漫画创作，激烈战斗与哀伤交织。2025年9月上映前在美国活动率先公开，引爆期待 [citation:2]。</div></div>
+            <div class="meta-tags"><span>米津玄师</span><span>MAPPA</span></div>
+        </div>
+        <!-- 5. 遥か彼方 / ASIAN KUNG-FU GENERATION — 火影 OP -->
+        <div class="song-card" id="card-music-4">
+            <div class="card-header"><span class="song-label">⚡ 永恒经典</span></div>
+            <div class="song-title">遥か彼方</div>
+            <div class="song-artist">ASIAN KUNG-FU GENERATION</div>
+            <div class="anime-source">火影忍者 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">2002年独立时期作品，被选为火影OP后在海外获得压倒性支持，2024年重新录制，依然撼动灵魂 [citation:2]。</div></div>
+            <div class="meta-tags"><span>热血摇滚</span><span>火影</span></div>
+        </div>
+        <!-- 6. GO!!! / FLOW — 火影 OP4 -->
+        <div class="song-card" id="card-music-5">
+            <div class="card-header"><span class="song-label">🏅 20周年</span></div>
+            <div class="song-title">GO!!!</div>
+            <div class="song-artist">FLOW</div>
+            <div class="anime-source">火影忍者 OP4</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">2004年单曲，2024年4月推出20周年纪念8cm CD。充满能量，现场大合唱必备 [citation:2]。</div></div>
+            <div class="meta-tags"><span>FLOW</span><span>青春</span></div>
+        </div>
+        <!-- 7. 燦々デイズ /  — 换装娃娃OP （来源 残酷二选一排行榜） -->
+        <div class="song-card" id="card-music-6">
+            <div class="card-header"><span class="song-label">💕 心动神曲</span></div>
+            <div class="song-title">燦々デイズ</div>
+            <div class="song-artist"> Spira Spica</div>
+            <div class="anime-source">恋上换装娃娃 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一榜单胜率57.7% [citation:4]。轻快旋律完美配合海边的恋爱氛围，漫改天花板级OP。</div></div>
+            <div class="meta-tags"><span>可爱摇滚</span><span>纯爱</span></div>
+        </div>
+        <!-- 8. ないない / ReoNa — 影宅 ED -->
+        <div class="song-card" id="card-music-7">
+            <div class="card-header"><span class="song-label">🕯️ 暗黑系</span></div>
+            <div class="song-title">ないない</div>
+            <div class="song-artist">ReoNa</div>
+            <div class="anime-source">SHADOWS HOUSE-影宅- ED</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一榜单57.6%胜率 [citation:4]。ReoNa的“绝望嗓音”与哥特世界绝配，耐人寻味。</div></div>
+            <div class="meta-tags"><span>ReoNa</span><span>影宅</span></div>
+        </div>
+        <!-- 9. アポリア /  — 关于地球的运动 ED -->
+        <div class="song-card" id="card-music-8">
+            <div class="card-header"><span class="song-label">🌍 哲学OP</span></div>
+            <div class="song-title">アポリア</div>
+            <div class="song-artist">ヨルシカ</div>
+            <div class="anime-source">地。-关于地球的运动- OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一榜57.5%胜率 [citation:4]。摇滚与真理追寻的共鸣，充满知性热血。</div></div>
+            <div class="meta-tags"><span>ヨルシカ</span></div>
+        </div>
+        <!-- 10. Stay Alive /  — Re0 ED -->
+        <div class="song-card" id="card-music-9">
+            <div class="card-header"><span class="song-label">💧 催泪神</span></div>
+            <div class="song-title">Stay Alive</div>
+            <div class="song-artist"> 高橋李依</div>
+            <div class="anime-source">Re：从零开始的异世界生活 ED</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一榜57.4%胜率 [citation:4]。艾米莉娅角色歌，温柔的嗓音治愈无数人。</div></div>
+            <div class="meta-tags"><span>高橋李依</span></div>
+        </div>
+    </div>
+
+    <!-- 第二部分：时代经典 / 跨世代名曲（10首） 月光传说 / Trust You / 天使にふれたよ / 等 -->
+    <div class="section-title">📀 Part 2 · 时代经典 · 跨世代名曲</div>
+    <div class="grid">
+        <!-- 11. ムーンライト伝説 / DALI — 美少女战士OP -->
+        <div class="song-card" id="card-music-10">
+            <div class="card-header"><span class="song-label">🌙 传奇</span></div>
+            <div class="song-title">月光传说 (ムーンライト伝説)</div>
+            <div class="song-artist">DALI</div>
+            <div class="anime-source">美少女战士 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">1992年单曲，美国漫展引发大合唱的日本代表动画歌。前奏一出即刻心跳 [citation:2]。</div></div>
+            <div class="meta-tags"><span>美战</span><span>黄金年代</span></div>
+        </div>
+        <!-- 12. Trust You /  — 高达00 第二季ED -->
+        <div class="song-card" id="card-music-11">
+            <div class="card-header"><span class="song-label">🤖 高达神曲</span></div>
+            <div class="song-title">Trust You</div>
+            <div class="song-artist">伊藤由奈</div>
+            <div class="anime-source">机动战士高达00 第二季 ED</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一榜57.7%胜率 [citation:4]。温柔而坚定的歌声，代表高达系列柔情一面。</div></div>
+            <div class="meta-tags"><span>高达00</span></div>
+        </div>
+        <!-- 13. 天使にふれたよ! / 放課後ティータイム — K-ON!! 插曲 -->
+        <div class="song-card" id="card-music-12">
+            <div class="card-header"><span class="song-label">🎸 毕业神曲</span></div>
+            <div class="song-title">天使にふれたよ!</div>
+            <div class="song-artist">放課後ティータイム</div>
+            <div class="anime-source">K-ON!! 轻音少女 插曲</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一榜57.6%胜率 [citation:4]。轻音部毕业季的催泪弹，无数人的入坑回忆。</div></div>
+            <div class="meta-tags"><span>K-ON</span><span>HTT</span></div>
+        </div>
+        <!-- 14. イマジネーション / SPYAIR — 排球少年OP -->
+        <div class="song-card" id="card-music-13">
+            <div class="card-header"><span class="song-label">🏐 排球国歌</span></div>
+            <div class="song-title">イマジネーション</div>
+            <div class="song-artist">SPYAIR</div>
+            <div class="anime-source">排球少年!! OP1</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一榜57.6% [citation:4]。只要前奏响起，乌野的翅膀就开始飞翔，热血代名词。</div></div>
+            <div class="meta-tags"><span>排球少年</span><span>SPYAIR</span></div>
+        </div>
+        <!-- 15. エウテルペ / EGOIST — 罪恶王冠插曲 -->
+        <div class="song-card" id="card-music-14">
+            <div class="card-header"><span class="song-label">👑 泽野神曲</span></div>
+            <div class="song-title">エウテルペ</div>
+            <div class="song-artist">EGOIST</div>
+            <div class="anime-source">罪恶王冠 插曲</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一57.5% [citation:4]。chelly空灵的声音，樱满集与祈的悲歌。</div></div>
+            <div class="meta-tags"><span>EGOIST</span><span>罪恶王冠</span></div>
+        </div>
+        <!-- 16. センチメンタルクライシス /  — 辉夜姬OP -->
+        <div class="song-card" id="card-music-15">
+            <div class="card-header"><span class="song-label">❤️ 辉夜名曲</span></div>
+            <div class="song-title">センチメンタルクライシス</div>
+            <div class="song-artist">halca</div>
+            <div class="anime-source">辉夜姬想让人告白 OP2</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一57.4% [citation:4]。少女心爆发，完美诠释辉夜大小姐的傲娇。</div></div>
+            <div class="meta-tags"><span>halca</span></div>
+        </div>
+        <!-- 17. ふたつの鼓動と赤い罪 /  — 吸血鬼骑士OP -->
+        <div class="song-card" id="card-music-16">
+            <div class="card-header"><span class="song-label">🦇 经典暗黑</span></div>
+            <div class="song-title">ふたつの鼓動と赤い罪</div>
+            <div class="song-artist">ON/OFF</div>
+            <div class="anime-source">吸血鬼骑士 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">很多人的哥特启蒙，双胞胎组合的迷人声线，优姬与枢的宿命。</div></div>
+            <div class="meta-tags"><span>吸血鬼骑士</span></div>
+        </div>
+        <!-- 18. 君の知らない物語 / supercell — 化物语ED -->
+        <div class="song-card" id="card-music-17">
+            <div class="card-header"><span class="song-label">⭐ 神前晓</span></div>
+            <div class="song-title">君の知らない物語</div>
+            <div class="song-artist">supercell</div>
+            <div class="anime-source">化物语 ED</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">星空下的告白曲，nagi清澈嗓音，十年后依然在耳边回响。</div></div>
+            <div class="meta-tags"><span>nagi</span><span>化物语</span></div>
+        </div>
+        <!-- 19. ライオン / May"n×中野愛子 — 超时空要塞F OP2 -->
+        <div class="song-card" id="card-music-18">
+            <div class="card-header"><span class="song-label">🦁 燃尽神曲</span></div>
+            <div class="song-title">ライオン</div>
+            <div class="song-artist">May"n / 中野愛子</div>
+            <div class="anime-source">超时空要塞F OP2</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">菅野洋子神级作曲，May"n的爆发力，雪露女王的霸气巅峰。</div></div>
+            <div class="meta-tags"><span>MF</span><span>May"n</span></div>
+        </div>
+        <!-- 20. 心絵 /  — 棒球大联盟 OP1 -->
+        <div class="song-card" id="card-music-19">
+            <div class="card-header"><span class="song-label">⚾ 元气满满</span></div>
+            <div class="song-title">心絵</div>
+            <div class="song-artist"> ロードオブメジャー</div>
+            <div class="anime-source">棒球大联盟 OP1</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">充满希望与勇气，无数人的童年应援曲，一听就充满力量。</div></div>
+            <div class="meta-tags"><span>MAJOR</span></div>
+        </div>
+    </div>
+
+    <!-- 第三部分：2026 新番/最新瞩目曲 (10首) 基于春番主题歌 + 初音宝可梦等 -->
+    <div class="section-title">✨ Part 3 · 2026 新番 &amp; 最新话题曲</div>
+    <div class="grid">
+        <!-- 21. 君のせいで愛してる / CHiCO with HoneyWorks — 愛してるゲームOP 春番 -->
+        <div class="song-card" id="card-music-20">
+            <div class="card-header"><span class="song-label blue">📺 2026春</span></div>
+            <div class="song-title">君のせいで愛してる</div>
+            <div class="song-artist">CHiCO with HoneyWorks</div>
+            <div class="anime-source">爱してるゲームを終わらせたい OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">2026年4月新番 [citation:6]。HoneyWorks 招牌青春酸甜，CHiCO 嗓音活力全开。</div></div>
+            <div class="meta-tags"><span>4月OP</span><span>HoneyWorks</span></div>
+        </div>
+        <!-- 22. リトルワールド / PompadollS — 同作ED -->
+        <div class="song-card" id="card-music-21">
+            <div class="card-header"><span class="song-label blue">2026春</span></div>
+            <div class="song-title">リトルワールド</div>
+            <div class="song-artist">PompadollS</div>
+            <div class="anime-source">爱してるゲーム ED</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">新锐乐队，透明感 ED，值得关注 [citation:6]。</div></div>
+            <div class="meta-tags"><span>4月ED</span></div>
+        </div>
+        <!-- 23. 人誑し / 桑田佳祐 — あかね噺 OP -->
+        <div class="song-card" id="card-music-22">
+            <div class="card-header"><span class="song-label blue">国民级</span></div>
+            <div class="song-title">人誑し (ひとたらし)</div>
+            <div class="song-artist">桑田佳祐</div>
+            <div class="anime-source">あかね噺 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">南方之星桑田佳祐为落语题材动画献唱，4月4日开播 [citation:6]。破格合作。</div></div>
+            <div class="meta-tags"><span>桑田佳祐</span></div>
+        </div>
+        <!-- 24. HIDE AND SEEK / i-dle — オタクに優しいギャルはいない!? OP 韩团 -->
+        <div class="song-card" id="card-music-23">
+            <div class="card-header"><span class="song-label blue">韩流</span></div>
+            <div class="song-title">HIDE AND SEEK</div>
+            <div class="song-artist">i-dle</div>
+            <div class="anime-source">オタクに優しいギャルはいない!? OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">2026年4月8日放送，(G)I-DLE 参与动画主题歌 [citation:6]，日韩碰撞。</div></div>
+            <div class="meta-tags"><span>i-dle</span></div>
+        </div>
+        <!-- 25. 初恋モーメント / Faulieu. — カナン様はあくまでチョロい OP -->
+        <div class="song-card" id="card-music-24">
+            <div class="card-header"><span class="song-label blue">新人</span></div>
+            <div class="song-title">初恋モーメント</div>
+            <div class="song-artist">Faulieu.</div>
+            <div class="anime-source">カナン様はあくまでチョロい OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">4月4日新番，清新恋爱摇滚 [citation:6]，挖掘潜力新声。</div></div>
+            <div class="meta-tags"><span>4月</span></div>
+        </div>
+        <!-- 26. 木漏れ日坂 / Galileo Galilei — クジマ歌えば家ほろろ OP -->
+        <div class="song-card" id="card-music-25">
+            <div class="card-header"><span class="song-label blue">回归</span></div>
+            <div class="song-title">木漏れ日坂</div>
+            <div class="song-artist">Galileo Galilei</div>
+            <div class="anime-source">クジマ歌えば家ほろろ OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text"> Galileo Galilei 新作，4月9日首播 [citation:6]，清爽少年音再临。</div></div>
+            <div class="meta-tags"><span>Galileo Galilei</span></div>
+        </div>
+        <!-- 27. サブマリンユース / reGretGirl — クラスで2番目に可愛い女の子と友だちになった OP -->
+        <div class="song-card" id="card-music-26">
+            <div class="card-header"><span class="song-label blue">青春</span></div>
+            <div class="song-title">サブマリンユース</div>
+            <div class="song-artist">reGretGirl</div>
+            <div class="anime-source">クラスで2番目に可愛い女の子と友だちになった OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">4月7日开播 [citation:6]，原作轻小说人气极高，OP充满青春酸涩感。</div></div>
+            <div class="meta-tags"><span>reGretGirl</span></div>
+        </div>
+        <!-- 28. 启程之歌 / 初音未来 × 宝可梦 合作曲 2026 -->
+        <div class="song-card" id="card-music-27">
+            <div class="card-header"><span class="song-label">🎉 梦幻联动</span></div>
+            <div class="song-title">启程之歌</div>
+            <div class="song-artist">初音未来 × 宝可梦</div>
+            <div class="anime-source">宝可梦feat.初音未来 Project VOLTAGE</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">2026开年王炸，乌屋茶房创作，间奏融入宝可梦中心BGM，MV超500万播放 [citation:8]。</div></div>
+            <div class="meta-tags"><span>初音</span><span>皮卡丘</span></div>
+        </div>
+        <!-- 29. Cusp / ASCA — 黑猫与魔女的教室 OP -->
+        <div class="song-card" id="card-music-28">
+            <div class="card-header"><span class="song-label blue">ASCA</span></div>
+            <div class="song-title">Cusp</div>
+            <div class="song-artist">ASCA</div>
+            <div class="anime-source">黑猫与魔女的教室 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">4月12日开播 [citation:6]，ASCA 充满力量的歌喉，魔法奇幻题材绝配。</div></div>
+            <div class="meta-tags"><span>ASCA</span></div>
+        </div>
+        <!-- 30. 梦色轨迹 / hanser — 中国V-singer 2026 -->
+        <div class="song-card" id="card-music-29">
+            <div class="card-header"><span class="song-label">🎤 国V</span></div>
+            <div class="song-title">梦色轨迹</div>
+            <div class="song-artist">hanser</div>
+            <div class="anime-source">原创/二次元圈热门</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">2026年2月发布，永夜蛰居编曲 [citation:3]。hanser 温柔声线，二次元圈内高人气。</div></div>
+            <div class="meta-tags"><span>hanser</span><span>V曲</span></div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        Ⓒ 歌单综合自 Billboard JAPAN、Oricon、B站全年代动漫歌曲榜、美国动画歌曲盘点 [citation:2]、2026春番主题歌特集 [citation:6] 及 Bangumi 信息 [citation:1][citation:3]。 30首涵盖现象级、经典、2026新曲。
+        <div style="margin-top:1rem;">🎧 每一首都值得加入播放列表 · 网页为静态展示 2026.03</div>
+    </div>
+</div>
+<script src="../scripts/scroll.js"></script>
+
+</body></html>
