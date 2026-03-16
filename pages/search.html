@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索结果 - YOCIM轻站</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/Home-Page.CSS"> 
+    <style>
+        /* 搜索页专用样式 */
+        .search-header {
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .search-header .back-home {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2rem;
+        }
+        .search-header .search-container {
+            flex: 1;
+            max-width: 600px;
+            margin: 0;
+        }
+        .search-results-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .result-card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .result-card:hover {
+            background: #f0f0f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .result-card h3 {
+            margin: 0 0 5px;
+            color: #333;
+        }
+        .result-card p {
+            margin: 0;
+            color: #666;
+        }
+        .result-card .source {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-header">
+        <a href="/" class="back-home"><i class="fas fa-arrow-left"></i> 返回首页</a>
+        <form class="search-container" onsubmit="return handleSearchSubmit(event)">
+            <input type="text" class="search-input" placeholder="再次搜索..." value="">
+            <button type="submit" class="search-btn">搜索</button>
+        </form>
+    </div>
+
+    <div class="search-results-page" id="searchResultsPage">
+        <!-- 搜索结果将动态渲染在这里 -->
+    </div>
+
+    <script src="../scripts/search.js"></script>
+</body>
+</html>

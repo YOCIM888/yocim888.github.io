@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20部热门漫画 · 2026新潮榜 | 推荐理由全收录</title>
+    <style>
+        /* 此处保留你原有的所有样式，无需修改 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #f6f2ff;
+            background-image: radial-gradient(circle at 20% 30%, #f0e9ff 0%, #faf7ff 70%);
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(145deg, #281b4f, #7c5acf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+            filter: drop-shadow(0 8px 12px #dacfff);
+        }
+
+        .badge-strip {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 2rem;
+            margin: 1.2rem 0 2rem;
+        }
+
+        .badge-item {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(6px);
+            border-radius: 60px;
+            padding: 0.5rem 1.6rem;
+            font-weight: 600;
+            color: #372e5c;
+            border: 1px solid #ffffff;
+            box-shadow: 0 6px 14px rgba(154, 120, 255, 0.12);
+            font-size: 1rem;
+        }
+
+        .intro-msg {
+            background: #ffffffd9;
+            border-radius: 40px;
+            padding: 1.2rem 2.2rem;
+            width: fit-content;
+            margin: 1.5rem auto 2rem;
+            border: 1px solid white;
+            box-shadow: 0 12px 28px -10px #ac9ce8;
+            font-size: 1.1rem;
+            color: #1d123b;
+            font-weight: 450;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .intro-msg span {
+            background: #6045b3;
+            color: white;
+            padding: 0.2rem 1.4rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.8rem;
+            margin: 2.5rem 0 2rem;
+        }
+
+        .manga-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 36px;
+            padding: 1.6rem 1.5rem 1.9rem;
+            border: 1px solid rgba(255,255,255,0.8);
+            box-shadow: 0 20px 35px -10px #b7a2f0;
+            transition: transform 0.15s ease, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .manga-card:hover {
+            transform: translateY(-6px);
+            background: white;
+            border-color: #d8c7ff;
+            box-shadow: 0 30px 45px -12px #9c86e0;
+        }
+
+        .manga-card:link,
+        .manga-card:visited,
+        .manga-card:hover,
+        .manga-card:active {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.8rem;
+        }
+
+        .rank-badge {
+            background: #e2d5ff;
+            color: #341f74;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            border: 1px solid #b9a1ff;
+        }
+
+        .badge-gold {
+            background: #ffe9b6;
+            border-color: #ccaa6c;
+            color: #5b4000;
+        }
+
+        .badge-purple {
+            background: #e1ceff;
+            border-color: #a27beb;
+        }
+
+        .badge-blue {
+            background: #c7e4ff;
+            border-color: #3f86c5;
+            color: #10375e;
+        }
+
+        .manga-title {
+            font-size: 1.7rem;
+            font-weight: 750;
+            line-height: 1.2;
+            color: #1d103b;
+            margin: 0.3rem 0 0.2rem;
+        }
+
+        .manga-author {
+            color: #5f4d8a;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            border-left: 4px solid #ae94f5;
+            padding-left: 0.7rem;
+        }
+
+        .recommend-box {
+            background: #f2edff;
+            border-radius: 24px;
+            padding: 1rem 1.2rem;
+            margin: 0.8rem 0 1rem;
+            border: 1px solid #ffffff;
+            box-shadow: inset 0 1px 4px #ffffff, 0 4px 10px rgba(128, 106, 209, 0.1);
+        }
+
+        .recommend-label {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #4e2f8b;
+            margin-bottom: 0.5rem;
+        }
+
+        .recommend-label span {
+            background: #cdb7ff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+        }
+
+        .recommend-text {
+            color: #1e153b;
+            font-size: 0.98rem;
+            line-height: 1.5;
+        }
+
+        .meta-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+            align-items: center;
+        }
+
+        .tag {
+            background: white;
+            border-radius: 40px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            border: 1px solid #d5c4fd;
+            color: #3a2672;
+        }
+
+        .tag-strong {
+            background: #ffefc9;
+            border-color: #e6b85c;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2.5rem;
+            border-top: 3px dashed #cdbbff;
+            color: #463979;
+            font-size: 0.95rem;
+        }
+
+        .source-line {
+            background: #eae0ff;
+            border-radius: 60px;
+            padding: 0.6rem 2rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>热门漫画·20部大推荐</h1>
+        <div class="badge-strip">
+            <span class="badge-item">这本漫画真厉害！2026</span>
+            <span class="badge-item">最想动画化排行榜</span>
+            <span class="badge-item">官方衍生/新连载</span>
+            <span class="badge-item">⭐ 编辑部精选</span>
+        </div>
+        <div class="intro-msg">
+            <span>⭐ 每部均有推荐理由</span> 综合宝岛社、AnimeJapan、小学馆、角川等近期情报
+        </div>
+    </div>
+
+    <div class="grid">
+        <a class="manga-card" id="card-Comic-0" href="#">
+            <div class="card-top">
+                <span class="rank-badge badge-gold">这本漫画真厉害！男生榜 No.1</span>
+            </div>
+            <div class="manga-title">十月堂舊書事</div>
+            <div class="manga-author">（本なら売るほど）</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">旧书店主与客人的温暖际遇，用一本书串联起陌生人的命运。2026男生榜冠军，被誉为“爱书人必读的诗意物语”，细腻画风与人文关怀极佳 [citation:1][citation:8]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">书店题材</span>
+                <span class="tag">治愈系</span>
+                <span class="tag">宝岛社</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-1" href="#">
+            <div class="card-top">
+                <span class="rank-badge badge-gold">女生榜 No.1</span>
+            </div>
+            <div class="manga-title">半分姉弟</div>
+            <div class="manga-author">（混血姐弟）</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">混血儿群体在日本的身份认同群像剧，触及“异类感”与血缘纽带。情感刻画深邃，登顶女生榜当之无愧 [citation:1][citation:8]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">身份认同</span>
+                <span class="tag">社会派</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-2" href="#">
+            <div class="card-top">
+                <span class="rank-badge badge-purple">最想动画化 No.1</span>
+            </div>
+            <div class="manga-title">邻座同学用那种眼神看过来</div>
+            <div class="manga-author">mmk</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">AnimeJapan 2026 读者票选第一，纯爱喜剧巅峰！双向暗恋、各种误会和心动拉扯，让人忍不住傻笑。动画化预定潜力股 [citation:4]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">校园恋爱</span>
+                <span class="tag">暧昧神作</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-3" href="#">
+            <div class="card-top">
+                <span class="rank-badge ">男生榜 No.3</span>
+            </div>
+            <div class="manga-title">魔男伊奇</div>
+            <div class="manga-author">魔男のイチ</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">以“魔法即生命体”的独创世界观，少年猎人以最原始方式颠覆魔法常识。战斗作画炸裂，奇幻迷必追 [citation:1][citation:8]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">奇幻战斗</span>
+                <span class="tag">设定新颖</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-4" href="#">
+            <div class="card-top">
+                <span class="rank-badge ">男生榜 No.5</span>
+            </div>
+            <div class="manga-title">邪神便當店</div>
+            <div class="manga-author">邪神の弁当屋さん</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">曾是引发战争的邪神，如今沦落为人间便当店老板娘，思考“明天配什么菜”？搞笑又暖心的神明日常 [citation:1][citation:8]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">搞笑</span>
+                <span class="tag">神明日常</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-5" href="#">
+            <div class="card-top">
+                <span class="rank-badge ">女生榜 No.2</span>
+            </div>
+            <div class="manga-title">隙間</div>
+            <div class="manga-author">高妍</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">台湾漫画家高妍作品。女大生赴冲绳交换，在祖母离世与失恋后重新寻找“自我”。画面诗意，细腻疗愈 [citation:1][citation:8]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">疗愈</span>
+                <span class="tag">台湾作家</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-6" href="#">
+            <div class="card-top">
+                <span class="rank-badge badge-gold">男生榜 No.2 / 动画希望 No.2</span>
+            </div>
+            <div class="manga-title">Strikeout Pitch</div>
+            <div class="manga-author">住吉九</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">传说中的“球队终结者”只能投三球？无法参与正式比赛的天才投手，三周最后的夏天。热血又惆怅，双榜认证 [citation:1][citation:4]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">棒球</span>
+                <span class="tag">青春泪点</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-7" href="#">
+            <div class="card-top">
+                <span class="rank-badge ">动画希望 No.3</span>
+            </div>
+            <div class="manga-title">屁股戰士</div>
+            <div class="manga-author">高出なおたか</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">名字离谱但意外燃到爆的搞笑战斗漫画，用臀部必杀技拯救世界？AnimeJapan票选第三，可见人气多魔性 [citation:4]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">搞笑热血</span>
+                <span class="tag">cult</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-8" href="#">
+            <div class="card-top">
+                <span class="rank-badge badge-blue">✨ 童年回归</span>
+            </div>
+            <div class="manga-title">魔法咪路咪路New</div>
+            <div class="manga-author">篠塚廣夢</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">时隔20年完全新作！2026年3月3日小学馆Ciao开始连载。咪路、枫的日常全新展开，老粉狂喜，新一代也能入坑 [citation:2]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">童年回忆</span>
+                <span class="tag">新连载</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-9" href="#">
+            <div class="card-top">
+                <span class="rank-badge ">官方衍生</span>
+            </div>
+            <div class="manga-title">藥師少女的獨語：小蘭的故事</div>
+            <div class="manga-author">日向夏 (原作) / 七緒一綺 (作画)</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">猫猫背后的好友小兰视角！从贫穷少女到后宫宫女，与猫猫相遇的轨迹。2026年10月英文版发售，粉丝必读 [citation:5]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">衍生故事</span>
+                <span class="tag">猫猫好友</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-10" href="#">
+            <div class="card-top">
+                <span class="rank-badge ">男生榜 No.6</span>
+            </div>
+            <div class="manga-title">最喜歡大食！望月小姐</div>
+            <div class="manga-author">ドカ食いダイスキ! もちづきさん</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">暴食漫画的新境界！看似温柔的女性私下追求热量巅峰，大份量美食的搞笑冲击，禁忌的美食题材 [citation:1][citation:8]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">美食</span>
+                <span class="tag">搞笑</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-11" href="#">
+            <div class="card-top">
+                <span class="rank-badge ">动画希望 No.4</span>
+            </div>
+            <div class="manga-title">靈靈總總拍不到</div>
+            <div class="manga-author">コノシマルカ</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">以灵异节目为舞台，拍不到的诡异存在却逐渐侵蚀现实。新锐恐怖漫画，氛围绝佳 [citation:4]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">恐怖悬疑</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-12" href="#">
+            <div class="card-top">
+                <span class="rank-badge ">动画希望 No.5</span>
+            </div>
+            <div class="manga-title">#辣妹與辣妹的百合</div>
+            <div class="manga-author">イノウエ</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">两个辣妹之间纯粹的百合故事，SNS风格分镜，甜度爆表又时髦。年轻人气爆棚 [citation:4]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">百合</span>
+                <span class="tag">SNS感</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-13" href="#">
+            <div class="card-top">
+                <span class="rank-badge ">动画希望 No.6</span>
+            </div>
+            <div class="manga-title">公司和私生活－ON AND OFF－</div>
+            <div class="manga-author">金沢真之介</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">冷酷职场前辈与宅女后辈的双面生活共鸣喜剧。社畜共鸣+甜蜜日常 [citation:4]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">职场恋爱</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-14" href="#">
+            <div class="card-top">
+                <span class="rank-badge ">Square Enix</span>
+            </div>
+            <div class="manga-title">My Ex-Boyfriend Loves Boys‘ Love</div>
+            <div class="manga-author">（元カレがBL好きです）</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">前男友在书店BL区重逢！两人因BL再燃奇妙缘分的温馨喜剧。设定脑洞清奇，2026年9月英文版 [citation:5]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">BL题材</span>
+                <span class="tag">喜剧</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-15" href="#">
+            <div class="card-top">
+                <span class="rank-badge ">动画希望 No.8</span>
+            </div>
+            <div class="manga-title">恐龍庇護所</div>
+            <div class="manga-author">木下いたる</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">在恐龙庇护所工作的青年与形形色色古生物的温情日常。治愈且充满想象力 [citation:4]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">奇幻治愈</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-16" href="#">
+            <div class="card-top">
+                <span class="rank-badge ">动画希望 No.9</span>
+            </div>
+            <div class="manga-title">極樂街</div>
+            <div class="manga-author">佐乃夕斗</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">混乱街区里处理“不该存在之物”的两人，动作场面与妖异氛围极佳，JUMP+系新星 [citation:4]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">动作</span>
+                <span class="tag">奇幻</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-17" href="#">
+            <div class="card-top">
+                <span class="rank-badge ">动画希望 No.10</span>
+            </div>
+            <div class="manga-title">百人魂</div>
+            <div class="manga-author">暗森透</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">继承神社的少年与一百个灵魂的共存战斗。灵异+青春，2026备受期待 [citation:4]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">灵异</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-18" href="#">
+            <div class="card-top">
+                <span class="rank-badge ">男生榜 No.10</span>
+            </div>
+            <div class="manga-title">怪獣を解剖する</div>
+            <div class="manga-author">（解剖怪兽）</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">怪兽学者解剖巨大怪兽尸体，遇见能听见怪兽鸣叫的鱼贩。知识欲与神秘交错，哲学科幻佳作 [citation:1][citation:8]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">科幻</span>
+                <span class="tag">怪兽</span>
+            </div>
+        </a>
+        <a class="manga-card" id="card-Comic-19" href="#">
+            <div class="card-top">
+                <span class="rank-badge ">新作</span>
+            </div>
+            <div class="manga-title">Boyish Girlfriend</div>
+            <div class="manga-author">（男友力女友）</div>
+            <div class="recommend-box">
+                <div class="recommend-label"><span>推荐理由</span></div>
+                <div class="recommend-text">从小像男生的女友，在学校穿猫耳女仆装被男友发现！反差萌恋爱喜剧，9月英文版 [citation:5]。</div>
+            </div>
+            <div class="meta-tags">
+                <span class="tag">反差恋爱</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <div class="source-line">资料来源：《这本漫画真厉害！2026》、AnimeJapan 2026“最想动画化”排行榜、小学馆、Square Enix官方、台湾漫画家高妍报道等 [citation:1][citation:2][citation:4]</div>
+        <p style="margin-top:1.5rem;">🧾 每部漫画均附推荐理由，聚焦2025-2026新作、话题作与经典续篇。基于3月中旬前情报整理。</p>
+        <p>更新于2026年3月 · 20部热门漫画榜单 · 网页为静态展示</p>
+    </div>
+</div>
+<!-- 如果有公共JS可以保留，没有则删除 -->
+<!-- <script src="../scripts/scroll.js"></script> -->
+</body>
+</html>

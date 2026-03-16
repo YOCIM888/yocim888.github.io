@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ YOCIM轻站-导航姬</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/Home-Page.CSS">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-links">
+            <a href="pages/system.html" class="sidebar-item" title="虚拟系统·"><i class="fas fa-server"></i> <span>虚拟系统</span></a>
+            <a href="pages/Game-center.html" class="sidebar-item" title="小游戏"><i class="fas fa-gamepad"></i> <span>小游戏</span></a>
+            <a href="#acgn" class="sidebar-item" title="ACGN推荐"><i class="fas fa-file-alt"></i> <span>ACGN推荐</span></a>
+            <a href="#tools" class="sidebar-item" title="实用工具"><i class="fas fa-tools"></i> <span>实用工具</span></a>
+            <a href="#ai" class="sidebar-item" title="AI模型"><i class="fas fa-robot"></i> <span>AI模型</span></a>
+            <a href="#news" class="sidebar-item" title="新闻资讯"><i class="fas fa-graduation-cap"></i> <span>新闻资讯</span></a>
+            <a href="#shopping" class="sidebar-item" title="购物推荐"><i class="fas fa-database"></i> <span>购物推荐</span></a>
+            <a href="#gallery" class="sidebar-item" title="图库资源"><i class="fas fa-image"></i> <span>图库资源</span></a>
+            <a href="#video" class="sidebar-item" title="视频资源"><i class="fas fa-video"></i> <span>视频资源</span></a>
+            <a href="#forum" class="sidebar-item" title="社区论坛"><i class="fas fa-users"></i> <span>社区论坛</span></a>
+            <a href="#music" class="sidebar-item" title="音乐资源"><i class="fas fa-music"></i> <span>音乐资源</span></a>
+            <a href="#education" class="sidebar-item" title="学习教育"><i class="fas fa-book-reader"></i> <span>学习教育</span></a>
+            <a href="#software" class="sidebar-item" title="软件下载"><i class="fas fa-download"></i> <span>软件下载</span></a>
+            <a href="#programming" class="sidebar-item" title="编程资源"><i class="fas fa-code"></i> <span>编程资源</span></a>
+            <a href="mailto:yocim666@outlook.com" class="sidebar-item" title="联系站长"><i class="fas fa-envelope"></i> <span>联系站长</span></a>
+        </div>
+        <div class="sidebar-bottom">
+            <div class="sidebar-item toggle-btn" id="toggleSidebar">
+                <i class="fas fa-angle-double-left"></i> <span>收起</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo">
+            <i class="fas fa-cat"></i> YOCIM轻站
+        </div>
+        <div class="nav-links">
+            <a href="#top"><i class="fas fa-home"></i> 首页</a>
+            <a href="pages/novel.html"><i class="fas fa-tv"></i> 小说推荐</a>
+            <a href="pages/Comic.html"><i class="fas fa-book-open"></i> 漫画推荐</a>
+            <a href="pages/Game.html"><i class="fas fa-gamepad"></i> 游戏推荐</a>
+            <a href="pages/music.html"><i class="fas fa-music"></i> 音乐推荐</a>
+        </div>
+        <div class="header-right">
+            <div id="mockLoginArea" class="mock-login-area">
+                <button id="mockLoginBtn" class="mock-login-btn">
+                    <i class="fab fa-github"></i> 登录
+                </button>
+                <div id="mockUserInfo" class="mock-user-info" style="display: none;">
+                    <img id="mockUserAvatar" class="mock-user-avatar" src="" alt="avatar">
+                    <span id="mockUserName"></span>
+                </div>
+            </div>
+            <div class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="player-icon" id="playerIcon">
+                <i class="fas fa-headphones-alt"></i>
+            </div>
+        </div>
+        <div class="status-ball" id="statusBall">
+            <div class="status-item">网站访问次数: <span id="visitCount">0</span></div>
+            <div class="status-item">网站运行天数: <span id="runDays">0</span> 天</div>
+            <div class="status-item">数据流量: <span id="dataTraffic">0 MB</span></div>
+            <button class="close-btn" id="closeStatusBall">关闭状态球</button>
+        </div>
+    </header>
+
+    <!-- 移动端导航浮窗（初始为空，JS填充） -->
+    <div class="mobile-nav" id="mobileNav"></div>
+
+    <!-- 主内容 -->
+    <main>
+        <!-- 英雄区 / 搜索区 -->
+        <section class="hero">
+            <h1>✨ 发现 · 二次元新大陆</h1>
+            <p class="subtitle">网站目前还是测试阶段，会不断完善，感谢支持</p>
+            <form class="search-container" onsubmit="return handleSearchSubmit(event)">
+                <input type="text" class="search-input" placeholder="输入二次元关键词...">
+                <button type="submit" class="search-btn">搜索</button>
+            </form>
+            <!-- 用于展示搜索结果 -->
+            <div class="search-results" style="margin-top: 20px;"></div>
+
+            <!-- 随机语录显示区（动态） -->
+            <div class="random-quote">
+                <i class="fas fa-quote-left"></i>
+                <span id="anime-quote">正在加载中二语录...</span>
+                <i class="fas fa-quote-right"></i>
+            </div>
+        </section>
+
+        <!-- 动态卡片将从这里开始插入（英雄区之后，由脚本生成） -->
+    </main>
+
+    <!-- 登录模态框 -->
+    <div id="loginModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title"><i class="fab fa-github"></i> GitHub 登录</span>
+                <span class="modal-close" id="modalCloseBtn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>请输入 GitHub 用户名：</p>
+                <input type="text" id="githubUsernameInput" class="modal-input" placeholder="例如: octocat" autocomplete="off">
+                <div class="modal-error" id="modalErrorMsg" style="display: none;"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn cancel" id="modalCancelBtn">取消</button>
+                <button class="modal-btn confirm" id="modalConfirmBtn">登录</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 footer -->
+    <footer class="footer">
+        <div class="footer-quote">
+            <span class="quote-label"><i class="fas fa-heart"></i> 今日语录</span>
+            <span id="anime-quote-footer">—— 用代码编织二次元的梦</span>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2025-<span id="current-year"></span> YOCIM轻站 · 为爱发电 <i class="fas fa-bolt"></i> 免责声明：网站所有信息都源自于互联网采集，如内容有侵权，请联系删除。本网站仅提供网址导航服务，不控制外部链接内容，不对其合法性、安全性、准确性负责。用户访问外部网站风险自担，因使用本站产生的一切损失，本站不承担责任。</p>
+            <p class="footer-links">
+                <a href="https://github.com/YOCIM888"><i class="fab fa-github"></i> GitHub</a> | 
+                <a href="https://mp.weixin.qq.com/s/zPMs_f6EN76Wg98g8hMutQ"><i class="fas fa-rss"></i> 公众号</a> | 
+                <a href="mailto:yocim666@outlook.com"><i class="fas fa-envelope"></i> 反馈</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- 悬浮音乐播放器 -->
+    <div class="music-player" id="musicPlayer">
+        <div class="player-header">
+            <span class="player-title"><i class="fas fa-music"></i> 次元播放器</span>
+            <button class="close-player" id="closePlayer"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="player-content">
+            <div class="song-info">
+                <span class="song-name" id="currentSong">未播放</span>
+            </div>
+            <div class="progress-container">
+                <input type="range" class="progress-bar" id="progressBar" value="0" step="0.1">
+                <div class="time">
+                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                </div>
+            </div>
+            <div class="player-controls">
+                <button id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                <button id="playPauseBtn"><i class="fas fa-play"></i></button>
+                <button id="nextBtn"><i class="fas fa-step-forward"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/Home-Page.js"></script>
+    <script src="scripts/search.js"></script>
+    <script src="scripts/scroll.js"></script>
+</body>
+</html>
