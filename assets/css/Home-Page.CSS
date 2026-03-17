@@ -381,7 +381,9 @@ body::before {
             transition: all 0.25s ease;
             border: 1px solid rgba(255, 255, 255, 0.9);
             box-shadow: 0 8px 16px -6px rgba(210, 160, 200, 0.25);
-            display: flex;
+            display: block;
+            text-decoration: none;
+            color: inherit;
             flex-direction: column;
         }
         .card:hover {
