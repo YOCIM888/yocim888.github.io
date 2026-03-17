@@ -29,17 +29,18 @@ data.categories.forEach((cat, catIndex) => {
     cardsHtml += `  <h2 class="category-title"><i class="${cat.icon}"></i> ${titleText}</h2>\n`;
     cardsHtml += `  <div class="card-grid">\n`;
 
-    cat.links.forEach((link, linkIndex) => {
-        const cardId = `card-${cat.id}-${linkIndex}`;
-        cardsHtml += `    <div class="card" id="${cardId}">\n`;
-        cardsHtml += `      <i class="${link.icon} card-icon"></i>\n`;
-        cardsHtml += `      <h3>${link.name}</h3>\n`;
-        cardsHtml += `      <p>${link.desc || ''}</p>\n`;
-        cardsHtml += `      <div class="card-footer">\n`;
-        cardsHtml += `        <a href="${link.url}" class="card-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 访问</a>\n`;
-        cardsHtml += `        <span class="tag">${link.tag || ''}</span>\n`;
-        cardsHtml += `      </div>\n`;
-        cardsHtml += `    </div>\n`;
+   cat.links.forEach((link, linkIndex) => {
+    const cardId = `card-${cat.id}-${linkIndex}`;
+    cardsHtml += `    <a href="${link.url}" class="card" id="${cardId}" target="_blank" rel="noopener">\n`;
+    cardsHtml += `      <i class="${link.icon} card-icon"></i>\n`;
+    cardsHtml += `      <h3>${link.name}</h3>\n`;
+    cardsHtml += `      <p>${link.desc || ''}</p>\n`;
+    cardsHtml += `      <div class="card-footer">\n`;
+    // 原来的 <a> 改成 <span>，保留类名和图标文字
+    cardsHtml += `        <span class="card-link"><i class="fas fa-external-link-alt"></i> 访问</span>\n`;
+    cardsHtml += `        <span class="tag">${link.tag || ''}</span>\n`;
+    cardsHtml += `      </div>\n`;
+    cardsHtml += `    </a>\n`;
     });
 
     cardsHtml += `  </div>\n`;
