@@ -166,9 +166,9 @@ body::before {
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(160, 120, 200, 0.5);
   color: #5a3e5a;
-  padding: 6px 12px;
-  border-radius: 30px;
-  font-size: 13px;
+   padding: 5px 9px;
+  border-radius: 18px;
+  font-size: 8px;
   cursor: pointer;
   transition: background 0.2s;
   width: 100%;
