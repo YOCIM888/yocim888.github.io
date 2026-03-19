@@ -502,8 +502,122 @@ function endAuction() {
 }
 
 function performAttack(attacker) {
-    // 原攻击逻辑保持不变，此处省略（请保留原完整函数）
-    console.log("attack");
+    // 获取目标（攻击者的 enemyId 指定）
+    let target = game.players.find(p => p.id === attacker.enemyId);
+    if (!target) {
+        addLog(`攻击者 ${attacker.name} 没有目标！`, 'system');
+        return;
+    }
+
+    // 基础攻击力
+    let baseAttack = attacker.attack;
+    // 目标基础防御
+    let targetDefense = target.defense;
+    
+    // 伤害倍率（默认1）
+    let damageMultiplier = 1.0;
+    // 额外真实伤害
+    let bonusTrueDamage = 0;
+    // 是否免疫伤害（目标）
+    let isImmune = false;
+    // 目标减伤比例
+    let targetDamageReduction = 0;
+
+    // ----- 处理攻击者的祝福（增益）-----
+    attacker.blessings.forEach(b => {
+        if (b.type === 'double_damage_chance' && Math.random() < b.value) {
+            damageMultiplier *= 2;
+            addLog(`${attacker.name} 触发双倍伤害！`, 'system');
+        }
+        if (b.type === 'bonus_true_damage') {
+            bonusTrueDamage += b.value;
+        }
+        // 其他攻击相关祝福可在此扩展
+    });
+
+    // ----- 处理攻击者的诅咒（减益）-----
+    attacker.curses.forEach(c => {
+        if (c.type === 'attack_reduction') {
+            baseAttack *= (1 - c.value);
+        }
+        // 其他诅咒效果...
+    });
+
+    // ----- 处理目标的祝福（防御性）-----
+    target.blessings.forEach(b => {
+        if (b.type === 'damage_reduction') {
+            targetDamageReduction += b.value;
+        }
+        if (b.type === 'damage_immunity') {
+            isImmune = true;
+            addLog(`${target.name} 免疫了这次攻击！`, 'system');
+        }
+    });
+
+    // 如果目标免疫伤害，直接结束
+    if (isImmune) {
+        // 消耗免疫效果（如果需要）
+        target.blessings = target.blessings.filter(b => b.type !== 'damage_immunity');
+        updatePlayerUI(attacker);
+        updatePlayerUI(target);
+        return;
+    }
+
+    // ----- 处理目标的诅咒（防御降低等）-----
+    let effectiveDefense = targetDefense;
+    target.curses.forEach(c => {
+        if (c.type === 'defense_reduction') {
+            effectiveDefense *= (1 - c.value);
+        }
+    });
+
+    // 计算穿透后的防御（穿透百分比）
+    let penetration = attacker.penetration / 100; // 转换为小数
+    effectiveDefense = effectiveDefense * (1 - penetration);
+
+    // 基础伤害公式：攻击 - 防御，最低保底5点
+    let damage = baseAttack - effectiveDefense;
+    if (damage < 5) damage = 5;
+
+    // 应用伤害倍率
+    damage *= damageMultiplier;
+
+    // 加上额外真实伤害
+    damage += bonusTrueDamage;
+
+    // 应用目标减伤
+    damage *= (1 - targetDamageReduction);
+
+    // 确保伤害为整数且不小于0
+    damage = Math.max(0, Math.floor(damage));
+
+    // 扣除目标生命值
+    target.health -= damage;
+    if (target.health < 0) target.health = 0;
+
+    // 记录攻击日志
+    addLog(`${attacker.name} 攻击 ${target.name}，造成 ${damage} 点伤害！`, 'system');
+
+    // 处理攻击者的吸血效果（例如嗜血长弓，需要先确认物品效果中已添加相应祝福）
+    // 假设存在 'lifesteal' 类型祝福，值为每次攻击恢复的血量
+    attacker.blessings.forEach(b => {
+        if (b.type === 'lifesteal') {
+            let heal = Math.min(b.value, attacker.maxHealth - attacker.health);
+            attacker.health += heal;
+            addLog(`${attacker.name} 通过吸血恢复了 ${heal} 点生命值。`, 'heal');
+        }
+    });
+
+    // 更新双方UI
+    updatePlayerUI(attacker);
+    updatePlayerUI(target);
+
+    // 检查目标是否死亡（可选，目前不结束游戏，仅记录）
+    if (target.health <= 0) {
+        addLog(`${target.name} 生命值归零！`, 'system');
+    }
+
+    // 可选：减少祝福/诅咒的持续时间（需要统一在回合结束时处理，此处略）
 }
 
 function endGame() {
