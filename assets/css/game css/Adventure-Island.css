@@ -628,7 +628,7 @@ body::after {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 0;                /* 与状态卡片顶部对齐（父容器已设 top:10px，子元素 top:0 即位于父容器顶部） */
+    top: 0;                /* 与状态卡片顶部对齐（父容器已设 top:10px，子元素 top:10 即位于父容器顶部） */
     flex: none;            /* 取消 Flex 伸缩，避免冲突 */
     margin: 0;             /* 重置外边距 */
     
