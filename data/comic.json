@@ -1,0 +1,197 @@
+{
+  "pageTitle": "20部热门漫画 · 2026新潮榜 | 推荐理由全收录",
+  "headerTitle": "热门漫画·20部大推荐",
+  "badges": [
+    "这本漫画真厉害！2026",
+    "最想动画化排行榜",
+    "官方衍生/新连载",
+    "⭐ 编辑部精选"
+  ],
+  "intro": "综合宝岛社、AnimeJapan、小学馆、角川等近期情报",
+  "comics": [
+    {
+      "id": "Comic-0",
+      "title": "十月堂舊書事",
+      "author": "（本なら売るほど）",
+      "rankBadgeClass": "badge-gold",
+      "rankText": "这本漫画真厉害！男生榜 No.1",
+      "recommendation": "旧书店主与客人的温暖际遇，用一本书串联起陌生人的命运。2026男生榜冠军，被誉为“爱书人必读的诗意物语”，细腻画风与人文关怀极佳 [citation:1][citation:8]。",
+      "tags": ["书店题材", "治愈系", "宝岛社"]
+    },
+    {
+      "id": "Comic-1",
+      "title": "半分姉弟",
+      "author": "（混血姐弟）",
+      "rankBadgeClass": "badge-gold",
+      "rankText": "女生榜 No.1",
+      "recommendation": "混血儿群体在日本的身份认同群像剧，触及“异类感”与血缘纽带。情感刻画深邃，登顶女生榜当之无愧 [citation:1][citation:8]。",
+      "tags": ["身份认同", "社会派"]
+    },
+    {
+      "id": "Comic-2",
+      "title": "邻座同学用那种眼神看过来",
+      "author": "mmk",
+      "rankBadgeClass": "badge-purple",
+      "rankText": "最想动画化 No.1",
+      "recommendation": "AnimeJapan 2026 读者票选第一，纯爱喜剧巅峰！双向暗恋、各种误会和心动拉扯，让人忍不住傻笑。动画化预定潜力股 [citation:4]。",
+      "tags": ["校园恋爱", "暧昧神作"]
+    },
+    {
+      "id": "Comic-3",
+      "title": "魔男伊奇",
+      "author": "魔男のイチ",
+      "rankBadgeClass": "",
+      "rankText": "男生榜 No.3",
+      "recommendation": "以“魔法即生命体”的独创世界观，少年猎人以最原始方式颠覆魔法常识。战斗作画炸裂，奇幻迷必追 [citation:1][citation:8]。",
+      "tags": ["奇幻战斗", "设定新颖"]
+    },
+    {
+      "id": "Comic-4",
+      "title": "邪神便當店",
+      "author": "邪神の弁当屋さん",
+      "rankBadgeClass": "",
+      "rankText": "男生榜 No.5",
+      "recommendation": "曾是引发战争的邪神，如今沦落为人间便当店老板娘，思考“明天配什么菜”？搞笑又暖心的神明日常 [citation:1][citation:8]。",
+      "tags": ["搞笑", "神明日常"]
+    },
+    {
+      "id": "Comic-5",
+      "title": "隙間",
+      "author": "高妍",
+      "rankBadgeClass": "",
+      "rankText": "女生榜 No.2",
+      "recommendation": "台湾漫画家高妍作品。女大生赴冲绳交换，在祖母离世与失恋后重新寻找“自我”。画面诗意，细腻疗愈 [citation:1][citation:8]。",
+      "tags": ["疗愈", "台湾作家"]
+    },
+    {
+      "id": "Comic-6",
+      "title": "Strikeout Pitch",
+      "author": "住吉九",
+      "rankBadgeClass": "badge-gold",
+      "rankText": "男生榜 No.2 / 动画希望 No.2",
+      "recommendation": "传说中的“球队终结者”只能投三球？无法参与正式比赛的天才投手，三周最后的夏天。热血又惆怅，双榜认证 [citation:1][citation:4]。",
+      "tags": ["棒球", "青春泪点"]
+    },
+    {
+      "id": "Comic-7",
+      "title": "屁股戰士",
+      "author": "高出なおたか",
+      "rankBadgeClass": "",
+      "rankText": "动画希望 No.3",
+      "recommendation": "名字离谱但意外燃到爆的搞笑战斗漫画，用臀部必杀技拯救世界？AnimeJapan票选第三，可见人气多魔性 [citation:4]。",
+      "tags": ["搞笑热血", "cult"]
+    },
+    {
+      "id": "Comic-8",
+      "title": "魔法咪路咪路New",
+      "author": "篠塚廣夢",
+      "rankBadgeClass": "badge-blue",
+      "rankText": "✨ 童年回归",
+      "recommendation": "时隔20年完全新作！2026年3月3日小学馆Ciao开始连载。咪路、枫的日常全新展开，老粉狂喜，新一代也能入坑 [citation:2]。",
+      "tags": ["童年回忆", "新连载"]
+    },
+    {
+      "id": "Comic-9",
+      "title": "藥師少女的獨語：小蘭的故事",
+      "author": "日向夏 (原作) / 七緒一綺 (作画)",
+      "rankBadgeClass": "",
+      "rankText": "官方衍生",
+      "recommendation": "猫猫背后的好友小兰视角！从贫穷少女到后宫宫女，与猫猫相遇的轨迹。2026年10月英文版发售，粉丝必读 [citation:5]。",
+      "tags": ["衍生故事", "猫猫好友"]
+    },
+    {
+      "id": "Comic-10",
+      "title": "最喜歡大食！望月小姐",
+      "author": "ドカ食いダイスキ! もちづきさん",
+      "rankBadgeClass": "",
+      "rankText": "男生榜 No.6",
+      "recommendation": "暴食漫画的新境界！看似温柔的女性私下追求热量巅峰，大份量美食的搞笑冲击，禁忌的美食题材 [citation:1][citation:8]。",
+      "tags": ["美食", "搞笑"]
+    },
+    {
+      "id": "Comic-11",
+      "title": "靈靈總總拍不到",
+      "author": "コノシマルカ",
+      "rankBadgeClass": "",
+      "rankText": "动画希望 No.4",
+      "recommendation": "以灵异节目为舞台，拍不到的诡异存在却逐渐侵蚀现实。新锐恐怖漫画，氛围绝佳 [citation:4]。",
+      "tags": ["恐怖悬疑"]
+    },
+    {
+      "id": "Comic-12",
+      "title": "#辣妹與辣妹的百合",
+      "author": "イノウエ",
+      "rankBadgeClass": "",
+      "rankText": "动画希望 No.5",
+      "recommendation": "两个辣妹之间纯粹的百合故事，SNS风格分镜，甜度爆表又时髦。年轻人气爆棚 [citation:4]。",
+      "tags": ["百合", "SNS感"]
+    },
+    {
+      "id": "Comic-13",
+      "title": "公司和私生活－ON AND OFF－",
+      "author": "金沢真之介",
+      "rankBadgeClass": "",
+      "rankText": "动画希望 No.6",
+      "recommendation": "冷酷职场前辈与宅女后辈的双面生活共鸣喜剧。社畜共鸣+甜蜜日常 [citation:4]。",
+      "tags": ["职场恋爱"]
+    },
+    {
+      "id": "Comic-14",
+      "title": "My Ex-Boyfriend Loves Boys‘ Love",
+      "author": "（元カレがBL好きです）",
+      "rankBadgeClass": "",
+      "rankText": "Square Enix",
+      "recommendation": "前男友在书店BL区重逢！两人因BL再燃奇妙缘分的温馨喜剧。设定脑洞清奇，2026年9月英文版 [citation:5]。",
+      "tags": ["BL题材", "喜剧"]
+    },
+    {
+      "id": "Comic-15",
+      "title": "恐龍庇護所",
+      "author": "木下いたる",
+      "rankBadgeClass": "",
+      "rankText": "动画希望 No.8",
+      "recommendation": "在恐龙庇护所工作的青年与形形色色古生物的温情日常。治愈且充满想象力 [citation:4]。",
+      "tags": ["奇幻治愈"]
+    },
+    {
+      "id": "Comic-16",
+      "title": "極樂街",
+      "author": "佐乃夕斗",
+      "rankBadgeClass": "",
+      "rankText": "动画希望 No.9",
+      "recommendation": "混乱街区里处理“不该存在之物”的两人，动作场面与妖异氛围极佳，JUMP+系新星 [citation:4]。",
+      "tags": ["动作", "奇幻"]
+    },
+    {
+      "id": "Comic-17",
+      "title": "百人魂",
+      "author": "暗森透",
+      "rankBadgeClass": "",
+      "rankText": "动画希望 No.10",
+      "recommendation": "继承神社的少年与一百个灵魂的共存战斗。灵异+青春，2026备受期待 [citation:4]。",
+      "tags": ["灵异"]
+    },
+    {
+      "id": "Comic-18",
+      "title": "怪獣を解剖する",
+      "author": "（解剖怪兽）",
+      "rankBadgeClass": "",
+      "rankText": "男生榜 No.10",
+      "recommendation": "怪兽学者解剖巨大怪兽尸体，遇见能听见怪兽鸣叫的鱼贩。知识欲与神秘交错，哲学科幻佳作 [citation:1][citation:8]。",
+      "tags": ["科幻", "怪兽"]
+    },
+    {
+      "id": "Comic-19",
+      "title": "Boyish Girlfriend",
+      "author": "（男友力女友）",
+      "rankBadgeClass": "",
+      "rankText": "新作",
+      "recommendation": "从小像男生的女友，在学校穿猫耳女仆装被男友发现！反差萌恋爱喜剧，9月英文版 [citation:5]。",
+      "tags": ["反差恋爱"]
+    }
+  ],
+  "sourceLine": "资料来源：《这本漫画真厉害！2026》、AnimeJapan 2026“最想动画化”排行榜、小学馆、Square Enix官方、台湾漫画家高妍报道等 [citation:1][citation:2][citation:4]",
+  "footerNote": "🧾 每部漫画均附推荐理由，聚焦2025-2026新作、话题作与经典续篇。基于3月中旬前情报整理。",
+  "updateDate": "2026年3月",
+  "comicCount": 20
+}

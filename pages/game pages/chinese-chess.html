@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>经典象棋</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/game css/chinese-chess.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1><i class="fas fa-chess-rook"></i> 经典象棋 <i class="fas fa-chess-rook"></i></h1>
+        </header>
+
+        <div class="game-content">
+            <div class="board-container">
+                <div class="board" id="chessboard">
+                    <div class="palace top"></div>
+                    <div class="palace bottom"></div>
+                    <!-- 楚河汉界文字 -->
+                    <div class="river">楚河   汉界</div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <!-- 左侧按钮区 -->
+                <div class="controls-left">
+                    <div class="mode-selector">
+                        <div class="section-title"><i class="fas fa-user-friends"></i> 游戏模式</div>
+                        <div class="button-group">
+                            <button class="mode-btn active" id="two-player-mode">双人对战</button>
+                            <button class="mode-btn" id="ai-mode">人机对战</button>
+                        </div>
+                    </div>
+
+                    <div class="difficulty-selector">
+                        <div class="section-title"><i class="fas fa-brain"></i> AI难度</div>
+                        <div class="button-group">
+                            <button class="difficulty-btn" id="difficulty-1">简单</button>
+                            <button class="difficulty-btn" id="difficulty-2">中等</button>
+                            <button class="difficulty-btn active" id="difficulty-3">困难</button>
+                        </div>
+                    </div>
+
+                    <div class="game-buttons">
+                        <div class="section-title"><i class="fas fa-gamepad"></i> 游戏控制</div>
+                        <div class="button-group">
+                            <button class="game-btn new-game" id="new-game"><i class="fas fa-play-circle"></i> 新游戏</button>
+                            <button class="game-btn undo" id="undo-move"><i class="fas fa-undo"></i> 悔棋</button>
+                        </div>
+                        <button class="game-btn reset" id="reset-game"><i class="fas fa-redo"></i> 重新开始</button>
+                    </div>
+                </div>
+
+                <!-- 右侧走棋记录区 -->
+                <div class="controls-right">
+                    <div class="game-info">
+                        <div class="current-player" id="current-player">当前回合: 红方</div>
+                        <div class="status-message" id="status-message">游戏准备中，请选择模式</div>
+                        <div class="move-history" id="move-history">
+                            <div>走棋记录将显示在这里...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 底部公共信息（横跨两列） -->
+                <div class="captured-pieces">
+                    <div id="red-captured">红方吃子: </div>
+                    <div id="black-captured">黑方吃子: </div>
+                </div>
+
+                <div class="rules">
+                    <p><i class="fas fa-info-circle"></i> 红先黑后，点击棋子选中，再点击交叉点落子。将死对方获胜。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/game js/chinese-chess.js"></script>
+</body>
+</html>

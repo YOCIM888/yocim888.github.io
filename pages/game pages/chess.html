@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <link rel="stylesheet" href="../../assets/css/game css/chess.css">
+    <title>国际象棋</title>
+</head>
+<body>
+    <div class="sci-fi-elements"></div>
+    <div class="container">
+        <header>
+            <h1>⚡ 国际象棋 ⚡</h1>
+            <div class="subtitle">剪枝-思考深度-5</div>
+        </header>
+
+        <div class="game-container">
+            <div class="chessboard-container">
+                <div class="chessboard" id="chessboard"></div>
+            </div>
+
+            <div class="game-info">
+                <div class="player-turn">
+                    <span class="turn-indicator" id="turn-indicator">白方回合</span>
+                    <div>
+                        <span class="player-icon" id="white-player">⚪ 白</span>
+                        <span class="player-icon" id="black-player">⚫ 黑</span>
+                    </div>
+                </div>
+
+                <div class="game-controls">
+                    <button id="new-game">🔄 新对局</button>
+                    <button id="hint">💡 提示</button>
+                    <button id="toggle-sound">🔊 音效: 开</button>
+                </div>
+
+                <div class="moves-list" id="move-history">
+                    <h3>📋 着法记录</h3>
+                </div>
+
+                <div id="captured-pieces" class="captured-pieces">
+                    <h3>💀 被吃棋子</h3>
+                </div>
+
+                <div class="status-message" id="status-message">游戏加载中...</div>
+            </div>
+        </div>
+
+        <footer>♞ 国际象棋 ♝</footer>
+    </div>
+    <script src="../../assets/js/game js/chess.js"></script>
+</body>
+</html>

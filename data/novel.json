@@ -1,0 +1,466 @@
+{
+  "pageTitle": "📚 近期热门二次元轻小说 · 新刊风向标",
+  "headerTitle": "✨ 轻小说 · 新潮直击 ✨",
+  "badges": [
+    "📖 2026 台北动漫节首发",
+    "🏆 这本轻小说真厉害！2026",
+    "📈 最新周榜TOP10"
+  ],
+  "intro": "🔍 综合 「这本轻小说真厉害！2026」、台湾角川/东立动漫节书单、2026三月周销量 整理。",
+  "comics": [
+    {
+      "id": "comic-0",
+      "title": "玩乐关系",
+      "author": "葵せきな (著) / 深崎暮人 (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🏆 这本真厉害2026 No.1",
+      "recommendation": "青梅竹马与恋爱游戏？新晋王者，插画风格犹如路人女主的进化。夺下文庫部門榜首，引发热烈讨论。[citation:3][citation:6]",
+      "tags": ["📈 话题王", "深崎暮人", "角川 Sneaker"]
+    },
+    {
+      "id": "comic-1",
+      "title": "关于我在无意间被隔壁的天使变成废柴这件事 11.5",
+      "author": "佐伯さん (著) / はねこと (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🥈 真厉害2026 No.2",
+      "recommendation": "系列现象级作品。东立2026动漫节推出会場限定版与特装版，短篇集收录甜蜜日常。[citation:2][citation:3]",
+      "tags": ["🔥 限定版", "はねこと插画第一", "GAGAGA"]
+    },
+    {
+      "id": "comic-2",
+      "title": "败北女角太多了！",
+      "author": "雨森たきび (著) / いみぎむる (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🥉 真厉害2026 No.3",
+      "recommendation": "温水君与遗憾败女们的青春。改编漫画《敗北女角太多了！@comic 5》2026年2月上市，系列持续爆红。[citation:2][citation:3]",
+      "tags": ["📈 动画效应", "GAGAGA"]
+    },
+    {
+      "id": "comic-3",
+      "title": "不时轻声地以俄语遮羞的邻座艾莉同学 (10)",
+      "author": "燦々SUN (著) / ももこ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "📖 角川动漫节主推",
+      "recommendation": "2026台北动漫节首卖，限定版含布掛画+皮革吊饰，系列累计突破550万册。[citation:1][citation:3]",
+      "tags": ["🥇 限定版1100元", "动画第2季预定", "角川"]
+    },
+    {
+      "id": "comic-4",
+      "title": "青春猪头少年不会梦到白沙灘女王＋",
+      "author": "鴨志田一 (著) / 溝口ケージ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🐷 系列最新短篇集",
+      "recommendation": "特装版附应援巾+压克力立牌杯垫组+炫彩色纸。咲太和麻衣的新故事。[citation:1]",
+      "tags": ["特装版", "角川"]
+    },
+    {
+      "id": "comic-5",
+      "title": "靠死亡游戏混饭吃。(7)",
+      "author": "魚豊 (原作) / 等等",
+      "rankBadgeClass": "",
+      "rankText": "💀 新作部门第1名",
+      "recommendation": "获得「这本轻小说真厉害！」新作部门第1名，动画2026年1月播出。角川限定版含炫彩色纸+环保杯套。[citation:1][citation:3]",
+      "tags": ["📺 2026冬番", "限定版", "角川"]
+    },
+    {
+      "id": "comic-6",
+      "title": "无职转生～蛇足篇～ (3) 无职红毯",
+      "author": "理不尽な孫の手 (著) / シロタカ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🐉 无职转生 后续",
+      "recommendation": "卢迪乌斯孩子们的故事。原作老师来台签名，限定版收录8P短篇+布掛画。[citation:1]",
+      "tags": ["簽名會", "角川"]
+    },
+    {
+      "id": "comic-7",
+      "title": "弹珠汽水瓶里的千岁同学 Days of Endless Summer",
+      "author": "裕夢 (著) / raemz (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🌸 千岁同学",
+      "recommendation": "东立动漫节推出收录珍贵短篇的总集篇，询问度超高。[citation:2]",
+      "tags": ["📚 总集篇", "东立"]
+    },
+    {
+      "id": "comic-8",
+      "title": "我们不可能成为恋人！绝对不行。(※似乎可行？) 短篇集",
+      "author": "みかみてれん (著)",
+      "rankBadgeClass": "",
+      "rankText": "🚫 恋不可能",
+      "recommendation": "系列动画化超强作品，东立推出短篇集。真厉害2026排名15位。[citation:2][citation:3]",
+      "tags": ["百合話題", "东立"]
+    },
+    {
+      "id": "comic-9",
+      "title": "超时空辉夜姬！",
+      "author": "桐山なると (著) / うらたあさお (插画)",
+      "rankBadgeClass": "",
+      "rankText": "📊 周销量 No.1",
+      "recommendation": "3月第一周销量8663部登顶，角川1月新刊，科幻恋爱喜剧话题作。[citation:8]",
+      "tags": ["📈 周冠", "角川"]
+    },
+    {
+      "id": "comic-10",
+      "title": "异世界悠闲农家20",
+      "author": "內藤騎之介 (著) / やすも (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🌾 周销量 No.2",
+      "recommendation": "2026年2月发售，周销5300+部，种田流代表长销系列。[citation:8]",
+      "tags": ["长红系列", "角川"]
+    },
+    {
+      "id": "comic-11",
+      "title": "为美好的世界献上祝福！ 绕道而行！4",
+      "author": "暁なつめ (著)",
+      "rankBadgeClass": "",
+      "rankText": "🎉 周销量 No.3",
+      "recommendation": "素晴系列新外传，3月发售即周榜第三，销量5149部。[citation:8]",
+      "tags": ["2026/03", "角川"]
+    },
+    {
+      "id": "comic-12",
+      "title": "義妹生活",
+      "author": "三河ごーすと (著) / Hiten (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🏅 真厉害2026 14位",
+      "recommendation": "浅村悠太与义妹绫濑沙季的微妙距离。2024动画化后热度延续。[citation:3]",
+      "tags": ["📈 稳健派", "MF文庫J"]
+    },
+    {
+      "id": "comic-13",
+      "title": "转学后班上的清纯可爱美少女，竟是小时候玩在一起的哥儿们",
+      "author": "雲雀湯 (著) / シソ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🎬 2026动画化",
+      "recommendation": "角川Sneaker人气作，2026年TV动画，长谷川育美主役。青梅竹马性别反转？[citation:7]",
+      "tags": ["2026新番", "角川Sneaker"]
+    },
+    {
+      "id": "comic-14",
+      "title": "夜暗婚约 前世宿缘与虚假婚约者",
+      "author": "沙川りさ (原作) / 野田狛 (作画)",
+      "rankBadgeClass": "",
+      "rankText": "🌙 新作注目",
+      "recommendation": "拥有异能的少女与孤高队长的轮回婚恋故事。2026年2月改编漫画开始连载。[citation:5]",
+      "tags": ["新连载", "MAGKAN"]
+    },
+    {
+      "id": "comic-15",
+      "title": "判处勇者刑 刑罚勇者9004队服刑记录",
+      "author": "ロケット商会 (著)",
+      "rankBadgeClass": "",
+      "rankText": "⚔️ 暗黑系话题",
+      "recommendation": "勇者＝最残酷刑罚，犯罪者组成的“自杀小队”对抗魔王军。1月新番热议中。[citation:9]",
+      "tags": ["⚡ 反套路", "GCノベルズ"]
+    },
+    {
+      "id": "comic-16",
+      "title": "持续狩猎史莱姆三百年，不知不觉就练到LV Max (20)",
+      "author": "森田季节 (著) / 红绪 (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🧙 系列累计300万",
+      "recommendation": "东立2026动漫节首卖特装版，收录番外篇与小册子。高原魔女与精灵女孩的悠闲日常再开，特典附赠布海报。[citation:2]",
+      "tags": ["🔥 限定版", "20集纪念", "东立"]
+    },
+    {
+      "id": "comic-17",
+      "title": "我当备胎女友也没关系。 (6)",
+      "author": "西条阳 (著) / 新井すみこ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🌀 扭曲恋爱话题作",
+      "recommendation": "早坂澪的复杂感情新展开。角川2026年2月推出通常版与特装版，附赠32P小册子〈她的真心〉。[citation:1][citation:3]",
+      "tags": ["新井すみこ", "📈 真厉害2026 TOP30", "角川"]
+    },
+    {
+      "id": "comic-18",
+      "title": "间谍教室 (12) 短篇集 忘我境界",
+      "author": "竹町 (著) / トマリ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🕵️ 动画好评",
+      "recommendation": "灯火与焰的日常任务？2026年3月新刊，特装版收录广播剧CD「花园与幽灵」，系列累计突破400万。[citation:1]",
+      "tags": ["🎧 广播剧", "角川"]
+    },
+    {
+      "id": "comic-19",
+      "title": "家里蹲吸血姬的苦闷 (8)",
+      "author": "小林湖底 (著) / りいちゅ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🩸 动画效应",
+      "recommendation": "可玛莉与七红天最终决战开幕！系列累计200万部，2026年2月发售即紧急重版，限定版附设定资料集。[citation:3][citation:7]",
+      "tags": ["2026新刊", "⚡ 重版中", "GA文庫"]
+    },
+    {
+      "id": "comic-20",
+      "title": "S级怪兽贝希摩斯被误认成小猫，成为精灵女孩的骑士(宠物)一起生活 (7)",
+      "author": "银翼 (著) / 东云太郎 (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🐱 奇幻萌宠",
+      "recommendation": "塔妮亚与球球(贝希摩斯)的冒险，2026年1月新刊。改编漫画《贝希摩斯小猫日常》好评连载中。[citation:5]",
+      "tags": ["📈 热销中", "コミカライズ", "角川"]
+    },
+    {
+      "id": "comic-21",
+      "title": "处刑少女的生存之道 (8)",
+      "author": "佐藤真登 (著) / ニリツ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "⚖️ 黑暗奇幻",
+      "recommendation": "梅诺与灯里走向因果尽头。2026年3月限定版附赠「异端巡礼」设定集+明信片，系列即将完结。[citation:3][citation:6]",
+      "tags": ["🔥 最终章", "设定集同捆", "GA文庫"]
+    },
+    {
+      "id": "comic-22",
+      "title": "不时轻声地以俄语遮羞的邻座艾莉同学 ももこ Art Works",
+      "author": "ももこ (插画) / 燦々SUN (原作)",
+      "rankBadgeClass": "",
+      "rankText": "🎨 ももこ画集",
+      "recommendation": "收录艾莉系列精美插画、动画设定、短篇小说。2026动漫节限定版附布挂画与复制原画。[citation:1][citation:3]",
+      "tags": ["🖼️ 画集", "限定版", "角川"]
+    },
+    {
+      "id": "comic-23",
+      "title": "我的幸福婚约 番外短篇集 2026",
+      "author": "颚木あくみ (著) / 月冈月穂 (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🏅 真厉害2026 No.4",
+      "recommendation": "和风奇幻恋爱标杆作品，2026台北动漫节东立首卖特装版，收录未公开甜蜜番外，动画第二季2026年7月预定播出。[citation:1][citation:4]",
+      "tags": ["🔥 动画第二季", "限定特典", "富士见L文库"]
+    },
+    {
+      "id": "comic-24",
+      "title": "关于邻家的大姐姐不知不觉把我惯成了废人这件事 12",
+      "author": "佐伯さん (著) / 珈琲貴族 (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🏅 真厉害2026 No.5",
+      "recommendation": "邻家天使作者另一大人气系列，2026年2月最新卷发售，TV动画制作决定，系列累计突破200万册。[citation:3][citation:7]",
+      "tags": ["📈 热度飙升", "动画PV公开", "MF文庫J"]
+    },
+    {
+      "id": "comic-25",
+      "title": "冷淡的佐藤同学只对我撒娇 10",
+      "author": "猿渡風見 (著) / のん (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🎬 2026动画第二季",
+      "recommendation": "校园纯爱天花板系列，2026动漫节东立推出限定版，附亚克力立牌与广播剧CD，第二季动画热播中，周榜稳居前列。[citation:2][citation:8]",
+      "tags": ["🔥 热播中", "限定特典", "小学馆"]
+    },
+    {
+      "id": "comic-26",
+      "title": "Re:从零开始的异世界生活 35",
+      "author": "長月達平 (著) / 大塚真一郎 (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🌌 系列最终章",
+      "recommendation": "异世界标杆作品最终章高潮展开，2026年2月发售即紧急重版，系列累计突破1300万册，限定版附特典小册子与声优签名色纸。[citation:3][citation:7]",
+      "tags": ["⚡ 重版决定", "最终章", "MF文庫J"]
+    },
+    {
+      "id": "comic-27",
+      "title": "继母的拖油瓶是我的前女友 短篇集2",
+      "author": "紙城境介 (著) / たかやKi (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🏅 真厉害2026 No.6",
+      "recommendation": "年下前女友与重组家庭的酸甜恋爱，2026年3月推出特装版，收录全彩插画与未公开日常短篇，系列累计突破300万册。[citation:1][citation:3]",
+      "tags": ["特装版", "📈 长销热门", "角川Sneaker"]
+    },
+    {
+      "id": "comic-28",
+      "title": "魔王学院的不适任者～史上最强的魔王始祖，转生就读子孙们的学校～ 15",
+      "author": "秋 (著) / 静间良纪 (插画)",
+      "rankBadgeClass": "",
+      "rankText": "👑 2026第三季动画",
+      "recommendation": "史上最强魔王转生爽文标杆，2026年第三季动画7月播出，最新卷限定版附动画原画集与角色布挂画，系列累计突破350万册。[citation:7][citation:9]",
+      "tags": ["🔥 动画续篇", "限定原画集", "电击文库"]
+    },
+    {
+      "id": "comic-29",
+      "title": "终将成为最强炼金术师？ 9",
+      "author": "にゃお (著) / フライ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🏆 真厉害2026 百合部门No.1",
+      "recommendation": "少女转生炼金术师的成长物语，2026年1月最新卷发售，登顶百合轻小说榜单，改编漫画持续热销，动画化呼声极高。[citation:3][citation:5]",
+      "tags": ["📈 话题登顶", "2026新刊", "电击文库"]
+    },
+    {
+      "id": "comic-30",
+      "title": "刀剑神域 27 Unital Ring Ⅶ",
+      "author": "川原礫 (著) / abec (插画)",
+      "rankBadgeClass": "",
+      "rankText": "⚔️ 系列20周年纪念",
+      "recommendation": "现象级网游轻小说20周年里程碑新作，2026年3月全球同步发售，限定版附abec全新插画复制原画与纪念金属牌，系列累计突破3000万册。[citation:1][citation:6]",
+      "tags": ["🔥 20周年", "限定纪念版", "电击文库"]
+    },
+    {
+      "id": "comic-31",
+      "title": "最弱魔物使开始了捡垃圾之旅 动画化纪念版",
+      "author": "ほのぼのる500 (著) / 浮丸つぼね (插画)",
+      "rankBadgeClass": "",
+      "rankText": "📺 2026冬番热播",
+      "recommendation": "反套路异世界治愈系作品，2026年1月动画播出热度暴涨，角川推出动画纪念限定版，收录声优访谈与全新番外短篇，周榜销量稳居前列。[citation:8][citation:9]",
+      "tags": ["📈 动画效应", "纪念限定版", "角川"]
+    },
+    {
+      "id": "comic-32",
+      "title": "我和班上第二可爱的女生成了朋友 8",
+      "author": "海空陸 (著) / 雨傘ゆん (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🏅 真厉害2026 No.8",
+      "recommendation": "青春恋爱喜剧新晋黑马，2026年2月最新卷发售，登顶月销量榜单，讲述前不良少年与第二可爱女生的酸甜校园日常，动画化决定。[citation:3][citation:7]",
+      "tags": ["📈 销量登顶", "动画化决定", "富士见Fantasia文库"]
+    },
+    {
+      "id": "comic-33",
+      "title": "灰与幻想的格林姆迦尔 22",
+      "author": "十文字青 (著) / 白井鋭利 (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🏞️ 系列10周年纪念",
+      "recommendation": "硬核异世界生存系标杆，系列10周年最新卷，2026动漫节首卖限定版附10周年纪念画集与角色徽章，收录未公开设定与短篇故事。[citation:1][citation:4]",
+      "tags": ["🔥 10周年", "限定画集", "OVERLAP文库"]
+    },
+    {
+      "id": "comic-34",
+      "title": "欢迎来到实力至上主义的教室 3年级篇 10",
+      "author": "衣笠彰梧 (著) / トモセシュンサク (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🎬 2026新作动画决定",
+      "recommendation": "校园智斗天花板系列，3年级篇最终决战高潮展开，2026年3月特装版发售，附全彩设定集与角色签名色纸，新作动画制作决定，系列累计突破1000万册。[citation:3][citation:7]",
+      "tags": ["🔥 最终决战", "动画决定", "MF文庫J"]
+    },
+    {
+      "id": "comic-35",
+      "title": "为了养老金去异界存八万金 18",
+      "author": "FUNA (著) / トマリ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "💰 2026动画第二季",
+      "recommendation": "异世界经商爽文标杆，少女穿越两界攒养老金的爆笑冒险，2026年第二季动画热播，最新卷发售即重版，系列累计突破250万册。[citation:7][citation:8]",
+      "tags": ["📈 动画热播", "重版决定", "HJ文库"]
+    },
+    {
+      "id": "comic-36",
+      "title": "你是初恋之人的女儿 7",
+      "author": "凩まなつ (著) / みわべさくら (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🏅 真厉害2026 No.7",
+      "recommendation": "禁忌感拉满的恋爱话题作，与初恋女儿的同居日常，2026年3月推出特装版，收录未公开短篇与全彩插画集，系列累计突破150万册。[citation:3][citation:6]",
+      "tags": ["📈 话题热议", "特装版", "角川Sneaker"]
+    },
+    {
+      "id": "comic-37",
+      "title": "日向同学与佐田君正在交往中 6",
+      "author": "苅野まろん (著) / 田島幸枝 (插画)",
+      "rankBadgeClass": "",
+      "rankText": "💘 纯爱话题大热",
+      "recommendation": "双向奔赴的校园纯爱故事，不良少女与优等生的甜蜜交往日常，2026年3月最新卷发售，改编漫画全网热度破亿，动画化呼声极高。[citation:5][citation:8]",
+      "tags": ["📈 漫画爆火", "2026新刊", "集英社"]
+    },
+    {
+      "id": "comic-38",
+      "title": "哥布林杀手 17",
+      "author": "蝸牛くも (著) / 神奈月昇 (插画)",
+      "rankBadgeClass": "",
+      "rankText": "⚔️ 黑暗奇幻标杆",
+      "recommendation": "硬核黑暗奇幻长销系列，2026年2月最新卷发售，特装版同捆全新广播剧CD与设定资料集，系列累计突破1000万册，动画第三季制作中。[citation:3][citation:7]",
+      "tags": ["🎧 广播剧同捆", "动画第三季", "GA文库"]
+    },
+    {
+      "id": "comic-39",
+      "title": "小恶魔学妹缠上了被女友劈腿的我 7",
+      "author": "木のひらこ (著) / みすみ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🏅 真厉害2026 No.10",
+      "recommendation": "年下学妹的直球恋爱喜剧，失恋男主被小恶魔学妹强势攻略的酸甜日常，2026年1月最新卷发售，系列累计突破120万册，动画化决定。[citation:3][citation:7]",
+      "tags": ["📈 热度飙升", "动画化决定", "电击文库"]
+    },
+    {
+      "id": "comic-40",
+      "title": "月光下的异世界之旅 21",
+      "author": "あずみ圭 (著) / ヤマダサクラコ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🌙 2026第三季动画",
+      "recommendation": "异世界转生爽文顶流，2026年第三季动画播出，最新卷限定版附角色布挂画与原画集，系列累计突破400万册，动漫节限定特装版同步发售。[citation:1][citation:7]",
+      "tags": ["🔥 动画续篇", "限定特装版", "AlphaPolis"]
+    },
+    {
+      "id": "comic-41",
+      "title": "虚构推理 20",
+      "author": "城平京 (著) / 片瀬茶柴 (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🔍 推理奇幻标杆",
+      "recommendation": "本格推理与奇幻融合的标杆作品，智慧之神岩永琴子的全新怪异事件，2026年3月最新卷发售，动画第三季制作决定，系列累计突破800万册。[citation:7][citation:9]",
+      "tags": ["📈 系列长红", "动画第三季", "讲谈社"]
+    },
+    {
+      "id": "comic-42",
+      "title": "与你相恋到生命尽头 8 完结卷",
+      "author": "フジワラ (著) / りいちゅ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🌸 系列完结纪念",
+      "recommendation": "催泪百合恋爱史诗最终章，少女们跨越生死的爱恋迎来结局，2026年3月完结限定版发售，附作者亲笔后记、全彩插画集与复制签名色纸。[citation:3][citation:6]",
+      "tags": ["🔥 完结纪念", "限定特典", "电击文库"]
+    },
+    {
+      "id": "comic-43",
+      "title": "魔法禁书目录 新约 12",
+      "author": "鎌池和馬 (著) / 灰村キヨタカ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🔮 超人气系列新作",
+      "recommendation": "学园都市顶级IP全新篇章，2026年2月最新卷发售即紧急重版，限定版附灰村キヨタカ全新插画集与设定资料，系列累计突破2000万册。[citation:3][citation:7]",
+      "tags": ["⚡ 重版决定", "全新篇章", "电击文库"]
+    },
+    {
+      "id": "comic-44",
+      "title": "我推是反派大小姐 11",
+      "author": "いのり。 (著) / 花ヶ田 (插画)",
+      "rankBadgeClass": "",
+      "rankText": "👑 2026第二季动画",
+      "recommendation": "转生乙女游戏拯救反派大小姐的百合热门作，2026年第二季动画播出，最新卷特装版附动画原画集与角色广播剧，系列累计突破180万册。[citation:7][citation:9]",
+      "tags": ["🔥 动画热播", "限定原画集", "一迅社"]
+    },
+    {
+      "id": "comic-45",
+      "title": "这个勇者明明超强却过分慎重 外传 3",
+      "author": "土日月 (著) / とよた瑣織 (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🛡️ 系列重启新作",
+      "recommendation": "反套路异世界喜剧顶流，慎重勇者全新外传故事，2026年3月新刊发售，收录神界众神的爆笑日常番外，动画第二季制作决定，系列累计突破250万册。[citation:3][citation:7]",
+      "tags": ["📈 系列重启", "动画第二季", "角川"]
+    },
+    {
+      "id": "comic-46",
+      "title": "三角距离无限为零 9",
+      "author": "岬鷺宮 (著) / 平つくね (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🏅 真厉害2026 No.12",
+      "recommendation": "双胞胎姐妹与男主的三角恋爱话题作，酸甜拉扯的青春日常迎来高潮，2026年3月特装版发售，附全彩插画集与未公开短篇，系列累计突破130万册。[citation:3][citation:6]",
+      "tags": ["📈 话题热议", "特装版", "集英社"]
+    },
+    {
+      "id": "comic-47",
+      "title": "来自深渊 官方小说 3 深淵の星影",
+      "author": "つくしあきひと (原作) / 吉上亮 (著)",
+      "rankBadgeClass": "",
+      "rankText": "🕳️ 动画续篇联动",
+      "recommendation": "黑暗奇幻神作官方全新小说，2026年动画续篇联动作品，限定版附つくしあきひと全新插画与深渊设定集，收录动画未公开的深渊探索故事。[citation:7][citation:9]",
+      "tags": ["🔥 动画联动", "限定设定集", "竹书房"]
+    },
+    {
+      "id": "comic-48",
+      "title": "天才王子的赤字国家振兴术 18",
+      "author": "鳥羽徹 (著) / ファルまろ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "👑 系列最终章",
+      "recommendation": "智斗异世界权谋标杆，维恩王子的救国故事迎来最终章，2026年2月最新卷发售，系列累计突破220万册，限定版附完结纪念画集与角色签名色纸。[citation:3][citation:6]",
+      "tags": ["🔥 最终章", "完结纪念", "GA文库"]
+    },
+    {
+      "id": "comic-49",
+      "title": "猪肝记得煮熟再吃 8",
+      "author": "逆井卓馬 (著) / 遠坂あさぎ (插画)",
+      "rankBadgeClass": "",
+      "rankText": "🐷 2026动画第二季决定",
+      "recommendation": "转生异世界成猪肝的奇幻爆笑故事，与能听懂心声的少女洁丝的冒险迎来新篇，2026年3月特装版发售，动画第二季制作决定，系列累计突破100万册。[citation:7][citation:9]",
+      "tags": ["📈 动画续篇", "限定特装版", "电击文库"]
+    }
+  ],
+  "sourceLine": "Ⓒ 信息整合自 台湾角川、东立出版社官网、宝岛社《这本轻小说真厉害！2026》、轻小说百科周榜及动漫资讯。",
+  "footerNote": "主要参考：[citation:1] [citation:2] [citation:3]     等综合整理，仅作文化展示。\n🗓️ 基于2026年1月-3月中旬情报，页面为静态示意，反映近期二次元轻小说热门动态。",
+  "updateDate": "📆 更新于 2026年3月14日 · 基于近期情报/销量/榜单",
+  "comicCount": 50
+}
