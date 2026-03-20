@@ -1,0 +1,523 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    background: #01010a;
+    overflow: hidden;
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+}
+/* 赛博扫描线效果 */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(0, 0, 0, 0.1) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.3;
+}
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: none;
+}
+/* UI 面板 - 赛博强化 */
+#ui-panel {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    pointer-events: none;
+    z-index: 20;
+    font-family: 'Share Tech Mono', monospace;
+    text-shadow: 0 0 5px #0ff;
+}
+.ui-card {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 255, 255, 0.6);
+    border-radius: 4px;
+    padding: 8px 18px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.ui-card:hover {
+    animation: glitch 0.3s infinite;
+    border-color: rgba(255, 0, 255, 0.8);
+}
+.ui-card span {
+    color: #0ff;
+    font-weight: bold;
+}
+.hp-bar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.hp-icon {
+    color: #f0f;
+    font-size: 18px;
+}
+.hp-value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff44ee;
+}
+#status-msg {
+    font-size: 14px;
+    max-width: 320px;
+    background: rgba(0, 0, 0, 0.8);
+    border-left: 4px solid #0ff;
+    padding: 6px 12px;
+    transition: 0.2s;
+}
+/* 警觉条样式 */
+.alert-bar {
+    position: fixed;
+    bottom: 30px;
+    left: 20px;
+    width: 200px;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid #f0f;
+    border-radius: 10px;
+    padding: 4px;
+    pointer-events: none;
+    z-index: 20;
+}
+.alert-fill {
+    height: 12px;
+    background: linear-gradient(90deg, #0ff, #f0f);
+    width: 0%;
+    border-radius: 6px;
+    transition: width 0.1s linear;
+}
+.alert-label {
+    color: #fff;
+    font-size: 10px;
+    margin-bottom: 2px;
+    letter-spacing: 2px;
+}
+/* 模态框 赛博风格强化 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 0, 20, 0.95);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.hack-box, .gameover-box {
+    background: #0a0a1a;
+    border: 2px solid #f0f;
+    box-shadow: 0 0 60px #f0f, inset 0 0 20px rgba(255, 0, 255, 0.3);
+    padding: 30px 40px;
+    text-align: center;
+    min-width: 320px;
+    animation: glitchIn 0.3s ease;
+}
+.hack-box h2, .gameover-box h1 {
+    font-family: monospace;
+    color: #f0f;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    animation: glitch 1s infinite;
+}
+.btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.cyber-btn {
+    background: transparent;
+    border: 1px solid #0ff;
+    color: #0ff;
+    padding: 10px 20px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 0 4px #0ff;
+    animation: neonPulse 2s infinite;
+}
+.cyber-btn:hover {
+    background: #0ff;
+    color: #000;
+    box-shadow: 0 0 30px #0ff;
+    transform: scale(1.05);
+}
+.hidden {
+    display: none !important;
+}
+/* 动画定义 */
+@keyframes glitchIn {
+    0% { opacity: 0; transform: scale(0.95); filter: blur(2px);}
+    100% { opacity: 1; transform: scale(1);}
+}
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+@keyframes neonPulse {
+    0%, 100% { box-shadow: 0 0 4px #0ff, 0 0 8px #0ff; }
+    50% { box-shadow: 0 0 15px #0ff, 0 0 25px #0ff; }
+}
+@keyframes blink {
+    0%, 100% { background: #111; color: #0ff; }
+    50% { background: #0ff; color: #000; box-shadow: 0 0 25px #0ff; }
+}
+.puzzle-desc {
+    color: #0ff;
+    font-size: 14px;
+    margin: 15px 0;
+}
+.sequence-area {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin: 15px 0;
+}
+.seq-btn {
+    background: #111;
+    border: 1px solid #0ff;
+    color: #0ff;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.1s linear;
+}
+.seq-btn:hover:not(:disabled) {
+    background: #0ff;
+    color: #000;
+    box-shadow: 0 0 20px #0ff;
+}
+.seq-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+.seq-btn.blink {
+    animation: blink 0.5s ease;
+}
+/* 横屏提示 */
+.orientation-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #01010a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.orientation-content {
+    text-align: center;
+    color: #0ff;
+}
+.orientation-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #0ff;
+}
+.orientation-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+.rotate-icon {
+    font-size: 60px;
+    animation: rotateIcon 2s infinite;
+}
+@keyframes rotateIcon {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(90deg); }
+}
+/* 移动端控制 */
+.mobile-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 50;
+    pointer-events: auto;
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.joystick-container {
+    width: 140px;
+    height: 140px;
+    position: relative;
+    touch-action: none;
+    pointer-events: auto;
+    background: transparent;
+    -webkit-tap-highlight-color: transparent;
+}
+.joystick-base {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.15);
+    border: 3px solid rgba(0, 255, 255, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transition: all 0.1s ease;
+}
+.joystick-stick {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.6);
+    border: 3px solid #0ff;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    box-shadow: 0 0 20px #0ff;
+    pointer-events: none;
+    transition: transform 0.05s ease;
+}
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    touch-action: manipulation;
+    pointer-events: auto;
+}
+.action-btn {
+    width: 80px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #f0f;
+    color: #f0f;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #f0f;
+    touch-action: manipulation;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    transition: all 0.1s ease;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.action-btn:active, .action-btn.pressed {
+    background: #f0f !important;
+    color: #000 !important;
+    transform: scale(0.95);
+    box-shadow: 0 0 25px #f0f;
+    transition: all 0.05s ease;
+}
+/* 响应式设计 - 移动端优先 */
+@media (max-width: 1024px) {
+    .mobile-controls {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #ui-panel {
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        gap: 6px;
+        align-items: flex-start;
+    }
+    .ui-card {
+        padding: 4px 8px;
+        font-size: 10px;
+        flex-shrink: 1;
+        min-width: 0;
+    }
+    .hp-bar {
+        flex-wrap: nowrap;
+        gap: 4px;
+    }
+    .hp-icon {
+        font-size: 13px;
+    }
+    .hp-value {
+        font-size: 14px;
+    }
+    #status-msg {
+        font-size: 9px;
+        max-width: 150px;
+        padding: 4px 6px;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+    .alert-bar {
+        bottom: 170px;
+        left: 8px;
+        width: 120px;
+    }
+    .alert-label {
+        font-size: 8px;
+    }
+    .alert-fill {
+        height: 8px;
+    }
+    .hack-box, .gameover-box {
+        padding: 15px;
+        min-width: 250px;
+    }
+    .seq-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+    /* 虚拟摇杆优化 */
+    .joystick-container {
+        width: 110px;
+        height: 110px;
+    }
+    .joystick-base {
+        width: 110px;
+        height: 110px;
+    }
+    .joystick-stick {
+        width: 48px;
+        height: 48px;
+        top: 31px;
+        left: 31px;
+    }
+    .action-btn {
+        width: 68px;
+        height: 42px;
+        font-size: 10px;
+    }
+}
+
+/* 横屏模式优化 - 手机 */
+@media (orientation: landscape) and (max-height: 600px) {
+    #ui-panel {
+        top: 5px;
+        left: 10px;
+        right: 10px;
+        gap: 5px;
+    }
+    .ui-card {
+        padding: 3px 6px;
+        font-size: 9px;
+    }
+    .hp-bar {
+        gap: 3px;
+    }
+    .hp-icon {
+        font-size: 12px;
+    }
+    .hp-value {
+        font-size: 12px;
+    }
+    #status-msg {
+        font-size: 8px;
+        max-width: 140px;
+        padding: 3px 5px;
+    }
+    .alert-bar {
+        bottom: 15px;
+        left: 150px;
+        width: 100px;
+    }
+    .alert-label {
+        font-size: 7px;
+    }
+    .alert-fill {
+        height: 7px;
+    }
+    .mobile-controls {
+        bottom: 8px;
+        left: 8px;
+        right: 8px;
+    }
+    .joystick-container {
+        width: 90px;
+        height: 90px;
+    }
+    .joystick-base {
+        width: 90px;
+        height: 90px;
+    }
+    .joystick-stick {
+        width: 40px;
+        height: 40px;
+        top: 25px;
+        left: 25px;
+    }
+    .action-buttons {
+        flex-direction: row;
+        gap: 6px;
+    }
+    .action-btn {
+        width: 60px;
+        height: 36px;
+        font-size: 9px;
+    }
+}
+
+/* 竖屏提示 - 只有在竖屏且高度足够时才显示 */
+@media (orientation: portrait) and (min-aspect-ratio: 3/4) {
+    #orientation-alert {
+        display: flex !important;
+    }
+    #game-container {
+        display: none;
+    }
+}
+
+/* 桌面端隐藏移动控件 - 但可以通过 JS 覆盖 */
+@media (min-width: 1025px) and (hover: hover) and (pointer: fine) {
+    .mobile-controls:not(.force-show) {
+        display: none !important;
+    }
+}
