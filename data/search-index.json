@@ -1,0 +1,7009 @@
+[
+  {
+    "id": "card-acgn-0",
+    "title": "哔哩哔哩",
+    "description": "弹幕护体，新番同步",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-1",
+    "title": "AcFun",
+    "description": "弹幕视频网",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-2",
+    "title": "Muse木棉花",
+    "description": "官方同步频道",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-3",
+    "title": "Niconico",
+    "description": "弹幕元祖，生放送",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-4",
+    "title": "Crunchyroll",
+    "description": "全球动漫流媒体",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-5",
+    "title": "腾讯动漫",
+    "description": "经典漫画平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-6",
+    "title": "拷贝漫画",
+    "description": "清爽阅读体验",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-7",
+    "title": "MangaDex",
+    "description": "多语言漫画社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-8",
+    "title": "好多漫",
+    "description": "高质量漫画阅读",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-9",
+    "title": "巴哈姆特动画疯",
+    "description": "台湾地区新番同步",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-10",
+    "title": "AniList",
+    "description": "动漫追踪&数据库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-11",
+    "title": "MyAnimeList",
+    "description": "全球最大动漫社群",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-12",
+    "title": "哔哩哔哩漫画",
+    "description": "正版日漫国漫全覆盖",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-13",
+    "title": "快看漫画",
+    "description": "国漫原创热门平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-14",
+    "title": "动漫之家",
+    "description": "漫画资讯一站式",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-15",
+    "title": "漫画柜",
+    "description": "高清漫画阅读",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-16",
+    "title": "有妖气",
+    "description": "老牌原创漫画",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-17",
+    "title": "LINE WEBTOON",
+    "description": "韩漫日漫全球",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-18",
+    "title": "HiDive",
+    "description": "正版日系流媒体",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-19",
+    "title": "Bangumi",
+    "description": "番剧评分社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-20",
+    "title": "轻之国度",
+    "description": "轻小说资讯",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-21",
+    "title": "AnimeNewsNetwork",
+    "description": "国际动漫新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-22",
+    "title": "Anime-Planet",
+    "description": "追番数据库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-23",
+    "title": "漫客栈",
+    "description": "国漫经典平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-24",
+    "title": "Pixiv",
+    "description": "插画同人社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-25",
+    "title": "角川ComicWalker",
+    "description": "日漫免费正版",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-26",
+    "title": "AnimeKisa",
+    "description": "多源番剧速更",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-27",
+    "title": "包子漫画",
+    "description": "海量在线漫画，更新及时",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-28",
+    "title": "漫画鱼",
+    "description": "清爽阅读体验，资源丰富",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-29",
+    "title": "漫搜",
+    "description": "漫画搜索引擎，多源聚合",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-30",
+    "title": "Komiic漫画",
+    "description": "界面简洁，注重用户体验",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-31",
+    "title": "咚漫",
+    "description": "韩漫日漫官方平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-32",
+    "title": "MangaDex",
+    "description": "全球多语言漫画社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-33",
+    "title": "MANGA Plus",
+    "description": "集英社官方全球同步",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-34",
+    "title": "ComicWalker",
+    "description": "角川官方免费漫画",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-35",
+    "title": "Piccoma",
+    "description": "日本最大的电子漫画平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-36",
+    "title": "kox.moe",
+    "description": "EPUB/MOBI格式漫画下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-37",
+    "title": "ESJ Zone",
+    "description": "轻小说分享与创作社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-38",
+    "title": "轻之国度",
+    "description": "华语区轻小说核心论坛",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-39",
+    "title": "轻书架",
+    "description": "轻小说在线阅读收藏",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-40",
+    "title": "铅笔小说",
+    "description": "多类别轻小说资源",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-41",
+    "title": "迷糊轻小说",
+    "description": "资源强大的轻小说站",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-42",
+    "title": "深夜读书会",
+    "description": "轻小说讨论分享社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-43",
+    "title": "猫耳FM",
+    "description": "二次元有声作品平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-44",
+    "title": "次元小镇",
+    "description": "动漫壁纸插画COS社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-45",
+    "title": "幻猫ACG",
+    "description": "动漫资讯COS美图社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-46",
+    "title": "动漫啦",
+    "description": "综合性动漫资源站",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-47",
+    "title": "看漫网",
+    "description": "漫画阅读平台，更新及时",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-48",
+    "title": "古风漫画网",
+    "description": "专注古风题材漫画",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-49",
+    "title": "風之动漫",
+    "description": "在线动漫综合站",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-50",
+    "title": "次元狗",
+    "description": "漫画轻小说资源下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-51",
+    "title": "Animeko",
+    "description": "开源聚合追番APP",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-52",
+    "title": "Mihon",
+    "description": "开源漫画聚合阅读器",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-acgn-53",
+    "title": "开源阅读",
+    "description": "开源小说聚合阅读器",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-0",
+    "title": "Google翻译",
+    "description": "多语言互译",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-1",
+    "title": "草料二维码",
+    "description": "二维码生成/解码",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-2",
+    "title": "Smallpdf",
+    "description": "PDF在线转换",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-3",
+    "title": "ProcessOn",
+    "description": "思维导图/流程图",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-4",
+    "title": "Canva",
+    "description": "在线设计神器",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-5",
+    "title": "Remove.bg",
+    "description": "一键智能抠图",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-6",
+    "title": "ILoveIMG",
+    "description": "图片压缩编辑",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-7",
+    "title": "ILovePDF",
+    "description": "PDF全能处理",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-8",
+    "title": "在线打字测试",
+    "description": "打字速度练习",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-9",
+    "title": "在线格式转换",
+    "description": "音视频格式修改",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-10",
+    "title": "在线时间戳",
+    "description": "时间戳转换工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-11",
+    "title": "科学计算器",
+    "description": "高级计算工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-12",
+    "title": "ColorHub",
+    "description": "配色方案参考",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-13",
+    "title": "石墨文档",
+    "description": "在线协作文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-14",
+    "title": "腾讯文档",
+    "description": "云端文档编辑",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-15",
+    "title": "在线截图工具",
+    "description": "网页截图长图",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-16",
+    "title": "DeepL翻译",
+    "description": "精准翻译工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-17",
+    "title": "在线待办清单",
+    "description": "任务清单管理",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-18",
+    "title": "代码格式化",
+    "description": "代码美化整理",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-19",
+    "title": "改图鸭",
+    "description": "图片编辑处理",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-20",
+    "title": "WiFi密码查看",
+    "description": "密码找回工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-21",
+    "title": "Excel表格工具",
+    "description": "在线表格处理",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-22",
+    "title": "CPU性能查询",
+    "description": "硬件参数查询",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-23",
+    "title": "在线倒计时器",
+    "description": "定时提醒工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-24",
+    "title": "在线OCR识别",
+    "description": "图片文字提取",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-25",
+    "title": "在线白板",
+    "description": "绘图思维导图",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-26",
+    "title": "视频去水印",
+    "description": "在线视频处理",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-27",
+    "title": "幕布",
+    "description": "大纲笔记工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-28",
+    "title": "SAVE-EDITOR",
+    "description": "在线代码编辑与格式化工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-29",
+    "title": "Replit",
+    "description": "支持50+语言的在线IDE",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-30",
+    "title": "CodePen",
+    "description": "前端代码实时预览社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-31",
+    "title": "JSFiddle",
+    "description": "在线JavaScript测试工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-32",
+    "title": "GitHub Codespaces",
+    "description": "云端完整开发环境",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-33",
+    "title": "StackBlitz",
+    "description": "Web应用在线IDE",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-34",
+    "title": "CodeSandbox",
+    "description": "现代Web应用开发平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-35",
+    "title": "ConvertX",
+    "description": "可自部署的万能格式转换",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-36",
+    "title": "Zamzar",
+    "description": "支持超过1200种格式转换",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-37",
+    "title": "GroupDocs Conversion",
+    "description": "免费在线文件转换",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-38",
+    "title": "iLovePDF",
+    "description": "PDF全能处理工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-39",
+    "title": "iLoveIMG",
+    "description": "图片压缩编辑",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-40",
+    "title": "Convertio",
+    "description": "音视频文档格式转换",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-41",
+    "title": "仓鼠工具箱",
+    "description": "各类实用小工具合集",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-42",
+    "title": "深言达意",
+    "description": "据意查词查句智能工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-43",
+    "title": "91化简",
+    "description": "免费开源在线简历制作",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-44",
+    "title": "Image Splitter",
+    "description": "在线图片分割九宫格工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-45",
+    "title": "JSON.cn",
+    "description": "JSON格式化/校验/编辑",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-46",
+    "title": "正则表达式在线测试",
+    "description": "正则表达式在线测试",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-47",
+    "title": "Tool.lu 工具",
+    "description": "开发者在线工具集合",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-48",
+    "title": "Crontab 在线",
+    "description": "Cron表达式在线解释",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-49",
+    "title": "URL 编码解码",
+    "description": "在线URL编码转换",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-50",
+    "title": "Base64 加密解密",
+    "description": "Base64在线转换",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-51",
+    "title": "Diffchecker",
+    "description": "文本/文件差异对比",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-52",
+    "title": "Excalidraw",
+    "description": "手绘风格在线白板",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-53",
+    "title": "OCR 在线识别",
+    "description": "图片文字提取工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-54",
+    "title": "TinyPNG",
+    "description": "智能压缩PNG/JPEG",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-55",
+    "title": "Squoosh",
+    "description": "Google出品图片压缩",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-56",
+    "title": "WebGradients",
+    "description": "渐变色配色参考",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-57",
+    "title": "Coolors",
+    "description": "快速配色方案生成",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-58",
+    "title": "AIbase",
+    "description": "AI工具导航大全",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-tools-59",
+    "title": "Prompt2Tool",
+    "description": "收录2900+在线工具导航",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-0",
+    "title": "OpenAI GPT",
+    "description": "语言生成",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-1",
+    "title": "Stable Diffusion",
+    "description": "开源图像生成",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-2",
+    "title": "DALL·E",
+    "description": "OpenAI图像",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-3",
+    "title": "Midjourney",
+    "description": "高质量AI绘画",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-4",
+    "title": "Claude",
+    "description": "Anthropic对话AI",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-5",
+    "title": "文心一言",
+    "description": "百度知识增强",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-6",
+    "title": "豆包",
+    "description": "全能AI智能助手",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-7",
+    "title": "醒图AI",
+    "description": "国产AI绘画创作",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-8",
+    "title": "通义万相",
+    "description": "阿里AI绘画",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-9",
+    "title": "讯飞星火",
+    "description": "科大讯飞对话AI",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-10",
+    "title": "腾讯混元",
+    "description": "腾讯AI大模型",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-11",
+    "title": "NovelAI",
+    "description": "二次元专属绘画",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-12",
+    "title": "FaceChain",
+    "description": "AI写真角色生成",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-13",
+    "title": "Runway",
+    "description": "AI视频生成",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-14",
+    "title": "Suno AI",
+    "description": "AI音乐创作",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-15",
+    "title": "Kimi",
+    "description": "长文本对话AI",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-16",
+    "title": "秘塔写作猫",
+    "description": "AI写作润色",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-17",
+    "title": "幻方AI",
+    "description": "二次元模型创作",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-18",
+    "title": "ChatGLM",
+    "description": "清华开源大模型",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-19",
+    "title": "美图AI",
+    "description": "AI动漫头像生成",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-20",
+    "title": "Minimax",
+    "description": "多模态AI创作",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-21",
+    "title": "无界AI",
+    "description": "国风二次元绘画",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-22",
+    "title": "讯飞配音",
+    "description": "AI语音合成",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-23",
+    "title": "Civitai",
+    "description": "AI模型分享社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-24",
+    "title": "网易有道AI",
+    "description": "智能创作翻译",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-25",
+    "title": "WaveSpeedAI",
+    "description": "600+模型API，支持Seedream/Kling/Flux等",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-26",
+    "title": "Replicate",
+    "description": "1000+开源模型，社区驱动",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-27",
+    "title": "Fal.ai",
+    "description": "10倍速推理，生产级API",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-28",
+    "title": "Runware",
+    "description": "超低价图像生成，40万+模型",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-29",
+    "title": "SiliconFlow",
+    "description": "开源模型云平台，推理快2.3倍",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-30",
+    "title": "Hugging Face",
+    "description": "50万+模型，开源AI社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-31",
+    "title": "Freepik AI",
+    "description": "39+图像模型，36+视频模型聚合",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-32",
+    "title": "Flowpix",
+    "description": "提示词驱动，10秒生成核心视觉",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-33",
+    "title": "海艺AI",
+    "description": "80万+模型库，中文提示词优化",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-34",
+    "title": "Nano Banana",
+    "description": "角色一致性最强的生图工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-35",
+    "title": "Qwen-Image-2.0",
+    "description": "阿里千问，支持中文汉字渲染",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-36",
+    "title": "Sora 2",
+    "description": "OpenAI视频生成，真实物理模拟",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-37",
+    "title": "Veo 3",
+    "description": "Google视频生成，瑕疵更少",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-38",
+    "title": "Kling",
+    "description": "快手可灵，视频生成技术",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-39",
+    "title": "HeyGen",
+    "description": "AI数字人，视频翻译口型同步",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-40",
+    "title": "Suno AI",
+    "description": "AI音乐生成，人声+乐器",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-41",
+    "title": "ElevenLabs",
+    "description": "逼真语音合成，声音克隆",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-42",
+    "title": "NotebookLM",
+    "description": "Google研究助手，文档问答",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-43",
+    "title": "Perplexity",
+    "description": "AI搜索，带引用来源",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-44",
+    "title": "Comet",
+    "description": "AI浏览器，智能体模式",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-45",
+    "title": "Cursor",
+    "description": "AI代码编辑器，氛围编程",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-46",
+    "title": "Gamma",
+    "description": "AI生成演示文稿",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-47",
+    "title": "Napkin AI",
+    "description": "文字转视觉图表",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-48",
+    "title": "n8n",
+    "description": "开源工作流自动化",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-49",
+    "title": "Pixso AI",
+    "description": "国产UI设计，生成代码",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-50",
+    "title": "Figma Make",
+    "description": "AI辅助UI设计，导出代码",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-51",
+    "title": "Canva AI",
+    "description": "模板生态+AI智能适配",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-ai-52",
+    "title": "Civitai",
+    "description": "AI模型分享社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-0",
+    "title": "新华网",
+    "description": "权威报道",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-1",
+    "title": "BBC News",
+    "description": "国际新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-2",
+    "title": "CNN",
+    "description": "美国新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-3",
+    "title": "NHK",
+    "description": "日本放送协会",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-4",
+    "title": "Reuters",
+    "description": "路透社",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-5",
+    "title": "人民网",
+    "description": "中央重点新闻网站",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-6",
+    "title": "央视网",
+    "description": "央视官方新闻平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-7",
+    "title": "财新网",
+    "description": "财经深度资讯",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-8",
+    "title": "36氪",
+    "description": "科技创业资讯",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-9",
+    "title": "爱范儿",
+    "description": "数码科技新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-10",
+    "title": "联合早报",
+    "description": "新加坡中文资讯",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-11",
+    "title": "凤凰网",
+    "description": "综合资讯门户",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-12",
+    "title": "澎湃新闻",
+    "description": "时事深度报道",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-13",
+    "title": "新浪新闻",
+    "description": "综合实时热点",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-14",
+    "title": "网易新闻",
+    "description": "热点资讯聚合",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-15",
+    "title": "观察者网",
+    "description": "时政军事评论",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-16",
+    "title": "卫报",
+    "description": "英国权威新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-17",
+    "title": "法新社",
+    "description": "法国国际新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-18",
+    "title": "机核网",
+    "description": "游戏ACG资讯",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-19",
+    "title": "游民星空",
+    "description": "游戏资讯攻略",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-20",
+    "title": "美术报",
+    "description": "艺术文创资讯",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-21",
+    "title": "第一财经",
+    "description": "专业财经资讯",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-22",
+    "title": "日经新闻",
+    "description": "日本经济资讯",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-23",
+    "title": "腾讯新闻",
+    "description": "全网热点聚合",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-24",
+    "title": "界面新闻",
+    "description": "商业财经资讯",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-25",
+    "title": "Reuters",
+    "description": "全球最具公信力的国际通讯社",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-26",
+    "title": "Associated Press",
+    "description": "美联社，中立客观的新闻报道",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-27",
+    "title": "NPR",
+    "description": "美国国家公共电台，深度报道与播客",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-28",
+    "title": "PBS NewsHour",
+    "description": "美国公共电视网，深度新闻分析",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-29",
+    "title": "CBS News",
+    "description": "哥伦比亚广播公司新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-30",
+    "title": "NBC News",
+    "description": "全国广播公司新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-31",
+    "title": "ABC News",
+    "description": "美国广播公司新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-32",
+    "title": "France 24",
+    "description": "法国国际新闻频道",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-33",
+    "title": "Deutsche Welle",
+    "description": "德国之声，多语种国际报道",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-34",
+    "title": "Al Jazeera",
+    "description": "半岛电视台，中东视角",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-35",
+    "title": "South China Morning Post",
+    "description": "南华早报，亚洲英文视角",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-36",
+    "title": "Nikkei Asia",
+    "description": "日经亚洲，亚洲经济政治深度",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-37",
+    "title": "The Straits Times",
+    "description": "新加坡海峡时报，东南亚新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-38",
+    "title": "The New York Times",
+    "description": "纽约时报，国际深度报道",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-39",
+    "title": "The Wall Street Journal",
+    "description": "华尔街日报，财经权威",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-40",
+    "title": "The Washington Post",
+    "description": "华盛顿邮报，政治调查报道",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-41",
+    "title": "Financial Times",
+    "description": "金融时报，国际财经深度",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-42",
+    "title": "The Guardian",
+    "description": "卫报，英国左翼视角",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-43",
+    "title": "The Economist",
+    "description": "经济学人，深度分析与预测",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-44",
+    "title": "Bloomberg",
+    "description": "彭博社，金融数据与新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-45",
+    "title": "Fortune",
+    "description": "财富杂志，商业深度报道",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-46",
+    "title": "Forbes",
+    "description": "福布斯，商业与企业家新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-47",
+    "title": "Business Insider",
+    "description": "商业内幕，科技与商业速报",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-48",
+    "title": "Quartz",
+    "description": "石英财经，全球商业新视角",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-49",
+    "title": "Barron's",
+    "description": "巴伦周刊，投资市场深度",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-50",
+    "title": "MarketWatch",
+    "description": "市场观察，实时金融数据",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-51",
+    "title": "TechCrunch",
+    "description": "全球科技创业与融资新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-52",
+    "title": "The Verge",
+    "description": "前沿科技与消费电子",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-53",
+    "title": "Wired",
+    "description": "连线，科技文化深度解读",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-54",
+    "title": "Ars Technica",
+    "description": "科技新闻与技术深度分析",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-55",
+    "title": "CNET",
+    "description": "数码产品评测与科技资讯",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-56",
+    "title": "Engadget",
+    "description": "消费电子与科技新品",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-57",
+    "title": "ZDNet",
+    "description": "企业IT与科技趋势",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-58",
+    "title": "IT之家",
+    "description": "快速全面的科技数码资讯",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-59",
+    "title": "36氪",
+    "description": "前沿科技与创投资讯",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-60",
+    "title": "虎嗅",
+    "description": "商业科技深度聚合",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-61",
+    "title": "钛媒体",
+    "description": "科技产业与创新经济",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-62",
+    "title": "澎湃新闻",
+    "description": "时事深度与思想平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-63",
+    "title": "界面新闻",
+    "description": "商业与财经新媒体",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-64",
+    "title": "财新网",
+    "description": "付费财经深度报道",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-65",
+    "title": "第一财经",
+    "description": "专业财经资讯平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-66",
+    "title": "华尔街见闻",
+    "description": "全球金融市场即时资讯",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-67",
+    "title": "观察者网",
+    "description": "时政与战略评论",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-68",
+    "title": "参考消息",
+    "description": "海外媒体资讯编译",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-69",
+    "title": "中国新闻网",
+    "description": "中新社主办，综合新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-70",
+    "title": "央广网",
+    "description": "中央人民广播电台官网",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-71",
+    "title": "国际在线",
+    "description": "多语种国际新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-72",
+    "title": "中国日报",
+    "description": "国家级英文媒体",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-73",
+    "title": "Global Times",
+    "description": "环球时报英文版",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-74",
+    "title": "联合早报",
+    "description": "新加坡中文国际视角",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-75",
+    "title": "BBC中文",
+    "description": "BBC中文网，国际新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-76",
+    "title": "德国之声中文",
+    "description": "德国之声中文版",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-77",
+    "title": "法广中文",
+    "description": "法国国际广播电台中文",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-78",
+    "title": "纽约时报中文",
+    "description": "纽约时报中文版",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-79",
+    "title": "FT中文网",
+    "description": "金融时报中文版",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-80",
+    "title": "WSJ中文",
+    "description": "华尔街日报中文版",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-81",
+    "title": "nippon.com",
+    "description": "日本多元文化资讯",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-82",
+    "title": "Korea JoongAng Daily",
+    "description": "韩国中央日报英文版",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-83",
+    "title": "ABS-CBN News",
+    "description": "菲律宾主流新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-84",
+    "title": "The Jakarta Post",
+    "description": "印尼英文日报",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-85",
+    "title": "Vietnam News",
+    "description": "越南英文新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-86",
+    "title": "Bangkok Post",
+    "description": "泰国英文新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-87",
+    "title": "The Hindu",
+    "description": "印度主要英文日报",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-88",
+    "title": "India Today",
+    "description": "印度新闻杂志",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-89",
+    "title": "Haaretz",
+    "description": "以色列权威报纸",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-90",
+    "title": "The National",
+    "description": "阿联酋英文新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-91",
+    "title": "Moscow Times",
+    "description": "俄罗斯英文新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-92",
+    "title": "Kyiv Independent",
+    "description": "乌克兰英文新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-93",
+    "title": "Politico",
+    "description": "美国政治新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-94",
+    "title": "The Hill",
+    "description": "美国国会政治新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-95",
+    "title": "Roll Call",
+    "description": "美国国会新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-96",
+    "title": "Foreign Affairs",
+    "description": "国际事务深度分析",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-97",
+    "title": "Foreign Policy",
+    "description": "外交政策杂志",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-98",
+    "title": "The Diplomat",
+    "description": "亚太地缘政治分析",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-99",
+    "title": "Project Syndicate",
+    "description": "全球知名评论合集",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-100",
+    "title": "Aeon",
+    "description": "深度思想与文化文章",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-101",
+    "title": "Quartz",
+    "description": "新锐商业视角",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-102",
+    "title": "Rest of World",
+    "description": "关注新兴市场科技",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-103",
+    "title": "Semafor",
+    "description": "全球新闻新锐媒体",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-104",
+    "title": "Axios",
+    "description": "简明快速的新闻简报",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-105",
+    "title": "Punch",
+    "description": "尼日利亚主要新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-106",
+    "title": "Daily Maverick",
+    "description": "南非独立新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-news-107",
+    "title": "Nation Africa",
+    "description": "肯尼亚东非新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-0",
+    "title": "天猫旗舰店",
+    "description": "正版周边",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-1",
+    "title": "京东自营",
+    "description": "快速配送",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-2",
+    "title": "亚马逊中国",
+    "description": "全球购",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-3",
+    "title": "苏宁易购",
+    "description": "家电数码",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-4",
+    "title": "任天堂商店",
+    "description": "官方周边",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-5",
+    "title": "PlayStation商店",
+    "description": "游戏/周边",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-6",
+    "title": "淘宝",
+    "description": "综合购物平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-7",
+    "title": "拼多多",
+    "description": "高性价比购物",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-8",
+    "title": "唯品会",
+    "description": "品牌特卖",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-9",
+    "title": "抖音商城",
+    "description": "直播购物",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-10",
+    "title": "小红书商城",
+    "description": "好物种草",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-11",
+    "title": "Steam商城",
+    "description": "PC游戏正版",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-12",
+    "title": "Epic商城",
+    "description": "正版游戏平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-13",
+    "title": "Xbox商店",
+    "description": "微软游戏商城",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-14",
+    "title": "B站会员购",
+    "description": "手办周边潮玩",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-15",
+    "title": "萌购",
+    "description": "日本代购直邮",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-16",
+    "title": "任你购",
+    "description": "日版ACG代购",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-17",
+    "title": "京东国际",
+    "description": "进口商品免税",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-18",
+    "title": "天猫国际",
+    "description": "海外直营",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-19",
+    "title": "文具控",
+    "description": "文具手账好物",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-20",
+    "title": "锐意网",
+    "description": "摄影器材商城",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-21",
+    "title": "有货YOHO",
+    "description": "潮流服饰品牌",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-22",
+    "title": "考拉海购",
+    "description": "网易跨境电商",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-23",
+    "title": "1688批发",
+    "description": "源头厂家批发",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-24",
+    "title": "淘宝二次元",
+    "description": "动漫周边专区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-25",
+    "title": "亚马逊全球",
+    "description": "海外购物直邮",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-26",
+    "title": "B站会员购",
+    "description": "手办、周边、漫展官方票务",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-27",
+    "title": "萌购",
+    "description": "专注日本动漫周边的代购平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-28",
+    "title": "任你购",
+    "description": "日本ACG代购，支持日亚煤炉",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-29",
+    "title": "魔法集市",
+    "description": "日系二次元一站式代购",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-30",
+    "title": "Hpoi 手办维基",
+    "description": "手办资料库及交易商城",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-31",
+    "title": "阿里集团",
+    "description": "源头工厂批发价",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-32",
+    "title": "淘特",
+    "description": "源头厂货，性价比高",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-33",
+    "title": "京喜",
+    "description": "京东旗下特惠购物",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-34",
+    "title": "小米有品",
+    "description": "精品生活电商",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-35",
+    "title": "网易严选",
+    "description": "ODM模式品质好物",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-36",
+    "title": "得物",
+    "description": "潮流单品鉴别交易",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-37",
+    "title": "识货",
+    "description": "正品比价导购平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-38",
+    "title": "什么值得买",
+    "description": "全网优惠信息聚合",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-39",
+    "title": "慢慢买",
+    "description": "历史价格查询工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-40",
+    "title": "eBay",
+    "description": "全球拍卖与二手交易",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-41",
+    "title": "Mercari",
+    "description": "日本主流二手交易平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-42",
+    "title": "煤炉",
+    "description": "日本闲鱼，需代购",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-43",
+    "title": "Rakuten",
+    "description": "日本最大电商平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-44",
+    "title": "Yahoo! Japan",
+    "description": "日本雅虎拍卖",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-45",
+    "title": "Suruga-ya",
+    "description": "日本二手动漫游戏专卖",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-46",
+    "title": "Mandarake",
+    "description": "大型动漫二手连锁",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-47",
+    "title": "Animate",
+    "description": "日本动漫周边连锁",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-48",
+    "title": "AmiAmi",
+    "description": "手办模型专门店",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-49",
+    "title": "GoodSmile",
+    "description": "良笑社官方商城",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-50",
+    "title": "Bandai Namco",
+    "description": "万代南梦宫官方",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-51",
+    "title": "Etsy",
+    "description": "全球手工创意平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-52",
+    "title": "Shopify",
+    "description": "品牌独立站聚合",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-53",
+    "title": "Farfetch",
+    "description": "全球奢侈品买手店",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-54",
+    "title": "SSENSE",
+    "description": "高端潮流买手平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-55",
+    "title": "MyTheresa",
+    "description": "德国奢侈品电商",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-56",
+    "title": "Net-a-Porter",
+    "description": "英国时尚奢侈品",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-57",
+    "title": "ASOS",
+    "description": "英国年轻潮流服饰",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-58",
+    "title": "Zalando",
+    "description": "欧洲时尚电商平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-59",
+    "title": "Coupang",
+    "description": "韩国最大电商平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-60",
+    "title": "Gmarket",
+    "description": "韩国主流综合购物",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-61",
+    "title": "Lazada",
+    "description": "东南亚电商平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-62",
+    "title": "Shopee",
+    "description": "东南亚与台湾地区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-63",
+    "title": "Zalora",
+    "description": "东南亚时尚电商",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-64",
+    "title": "Tokopedia",
+    "description": "印尼电商平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-65",
+    "title": "Flipkart",
+    "description": "印度电商龙头",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-66",
+    "title": "Myntra",
+    "description": "印度时尚电商",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-67",
+    "title": "Jumia",
+    "description": "非洲电商平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-68",
+    "title": "Konga",
+    "description": "尼日利亚电商",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-69",
+    "title": "Takealot",
+    "description": "南非电商平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-70",
+    "title": "Souq",
+    "description": "中东电商(亚马逊)",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-71",
+    "title": "Noon",
+    "description": "中东本土电商",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-72",
+    "title": "Ozon",
+    "description": "俄罗斯电商平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-73",
+    "title": "Wildberries",
+    "description": "俄罗斯时尚电商",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-74",
+    "title": "Allegro",
+    "description": "波兰电商平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-75",
+    "title": "Zara",
+    "description": "Inditex集团官网",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-76",
+    "title": "H&M",
+    "description": "快时尚品牌官网",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-77",
+    "title": "Uniqlo",
+    "description": "优衣库官方商城",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-78",
+    "title": "Muji",
+    "description": "无印良品官方",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-79",
+    "title": "IKEA",
+    "description": "宜家家居官方商城",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-80",
+    "title": "Nitori",
+    "description": "似鸟家居官方",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-81",
+    "title": "Nike",
+    "description": "耐克官方商城",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-82",
+    "title": "Adidas",
+    "description": "阿迪达斯官方",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-83",
+    "title": "Apple",
+    "description": "苹果官方商城",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-84",
+    "title": "Samsung",
+    "description": "三星官方商城",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-85",
+    "title": "Xiaomi",
+    "description": "小米官方商城",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-86",
+    "title": "Huawei",
+    "description": "华为官方商城",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-87",
+    "title": "Anker",
+    "description": "数码配件官方",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-88",
+    "title": "LEGO",
+    "description": "乐高官方商城",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-89",
+    "title": "Hasbro",
+    "description": "孩之宝官方",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-90",
+    "title": "Mattel",
+    "description": "美泰官方商城",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-91",
+    "title": "Bandai",
+    "description": "万代拼装模型",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-92",
+    "title": "Tamiya",
+    "description": "田宫模型官方",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-93",
+    "title": "Kaiyodo",
+    "description": "海洋堂官方",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-94",
+    "title": "Alibaba",
+    "description": "全球B2B批发平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-95",
+    "title": "Global Sources",
+    "description": "外贸B2B平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-96",
+    "title": "DHgate",
+    "description": "小额批发平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-97",
+    "title": "Made-in-China",
+    "description": "中国制造网",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-98",
+    "title": "StockX",
+    "description": "球鞋潮牌股票交易",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-99",
+    "title": "GOAT",
+    "description": "正品球鞋交易",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-100",
+    "title": "Stadium Goods",
+    "description": "纽约潮牌寄卖",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-101",
+    "title": "Grailed",
+    "description": "男士潮流二手",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-102",
+    "title": "Depop",
+    "description": "复古时尚社交平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-103",
+    "title": "Poshmark",
+    "description": "时尚二手交易",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-104",
+    "title": "Mercari US",
+    "description": "美国二手交易",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-105",
+    "title": "Vestiaire",
+    "description": "二手奢侈品平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-106",
+    "title": "The RealReal",
+    "description": "二手奢侈品寄卖",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-107",
+    "title": "Reverb",
+    "description": "乐器二手交易",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-108",
+    "title": "Discogs",
+    "description": "音乐唱片市场",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-shopping-109",
+    "title": "Amazon Handmade",
+    "description": "手工艺品市场",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-0",
+    "title": "Pixiv",
+    "description": "插画分享",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-1",
+    "title": "Wallhaven",
+    "description": "壁纸社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-2",
+    "title": "Unsplash",
+    "description": "高清图片",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-3",
+    "title": "DeviantArt",
+    "description": "艺术社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-4",
+    "title": "Pexels",
+    "description": "免费素材",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-5",
+    "title": "ArtStation",
+    "description": "游戏影视CG美术",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-6",
+    "title": "Dribbble",
+    "description": "设计创意作品",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-7",
+    "title": "Behance",
+    "description": "创意设计作品集",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-8",
+    "title": "零chan",
+    "description": "ACG动漫壁纸",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-9",
+    "title": "Konachan",
+    "description": "二次元高清壁纸",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-10",
+    "title": "Yande.re",
+    "description": "动漫插画壁纸",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-11",
+    "title": "壁纸引擎",
+    "description": "动态壁纸资源",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-12",
+    "title": "壁纸社",
+    "description": "超清电脑壁纸",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-13",
+    "title": "极简壁纸",
+    "description": "简约高清壁纸",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-14",
+    "title": "爱给网",
+    "description": "免费图片素材",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-15",
+    "title": "摄图网",
+    "description": "正版商用图库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-16",
+    "title": "千库网",
+    "description": "免抠图片素材",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-17",
+    "title": "包图网",
+    "description": "设计图片素材",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-18",
+    "title": "CC0图片",
+    "description": "免费可商用图库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-19",
+    "title": "动漫壁纸",
+    "description": "ACG高清壁纸站",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-20",
+    "title": "樱花动漫图库",
+    "description": "动漫插画美图",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-21",
+    "title": "VisualHunt",
+    "description": "免费CC0图库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-22",
+    "title": "Lifeofpix",
+    "description": "欧美摄影美图",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-23",
+    "title": "SketchupTexture",
+    "description": "PBR材质贴图",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-24",
+    "title": "Texturer",
+    "description": "无缝材质纹理",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-25",
+    "title": "DeviantArt",
+    "description": "全球最大艺术社区，6.5亿+作品，涵盖插画、摄影、AI艺术",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-26",
+    "title": "半次元",
+    "description": "国内二次元创作者社区，原创漫画/插画/COS集中地",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-27",
+    "title": "ArtStation",
+    "description": "专业游戏影视CG美术平台，行业顶尖概念设计",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-28",
+    "title": "Pixiv",
+    "description": "日本插画师社区，日系画风潮流风向标",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-29",
+    "title": "高品图像",
+    "description": "数亿级商用素材，AI工具+智能编辑免费开放",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-30",
+    "title": "千图网",
+    "description": "版权清晰的商用素材库，模板/插画/矢量图",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-31",
+    "title": "站酷",
+    "description": "国内设计师社区，插画/UI/平面设计作品集",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-32",
+    "title": "Wallhaven",
+    "description": "4K超清壁纸库，支持标签/分辨率精准筛选",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-33",
+    "title": "Alpha Coders",
+    "description": "庞大动漫壁纸库，按作品/角色分类检索",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-34",
+    "title": "Konachan",
+    "description": "二次元高质量壁纸，支持多级标签筛选",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-35",
+    "title": "Yande.re",
+    "description": "动漫插画壁纸站，社区评分制",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-36",
+    "title": "Wallpaper Abyss",
+    "description": "专注动漫的4K壁纸分站",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-37",
+    "title": "Unsplash",
+    "description": "高审美摄影作品，CC0协议可商用",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-38",
+    "title": "Pexels",
+    "description": "免费图片+视频素材，更新快紧跟潮流",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-39",
+    "title": "Pixabay",
+    "description": "全球最大免费素材社区，含矢量/插画/音乐",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-40",
+    "title": "Freepik",
+    "description": "矢量图/插图/PSD模板，海量免费资源",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-41",
+    "title": "Flaticon",
+    "description": "数百万图标库，支持PNG/SVG/矢量下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-42",
+    "title": "即时设计",
+    "description": "国产设计工具+资源广场，矢量/插画免费用",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-43",
+    "title": "Mixkit",
+    "description": "免费视频素材/音效/BGM，风格现代",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-44",
+    "title": "Foodiesfeed",
+    "description": "专注美食摄影的免费图库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-45",
+    "title": "Poly Haven",
+    "description": "CC0协议的HDRI/纹理/3D模型",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-46",
+    "title": "ambientCG",
+    "description": "CC0协议的PBR材质库，格式齐全",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-47",
+    "title": "Textures.com",
+    "description": "老牌贴图库，品类全检索强",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-48",
+    "title": "Quixel Megascans",
+    "description": "扫描级写实材质库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-49",
+    "title": "BlenderKit",
+    "description": "Blender内置材质库，一键拖拽",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-50",
+    "title": "HDRMAPS",
+    "description": "专注HDRI环境贴图",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-51",
+    "title": "OpenGameArt",
+    "description": "游戏素材社区，纹理/像素风/音效",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-52",
+    "title": "NASA Visible Earth",
+    "description": "地球/天体主题纹理与影像",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-53",
+    "title": "视觉中国免费专区",
+    "description": "部分免费素材，品质有保障",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-54",
+    "title": "摄图网",
+    "description": "免费摄影图片+设计素材",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-55",
+    "title": "包图网",
+    "description": "电商模板/海报PSD免费专区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-56",
+    "title": "图精灵",
+    "description": "专注PNG免抠元素",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-57",
+    "title": "懒人图库",
+    "description": "网页设计素材，经典实用",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-58",
+    "title": "素材中国",
+    "description": "综合素材分享平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-59",
+    "title": "我图网",
+    "description": "设计师分享平台，可淘特色素材",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-60",
+    "title": "极简壁纸",
+    "description": "极简风格高清壁纸",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-61",
+    "title": "动漫壁纸",
+    "description": "ACG高清壁纸站",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-62",
+    "title": "爱给网",
+    "description": "免费音效/配乐/素材",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-63",
+    "title": "CC0图片",
+    "description": "可商用CC0协议图库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-64",
+    "title": "VisualHunt",
+    "description": "CC0图库聚合搜索",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-65",
+    "title": "Lifeofpix",
+    "description": "欧美风格摄影图库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-66",
+    "title": "SketchupTexture",
+    "description": "建筑/室内设计纹理",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-67",
+    "title": "ShareTextures",
+    "description": "社区型PBR材质分享",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-68",
+    "title": "3DTextures",
+    "description": "可平铺PBR材质库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-69",
+    "title": "CGBookcase",
+    "description": "免费PBR材质与HDRI",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-70",
+    "title": "Poliigon",
+    "description": "高质量建筑可视化材质",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-71",
+    "title": "NoEmotion HDRs",
+    "description": "HDRI环境贴图聚合",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-72",
+    "title": "MatCaps",
+    "description": "Blender官方MatCap库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-gallery-73",
+    "title": "艺术维基",
+    "description": "全球艺术作品数据库，125万+公版作品",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-0",
+    "title": "Bilibili",
+    "description": "弹幕视频",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-1",
+    "title": "Youku",
+    "description": "优酷平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-2",
+    "title": "腾讯视频",
+    "description": "v.qq.com",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-3",
+    "title": "Netflix",
+    "description": "全球流媒体",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-4",
+    "title": "Disney+",
+    "description": "迪士尼+",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-5",
+    "title": "Twitch",
+    "description": "游戏直播",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-6",
+    "title": "爱奇艺",
+    "description": "高清影视平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-7",
+    "title": "芒果TV",
+    "description": "综艺剧集全覆盖",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-8",
+    "title": "YouTube",
+    "description": "全球最大视频站",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-9",
+    "title": "TikTok",
+    "description": "海外版抖音",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-10",
+    "title": "抖音",
+    "description": "短视频创作",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-11",
+    "title": "快手",
+    "description": "生活短视频",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-12",
+    "title": "央视影音",
+    "description": "直播回看平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-13",
+    "title": "Hulu",
+    "description": "美区影视平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-14",
+    "title": "HBO Max",
+    "description": "美剧独家平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-15",
+    "title": "Amazon Prime",
+    "description": "亚马逊影视",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-16",
+    "title": "LiTV",
+    "description": "台剧综艺直播",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-17",
+    "title": "KKTV",
+    "description": "台剧日漫同步",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-18",
+    "title": "咪咕视频",
+    "description": "体育赛事直播",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-19",
+    "title": "新片场",
+    "description": "原创影视短片",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-20",
+    "title": "开眼Eyepetizer",
+    "description": "高清创意短片",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-21",
+    "title": "预告片世界",
+    "description": "高清影视预告",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-22",
+    "title": "片源网",
+    "description": "影视资源索引",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-23",
+    "title": "Vimeo",
+    "description": "高清创意视频",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-24",
+    "title": "Dailymotion",
+    "description": "欧系视频平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-25",
+    "title": "YouTube 影视",
+    "description": "正版电影剧集",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-26",
+    "title": "Tubi",
+    "description": "超5万部影视剧免费观看，含广告，片库庞大更新快",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-27",
+    "title": "Pluto TV",
+    "description": "数百个免费直播频道+点播，体验类似有线电视",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-28",
+    "title": "Plex",
+    "description": "整合个人媒体库与5万+免费影视剧、直播频道",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-29",
+    "title": "The Roku Channel",
+    "description": "Roku官方免费频道，含原创内容和500+直播频道",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-30",
+    "title": "Crackle",
+    "description": "索尼旗下免费影视平台，原创剧集与经典电影",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-31",
+    "title": "Amazon Freevee",
+    "description": "亚马逊免费影视，含IMDb评分整合",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-32",
+    "title": "YouTube 免费电影",
+    "description": "官方免费带广告电影专区，含4K资源",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-33",
+    "title": "FMovies",
+    "description": "界面简洁，支持多服务器，更新速度快",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-34",
+    "title": "Goojara",
+    "description": "片库海量，移动端友好",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-35",
+    "title": "M4uHD",
+    "description": "高清/4K资源，弹窗极少",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-36",
+    "title": "LookMovie",
+    "description": "Netflix风格界面，画质出色",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-37",
+    "title": "HiMovies",
+    "description": "加载速度快，支持多语言字幕",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-38",
+    "title": "Braflix",
+    "description": "Reddit热门推荐，近乎零广告",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-39",
+    "title": "卓特视觉",
+    "description": "超5000万条4K视频素材，AI搜/AI绘图工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-40",
+    "title": "Shutterstock",
+    "description": "全球顶级商用素材库，海量视频/音乐/图片",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-41",
+    "title": "iStock",
+    "description": "Getty旗下，无AI生成内容，纯艺术家原创",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-42",
+    "title": "StoryBlocks",
+    "description": "会员制无限下载，含AE模板/背景视频",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-43",
+    "title": "Depositphotos",
+    "description": "超3.27亿份素材，支持以图搜图",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-44",
+    "title": "Pexels",
+    "description": "免费可商用视频+图片，风格现代",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-45",
+    "title": "Pixabay",
+    "description": "全球最大免费素材库，含视频/音乐/音效",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-46",
+    "title": "Mixkit",
+    "description": "免费高清视频素材/音效/BGM",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-47",
+    "title": "Coverr",
+    "description": "专注网站背景视频的免费素材库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-48",
+    "title": "Videvo",
+    "description": "免费+付费视频素材，含动态图形",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-49",
+    "title": "Mazwai",
+    "description": "电影感大片视频素材，需标注作者",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-50",
+    "title": "Cutestock",
+    "description": "免费高质量视频片段，分类清晰",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-51",
+    "title": "Instagram Reels",
+    "description": "日活超2亿，与社交关系链深度整合",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-52",
+    "title": "YouTube Shorts",
+    "description": "日均500亿播放，SEO长尾流量优势强",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-53",
+    "title": "Snapchat Spotlight",
+    "description": "Z世代聚集，4.2亿日活，AR滤镜丰富",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-54",
+    "title": "Lemon8",
+    "description": "字节跳动旗下，图文+视频结合的生活社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-55",
+    "title": "Triller",
+    "description": "AI自动剪辑音乐视频，艺人合作多",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-56",
+    "title": "Likee",
+    "description": "特效工具强大，新兴市场流行",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-57",
+    "title": "小红书",
+    "description": "图文+视频种草社区，高消费力女性用户",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-58",
+    "title": "微信视频号",
+    "description": "基于社交关系分发，打通微信生态",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-video-59",
+    "title": "西瓜视频",
+    "description": "字节跳动旗下，中短视频混合平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-0",
+    "title": "贴吧",
+    "description": "百度贴吧",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-1",
+    "title": "Reddit",
+    "description": "社交新闻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-2",
+    "title": "Stack Overflow",
+    "description": "程序员问答",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-3",
+    "title": "NGA玩家社区",
+    "description": "艾泽拉斯",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-4",
+    "title": "V2EX",
+    "description": "技术创意",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-5",
+    "title": "Stage1st",
+    "description": "动漫游戏论坛",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-6",
+    "title": "豆瓣",
+    "description": "书评影评兴趣社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-7",
+    "title": "知乎",
+    "description": "知识问答社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-8",
+    "title": "小红书",
+    "description": "生活种草分享",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-9",
+    "title": "虎扑",
+    "description": "体育数码社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-10",
+    "title": "游民星空论坛",
+    "description": "游戏玩家交流",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-11",
+    "title": "3DM论坛",
+    "description": "单机游戏交流",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-12",
+    "title": "TapTap社区",
+    "description": "手游玩家交流",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-13",
+    "title": "掘金",
+    "description": "前端技术社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-14",
+    "title": "CSDN",
+    "description": "程序员技术博客",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-15",
+    "title": "开源中国",
+    "description": "开源技术社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-16",
+    "title": "站酷",
+    "description": "设计师交流社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-17",
+    "title": "UI中国",
+    "description": "界面设计交流",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-18",
+    "title": "天涯社区",
+    "description": "综合老牌论坛",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-19",
+    "title": "猫扑",
+    "description": "娱乐综合社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-20",
+    "title": "水木社区",
+    "description": "高校精英论坛",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-21",
+    "title": "爱卡汽车",
+    "description": "汽车车友论坛",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-22",
+    "title": "汽车之家论坛",
+    "description": "汽车交流社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-23",
+    "title": "4chan",
+    "description": "海外综合贴图版",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-24",
+    "title": "Quora",
+    "description": "国外知乎问答",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-25",
+    "title": "Steam社区",
+    "description": "玩家讨论组",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-26",
+    "title": "果壳",
+    "description": "科技趣味社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-27",
+    "title": "丁香园",
+    "description": "健康医疗交流",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-28",
+    "title": "Chiphell",
+    "description": "高端硬件数码发烧友论坛，俗称“CHH”",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-29",
+    "title": "色影无忌",
+    "description": "摄影爱好者专业论坛，器材讨论与作品分享",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-30",
+    "title": "蜂鸟网",
+    "description": "影像生活社区，摄影技巧与器材交易",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-31",
+    "title": "马蜂窝",
+    "description": "旅游攻略分享社区，结伴旅行",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-32",
+    "title": "穷游网",
+    "description": "出境游攻略与问答社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-33",
+    "title": "下厨房",
+    "description": "美食菜谱与厨艺交流社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-34",
+    "title": "豆果美食",
+    "description": "家常菜谱与美食分享平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-35",
+    "title": "狗民网",
+    "description": "宠物狗爱好者交流社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-36",
+    "title": "宝宝树",
+    "description": "母婴育儿交流平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-37",
+    "title": "妈妈帮",
+    "description": "妈妈互助社区，育儿经验分享",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-38",
+    "title": "小木虫",
+    "description": "学术科研交流论坛，论文投稿经验",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-39",
+    "title": "经管之家",
+    "description": "经济管理学术论坛，资源分享",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-40",
+    "title": "人人都是产品经理",
+    "description": "产品经理、运营学习交流社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-41",
+    "title": "SegmentFault",
+    "description": "技术问答与开发者社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-42",
+    "title": "IT之家",
+    "description": "科技数码资讯与交流社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-43",
+    "title": "威锋网",
+    "description": "苹果用户交流论坛",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-44",
+    "title": "机锋论坛",
+    "description": "安卓手机玩家论坛",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-45",
+    "title": "A9VG",
+    "description": "主机游戏核心玩家社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-46",
+    "title": "电玩巴士",
+    "description": "游戏综合论坛，任系索尼微软讨论",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-47",
+    "title": "龙空",
+    "description": "网络文学作者与读者论坛",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-48",
+    "title": "涂鸦王国",
+    "description": "插画师原创作品交流社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-49",
+    "title": "铁血网",
+    "description": "军事历史论坛，军迷聚集地",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-50",
+    "title": "超级大本营",
+    "description": "军事科技与战略讨论社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-51",
+    "title": "寄托天下",
+    "description": "留学申请与考试交流论坛",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-52",
+    "title": "一亩三分地",
+    "description": "留学、求职、移民社区（北美方向）",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-53",
+    "title": "考研论坛",
+    "description": "考研交流与资料分享",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-54",
+    "title": "学法网",
+    "description": "法律职业交流与考试论坛",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-55",
+    "title": "脉脉",
+    "description": "职场社交与匿名吐槽社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-56",
+    "title": "看准网",
+    "description": "公司评价与薪资讨论社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-57",
+    "title": "煎蛋",
+    "description": "无厘头趣味内容与无聊图社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-58",
+    "title": "GitHub Discussions",
+    "description": "开源项目讨论区，开发者交流",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-59",
+    "title": "Goodreads",
+    "description": "英文读书爱好者社区，书评与推荐",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-60",
+    "title": "Letterboxd",
+    "description": "电影爱好者社交平台，记录与评论",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-61",
+    "title": "Last.fm",
+    "description": "音乐收听记录与社交推荐",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-62",
+    "title": "Discord",
+    "description": "游戏与兴趣社群即时通讯平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-63",
+    "title": "Telegram频道",
+    "description": "频道与群组讨论，兴趣交流",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-64",
+    "title": "Gaia Online",
+    "description": "动漫角色扮演虚拟社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-65",
+    "title": "Neopets",
+    "description": "经典虚拟宠物社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-66",
+    "title": "The Something Awful Forums",
+    "description": "老牌网络文化论坛，恶搞与讨论",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-forum-67",
+    "title": "Stack Exchange",
+    "description": "Stack Overflow母公司，多领域问答网络",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-0",
+    "title": "网易云音乐",
+    "description": "歌单评论社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-1",
+    "title": "QQ音乐",
+    "description": "正版曲库齐全",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-2",
+    "title": "酷狗音乐",
+    "description": "海量乐库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-3",
+    "title": "酷我音乐",
+    "description": "高品质试听",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-4",
+    "title": "咪咕音乐",
+    "description": "免费正版超多",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-5",
+    "title": "虾米音乐",
+    "description": "复古音乐社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-6",
+    "title": "Spotify",
+    "description": "全球流行乐库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-7",
+    "title": "Apple Music",
+    "description": "苹果正版音乐",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-8",
+    "title": "YouTube Music",
+    "description": "视频音乐一体",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-9",
+    "title": "SoundCloud",
+    "description": "原创音乐人",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-10",
+    "title": "Last.fm",
+    "description": "音乐数据记录",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-11",
+    "title": "猫耳FM",
+    "description": "二次元广播剧",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-12",
+    "title": "酷狗繁星",
+    "description": "直播音乐",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-13",
+    "title": "5sing原创",
+    "description": "原创音乐基地",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-14",
+    "title": "豆瓣音乐",
+    "description": "音乐评分评论",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-15",
+    "title": "无损音乐网",
+    "description": "高品质音源",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-16",
+    "title": "搜韵音乐",
+    "description": "古风音乐合集",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-17",
+    "title": "ANIME MUSIC",
+    "description": "动漫音乐合集",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-18",
+    "title": "哔哩哔哩音乐",
+    "description": "B站音乐区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-19",
+    "title": "小宇宙",
+    "description": "播客泛用型",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-20",
+    "title": "Qobuz",
+    "description": "法国高保真流媒体，提供CD级和Hi-Res音频",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-21",
+    "title": "Deezer",
+    "description": "全球流媒体，支持FLAC无损，Flow智能推荐",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-22",
+    "title": "Pandora",
+    "description": "美国音乐电台服务，基于音乐基因组的个性化推荐",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-23",
+    "title": "Bandcamp",
+    "description": "支持独立音乐人直接销售，常能发现小众佳作",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-24",
+    "title": "Mixcloud",
+    "description": "专注于DJ混音带、电台节目和播客的长音频平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-25",
+    "title": "NTS Radio",
+    "description": "全球独立电台，直播+回放，风格前卫多元",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-26",
+    "title": "Acclaimed Music",
+    "description": "基于数千份乐评榜单汇总的艺术家/专辑排名",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-27",
+    "title": "Rate Your Music",
+    "description": "用户自建的音乐数据库与评分社区，分类极细",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-28",
+    "title": "Discogs",
+    "description": "黑胶/CD/Digital数据库与交易市场，版本大全",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-29",
+    "title": "WhoSampled",
+    "description": "挖掘歌曲中的采样、翻唱、remix来源",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-30",
+    "title": "Musixmatch",
+    "description": "全球最大歌词平台，支持同步歌词翻译",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-31",
+    "title": "Genius",
+    "description": "歌词注解与音乐知识社区，解析歌曲背后的故事",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-32",
+    "title": "Free Music Archive",
+    "description": "免费、合法的音乐下载库，按协议分类",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-33",
+    "title": "Jamendo",
+    "description": "独立音乐人分享的免费音乐，可商用需确认授权",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-34",
+    "title": "Audius",
+    "description": "去中心化音乐流媒体平台，创作者直接获益",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-35",
+    "title": "Resonic",
+    "description": "本地音乐文件管理与播放器，快速高效",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-36",
+    "title": "MusicBee",
+    "description": "Windows平台强大本地音乐管理工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-37",
+    "title": "古典音乐频道",
+    "description": "国家大剧院古典音乐专属平台，高清音视频",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-38",
+    "title": "索尼精选",
+    "description": "亚洲领先Hi-Res高解析度音乐下载/在线听",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-39",
+    "title": "库客音乐",
+    "description": "古典音乐、爵士、世界音乐数字图书馆",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-40",
+    "title": "落网",
+    "description": "独立音乐期刊式推荐，已停更但存档可寻",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-41",
+    "title": "SoundClick",
+    "description": "老牌独立音乐人发布平台，风格多样",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-42",
+    "title": "Freesound",
+    "description": "CC协议音效采样素材库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-43",
+    "title": "耳海FM",
+    "description": "音频故事、有声书平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-44",
+    "title": "喜马拉雅",
+    "description": "国内最大音频平台，有声书/课程/播客",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-45",
+    "title": "蜻蜓FM",
+    "description": "广播、有声书、播客聚合平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-46",
+    "title": "荔枝FM",
+    "description": "人人都能做主播的音频社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-47",
+    "title": "故事FM",
+    "description": "亲历者讲述真实故事的叙事播客",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-48",
+    "title": "Vocaloid",
+    "description": "初音未来等虚拟歌姬官方，P主创作社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-music-49",
+    "title": "Niconico音乐",
+    "description": "日本弹幕站音乐区，V家、唱见核心地",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-0",
+    "title": "慕课网",
+    "description": "IT职业在线学习",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-1",
+    "title": "中国大学MOOC",
+    "description": "名校公开课",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-2",
+    "title": "网易公开课",
+    "description": "全球名校课程",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-3",
+    "title": "多邻国",
+    "description": "多语言学习",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-4",
+    "title": "扇贝单词",
+    "description": "英语单词记忆",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-5",
+    "title": "可汗学院",
+    "description": "免费全学科教育",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-6",
+    "title": "学堂在线",
+    "description": "清华慕课平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-7",
+    "title": "得到",
+    "description": "知识付费平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-8",
+    "title": "石墨文档",
+    "description": "在线学习笔记",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-9",
+    "title": "喜马拉雅",
+    "description": "音频知识学习",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-10",
+    "title": "学堂在线",
+    "description": "清华大学官方慕课平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-11",
+    "title": "每日英语听力",
+    "description": "英语听力口语训练",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-12",
+    "title": "TED",
+    "description": "全球精英思想演讲",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-13",
+    "title": "Tidal",
+    "description": "无损音质、HiFi沉浸式音频，专注高品质音乐",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-14",
+    "title": "中国大学MOOC",
+    "description": "千余所高校、超万门精品课，含认证证书与AI辅助学习",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-15",
+    "title": "学堂在线",
+    "description": "清华大学发起，全球优质课程，可申请学分课",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-16",
+    "title": "好大学在线",
+    "description": "上海交大牵头，两岸三地高校课程联盟",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-17",
+    "title": "智慧树网",
+    "description": "跨校共享课，支持直播互动与学分认定",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-18",
+    "title": "FutureLearn",
+    "description": "英国平台，多所世界名校人文社科课程",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-19",
+    "title": "edX",
+    "description": "哈佛与MIT创办，顶尖理工科课程",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-20",
+    "title": "Coursera",
+    "description": "全球200+大学合作，专业专项课程体系",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-21",
+    "title": "Udacity",
+    "description": "与谷歌、亚马逊等企业联合的“纳米学位”",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-22",
+    "title": "Pluralsight",
+    "description": "专注技术技能，含AI、云、数据科学路径",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-23",
+    "title": "DataCamp",
+    "description": "数据科学与分析，浏览器内编码实战",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-24",
+    "title": "Codecademy",
+    "description": "互动式编程学习，从HTML到机器学习",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-25",
+    "title": "freeCodeCamp",
+    "description": "开源公益编程学校，实战项目获认证",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-26",
+    "title": "O‘Reilly",
+    "description": "技术专家撰写，前沿技术深度学习平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-27",
+    "title": "MIT OpenCourseWare",
+    "description": "麻省理工官方开放课程，海量资料免费",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-28",
+    "title": "Stanford Online",
+    "description": "斯坦福大学官方线上课程",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-29",
+    "title": "Harvard Online",
+    "description": "哈佛大学官方学习平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-30",
+    "title": "iCourse 爱课程",
+    "description": "国家精品课程资源中心，资源库庞大",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-31",
+    "title": "国图公开课",
+    "description": "国家图书馆出品，文史艺术免费公开课",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-32",
+    "title": "学习强国",
+    "description": "权威学习平台，含大量慕课与纪录片",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-33",
+    "title": "国家职业教育智慧平台",
+    "description": "职业教育课程与实训资源",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-34",
+    "title": "大学资源网",
+    "description": "整合各类大学课程视频，覆盖广",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-35",
+    "title": "Memrise",
+    "description": "基于记忆曲线的语言学习，场景化词汇",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-36",
+    "title": "Lingoda",
+    "description": "真人小班直播授课，主攻英德法语",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-37",
+    "title": "Busuu",
+    "description": "语言学习社区，可获麦克米伦认证",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-38",
+    "title": "HiNative",
+    "description": "多语言问答社区，母语者解答",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-39",
+    "title": "声同小语种",
+    "description": "小语种学习论坛，资料分享与交流",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-40",
+    "title": "沪江网校",
+    "description": "多语种及考证课程",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-41",
+    "title": "环球雅思",
+    "description": "雅思托福等出国考试培训",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-42",
+    "title": "新东方在线",
+    "description": "考试辅导与语言培训",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-43",
+    "title": "万门大学",
+    "description": "全品类课程，覆盖职场与兴趣",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-44",
+    "title": "B站大学",
+    "description": "海量免费学习视频，知识区宝藏",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-45",
+    "title": "一席",
+    "description": "人文科技演讲，类似中文TED",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-46",
+    "title": "超星尔雅",
+    "description": "通识教育课平台，高校广泛使用",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-education-47",
+    "title": "CnOpenData",
+    "description": "经济金融等学术数据分享平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-0",
+    "title": "微软官网",
+    "description": "Windows/Office",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-1",
+    "title": "Adobe官网",
+    "description": "设计全家桶",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-2",
+    "title": "腾讯软件中心",
+    "description": "安全软件下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-3",
+    "title": "360软件宝库",
+    "description": "常用软件大全",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-4",
+    "title": "FileHippo",
+    "description": "国外软件库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-5",
+    "title": "Softonic",
+    "description": "安全软件下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-6",
+    "title": "Figma",
+    "description": "在线UI设计",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-7",
+    "title": "剪映专业版",
+    "description": "桌面视频剪辑",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-8",
+    "title": "Steam",
+    "description": "游戏软件平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-9",
+    "title": "火绒安全",
+    "description": "纯净杀毒软件",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-10",
+    "title": "果核剥壳",
+    "description": "纯净绿色软件下载站，无捆绑无广告",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-11",
+    "title": "华军软件园",
+    "description": "老牌软件下载站，资源丰富安全",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-12",
+    "title": "ZOL软件下载",
+    "description": "中关村在线旗下，软件评测全面",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-13",
+    "title": "天空下载站",
+    "description": "经典软件下载平台，系统工具齐全",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-14",
+    "title": "423下载站",
+    "description": "便携版软件资源站，更新快无广告",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-15",
+    "title": "FossHub",
+    "description": "国际纯净开源软件分发平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-16",
+    "title": "SourceForge",
+    "description": "全球开源软件托管与下载平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-17",
+    "title": "Softpedia",
+    "description": "国外软件百科式下载站，安全检测",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-18",
+    "title": "FileHorse",
+    "description": "国外软件高速下载平台，版本齐全",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-19",
+    "title": "Microsoft Store",
+    "description": "Windows官方应用商店，纯净安全",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-20",
+    "title": "联想应用商店",
+    "description": "联想官方软件平台，系统兼容性好",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-21",
+    "title": "MacW",
+    "description": "Mac软件下载平台，破解版资源丰富",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-22",
+    "title": "MacX",
+    "description": "苹果软件与游戏下载社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-23",
+    "title": "应用宝",
+    "description": "腾讯安卓应用商店，安全检测严格",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-24",
+    "title": "应用汇",
+    "description": "安卓应用商店，小众软件资源多",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-25",
+    "title": "豌豆荚",
+    "description": "经典安卓应用下载与管理平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-26",
+    "title": "腾讯电脑管家软件中心",
+    "description": "安全软件下载，一键安装管理",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-27",
+    "title": "驱动精灵",
+    "description": "硬件驱动程序下载与更新工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-28",
+    "title": "驱动人生",
+    "description": "电脑驱动检测、下载与安装平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-29",
+    "title": "Epic Games",
+    "description": "游戏软件与大作下载平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-30",
+    "title": "Origin",
+    "description": "EA游戏平台，正版游戏下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-31",
+    "title": "Uplay",
+    "description": "育碧游戏下载与启动平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-32",
+    "title": "WPS官网",
+    "description": "WPS办公软件官方下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-33",
+    "title": "Notion",
+    "description": "笔记与协作工具官方下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-34",
+    "title": "Obsidian",
+    "description": "知识管理与笔记软件下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-35",
+    "title": "达芬奇官网",
+    "description": "专业视频剪辑调色软件下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-36",
+    "title": "Blender",
+    "description": "开源3D建模渲染软件下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-37",
+    "title": "GIMP",
+    "description": "开源图像编辑软件，替代PS",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-38",
+    "title": "华军软件园",
+    "description": "老牌综合下载站，超44万款软件，全国300余台服务器加速[citation:1]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-39",
+    "title": "吾爱破解论坛",
+    "description": "知名技术社区，网友分享绿色软件、小众工具及原创作品[citation:6]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-40",
+    "title": "IT小众",
+    "description": "专注小众精品软件，涵盖Windows/macOS/Android三平台[citation:6]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-41",
+    "title": "正版中国",
+    "description": "聚合限时免费正版软件，提供官方下载渠道[citation:6]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-42",
+    "title": "Xclient",
+    "description": "精品Mac应用库，提供历史版本下载服务[citation:8]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-43",
+    "title": "马可波罗",
+    "description": "Mac热门应用发现平台，设有详尽软件排行榜[citation:8]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-44",
+    "title": "Mac8K",
+    "description": "免费Mac软件资源站，无需注册直接下载[citation:8]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-45",
+    "title": "麦氪派",
+    "description": "提供Mac软件深度功能详解及使用教程[citation:8]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-46",
+    "title": "iMacAPP",
+    "description": "苹果生态应用整合平台，界面符合苹果美学[citation:8]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-47",
+    "title": "Haxmac",
+    "description": "国际Mac软件资源站，含多类型修改版软件[citation:8]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-48",
+    "title": "Xmac",
+    "description": "极简Mac下载站，仅保留软件名与下载链接[citation:8]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-49",
+    "title": "Appstorrent",
+    "description": "俄罗斯技术团队维护的专业资源站[citation:8]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-50",
+    "title": "MacWk",
+    "description": "经典Mac下载站，免登录直接下载[citation:8]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-51",
+    "title": "豌豆荚",
+    "description": "安卓应用市场，收录近200万款软件，保留历史旧版本[citation:5][citation:9]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-52",
+    "title": "华为应用市场",
+    "description": "华为官方应用商店，应用经过官方安全检测[citation:5][citation:9]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-53",
+    "title": "小米应用商店",
+    "description": "小米官方应用平台，针对MIUI系统深度优化[citation:5]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-54",
+    "title": "OPPO软件商店",
+    "description": "OPPO官方应用市场，应用兼容性佳[citation:5]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-55",
+    "title": "vivo应用商店",
+    "description": "vivo官方应用分发平台[citation:9]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-56",
+    "title": "酷安",
+    "description": "数码爱好者社区，收录优质应用及玩机技巧[citation:9]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-57",
+    "title": "360手机助手",
+    "description": "老牌安卓应用市场，安全检测严格[citation:9]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-58",
+    "title": "百度手机助手",
+    "description": "百度旗下应用商店，资源丰富[citation:9]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-59",
+    "title": "CNET Download",
+    "description": "国际知名下载站，每款软件均有详细描述及评分[citation:7]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-60",
+    "title": "Softpedia",
+    "description": "全球最大软件目录之一，超100万款软件[citation:7]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-61",
+    "title": "GitHub Store",
+    "description": "开源应用商店，自动识别系统匹配GitHub安装包[citation:3]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-62",
+    "title": "五九软件库",
+    "description": "专注绿色免费软件，含便携版、破解版资源[citation:2]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-software-63",
+    "title": "樱咔资源",
+    "description": "绿色软件分享平台，配套技术教程文章[citation:10]",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-0",
+    "title": "GitHub",
+    "description": "全球代码托管",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-1",
+    "title": "GitLab",
+    "description": "代码托管平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-2",
+    "title": "掘金",
+    "description": "前端技术社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-3",
+    "title": "MDN",
+    "description": "Web标准文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-4",
+    "title": "LeetCode",
+    "description": "算法刷题平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-5",
+    "title": "牛客网",
+    "description": "笔试面试题库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-6",
+    "title": "Stack Overflow",
+    "description": "程序员问答",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-7",
+    "title": "CodePen",
+    "description": "在线前端演示",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-8",
+    "title": "开源中国",
+    "description": "国产开源社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-9",
+    "title": "菜鸟教程",
+    "description": "编程入门教程",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-10",
+    "title": "Stack Overflow",
+    "description": "全球程序员问答社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-11",
+    "title": "CSDN",
+    "description": "国内老牌IT技术社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-12",
+    "title": "InfoQ",
+    "description": "架构与技术实践",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-13",
+    "title": "W3School",
+    "description": "Web前端入门教程",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-14",
+    "title": "廖雪峰官方网站",
+    "description": "全栈系列教程",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-15",
+    "title": "NowCoder",
+    "description": "求职面试刷题",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-16",
+    "title": "LintCode",
+    "description": "算法与面试训练",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-17",
+    "title": "HackerRank",
+    "description": "国外编程刷题平台",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-18",
+    "title": "Codewars",
+    "description": "编程竞技练习",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-19",
+    "title": "JSRun",
+    "description": "在线JS运行调试",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-20",
+    "title": "CodeSandbox",
+    "description": "在线前端项目IDE",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-21",
+    "title": "StackBlitz",
+    "description": "在线Web IDE",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-22",
+    "title": "GitHub Docs",
+    "description": "GitHub官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-23",
+    "title": "DevDocs",
+    "description": "多语言API文档合集",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-24",
+    "title": "VuePress",
+    "description": "Vue驱动的静态网站",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-25",
+    "title": "V2EX",
+    "description": "极客技术社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-26",
+    "title": "SegmentFault",
+    "description": "思否开发者社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-27",
+    "title": "Python官方文档",
+    "description": "Python中文文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-28",
+    "title": "Go语言中文网",
+    "description": "Go学习与资料",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-29",
+    "title": "Spring.io",
+    "description": "Spring官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-30",
+    "title": "BootDoc",
+    "description": "前端CDN加速",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-31",
+    "title": "Can I Use",
+    "description": "浏览器兼容性查询",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-32",
+    "title": "Regex101",
+    "description": "在线正则测试",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-33",
+    "title": "JSON.cn",
+    "description": "JSON格式化校验",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-34",
+    "title": "Git教程",
+    "description": "Git官方中文教程",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-35",
+    "title": "Docker Docs",
+    "description": "Docker官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-36",
+    "title": "K8s中文文档",
+    "description": "Kubernetes中文指南",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-37",
+    "title": "Linux命令大全",
+    "description": "Linux常用命令查询",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-38",
+    "title": "LeetCode 题解",
+    "description": "算法题解参考",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-39",
+    "title": "Kubernetes官网",
+    "description": "容器编排事实标准，官方中文文档与教程",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-40",
+    "title": "Docker官网",
+    "description": "容器化平台官方站，含文档、镜像仓库与工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-41",
+    "title": "Linux命令大全",
+    "description": "Linux常用命令在线查询与速查手册",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-42",
+    "title": "正则表达式在线测试",
+    "description": "支持多语言的正则测试、解释与调试工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-43",
+    "title": "JSON.cn",
+    "description": "JSON格式化、压缩、校验与转义工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-44",
+    "title": "Can I use",
+    "description": "查询HTML、CSS、JS特性的浏览器兼容性",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-45",
+    "title": "Node.js官网",
+    "description": "JavaScript运行时官方文档与下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-46",
+    "title": "npm官网",
+    "description": "Node包管理器官方库与文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-47",
+    "title": "TypeScript官网",
+    "description": "JS超集语言官方文档与Playground",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-48",
+    "title": "Vue.js官网",
+    "description": "渐进式JS框架官方中文文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-49",
+    "title": "React官网",
+    "description": "UI库官方中文文档与教程",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-50",
+    "title": "Angular官网",
+    "description": "Web应用框架官方中文文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-51",
+    "title": "Webpack官网",
+    "description": "模块打包工具官方文档与配置指南",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-52",
+    "title": "Vite官网",
+    "description": "下一代前端工具链官方中文文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-53",
+    "title": "Python官网",
+    "description": "Python语言官方文档与下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-54",
+    "title": "PyPI",
+    "description": "Python包索引，查找第三方库",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-55",
+    "title": "Java官网",
+    "description": "Java官方文档与JDK下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-56",
+    "title": "Spring官网",
+    "description": "Java框架Spring官方文档与指南",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-57",
+    "title": "Go官网",
+    "description": "Go语言官方文档、教程与包索引",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-58",
+    "title": "Rust官网",
+    "description": "Rust语言官方文档与工具链",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-59",
+    "title": "crates.io",
+    "description": "Rust包注册官方站",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-60",
+    "title": "MySQL官网",
+    "description": "MySQL数据库官方文档与下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-61",
+    "title": "PostgreSQL官网",
+    "description": "开源数据库官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-62",
+    "title": "MongoDB官网",
+    "description": "NoSQL数据库官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-63",
+    "title": "Redis官网",
+    "description": "内存数据库官方文档与命令参考",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-64",
+    "title": "Git官网",
+    "description": "版本控制工具官方文档与Pro Git书籍",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-65",
+    "title": "Nginx官网",
+    "description": "Web服务器官方文档与配置说明",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-66",
+    "title": "Jenkins官网",
+    "description": "CI/CD自动化服务器官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-67",
+    "title": "Prometheus官网",
+    "description": "监控系统官方文档与查询语言指南",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-68",
+    "title": "Grafana官网",
+    "description": "可视化仪表板官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-69",
+    "title": "Terraform官网",
+    "description": "基础设施即代码官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-70",
+    "title": "AWS文档",
+    "description": "亚马逊云服务官方文档集",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-71",
+    "title": "Azure文档",
+    "description": "微软云官方中文文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-72",
+    "title": "Google Cloud文档",
+    "description": "谷歌云官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-73",
+    "title": "DevDocs",
+    "description": "聚合多语言API文档，离线可查",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-74",
+    "title": "OverAPI",
+    "description": "各大语言API速查卡片集",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-75",
+    "title": "Program Creek",
+    "description": "Java/Python等代码示例与API用法搜索",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-76",
+    "title": "GitHub Docs",
+    "description": "GitHub官方使用文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-77",
+    "title": "GitLab Docs",
+    "description": "GitLab官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-78",
+    "title": "Visual Studio Code",
+    "description": "编辑器官方文档与插件市场",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-79",
+    "title": "JetBrains 工具箱",
+    "description": "IDE官方文档与下载",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-80",
+    "title": "Postman官网",
+    "description": "API开发工具官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-81",
+    "title": "Swagger官网",
+    "description": "API设计工具官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-82",
+    "title": "OpenAPI规范",
+    "description": "RESTful API描述规范官方",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-83",
+    "title": "Markdown Guide",
+    "description": "Markdown语法完全指南",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-84",
+    "title": "Devhints",
+    "description": "各种技术速查表(cheatsheet)",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-85",
+    "title": "QuickRef.ME",
+    "description": "多语言编程速查参考",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-86",
+    "title": "Ray.so",
+    "description": "代码截图美化工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-87",
+    "title": "Carbon",
+    "description": "代码转美观图片分享",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-88",
+    "title": "Excalidraw",
+    "description": "手绘风格架构图绘制工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-89",
+    "title": "DB Diagram",
+    "description": "在线数据库关系图设计",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-90",
+    "title": "Quicktype",
+    "description": "JSON转各类语言类型定义",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-91",
+    "title": "Hoppscotch",
+    "description": "开源API请求调试工具",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-92",
+    "title": "JWT.io",
+    "description": "JWT令牌在线调试与解码",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-93",
+    "title": "GitIgnore.io",
+    "description": "自动生成.gitignore文件",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-94",
+    "title": "Choose a License",
+    "description": "开源许可证选择指南",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-95",
+    "title": "第一PHP社区",
+    "description": "PHP中文文档与代码示例",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-96",
+    "title": "Ruby China",
+    "description": "Ruby 社区与文档资源",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-97",
+    "title": "Laravel China",
+    "description": "Laravel 中文文档与社区",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-98",
+    "title": "Flutter 中文网",
+    "description": "Flutter 官方中文文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-99",
+    "title": "Android 开发者",
+    "description": "Android 官方开发文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-100",
+    "title": "Swift 官网",
+    "description": "Swift 语言官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-101",
+    "title": "Kotlin 官网",
+    "description": "Kotlin 语言官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-102",
+    "title": "Rust 语言中文",
+    "description": "Rust 中文社区与文档翻译",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-103",
+    "title": "Zig 官网",
+    "description": "Zig 语言官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-104",
+    "title": "Deno 官网",
+    "description": "Deno 运行时官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-105",
+    "title": "Bun 官网",
+    "description": "Bun 工具链官方文档",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-106",
+    "title": "ES6 入门教程",
+    "description": "阮一峰 ES6 中文教程",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "card-programming-107",
+    "title": "网道 WangDoc",
+    "description": "Web 技术中文文档集合",
+    "link": "",
+    "page": "/"
+  },
+  {
+    "id": "game-2048",
+    "title": "2048",
+    "description": "🎲",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-abyss-devourer",
+    "title": "深渊吞噬者",
+    "description": "🌑",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-adventure-island",
+    "title": "冒险岛",
+    "description": "🏝️",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-auction-chaos",
+    "title": "圣职乱斗",
+    "description": "🔨",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-chess",
+    "title": "国际象棋",
+    "description": "♟️",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-chinese-chess",
+    "title": "中国象棋",
+    "description": "🐘",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-contra",
+    "title": "魂斗罗",
+    "description": "🔫",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-cycber-assassin",
+    "title": "赛博刺客",
+    "description": "🤖",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-dream-towerdefence",
+    "title": "梦幻塔防",
+    "description": "🏰",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-endless-warplane",
+    "title": "无尽战机",
+    "description": "✈️",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-hunter-shooting",
+    "title": "猎手射击",
+    "description": "🎯",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-kill-box",
+    "title": "消灭方块",
+    "description": "🧩",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-piano-tiles",
+    "title": "钢琴块",
+    "description": "🎹",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-poker-blackjack",
+    "title": "扑克21点",
+    "description": "🃏",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-starfall-night",
+    "title": "星陨之夜",
+    "description": "🌟",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-star-strike-forse",
+    "title": "星际打击部队",
+    "description": "🚀",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "game-zombie-towerdefence",
+    "title": "僵尸塔防",
+    "description": "🧟",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "futureNotebookIcon",
+    "title": "记事本",
+    "description": "系统应用: notebook",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "futureBookshelfIcon",
+    "title": "书架",
+    "description": "系统应用: bookshelf",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "futureDrawingBoardIcon",
+    "title": "画板",
+    "description": "系统应用: drawing-board",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "futureVideoIcon",
+    "title": "视频",
+    "description": "系统应用: video",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "futureCodeIcon",
+    "title": "代码库",
+    "description": "系统应用: code",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "futureShopIcon",
+    "title": "商城",
+    "description": "系统应用: shop",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "futureLuckIcon",
+    "title": "今日运势",
+    "description": "系统应用: luck",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "futureComputerIcon",
+    "title": "超级计算",
+    "description": "系统应用: computer",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "futureLinkStationIcon",
+    "title": "网址导航",
+    "description": "系统应用: link-station",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "futureYocimIcon",
+    "title": "YOCIM助手",
+    "description": "系统应用: yocim",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "futureCssIcon",
+    "title": "CSS特效",
+    "description": "系统应用: css",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "futureLiveIcon",
+    "title": "直播",
+    "description": "系统应用: live",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "futureTravelIcon",
+    "title": "旅行",
+    "description": "系统应用: travel",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "futureTrashIcon",
+    "title": "回收站",
+    "description": "系统应用: trash",
+    "link": "",
+    "page": "/pages\\system.html"
+  },
+  {
+    "id": "card-comic-0",
+    "title": "玩乐关系",
+    "description": "青梅竹马与恋爱游戏？新晋王者，插画风格犹如路人女主的进化。夺下文庫部門榜首，引发热烈讨论。[citation:3][citation:6]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-1",
+    "title": "关于我在无意间被隔壁的天使变成废柴这件事 11.5",
+    "description": "系列现象级作品。东立2026动漫节推出会場限定版与特装版，短篇集收录甜蜜日常。[citation:2][citation:3]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-2",
+    "title": "败北女角太多了！",
+    "description": "温水君与遗憾败女们的青春。改编漫画《敗北女角太多了！@comic 5》2026年2月上市，系列持续爆红。[citation:2][citation:3]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-3",
+    "title": "不时轻声地以俄语遮羞的邻座艾莉同学 (10)",
+    "description": "2026台北动漫节首卖，限定版含布掛画+皮革吊饰，系列累计突破550万册。[citation:1][citation:3]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-4",
+    "title": "青春猪头少年不会梦到白沙灘女王＋",
+    "description": "特装版附应援巾+压克力立牌杯垫组+炫彩色纸。咲太和麻衣的新故事。[citation:1]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-5",
+    "title": "靠死亡游戏混饭吃。(7)",
+    "description": "获得「这本轻小说真厉害！」新作部门第1名，动画2026年1月播出。角川限定版含炫彩色纸+环保杯套。[citation:1][citation:3]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-6",
+    "title": "无职转生～蛇足篇～ (3) 无职红毯",
+    "description": "卢迪乌斯孩子们的故事。原作老师来台签名，限定版收录8P短篇+布掛画。[citation:1]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-7",
+    "title": "弹珠汽水瓶里的千岁同学 Days of Endless Summer",
+    "description": "东立动漫节推出收录珍贵短篇的总集篇，询问度超高。[citation:2]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-8",
+    "title": "我们不可能成为恋人！绝对不行。(※似乎可行？) 短篇集",
+    "description": "系列动画化超强作品，东立推出短篇集。真厉害2026排名15位。[citation:2][citation:3]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-9",
+    "title": "超时空辉夜姬！",
+    "description": "3月第一周销量8663部登顶，角川1月新刊，科幻恋爱喜剧话题作。[citation:8]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-10",
+    "title": "异世界悠闲农家20",
+    "description": "2026年2月发售，周销5300+部，种田流代表长销系列。[citation:8]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-11",
+    "title": "为美好的世界献上祝福！ 绕道而行！4",
+    "description": "素晴系列新外传，3月发售即周榜第三，销量5149部。[citation:8]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-12",
+    "title": "義妹生活",
+    "description": "浅村悠太与义妹绫濑沙季的微妙距离。2024动画化后热度延续。[citation:3]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-13",
+    "title": "转学后班上的清纯可爱美少女，竟是小时候玩在一起的哥儿们",
+    "description": "角川Sneaker人气作，2026年TV动画，长谷川育美主役。青梅竹马性别反转？[citation:7]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-14",
+    "title": "夜暗婚约 前世宿缘与虚假婚约者",
+    "description": "拥有异能的少女与孤高队长的轮回婚恋故事。2026年2月改编漫画开始连载。[citation:5]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-15",
+    "title": "判处勇者刑 刑罚勇者9004队服刑记录",
+    "description": "勇者＝最残酷刑罚，犯罪者组成的“自杀小队”对抗魔王军。1月新番热议中。[citation:9]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-16",
+    "title": "持续狩猎史莱姆三百年，不知不觉就练到LV Max (20)",
+    "description": "东立2026动漫节首卖特装版，收录番外篇与小册子。高原魔女与精灵女孩的悠闲日常再开，特典附赠布海报。[citation:2]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-17",
+    "title": "我当备胎女友也没关系。 (6)",
+    "description": "早坂澪的复杂感情新展开。角川2026年2月推出通常版与特装版，附赠32P小册子〈她的真心〉。[citation:1][citation:3]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-18",
+    "title": "间谍教室 (12) 短篇集 忘我境界",
+    "description": "灯火与焰的日常任务？2026年3月新刊，特装版收录广播剧CD「花园与幽灵」，系列累计突破400万。[citation:1]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-19",
+    "title": "家里蹲吸血姬的苦闷 (8)",
+    "description": "可玛莉与七红天最终决战开幕！系列累计200万部，2026年2月发售即紧急重版，限定版附设定资料集。[citation:3][citation:7]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-20",
+    "title": "S级怪兽贝希摩斯被误认成小猫，成为精灵女孩的骑士(宠物)一起生活 (7)",
+    "description": "塔妮亚与球球(贝希摩斯)的冒险，2026年1月新刊。改编漫画《贝希摩斯小猫日常》好评连载中。[citation:5]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-21",
+    "title": "处刑少女的生存之道 (8)",
+    "description": "梅诺与灯里走向因果尽头。2026年3月限定版附赠「异端巡礼」设定集+明信片，系列即将完结。[citation:3][citation:6]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-22",
+    "title": "不时轻声地以俄语遮羞的邻座艾莉同学 ももこ Art Works",
+    "description": "收录艾莉系列精美插画、动画设定、短篇小说。2026动漫节限定版附布挂画与复制原画。[citation:1][citation:3]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-23",
+    "title": "我的幸福婚约 番外短篇集 2026",
+    "description": "和风奇幻恋爱标杆作品，2026台北动漫节东立首卖特装版，收录未公开甜蜜番外，动画第二季2026年7月预定播出。[citation:1][citation:4]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-24",
+    "title": "关于邻家的大姐姐不知不觉把我惯成了废人这件事 12",
+    "description": "邻家天使作者另一大人气系列，2026年2月最新卷发售，TV动画制作决定，系列累计突破200万册。[citation:3][citation:7]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-25",
+    "title": "冷淡的佐藤同学只对我撒娇 10",
+    "description": "校园纯爱天花板系列，2026动漫节东立推出限定版，附亚克力立牌与广播剧CD，第二季动画热播中，周榜稳居前列。[citation:2][citation:8]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-26",
+    "title": "Re:从零开始的异世界生活 35",
+    "description": "异世界标杆作品最终章高潮展开，2026年2月发售即紧急重版，系列累计突破1300万册，限定版附特典小册子与声优签名色纸。[citation:3][citation:7]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-27",
+    "title": "继母的拖油瓶是我的前女友 短篇集2",
+    "description": "年下前女友与重组家庭的酸甜恋爱，2026年3月推出特装版，收录全彩插画与未公开日常短篇，系列累计突破300万册。[citation:1][citation:3]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-28",
+    "title": "魔王学院的不适任者～史上最强的魔王始祖，转生就读子孙们的学校～ 15",
+    "description": "史上最强魔王转生爽文标杆，2026年第三季动画7月播出，最新卷限定版附动画原画集与角色布挂画，系列累计突破350万册。[citation:7][citation:9]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-29",
+    "title": "终将成为最强炼金术师？ 9",
+    "description": "少女转生炼金术师的成长物语，2026年1月最新卷发售，登顶百合轻小说榜单，改编漫画持续热销，动画化呼声极高。[citation:3][citation:5]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-30",
+    "title": "刀剑神域 27 Unital Ring Ⅶ",
+    "description": "现象级网游轻小说20周年里程碑新作，2026年3月全球同步发售，限定版附abec全新插画复制原画与纪念金属牌，系列累计突破3000万册。[citation:1][citation:6]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-comic-31",
+    "title": "最弱魔物使开始了捡垃圾之旅 动画化纪念版",
+    "description": "反套路异世界治愈系作品，2026年1月动画播出热度暴涨，角川推出动画纪念限定版，收录声优访谈与全新番外短篇，周榜销量稳居前列。[citation:8][citation:9]",
+    "link": "",
+    "page": "/pages\\novel.html"
+  },
+  {
+    "id": "card-music-0",
+    "title": "アイドル",
+    "description": "Billboard Global Excl. U.S. 日音首次夺冠。急速变化的曲风完美演绎演艺圈光与影，跨越语言的现象级神曲 [citation:2]。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-1",
+    "title": "Bling-Bang-Bang-Born",
+    "description": "Billboard Japan 年榜第一，中毒性副歌引发全球BBBB舞蹈，一响就想跟着跳 [citation:2]。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-2",
+    "title": "剪影 (シルエット)",
+    "description": "2026年3月达成自身首次累计2亿播放 [citation:9]。跨越时代的火影国歌，海外粉丝大合唱定番 [citation:2]。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-3",
+    "title": "IRIS",
+    "description": "米津紧盯原作漫画创作，激烈战斗与哀伤交织。2025年9月上映前在美国活动率先公开，引爆期待 [citation:2]。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-4",
+    "title": "遥か彼方",
+    "description": "2002年独立时期作品，被选为火影OP后在海外获得压倒性支持，2024年重新录制，依然撼动灵魂 [citation:2]。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-5",
+    "title": "GO!!!",
+    "description": "2004年单曲，2024年4月推出20周年纪念8cm CD。充满能量，现场大合唱必备 [citation:2]。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-6",
+    "title": "燦々デイズ",
+    "description": "二选一榜单胜率57.7% [citation:4]。轻快旋律完美配合海边的恋爱氛围，漫改天花板级OP。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-7",
+    "title": "ないない",
+    "description": "二选一榜单57.6%胜率 [citation:4]。ReoNa的“绝望嗓音”与哥特世界绝配，耐人寻味。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-8",
+    "title": "アポリア",
+    "description": "二选一榜57.5%胜率 [citation:4]。摇滚与真理追寻的共鸣，充满知性热血。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-9",
+    "title": "Stay Alive",
+    "description": "二选一榜57.4%胜率 [citation:4]。艾米莉娅角色歌，温柔的嗓音治愈无数人。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-10",
+    "title": "月光传说 (ムーンライト伝説)",
+    "description": "1992年单曲，美国漫展引发大合唱的日本代表动画歌。前奏一出即刻心跳 [citation:2]。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-11",
+    "title": "Trust You",
+    "description": "二选一榜57.7%胜率 [citation:4]。温柔而坚定的歌声，代表高达系列柔情一面。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-12",
+    "title": "天使にふれたよ!",
+    "description": "二选一榜57.6%胜率 [citation:4]。轻音部毕业季的催泪弹，无数人的入坑回忆。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-13",
+    "title": "イマジネーション",
+    "description": "二选一榜57.6% [citation:4]。只要前奏响起，乌野的翅膀就开始飞翔，热血代名词。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-14",
+    "title": "エウテルペ",
+    "description": "二选一57.5% [citation:4]。chelly空灵的声音，樱满集与祈的悲歌。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-15",
+    "title": "センチメンタルクライシス",
+    "description": "二选一57.4% [citation:4]。少女心爆发，完美诠释辉夜大小姐的傲娇。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-16",
+    "title": "ふたつの鼓動と赤い罪",
+    "description": "很多人的哥特启蒙，双胞胎组合的迷人声线，优姬与枢的宿命。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-17",
+    "title": "君の知らない物語",
+    "description": "星空下的告白曲，nagi清澈嗓音，十年后依然在耳边回响。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-18",
+    "title": "ライオン",
+    "description": "菅野洋子神级作曲，May\"n的爆发力，雪露女王的霸气巅峰。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-19",
+    "title": "心絵",
+    "description": "充满希望与勇气，无数人的童年应援曲，一听就充满力量。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-20",
+    "title": "君のせいで愛してる",
+    "description": "2026年4月新番 [citation:6]。HoneyWorks 招牌青春酸甜，CHiCO 嗓音活力全开。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-21",
+    "title": "リトルワールド",
+    "description": "新锐乐队，透明感 ED，值得关注 [citation:6]。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-22",
+    "title": "人誑し (ひとたらし)",
+    "description": "南方之星桑田佳祐为落语题材动画献唱，4月4日开播 [citation:6]。破格合作。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-23",
+    "title": "HIDE AND SEEK",
+    "description": "2026年4月8日放送，(G)I-DLE 参与动画主题歌 [citation:6]，日韩碰撞。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-24",
+    "title": "初恋モーメント",
+    "description": "4月4日新番，清新恋爱摇滚 [citation:6]，挖掘潜力新声。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-25",
+    "title": "木漏れ日坂",
+    "description": "Galileo Galilei 新作，4月9日首播 [citation:6]，清爽少年音再临。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-26",
+    "title": "サブマリンユース",
+    "description": "4月7日开播 [citation:6]，原作轻小说人气极高，OP充满青春酸涩感。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-27",
+    "title": "启程之歌",
+    "description": "2026开年王炸，乌屋茶房创作，间奏融入宝可梦中心BGM，MV超500万播放 [citation:8]。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-28",
+    "title": "Cusp",
+    "description": "4月12日开播 [citation:6]，ASCA 充满力量的歌喉，魔法奇幻题材绝配。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-music-29",
+    "title": "梦色轨迹",
+    "description": "2026年2月发布，永夜蛰居编曲 [citation:3]。hanser 温柔声线，二次元圈内高人气。",
+    "link": "",
+    "page": "/pages\\music.html"
+  },
+  {
+    "id": "card-Game-0",
+    "title": "侠盗猎车手6",
+    "description": "开放世界天花板，Vice City回归，规模与细节传闻达“5A”级。2026年最受期待，没有之一。[citation:5]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-1",
+    "title": "生化危机 Requiem",
+    "description": "FBI新主角格蕾丝，可切换第一/三人称，重返浣熊市。经典生存恐怖新章。[citation:1][citation:5]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-2",
+    "title": "仁王3",
+    "description": "继承前作深度战斗与战国题材，动作系统再进化， Team Ninja 刀剑哲♂学新高度。[citation:5]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-3",
+    "title": "噬血代碼2",
+    "description": "吸血鬼末日题材“二次元魂系”，全新吸血鬼猎人主角，风格化吸血战斗。[citation:5]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-4",
+    "title": "007：初露锋芒",
+    "description": "年轻邦德起源故事，延续《HITMAN》多途径暗杀设计，电影级间谍沙盒。[citation:1]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-5",
+    "title": "赤血沙漠",
+    "description": "开放世界奇幻史诗，佣兵团战斗、攀爬、魔法，多次展会惊艳，3A级韩系新IP。[citation:5]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-6",
+    "title": "鬼武者：剑之道",
+    "description": "宫本武藏为主角，一闪系统回归，江户初期幻魔剑斗，系列重生之作。[citation:5]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-7",
+    "title": "控制：共鸣",
+    "description": "迪伦视角，超自然曼哈顿，变异近战武器“Aberrant”，Remedy式怪诞叙事。[citation:1][citation:5]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-8",
+    "title": "泰坦之旅2",
+    "description": "神话ARPG经典续作，职业搭配+希腊/埃及神话，刷宝玩法升级。[citation:5]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-9",
+    "title": "极限竞速 地平线6",
+    "description": "日本虚构地图，风光与改装文化极致融合，地平线嘉年华再临。[citation:5]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-10",
+    "title": "巧克力与香兰子 世界链接",
+    "description": "系列最新作，猫娘新故事+餐车战斗，全语音Live2D，温馨喜剧。[citation:2]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-11",
+    "title": "无尽猎杀",
+    "description": "肉鸽+幸存者like，地狱恶魔猎手，武器类型丰富(深渊/炼狱/腥血)，爽快弹幕。[citation:10]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-12",
+    "title": "雪中悍刀行",
+    "description": "知名IP改编，武侠撤离玩法+近战系统，UE5打造，PVPVE博弈。[citation:9]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-13",
+    "title": "剑来",
+    "description": "UE5仙侠单机，动作RPG，基于烽火戏诸侯小说，视觉全新演绎。[citation:9]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-14",
+    "title": "Big Walk",
+    "description": "开放世界合作冒险，与朋友探索解谜、看落日，治愈系社交。[citation:1]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-15",
+    "title": "Mixtape",
+    "description": "青少年夜晚冒险，收录Joy Division等金曲，一封给音乐的情书。[citation:1]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-16",
+    "title": "英雄传说 界之轨迹",
+    "description": "轨迹系列最新作，范恩故事延续，指令战斗进化，塞姆利亚大陆新章。[citation:1]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-17",
+    "title": "堕落之主2",
+    "description": "生者与亡者双界切换，魂系风格+更宏大的黑暗奇幻。[citation:1]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-18",
+    "title": "星球大战：零号连队",
+    "description": "XCOM式战术+星战，回合制策略小队战斗，光剑+爆能枪协同。[citation:1]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-19",
+    "title": "超级肉肉哥 3D",
+    "description": "经典平台跳跳乐3D化，难度依旧变态，黑暗世界回归。[citation:1]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-20",
+    "title": "全境封锁：曙光",
+    "description": "开放世界刷宝射击，暗区+PVEvP，填补1代与2代之间的剧情。[citation:7]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-21",
+    "title": "巧克力与香兰子 世界链接",
+    "description": "猫娘新作，全语音+餐车战斗，世界各地新猫娘登场。[citation:2]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-22",
+    "title": "血之继承者",
+    "description": "吸血鬼题材MMO，限制级暗黑风格，PK团战为核心，分阶段保底抽卡。[citation:6]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-23",
+    "title": "不可思议的刀剑与魔法",
+    "description": "竖屏放置，孙悟空宙斯同框，送1000抽，真·摸鱼神器。[citation:3]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-24",
+    "title": "凡人灵境游",
+    "description": "竖屏仙侠，赛季制+轮回，云海渲染，佛系修仙首选。[citation:4]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-25",
+    "title": "逆战：未来",
+    "description": "IP续作，时空追猎+大地图射击，赛季更新。[citation:4]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-26",
+    "title": "明日方舟：终末地",
+    "description": "方舟宇宙续作，3D箱庭探索+实时战术，干员连携。[citation:4][citation:5]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-27",
+    "title": "热血西游",
+    "description": "经典西游+封神元素，跨服魔族讨伐，每日送新英雄。[citation:8]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-28",
+    "title": "吉星派对",
+    "description": "骰子驱动关卡，4人同屏互坑，角色技能各异，轻松社交。[citation:8]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Game-29",
+    "title": "时尚百货城",
+    "description": "从街角小店到商业体，员工采购/陈列/营销，策略化人才梯队。[citation:4]",
+    "link": "",
+    "page": "/pages\\Game.html"
+  },
+  {
+    "id": "card-Comic-0",
+    "title": "十月堂舊書事",
+    "description": "旧书店主与客人的温暖际遇，用一本书串联起陌生人的命运。2026男生榜冠军，被誉为“爱书人必读的诗意物语”，细腻画风与人文关怀极佳 [citation:1][citation:8]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-1",
+    "title": "半分姉弟",
+    "description": "混血儿群体在日本的身份认同群像剧，触及“异类感”与血缘纽带。情感刻画深邃，登顶女生榜当之无愧 [citation:1][citation:8]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-2",
+    "title": "邻座同学用那种眼神看过来",
+    "description": "AnimeJapan 2026 读者票选第一，纯爱喜剧巅峰！双向暗恋、各种误会和心动拉扯，让人忍不住傻笑。动画化预定潜力股 [citation:4]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-3",
+    "title": "魔男伊奇",
+    "description": "以“魔法即生命体”的独创世界观，少年猎人以最原始方式颠覆魔法常识。战斗作画炸裂，奇幻迷必追 [citation:1][citation:8]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-4",
+    "title": "邪神便當店",
+    "description": "曾是引发战争的邪神，如今沦落为人间便当店老板娘，思考“明天配什么菜”？搞笑又暖心的神明日常 [citation:1][citation:8]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-5",
+    "title": "隙間",
+    "description": "台湾漫画家高妍作品。女大生赴冲绳交换，在祖母离世与失恋后重新寻找“自我”。画面诗意，细腻疗愈 [citation:1][citation:8]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-6",
+    "title": "Strikeout Pitch",
+    "description": "传说中的“球队终结者”只能投三球？无法参与正式比赛的天才投手，三周最后的夏天。热血又惆怅，双榜认证 [citation:1][citation:4]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-7",
+    "title": "屁股戰士",
+    "description": "名字离谱但意外燃到爆的搞笑战斗漫画，用臀部必杀技拯救世界？AnimeJapan票选第三，可见人气多魔性 [citation:4]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-8",
+    "title": "魔法咪路咪路New",
+    "description": "时隔20年完全新作！2026年3月3日小学馆Ciao开始连载。咪路、枫的日常全新展开，老粉狂喜，新一代也能入坑 [citation:2]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-9",
+    "title": "藥師少女的獨語：小蘭的故事",
+    "description": "猫猫背后的好友小兰视角！从贫穷少女到后宫宫女，与猫猫相遇的轨迹。2026年10月英文版发售，粉丝必读 [citation:5]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-10",
+    "title": "最喜歡大食！望月小姐",
+    "description": "暴食漫画的新境界！看似温柔的女性私下追求热量巅峰，大份量美食的搞笑冲击，禁忌的美食题材 [citation:1][citation:8]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-11",
+    "title": "靈靈總總拍不到",
+    "description": "以灵异节目为舞台，拍不到的诡异存在却逐渐侵蚀现实。新锐恐怖漫画，氛围绝佳 [citation:4]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-12",
+    "title": "#辣妹與辣妹的百合",
+    "description": "两个辣妹之间纯粹的百合故事，SNS风格分镜，甜度爆表又时髦。年轻人气爆棚 [citation:4]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-13",
+    "title": "公司和私生活－ON AND OFF－",
+    "description": "冷酷职场前辈与宅女后辈的双面生活共鸣喜剧。社畜共鸣+甜蜜日常 [citation:4]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-14",
+    "title": "My Ex-Boyfriend Loves Boys‘ Love",
+    "description": "前男友在书店BL区重逢！两人因BL再燃奇妙缘分的温馨喜剧。设定脑洞清奇，2026年9月英文版 [citation:5]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-15",
+    "title": "恐龍庇護所",
+    "description": "在恐龙庇护所工作的青年与形形色色古生物的温情日常。治愈且充满想象力 [citation:4]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-16",
+    "title": "極樂街",
+    "description": "混乱街区里处理“不该存在之物”的两人，动作场面与妖异氛围极佳，JUMP+系新星 [citation:4]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-17",
+    "title": "百人魂",
+    "description": "继承神社的少年与一百个灵魂的共存战斗。灵异+青春，2026备受期待 [citation:4]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-18",
+    "title": "怪獣を解剖する",
+    "description": "怪兽学者解剖巨大怪兽尸体，遇见能听见怪兽鸣叫的鱼贩。知识欲与神秘交错，哲学科幻佳作 [citation:1][citation:8]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-Comic-19",
+    "title": "Boyish Girlfriend",
+    "description": "从小像男生的女友，在学校穿猫耳女仆装被男友发现！反差萌恋爱喜剧，9月英文版 [citation:5]。",
+    "link": "",
+    "page": "/pages\\Comic.html"
+  },
+  {
+    "id": "card-{{ id }}",
+    "title": "{{ title }}",
+    "description": "{{ recommendation }}",
+    "link": "",
+    "page": "/pages\\examples\\example-acgn.html"
+  }
+]

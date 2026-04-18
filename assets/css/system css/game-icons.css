@@ -1,0 +1,248 @@
+/* 游戏图标样式 - 未来科技风格 */
+
+/* 游戏图标容器 */
+.game-icon-container {
+    position: relative;   
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: 0;
+    width: 80px;
+}
+
+/* 未来风格游戏图标 */
+.future-game-icon {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    width: 80px;
+    transition: transform 0.3s ease;
+}
+
+.future-game-icon:hover {
+    transform: translateY(-5px);
+}
+
+/* 游戏图标主体 */
+.game-icon-shape {
+    position: relative;
+    width: 75px;
+    height: 75px;
+    background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+    border-radius: 15px;
+    box-shadow: 
+        0 10px 20px rgba(0, 180, 219, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.future-game-icon:hover .game-icon-shape {
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    box-shadow: 
+        0 15px 30px rgba(0, 180, 219, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.2),
+        inset 0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+/* 游戏图标符号 */
+.game-symbol {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 24px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    opacity: 0.9;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.future-game-icon:hover .game-symbol {
+    opacity: 1;
+    transform: scale(1.1);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+}
+
+/* 游戏图标动画效果 */
+.game-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    animation: gamePulse 2s infinite ease-in-out;
+}
+
+@keyframes gamePulse {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.05);
+    }
+}
+
+.future-game-icon:hover .game-pulse {
+    animation-duration: 1s;
+}
+
+/* 游戏图标光效 */
+.game-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: radial-gradient(circle at center, rgba(0, 198, 255, 0.2) 0%, rgba(0, 114, 255, 0) 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.future-game-icon:hover .game-glow {
+    opacity: 1;
+}
+
+/* 游戏图标标签 */
+.game-icon-label {
+    margin-top: 8px;
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #e0e0ff;
+    text-shadow: 0 0 10px rgba(0, 180, 219, 0.5);
+    letter-spacing: 0.5px;
+    text-align: center;
+    line-height: 1.2;
+    max-width: 80px;
+    word-wrap: break-word;
+}
+
+/* 点击动画效果 */
+@keyframes gameIconClick {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+.game-icon-clicked {
+    animation: gameIconClick 0.3s ease;
+}
+
+/* 游戏图标点击效果 */
+.future-game-icon:active .game-icon-shape {
+    transform: scale(0.95);
+    box-shadow: 
+        0 5px 15px rgba(0, 180, 219, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* 不同游戏类型的点击效果 */
+.game-icon-puzzle:active .game-icon-shape {
+    box-shadow: 
+        0 5px 15px rgba(157, 80, 187, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.game-icon-action:active .game-icon-shape {
+    box-shadow: 
+        0 5px 15px rgba(255, 65, 108, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.game-icon-strategy:active .game-icon-shape {
+    box-shadow: 
+        0 5px 15px rgba(86, 171, 47, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.game-icon-card:active .game-icon-shape {
+    box-shadow: 
+        0 5px 15px rgba(244, 107, 69, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.game-icon-shooting:active .game-icon-shape {
+    box-shadow: 
+        0 5px 15px rgba(33, 147, 176, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* 不同游戏类型的颜色变体 */
+
+/* 益智游戏 - 紫色 */
+.game-icon-puzzle .game-icon-shape {
+    background: linear-gradient(135deg, #9d50bb 0%, #6e48aa 100%);
+}
+
+.game-icon-puzzle:hover .game-icon-shape {
+    background: linear-gradient(135deg, #b066d6 0%, #7d5bbe 100%);
+}
+
+.game-icon-puzzle .game-icon-label {
+    text-shadow: 0 0 10px rgba(157, 80, 187, 0.5);
+}
+
+/* 动作游戏 - 红色 */
+.game-icon-action .game-icon-shape {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+}
+
+.game-icon-action:hover .game-icon-shape {
+    background: linear-gradient(135deg, #ff5c8a 0%, #ff6b4a 100%);
+}
+
+.game-icon-action .game-icon-label {
+    text-shadow: 0 0 10px rgba(255, 65, 108, 0.5);
+}
+
+/* 策略游戏 - 绿色 */
+.game-icon-strategy .game-icon-shape {
+    background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+}
+
+.game-icon-strategy:hover .game-icon-shape {
+    background: linear-gradient(135deg, #6bc437 0%, #b8f073 100%);
+}
+
+.game-icon-strategy .game-icon-label {
+    text-shadow: 0 0 10px rgba(86, 171, 47, 0.5);
+}
+
+/* 棋牌游戏 - 橙色 */
+.game-icon-card .game-icon-shape {
+    background: linear-gradient(135deg, #f46b45 0%, #eea849 100%);
+}
+
+.game-icon-card:hover .game-icon-shape {
+    background: linear-gradient(135deg, #ff7b55 0%, #ffb859 100%);
+}
+
+.game-icon-card .game-icon-label {
+    text-shadow: 0 0 10px rgba(244, 107, 69, 0.5);
+}
+
+/* 射击游戏 - 蓝色 */
+.game-icon-shooting .game-icon-shape {
+    background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+}
+
+.game-icon-shooting:hover .game-icon-shape {
+    background: linear-gradient(135deg, #2ba3c0 0%, #7de5fd 100%);
+}
+
+.game-icon-shooting .game-icon-label {
+    text-shadow: 0 0 10px rgba(33, 147, 176, 0.5);
+}

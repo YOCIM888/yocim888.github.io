@@ -1,0 +1,540 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(135deg, #0a2e38 0%, #1a1a2e 100%);
+    color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    max-width: 1400px;
+    gap: 10px;
+    padding: 10px;
+}
+
+header {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #ffd700, #ff8c00, #ff4500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.game-content {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    width: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.board-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    min-height: 0;
+}
+
+/* 棋盘 Grid 布局，每个单元格代表一个交叉点 */
+.board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    aspect-ratio: 9/10;
+    background: #e8c48e;
+    border: 8px solid #8b4513;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* 绘制棋盘线（穿过每个单元格中心） */
+.board::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        /* 竖线：每个格子中间一条 */
+        linear-gradient(to right, #8b4513 1px, transparent 1px),
+        /* 横线：每个格子中间一条 */
+        linear-gradient(to bottom, #8b4513 1px, transparent 1px);
+    background-size: calc(100% / 9) calc(100% / 10), calc(100% / 9) calc(100% / 10);
+    background-position: calc(100% / 9 / 2) 0, 0 calc(100% / 10 / 2);
+    background-repeat: repeat;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+/* 楚河汉界文字 */
+.river {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 2.5vw;
+    color: #8b4513;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+    letter-spacing: 4px;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0.7;
+}
+
+/* 九宫区域容器（仅用于可能的高亮，不画斜线） */
+.palace {
+    position: absolute;
+    width: 33.33%;
+    height: 30%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 6;
+    /* 如果需要显示九宫范围，可加一个极浅的虚线框，但通常不画 */
+    /* border: 1px dashed rgba(139, 69, 19, 0.3); */
+}
+
+.palace.bottom {
+    top: auto;
+    bottom: 0;
+}
+
+/* 交叉点单元格 */
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    background: transparent;
+    z-index: 10;
+}
+
+.cell:hover {
+    background-color: rgba(210, 165, 91, 0.4);
+}
+
+.cell.selected {
+    background-color: rgba(255, 215, 0, 0.4);
+}
+
+.cell.valid-move {
+    background-color: rgba(50, 205, 50, 0.3);
+}
+
+.cell.valid-capture {
+    background-color: rgba(220, 20, 60, 0.3);
+}
+
+/* 圆形棋子（确保正圆） */
+.piece {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 2.2vw;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: 2px solid #3a281a;
+    background: #f5e6d3;
+    color: #2d1f0c;
+    text-shadow: none;
+    z-index: 20;
+}
+
+.piece:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
+}
+
+.red {
+    background: radial-gradient(circle at 30% 30%, #f44336, #b71c1c);
+    color: #fff9c4;
+    border-color: #ffd700;
+}
+
+.black {
+    background: radial-gradient(circle at 30% 30%, #424242, #1e1e1e);
+    color: #e0e0e0;
+    border-color: #b0bec5;
+}
+
+/* 控制区默认样式（桌面） */
+.controls {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    min-width: 300px;
+    background: rgba(30, 30, 46, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    overflow-y: auto;
+    height: 100%;
+}
+
+.game-info {
+    background: rgba(40, 40, 60, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+.current-player {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.move-history {
+    height: 120px;
+    overflow-y: auto;
+    background: rgba(20, 20, 30, 0.9);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.move-history div {
+    padding: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.move-history div:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.mode-selector, .difficulty-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    color: #ffd700;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.mode-btn, .difficulty-btn, .game-btn {
+    padding: 12px 15px;
+    background: linear-gradient(145deg, #2a2a4a, #1a1a2e);
+    color: #f0f0f0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 1;
+    font-weight: 600;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.mode-btn:hover, .difficulty-btn:hover, .game-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.mode-btn.active, .difficulty-btn.active {
+    background: linear-gradient(145deg, #ff8c00, #ff4500);
+    color: white;
+}
+
+.game-btn {
+    background: linear-gradient(145deg, #1e90ff, #1c86ee);
+    font-size: 1rem;
+}
+
+.game-btn.reset {
+    background: linear-gradient(145deg, #ff4757, #ff3838);
+}
+
+.game-btn.undo {
+    background: linear-gradient(145deg, #2ed573, #1dd1a1);
+}
+
+.status-message {
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #ffd700;
+    font-size: 0.9rem;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.captured-pieces {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.captured-pieces div {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.rules {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #aaa;
+    line-height: 1.4;
+}
+
+/* 响应式：手机端紧凑布局 */
+@media (max-width: 1100px) {
+    .game-content {
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+    }
+    
+    .board-container {
+        width: 100%;
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .board {
+        width: auto;
+        height: 100%;
+        max-width: 80vh;
+    }
+    
+    .piece {
+        font-size: 3.5vw;
+    }
+    
+    .controls {
+        width: 100%;
+        min-width: auto;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .board-container {
+        height: 50vh;
+        min-height: 350px;
+    }
+
+    .piece {
+        font-size: 4vw;
+    }
+
+    /* 控制区改为两列网格布局，且高度自适应（不溢出） */
+    .controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+        padding: 12px;
+        height: auto;          /* 取消固定高度，由内容撑开 */
+        overflow-y: visible;   /* 取消滚动，由内部记录容器处理 */
+        min-height: 0;
+    }
+
+    /* 左侧按钮区 */
+    .controls-left {
+        grid-column: 1 / 2;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* 右侧走棋记录区 */
+    .controls-right {
+        grid-column: 2 / 3;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 底部公共信息横跨两列 */
+    .captured-pieces,
+    .rules {
+        grid-column: 1 / -1;
+        margin: 5px 0 0 0;
+    }
+
+    /* 移除多余的底部间距 */
+    .controls-left > *,
+    .controls-right > * {
+        margin-bottom: 0;
+    }
+
+    /* 游戏信息容器紧凑 */
+    .game-info {
+        margin-bottom: 0;
+        padding: 10px;
+    }
+
+    /* 走棋记录容器固定高度，内部滚动 */
+    .move-history {
+        height: 160px;         /* 固定高度，保证可见记录数量 */
+        max-height: 160px;
+        overflow-y: auto;
+        margin-top: 8px;
+        font-size: 0.8rem;
+    }
+
+    /* 按钮变小，内边距减小 */
+    .mode-btn, .difficulty-btn, .game-btn {
+        padding: 8px 6px;
+        font-size: 0.8rem;
+    }
+
+    /* 按钮组竖排，间隙减小 */
+    .button-group {
+        flex-direction:row ;
+        gap: 6px;
+    }
+
+    .mode-selector, .difficulty-selector {
+         padding: 6px 4px;           /* 缩小内边距 */
+        font-size: 0.75rem;         /* 减小字体 */
+        flex: 1;                     /* 按钮均分宽度 */
+        min-width: 0;               /* 允许按钮缩小到适应容器 */  
+    }
+
+    .current-player {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+
+    .status-message {
+        margin: 5px 0;
+        padding: 6px;
+        font-size: 0.8rem;
+        min-height: 30px;
+    }
+
+    .captured-pieces {
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
+
+    .rules {
+        margin-top: 5px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-container {
+        padding: 5px;
+        gap: 5px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .board {
+        border-width: 5px;
+    }
+
+    .piece {
+        font-size: 5vw;
+    }
+
+    .controls {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .mode-btn, .difficulty-btn, .game-btn {
+        padding: 6px 4px;
+        font-size: 0.75rem;
+    }
+
+    .move-history {
+        height: 140px;
+        max-height: 140px;
+        font-size: 0.7rem;
+    }
+
+    .game-info {
+        padding: 6px;
+    }
+
+    .current-player {
+        font-size: 1rem;
+    }
+
+    .captured-pieces {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 0.8rem;
+    }
+
+    .river {
+        font-size: 4vw;
+    }
+}

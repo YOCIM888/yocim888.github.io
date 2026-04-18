@@ -1,0 +1,1190 @@
+/* 重置与基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto Mono', monospace;
+    background-color: #0a0a1a;
+    color: #00ffff;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* 主容器 */
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #0a0a1a 0%, #151530 100%);
+}
+
+/* 工具栏通用样式 */
+.toolbar {
+    width: 280px;
+    background-color: rgba(10, 15, 30, 0.9);
+    border: 1px solid #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    padding: 15px;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.left-toolbar {
+    border-right: 2px solid #ff00ff;
+}
+
+.right-toolbar {
+    border-left: 2px solid #ff00ff;
+}
+
+/* 工具部分 */
+.tool-section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.section-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #ff00ff;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 工具按钮 */
+.tool-buttons, .advanced-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.tool-btn, .adv-btn, .control-btn, .layer-action-btn {
+    background-color: rgba(0, 40, 80, 0.8);
+    border: 1px solid #00ffff;
+    color: #00ffff;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.tool-btn:hover, .adv-btn:hover, .control-btn:hover, .layer-action-btn:hover {
+    background-color: rgba(0, 100, 200, 0.8);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+    transform: translateY(-2px);
+}
+
+.tool-btn.active, .adv-btn.active {
+    background-color: rgba(255, 0, 255, 0.3);
+    border-color: #ff00ff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+}
+
+.tool-btn i, .adv-btn i {
+    font-size: 18px;
+}
+
+.control-btn {
+    padding: 8px 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 5px;
+}
+
+.control-btn.danger {
+    background-color: rgba(200, 0, 50, 0.7);
+    border-color: #ff0055;
+}
+
+.control-btn.danger:hover {
+    background-color: rgba(255, 0, 80, 0.9);
+    box-shadow: 0 0 15px rgba(255, 0, 80, 0.7);
+}
+
+.control-btn.success {
+    background-color: rgba(0, 150, 80, 0.7);
+    border-color: #00ffaa;
+}
+
+.control-btn.success:hover {
+    background-color: rgba(0, 200, 100, 0.9);
+    box-shadow: 0 0 15px rgba(0, 255, 170, 0.7);
+}
+
+/* 控制组 */
+.control-group {
+    margin-bottom: 15px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #a0f0ff;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    background: linear-gradient(to right, #00aaff, #ff00ff);
+    border-radius: 4px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #00ffff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    background-color: rgba(0, 30, 60, 0.9);
+    border: 1px solid #00ffff;
+    color: #00ffff;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* 颜色面板 */
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.color-swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.color-swatch:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px currentColor;
+}
+
+.color-swatch.active {
+    border-color: #fff;
+    box-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
+}
+
+.neon-blue { background-color: #00ffff; }
+.neon-pink { background-color: #ff00ff; }
+.neon-green { background-color: #00ff00; }
+.neon-yellow { background-color: #ffff00; }
+.neon-purple { background-color: #9000ff; }
+.white { background-color: #ffffff; }
+.black { background-color: #000000; }
+
+.custom-color {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#customColorPicker {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    cursor: pointer;
+    background: transparent;
+}
+
+/* 画布容器 */
+.canvas-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.canvas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.canvas-info {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.coordinates, .tool-indicator {
+    background-color: rgba(0, 30, 60, 0.7);
+    padding: 8px 15px;
+    border-radius: 6px;
+    border: 1px solid #00aaff;
+}
+
+/* 画布 */
+#drawingCanvas {
+    flex: 1;
+    background-color: #0a0a1a;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+    cursor: crosshair;
+    touch-action: none;
+}
+
+.canvas-footer {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 255, 255, 0.3);
+    font-size: 14px;
+    color: #a0f0ff;
+    text-align: center;
+}
+
+.hint i {
+    color: #ff00ff;
+    margin-right: 8px;
+}
+
+/* 图层管理 */
+.layer-list {
+    margin-bottom: 15px;
+}
+
+.layer-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(0, 30, 60, 0.5);
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border: 1px solid #00aaff;
+}
+
+.layer-item.active {
+    background-color: rgba(0, 60, 120, 0.7);
+    border-color: #00ffff;
+}
+
+.layer-item i {
+    margin-right: 10px;
+    color: #ff00ff;
+}
+
+.layer-item span {
+    flex: 1;
+}
+
+.layer-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.layer-btn {
+    background: transparent;
+    border: none;
+    color: #00ffff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.layer-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* 历史记录 */
+.history-list {
+    max-height: 150px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.history-item {
+    padding: 8px 12px;
+    background-color: rgba(0, 30, 60, 0.5);
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    border-left: 3px solid #00ffff;
+}
+
+.history-info {
+    font-size: 14px;
+    color: #a0f0ff;
+    text-align: center;
+    padding: 8px;
+    background-color: rgba(0, 30, 60, 0.5);
+    border-radius: 6px;
+}
+
+/* 模态框 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 10, 20, 0.9);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: rgba(10, 20, 40, 0.95);
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    padding: 25px;
+    width: 400px;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+    color: #ff00ff;
+    text-align: center;
+}
+
+#textInput {
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(0, 30, 60, 0.9);
+    border: 1px solid #00ffff;
+    color: #00ffff;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.modal-btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.modal-btn.confirm {
+    background-color: rgba(0, 150, 80, 0.9);
+    color: #00ffaa;
+    border: 1px solid #00ffaa;
+}
+
+.modal-btn.confirm:hover {
+    background-color: rgba(0, 200, 100, 1);
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.7);
+}
+
+.modal-btn.cancel {
+    background-color: rgba(200, 0, 50, 0.9);
+    color: #ff5577;
+    border: 1px solid #ff5577;
+}
+
+.modal-btn.cancel:hover {
+    background-color: rgba(255, 0, 80, 1);
+    box-shadow: 0 0 20px rgba(255, 0, 80, 0.7);
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 30, 60, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #00ffff, #ff00ff);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #00aaff, #ff00aa);
+}
+
+/* 响应式设计 */
+
+/* 大屏幕适配 (1400px以上) */
+@media (min-width: 1400px) {
+    .toolbar {
+        width: 320px;
+        padding: 20px;
+    }
+    
+    .section-title {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+    
+    .tool-btn, .adv-btn, .control-btn, .layer-action-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    .tool-btn i, .adv-btn i {
+        font-size: 20px;
+    }
+    
+    .control-group label {
+        font-size: 15px;
+    }
+    
+    .color-swatch {
+        width: 45px;
+        height: 45px;
+    }
+    
+    #customColorPicker {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .canvas-container {
+        padding: 20px;
+    }
+    
+    .canvas-header {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+    
+    .canvas-info {
+        font-size: 15px;
+        gap: 25px;
+    }
+    
+    .coordinates, .tool-indicator {
+        padding: 10px 20px;
+    }
+    
+    .canvas-footer {
+        margin-top: 20px;
+        padding-top: 15px;
+        font-size: 15px;
+    }
+    
+    .layer-item {
+        padding: 12px;
+    }
+    
+    .history-list {
+        max-height: 180px;
+    }
+    
+    .history-item {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+/* 中等屏幕适配 (1200px - 1400px) */
+@media (max-width: 1400px) and (min-width: 1201px) {
+    .toolbar {
+        width: 280px;
+    }
+    
+    .color-swatch {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .history-list {
+        max-height: 160px;
+    }
+}
+
+/* 平板横屏适配 (992px - 1200px) */
+@media (max-width: 1200px) {
+    .toolbar {
+        width: 240px;
+        padding: 12px;
+    }
+    
+    .section-title {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+    
+    .tool-buttons, .advanced-buttons {
+        gap: 8px;
+    }
+    
+    .tool-btn, .adv-btn {
+        padding: 8px;
+        font-size: 13px;
+    }
+    
+    .tool-btn i, .adv-btn i {
+        font-size: 16px;
+    }
+    
+    .control-btn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    
+    .color-swatch {
+        width: 35px;
+        height: 35px;
+    }
+    
+    #customColorPicker {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .canvas-container {
+        padding: 12px;
+    }
+    
+    .canvas-info {
+        font-size: 13px;
+        gap: 15px;
+    }
+    
+    .layer-item {
+        padding: 8px;
+    }
+    
+    .history-list {
+        max-height: 130px;
+    }
+}
+
+/* 平板竖屏适配 (768px - 992px) */
+@media (max-width: 992px) {
+    body {
+        overflow: auto;
+    }
+    
+    .container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .toolbar {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        padding: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    
+    .left-toolbar, .right-toolbar {
+        border-right: none;
+        border-left: none;
+        border-bottom: 2px solid #ff00ff;
+    }
+    
+    .tool-section {
+        flex: 1;
+        min-width: 200px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+        border-right: 1px solid rgba(0, 255, 255, 0.2);
+        padding-right: 15px;
+    }
+    
+    .tool-section:last-child {
+        border-right: none;
+    }
+    
+    .tool-buttons, .advanced-buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .color-palette {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .canvas-container {
+        height: 70vh;
+        min-height: 500px;
+    }
+    
+    .layer-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .layer-item {
+        flex: 1;
+        min-width: 150px;
+        margin-bottom: 0;
+    }
+    
+    .history-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        max-height: none;
+    }
+    
+    .history-item {
+        flex: 1;
+        min-width: 120px;
+        margin-bottom: 0;
+    }
+    
+    .modal-content {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+/* 手机横屏适配 (600px - 768px) */
+@media (max-width: 768px) {
+    .toolbar {
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .tool-section {
+        min-width: 160px;
+        padding-right: 10px;
+    }
+    
+    .section-title {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .tool-buttons, .advanced-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+    
+    .tool-btn, .adv-btn {
+        padding: 6px;
+        font-size: 12px;
+    }
+    
+    .tool-btn i, .adv-btn i {
+        font-size: 14px;
+    }
+    
+    .control-btn {
+        padding: 5px 10px;
+        font-size: 12px;
+        margin: 0 3px;
+    }
+    
+    .control-group label {
+        font-size: 13px;
+    }
+    
+    input[type="range"] {
+        height: 6px;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {
+        width: 16px;
+        height: 16px;
+    }
+    
+    select {
+        padding: 6px;
+        font-size: 13px;
+    }
+    
+    .color-palette {
+        gap: 6px;
+    }
+    
+    .color-swatch {
+        width: 30px;
+        height: 30px;
+    }
+    
+    #customColorPicker {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .canvas-container {
+        padding: 10px;
+        height: 65vh;
+        min-height: 400px;
+    }
+    
+    .canvas-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+    
+    .canvas-info {
+        width: 100%;
+        justify-content: space-between;
+        font-size: 12px;
+        gap: 10px;
+    }
+    
+    .coordinates, .tool-indicator {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .canvas-footer {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+    
+    .layer-item {
+        padding: 6px;
+        font-size: 13px;
+    }
+    
+    .layer-item i {
+        margin-right: 6px;
+    }
+    
+    .layer-btn {
+        font-size: 12px;
+    }
+    
+    .history-item {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .modal-content {
+        padding: 20px;
+    }
+    
+    .modal-content h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    
+    #textInput {
+        padding: 10px;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    
+    .modal-btn {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+/* 手机竖屏适配 (480px - 600px) */
+@media (max-width: 600px) {
+    .toolbar {
+        padding: 8px;
+        gap: 8px;
+    }
+    
+    .tool-section {
+        min-width: 140px;
+        padding-right: 8px;
+    }
+    
+    .section-title {
+        font-size: 13px;
+        margin-bottom: 8px;
+        gap: 5px;
+    }
+    
+    .tool-buttons, .advanced-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+    
+    .tool-btn, .adv-btn {
+        padding: 5px;
+        font-size: 11px;
+        border-radius: 4px;
+    }
+    
+    .tool-btn i, .adv-btn i {
+        font-size: 13px;
+    }
+    
+    .control-btn {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+    
+    .control-group {
+        margin-bottom: 10px;
+    }
+    
+    .control-group label {
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+    
+    select {
+        padding: 5px;
+        font-size: 12px;
+    }
+    
+    .color-palette {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .color-swatch {
+        width: 28px;
+        height: 28px;
+    }
+    
+    #customColorPicker {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .custom-color {
+        gap: 8px;
+    }
+    
+    .canvas-container {
+        padding: 8px;
+        height: 60vh;
+        min-height: 350px;
+    }
+    
+    .canvas-header {
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+    }
+    
+    .canvas-info {
+        font-size: 11px;
+        gap: 8px;
+    }
+    
+    .coordinates, .tool-indicator {
+        padding: 5px 10px;
+        font-size: 11px;
+        border-radius: 4px;
+    }
+    
+    #drawingCanvas {
+        border-radius: 6px;
+    }
+    
+    .canvas-footer {
+        margin-top: 8px;
+        padding-top: 8px;
+        font-size: 11px;
+    }
+    
+    .layer-item {
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 4px;
+    }
+    
+    .layer-actions {
+        gap: 3px;
+    }
+    
+    .layer-btn {
+        font-size: 11px;
+    }
+    
+    .layer-buttons {
+        gap: 6px;
+    }
+    
+    .history-item {
+        padding: 5px 8px;
+        font-size: 11px;
+    }
+    
+    .history-info {
+        font-size: 12px;
+        padding: 6px;
+    }
+    
+    .modal-content {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .modal-content h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    
+    #textInput {
+        padding: 8px;
+        font-size: 13px;
+        margin-bottom: 12px;
+        border-radius: 4px;
+    }
+    
+    .modal-buttons {
+        gap: 15px;
+    }
+    
+    .modal-btn {
+        padding: 6px 15px;
+        font-size: 13px;
+        border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+/* 小屏手机适配 (480px以下) */
+@media (max-width: 480px) {
+    .toolbar {
+        padding: 6px;
+        gap: 6px;
+    }
+    
+    .tool-section {
+        min-width: 120px;
+        padding-right: 6px;
+    }
+    
+    .section-title {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+    
+    .section-title i {
+        font-size: 14px;
+    }
+    
+    .tool-buttons, .advanced-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+    }
+    
+    .tool-btn, .adv-btn {
+        padding: 4px;
+        font-size: 10px;
+        border-radius: 3px;
+        gap: 3px;
+    }
+    
+    .tool-btn i, .adv-btn i {
+        font-size: 12px;
+    }
+    
+    .control-btn {
+        padding: 3px 6px;
+        font-size: 10px;
+        margin: 0 2px;
+        gap: 4px;
+    }
+    
+    .control-group {
+        margin-bottom: 8px;
+    }
+    
+    .control-group label {
+        font-size: 11px;
+    }
+    
+    input[type="range"] {
+        height: 5px;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {
+        width: 14px;
+        height: 14px;
+    }
+    
+    select {
+        padding: 4px;
+        font-size: 11px;
+    }
+    
+    .color-palette {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4px;
+        margin-bottom: 8px;
+    }
+    
+    .color-swatch {
+        width: 24px;
+        height: 24px;
+        border-width: 1px;
+    }
+    
+    #customColorPicker {
+        width: 30px;
+        height: 30px;
+        border-width: 1px;
+        border-radius: 6px;
+    }
+    
+    .custom-color {
+        gap: 6px;
+    }
+    
+    .canvas-container {
+        padding: 6px;
+        height: 55vh;
+        min-height: 300px;
+    }
+    
+    .canvas-header {
+        margin-bottom: 6px;
+        padding-bottom: 6px;
+    }
+    
+    .canvas-info {
+        font-size: 10px;
+        gap: 6px;
+    }
+    
+    .coordinates, .tool-indicator {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+    
+    #drawingCanvas {
+        border-width: 1px;
+        border-radius: 4px;
+    }
+    
+    .canvas-footer {
+        margin-top: 6px;
+        padding-top: 6px;
+        font-size: 10px;
+    }
+    
+    .hint i {
+        margin-right: 4px;
+    }
+    
+    .layer-item {
+        padding: 4px;
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+    
+    .layer-item i {
+        margin-right: 4px;
+        font-size: 12px;
+    }
+    
+    .layer-actions {
+        gap: 2px;
+    }
+    
+    .layer-btn {
+        font-size: 10px;
+    }
+    
+    .layer-buttons {
+        gap: 4px;
+    }
+    
+    .history-list {
+        margin-bottom: 6px;
+    }
+    
+    .history-item {
+        padding: 4px 6px;
+        font-size: 10px;
+        margin-bottom: 3px;
+    }
+    
+    .history-info {
+        font-size: 11px;
+        padding: 5px;
+    }
+    
+    .modal-content {
+        padding: 12px;
+        border-radius: 6px;
+        border-width: 1px;
+    }
+    
+    .modal-content h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    #textInput {
+        padding: 6px;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .modal-buttons {
+        gap: 10px;
+    }
+    
+    .modal-btn {
+        padding: 5px 12px;
+        font-size: 12px;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+}
+
+/* 动画效果 */
+@keyframes pulse {
+    0% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.9); }
+    100% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.5); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}

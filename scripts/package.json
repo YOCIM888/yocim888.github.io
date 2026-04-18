@@ -1,0 +1,41 @@
+{
+  "name": "yocim",
+  "version": "1.0.0",
+  "description": "YOCIM轻站-导航姬 - 二次元风格导航网站",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node build.js --watch",
+    "build": "node build.js --once && node build-search.js",
+    "build:prod": "node build.js --production && node build-search.js",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "clean": "node scripts/clean.js",
+    "serve": "npx http-server ../ -p 8080 -o"
+  },
+  "keywords": ["navigation", "anime", "game", "tools"],
+  "author": "YOCIM Team",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "cheerio": "^1.2.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "glob": "^13.0.6",
+    "jest": "^29.7.0",
+    "prettier": "^3.2.5"
+  },
+  "dependencies": {
+    "axios": "^1.15.0",
+    "chalk": "^5.6.2",
+    "cli-progress": "^3.12.0",
+    "commander": "^14.0.3",
+    "csv-parse": "^6.2.1",
+    "handlebars": "^4.7.8",
+    "p-limit": "^7.3.0"
+  }
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索结果 - YOCIM轻站</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/Home-Page.CSS"> 
+    <style>
+        /* 搜索页专用样式 */
+        body {
+            /* 背景图片 */
+            background-image: url('../../public/images/daytime-girl.png');  
+            /* 让背景覆盖整个页面，不变形 */
+            background-size: cover;  
+            /* 背景不重复平铺 */
+            background-repeat: no-repeat;  
+            /* 背景居中显示 */
+            background-position: center;  
+            /* 让背景填满整个视口高度 */
+            min-height: 100vh;  
+            /* 可选：背景固定，滚动时不动 */
+            background-attachment: fixed;
+        }
+        
+        /* 暗色模式：夜间背景图 */
+        body.dark {
+            background-image: url('../../public/images/night-girl.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .search-header {
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .search-header .back-home {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2rem;
+        }
+        .search-header .search-container {
+            flex: 1;
+            max-width: 600px;
+            margin: 0;
+        }
+        .search-results-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .result-card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .result-card:hover {
+            background: #f0f0f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .result-card h3 {
+            margin: 0 0 5px;
+            color: #333;
+        }
+        .result-card p {
+            margin: 0;
+            color: #666;
+        }
+        .result-card .source {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 8px;
+        }
+        
+        /* 夜间模式适配 */
+        body.dark .search-header .back-home {
+            color: #e0e0e0;
+        }
+        
+        body.dark .result-card {
+            background: rgba(30, 30, 45, 0.8);
+            border: 1px solid #444;
+            color: #e0e0e0;
+        }
+        
+        body.dark .result-card:hover {
+            background: rgba(50, 50, 70, 0.8);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        body.dark .result-card h3 {
+            color: #f0f0f0;
+        }
+        
+        body.dark .result-card p {
+            color: #b0b0b0;
+        }
+        
+        body.dark .result-card .source {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-header">
+        <a href="/" class="back-home"><i class="fas fa-arrow-left"></i> 返回首页</a>
+        <form class="search-container" onsubmit="return handleSearchSubmit(event)">
+            <input type="text" class="search-input" placeholder="再次搜索..." value="">
+            <button type="submit" class="search-btn">搜索</button>
+        </form>
+        <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </div>
+    </div>
+
+    <div class="search-results-page" id="searchResultsPage">
+        <!-- 搜索结果将动态渲染在这里 -->
+    </div>
+
+    <script src="../scripts/search.js"></script>
+    <script>
+        // 搜索页主题切换功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            const body = document.body;
+
+            // 检查本地存储或系统偏好
+            function setInitialTheme() {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    body.classList.add('dark');
+                    updateThemeIcon(true);
+                } else if (savedTheme === 'light') {
+                    body.classList.remove('dark');
+                    updateThemeIcon(false);
+                } else {
+                    // 无保存值时跟随系统
+                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    if (prefersDark) {
+                        body.classList.add('dark');
+                        updateThemeIcon(true);
+                    } else {
+                        updateThemeIcon(false);
+                    }
+                }
+            }
+
+            function updateThemeIcon(isDark) {
+                const icon = themeToggle.querySelector('i');
+                if (isDark) {
+                    icon.className = 'fas fa-sun';      // 深色模式显示太阳，表示可切回亮色
+                } else {
+                    icon.className = 'fas fa-moon';     // 亮色模式显示月亮，表示可切到深色
+                }
+            }
+
+            if (themeToggle) {
+                // 初始设置
+                setInitialTheme();
+
+                themeToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (body.classList.contains('dark')) {
+                        body.classList.remove('dark');
+                        localStorage.setItem('theme', 'light');
+                        updateThemeIcon(false);
+                    } else {
+                        body.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                        updateThemeIcon(true);
+                    }
+                });
+            }
+
+            // 监听系统主题变化（可选）
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                if (!localStorage.getItem('theme')) {  // 仅当用户未手动设置时才跟随系统
+                    if (e.matches) {
+                        body.classList.add('dark');
+                        updateThemeIcon(true);
+                    } else {
+                        body.classList.remove('dark');
+                        updateThemeIcon(false);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

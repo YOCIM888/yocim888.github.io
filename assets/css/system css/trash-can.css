@@ -1,0 +1,1351 @@
+/* 重置和基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Courier New', monospace;
+}
+
+body {
+    background: #0a0a12;
+    color: #00f3ff;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+/* 霓虹灯文字效果 */
+.cyberpunk-text {
+    text-shadow: 
+        0 0 5px #00f3ff,
+        0 0 10px #00f3ff,
+        0 0 15px #00f3ff,
+        0 0 20px #0077ff;
+}
+
+.cyberpunk-title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ff00ff;
+    text-shadow: 
+        0 0 5px #ff00ff,
+        0 0 10px #ff00ff,
+        0 0 20px #ff00ff,
+        0 0 40px #ff00ff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 主终端容器 */
+.cyber-terminal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #0a0a12 0%, #15152b 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 状态栏 */
+.status-bar {
+    background: rgba(5, 10, 25, 0.9);
+    border-bottom: 1px solid #00f3ff;
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+    z-index: 10;
+    position: relative;
+}
+
+.system-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.time-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ff00ff;
+}
+
+/* 主容器 */
+.main-container {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* 控制面板 */
+.control-panel {
+    width: 280px;
+    background: rgba(10, 15, 40, 0.8);
+    border: 1px solid #0077ff;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 119, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.panel-header {
+    background: rgba(0, 119, 255, 0.2);
+    padding: 15px;
+    border-bottom: 1px solid #0077ff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00f3ff;
+}
+
+.panel-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+/* 赛博朋克按钮 */
+.cyber-btn {
+    background: transparent;
+    color: #00f3ff;
+    border: 1px solid #00f3ff;
+    padding: 12px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.cyber-btn:hover {
+    background: rgba(0, 243, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.cyber-btn:active {
+    transform: translateY(0);
+}
+
+.cyber-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.cyber-btn:hover::before {
+    left: 100%;
+}
+
+/* 状态显示 */
+.stats-display {
+    background: rgba(0, 10, 30, 0.7);
+    border: 1px solid #0077ff;
+    border-radius: 3px;
+    padding: 15px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 119, 255, 0.3);
+}
+
+.stat-item:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.stat-label {
+    color: #a0a0ff;
+}
+
+.stat-value {
+    color: #00ffaa;
+    font-weight: bold;
+}
+
+.neon-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00f3ff, transparent);
+    margin: 10px 0;
+}
+
+.system-status h3 {
+    color: #ff00ff;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-bar.cyber-bg {
+    height: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #00f3ff;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.status-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00f3ff, #0077ff);
+    box-shadow: 0 0 10px #00f3ff;
+}
+
+.status-text {
+    color: #a0a0ff;
+    font-size: 0.9rem;
+}
+
+/* 文件容器 */
+.file-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgba(10, 15, 40, 0.6);
+    border: 1px solid #ff00ff;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+    overflow: hidden;
+}
+
+.file-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 0, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 10, 30, 0.7);
+    border: 1px solid #00f3ff;
+    border-radius: 3px;
+    padding: 10px 15px;
+    width: 300px;
+}
+
+.search-box i {
+    color: #00f3ff;
+    margin-right: 10px;
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* 文件列表 */
+.file-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.file-list-header {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr 1fr;
+    padding: 15px 20px;
+    background: rgba(0, 10, 30, 0.8);
+    border-bottom: 1px solid #0077ff;
+    color: #a0a0ff;
+    font-weight: bold;
+}
+
+.header-cell {
+    display: flex;
+    align-items: center;
+}
+
+.name-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#select-all {
+    width: 16px;
+    height: 16px;
+    accent-color: #00f3ff;
+}
+
+.file-list-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+.file-item {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr 1fr;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(0, 119, 255, 0.2);
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.file-item:hover {
+    background: rgba(0, 119, 255, 0.1);
+}
+
+.file-item.selected {
+    background: rgba(0, 243, 255, 0.1);
+    border-left: 3px solid #00f3ff;
+}
+
+.file-checkbox {
+    width: 16px;
+    height: 16px;
+    accent-color: #00f3ff;
+}
+
+.file-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-name {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.file-type {
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.file-type.document { background: rgba(0, 119, 255, 0.2); color: #00f3ff; border: 1px solid #00f3ff; }
+.file-type.image { background: rgba(255, 0, 255, 0.2); color: #ff00ff; border: 1px solid #ff00ff; }
+.file-type.video { background: rgba(255, 100, 0, 0.2); color: #ff6400; border: 1px solid #ff6400; }
+.file-type.archive { background: rgba(0, 255, 100, 0.2); color: #00ff64; border: 1px solid #00ff64; }
+.file-type.code { background: rgba(255, 255, 0, 0.2); color: #ffff00; border: 1px solid #ffff00; }
+.file-type.executable { background: rgba(255, 0, 0, 0.2); color: #ff0000; border: 1px solid #ff0000; }
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-restore, .btn-delete {
+    padding: 5px 12px;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-restore {
+    background: rgba(0, 255, 100, 0.1);
+    color: #00ff64;
+    border: 1px solid #00ff64;
+}
+
+.btn-restore:hover {
+    background: rgba(0, 255, 100, 0.3);
+    box-shadow: 0 0 8px rgba(0, 255, 100, 0.5);
+}
+
+.btn-delete {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+.btn-delete:hover {
+    background: rgba(255, 0, 0, 0.3);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+}
+
+/* 底部信息栏 */
+.footer-info {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(0, 119, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 10, 30, 0.8);
+}
+
+.selected-info {
+    color: #00ffaa;
+    font-weight: bold;
+}
+
+.hint {
+    color: #ff9900;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 对话框 */
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    display: none;
+}
+
+.cyber-dialog {
+    width: 500px;
+    background: linear-gradient(135deg, #0a0a12 0%, #15152b 100%);
+    border: 1px solid #ff00ff;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.7);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dialog-header {
+    background: rgba(255, 0, 255, 0.1);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ff00ff;
+}
+
+.dialog-header h3 {
+    color: #ff00ff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.close-dialog {
+    background: transparent;
+    border: none;
+    color: #ff00ff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-dialog:hover {
+    color: #fff;
+}
+
+.dialog-body {
+    padding: 30px;
+    color: #a0a0ff;
+    line-height: 1.6;
+}
+
+.error-code {
+    color: #ff0000;
+    font-family: monospace;
+    font-size: 1.1rem;
+    margin: 15px 0;
+    padding: 10px;
+    background: rgba(255, 0, 0, 0.1);
+    border-left: 3px solid #ff0000;
+}
+
+.error-message {
+    color: #ff9900;
+    font-style: italic;
+}
+
+.dialog-footer {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid rgba(255, 0, 255, 0.3);
+}
+
+/* 赛博朋克特效 */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(0, 243, 255, 0.03) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 1;
+    animation: scanline 10s linear infinite;
+}
+
+@keyframes scanline {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100%; }
+}
+
+.glitch-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    background: transparent;
+    animation: glitch 10s infinite;
+}
+
+@keyframes glitch {
+    0%, 100% { opacity: 0; }
+    97% { opacity: 0; }
+    98% { 
+        opacity: 0.1;
+        transform: translateX(-5px);
+        background: rgba(255, 0, 255, 0.1);
+    }
+    99% { 
+        opacity: 0.1;
+        transform: translateX(5px);
+        background: rgba(0, 243, 255, 0.1);
+    }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 10, 30, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0077ff;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00f3ff;
+    box-shadow: 0 0 10px #00f3ff;
+}
+
+/* 响应式调整 */
+
+/* 大屏幕适配 (1400px以上) */
+@media (min-width: 1400px) {
+    .cyberpunk-title {
+        font-size: 3rem;
+        margin-bottom: 25px;
+    }
+    
+    .status-bar {
+        padding: 10px 30px;
+    }
+    
+    .time-display {
+        font-size: 1.4rem;
+    }
+    
+    .main-container {
+        padding: 30px;
+        gap: 30px;
+    }
+    
+    .control-panel {
+        width: 320px;
+    }
+    
+    .panel-header {
+        padding: 20px;
+        font-size: 1.4rem;
+    }
+    
+    .panel-content {
+        padding: 25px;
+        gap: 25px;
+    }
+    
+    .cyber-btn {
+        padding: 15px 20px;
+        font-size: 1.1rem;
+    }
+    
+    .stats-display {
+        padding: 20px;
+    }
+    
+    .stat-item {
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+    }
+    
+    .file-header {
+        padding: 25px;
+    }
+    
+    .search-box {
+        width: 350px;
+        padding: 12px 18px;
+    }
+    
+    .search-box input {
+        font-size: 1.1rem;
+    }
+    
+    .file-list-header {
+        padding: 18px 25px;
+        font-size: 1.1rem;
+    }
+    
+    .file-item {
+        padding: 15px 25px;
+    }
+    
+    .file-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .file-type {
+        font-size: 0.9rem;
+        padding: 4px 10px;
+    }
+    
+    .btn-restore, .btn-delete {
+        padding: 6px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .footer-info {
+        padding: 18px 25px;
+    }
+    
+    .cyber-dialog {
+        width: 550px;
+    }
+    
+    .dialog-header {
+        padding: 25px;
+    }
+    
+    .dialog-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .dialog-body {
+        padding: 35px;
+        font-size: 1.1rem;
+    }
+    
+    .dialog-footer {
+        padding: 25px;
+    }
+}
+
+/* 中等屏幕适配 (1200px - 1400px) */
+@media (max-width: 1400px) and (min-width: 1201px) {
+    .control-panel {
+        width: 300px;
+    }
+    
+    .search-box {
+        width: 320px;
+    }
+}
+
+/* 平板横屏适配 (992px - 1200px) */
+@media (max-width: 1200px) {
+    .cyberpunk-title {
+        font-size: 2.2rem;
+    }
+    
+    .main-container {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .control-panel {
+        width: 260px;
+    }
+    
+    .panel-header {
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+    
+    .panel-content {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .cyber-btn {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+    
+    .stats-display {
+        padding: 12px;
+    }
+    
+    .file-header {
+        padding: 15px;
+    }
+    
+    .search-box {
+        width: 250px;
+        padding: 8px 12px;
+    }
+    
+    .search-box input {
+        font-size: 0.95rem;
+    }
+    
+    .file-list-header, .file-item {
+        grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr 0.8fr;
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+    
+    .file-icon {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .btn-restore, .btn-delete {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .footer-info {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+    
+    .cyber-dialog {
+        width: 450px;
+    }
+    
+    .dialog-body {
+        padding: 25px;
+    }
+}
+
+/* 平板竖屏适配 (768px - 992px) */
+@media (max-width: 992px) {
+    .cyberpunk-title {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+    
+    .main-container {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .control-panel {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .panel-header {
+        width: 100%;
+        padding: 12px 15px;
+    }
+    
+    .panel-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 15px;
+        gap: 12px;
+    }
+    
+    .cyber-btn {
+        flex: 1;
+        min-width: 150px;
+        padding: 10px 15px;
+    }
+    
+    .stats-display {
+        flex: 1;
+        min-width: 200px;
+    }
+    
+    .system-status {
+        flex: 1;
+        min-width: 200px;
+    }
+    
+    .file-container {
+        flex: 1;
+    }
+    
+    .file-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    
+    .search-box {
+        width: 100%;
+    }
+    
+    .file-list-header {
+        grid-template-columns: 2fr 1fr 1fr 0.8fr 0.8fr;
+    }
+    
+    .file-list-header .header-cell:nth-child(2),
+    .file-item > div:nth-child(2) {
+        display: none;
+    }
+    
+    .file-item {
+        grid-template-columns: 2fr 1fr 1fr 0.8fr 0.8fr;
+    }
+    
+    .footer-info {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .cyber-dialog {
+        width: 90%;
+        max-width: 500px;
+    }
+}
+
+/* 手机横屏适配 (600px - 768px) */
+@media (max-width: 768px) {
+    .status-bar {
+        padding: 6px 15px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .system-info {
+        gap: 10px;
+    }
+    
+    .time-display {
+        font-size: 1rem;
+    }
+    
+    .cyberpunk-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .main-container {
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .control-panel {
+        border-radius: 3px;
+    }
+    
+    .panel-header {
+        padding: 10px 12px;
+        font-size: 1rem;
+    }
+    
+    .panel-content {
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .cyber-btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        min-width: 120px;
+    }
+    
+    .stats-display {
+        padding: 10px;
+    }
+    
+    .stat-item {
+        margin-bottom: 8px;
+        padding-bottom: 6px;
+        font-size: 0.9rem;
+    }
+    
+    .system-status h3 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .file-header {
+        padding: 12px;
+    }
+    
+    .search-box {
+        padding: 8px 12px;
+    }
+    
+    .search-box input {
+        font-size: 0.9rem;
+    }
+    
+    .file-list-header {
+        grid-template-columns: 2fr 1fr 0.8fr 0.8fr;
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .file-list-header .header-cell:nth-child(3),
+    .file-item > div:nth-child(3) {
+        display: none;
+    }
+    
+    .file-item {
+        grid-template-columns: 2fr 1fr 0.8fr 0.8fr;
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .file-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
+    
+    .file-type {
+        font-size: 0.7rem;
+        padding: 2px 6px;
+    }
+    
+    .action-buttons {
+        flex-direction: row;
+        gap: 5px;
+    }
+    
+    .btn-restore, .btn-delete {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+    
+    .footer-info {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .cyber-dialog {
+        width: 95%;
+        border-radius: 3px;
+    }
+    
+    .dialog-header {
+        padding: 15px;
+    }
+    
+    .dialog-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .close-dialog {
+        font-size: 1.5rem;
+    }
+    
+    .dialog-body {
+        padding: 20px;
+        font-size: 0.95rem;
+    }
+    
+    .error-code {
+        font-size: 1rem;
+        padding: 8px;
+    }
+    
+    .dialog-footer {
+        padding: 15px;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+}
+
+/* 手机竖屏适配 (480px - 600px) */
+@media (max-width: 600px) {
+    .cyberpunk-title {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        gap: 10px;
+    }
+    
+    .status-bar {
+        padding: 5px 10px;
+    }
+    
+    .system-info {
+        gap: 8px;
+    }
+    
+    .status-indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .time-display {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+    
+    .main-container {
+        padding: 8px;
+        gap: 8px;
+    }
+    
+    .panel-content {
+        flex-direction: column;
+    }
+    
+    .cyber-btn {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .stats-display,
+    .system-status {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .file-list-header {
+        grid-template-columns: 2fr 0.8fr 0.8fr;
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .file-list-header .header-cell:nth-child(4),
+    .file-item > div:nth-child(4) {
+        display: none;
+    }
+    
+    .file-item {
+        grid-template-columns: 2fr 0.8fr 0.8fr;
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .name-cell {
+        gap: 6px;
+    }
+    
+    .file-checkbox {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .file-icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .btn-restore, .btn-delete {
+        padding: 3px 6px;
+        font-size: 0.65rem;
+    }
+    
+    .footer-info {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .dialog-header h3 {
+        font-size: 1rem;
+    }
+    
+    .dialog-body {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* 小屏手机适配 (480px以下) */
+@media (max-width: 480px) {
+    .cyberpunk-title {
+        font-size: 1.1rem;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .status-bar {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .system-info {
+        gap: 6px;
+    }
+    
+    .status-indicator {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .time-display {
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .main-container {
+        padding: 6px;
+        gap: 6px;
+    }
+    
+    .control-panel {
+        box-shadow: 0 0 10px rgba(0, 119, 255, 0.3);
+    }
+    
+    .panel-header {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+        gap: 8px;
+    }
+    
+    .panel-content {
+        padding: 10px;
+        gap: 8px;
+    }
+    
+    .cyber-btn {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+        gap: 6px;
+    }
+    
+    .stats-display {
+        padding: 8px;
+    }
+    
+    .stat-item {
+        margin-bottom: 6px;
+        padding-bottom: 5px;
+        font-size: 0.8rem;
+    }
+    
+    .neon-line {
+        margin: 6px 0;
+    }
+    
+    .system-status h3 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        gap: 6px;
+    }
+    
+    .status-bar.cyber-bg {
+        height: 8px;
+        margin-bottom: 6px;
+    }
+    
+    .status-text {
+        font-size: 0.75rem;
+    }
+    
+    .file-container {
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.2);
+    }
+    
+    .file-header {
+        padding: 8px 10px;
+        gap: 8px;
+    }
+    
+    .search-box {
+        padding: 6px 10px;
+    }
+    
+    .search-box i {
+        margin-right: 6px;
+        font-size: 0.9rem;
+    }
+    
+    .search-box input {
+        font-size: 0.85rem;
+    }
+    
+    .file-list-header {
+        grid-template-columns: 1.5fr 0.7fr 0.7fr;
+        padding: 6px 8px;
+        font-size: 0.7rem;
+    }
+    
+    .file-list-header .header-cell:nth-child(5),
+    .file-item > div:nth-child(5) {
+        display: none;
+    }
+    
+    .file-item {
+        grid-template-columns: 1.5fr 0.7fr 0.7fr;
+        padding: 6px 8px;
+        font-size: 0.75rem;
+    }
+    
+    .file-item.selected {
+        border-left: 2px solid #00f3ff;
+    }
+    
+    .name-cell {
+        gap: 4px;
+    }
+    
+    .file-checkbox {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .file-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+    }
+    
+    .file-name {
+        font-size: 0.75rem;
+    }
+    
+    .file-type {
+        font-size: 0.6rem;
+        padding: 2px 4px;
+    }
+    
+    .action-buttons {
+        gap: 3px;
+    }
+    
+    .btn-restore, .btn-delete {
+        padding: 2px 5px;
+        font-size: 0.6rem;
+        gap: 3px;
+    }
+    
+    .footer-info {
+        padding: 6px 8px;
+        font-size: 0.75rem;
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    .hint {
+        gap: 6px;
+        font-size: 0.75rem;
+    }
+    
+    .cyber-dialog {
+        width: 95%;
+        margin: 10px;
+    }
+    
+    .dialog-header {
+        padding: 10px 12px;
+    }
+    
+    .dialog-header h3 {
+        font-size: 0.9rem;
+        gap: 6px;
+    }
+    
+    .close-dialog {
+        font-size: 1.3rem;
+    }
+    
+    .dialog-body {
+        padding: 12px;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    .error-code {
+        font-size: 0.85rem;
+        margin: 10px 0;
+        padding: 6px;
+    }
+    
+    .error-message {
+        font-size: 0.8rem;
+    }
+    
+    .dialog-footer {
+        padding: 10px 12px;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+}

@@ -1,0 +1,858 @@
+﻿category_id,category_icon,category_title,category_subtitle,link_name,link_url,link_icon,link_desc,link_tag
+acgn,fas fa-fire,ACGN推荐,放送中,哔哩哔哩,https://www.bilibili.com/,fab fa-bilibili,弹幕护体，新番同步,番剧
+acgn,fas fa-fire,ACGN推荐,放送中,AcFun,https://www.acfun.cn/,fas fa-tv,弹幕视频网,新番
+acgn,fas fa-fire,ACGN推荐,放送中,Muse木棉花,https://www.e-muse.com/cn,fab fa-youtube,官方同步频道,港澳台
+acgn,fas fa-fire,ACGN推荐,放送中,Niconico,https://www.nicovideo.jp/,fas fa-dragon,弹幕元祖，生放送,日系
+acgn,fas fa-fire,ACGN推荐,放送中,Crunchyroll,https://www.crunchyroll.com/,fas fa-tv,全球动漫流媒体,国际
+acgn,fas fa-fire,ACGN推荐,放送中,腾讯动漫,https://ac.qq.com/,fas fa-book-open,经典漫画平台,中文
+acgn,fas fa-fire,ACGN推荐,放送中,拷贝漫画,https://www.komica.org/,fas fa-meteor,清爽阅读体验,多平台
+acgn,fas fa-fire,ACGN推荐,放送中,MangaDex,https://www.mangadex.org/,fas fa-globe,多语言漫画社区,国际
+acgn,fas fa-fire,ACGN推荐,放送中,好多漫,https://www.haoduoman.com/,fas fa-pencil-ruler,高质量漫画阅读,插画
+acgn,fas fa-fire,ACGN推荐,放送中,巴哈姆特动画疯,https://ani.gamer.com.tw/,fas fa-tv,台湾地区新番同步,繁中
+acgn,fas fa-fire,ACGN推荐,放送中,AniList,https://anilist.co/,fas fa-list-alt,动漫追踪&数据库,英文
+acgn,fas fa-fire,ACGN推荐,放送中,MyAnimeList,https://myanimelist.net/,fas fa-heart,全球最大动漫社群,英文
+acgn,fas fa-fire,ACGN推荐,放送中,哔哩哔哩漫画,https://manga.bilibili.com/,fas fa-book,正版日漫国漫全覆盖,正版
+acgn,fas fa-fire,ACGN推荐,放送中,快看漫画,https://www.kuaikanmanhua.com/,fas fa-star,国漫原创热门平台,国漫
+acgn,fas fa-fire,ACGN推荐,放送中,动漫之家,https://www.dmzj.com/,fas fa-home,漫画资讯一站式,资讯
+acgn,fas fa-fire,ACGN推荐,放送中,漫画柜,https://www.manhuagui.com/,fas fa-book-reader,高清漫画阅读,漫画
+acgn,fas fa-fire,ACGN推荐,放送中,有妖气,https://www.u17.com/,fas fa-pen,老牌原创漫画,原创
+acgn,fas fa-fire,ACGN推荐,放送中,LINE WEBTOON,https://www.webtoons.com/,fas fa-globe-asia,韩漫日漫全球,韩漫
+acgn,fas fa-fire,ACGN推荐,放送中,HiDive,https://www.hidive.com/,fas fa-tv,正版日系流媒体,正版
+acgn,fas fa-fire,ACGN推荐,放送中,Bangumi,https://bangumi.tv/,fas fa-users,番剧评分社区,社区
+acgn,fas fa-fire,ACGN推荐,放送中,轻之国度,https://www.lightnovel.cn/,fas fa-book-open,轻小说资讯,轻小说
+acgn,fas fa-fire,ACGN推荐,放送中,AnimeNewsNetwork,https://www.animenewsnetwork.com/,fas fa-newspaper,国际动漫新闻,资讯
+acgn,fas fa-fire,ACGN推荐,放送中,Anime-Planet,https://www.anime-planet.com/,fas fa-compass,追番数据库,英文
+acgn,fas fa-fire,ACGN推荐,放送中,漫客栈,https://www.mkzhan.com/,fas fa-fire,国漫经典平台,国漫
+acgn,fas fa-fire,ACGN推荐,放送中,Pixiv,https://www.pixiv.net/,fas fa-palette,插画同人社区,插画
+acgn,fas fa-fire,ACGN推荐,放送中,角川ComicWalker,https://comic-walker.com/,fas fa-book,日漫免费正版,日漫
+acgn,fas fa-fire,ACGN推荐,放送中,AnimeKisa,https://animekisa.tv/,fas fa-trophy,多源番剧速更,速更
+acgn,fas fa-fire,ACGN推荐,放送中,包子漫画,https://www.baozimh.com/,fas fa-book-open,海量在线漫画，更新及时,漫画
+acgn,fas fa-fire,ACGN推荐,放送中,漫画鱼,https://www.manhuayu5.com/,fas fa-fish,清爽阅读体验，资源丰富,漫画
+acgn,fas fa-fire,ACGN推荐,放送中,漫搜,https://www.soman.com/,fas fa-search,漫画搜索引擎，多源聚合,搜索
+acgn,fas fa-fire,ACGN推荐,放送中,Komiic漫画,https://komiic.com/,fas fa-layer-group,界面简洁，注重用户体验,漫画
+acgn,fas fa-fire,ACGN推荐,放送中,咚漫,https://www.dongmanmanhua.cn/,fas fa-robot,韩漫日漫官方平台,韩漫
+acgn,fas fa-fire,ACGN推荐,放送中,MangaDex,https://mangadex.org/,fas fa-globe,全球多语言漫画社区,国际
+acgn,fas fa-fire,ACGN推荐,放送中,MANGA Plus,https://mangaplus.shueisha.co.jp/,fas fa-bolt,集英社官方全球同步,日漫
+acgn,fas fa-fire,ACGN推荐,放送中,ComicWalker,https://comic-walker.com/,fas fa-walking,角川官方免费漫画,日漫
+acgn,fas fa-fire,ACGN推荐,放送中,Piccoma,https://piccoma.com/,fas fa-star,日本最大的电子漫画平台,日系
+acgn,fas fa-fire,ACGN推荐,放送中,kox.moe,https://kox.moe/,fas fa-tablet-alt,EPUB/MOBI格式漫画下载,电子书
+acgn,fas fa-fire,ACGN推荐,放送中,ESJ Zone,https://www.esjzone.one/,fas fa-book,轻小说分享与创作社区,轻小说
+acgn,fas fa-fire,ACGN推荐,放送中,轻之国度,https://www.lightnovel.cn/,fas fa-flag,华语区轻小说核心论坛,轻小说
+acgn,fas fa-fire,ACGN推荐,放送中,轻书架,https://www.lightnovel.app/,fas fa-books,轻小说在线阅读收藏,轻小说
+acgn,fas fa-fire,ACGN推荐,放送中,铅笔小说,https://www.qianbixs.com/,fas fa-pencil,多类别轻小说资源,轻小说
+acgn,fas fa-fire,ACGN推荐,放送中,迷糊轻小说,https://mhlightnovel.com/,fas fa-sleep,资源强大的轻小说站,轻小说
+acgn,fas fa-fire,ACGN推荐,放送中,深夜读书会,https://www.sysbs.com/,fas fa-moon,轻小说讨论分享社区,轻小说
+acgn,fas fa-fire,ACGN推荐,放送中,猫耳FM,https://www.missevan.com/,fas fa-headphones,二次元有声作品平台,听书
+acgn,fas fa-fire,ACGN推荐,放送中,次元小镇,https://dimtown.com/,fas fa-images,动漫壁纸插画COS社区,美图
+acgn,fas fa-fire,ACGN推荐,放送中,幻猫ACG,https://www.huanmao.ac.cn/,fas fa-cat,动漫资讯COS美图社区,资讯
+acgn,fas fa-fire,ACGN推荐,放送中,动漫啦,https://www.dongman.la/,fas fa-tv,综合性动漫资源站,综合
+acgn,fas fa-fire,ACGN推荐,放送中,看漫网,https://www.kanman.com/,fas fa-eye,漫画阅读平台，更新及时,漫画
+acgn,fas fa-fire,ACGN推荐,放送中,古风漫画网,https://www.gufengmh.com,fas fa-feather,专注古风题材漫画,国漫
+acgn,fas fa-fire,ACGN推荐,放送中,風之动漫,https://www.fffdm.com/,fas fa-wind,在线动漫综合站,综合
+acgn,fas fa-fire,ACGN推荐,放送中,次元狗,https://www.acgndog.com/,fas fa-dog,漫画轻小说资源下载,资源
+acgn,fas fa-fire,ACGN推荐,放送中,Animeko,https://github.com/open-ani/animeko,fab fa-github,开源聚合追番APP,工具
+acgn,fas fa-fire,ACGN推荐,放送中,Mihon,https://mihon.app/,fas fa-comment-dots,开源漫画聚合阅读器,工具
+acgn,fas fa-fire,ACGN推荐,放送中,开源阅读,https://github.com/gedoor/legado,fab fa-github,开源小说聚合阅读器,工具
+tools,fas fa-tools,实用工具,便捷高效,Google翻译,https://translate.google.com/,fas fa-language,多语言互译,多语言
+tools,fas fa-tools,实用工具,便捷高效,草料二维码,https://cli.im/,fas fa-qrcode,二维码生成/解码,实用
+tools,fas fa-tools,实用工具,便捷高效,Smallpdf,https://smallpdf.com/,fas fa-file-pdf,PDF在线转换,文档
+tools,fas fa-tools,实用工具,便捷高效,ProcessOn,https://www.processon.com/,fas fa-brain,思维导图/流程图,协作
+tools,fas fa-tools,实用工具,便捷高效,Canva,https://www.canva.com/,fas fa-crop-alt,在线设计神器,设计
+tools,fas fa-tools,实用工具,便捷高效,Remove.bg,https://www.remove.bg/,fas fa-file-image,一键智能抠图,抠图
+tools,fas fa-tools,实用工具,便捷高效,ILoveIMG,https://www.iloveimg.com/,fas fa-compress-arrows-alt,图片压缩编辑,图片
+tools,fas fa-tools,实用工具,便捷高效,ILovePDF,https://www.ilovepdf.com/,fas fa-file-pdf,PDF全能处理,PDF
+tools,fas fa-tools,实用工具,便捷高效,在线打字测试,https://dazi.kukuw.com/,fas fa-keyboard,打字速度练习,练习
+tools,fas fa-tools,实用工具,便捷高效,在线格式转换,https://convertio.co/,fas fa-video,音视频格式修改,转换
+tools,fas fa-tools,实用工具,便捷高效,在线时间戳,https://tool.lu/timestamp,fas fa-clock,时间戳转换工具,开发
+tools,fas fa-tools,实用工具,便捷高效,科学计算器,https://www.baidu.com/s?wd=%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%99%A8,fas fa-calculator,高级计算工具,计算
+tools,fas fa-tools,实用工具,便捷高效,ColorHub,https://www.colorhub.me/,fas fa-palette,配色方案参考,配色
+tools,fas fa-tools,实用工具,便捷高效,石墨文档,https://shimo.im/,fas fa-file-alt,在线协作文档,办公
+tools,fas fa-tools,实用工具,便捷高效,腾讯文档,https://docs.qq.com/,fas fa-cloud,云端文档编辑,协作
+tools,fas fa-tools,实用工具,便捷高效,在线截图工具,https://web-capture.net/,fas fa-cut,网页截图长图,截图
+tools,fas fa-tools,实用工具,便捷高效,DeepL翻译,https://www.deepl.com/,fas fa-globe,精准翻译工具,翻译
+tools,fas fa-tools,实用工具,便捷高效,在线待办清单,https://todoist.com/,fas fa-list,任务清单管理,效率
+tools,fas fa-tools,实用工具,便捷高效,代码格式化,https://tool.oschina.net/codeformat,fas fa-code,代码美化整理,开发
+tools,fas fa-tools,实用工具,便捷高效,改图鸭,https://www.gaituya.com/,fas fa-image,图片编辑处理,修图
+tools,fas fa-tools,实用工具,便捷高效,WiFi密码查看,https://www.wifipassword.cn/,fas fa-wifi,密码找回工具,网络
+tools,fas fa-tools,实用工具,便捷高效,Excel表格工具,https://www.office.com/,fas fa-file-excel,在线表格处理,办公
+tools,fas fa-tools,实用工具,便捷高效,CPU性能查询,https://www.cpu-monkey.com/,fas fa-microchip,硬件参数查询,硬件
+tools,fas fa-tools,实用工具,便捷高效,在线倒计时器,https://time.is/zh/Countdown,fas fa-bell,定时提醒工具,时间
+tools,fas fa-tools,实用工具,便捷高效,在线OCR识别,https://ocr.wdku.net/,fas fa-book,图片文字提取,识别
+tools,fas fa-tools,实用工具,便捷高效,在线白板,https://excalidraw.com/,fas fa-pen,绘图思维导图,绘图
+tools,fas fa-tools,实用工具,便捷高效,视频去水印,https://www.shipinxiaocong.com/,fas fa-film,在线视频处理,视频
+tools,fas fa-tools,实用工具,便捷高效,幕布,https://mubu.com/,fas fa-sitemap,大纲笔记工具,笔记
+tools,fas fa-tools,实用工具,便捷高效,SAVE-EDITOR,https://www.save-editor.com/,fas fa-code,在线代码编辑与格式化工具,开发
+tools,fas fa-tools,实用工具,便捷高效,Replit,https://replit.com/,fas fa-laptop-code,支持50+语言的在线IDE,编程
+tools,fas fa-tools,实用工具,便捷高效,CodePen,https://codepen.io/,fab fa-codepen,前端代码实时预览社区,前端
+tools,fas fa-tools,实用工具,便捷高效,JSFiddle,https://jsfiddle.net/,fas fa-js,在线JavaScript测试工具,前端
+tools,fas fa-tools,实用工具,便捷高效,GitHub Codespaces,https://github.com/features/codespaces,fab fa-github,云端完整开发环境,编程
+tools,fas fa-tools,实用工具,便捷高效,StackBlitz,https://stackblitz.com/,fas fa-bolt,Web应用在线IDE,前端
+tools,fas fa-tools,实用工具,便捷高效,CodeSandbox,https://codesandbox.io/,fas fa-cube,现代Web应用开发平台,前端
+tools,fas fa-tools,实用工具,便捷高效,ConvertX,https://github.com/C4illin/ConvertX,fab fa-github,可自部署的万能格式转换,转换
+tools,fas fa-tools,实用工具,便捷高效,Zamzar,https://www.zamzar.com/,fas fa-exchange-alt,支持超过1200种格式转换,转换
+tools,fas fa-tools,实用工具,便捷高效,GroupDocs Conversion,https://products.groupdocs.app/zh/conversion,fas fa-file-export,免费在线文件转换,文档
+tools,fas fa-tools,实用工具,便捷高效,iLovePDF,https://www.ilovepdf.com/,fas fa-file-pdf,PDF全能处理工具,PDF
+tools,fas fa-tools,实用工具,便捷高效,iLoveIMG,https://www.iloveimg.com/,fas fa-image,图片压缩编辑,图片
+tools,fas fa-tools,实用工具,便捷高效,Convertio,https://convertio.co/,fas fa-video,音视频文档格式转换,转换
+tools,fas fa-tools,实用工具,便捷高效,仓鼠工具箱,https://www.hamstertools.org/,fas fa-mouse,各类实用小工具合集,工具箱
+tools,fas fa-tools,实用工具,便捷高效,深言达意,https://www.shenyandayi.com/,fas fa-pen-fancy,据意查词查句智能工具,写作
+tools,fas fa-tools,实用工具,便捷高效,91化简,https://91huajian.cn/,fas fa-file-alt,免费开源在线简历制作,办公
+tools,fas fa-tools,实用工具,便捷高效,Image Splitter,https://imagesplitter.net/,fas fa-crop,在线图片分割九宫格工具,图片
+tools,fas fa-tools,实用工具,便捷高效,JSON.cn,https://www.json.cn/,fas fa-brackets-curly,JSON格式化/校验/编辑,开发
+tools,fas fa-tools,实用工具,便捷高效,正则表达式在线测试,https://c.runoob.com/front-end/854/,fas fa-code-branch,正则表达式在线测试,开发
+tools,fas fa-tools,实用工具,便捷高效,Tool.lu 工具,https://tool.lu/,fas fa-toolbox,开发者在线工具集合,开发
+tools,fas fa-tools,实用工具,便捷高效,Crontab 在线,https://crontab.guru/,fas fa-clock,Cron表达式在线解释,开发
+tools,fas fa-tools,实用工具,便捷高效,URL 编码解码,https://www.urlencoder.org/,fas fa-link,在线URL编码转换,开发
+tools,fas fa-tools,实用工具,便捷高效,Base64 加密解密,https://base64.us/,fas fa-shield,Base64在线转换,开发
+tools,fas fa-tools,实用工具,便捷高效,Diffchecker,https://www.diffchecker.com/,fas fa-not-equal,文本/文件差异对比,开发
+tools,fas fa-tools,实用工具,便捷高效,Excalidraw,https://excalidraw.com/,fas fa-pencil-ruler,手绘风格在线白板,绘图
+tools,fas fa-tools,实用工具,便捷高效,OCR 在线识别,https://ocr.wdku.net/,fas fa-font,图片文字提取工具,识别
+tools,fas fa-tools,实用工具,便捷高效,TinyPNG,https://tinypng.com/,fas fa-compress-alt,智能压缩PNG/JPEG,图片
+tools,fas fa-tools,实用工具,便捷高效,Squoosh,https://squoosh.app/,fas fa-robot,Google出品图片压缩,图片
+tools,fas fa-tools,实用工具,便捷高效,WebGradients,https://webgradients.com/,fas fa-palette,渐变色配色参考,设计
+tools,fas fa-tools,实用工具,便捷高效,Coolors,https://coolors.co/,fas fa-fill-drip,快速配色方案生成,设计
+tools,fas fa-tools,实用工具,便捷高效,AIbase,https://app.aibase.com/zh/tools,fas fa-robot,AI工具导航大全,AI
+tools,fas fa-tools,实用工具,便捷高效,Prompt2Tool,https://www.prompt2tool.com/,fas fa-compass,收录2900+在线工具导航,导航
+ai,fas fa-robot,AI模型,二次元创作,OpenAI GPT,https://openai.com/,fas fa-robot,语言生成,英文
+ai,fas fa-robot,AI模型,二次元创作,Stable Diffusion,https://stablediffusionweb.com/,fas fa-palette,开源图像生成,多语言
+ai,fas fa-robot,AI模型,二次元创作,DALL·E,https://openai.com/dall-e,fas fa-image,OpenAI图像,英文
+ai,fas fa-robot,AI模型,二次元创作,Midjourney,https://www.midjourney.com/,fas fa-fire,高质量AI绘画,英文
+ai,fas fa-robot,AI模型,二次元创作,Claude,https://claude.ai/,fas fa-comment-dots,Anthropic对话AI,英文
+ai,fas fa-robot,AI模型,二次元创作,文心一言,https://yiyan.baidu.com/,fas fa-language,百度知识增强,中文
+ai,fas fa-robot,AI模型,二次元创作,豆包,https://www.doubao.com/,fas fa-star,全能AI智能助手,中文
+ai,fas fa-robot,AI模型,二次元创作,醒图AI,https://xingtu.cn/,fas fa-paint-brush,国产AI绘画创作,中文
+ai,fas fa-robot,AI模型,二次元创作,通义万相,https://wanxiang.aliyun.com/,fas fa-magic,阿里AI绘画,中文
+ai,fas fa-robot,AI模型,二次元创作,讯飞星火,https://xinghuo.xfyun.cn/,fas fa-cloud,科大讯飞对话AI,中文
+ai,fas fa-robot,AI模型,二次元创作,腾讯混元,https://hunyuan.tencent.com/,fas fa-image,腾讯AI大模型,中文
+ai,fas fa-robot,AI模型,二次元创作,NovelAI,https://novelai.net/,fas fa-palette,二次元专属绘画,二次元
+ai,fas fa-robot,AI模型,二次元创作,FaceChain,https://modelscope.cn/,fas fa-female,AI写真角色生成,角色
+ai,fas fa-robot,AI模型,二次元创作,Runway,https://runwayml.com/,fas fa-video,AI视频生成,视频
+ai,fas fa-robot,AI模型,二次元创作,Suno AI,https://suno.ai/,fas fa-music,AI音乐创作,音乐
+ai,fas fa-robot,AI模型,二次元创作,Kimi,https://kimi.moonshot.cn/,fas fa-comment,长文本对话AI,中文
+ai,fas fa-robot,AI模型,二次元创作,秘塔写作猫,https://xiezuocat.com/,fas fa-pencil-ruler,AI写作润色,写作
+ai,fas fa-robot,AI模型,二次元创作,幻方AI,https://www.myshell.ai/,fas fa-rocket,二次元模型创作,二次元
+ai,fas fa-robot,AI模型,二次元创作,ChatGLM,https://chatglm.cn/,fas fa-brain,清华开源大模型,开源
+ai,fas fa-robot,AI模型,二次元创作,美图AI,https://www.meitu.com/,fas fa-camera,AI动漫头像生成,头像
+ai,fas fa-robot,AI模型,二次元创作,Minimax,https://www.minimax.chat/,fas fa-microchip,多模态AI创作,创作
+ai,fas fa-robot,AI模型,二次元创作,无界AI,https://www.wujieai.com/,fas fa-picture-o,国风二次元绘画,国风
+ai,fas fa-robot,AI模型,二次元创作,讯飞配音,https://peiyin.xunfei.cn/,fas fa-headphones,AI语音合成,语音
+ai,fas fa-robot,AI模型,二次元创作,Civitai,https://civitai.com/,fas fa-gamepad,AI模型分享社区,模型
+ai,fas fa-robot,AI模型,二次元创作,网易有道AI,https://ai.youdao.com/,fas fa-pen,智能创作翻译,工具
+ai,fas fa-robot,AI模型,二次元创作,WaveSpeedAI,https://wavespeed.ai/,fas fa-bolt,600+模型API，支持Seedream/Kling/Flux等,聚合平台
+ai,fas fa-robot,AI模型,二次元创作,Replicate,https://replicate.com/,fas fa-copy,1000+开源模型，社区驱动,聚合平台
+ai,fas fa-robot,AI模型,二次元创作,Fal.ai,https://fal.ai/,fas fa-tachometer-alt,10倍速推理，生产级API,推理平台
+ai,fas fa-robot,AI模型,二次元创作,Runware,https://runware.com/,fas fa-dollar-sign,超低价图像生成，40万+模型,推理平台
+ai,fas fa-robot,AI模型,二次元创作,SiliconFlow,https://siliconflow.cn/,fas fa-microchip,开源模型云平台，推理快2.3倍,开发平台
+ai,fas fa-robot,AI模型,二次元创作,Hugging Face,https://huggingface.co/,fas fa-smile,50万+模型，开源AI社区,模型库
+ai,fas fa-robot,AI模型,二次元创作,Freepik AI,https://www.freepik.com/ai,fas fa-paint-brush,39+图像模型，36+视频模型聚合,生图
+ai,fas fa-robot,AI模型,二次元创作,Flowpix,https://flowpix.com/,fas fa-bezier-curve,提示词驱动，10秒生成核心视觉,生图
+ai,fas fa-robot,AI模型,二次元创作,海艺AI,https://www.seaart.ai/,fas fa-sea,80万+模型库，中文提示词优化,生图
+ai,fas fa-robot,AI模型,二次元创作,Nano Banana,https://nanobanana.com/,fas fa-leaf,角色一致性最强的生图工具,生图
+ai,fas fa-robot,AI模型,二次元创作,Qwen-Image-2.0,https://tongyi.aliyun.com/,fas fa-dragon,阿里千问，支持中文汉字渲染,生图
+ai,fas fa-robot,AI模型,二次元创作,Sora 2,https://openai.com/sora,fas fa-film,OpenAI视频生成，真实物理模拟,视频
+ai,fas fa-robot,AI模型,二次元创作,Veo 3,https://deepmind.google/technologies/veo/,fas fa-video,Google视频生成，瑕疵更少,视频
+ai,fas fa-robot,AI模型,二次元创作,Kling,https://kling.kuaishou.com/,fas fa-dragon,快手可灵，视频生成技术,视频
+ai,fas fa-robot,AI模型,二次元创作,HeyGen,https://www.heygen.com/,fas fa-user-tie,AI数字人，视频翻译口型同步,视频
+ai,fas fa-robot,AI模型,二次元创作,Suno AI,https://suno.ai/,fas fa-music,AI音乐生成，人声+乐器,音乐
+ai,fas fa-robot,AI模型,二次元创作,ElevenLabs,https://elevenlabs.io/,fas fa-waveform,逼真语音合成，声音克隆,音频
+ai,fas fa-robot,AI模型,二次元创作,NotebookLM,https://notebooklm.google/,fas fa-book,Google研究助手，文档问答,写作
+ai,fas fa-robot,AI模型,二次元创作,Perplexity,https://www.perplexity.ai/,fas fa-search,AI搜索，带引用来源,搜索
+ai,fas fa-robot,AI模型,二次元创作,Comet,https://comet.ai/,fas fa-comet,AI浏览器，智能体模式,浏览
+ai,fas fa-robot,AI模型,二次元创作,Cursor,https://cursor.com/,fas fa-code,AI代码编辑器，氛围编程,开发
+ai,fas fa-robot,AI模型,二次元创作,Gamma,https://gamma.app/,fas fa-file-powerpoint,AI生成演示文稿,办公
+ai,fas fa-robot,AI模型,二次元创作,Napkin AI,https://napkin.ai/,fas fa-pencil-ruler,文字转视觉图表,设计
+ai,fas fa-robot,AI模型,二次元创作,n8n,https://n8n.io/,fas fa-network-wired,开源工作流自动化,自动化
+ai,fas fa-robot,AI模型,二次元创作,Pixso AI,https://pixso.cn/,fas fa-paint-brush,国产UI设计，生成代码,设计
+ai,fas fa-robot,AI模型,二次元创作,Figma Make,https://www.figma.com/,fab fa-figma,AI辅助UI设计，导出代码,设计
+ai,fas fa-robot,AI模型,二次元创作,Canva AI,https://www.canva.com/,fas fa-crop-alt,模板生态+AI智能适配,设计
+ai,fas fa-robot,AI模型,二次元创作,Civitai,https://civitai.com/,fas fa-images,AI模型分享社区,模型
+news,fas fa-newspaper,新闻资讯,时事热点,新华网,https://www.xinhuanet.com/,fas fa-globe-asia,权威报道,国内
+news,fas fa-newspaper,新闻资讯,时事热点,BBC News,https://www.bbc.com/news,fas fa-globe-europe,国际新闻,国际
+news,fas fa-newspaper,新闻资讯,时事热点,CNN,https://edition.cnn.com/,fas fa-globe-americas,美国新闻,国际
+news,fas fa-newspaper,新闻资讯,时事热点,NHK,https://www.nhk.or.jp/,fas fa-globe,日本放送协会,日语
+news,fas fa-newspaper,新闻资讯,时事热点,Reuters,https://www.reuters.com/,fas fa-newspaper,路透社,国际
+news,fas fa-newspaper,新闻资讯,时事热点,人民网,https://www.people.com.cn/,fas fa-bullhorn,中央重点新闻网站,国内
+news,fas fa-newspaper,新闻资讯,时事热点,央视网,https://www.cctv.com/,fas fa-rss,央视官方新闻平台,国内
+news,fas fa-newspaper,新闻资讯,时事热点,财新网,https://www.caixin.com/,fas fa-chart-line,财经深度资讯,财经
+news,fas fa-newspaper,新闻资讯,时事热点,36氪,https://36kr.com/,fas fa-laptop-code,科技创业资讯,科技
+news,fas fa-newspaper,新闻资讯,时事热点,爱范儿,https://www.ifanr.com/,fas fa-microchip,数码科技新闻,数码
+news,fas fa-newspaper,新闻资讯,时事热点,联合早报,https://www.zaobao.com/,fas fa-globe,新加坡中文资讯,中文
+news,fas fa-newspaper,新闻资讯,时事热点,凤凰网,https://www.ifeng.com/,fas fa-newspaper,综合资讯门户,综合
+news,fas fa-newspaper,新闻资讯,时事热点,澎湃新闻,https://www.thepaper.cn/,fas fa-brain,时事深度报道,深度
+news,fas fa-newspaper,新闻资讯,时事热点,新浪新闻,https://news.sina.com.cn/,fas fa-rss-square,综合实时热点,综合
+news,fas fa-newspaper,新闻资讯,时事热点,网易新闻,https://www.163.com/,fas fa-newspaper,热点资讯聚合,综合
+news,fas fa-newspaper,新闻资讯,时事热点,观察者网,https://www.guancha.cn/,fas fa-bullseye,时政军事评论,时政
+news,fas fa-newspaper,新闻资讯,时事热点,卫报,https://www.theguardian.com/,fas fa-globe-europe,英国权威新闻,国际
+news,fas fa-newspaper,新闻资讯,时事热点,法新社,https://www.afp.com/,fas fa-newspaper,法国国际新闻,国际
+news,fas fa-newspaper,新闻资讯,时事热点,机核网,https://www.gcores.com/,fas fa-gamepad,游戏ACG资讯,ACG
+news,fas fa-newspaper,新闻资讯,时事热点,游民星空,https://www.gamersky.com/,fas fa-fire,游戏资讯攻略,游戏
+news,fas fa-newspaper,新闻资讯,时事热点,美术报,https://www.meishubao.com/,fas fa-palette,艺术文创资讯,艺术
+news,fas fa-newspaper,新闻资讯,时事热点,第一财经,https://www.yicai.com/,fas fa-chart-bar,专业财经资讯,财经
+news,fas fa-newspaper,新闻资讯,时事热点,日经新闻,https://www.nikkei.com/,fas fa-globe-asia,日本经济资讯,日系
+news,fas fa-newspaper,新闻资讯,时事热点,腾讯新闻,https://news.qq.com/,fas fa-video,全网热点聚合,综合
+news,fas fa-newspaper,新闻资讯,时事热点,界面新闻,https://www.jiemian.com/,fas fa-book,商业财经资讯,商业
+news,fas fa-newspaper,新闻资讯,时事热点,Reuters,https://www.reuters.com/,fas fa-newspaper,全球最具公信力的国际通讯社,国际
+news,fas fa-newspaper,新闻资讯,时事热点,Associated Press,https://apnews.com/,fas fa-globe,美联社，中立客观的新闻报道,国际
+news,fas fa-newspaper,新闻资讯,时事热点,NPR,https://www.npr.org/,fas fa-podcast,美国国家公共电台，深度报道与播客,国际
+news,fas fa-newspaper,新闻资讯,时事热点,PBS NewsHour,https://www.pbs.org/newshour/,fas fa-tv,美国公共电视网，深度新闻分析,国际
+news,fas fa-newspaper,新闻资讯,时事热点,CBS News,https://www.cbsnews.com/,fas fa-video,哥伦比亚广播公司新闻,国际
+news,fas fa-newspaper,新闻资讯,时事热点,NBC News,https://www.nbcnews.com/,fas fa-tower-broadcast,全国广播公司新闻,国际
+news,fas fa-newspaper,新闻资讯,时事热点,ABC News,https://abcnews.go.com/,fas fa-star,美国广播公司新闻,国际
+news,fas fa-newspaper,新闻资讯,时事热点,France 24,https://www.france24.com/,fas fa-globe-europe,法国国际新闻频道,国际
+news,fas fa-newspaper,新闻资讯,时事热点,Deutsche Welle,https://www.dw.com/,fas fa-globe,德国之声，多语种国际报道,国际
+news,fas fa-newspaper,新闻资讯,时事热点,Al Jazeera,https://www.aljazeera.com/,fas fa-globe-asia,半岛电视台，中东视角,国际
+news,fas fa-newspaper,新闻资讯,时事热点,South China Morning Post,https://www.scmp.com/,fas fa-dragon,南华早报，亚洲英文视角,英文
+news,fas fa-newspaper,新闻资讯,时事热点,Nikkei Asia,https://asia.nikkei.com/,fas fa-chart-line,日经亚洲，亚洲经济政治深度,财经
+news,fas fa-newspaper,新闻资讯,时事热点,The Straits Times,https://www.straitstimes.com/,fas fa-globe-asia,新加坡海峡时报，东南亚新闻,东南亚
+news,fas fa-newspaper,新闻资讯,时事热点,The New York Times,https://www.nytimes.com/,fas fa-newspaper,纽约时报，国际深度报道,国际
+news,fas fa-newspaper,新闻资讯,时事热点,The Wall Street Journal,https://www.wsj.com/,fas fa-chart-bar,华尔街日报，财经权威,财经
+news,fas fa-newspaper,新闻资讯,时事热点,The Washington Post,https://www.washingtonpost.com/,fas fa-landmark,华盛顿邮报，政治调查报道,国际
+news,fas fa-newspaper,新闻资讯,时事热点,Financial Times,https://www.ft.com/,fas fa-pound-sign,金融时报，国际财经深度,财经
+news,fas fa-newspaper,新闻资讯,时事热点,The Guardian,https://www.theguardian.com/,fas fa-leaf,卫报，英国左翼视角,国际
+news,fas fa-newspaper,新闻资讯,时事热点,The Economist,https://www.economist.com/,fas fa-chart-pie,经济学人，深度分析与预测,财经
+news,fas fa-newspaper,新闻资讯,时事热点,Bloomberg,https://www.bloomberg.com/,fas fa-bolt,彭博社，金融数据与新闻,财经
+news,fas fa-newspaper,新闻资讯,时事热点,Fortune,https://fortune.com/,fas fa-crown,财富杂志，商业深度报道,商业
+news,fas fa-newspaper,新闻资讯,时事热点,Forbes,https://www.forbes.com/,fas fa-star,福布斯，商业与企业家新闻,商业
+news,fas fa-newspaper,新闻资讯,时事热点,Business Insider,https://www.businessinsider.com/,fas fa-chart-simple,商业内幕，科技与商业速报,商业
+news,fas fa-newspaper,新闻资讯,时事热点,Quartz,https://qz.com/,fas fa-gem,石英财经，全球商业新视角,财经
+news,fas fa-newspaper,新闻资讯,时事热点,Barron's,https://www.barrons.com/,fas fa-chart-line,巴伦周刊，投资市场深度,投资
+news,fas fa-newspaper,新闻资讯,时事热点,MarketWatch,https://www.marketwatch.com/,fas fa-chart-line,市场观察，实时金融数据,财经
+news,fas fa-newspaper,新闻资讯,时事热点,TechCrunch,https://techcrunch.com/,fab fa-techcrunch,全球科技创业与融资新闻,科技
+news,fas fa-newspaper,新闻资讯,时事热点,The Verge,https://www.theverge.com/,fas fa-microchip,前沿科技与消费电子,科技
+news,fas fa-newspaper,新闻资讯,时事热点,Wired,https://www.wired.com/,fas fa-brain,连线，科技文化深度解读,科技
+news,fas fa-newspaper,新闻资讯,时事热点,Ars Technica,https://arstechnica.com/,fas fa-flask,科技新闻与技术深度分析,科技
+news,fas fa-newspaper,新闻资讯,时事热点,CNET,https://www.cnet.com/,fas fa-laptop,数码产品评测与科技资讯,数码
+news,fas fa-newspaper,新闻资讯,时事热点,Engadget,https://www.engadget.com/,fas fa-gadget,消费电子与科技新品,数码
+news,fas fa-newspaper,新闻资讯,时事热点,ZDNet,https://www.zdnet.com/,fas fa-network-wired,企业IT与科技趋势,科技
+news,fas fa-newspaper,新闻资讯,时事热点,IT之家,https://www.ithome.com/,fas fa-mobile-alt,快速全面的科技数码资讯,科技
+news,fas fa-newspaper,新闻资讯,时事热点,36氪,https://36kr.com/,fas fa-rocket,前沿科技与创投资讯,科技
+news,fas fa-newspaper,新闻资讯,时事热点,虎嗅,https://www.huxiu.com/,fas fa-tiger,商业科技深度聚合,商业
+news,fas fa-newspaper,新闻资讯,时事热点,钛媒体,https://www.tmtpost.com/,fas fa-flask,科技产业与创新经济,科技
+news,fas fa-newspaper,新闻资讯,时事热点,澎湃新闻,https://www.thepaper.cn/,fas fa-brain,时事深度与思想平台,深度
+news,fas fa-newspaper,新闻资讯,时事热点,界面新闻,https://www.jiemian.com/,fas fa-chart-bar,商业与财经新媒体,财经
+news,fas fa-newspaper,新闻资讯,时事热点,财新网,https://www.caixin.com/,fas fa-file-invoice,付费财经深度报道,财经
+news,fas fa-newspaper,新闻资讯,时事热点,第一财经,https://www.yicai.com/,fas fa-chart-pie,专业财经资讯平台,财经
+news,fas fa-newspaper,新闻资讯,时事热点,华尔街见闻,https://wallstreetcn.com/,fas fa-bullseye,全球金融市场即时资讯,财经
+news,fas fa-newspaper,新闻资讯,时事热点,观察者网,https://www.guancha.cn/,fas fa-bullseye,时政与战略评论,时政
+news,fas fa-newspaper,新闻资讯,时事热点,参考消息,https://www.cankaoxiaoxi.com/,fas fa-globe,海外媒体资讯编译,国内
+news,fas fa-newspaper,新闻资讯,时事热点,中国新闻网,https://www.chinanews.com.cn/,fas fa-globe,中新社主办，综合新闻,国内
+news,fas fa-newspaper,新闻资讯,时事热点,央广网,https://www.cnr.cn/,fas fa-satellite-dish,中央人民广播电台官网,国内
+news,fas fa-newspaper,新闻资讯,时事热点,国际在线,https://www.cri.cn/,fas fa-globe-asia,多语种国际新闻,国内
+news,fas fa-newspaper,新闻资讯,时事热点,中国日报,https://www.chinadaily.com.cn/,fas fa-globe,国家级英文媒体,英文
+news,fas fa-newspaper,新闻资讯,时事热点,Global Times,https://www.globaltimes.cn/,fas fa-globe-asia,环球时报英文版,国际
+news,fas fa-newspaper,新闻资讯,时事热点,联合早报,https://www.zaobao.com/,fas fa-globe,新加坡中文国际视角,中文
+news,fas fa-newspaper,新闻资讯,时事热点,BBC中文,https://www.bbc.com/zhongwen,fas fa-globe,BBC中文网，国际新闻,中文
+news,fas fa-newspaper,新闻资讯,时事热点,德国之声中文,https://www.dw.com/zh/,fas fa-globe-europe,德国之声中文版,中文
+news,fas fa-newspaper,新闻资讯,时事热点,法广中文,https://www.rfi.fr/cn/,fas fa-globe-europe,法国国际广播电台中文,中文
+news,fas fa-newspaper,新闻资讯,时事热点,纽约时报中文,https://cn.nytimes.com/,fas fa-newspaper,纽约时报中文版,中文
+news,fas fa-newspaper,新闻资讯,时事热点,FT中文网,https://www.ftchinese.com/,fas fa-chart-line,金融时报中文版,财经
+news,fas fa-newspaper,新闻资讯,时事热点,WSJ中文,https://cn.wsj.com/,fas fa-chart-bar,华尔街日报中文版,财经
+news,fas fa-newspaper,新闻资讯,时事热点,nippon.com,https://www.nippon.com/,fas fa-sakura,日本多元文化资讯,日系
+news,fas fa-newspaper,新闻资讯,时事热点,Korea JoongAng Daily,https://koreajoongangdaily.joins.com/,fas fa-globe-asia,韩国中央日报英文版,韩系
+news,fas fa-newspaper,新闻资讯,时事热点,ABS-CBN News,https://news.abs-cbn.com/,fas fa-tv,菲律宾主流新闻,东南亚
+news,fas fa-newspaper,新闻资讯,时事热点,The Jakarta Post,https://www.thejakartapost.com/,fas fa-globe-asia,印尼英文日报,东南亚
+news,fas fa-newspaper,新闻资讯,时事热点,Vietnam News,https://vietnamnews.vn/,fas fa-globe-asia,越南英文新闻,东南亚
+news,fas fa-newspaper,新闻资讯,时事热点,Bangkok Post,https://www.bangkokpost.com/,fas fa-globe-asia,泰国英文新闻,东南亚
+news,fas fa-newspaper,新闻资讯,时事热点,The Hindu,https://www.thehindu.com/,fas fa-globe-asia,印度主要英文日报,南亚
+news,fas fa-newspaper,新闻资讯,时事热点,India Today,https://www.indiatoday.in/,fas fa-tv,印度新闻杂志,南亚
+news,fas fa-newspaper,新闻资讯,时事热点,Haaretz,https://www.haaretz.com/,fas fa-globe-asia,以色列权威报纸,中东
+news,fas fa-newspaper,新闻资讯,时事热点,The National,https://www.thenationalnews.com/,fas fa-globe-asia,阿联酋英文新闻,中东
+news,fas fa-newspaper,新闻资讯,时事热点,Moscow Times,https://www.themoscowtimes.com/,fas fa-globe-europe,俄罗斯英文新闻,东欧
+news,fas fa-newspaper,新闻资讯,时事热点,Kyiv Independent,https://kyivindependent.com/,fas fa-globe-europe,乌克兰英文新闻,东欧
+news,fas fa-newspaper,新闻资讯,时事热点,Politico,https://www.politico.com/,fas fa-landmark,美国政治新闻,政治
+news,fas fa-newspaper,新闻资讯,时事热点,The Hill,https://thehill.com/,fas fa-capitol,美国国会政治新闻,政治
+news,fas fa-newspaper,新闻资讯,时事热点,Roll Call,https://www.rollcall.com/,fas fa-vote-yea,美国国会新闻,政治
+news,fas fa-newspaper,新闻资讯,时事热点,Foreign Affairs,https://www.foreignaffairs.com/,fas fa-globe,国际事务深度分析,国际关系
+news,fas fa-newspaper,新闻资讯,时事热点,Foreign Policy,https://foreignpolicy.com/,fas fa-globe,外交政策杂志,国际关系
+news,fas fa-newspaper,新闻资讯,时事热点,The Diplomat,https://thediplomat.com/,fas fa-globe-asia,亚太地缘政治分析,国际关系
+news,fas fa-newspaper,新闻资讯,时事热点,Project Syndicate,https://www.project-syndicate.org/,fas fa-pen-fancy,全球知名评论合集,评论
+news,fas fa-newspaper,新闻资讯,时事热点,Aeon,https://aeon.co/,fas fa-brain,深度思想与文化文章,思想
+news,fas fa-newspaper,新闻资讯,时事热点,Quartz,https://qz.com/,fas fa-gem,新锐商业视角,商业
+news,fas fa-newspaper,新闻资讯,时事热点,Rest of World,https://restofworld.org/,fas fa-globe-asia,关注新兴市场科技,科技
+news,fas fa-newspaper,新闻资讯,时事热点,Semafor,https://www.semafor.com/,fas fa-chart-line,全球新闻新锐媒体,国际
+news,fas fa-newspaper,新闻资讯,时事热点,Axios,https://www.axios.com/,fas fa-bolt,简明快速的新闻简报,国际
+news,fas fa-newspaper,新闻资讯,时事热点,Punch,https://punchng.com/,fas fa-newspaper,尼日利亚主要新闻,非洲
+news,fas fa-newspaper,新闻资讯,时事热点,Daily Maverick,https://www.dailymaverick.co.za/,fas fa-eagle,南非独立新闻,非洲
+news,fas fa-newspaper,新闻资讯,时事热点,Nation Africa,https://nation.africa/,fas fa-globe-africa,肯尼亚东非新闻,非洲
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,天猫旗舰店,https://www.tmall.com/,fas fa-store,正版周边,淘宝
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,京东自营,https://www.jd.com/,fas fa-store,快速配送,京东
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,亚马逊中国,https://www.amazon.cn/,fas fa-store,全球购,Amazon
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,苏宁易购,https://www.suning.com/,fas fa-store,家电数码,苏宁
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,任天堂商店,https://store.nintendo.com/,fas fa-gamepad,官方周边,日美
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,PlayStation商店,https://www.playstation.com/,fab fa-playstation,游戏/周边,官方
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,淘宝,https://www.taobao.com/,fas fa-store,综合购物平台,综合
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,拼多多,https://www.pinduoduo.com/,fas fa-store,高性价比购物,平价
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,唯品会,https://www.vip.com/,fas fa-store,品牌特卖,特卖
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,抖音商城,https://www.douyin.com/,fas fa-store,直播购物,直播
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,小红书商城,https://www.xiaohongshu.com/,fas fa-store,好物种草,种草
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Steam商城,https://store.steampowered.com/,fas fa-gamepad,PC游戏正版,游戏
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Epic商城,https://store.epicgames.com/,fas fa-gamepad,正版游戏平台,游戏
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Xbox商店,https://www.xbox.com/,fas fa-gamepad,微软游戏商城,游戏
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,B站会员购,https://show.bilibili.com/,fas fa-box,手办周边潮玩,二次元
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,萌购,https://www.030buy.com/,fas fa-gift,日本代购直邮,日代
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,任你购,https://www.rennigou.com/,fas fa-gift,日版ACG代购,日购
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,京东国际,https://global.jd.com/,fas fa-store,进口商品免税,进口
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,天猫国际,https://global.tmall.com/,fas fa-store,海外直营,海淘
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,文具控,https://www.wenjukong.com/,fas fa-pencil-alt,文具手账好物,文具
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,锐意网,https://www.rayi.cn/,fas fa-camera,摄影器材商城,数码
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,有货YOHO,https://www.yohobuy.com/,fas fa-tshirt,潮流服饰品牌,潮牌
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,考拉海购,https://www.kaola.com/,fas fa-store,网易跨境电商,海淘
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,1688批发,https://www.1688.com/,fas fa-store,源头厂家批发,批发
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,淘宝二次元,https://2ciyuan.taobao.com/,fas fa-gift,动漫周边专区,ACG
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,亚马逊全球,https://www.amazon.com/,fas fa-store,海外购物直邮,国际
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,B站会员购,https://show.bilibili.com/,fas fa-box,手办、周边、漫展官方票务,二次元
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,萌购,https://www.030buy.com/,fas fa-gift,专注日本动漫周边的代购平台,日代
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,任你购,https://www.rennigou.com/,fas fa-plane,日本ACG代购，支持日亚煤炉,日购
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,魔法集市,https://www.masadora.jp/,fas fa-crown,日系二次元一站式代购,日代
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Hpoi 手办维基,https://www.hpoi.net/,fas fa-dragon,手办资料库及交易商城,手办
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,阿里集团,https://www.1688.com/,fas fa-warehouse,源头工厂批发价,批发
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,淘特,https://taotao.taobao.com/,fas fa-store-alt,源头厂货，性价比高,平价
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,京喜,https://www.joybuy.co.uk/,fas fa-store-alt,京东旗下特惠购物,平价
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,小米有品,https://www.xiaomiyoupin.com/,fas fa-microchip,精品生活电商,数码
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,网易严选,https://you.163.com/,fas fa-leaf,ODM模式品质好物,生活
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,得物,https://www.dewu.com/,fas fa-shoe-prints,潮流单品鉴别交易,潮牌
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,识货,https://www.shihuo.cn/,fas fa-check-circle,正品比价导购平台,导购
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,什么值得买,https://www.smzdm.com/,fas fa-gem,全网优惠信息聚合,导购
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,慢慢买,https://www.manmanbuy.com/,fas fa-chart-line,历史价格查询工具,比价
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,eBay,https://www.ebay.com/,fab fa-ebay,全球拍卖与二手交易,国际
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Mercari,https://www.mercari.com/,fas fa-tag,日本主流二手交易平台,日系
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,煤炉,https://jp.mercari.com/,fas fa-fire,日本闲鱼，需代购,二手
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Rakuten,https://www.rakuten.co.jp/,fas fa-store,日本最大电商平台,日系
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Yahoo! Japan,https://auctions.yahoo.co.jp/,fas fa-gavel,日本雅虎拍卖,日系
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Suruga-ya,https://www.suruga-ya.jp/,fas fa-box-open,日本二手动漫游戏专卖,二次元
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Mandarake,https://www.mandarake.co.jp/,fas fa-dragon,大型动漫二手连锁,中古
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Animate,https://www.animate.co.jp/,fas fa-star,日本动漫周边连锁,日系
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,AmiAmi,https://www.amiami.com/,fas fa-robot,手办模型专门店,手办
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,GoodSmile,https://www.goodsmile.info/,fas fa-smile,良笑社官方商城,手办
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Bandai Namco,https://p-bandai.jp/,fas fa-band-aid,万代南梦宫官方,成品
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Etsy,https://www.etsy.com/,fab fa-etsy,全球手工创意平台,手作
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Shopify,https://www.shopify.com/,fas fa-shopping-cart,品牌独立站聚合,品牌
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Farfetch,https://www.farfetch.com/,fas fa-tshirt,全球奢侈品买手店,时尚
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,SSENSE,https://www.ssense.com/,fas fa-tshirt,高端潮流买手平台,潮牌
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,MyTheresa,https://www.mytheresa.com/,fas fa-crown,德国奢侈品电商,时尚
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Net-a-Porter,https://www.net-a-porter.com/,fas fa-gem,英国时尚奢侈品,时尚
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,ASOS,https://www.asos.com/,fas fa-tshirt,英国年轻潮流服饰,时尚
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Zalando,https://www.zalando.com/,fas fa-shoe-prints,欧洲时尚电商平台,时尚
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Coupang,https://www.coupang.com/,fas fa-rocket,韩国最大电商平台,韩系
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Gmarket,https://www.gmarket.co.kr/,fas fa-store,韩国主流综合购物,韩系
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Lazada,https://www.lazada.com/,fas fa-globe-asia,东南亚电商平台,东南亚
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Shopee,https://shopee.sg/,fas fa-store,东南亚与台湾地区,东南亚
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Zalora,https://www.zalora.sg/,fas fa-tshirt,东南亚时尚电商,时尚
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Tokopedia,https://www.tokopedia.com/,fas fa-store,印尼电商平台,东南亚
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Flipkart,https://www.flipkart.com/,fas fa-shopping-cart,印度电商龙头,南亚
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Myntra,https://www.myntra.com/,fas fa-tshirt,印度时尚电商,时尚
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Jumia,https://www.jumia.com.ng/,fas fa-globe-africa,非洲电商平台,非洲
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Konga,https://www.konga.com/,fas fa-store,尼日利亚电商,非洲
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Takealot,https://www.takealot.com/,fas fa-shopping-bag,南非电商平台,非洲
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Souq,https://www.souq.com/,fas fa-globe-asia,中东电商(亚马逊),中东
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Noon,https://www.noon.com/,fas fa-clock,中东本土电商,中东
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Ozon,https://www.ozon.ru/,fas fa-store,俄罗斯电商平台,东欧
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Wildberries,https://www.wildberries.ru/,fas fa-tshirt,俄罗斯时尚电商,东欧
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Allegro,https://allegro.pl/,fas fa-store,波兰电商平台,东欧
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Zara,https://www.zara.com/,fas fa-tshirt,Inditex集团官网,快时尚
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,H&M,https://www2.hm.com/,fas fa-tshirt,快时尚品牌官网,服饰
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Uniqlo,https://www.uniqlo.com/,fas fa-tshirt,优衣库官方商城,服饰
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Muji,https://www.muji.com/,fas fa-leaf,无印良品官方,生活
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,IKEA,https://www.ikea.com/,fas fa-couch,宜家家居官方商城,家居
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Nitori,https://www.nitori-net.jp/,fas fa-bed,似鸟家居官方,日系
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Nike,https://www.nike.com/,fab fa-nike,耐克官方商城,运动
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Adidas,https://www.adidas.com/,fab fa-adidas,阿迪达斯官方,运动
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Apple,https://www.apple.com/,fab fa-apple,苹果官方商城,数码
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Samsung,https://www.samsung.com/,fab fa-samsung,三星官方商城,数码
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Xiaomi,https://www.mi.com/,fas fa-microchip,小米官方商城,数码
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Huawei,https://consumer.huawei.com/,fas fa-mobile-alt,华为官方商城,数码
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Anker,https://www.anker.com/,fas fa-bolt,数码配件官方,配件
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,LEGO,https://www.lego.com/,fas fa-cube,乐高官方商城,玩具
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Hasbro,https://shop.hasbro.com/,fas fa-robot,孩之宝官方,玩具
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Mattel,https://shop.mattel.com/,fas fa-star,美泰官方商城,玩具
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Bandai,https://bandai-hobby.net/,fas fa-dragon,万代拼装模型,模型
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Tamiya,https://www.tamiya.com/,fas fa-car,田宫模型官方,模型
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Kaiyodo,https://www.kaiyodo.co.jp/,fas fa-dragon,海洋堂官方,手办
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Alibaba,https://www.alibaba.com/,fas fa-globe,全球B2B批发平台,批发
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Global Sources,https://www.globalsources.com/,fas fa-globe-asia,外贸B2B平台,批发
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,DHgate,https://www.dhgate.com/,fas fa-store,小额批发平台,外贸
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Made-in-China,https://www.made-in-china.com/,fas fa-industry,中国制造网,B2B
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,StockX,https://stockx.com/,fas fa-chart-line,球鞋潮牌股票交易,潮牌
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,GOAT,https://www.goat.com/,fas fa-shoe-prints,正品球鞋交易,运动
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Stadium Goods,https://www.stadiumgoods.com/,fas fa-store,纽约潮牌寄卖,潮牌
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Grailed,https://www.grailed.com/,fas fa-tshirt,男士潮流二手,二手
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Depop,https://www.depop.com/,fas fa-store,复古时尚社交平台,二手
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Poshmark,https://poshmark.com/,fas fa-tshirt,时尚二手交易,二手
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Mercari US,https://www.mercari.com/,fas fa-tag,美国二手交易,二手
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Vestiaire,https://www.vestiairecollective.com/,fas fa-crown,二手奢侈品平台,奢侈品
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,The RealReal,https://www.therealreal.com/,fas fa-gem,二手奢侈品寄卖,奢侈品
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Reverb,https://reverb.com/,fas fa-guitar,乐器二手交易,乐器
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Discogs,https://www.discogs.com/,fas fa-music,音乐唱片市场,音乐
+shopping,fas fa-shopping-cart,购物推荐,官方旗舰,Amazon Handmade,https://www.amazon.com/handmade,fas fa-paint-brush,手工艺品市场,手作
+gallery,fas fa-images,图库资源,精选合集,Pixiv,https://www.pixiv.net/,fas fa-image,插画分享,日语
+gallery,fas fa-images,图库资源,精选合集,Wallhaven,https://wallhaven.cc/,fas fa-image,壁纸社区,英文
+gallery,fas fa-images,图库资源,精选合集,Unsplash,https://unsplash.com/,fas fa-image,高清图片,英文
+gallery,fas fa-images,图库资源,精选合集,DeviantArt,https://www.deviantart.com/,fab fa-deviantart,艺术社区,英文
+gallery,fas fa-images,图库资源,精选合集,Pexels,https://www.pexels.com/,fas fa-camera,免费素材,英文
+gallery,fas fa-images,图库资源,精选合集,ArtStation,https://www.artstation.com/,fas fa-image,游戏影视CG美术,英文
+gallery,fas fa-images,图库资源,精选合集,Dribbble,https://dribbble.com/,fas fa-image,设计创意作品,英文
+gallery,fas fa-images,图库资源,精选合集,Behance,https://www.behance.net/,fas fa-image,创意设计作品集,英文
+gallery,fas fa-images,图库资源,精选合集,零chan,https://www.zerochan.net/,fas fa-image,ACG动漫壁纸,二次元
+gallery,fas fa-images,图库资源,精选合集,Konachan,https://konachan.net/,fas fa-image,二次元高清壁纸,二次元
+gallery,fas fa-images,图库资源,精选合集,Yande.re,https://yande.re/,fas fa-image,动漫插画壁纸,二次元
+gallery,fas fa-images,图库资源,精选合集,壁纸引擎,https://www.wallpaperengine.io/,fas fa-image,动态壁纸资源,壁纸
+gallery,fas fa-images,图库资源,精选合集,壁纸社,https://www.wallpapersclub.com/,fas fa-image,超清电脑壁纸,壁纸
+gallery,fas fa-images,图库资源,精选合集,极简壁纸,https://bz.zzzmh.cn/,fas fa-image,简约高清壁纸,中文
+gallery,fas fa-images,图库资源,精选合集,爱给网,https://www.aigei.com/,fas fa-image,免费图片素材,中文
+gallery,fas fa-images,图库资源,精选合集,摄图网,https://699pic.com/,fas fa-image,正版商用图库,商用
+gallery,fas fa-images,图库资源,精选合集,千库网,https://www.588ku.com/,fas fa-image,免抠图片素材,素材
+gallery,fas fa-images,图库资源,精选合集,包图网,https://ibaotu.com/,fas fa-image,设计图片素材,商用
+gallery,fas fa-images,图库资源,精选合集,CC0图片,https://cc0.cn/,fas fa-image,免费可商用图库,免费
+gallery,fas fa-images,图库资源,精选合集,动漫壁纸,https://www.dmoe.cc/,fas fa-image,ACG高清壁纸站,二次元
+gallery,fas fa-images,图库资源,精选合集,樱花动漫图库,https://img.omegacode.cn/,fas fa-image,动漫插画美图,二次元
+gallery,fas fa-images,图库资源,精选合集,VisualHunt,https://visualhunt.com/,fas fa-image,免费CC0图库,英文
+gallery,fas fa-images,图库资源,精选合集,Lifeofpix,https://www.lifeofpix.com/,fas fa-image,欧美摄影美图,英文
+gallery,fas fa-images,图库资源,精选合集,SketchupTexture,https://www.sketchuptextureclub.com/,fas fa-image,PBR材质贴图,材质
+gallery,fas fa-images,图库资源,精选合集,Texturer,https://www.texturer.com/,fas fa-image,无缝材质纹理,材质
+gallery,fas fa-images,图库资源,精选合集,DeviantArt,https://www.deviantart.com/,fab fa-deviantart,全球最大艺术社区，6.5亿+作品，涵盖插画、摄影、AI艺术,国际
+gallery,fas fa-images,图库资源,精选合集,半次元,https://bcy.net/,fas fa-users,国内二次元创作者社区，原创漫画/插画/COS集中地,国产
+gallery,fas fa-images,图库资源,精选合集,ArtStation,https://www.artstation.com/,fas fa-rocket,专业游戏影视CG美术平台，行业顶尖概念设计,专业
+gallery,fas fa-images,图库资源,精选合集,Pixiv,https://www.pixiv.net/,fas fa-palette,日本插画师社区，日系画风潮流风向标,日系
+gallery,fas fa-images,图库资源,精选合集,高品图像,https://www.gaopinimages.com/,fas fa-crown,数亿级商用素材，AI工具+智能编辑免费开放,商用
+gallery,fas fa-images,图库资源,精选合集,千图网,https://www.58pic.com/,fas fa-file-image,版权清晰的商用素材库，模板/插画/矢量图,商用
+gallery,fas fa-images,图库资源,精选合集,站酷,https://www.zcool.com.cn/,fas fa-bolt,国内设计师社区，插画/UI/平面设计作品集,国产
+gallery,fas fa-images,图库资源,精选合集,Wallhaven,https://wallhaven.cc/,fas fa-image,4K超清壁纸库，支持标签/分辨率精准筛选,壁纸
+gallery,fas fa-images,图库资源,精选合集,Alpha Coders,https://wall.alphacoders.com/,fas fa-images,庞大动漫壁纸库，按作品/角色分类检索,二次元
+gallery,fas fa-images,图库资源,精选合集,Konachan,https://konachan.net/,fas fa-dragon,二次元高质量壁纸，支持多级标签筛选,二次元
+gallery,fas fa-images,图库资源,精选合集,Yande.re,https://yande.re/,fas fa-dragon,动漫插画壁纸站，社区评分制,二次元
+gallery,fas fa-images,图库资源,精选合集,Wallpaper Abyss,https://wall.alphacoders.com/by_sub_category.php?id=173947,fas fa-layer-group,专注动漫的4K壁纸分站,二次元
+gallery,fas fa-images,图库资源,精选合集,Unsplash,https://unsplash.com/,fas fa-camera-retro,高审美摄影作品，CC0协议可商用,摄影
+gallery,fas fa-images,图库资源,精选合集,Pexels,https://www.pexels.com/,fas fa-video,免费图片+视频素材，更新快紧跟潮流,综合
+gallery,fas fa-images,图库资源,精选合集,Pixabay,https://pixabay.com/,fas fa-database,全球最大免费素材社区，含矢量/插画/音乐,综合
+gallery,fas fa-images,图库资源,精选合集,Freepik,https://www.freepik.com/,fas fa-paint-brush,矢量图/插图/PSD模板，海量免费资源,矢量
+gallery,fas fa-images,图库资源,精选合集,Flaticon,https://www.flaticon.com/,fas fa-icons,数百万图标库，支持PNG/SVG/矢量下载,图标
+gallery,fas fa-images,图库资源,精选合集,即时设计,https://js.design/,fas fa-pencil-ruler,国产设计工具+资源广场，矢量/插画免费用,设计
+gallery,fas fa-images,图库资源,精选合集,Mixkit,https://mixkit.co/,fas fa-music,免费视频素材/音效/BGM，风格现代,视频
+gallery,fas fa-images,图库资源,精选合集,Foodiesfeed,https://www.foodiesfeed.com/,fas fa-utensils,专注美食摄影的免费图库,垂直
+gallery,fas fa-images,图库资源,精选合集,Poly Haven,https://polyhaven.com/,fas fa-cube,CC0协议的HDRI/纹理/3D模型,3D
+gallery,fas fa-images,图库资源,精选合集,ambientCG,https://ambientcg.com/,fas fa-border-all,CC0协议的PBR材质库，格式齐全,3D
+gallery,fas fa-images,图库资源,精选合集,Textures.com,https://www.textures.com/,fas fa-th,老牌贴图库，品类全检索强,3D
+gallery,fas fa-images,图库资源,精选合集,Quixel Megascans,https://quixel.com/megascans,fas fa-mountain,扫描级写实材质库,3D
+gallery,fas fa-images,图库资源,精选合集,BlenderKit,https://www.blenderkit.com/,fas fa-cube,Blender内置材质库，一键拖拽,3D
+gallery,fas fa-images,图库资源,精选合集,HDRMAPS,https://hdrmaps.com/,fas fa-sun,专注HDRI环境贴图,3D
+gallery,fas fa-images,图库资源,精选合集,OpenGameArt,https://opengameart.org/,fas fa-gamepad,游戏素材社区，纹理/像素风/音效,游戏
+gallery,fas fa-images,图库资源,精选合集,NASA Visible Earth,https://visibleearth.nasa.gov/,fas fa-globe,地球/天体主题纹理与影像,科学
+gallery,fas fa-images,图库资源,精选合集,视觉中国免费专区,https://www.vcg.com/,fas fa-eye,部分免费素材，品质有保障,商用
+gallery,fas fa-images,图库资源,精选合集,摄图网,https://699pic.com/,fas fa-camera,免费摄影图片+设计素材,商用
+gallery,fas fa-images,图库资源,精选合集,包图网,https://ibaotu.com/,fas fa-box-open,电商模板/海报PSD免费专区,模板
+gallery,fas fa-images,图库资源,精选合集,图精灵,https://www.tukuppt.com/,fas fa-puzzle-piece,专注PNG免抠元素,素材
+gallery,fas fa-images,图库资源,精选合集,懒人图库,https://www.lanrentuku.com/,fas fa-couch,网页设计素材，经典实用,设计
+gallery,fas fa-images,图库资源,精选合集,素材中国,https://www.sucai.com/,fas fa-download,综合素材分享平台,综合
+gallery,fas fa-images,图库资源,精选合集,我图网,https://www.ooopic.com/,fas fa-star,设计师分享平台，可淘特色素材,设计
+gallery,fas fa-images,图库资源,精选合集,极简壁纸,https://bz.zzzmh.cn/,fas fa-circle,极简风格高清壁纸,壁纸
+gallery,fas fa-images,图库资源,精选合集,动漫壁纸,https://www.dmoe.cc/,fas fa-dragon,ACG高清壁纸站,二次元
+gallery,fas fa-images,图库资源,精选合集,爱给网,https://www.aigei.com/,fas fa-heart,免费音效/配乐/素材,音频
+gallery,fas fa-images,图库资源,精选合集,CC0图片,https://cc0.cn/,fas fa-copyright,可商用CC0协议图库,免费
+gallery,fas fa-images,图库资源,精选合集,VisualHunt,https://visualhunt.com/,fas fa-search,CC0图库聚合搜索,聚合
+gallery,fas fa-images,图库资源,精选合集,Lifeofpix,https://www.lifeofpix.com/,fas fa-leaf,欧美风格摄影图库,摄影
+gallery,fas fa-images,图库资源,精选合集,SketchupTexture,https://www.sketchuptextureclub.com/,fas fa-cube,建筑/室内设计纹理,3D
+gallery,fas fa-images,图库资源,精选合集,ShareTextures,https://www.sharetextures.com/,fas fa-share-alt,社区型PBR材质分享,3D
+gallery,fas fa-images,图库资源,精选合集,3DTextures,https://3dtextures.me/,fas fa-th-large,可平铺PBR材质库,3D
+gallery,fas fa-images,图库资源,精选合集,CGBookcase,https://www.cgbookcase.com/,fas fa-book,免费PBR材质与HDRI,3D
+gallery,fas fa-images,图库资源,精选合集,Poliigon,https://www.poliigon.com/,fas fa-gem,高质量建筑可视化材质,3D
+gallery,fas fa-images,图库资源,精选合集,NoEmotion HDRs,https://noemotionhdrs.net/,fas fa-cloud-sun,HDRI环境贴图聚合,3D
+gallery,fas fa-images,图库资源,精选合集,MatCaps,https://docs.blender.org/manual/en/latest/editors/3dview/display/shading.html,fas fa-circle,Blender官方MatCap库,3D
+gallery,fas fa-images,图库资源,精选合集,艺术维基,https://artwiki.cn/,fas fa-university,全球艺术作品数据库，125万+公版作品,艺术
+video,fas fa-video,视频资源,影视剪辑,Bilibili,https://www.bilibili.com/,fas fa-film,弹幕视频,中文
+video,fas fa-video,视频资源,影视剪辑,Youku,https://www.youku.com/,fas fa-film,优酷平台,中文
+video,fas fa-video,视频资源,影视剪辑,腾讯视频,https://v.qq.com/,fas fa-film,v.qq.com,中文
+video,fas fa-video,视频资源,影视剪辑,Netflix,https://www.netflix.com/,fab fa-netflix,全球流媒体,多国
+video,fas fa-video,视频资源,影视剪辑,Disney+,https://www.disneyplus.com/,fab fa-disney,迪士尼+,多国
+video,fas fa-video,视频资源,影视剪辑,Twitch,https://www.twitch.tv/,fab fa-twitch,游戏直播,英文
+video,fas fa-video,视频资源,影视剪辑,爱奇艺,https://www.iqiyi.com/,fas fa-film,高清影视平台,中文
+video,fas fa-video,视频资源,影视剪辑,芒果TV,https://www.mgtv.com/,fas fa-film,综艺剧集全覆盖,中文
+video,fas fa-video,视频资源,影视剪辑,YouTube,https://www.youtube.com/,fab fa-youtube,全球最大视频站,国际
+video,fas fa-video,视频资源,影视剪辑,TikTok,https://www.tiktok.com/,fab fa-tiktok,海外版抖音,国际
+video,fas fa-video,视频资源,影视剪辑,抖音,https://www.douyin.com/,fas fa-video,短视频创作,中文
+video,fas fa-video,视频资源,影视剪辑,快手,https://www.kuaishou.com/,fas fa-video,生活短视频,中文
+video,fas fa-video,视频资源,影视剪辑,央视影音,https://tv.cctv.com/,fas fa-tv,直播回看平台,直播
+video,fas fa-video,视频资源,影视剪辑,Hulu,https://www.hulu.com/,fas fa-film,美区影视平台,英文
+video,fas fa-video,视频资源,影视剪辑,HBO Max,https://www.max.com/,fas fa-film,美剧独家平台,英文
+video,fas fa-video,视频资源,影视剪辑,Amazon Prime,https://prime.amazon.com/,fas fa-film,亚马逊影视,国际
+video,fas fa-video,视频资源,影视剪辑,LiTV,https://www.litv.tv/,fas fa-film,台剧综艺直播,繁中
+video,fas fa-video,视频资源,影视剪辑,KKTV,https://www.kktv.me/,fas fa-film,台剧日漫同步,繁中
+video,fas fa-video,视频资源,影视剪辑,咪咕视频,https://www.miguvideo.com/,fas fa-film,体育赛事直播,体育
+video,fas fa-video,视频资源,影视剪辑,新片场,https://www.xinpianchang.com/,fas fa-film,原创影视短片,创作
+video,fas fa-video,视频资源,影视剪辑,开眼Eyepetizer,https://www.eyepetizer.net/,fas fa-film,高清创意短片,短片
+video,fas fa-video,视频资源,影视剪辑,预告片世界,https://www.previewworld.com/,fas fa-film,高清影视预告,素材
+video,fas fa-video,视频资源,影视剪辑,片源网,https://www.pianyuan.la/,fas fa-film,影视资源索引,资源
+video,fas fa-video,视频资源,影视剪辑,Vimeo,https://vimeo.com/,fas fa-film,高清创意视频,英文
+video,fas fa-video,视频资源,影视剪辑,Dailymotion,https://www.dailymotion.com/,fas fa-film,欧系视频平台,国际
+video,fas fa-video,视频资源,影视剪辑,YouTube 影视,https://www.youtube.com/store,fas fa-film,正版电影剧集,国际
+video,fas fa-video,视频资源,影视剪辑,Tubi,https://tubitv.com/,fas fa-tv,超5万部影视剧免费观看，含广告，片库庞大更新快,国际
+video,fas fa-video,视频资源,影视剪辑,Pluto TV,https://pluto.tv/,fas fa-satellite-dish,数百个免费直播频道+点播，体验类似有线电视,国际
+video,fas fa-video,视频资源,影视剪辑,Plex,https://www.plex.tv/,fas fa-stream,整合个人媒体库与5万+免费影视剧、直播频道,国际
+video,fas fa-video,视频资源,影视剪辑,The Roku Channel,https://therokuchannel.roku.com/,fas fa-tv,Roku官方免费频道，含原创内容和500+直播频道,国际
+video,fas fa-video,视频资源,影视剪辑,Crackle,https://www.crackle.com/,fas fa-film,索尼旗下免费影视平台，原创剧集与经典电影,国际
+video,fas fa-video,视频资源,影视剪辑,Amazon Freevee,https://www.amazon.com/adlp/freevee,fab fa-amazon,亚马逊免费影视，含IMDb评分整合,国际
+video,fas fa-video,视频资源,影视剪辑,YouTube 免费电影,https://www.youtube.com/,fab fa-youtube,官方免费带广告电影专区，含4K资源,国际
+video,fas fa-video,视频资源,影视剪辑,FMovies,https://fmovies.co/,fas fa-film,界面简洁，支持多服务器，更新速度快,非官方
+video,fas fa-video,视频资源,影视剪辑,Goojara,https://www.goojara.ch/,fas fa-dragon,片库海量，移动端友好,非官方
+video,fas fa-video,视频资源,影视剪辑,M4uHD,https://m4uhd.tv/,fas fa-high-definition,高清/4K资源，弹窗极少,非官方
+video,fas fa-video,视频资源,影视剪辑,LookMovie,https://lookmovie2.to/,fas fa-film,Netflix风格界面，画质出色,非官方
+video,fas fa-video,视频资源,影视剪辑,HiMovies,https://www.himovies.to/,fas fa-film,加载速度快，支持多语言字幕,非官方
+video,fas fa-video,视频资源,影视剪辑,Braflix,https://www.braflix.com/,fas fa-bolt,Reddit热门推荐，近乎零广告,非官方
+video,fas fa-video,视频资源,影视剪辑,卓特视觉,https://www.droitstock.com/,fas fa-video,超5000万条4K视频素材，AI搜/AI绘图工具,商用素材
+video,fas fa-video,视频资源,影视剪辑,Shutterstock,https://www.shutterstock.com/,fas fa-camera,全球顶级商用素材库，海量视频/音乐/图片,商用素材
+video,fas fa-video,视频资源,影视剪辑,iStock,https://www.istockphoto.com/,fas fa-crown,Getty旗下，无AI生成内容，纯艺术家原创,商用素材
+video,fas fa-video,视频资源,影视剪辑,StoryBlocks,https://www.storyblocks.com/,fas fa-cubes,会员制无限下载，含AE模板/背景视频,商用素材
+video,fas fa-video,视频资源,影视剪辑,Depositphotos,https://depositphotos.com/,fas fa-photo-video,超3.27亿份素材，支持以图搜图,商用素材
+video,fas fa-video,视频资源,影视剪辑,Pexels,https://www.pexels.com/,fas fa-video,免费可商用视频+图片，风格现代,免费素材
+video,fas fa-video,视频资源,影视剪辑,Pixabay,https://pixabay.com/,fas fa-database,全球最大免费素材库，含视频/音乐/音效,免费素材
+video,fas fa-video,视频资源,影视剪辑,Mixkit,https://mixkit.co/,fas fa-music,免费高清视频素材/音效/BGM,免费素材
+video,fas fa-video,视频资源,影视剪辑,Coverr,https://coverr.co/,fas fa-play-circle,专注网站背景视频的免费素材库,免费素材
+video,fas fa-video,视频资源,影视剪辑,Videvo,https://www.videvo.net/,fas fa-video,免费+付费视频素材，含动态图形,素材
+video,fas fa-video,视频资源,影视剪辑,Mazwai,https://mazwai.com/,fas fa-film,电影感大片视频素材，需标注作者,素材
+video,fas fa-video,视频资源,影视剪辑,Cutestock,https://cutestock.com/,fas fa-cut,免费高质量视频片段，分类清晰,素材
+video,fas fa-video,视频资源,影视剪辑,Instagram Reels,https://www.instagram.com/reels/,fab fa-instagram,日活超2亿，与社交关系链深度整合,短视频
+video,fas fa-video,视频资源,影视剪辑,YouTube Shorts,https://www.youtube.com/shorts,fab fa-youtube,日均500亿播放，SEO长尾流量优势强,短视频
+video,fas fa-video,视频资源,影视剪辑,Snapchat Spotlight,https://www.snapchat.com/,fab fa-snapchat,Z世代聚集，4.2亿日活，AR滤镜丰富,短视频
+video,fas fa-video,视频资源,影视剪辑,Lemon8,https://www.lemon8.com/,fas fa-lemon,字节跳动旗下，图文+视频结合的生活社区,短视频
+video,fas fa-video,视频资源,影视剪辑,Triller,https://www.triller.co/,fas fa-music,AI自动剪辑音乐视频，艺人合作多,短视频
+video,fas fa-video,视频资源,影视剪辑,Likee,https://likee.com/,fas fa-star,特效工具强大，新兴市场流行,短视频
+video,fas fa-video,视频资源,影视剪辑,小红书,https://www.xiaohongshu.com/,fab fa-reddit,图文+视频种草社区，高消费力女性用户,短视频
+video,fas fa-video,视频资源,影视剪辑,微信视频号,https://channels.weixin.qq.com/,fab fa-weixin,基于社交关系分发，打通微信生态,短视频
+video,fas fa-video,视频资源,影视剪辑,西瓜视频,https://www.ixigua.com/,fas fa-watermelon,字节跳动旗下，中短视频混合平台,短视频
+forum,fas fa-comments,社区论坛,交流分享,贴吧,https://tieba.baidu.com/,fas fa-users,百度贴吧,中文
+forum,fas fa-comments,社区论坛,交流分享,Reddit,https://www.reddit.com/,fab fa-reddit,社交新闻,英文
+forum,fas fa-comments,社区论坛,交流分享,Stack Overflow,https://stackoverflow.com/,fab fa-stack-overflow,程序员问答,英文
+forum,fas fa-comments,社区论坛,交流分享,NGA玩家社区,https://nga.178.com/,fas fa-gamepad,艾泽拉斯,中文
+forum,fas fa-comments,社区论坛,交流分享,V2EX,https://www.v2ex.com/,fas fa-code,技术创意,中文
+forum,fas fa-comments,社区论坛,交流分享,Stage1st,https://bbs.saraba1st.com/,fas fa-users-cog,动漫游戏论坛,中文
+forum,fas fa-comments,社区论坛,交流分享,豆瓣,https://www.douban.com/,fas fa-users,书评影评兴趣社区,中文
+forum,fas fa-comments,社区论坛,交流分享,知乎,https://www.zhihu.com/,fas fa-users,知识问答社区,中文
+forum,fas fa-comments,社区论坛,交流分享,小红书,https://www.xiaohongshu.com/,fas fa-users,生活种草分享,中文
+forum,fas fa-comments,社区论坛,交流分享,虎扑,https://bbs.hupu.com/,fas fa-paw,体育数码社区,中文
+forum,fas fa-comments,社区论坛,交流分享,游民星空论坛,https://bbs.gamersky.com/,fas fa-gamepad,游戏玩家交流,游戏
+forum,fas fa-comments,社区论坛,交流分享,3DM论坛,https://bbs.3dmgame.com/,fas fa-gamepad,单机游戏交流,游戏
+forum,fas fa-comments,社区论坛,交流分享,TapTap社区,https://www.taptap.com/,fas fa-gamepad,手游玩家交流,手游
+forum,fas fa-comments,社区论坛,交流分享,掘金,https://juejin.cn/,fas fa-code,前端技术社区,开发
+forum,fas fa-comments,社区论坛,交流分享,CSDN,https://www.csdn.net/,fas fa-code,程序员技术博客,开发
+forum,fas fa-comments,社区论坛,交流分享,开源中国,https://www.oschina.net/,fas fa-code,开源技术社区,开发
+forum,fas fa-comments,社区论坛,交流分享,站酷,https://www.zcool.com.cn/,fas fa-palette,设计师交流社区,设计
+forum,fas fa-comments,社区论坛,交流分享,UI中国,https://www.ui.cn/,fas fa-palette,界面设计交流,设计
+forum,fas fa-comments,社区论坛,交流分享,天涯社区,https://www.tianya.cn/,fas fa-users,综合老牌论坛,中文
+forum,fas fa-comments,社区论坛,交流分享,猫扑,https://www.mop.com/,fas fa-users,娱乐综合社区,中文
+forum,fas fa-comments,社区论坛,交流分享,水木社区,http://www.newsmth.net/,fas fa-users,高校精英论坛,中文
+forum,fas fa-comments,社区论坛,交流分享,爱卡汽车,https://www.xcar.com.cn/,fas fa-users,汽车车友论坛,汽车
+forum,fas fa-comments,社区论坛,交流分享,汽车之家论坛,https://club.autohome.com.cn/,fas fa-users,汽车交流社区,汽车
+forum,fas fa-comments,社区论坛,交流分享,4chan,https://www.4chan.org/,fas fa-users,海外综合贴图版,英文
+forum,fas fa-comments,社区论坛,交流分享,Quora,https://www.quora.com/,fas fa-users,国外知乎问答,英文
+forum,fas fa-comments,社区论坛,交流分享,Steam社区,https://steamcommunity.com/,fas fa-gamepad,玩家讨论组,游戏
+forum,fas fa-comments,社区论坛,交流分享,果壳,https://www.guokr.com/,fas fa-users,科技趣味社区,科普
+forum,fas fa-comments,社区论坛,交流分享,丁香园,https://www.dxy.cn/,fas fa-users,健康医疗交流,健康
+forum,fas fa-comments,社区论坛,交流分享,Chiphell,https://www.chiphell.com/,fas fa-microchip,高端硬件数码发烧友论坛，俗称“CHH”,硬件
+forum,fas fa-comments,社区论坛,交流分享,色影无忌,https://www.xitek.com/,fas fa-camera,摄影爱好者专业论坛，器材讨论与作品分享,摄影
+forum,fas fa-comments,社区论坛,交流分享,蜂鸟网,https://www.fengniao.com/,fas fa-camera-retro,影像生活社区，摄影技巧与器材交易,摄影
+forum,fas fa-comments,社区论坛,交流分享,马蜂窝,https://www.mafengwo.cn/,fas fa-globe-asia,旅游攻略分享社区，结伴旅行,旅游
+forum,fas fa-comments,社区论坛,交流分享,穷游网,https://www.qyer.com/,fas fa-plane,出境游攻略与问答社区,旅游
+forum,fas fa-comments,社区论坛,交流分享,下厨房,https://www.xiachufang.com/,fas fa-utensils,美食菜谱与厨艺交流社区,美食
+forum,fas fa-comments,社区论坛,交流分享,豆果美食,https://www.douguo.com/,fas fa-cookie-bite,家常菜谱与美食分享平台,美食
+forum,fas fa-comments,社区论坛,交流分享,狗民网,https://www.goumin.com/,fas fa-dog,宠物狗爱好者交流社区,宠物
+forum,fas fa-comments,社区论坛,交流分享,宝宝树,https://www.babytree.com/,fas fa-baby,母婴育儿交流平台,母婴
+forum,fas fa-comments,社区论坛,交流分享,妈妈帮,https://www.mmbang.com/,fas fa-female,妈妈互助社区，育儿经验分享,母婴
+forum,fas fa-comments,社区论坛,交流分享,小木虫,https://muchong.com/,fas fa-flask,学术科研交流论坛，论文投稿经验,学术
+forum,fas fa-comments,社区论坛,交流分享,经管之家,https://bbs.pinggu.org/,fas fa-chart-line,经济管理学术论坛，资源分享,经管
+forum,fas fa-comments,社区论坛,交流分享,人人都是产品经理,https://www.woshipm.com/,fas fa-tasks,产品经理、运营学习交流社区,产品
+forum,fas fa-comments,社区论坛,交流分享,SegmentFault,https://segmentfault.com/,fas fa-code-branch,技术问答与开发者社区,技术
+forum,fas fa-comments,社区论坛,交流分享,IT之家,https://www.ithome.com/,fas fa-laptop,科技数码资讯与交流社区,数码
+forum,fas fa-comments,社区论坛,交流分享,威锋网,https://www.feng.com/,fas fa-apple-alt,苹果用户交流论坛,苹果
+forum,fas fa-comments,社区论坛,交流分享,机锋论坛,https://bbs.gfan.com/,fas fa-android,安卓手机玩家论坛,安卓
+forum,fas fa-comments,社区论坛,交流分享,A9VG,https://bbs.a9vg.com/,fas fa-playstation,主机游戏核心玩家社区,游戏
+forum,fas fa-comments,社区论坛,交流分享,电玩巴士,https://bbs.tgbus.com/,fas fa-gamepad,游戏综合论坛，任系索尼微软讨论,游戏
+forum,fas fa-comments,社区论坛,交流分享,龙空,https://www.lkong.com/,fas fa-dragon,网络文学作者与读者论坛,网文
+forum,fas fa-comments,社区论坛,交流分享,涂鸦王国,https://www.painterking.com/,fas fa-paint-brush,插画师原创作品交流社区,插画
+forum,fas fa-comments,社区论坛,交流分享,铁血网,https://www.tiexue.net/,fas fa-fist-raised,军事历史论坛，军迷聚集地,军事
+forum,fas fa-comments,社区论坛,交流分享,超级大本营,https://lt.cjdby.net/,fas fa-space-shuttle,军事科技与战略讨论社区,军事
+forum,fas fa-comments,社区论坛,交流分享,寄托天下,https://bbs.gter.net/,fas fa-graduation-cap,留学申请与考试交流论坛,留学
+forum,fas fa-comments,社区论坛,交流分享,一亩三分地,https://www.1point3acres.com/,fas fa-leaf,留学、求职、移民社区（北美方向）,留学
+forum,fas fa-comments,社区论坛,交流分享,考研论坛,https://bbs.kaoyan.com/,fas fa-book-open,考研交流与资料分享,考研
+forum,fas fa-comments,社区论坛,交流分享,学法网,https://www.xuefa.com/,fas fa-gavel,法律职业交流与考试论坛,法律
+forum,fas fa-comments,社区论坛,交流分享,脉脉,https://maimai.cn/,fas fa-briefcase,职场社交与匿名吐槽社区,职场
+forum,fas fa-comments,社区论坛,交流分享,看准网,https://www.kanzhun.com/,fas fa-building,公司评价与薪资讨论社区,职场
+forum,fas fa-comments,社区论坛,交流分享,煎蛋,https://jandan.net/,fas fa-egg,无厘头趣味内容与无聊图社区,趣味
+forum,fas fa-comments,社区论坛,交流分享,GitHub Discussions,https://github.com/,fab fa-github,开源项目讨论区，开发者交流,开发
+forum,fas fa-comments,社区论坛,交流分享,Goodreads,https://www.goodreads.com/,fas fa-book,英文读书爱好者社区，书评与推荐,读书
+forum,fas fa-comments,社区论坛,交流分享,Letterboxd,https://letterboxd.com/,fas fa-film,电影爱好者社交平台，记录与评论,电影
+forum,fas fa-comments,社区论坛,交流分享,Last.fm,https://www.last.fm/,fas fa-music,音乐收听记录与社交推荐,音乐
+forum,fas fa-comments,社区论坛,交流分享,Discord,https://discord.com/,fab fa-discord,游戏与兴趣社群即时通讯平台,社群
+forum,fas fa-comments,社区论坛,交流分享,Telegram频道,https://telegram.org/,fab fa-telegram,频道与群组讨论，兴趣交流,即时通讯
+forum,fas fa-comments,社区论坛,交流分享,Gaia Online,https://www.gaiaonline.com/,fas fa-dragon,动漫角色扮演虚拟社区,二次元
+forum,fas fa-comments,社区论坛,交流分享,Neopets,https://www.neopets.com/,fas fa-paw,经典虚拟宠物社区,怀旧
+forum,fas fa-comments,社区论坛,交流分享,The Something Awful Forums,https://forums.somethingawful.com/,fas fa-skull,老牌网络文化论坛，恶搞与讨论,英文
+forum,fas fa-comments,社区论坛,交流分享,Stack Exchange,https://stackexchange.com/,fab fa-stack-exchange,Stack Overflow母公司，多领域问答网络,问答
+music,fas fa-music,音乐资源,无损试听,网易云音乐,https://music.163.com/,fas fa-music,歌单评论社区,中文
+music,fas fa-music,音乐资源,无损试听,QQ音乐,https://y.qq.com/,fas fa-music,正版曲库齐全,中文
+music,fas fa-music,音乐资源,无损试听,酷狗音乐,https://www.kugou.com/,fas fa-music,海量乐库,中文
+music,fas fa-music,音乐资源,无损试听,酷我音乐,https://www.kuwo.cn/,fas fa-music,高品质试听,中文
+music,fas fa-music,音乐资源,无损试听,咪咕音乐,https://music.migu.cn/,fas fa-music,免费正版超多,中文
+music,fas fa-music,音乐资源,无损试听,虾米音乐,https://www.xiami.com/,fas fa-music,复古音乐社区,中文
+music,fas fa-music,音乐资源,无损试听,Spotify,https://www.spotify.com/,fab fa-spotify,全球流行乐库,国际
+music,fas fa-music,音乐资源,无损试听,Apple Music,https://music.apple.com/,fab fa-apple,苹果正版音乐,国际
+music,fas fa-music,音乐资源,无损试听,YouTube Music,https://music.youtube.com/,fas fa-music,视频音乐一体,国际
+music,fas fa-music,音乐资源,无损试听,SoundCloud,https://soundcloud.com/,fas fa-music,原创音乐人,国际
+music,fas fa-music,音乐资源,无损试听,Last.fm,https://www.last.fm/,fas fa-music,音乐数据记录,英文
+music,fas fa-music,音乐资源,无损试听,猫耳FM,https://www.missevan.com/,fas fa-music,二次元广播剧,二次元
+music,fas fa-music,音乐资源,无损试听,酷狗繁星,https://fanxing.kugou.com/,fas fa-music,直播音乐,直播
+music,fas fa-music,音乐资源,无损试听,5sing原创,https://5sing.kugou.com/,fas fa-music,原创音乐基地,原创
+music,fas fa-music,音乐资源,无损试听,豆瓣音乐,https://music.douban.com/,fas fa-music,音乐评分评论,中文
+music,fas fa-music,音乐资源,无损试听,无损音乐网,https://www.hifini.com/,fas fa-music,高品质音源,无损
+music,fas fa-music,音乐资源,无损试听,搜韵音乐,https://www.souyunmusic.com/,fas fa-music,古风音乐合集,古风
+music,fas fa-music,音乐资源,无损试听,ANIME MUSIC,https://anime-music.info/,fas fa-music,动漫音乐合集,动漫
+music,fas fa-music,音乐资源,无损试听,哔哩哔哩音乐,https://music.bilibili.com/,fas fa-music,B站音乐区,二次元
+music,fas fa-music,音乐资源,无损试听,小宇宙,https://www.xiaoyuzhoufm.com/,fas fa-podcast,播客泛用型,播客
+music,fas fa-music,音乐资源,无损试听,Qobuz,https://www.qobuz.com/,fas fa-music,法国高保真流媒体，提供CD级和Hi-Res音频,国际
+music,fas fa-music,音乐资源,无损试听,Deezer,https://www.deezer.com/,fas fa-music,全球流媒体，支持FLAC无损，Flow智能推荐,国际
+music,fas fa-music,音乐资源,无损试听,Pandora,https://www.pandora.com/,fas fa-music,美国音乐电台服务，基于音乐基因组的个性化推荐,国际
+music,fas fa-music,音乐资源,无损试听,Bandcamp,https://bandcamp.com/,fas fa-music,支持独立音乐人直接销售，常能发现小众佳作,独立
+music,fas fa-music,音乐资源,无损试听,Mixcloud,https://www.mixcloud.com/,fas fa-mixcloud,专注于DJ混音带、电台节目和播客的长音频平台,混音
+music,fas fa-music,音乐资源,无损试听,NTS Radio,https://www.nts.live/,fas fa-radio,全球独立电台，直播+回放，风格前卫多元,电台
+music,fas fa-music,音乐资源,无损试听,Acclaimed Music,https://www.acclaimedmusic.net/,fas fa-chart-line,基于数千份乐评榜单汇总的艺术家/专辑排名,乐评
+music,fas fa-music,音乐资源,无损试听,Rate Your Music,https://rateyourmusic.com/,fas fa-star,用户自建的音乐数据库与评分社区，分类极细,社区
+music,fas fa-music,音乐资源,无损试听,Discogs,https://www.discogs.com/,fas fa-record-vinyl,黑胶/CD/Digital数据库与交易市场，版本大全,资料库
+music,fas fa-music,音乐资源,无损试听,WhoSampled,https://www.whosampled.com/,fas fa-code-branch,挖掘歌曲中的采样、翻唱、remix来源,探索
+music,fas fa-music,音乐资源,无损试听,Musixmatch,https://www.musixmatch.com/,fas fa-lyrics,全球最大歌词平台，支持同步歌词翻译,歌词
+music,fas fa-music,音乐资源,无损试听,Genius,https://genius.com/,fas fa-brain,歌词注解与音乐知识社区，解析歌曲背后的故事,歌词
+music,fas fa-music,音乐资源,无损试听,Free Music Archive,https://freemusicarchive.org/,fas fa-archive,免费、合法的音乐下载库，按协议分类,免费
+music,fas fa-music,音乐资源,无损试听,Jamendo,https://www.jamendo.com/,fas fa-music,独立音乐人分享的免费音乐，可商用需确认授权,独立
+music,fas fa-music,音乐资源,无损试听,Audius,https://audius.co/,fas fa-music,去中心化音乐流媒体平台，创作者直接获益,区块链
+music,fas fa-music,音乐资源,无损试听,Resonic,https://resonic.app/,fas fa-folder-music,本地音乐文件管理与播放器，快速高效,工具
+music,fas fa-music,音乐资源,无损试听,MusicBee,https://getmusicbee.com/,fas fa-bee,Windows平台强大本地音乐管理工具,工具
+music,fas fa-music,音乐资源,无损试听,古典音乐频道,https://www.ncpachina.com/,fas fa-music,国家大剧院古典音乐专属平台，高清音视频,古典
+music,fas fa-music,音乐资源,无损试听,索尼精选,https://hi-resmusic.sonyselect.cn/,fas fa-music,亚洲领先Hi-Res高解析度音乐下载/在线听,古典
+music,fas fa-music,音乐资源,无损试听,库客音乐,https://www.kuke.com/,fas fa-music,古典音乐、爵士、世界音乐数字图书馆,古典
+music,fas fa-music,音乐资源,无损试听,落网,http://www.luoo.net/,fas fa-leaf,独立音乐期刊式推荐，已停更但存档可寻,独立
+music,fas fa-music,音乐资源,无损试听,SoundClick,https://www.soundclick.com/,fas fa-music,老牌独立音乐人发布平台，风格多样,独立
+music,fas fa-music,音乐资源,无损试听,Freesound,https://freesound.org/,fas fa-wave-square,CC协议音效采样素材库,音效
+music,fas fa-music,音乐资源,无损试听,耳海FM,https://www.erhainews.com/,fas fa-podcast,音频故事、有声书平台,有声书
+music,fas fa-music,音乐资源,无损试听,喜马拉雅,https://www.ximalaya.com/,fas fa-podcast,国内最大音频平台，有声书/课程/播客,播客
+music,fas fa-music,音乐资源,无损试听,蜻蜓FM,https://www.qingting.fm/,fas fa-podcast,广播、有声书、播客聚合平台,播客
+music,fas fa-music,音乐资源,无损试听,荔枝FM,https://www.lizhi.fm/,fas fa-podcast,人人都能做主播的音频社区,播客
+music,fas fa-music,音乐资源,无损试听,故事FM,https://storyfm.cn/,fas fa-headphones,亲历者讲述真实故事的叙事播客,播客
+music,fas fa-music,音乐资源,无损试听,Vocaloid,https://ec.crypton.co.jp/,fas fa-robot,初音未来等虚拟歌姬官方，P主创作社区,二次元
+music,fas fa-music,音乐资源,无损试听,Niconico音乐,https://www.nicovideo.jp/,fas fa-music,日本弹幕站音乐区，V家、唱见核心地,二次元
+education,fas fa-book-reader,学习教育,知识提升,慕课网,https://www.imooc.com/,fas fa-graduation-cap,IT职业在线学习,IT
+education,fas fa-book-reader,学习教育,知识提升,中国大学MOOC,https://www.icourse163.org/,fas fa-school,名校公开课,高校
+education,fas fa-book-reader,学习教育,知识提升,网易公开课,https://open.163.com/,fas fa-book,全球名校课程,综合
+education,fas fa-book-reader,学习教育,知识提升,多邻国,https://www.duolingo.com/,fas fa-language,多语言学习,语言
+education,fas fa-book-reader,学习教育,知识提升,扇贝单词,https://www.shanbay.com/,fas fa-pencil-alt,英语单词记忆,英语
+education,fas fa-book-reader,学习教育,知识提升,可汗学院,https://www.khanacademy.org/,fas fa-flask,免费全学科教育,国际
+education,fas fa-book-reader,学习教育,知识提升,学堂在线,https://www.xuetangx.com/,fas fa-book-open,清华慕课平台,高校
+education,fas fa-book-reader,学习教育,知识提升,得到,https://www.dedao.com/,fas fa-book,知识付费平台,提升
+education,fas fa-book-reader,学习教育,知识提升,石墨文档,https://shimo.im/,fas fa-pen,在线学习笔记,工具
+education,fas fa-book-reader,学习教育,知识提升,喜马拉雅,https://www.ximalaya.com/,fas fa-headphones,音频知识学习,音频
+education,fas fa-book-reader,学习教育,知识提升,学堂在线,https://www.xuetangx.com/,fas fa-book-open,清华大学官方慕课平台,高校
+education,fas fa-book-reader,学习教育,知识提升,每日英语听力,https://www.eudic.cn/,fas fa-headphones,英语听力口语训练,英语
+education,fas fa-book-reader,学习教育,知识提升,TED,https://www.ted.com/,fas fa-comments,全球精英思想演讲,提升
+education,fas fa-book-reader,学习教育,知识提升,Tidal,https://tidal.com/,fas fa-wave-square,无损音质、HiFi沉浸式音频，专注高品质音乐,国际
+education,fas fa-book-reader,学习教育,知识提升,中国大学MOOC,https://www.icourse163.org/,fas fa-university,千余所高校、超万门精品课，含认证证书与AI辅助学习,综合高校
+education,fas fa-book-reader,学习教育,知识提升,学堂在线,https://www.xuetangx.com/,fas fa-leaf,清华大学发起，全球优质课程，可申请学分课,高校
+education,fas fa-book-reader,学习教育,知识提升,好大学在线,https://www.cnmooc.org/,fas fa-globe,上海交大牵头，两岸三地高校课程联盟,高校
+education,fas fa-book-reader,学习教育,知识提升,智慧树网,https://www.zhihuishu.com/,fas fa-tree,跨校共享课，支持直播互动与学分认定,高校
+education,fas fa-book-reader,学习教育,知识提升,FutureLearn,https://www.futurelearn.com/,fas fa-rocket,英国平台，多所世界名校人文社科课程,国际
+education,fas fa-book-reader,学习教育,知识提升,edX,https://www.edx.org/,fas fa-microchip,哈佛与MIT创办，顶尖理工科课程,国际
+education,fas fa-book-reader,学习教育,知识提升,Coursera,https://www.coursera.org/,fas fa-graduation-cap,全球200+大学合作，专业专项课程体系,国际
+education,fas fa-book-reader,学习教育,知识提升,Udacity,https://www.udacity.com/,fas fa-robot,与谷歌、亚马逊等企业联合的“纳米学位”,技能
+education,fas fa-book-reader,学习教育,知识提升,Pluralsight,https://www.pluralsight.com/,fas fa-code,专注技术技能，含AI、云、数据科学路径,IT
+education,fas fa-book-reader,学习教育,知识提升,DataCamp,https://www.datacamp.com/,fas fa-chart-bar,数据科学与分析，浏览器内编码实战,数据
+education,fas fa-book-reader,学习教育,知识提升,Codecademy,https://www.codecademy.com/,fas fa-laptop-code,互动式编程学习，从HTML到机器学习,编程
+education,fas fa-book-reader,学习教育,知识提升,freeCodeCamp,https://www.freecodecamp.org/,fab fa-free-code-camp,开源公益编程学校，实战项目获认证,编程
+education,fas fa-book-reader,学习教育,知识提升,O‘Reilly,https://www.oreilly.com/,fas fa-book,技术专家撰写，前沿技术深度学习平台,技术
+education,fas fa-book-reader,学习教育,知识提升,MIT OpenCourseWare,https://ocw.mit.edu/,fas fa-flask,麻省理工官方开放课程，海量资料免费,国际
+education,fas fa-book-reader,学习教育,知识提升,Stanford Online,https://online.stanford.edu/,fas fa-graduation-cap,斯坦福大学官方线上课程,国际
+education,fas fa-book-reader,学习教育,知识提升,Harvard Online,https://www.harvardonline.harvard.edu/,fas fa-shield,哈佛大学官方学习平台,国际
+education,fas fa-book-reader,学习教育,知识提升,iCourse 爱课程,https://www.icourses.cn/,fas fa-crown,国家精品课程资源中心，资源库庞大,高校
+education,fas fa-book-reader,学习教育,知识提升,国图公开课,http://open.nlc.cn/,fas fa-landmark,国家图书馆出品，文史艺术免费公开课,人文
+education,fas fa-book-reader,学习教育,知识提升,学习强国,https://www.xuexi.cn/,fas fa-flag,权威学习平台，含大量慕课与纪录片,综合
+education,fas fa-book-reader,学习教育,知识提升,国家职业教育智慧平台,https://www.icve.com.cn/,fas fa-industry,职业教育课程与实训资源,职业
+education,fas fa-book-reader,学习教育,知识提升,大学资源网,http://www.dxzy163.com/,fas fa-network-wired,整合各类大学课程视频，覆盖广,综合
+education,fas fa-book-reader,学习教育,知识提升,Memrise,https://www.memrise.com/,fas fa-brain,基于记忆曲线的语言学习，场景化词汇,语言
+education,fas fa-book-reader,学习教育,知识提升,Lingoda,https://www.lingoda.com/,fas fa-language,真人小班直播授课，主攻英德法语,语言
+education,fas fa-book-reader,学习教育,知识提升,Busuu,https://www.busuu.com/,fas fa-globe,语言学习社区，可获麦克米伦认证,语言
+education,fas fa-book-reader,学习教育,知识提升,HiNative,https://hinative.com/,fas fa-question-circle,多语言问答社区，母语者解答,语言
+education,fas fa-book-reader,学习教育,知识提升,声同小语种,https://www.somdom.com/,fas fa-comments,小语种学习论坛，资料分享与交流,语言
+education,fas fa-book-reader,学习教育,知识提升,沪江网校,https://class.hujiang.com/,fas fa-graduation-cap,多语种及考证课程,语言
+education,fas fa-book-reader,学习教育,知识提升,环球雅思,https://www.gedu.org/,fas fa-pencil-alt,雅思托福等出国考试培训,留学
+education,fas fa-book-reader,学习教育,知识提升,新东方在线,https://www.koolearn.com/,fas fa-school,考试辅导与语言培训,考试
+education,fas fa-book-reader,学习教育,知识提升,万门大学,https://www.wanmen.org/,fas fa-door-open,全品类课程，覆盖职场与兴趣,综合
+education,fas fa-book-reader,学习教育,知识提升,B站大学,https://www.bilibili.com/,fab fa-bilibili,海量免费学习视频，知识区宝藏,视频
+education,fas fa-book-reader,学习教育,知识提升,一席,https://yixi.tv/,fas fa-users,人文科技演讲，类似中文TED,演讲
+education,fas fa-book-reader,学习教育,知识提升,超星尔雅,http://erya.mooc.chaoxing.com/,fas fa-star,通识教育课平台，高校广泛使用,高校
+education,fas fa-book-reader,学习教育,知识提升,CnOpenData,https://www.cnopendata.com/,fas fa-database,经济金融等学术数据分享平台,学术
+software,fas fa-download,软件下载,安全纯净,微软官网,https://www.microsoft.com/,fas fa-laptop,Windows/Office,官方
+software,fas fa-download,软件下载,安全纯净,Adobe官网,https://www.adobe.com/,fas fa-palette,设计全家桶,设计
+software,fas fa-download,软件下载,安全纯净,腾讯软件中心,https://pc.qq.com/,fas fa-windows,安全软件下载,安全
+software,fas fa-download,软件下载,安全纯净,360软件宝库,https://soft.360.cn/,fas fa-download,常用软件大全,综合
+software,fas fa-download,软件下载,安全纯净,FileHippo,https://www.filehippo.com/,fas fa-file-code,国外软件库,国际
+software,fas fa-download,软件下载,安全纯净,Softonic,https://softonic.com/,fas fa-bolt,安全软件下载,国际
+software,fas fa-download,软件下载,安全纯净,Figma,https://www.figma.com/,fas fa-paint-brush,在线UI设计,设计
+software,fas fa-download,软件下载,安全纯净,剪映专业版,https://www.capcut.cn/,fas fa-video,桌面视频剪辑,剪辑
+software,fas fa-download,软件下载,安全纯净,Steam,https://store.steampowered.com/,fas fa-keyboard,游戏软件平台,游戏
+software,fas fa-download,软件下载,安全纯净,火绒安全,https://www.huorong.cn/,fas fa-shield-alt,纯净杀毒软件,安全
+software,fas fa-download,软件下载,安全纯净,果核剥壳,https://www.ghxi.com,fas fa-leaf,纯净绿色软件下载站，无捆绑无广告,纯净
+software,fas fa-download,软件下载,安全纯净,华军软件园,https://www.onlinedown.net,fas fa-cloud-download-alt,老牌软件下载站，资源丰富安全,综合
+software,fas fa-download,软件下载,安全纯净,ZOL软件下载,https://xiazai.zol.com.cn,fas fa-desktop,中关村在线旗下，软件评测全面,综合
+software,fas fa-download,软件下载,安全纯净,天空下载站,https://www.skycn.com,fas fa-cloud,经典软件下载平台，系统工具齐全,综合
+software,fas fa-download,软件下载,安全纯净,423下载站,https://www.423down.com,fas fa-file-download,便携版软件资源站，更新快无广告,纯净
+software,fas fa-download,软件下载,安全纯净,FossHub,https://www.fosshub.com,fas fa-hubspot,国际纯净开源软件分发平台,国际
+software,fas fa-download,软件下载,安全纯净,SourceForge,https://sourceforge.net,fab fa-sourcetree,全球开源软件托管与下载平台,开源
+software,fas fa-download,软件下载,安全纯净,Softpedia,https://www.softpedia.com,fas fa-globe,国外软件百科式下载站，安全检测,国际
+software,fas fa-download,软件下载,安全纯净,FileHorse,https://www.filehorse.com,fas fa-horse,国外软件高速下载平台，版本齐全,国际
+software,fas fa-download,软件下载,安全纯净,Microsoft Store,https://www.microsoft.com/zh-cn/store,fab fa-microsoft,Windows官方应用商店，纯净安全,官方
+software,fas fa-download,软件下载,安全纯净,联想应用商店,https://lestore.lenovo.com,fab fa-lenovo,联想官方软件平台，系统兼容性好,官方
+software,fas fa-download,软件下载,安全纯净,MacW,https://www.macw.com,fab fa-apple,Mac软件下载平台，破解版资源丰富,苹果
+software,fas fa-download,软件下载,安全纯净,MacX,https://www.macx.cn,fab fa-app-store-ios,苹果软件与游戏下载社区,苹果
+software,fas fa-download,软件下载,安全纯净,应用宝,https://sj.qq.com,fab fa-qq,腾讯安卓应用商店，安全检测严格,安卓
+software,fas fa-download,软件下载,安全纯净,应用汇,https://www.appchina.com,fas fa-th-large,安卓应用商店，小众软件资源多,安卓
+software,fas fa-download,软件下载,安全纯净,豌豆荚,https://www.wandoujia.com,fas fa-seedling,经典安卓应用下载与管理平台,安卓
+software,fas fa-download,软件下载,安全纯净,腾讯电脑管家软件中心,https://guanjia.qq.com,fas fa-shield-virus,安全软件下载，一键安装管理,安全
+software,fas fa-download,软件下载,安全纯净,驱动精灵,https://www.drivergenius.com,fas fa-microchip,硬件驱动程序下载与更新工具,驱动
+software,fas fa-download,软件下载,安全纯净,驱动人生,https://www.160.com,fas fa-cogs,电脑驱动检测、下载与安装平台,驱动
+software,fas fa-download,软件下载,安全纯净,Epic Games,https://store.epicgames.com,fab fa-epic-games,游戏软件与大作下载平台,游戏
+software,fas fa-download,软件下载,安全纯净,Origin,https://www.origin.com,fab fa-origin,EA游戏平台，正版游戏下载,游戏
+software,fas fa-download,软件下载,安全纯净,Uplay,https://ubisoftconnect.com,fab fa-ubisoft,育碧游戏下载与启动平台,游戏
+software,fas fa-download,软件下载,安全纯净,WPS官网,https://www.wps.cn,fas fa-file-alt,WPS办公软件官方下载,办公
+software,fas fa-download,软件下载,安全纯净,Notion,https://www.notion.so,fas fa-sticky-note,笔记与协作工具官方下载,办公
+software,fas fa-download,软件下载,安全纯净,Obsidian,https://obsidian.md,fas fa-diamond,知识管理与笔记软件下载,办公
+software,fas fa-download,软件下载,安全纯净,达芬奇官网,https://www.blackmagicdesign.com,fas fa-film,专业视频剪辑调色软件下载,剪辑
+software,fas fa-download,软件下载,安全纯净,Blender,https://www.blender.org,fas fa-cube,开源3D建模渲染软件下载,设计
+software,fas fa-download,软件下载,安全纯净,GIMP,https://www.gimp.org,fas fa-paint-brush,开源图像编辑软件，替代PS,设计
+software,fas fa-download,软件下载,安全纯净,华军软件园,https://www.onlinedown.net,fas fa-cloud-download-alt,老牌综合下载站，超44万款软件，全国300余台服务器加速[citation:1],综合
+software,fas fa-download,软件下载,安全纯净,吾爱破解论坛,https://www.52pojie.cn,fas fa-shield-alt,知名技术社区，网友分享绿色软件、小众工具及原创作品[citation:6],社区
+software,fas fa-download,软件下载,安全纯净,IT小众,http://itsmall.cc,fas fa-compass,专注小众精品软件，涵盖Windows/macOS/Android三平台[citation:6],纯净
+software,fas fa-download,软件下载,安全纯净,正版中国,https://www.getitfree.cn,fas fa-certificate,聚合限时免费正版软件，提供官方下载渠道[citation:6],正版
+software,fas fa-download,软件下载,安全纯净,Xclient,https://xclient.info,fab fa-apple,精品Mac应用库，提供历史版本下载服务[citation:8],苹果
+software,fas fa-download,软件下载,安全纯净,马可波罗,http://www.macbl.com,fas fa-chart-line,Mac热门应用发现平台，设有详尽软件排行榜[citation:8],苹果
+software,fas fa-download,软件下载,安全纯净,Mac8K,https://mac8k.com,fas fa-bolt,免费Mac软件资源站，无需注册直接下载[citation:8],苹果
+software,fas fa-download,软件下载,安全纯净,麦氪派,https://www.waitsun.com,fas fa-book-open,提供Mac软件深度功能详解及使用教程[citation:8],苹果
+software,fas fa-download,软件下载,安全纯净,iMacAPP,https://www.imacapp.com,fab fa-app-store-ios,苹果生态应用整合平台，界面符合苹果美学[citation:8],苹果
+software,fas fa-download,软件下载,安全纯净,Haxmac,https://haxmac.cc,fas fa-globe,国际Mac软件资源站，含多类型修改版软件[citation:8],国际
+software,fas fa-download,软件下载,安全纯净,Xmac,https://xmac.cc,fas fa-minus-circle,极简Mac下载站，仅保留软件名与下载链接[citation:8],苹果
+software,fas fa-download,软件下载,安全纯净,Appstorrent,https://appstorrent.ru,fas fa-torii-gate,俄罗斯技术团队维护的专业资源站[citation:8],国际
+software,fas fa-download,软件下载,安全纯净,MacWk,https://macwk.com,fas fa-moon,经典Mac下载站，免登录直接下载[citation:8],苹果
+software,fas fa-download,软件下载,安全纯净,豌豆荚,https://www.wandoujia.com,fas fa-seedling,安卓应用市场，收录近200万款软件，保留历史旧版本[citation:5][citation:9],安卓
+software,fas fa-download,软件下载,安全纯净,华为应用市场,https://appgallery.huawei.com,fab fa-huawei,华为官方应用商店，应用经过官方安全检测[citation:5][citation:9],安卓
+software,fas fa-download,软件下载,安全纯净,小米应用商店,https://app.mi.com,fab fa-xiaomi,小米官方应用平台，针对MIUI系统深度优化[citation:5],安卓
+software,fas fa-download,软件下载,安全纯净,OPPO软件商店,https://store.oppo.com,fas fa-mobile-alt,OPPO官方应用市场，应用兼容性佳[citation:5],安卓
+software,fas fa-download,软件下载,安全纯净,vivo应用商店,https://appstore.vivo.com.cn,fas fa-mobile-alt,vivo官方应用分发平台[citation:9],安卓
+software,fas fa-download,软件下载,安全纯净,酷安,https://www.coolapk.com,fas fa-grin-squint,数码爱好者社区，收录优质应用及玩机技巧[citation:9],社区
+software,fas fa-download,软件下载,安全纯净,360手机助手,https://sj.360.cn,fas fa-shield-virus,老牌安卓应用市场，安全检测严格[citation:9],安卓
+software,fas fa-download,软件下载,安全纯净,百度手机助手,https://shouji.baidu.com,fab fa-baidu,百度旗下应用商店，资源丰富[citation:9],安卓
+software,fas fa-download,软件下载,安全纯净,CNET Download,https://download.cnet.com,fas fa-download,国际知名下载站，每款软件均有详细描述及评分[citation:7],国际
+software,fas fa-download,软件下载,安全纯净,Softpedia,https://www.softpedia.com,fas fa-globe-americas,全球最大软件目录之一，超100万款软件[citation:7],国际
+software,fas fa-download,软件下载,安全纯净,GitHub Store,https://github.com/rainxchzed/Github-Store,fab fa-github,开源应用商店，自动识别系统匹配GitHub安装包[citation:3],工具
+software,fas fa-download,软件下载,安全纯净,五九软件库,https://www.59xiazai.com,fas fa-leaf,专注绿色免费软件，含便携版、破解版资源[citation:2],纯净
+software,fas fa-download,软件下载,安全纯净,樱咔资源,https://www.ykz8.com,fas fa-cherries,绿色软件分享平台，配套技术教程文章[citation:10],纯净
+programming,fas fa-code,编程资源,开发必备,GitHub,https://github.com/,fas fa-code,全球代码托管,开源
+programming,fas fa-code,编程资源,开发必备,GitLab,https://gitlab.com/,fas fa-code-branch,代码托管平台,开源
+programming,fas fa-code,编程资源,开发必备,掘金,https://juejin.cn/,fas fa-laptop-code,前端技术社区,前端
+programming,fas fa-code,编程资源,开发必备,MDN,https://developer.mozilla.org/,fas fa-file-code,Web标准文档,文档
+programming,fas fa-code,编程资源,开发必备,LeetCode,https://leetcode.cn/,fas fa-code,算法刷题平台,算法
+programming,fas fa-code,编程资源,开发必备,牛客网,https://www.nowcoder.com/,fas fa-code,笔试面试题库,面试
+programming,fas fa-code,编程资源,开发必备,Stack Overflow,https://stackoverflow.com/,fas fa-puzzle-piece,程序员问答,英文
+programming,fas fa-code,编程资源,开发必备,CodePen,https://codepen.io/,fas fa-globe,在线前端演示,前端
+programming,fas fa-code,编程资源,开发必备,开源中国,https://www.oschina.net/,fas fa-cogs,国产开源社区,开源
+programming,fas fa-code,编程资源,开发必备,菜鸟教程,https://www.runoob.com/,fas fa-code,编程入门教程,入门
+programming,fas fa-code,编程资源,开发必备,Stack Overflow,https://stackoverflow.com/,fas fa-question-circle,全球程序员问答社区,问答
+programming,fas fa-code,编程资源,开发必备,CSDN,https://www.csdn.net/,fab fa-codepen,国内老牌IT技术社区,综合
+programming,fas fa-code,编程资源,开发必备,InfoQ,https://www.infoq.cn/,fas fa-newspaper,架构与技术实践,架构
+programming,fas fa-code,编程资源,开发必备,W3School,https://www.w3school.com.cn/,fas fa-laptop-code,Web前端入门教程,前端
+programming,fas fa-code,编程资源,开发必备,廖雪峰官方网站,https://www.liaoxuefeng.com/,fas fa-user-graduate,全栈系列教程,入门
+programming,fas fa-code,编程资源,开发必备,NowCoder,https://www.nowcoder.com/,fas fa-user-tie,求职面试刷题,面试
+programming,fas fa-code,编程资源,开发必备,LintCode,https://www.lintcode.com/,fas fa-code,算法与面试训练,算法
+programming,fas fa-code,编程资源,开发必备,HackerRank,https://www.hackerrank.com/,fas fa-code,国外编程刷题平台,算法
+programming,fas fa-code,编程资源,开发必备,Codewars,https://www.codewars.com/,fas fa-fist-raised,编程竞技练习,练习
+programming,fas fa-code,编程资源,开发必备,JSRun,https://jsrun.net/,fab fa-js-square,在线JS运行调试,前端
+programming,fas fa-code,编程资源,开发必备,CodeSandbox,https://codesandbox.io/,fas fa-code,在线前端项目IDE,前端
+programming,fas fa-code,编程资源,开发必备,StackBlitz,https://stackblitz.com/,fas fa-bolt,在线Web IDE,前端
+programming,fas fa-code,编程资源,开发必备,GitHub Docs,https://docs.github.com/,fab fa-github,GitHub官方文档,文档
+programming,fas fa-code,编程资源,开发必备,DevDocs,https://devdocs.io/,fas fa-book-open,多语言API文档合集,文档
+programming,fas fa-code,编程资源,开发必备,VuePress,https://vuepress.vuejs.org/,fab fa-vuejs,Vue驱动的静态网站,工具
+programming,fas fa-code,编程资源,开发必备,V2EX,https://www.v2ex.com/,fab fa-reddit,极客技术社区,社区
+programming,fas fa-code,编程资源,开发必备,SegmentFault,https://segmentfault.com/,fas fa-bug,思否开发者社区,问答
+programming,fas fa-code,编程资源,开发必备,Python官方文档,https://docs.python.org/zh-cn/3/,fab fa-python,Python中文文档,文档
+programming,fas fa-code,编程资源,开发必备,Go语言中文网,https://studygolang.com/,fab fa-golang,Go学习与资料,后端
+programming,fas fa-code,编程资源,开发必备,Spring.io,https://spring.io/,fas fa-leaf,Spring官方文档,后端
+programming,fas fa-code,编程资源,开发必备,BootDoc,https://bootcdn.cn/,fas fa-server,前端CDN加速,工具
+programming,fas fa-code,编程资源,开发必备,Can I Use,https://caniuse.com/,fas fa-check-circle,浏览器兼容性查询,前端
+programming,fas fa-code,编程资源,开发必备,Regex101,https://regex101.com/,fas fa-at,在线正则测试,工具
+programming,fas fa-code,编程资源,开发必备,JSON.cn,https://www.json.cn/,fas fa-code,JSON格式化校验,工具
+programming,fas fa-code,编程资源,开发必备,Git教程,https://git-scm.com/book/zh/v2,fab fa-git-alt,Git官方中文教程,工具
+programming,fas fa-code,编程资源,开发必备,Docker Docs,https://docs.docker.com/,fab fa-docker,Docker官方文档,运维
+programming,fas fa-code,编程资源,开发必备,K8s中文文档,https://kubernetes.io/zh/docs/home/,fas fa-shipping-fast,Kubernetes中文指南,运维
+programming,fas fa-code,编程资源,开发必备,Linux命令大全,https://www.linuxcool.com/,fab fa-linux,Linux常用命令查询,运维
+programming,fas fa-code,编程资源,开发必备,LeetCode 题解,https://leetcode-cn.com/problem-solving/,fas fa-lightbulb,算法题解参考,算法
+programming,fas fa-code,编程资源,开发必备,Kubernetes官网,https://kubernetes.io/zh/,fas fa-ship,容器编排事实标准，官方中文文档与教程,官方文档
+programming,fas fa-code,编程资源,开发必备,Docker官网,https://www.docker.com/,fab fa-docker,容器化平台官方站，含文档、镜像仓库与工具,官方文档
+programming,fas fa-code,编程资源,开发必备,Linux命令大全,https://www.linuxcool.com/,fab fa-linux,Linux常用命令在线查询与速查手册,工具
+programming,fas fa-code,编程资源,开发必备,正则表达式在线测试,https://regex101.com/,fas fa-code,支持多语言的正则测试、解释与调试工具,在线工具
+programming,fas fa-code,编程资源,开发必备,JSON.cn,https://www.json.cn/,fas fa-brackets-curly,JSON格式化、压缩、校验与转义工具,在线工具
+programming,fas fa-code,编程资源,开发必备,Can I use,https://caniuse.com/,fas fa-check-circle,查询HTML、CSS、JS特性的浏览器兼容性,前端
+programming,fas fa-code,编程资源,开发必备,Node.js官网,https://nodejs.org/,fab fa-node-js,JavaScript运行时官方文档与下载,官方文档
+programming,fas fa-code,编程资源,开发必备,npm官网,https://www.npmjs.com/,fab fa-npm,Node包管理器官方库与文档,官方文档
+programming,fas fa-code,编程资源,开发必备,TypeScript官网,https://www.typescriptlang.org/,fas fa-code,JS超集语言官方文档与Playground,官方文档
+programming,fas fa-code,编程资源,开发必备,Vue.js官网,https://cn.vuejs.org/,fab fa-vuejs,渐进式JS框架官方中文文档,官方文档
+programming,fas fa-code,编程资源,开发必备,React官网,https://zh-hans.react.dev/,fab fa-react,UI库官方中文文档与教程,官方文档
+programming,fas fa-code,编程资源,开发必备,Angular官网,https://angular.cn/,fab fa-angular,Web应用框架官方中文文档,官方文档
+programming,fas fa-code,编程资源,开发必备,Webpack官网,https://webpack.js.org/,fas fa-cubes,模块打包工具官方文档与配置指南,官方文档
+programming,fas fa-code,编程资源,开发必备,Vite官网,https://cn.vitejs.dev/,fas fa-bolt,下一代前端工具链官方中文文档,官方文档
+programming,fas fa-code,编程资源,开发必备,Python官网,https://www.python.org/,fab fa-python,Python语言官方文档与下载,官方文档
+programming,fas fa-code,编程资源,开发必备,PyPI,https://pypi.org/,fab fa-python,Python包索引，查找第三方库,官方文档
+programming,fas fa-code,编程资源,开发必备,Java官网,https://www.oracle.com/java/,fab fa-java,Java官方文档与JDK下载,官方文档
+programming,fas fa-code,编程资源,开发必备,Spring官网,https://spring.io/,fas fa-leaf,Java框架Spring官方文档与指南,官方文档
+programming,fas fa-code,编程资源,开发必备,Go官网,https://go.dev/,fab fa-golang,Go语言官方文档、教程与包索引,官方文档
+programming,fas fa-code,编程资源,开发必备,Rust官网,https://www.rust-lang.org/,fab fa-rust,Rust语言官方文档与工具链,官方文档
+programming,fas fa-code,编程资源,开发必备,crates.io,https://crates.io/,fas fa-cube,Rust包注册官方站,官方文档
+programming,fas fa-code,编程资源,开发必备,MySQL官网,https://www.mysql.com/,fas fa-database,MySQL数据库官方文档与下载,官方文档
+programming,fas fa-code,编程资源,开发必备,PostgreSQL官网,https://www.postgresql.org/,fas fa-elephant,开源数据库官方文档,官方文档
+programming,fas fa-code,编程资源,开发必备,MongoDB官网,https://www.mongodb.com/,fas fa-leaf,NoSQL数据库官方文档,官方文档
+programming,fas fa-code,编程资源,开发必备,Redis官网,https://redis.io/,fas fa-bolt,内存数据库官方文档与命令参考,官方文档
+programming,fas fa-code,编程资源,开发必备,Git官网,https://git-scm.com/,fab fa-git-alt,版本控制工具官方文档与Pro Git书籍,官方文档
+programming,fas fa-code,编程资源,开发必备,Nginx官网,https://nginx.org/,fas fa-server,Web服务器官方文档与配置说明,官方文档
+programming,fas fa-code,编程资源,开发必备,Jenkins官网,https://www.jenkins.io/,fas fa-tasks,CI/CD自动化服务器官方文档,官方文档
+programming,fas fa-code,编程资源,开发必备,Prometheus官网,https://prometheus.io/,fas fa-chart-line,监控系统官方文档与查询语言指南,官方文档
+programming,fas fa-code,编程资源,开发必备,Grafana官网,https://grafana.com/,fas fa-chart-pie,可视化仪表板官方文档,官方文档
+programming,fas fa-code,编程资源,开发必备,Terraform官网,https://www.terraform.io/,fas fa-code-branch,基础设施即代码官方文档,官方文档
+programming,fas fa-code,编程资源,开发必备,AWS文档,https://docs.aws.amazon.com/,fab fa-aws,亚马逊云服务官方文档集,云文档
+programming,fas fa-code,编程资源,开发必备,Azure文档,https://docs.microsoft.com/zh-cn/azure/,fab fa-microsoft,微软云官方中文文档,云文档
+programming,fas fa-code,编程资源,开发必备,Google Cloud文档,https://cloud.google.com/docs,fab fa-google,谷歌云官方文档,云文档
+programming,fas fa-code,编程资源,开发必备,DevDocs,https://devdocs.io/,fas fa-book-open,聚合多语言API文档，离线可查,文档聚合
+programming,fas fa-code,编程资源,开发必备,OverAPI,http://overapi.com/,fas fa-sitemap,各大语言API速查卡片集,文档聚合
+programming,fas fa-code,编程资源,开发必备,Program Creek,https://www.programcreek.com/,fas fa-code,Java/Python等代码示例与API用法搜索,代码搜索
+programming,fas fa-code,编程资源,开发必备,GitHub Docs,https://docs.github.com/,fab fa-github,GitHub官方使用文档,官方文档
+programming,fas fa-code,编程资源,开发必备,GitLab Docs,https://docs.gitlab.com/,fab fa-gitlab,GitLab官方文档,官方文档
+programming,fas fa-code,编程资源,开发必备,Visual Studio Code,https://code.visualstudio.com/,fab fa-vsstudio,编辑器官方文档与插件市场,官方文档
+programming,fas fa-code,编程资源,开发必备,JetBrains 工具箱,https://www.jetbrains.com/,fas fa-brain,IDE官方文档与下载,官方文档
+programming,fas fa-code,编程资源,开发必备,Postman官网,https://www.postman.com/,fas fa-paper-plane,API开发工具官方文档,官方文档
+programming,fas fa-code,编程资源,开发必备,Swagger官网,https://swagger.io/,fas fa-code-branch,API设计工具官方文档,官方文档
+programming,fas fa-code,编程资源,开发必备,OpenAPI规范,https://swagger.io/specification/,fas fa-file-code,RESTful API描述规范官方,官方文档
+programming,fas fa-code,编程资源,开发必备,Markdown Guide,https://www.markdownguide.org/,fas fa-markdown,Markdown语法完全指南,文档
+programming,fas fa-code,编程资源,开发必备,Devhints,https://devhints.io/,fas fa-sticky-note,各种技术速查表(cheatsheet),速查
+programming,fas fa-code,编程资源,开发必备,QuickRef.ME,https://quickref.me/,fas fa-fast-forward,多语言编程速查参考,速查
+programming,fas fa-code,编程资源,开发必备,Ray.so,https://ray.so/,fas fa-camera,代码截图美化工具,工具
+programming,fas fa-code,编程资源,开发必备,Carbon,https://carbon.now.sh/,fas fa-image,代码转美观图片分享,工具
+programming,fas fa-code,编程资源,开发必备,Excalidraw,https://excalidraw.com/,fas fa-pencil-ruler,手绘风格架构图绘制工具,工具
+programming,fas fa-code,编程资源,开发必备,DB Diagram,https://dbdiagram.io/,fas fa-diagram-project,在线数据库关系图设计,工具
+programming,fas fa-code,编程资源,开发必备,Quicktype,https://quicktype.io/,fas fa-bolt,JSON转各类语言类型定义,工具
+programming,fas fa-code,编程资源,开发必备,Hoppscotch,https://hoppscotch.io/,fas fa-bolt,开源API请求调试工具,工具
+programming,fas fa-code,编程资源,开发必备,JWT.io,https://jwt.io/,fas fa-key,JWT令牌在线调试与解码,工具
+programming,fas fa-code,编程资源,开发必备,GitIgnore.io,https://www.toptal.com/developers/gitignore,fab fa-git-alt,自动生成.gitignore文件,工具
+programming,fas fa-code,编程资源,开发必备,Choose a License,https://choosealicense.com/,fas fa-balance-scale,开源许可证选择指南,文档
+programming,fas fa-code,编程资源,开发必备,第一PHP社区,https://www.php1.cn/,fab fa-php,PHP中文文档与代码示例,文档
+programming,fas fa-code,编程资源,开发必备,Ruby China,https://ruby-china.org/,fas fa-gem,Ruby 社区与文档资源,社区
+programming,fas fa-code,编程资源,开发必备,Laravel China,https://learnku.com/laravel,fas fa-leaf,Laravel 中文文档与社区,文档
+programming,fas fa-code,编程资源,开发必备,Flutter 中文网,https://flutter.cn/,fab fa-flutter,Flutter 官方中文文档,官方文档
+programming,fas fa-code,编程资源,开发必备,Android 开发者,https://developer.android.google.cn/,fab fa-android,Android 官方开发文档,官方文档
+programming,fas fa-code,编程资源,开发必备,Swift 官网,https://www.swift.org/,fab fa-swift,Swift 语言官方文档,官方文档
+programming,fas fa-code,编程资源,开发必备,Kotlin 官网,https://kotlinlang.org/,fab fa-kotlin,Kotlin 语言官方文档,官方文档
+programming,fas fa-code,编程资源,开发必备,Rust 语言中文,https://rustwiki.org/,fab fa-rust,Rust 中文社区与文档翻译,文档
+programming,fas fa-code,编程资源,开发必备,Zig 官网,https://ziglang.org/,fas fa-zig,Zig 语言官方文档,官方文档
+programming,fas fa-code,编程资源,开发必备,Deno 官网,https://deno.com/,fas fa-dragon,Deno 运行时官方文档,官方文档
+programming,fas fa-code,编程资源,开发必备,Bun 官网,https://bun.sh/,fas fa-rocket,Bun 工具链官方文档,官方文档
+programming,fas fa-code,编程资源,开发必备,ES6 入门教程,https://es6.ruanyifeng.com/,fab fa-js,阮一峰 ES6 中文教程,入门
+programming,fas fa-code,编程资源,开发必备,网道 WangDoc,https://wangdoc.com/,fas fa-file-alt,Web 技术中文文档集合,文档
