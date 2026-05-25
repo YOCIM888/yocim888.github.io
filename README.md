@@ -269,12 +269,12 @@ python check_fix_dead_links.py ../data/links.json --report-only
 
 ## 📄 许可证
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
+本项目采用 ISC 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
 
 ## 👥 开发团队
 
 - **作者**: YOCIM
-- **版本**: V1.0.3
+- **版本**: V1.0.6
 - **GitHub**: [https://github.com/YOCIM888](https://github.com/YOCIM888)
 
 ## 📞 联系我们
