@@ -1,0 +1,923 @@
+<!DOCTYPE html><html lang="zh"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎶 二次元回声 · 30首入坑必听/新曲推荐</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Helvetica Neue', 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(165deg, #fff0f5 0%, #ffe4ec 100%);
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+            scrollbar-width: thin;
+            scrollbar-color: #ffb6c1 #ffe6f0;
+        }
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-thumb {
+            background: #ffb6c1;
+            border-radius: 10px;
+        }
+        body::-webkit-scrollbar-track {
+            background: #ffe6f0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .header h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(145deg, #880e4f, #ff8fab);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 8px 12px #ffb0c8);
+            letter-spacing: -0.02em;
+        }
+
+        .sub-badge {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 2.5rem;
+            margin: 1rem 0 1.8rem;
+        }
+
+        .pill {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 60px;
+            padding: 0.5rem 2rem;
+            border: 1px solid white;
+            color: #5a3a5a;
+            font-weight: 600;
+            box-shadow: 0 6px 14px rgba(255, 143, 171, 0.2);
+        }
+
+        .intro-note {
+            background: #ffffffc2;
+            backdrop-filter: blur(4px);
+            border-radius: 60px;
+            padding: 1rem 2.2rem;
+            width: fit-content;
+            margin: 0 auto 2.5rem;
+            border: 1px solid white;
+            color: #5a3a5a;
+            font-size: 1.05rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #5a3a5a;
+            margin: 2.2rem 0 1.2rem 0;
+            border-left: 10px solid #ff8fab;
+            padding-left: 1.2rem;
+        }
+
+        .section-sub {
+            color: #8a5a7a;
+            margin-bottom: 1.8rem;
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.8rem;
+        }
+
+        a.song-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 36px;
+            padding: 1.5rem 1.5rem 1.8rem;
+            border: 1px solid rgba(255,255,255,0.8);
+            box-shadow: 0 20px 30px -10px #ffb0c8;
+            transition: 0.15s;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        a.song-card:link,
+        a.song-card:visited,
+        a.song-card:hover,
+        a.song-card:active {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a.song-card:hover {
+            transform: translateY(-6px);
+            background: #ffffff;
+            border-color: #ffc0d5;
+            box-shadow: 0 28px 40px -12px #f0a0b8;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.8rem;
+        }
+
+        .song-label {
+            background: #ffe4ec;
+            color: #6b3a5a;
+            font-weight: 700;
+            font-size: 0.7rem;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            border: 1px solid #ff8fab;
+        }
+
+        .song-label.gold {
+            background: #ffe4a1;
+            border-color: #c6972c;
+        }
+
+        .song-label.blue {
+            background: #bde1ff;
+            border-color: #3f74b3;
+        }
+
+        .song-title {
+            font-size: 1.5rem;
+            font-weight: 750;
+            line-height: 1.2;
+            color: #4a2a3a;
+        }
+
+        .song-artist {
+            font-size: 0.95rem;
+            color: #8a5a7a;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid #ff8fab;
+            padding-left: 0.7rem;
+        }
+
+        .anime-source {
+            background: #ffe4ec;
+            border-radius: 30px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin: 0.2rem 0 0.6rem;
+            color: #6b3a5a;
+            font-weight: 500;
+        }
+
+        .recommend-box {
+            background: #fff5f8;
+            border-radius: 20px;
+            padding: 0.9rem 1.2rem;
+            margin: 0.8rem 0 0.2rem;
+            border: 1px solid #ffffff;
+        }
+
+        .recommend-label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #c0507a;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+        }
+
+        .recommend-text {
+            color: #4a2a3a;
+            font-size: 0.94rem;
+            line-height: 1.45;
+        }
+
+        .meta-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.8rem;
+        }
+
+        .meta-tags span {
+            background: #ffffff;
+            border-radius: 40px;
+            padding: 0.2rem 1rem;
+            font-size: 0.7rem;
+            border: 1px solid #ffc0d5;
+            color: #6b3a5a;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 3px dashed #ffb0c8;
+            color: #6b3a5a;
+            font-size: 0.95rem;
+        }
+
+        .hr-div {
+            opacity: 0.3;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width:600px) {
+            .header h1 { font-size: 2.2rem; }
+            .subpage-header {
+                padding: 0.4rem 3%;
+                border-radius: 16px;
+            }
+            .subpage-logo {
+                font-size: 1rem;
+            }
+            .subpage-logo-img {
+                width: 28px;
+                height: 28px;
+            }
+            .subpage-quote {
+                font-size: 0.7rem;
+            }
+            .subpage-theme-toggle,
+            .subpage-player-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 0.85rem;
+            }
+            .subpage-music-player {
+                width: 240px;
+                right: 10px;
+                top: 70px;
+            }
+            .subpage-player-controls button {
+                width: 38px;
+                height: 38px;
+                font-size: 1.1rem;
+            }
+            #subpagePlayPauseBtn {
+                width: 46px;
+                height: 46px;
+                font-size: 1.4rem;
+            }
+        }
+
+        .subpage-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 5%;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            position: sticky;
+            top: 8px;
+            margin: 8px 8px 1.5rem;
+            z-index: 100;
+        }
+        .subpage-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #ff7b9c;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-shadow: 1px 1px 0 #ffe0e8;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .subpage-logo-img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 143, 171, 0.4);
+        }
+        .subpage-quote {
+            flex: 1;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6a5a6a;
+            font-style: italic;
+            padding: 0 1rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .subpage-header-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .subpage-theme-toggle {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #ffd9e6;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 8px rgba(255, 180, 200, 0.4);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #ff8fab;
+            transition: all 0.2s;
+        }
+        .subpage-theme-toggle:hover {
+            background: #ffb6c1;
+            color: white;
+            transform: scale(1.1);
+        }
+        .subpage-player-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #ffd9e6;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 8px rgba(255, 180, 200, 0.4);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #ff8fab;
+            transition: all 0.2s;
+        }
+        .subpage-player-icon:hover {
+            background: #ffb6c1;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .subpage-music-player {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            width: 200px;
+            background: rgba(255, 240, 250, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 24px;
+            padding: 0.5rem 0.3rem 0.5rem;
+            box-shadow: 0 15px 35px rgba(255, 150, 180, 0.25);
+            border: 1px solid rgba(255, 220, 240, 0.8);
+            z-index: 1000;
+            transition: opacity 0.2s, visibility 0.2s;
+            opacity: 1;
+            visibility: visible;
+        }
+        .subpage-music-player.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .subpage-player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px dashed #ffbfd5;
+        }
+        .subpage-player-title {
+            font-weight: 600;
+            color: #ff8fab;
+            font-size: 1rem;
+        }
+        .subpage-player-title i {
+            margin-right: 5px;
+            color: #ff7b9c;
+        }
+        .subpage-close-player {
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            color: #f0b8cc;
+            cursor: pointer;
+            padding: 0 4px;
+            transition: color 0.2s;
+        }
+        .subpage-close-player:hover {
+            color: #ff7b9c;
+        }
+        .subpage-song-info {
+            text-align: center;
+            margin-bottom: 0.8rem;
+        }
+        .subpage-song-name {
+            font-weight: 600;
+            color: #5a4a5a;
+            background: rgba(255, 220, 240, 0.6);
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            display: inline-block;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 0.95rem;
+        }
+        .subpage-progress-container {
+            margin: 0.8rem 0;
+        }
+        .subpage-progress-bar {
+            width: 100%;
+            height: 4px;
+            border-radius: 10px;
+            background: #ffd0dd;
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+        }
+        .subpage-progress-bar::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            background: #ff7b9c;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 6px #ff9eb5;
+            transition: 0.1s;
+        }
+        .subpage-progress-bar::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            background: #ff5f8a;
+        }
+        .subpage-time {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #d4729a;
+            margin-top: 4px;
+        }
+        .subpage-player-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0.6rem;
+        }
+        .subpage-player-controls button {
+            background: white;
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            color: #ff8fab;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 5px 12px rgba(255, 150, 170, 0.3);
+            transition: 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        #subpagePlayPauseBtn {
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            background: #ff9eb5;
+            color: white;
+        }
+        .subpage-player-controls button:hover {
+            background: #ffb6c1;
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 8px 18px #ff9eb5;
+        }
+        #subpagePlayPauseBtn:hover {
+            background: #ff7b9c;
+        }
+
+        body.dark {
+            background: linear-gradient(165deg, #1a1020 0%, #0f0a10 100%) !important;
+            scrollbar-color: #8a4f6a #2a1a25;
+        }
+        body.dark::-webkit-scrollbar-thumb {
+            background: #8a4f6a;
+        }
+        body.dark::-webkit-scrollbar-track {
+            background: #2a1a25;
+        }
+        body.dark a.song-card {
+            background: rgba(30, 20, 30, 0.85);
+            border-color: #4a3a4a;
+            box-shadow: 0 20px 30px -10px rgba(100, 50, 80, 0.3);
+        }
+        body.dark a.song-card:hover {
+            background: rgba(40, 28, 40, 0.95);
+            border-color: #ff8fab;
+        }
+        body.dark .song-title { color: #f0c0d0; }
+        body.dark .song-artist { color: #c0a0b0; border-left-color: #ff8fab; }
+        body.dark .song-label { background: #2a1f2a; color: #d0b0c0; border-color: #5a4a5a; }
+        body.dark .song-label.gold { background: #3a2a10; border-color: #8a6a2a; color: #e0c070; }
+        body.dark .song-label.blue { background: #1a2a3a; border-color: #3a6a9a; color: #a0c0e0; }
+        body.dark .anime-source { background: #2a1f2a; color: #c0a0b0; }
+        body.dark .recommend-box { background: #1e1520; border-color: #3a2a3a; }
+        body.dark .recommend-label { color: #c0a0b0; }
+        body.dark .recommend-text { color: #d0c0e0; }
+        body.dark .meta-tags span { background: #2a1f2a; border-color: #5a4a5a; color: #d0b0c0; }
+        body.dark .pill { background: rgba(30, 20, 30, 0.7); color: #d0b0c0; border-color: #4a3a4a; }
+        body.dark .intro-note { background: rgba(30, 20, 30, 0.8); color: #d0c0e0; border-color: #4a3a4a; }
+        body.dark .section-title { color: #d0b0c0; border-left-color: #ff8fab; }
+        body.dark .section-sub { color: #a08a9a; }
+        body.dark .footer-note { border-top-color: #4a3a4a; color: #a08a9a; }
+        body.dark .hr-div { opacity: 0.15; }
+        body.dark .subpage-theme-toggle {
+            background: rgba(30, 20, 30, 0.8);
+            color: #ffa0b0;
+            border-color: #5a4a5a;
+        }
+        body.dark .subpage-header {
+            background: rgba(20, 20, 35, 0.8);
+            border-color: #444;
+        }
+        body.dark .subpage-logo {
+            color: #e0e0e0;
+            text-shadow: none;
+        }
+        body.dark .subpage-logo-img {
+            border-color: rgba(255, 160, 190, 0.5);
+        }
+        body.dark .subpage-quote {
+            color: #b0b0b0;
+        }
+        body.dark .subpage-player-icon {
+            background: rgba(30, 20, 30, 0.8);
+            color: #ffa0b0;
+            border-color: #5a4a5a;
+        }
+        body.dark .subpage-music-player {
+            background: rgba(20, 20, 35, 0.9);
+            border-color: #444;
+        }
+        body.dark .subpage-player-title {
+            color: #f0a0b0;
+        }
+        body.dark .subpage-song-name {
+            color: #e0e0e0;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        body.dark .subpage-close-player {
+            color: #888;
+        }
+        body.dark .subpage-close-player:hover {
+            color: #ff7b9c;
+        }
+        body.dark .subpage-progress-bar {
+            background: #4a3a4a;
+        }
+        body.dark .subpage-time {
+            color: #999;
+        }
+        body.dark .subpage-player-controls button {
+            background: #3a2e3a;
+            color: #f0b0c0;
+            border-color: #5a4a5a;
+        }
+        body.dark .subpage-player-controls button:hover {
+            background: #8a4f6a;
+        }
+        body.dark #subpagePlayPauseBtn {
+            background: #c07090;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<header class="subpage-header">
+    <a href="../index.html" class="subpage-logo" id="subpageLogoBtn">
+        <img class="subpage-logo-img" src="../public/images/xiyue.webp" alt="YOCIM">
+        <span>YOCIM轻站</span>
+    </a>
+    <div class="subpage-quote" id="subpageQuote">旋律是灵魂的语言，无需翻译便能共鸣。</div>
+    <div class="subpage-header-right">
+        <div class="subpage-theme-toggle" id="subpageThemeToggle"><i class="fas fa-moon"></i></div>
+        <div class="subpage-player-icon" id="subpagePlayerIcon"><i class="fas fa-headphones-alt"></i></div>
+    </div>
+</header>
+<div class="container">
+    <div class="header">
+        <h1>♪ 30首二次元·珍藏歌单 ♪</h1>
+        <div class="sub-badge">
+            <span class="pill">🔥 现象级神曲</span>
+            <span class="pill">📀 时代经典</span>
+            <span class="pill">✨ 2026春夏新曲</span>
+        </div>
+        <div class="intro-note">
+            ⭐ 每首均附「推荐理由」—— 综合公告牌/ORICON/B站收藏/海外口碑
+        </div>
+    </div>
+
+    <div class="section-title">✨ Part 1 · 现象级爆款 / 近年霸权</div>
+    <div class="grid">
+        <a class="song-card" id="card-music-0" href="https://y.qq.com/n/ryqq/search?w=アイドル YOASOBI" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label gold">🏆 全球爆红</span><span>2023-2026</span></div>
+            <div class="song-title">アイドル</div>
+            <div class="song-artist">YOASOBI</div>
+            <div class="anime-source">【我推的孩子】OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">Billboard Global Excl. U.S. 日音首次夺冠。急速变化的曲风完美演绎演艺圈光与影，跨越语言的现象级神曲 [citation:2]。</div></div>
+            <div class="meta-tags"><span>YOASOBI</span><span>#1 推子</span></div>
+        </a>
+        <a class="song-card" id="card-music-1" href="https://y.qq.com/n/ryqq/search?w=Bling-Bang-Bang-Born Creepy Nuts" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label gold">🔥 2024年霸</span></div>
+            <div class="song-title">Bling-Bang-Bang-Born</div>
+            <div class="song-artist">Creepy Nuts</div>
+            <div class="anime-source">肌肉魔法使 MASHLE 第二季OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">Billboard Japan 年榜第一，中毒性副歌引发全球BBBB舞蹈，一响就想跟着跳 [citation:2]。</div></div>
+            <div class="meta-tags"><span>说唱摇滚</span><span>肌肉魔法</span></div>
+        </a>
+        <a class="song-card" id="card-music-2" href="https://y.qq.com/n/ryqq/search?w=剪影 (シルエット) KANA-BOON" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label gold">📈 2亿播放</span></div>
+            <div class="song-title">剪影 (シルエット)</div>
+            <div class="song-artist">KANA-BOON</div>
+            <div class="anime-source">火影忍者 疾风传 OP16</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">2026年3月达成自身首次累计2亿播放 [citation:9]。跨越时代的火影国歌，海外粉丝大合唱定番 [citation:2]。</div></div>
+            <div class="meta-tags"><span>NARUTO</span><span>摇滚</span></div>
+        </a>
+        <a class="song-card" id="card-music-3" href="https://y.qq.com/n/ryqq/search?w=IRIS 米津玄师" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">🎬 剧场版主题曲</span></div>
+            <div class="song-title">IRIS</div>
+            <div class="song-artist">米津玄师</div>
+            <div class="anime-source">电锯人 蕾塞篇</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">米津紧盯原作漫画创作，激烈战斗与哀伤交织。2025年9月上映前在美国活动率先公开，引爆期待 [citation:2]。</div></div>
+            <div class="meta-tags"><span>米津玄师</span><span>MAPPA</span></div>
+        </a>
+        <a class="song-card" id="card-music-4" href="https://y.qq.com/n/ryqq/search?w=遥か彼方 ASIAN KUNG-FU GENERATION" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">⚡ 永恒经典</span></div>
+            <div class="song-title">遥か彼方</div>
+            <div class="song-artist">ASIAN KUNG-FU GENERATION</div>
+            <div class="anime-source">火影忍者 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">2002年独立时期作品，被选为火影OP后在海外获得压倒性支持，2024年重新录制，依然撼动灵魂 [citation:2]。</div></div>
+            <div class="meta-tags"><span>热血摇滚</span><span>火影</span></div>
+        </a>
+        <a class="song-card" id="card-music-5" href="https://y.qq.com/n/ryqq/search?w=GO!!! FLOW" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">🏅 20周年</span></div>
+            <div class="song-title">GO!!!</div>
+            <div class="song-artist">FLOW</div>
+            <div class="anime-source">火影忍者 OP4</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">2004年单曲，2024年4月推出20周年纪念8cm CD。充满能量，现场大合唱必备 [citation:2]。</div></div>
+            <div class="meta-tags"><span>FLOW</span><span>青春</span></div>
+        </a>
+        <a class="song-card" id="card-music-6" href="https://y.qq.com/n/ryqq/search?w=燦々デイズ Spira Spica" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">💕 心动神曲</span></div>
+            <div class="song-title">燦々デイズ</div>
+            <div class="song-artist">Spira Spica</div>
+            <div class="anime-source">恋上换装娃娃 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一榜单胜率57.7% [citation:4]。轻快旋律完美配合海边的恋爱氛围，漫改天花板级OP。</div></div>
+            <div class="meta-tags"><span>可爱摇滚</span><span>纯爱</span></div>
+        </a>
+        <a class="song-card" id="card-music-7" href="https://y.qq.com/n/ryqq/search?w=ないない ReoNa" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">🕯️ 暗黑系</span></div>
+            <div class="song-title">ないない</div>
+            <div class="song-artist">ReoNa</div>
+            <div class="anime-source">SHADOWS HOUSE-影宅- ED</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一榜单57.6%胜率 [citation:4]。ReoNa的“绝望嗓音”与哥特世界绝配，耐人寻味。</div></div>
+            <div class="meta-tags"><span>ReoNa</span><span>影宅</span></div>
+        </a>
+        <a class="song-card" id="card-music-8" href="https://y.qq.com/n/ryqq/search?w=アポリア ヨルシカ" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">🌍 哲学OP</span></div>
+            <div class="song-title">アポリア</div>
+            <div class="song-artist">ヨルシカ</div>
+            <div class="anime-source">地。-关于地球的运动- OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一榜57.5%胜率 [citation:4]。摇滚与真理追寻的共鸣，充满知性热血。</div></div>
+            <div class="meta-tags"><span>ヨルシカ</span></div>
+        </a>
+        <a class="song-card" id="card-music-9" href="https://y.qq.com/n/ryqq/search?w=Stay Alive 高橋李依" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">💧 催泪神</span></div>
+            <div class="song-title">Stay Alive</div>
+            <div class="song-artist">高橋李依</div>
+            <div class="anime-source">Re：从零开始的异世界生活 ED</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一榜57.4%胜率 [citation:4]。艾米莉娅角色歌，温柔的嗓音治愈无数人。</div></div>
+            <div class="meta-tags"><span>高橋李依</span></div>
+        </a>
+    </div>
+
+    <div class="section-title">📀 Part 2 · 时代经典 · 跨世代名曲</div>
+    <div class="grid">
+        <a class="song-card" id="card-music-10" href="https://y.qq.com/n/ryqq/search?w=月光传说 (ムーンライト伝説) DALI" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">🌙 传奇</span></div>
+            <div class="song-title">月光传说 (ムーンライト伝説)</div>
+            <div class="song-artist">DALI</div>
+            <div class="anime-source">美少女战士 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">1992年单曲，美国漫展引发大合唱的日本代表动画歌。前奏一出即刻心跳 [citation:2]。</div></div>
+            <div class="meta-tags"><span>美战</span><span>黄金年代</span></div>
+        </a>
+        <a class="song-card" id="card-music-11" href="https://y.qq.com/n/ryqq/search?w=Trust You 伊藤由奈" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">🤖 高达神曲</span></div>
+            <div class="song-title">Trust You</div>
+            <div class="song-artist">伊藤由奈</div>
+            <div class="anime-source">机动战士高达00 第二季 ED</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一榜57.7%胜率 [citation:4]。温柔而坚定的歌声，代表高达系列柔情一面。</div></div>
+            <div class="meta-tags"><span>高达00</span></div>
+        </a>
+        <a class="song-card" id="card-music-12" href="https://y.qq.com/n/ryqq/search?w=天使にふれたよ! 放課後ティータイム" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">🎸 毕业神曲</span></div>
+            <div class="song-title">天使にふれたよ!</div>
+            <div class="song-artist">放課後ティータイム</div>
+            <div class="anime-source">K-ON!! 轻音少女 插曲</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一榜57.6%胜率 [citation:4]。轻音部毕业季的催泪弹，无数人的入坑回忆。</div></div>
+            <div class="meta-tags"><span>K-ON</span><span>HTT</span></div>
+        </a>
+        <a class="song-card" id="card-music-13" href="https://y.qq.com/n/ryqq/search?w=イマジネーション SPYAIR" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">🏐 排球国歌</span></div>
+            <div class="song-title">イマジネーション</div>
+            <div class="song-artist">SPYAIR</div>
+            <div class="anime-source">排球少年!! OP1</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一榜57.6% [citation:4]。只要前奏响起，乌野的翅膀就开始飞翔，热血代名词。</div></div>
+            <div class="meta-tags"><span>排球少年</span><span>SPYAIR</span></div>
+        </a>
+        <a class="song-card" id="card-music-14" href="https://y.qq.com/n/ryqq/search?w=エウテルペ EGOIST" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">👑 泽野神曲</span></div>
+            <div class="song-title">エウテルペ</div>
+            <div class="song-artist">EGOIST</div>
+            <div class="anime-source">罪恶王冠 插曲</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一57.5% [citation:4]。chelly空灵的声音，樱满集与祈的悲歌。</div></div>
+            <div class="meta-tags"><span>EGOIST</span><span>罪恶王冠</span></div>
+        </a>
+        <a class="song-card" id="card-music-15" href="https://y.qq.com/n/ryqq/search?w=センチメンタルクライシス halca" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">❤️ 辉夜名曲</span></div>
+            <div class="song-title">センチメンタルクライシス</div>
+            <div class="song-artist">halca</div>
+            <div class="anime-source">辉夜姬想让人告白 OP2</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">二选一57.4% [citation:4]。少女心爆发，完美诠释辉夜大小姐的傲娇。</div></div>
+            <div class="meta-tags"><span>halca</span></div>
+        </a>
+        <a class="song-card" id="card-music-16" href="https://y.qq.com/n/ryqq/search?w=ふたつの鼓動と赤い罪 ON/OFF" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">🦇 经典暗黑</span></div>
+            <div class="song-title">ふたつの鼓動と赤い罪</div>
+            <div class="song-artist">ON/OFF</div>
+            <div class="anime-source">吸血鬼骑士 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">很多人的哥特启蒙，双胞胎组合的迷人声线，优姬与枢的宿命。</div></div>
+            <div class="meta-tags"><span>吸血鬼骑士</span></div>
+        </a>
+        <a class="song-card" id="card-music-17" href="https://y.qq.com/n/ryqq/search?w=君の知らない物語 supercell" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">⭐ 神前晓</span></div>
+            <div class="song-title">君の知らない物語</div>
+            <div class="song-artist">supercell</div>
+            <div class="anime-source">化物语 ED</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">星空下的告白曲，nagi清澈嗓音，十年后依然在耳边回响。</div></div>
+            <div class="meta-tags"><span>nagi</span><span>化物语</span></div>
+        </a>
+        <a class="song-card" id="card-music-18" href="https://y.qq.com/n/ryqq/search?w=ライオン May'n / 中野愛子" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">🦁 燃尽神曲</span></div>
+            <div class="song-title">ライオン</div>
+            <div class="song-artist">May&quot;n / 中野愛子</div>
+            <div class="anime-source">超时空要塞F OP2</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">菅野洋子神级作曲，May&quot;n的爆发力，雪露女王的霸气巅峰。</div></div>
+            <div class="meta-tags"><span>MF</span><span>May&quot;n</span></div>
+        </a>
+        <a class="song-card" id="card-music-19" href="https://y.qq.com/n/ryqq/search?w=心絵 ロードオブメジャー" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">⚾ 元气满满</span></div>
+            <div class="song-title">心絵</div>
+            <div class="song-artist">ロードオブメジャー</div>
+            <div class="anime-source">棒球大联盟 OP1</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">充满希望与勇气，无数人的童年应援曲，一听就充满力量。</div></div>
+            <div class="meta-tags"><span>MAJOR</span></div>
+        </a>
+    </div>
+
+    <div class="section-title">✨ Part 3 · 2026 最新动画歌曲 · 5月精选</div>
+    <div class="grid">
+        <a class="song-card" id="card-music-20" href="https://y.qq.com/n/ryqq/search?w=AIZO King Gnu" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label gold">🏆 QQ音乐动漫榜第1</span></div>
+            <div class="song-title">AIZO</div>
+            <div class="song-artist">King Gnu</div>
+            <div class="anime-source">咒术回战 死灭回游 前篇 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">King Gnu再临咒术回战，震撼弦乐与爆发力嗓音，QQ音乐动漫榜登顶第1，2026年度最强OP有力候补。[citation:6]</div></div>
+            <div class="meta-tags"><span>King Gnu</span><span>咒术回战</span></div>
+        </a>
+        <a class="song-card" id="card-music-21" href="https://y.qq.com/n/ryqq/search?w=ATTITUDE aespa" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label blue">K-POP</span></div>
+            <div class="song-title">ATTITUDE</div>
+            <div class="song-artist">aespa</div>
+            <div class="anime-source">杀手青春 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">aespa为杀手青春献唱OP，K-POP与动画的跨界碰撞，中毒性旋律与酷炫编曲。[citation:6]</div></div>
+            <div class="meta-tags"><span>aespa</span><span>杀手青春</span></div>
+        </a>
+        <a class="song-card" id="card-music-22" href="https://y.qq.com/n/ryqq/search?w=Recollect 铃木このみ / Ashnikko" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label blue">🔥 王道回归</span></div>
+            <div class="song-title">Recollect</div>
+            <div class="song-artist">铃木このみ / Ashnikko</div>
+            <div class="anime-source">Re:从零开始的异世界生活 第四季 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">铃木このみ携手Ashnikko，Re:零第四季OP，史诗级交响摇滚与异世界再会，粉丝泪目。[citation:6]</div></div>
+            <div class="meta-tags"><span>铃木このみ</span><span>Re:零</span></div>
+        </a>
+        <a class="song-card" id="card-music-23" href="https://y.qq.com/n/ryqq/search?w=PROVANT SawanoHiroyuki[nZk]" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label blue">泽野</span></div>
+            <div class="song-title">PROVANT</div>
+            <div class="song-artist">SawanoHiroyuki[nZk]</div>
+            <div class="anime-source">命运/奇异赝品 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">泽野弘之再度出击，命运系列新作OP，宏大管弦与电子融合，型月世界配乐新巅峰。[citation:6]</div></div>
+            <div class="meta-tags"><span>泽野弘之</span><span>Fate</span></div>
+        </a>
+        <a class="song-card" id="card-music-24" href="https://y.qq.com/n/ryqq/search?w=あぶく ヨルシカ" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label blue">ヨルシカ</span></div>
+            <div class="song-title">あぶく</div>
+            <div class="song-artist">ヨルシカ</div>
+            <div class="anime-source">欺诈游戏 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">ヨルシカ为欺诈游戏献唱OP，轻快旋律下暗藏心机，泡沫般虚幻的博弈世界。[citation:6]</div></div>
+            <div class="meta-tags"><span>ヨルシカ</span><span>欺诈游戏</span></div>
+        </a>
+        <a class="song-card" id="card-music-25" href="https://y.qq.com/n/ryqq/search?w=Eureka Evrika Luna Goami" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label">京阿尼</span></div>
+            <div class="song-title">Eureka Evrika</div>
+            <div class="song-artist">Luna Goami</div>
+            <div class="anime-source">京阿尼新作 Sparks of Tomorrow OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">京阿尼2026全新原创动画OP，Luna Goami清澈声线，充满希望与光芒的旋律。[citation:6]</div></div>
+            <div class="meta-tags"><span>京阿尼</span><span>Sparks of Tomorrow</span></div>
+        </a>
+        <a class="song-card" id="card-music-26" href="https://y.qq.com/n/ryqq/search?w=茜 ヨルシカ" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label blue">剧场版</span></div>
+            <div class="song-title">茜</div>
+            <div class="song-artist">ヨルシカ</div>
+            <div class="anime-source">我心里危险的东西 剧场版主题曲</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">ヨルシカ双杀5月新番，剧场版主题曲「茜」，茜色黄昏下的青春告白，催泪神曲。[citation:6]</div></div>
+            <div class="meta-tags"><span>ヨルシカ</span><span>我心里危险的东西</span></div>
+        </a>
+        <a class="song-card" id="card-music-27" href="https://y.qq.com/n/ryqq/search?w=芽吹くとき yonige" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label blue">清新</span></div>
+            <div class="song-title">芽吹くとき</div>
+            <div class="song-artist">yonige</div>
+            <div class="anime-source">上伊那牡丹 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">yonige为上伊那牡丹献唱OP，萌芽时刻的清新摇滚，少女与花朵的物语。[citation:6]</div></div>
+            <div class="meta-tags"><span>yonige</span><span>上伊那牡丹</span></div>
+        </a>
+        <a class="song-card" id="card-music-28" href="https://y.qq.com/n/ryqq/search?w=KILL SHOT RIIZE" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label blue">K-POP</span></div>
+            <div class="song-title">KILL SHOT</div>
+            <div class="song-artist">RIIZE</div>
+            <div class="anime-source">杀手青春 ED</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">RIIZE为杀手青春献唱ED，与aespa的OP形成双K-POP阵容，利落节拍与帅气和声。[citation:6]</div></div>
+            <div class="meta-tags"><span>RIIZE</span><span>杀手青春</span></div>
+        </a>
+        <a class="song-card" id="card-music-29" href="https://y.qq.com/n/ryqq/search?w=Cold Night HANA" target="_blank" rel="noopener">
+            <div class="card-header"><span class="song-label blue">竞技</span></div>
+            <div class="song-title">Cold Night</div>
+            <div class="song-artist">HANA</div>
+            <div class="anime-source">金牌得主 第二季 OP</div>
+            <div class="recommend-box"><div class="recommend-label"><span>🎧 推荐理由</span></div><div class="recommend-text">HANA为金牌得主第二季献唱OP，寒夜中的热血花滑，清澈高音与冰上旋转共鸣。[citation:6]</div></div>
+            <div class="meta-tags"><span>HANA</span><span>金牌得主</span></div>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        Ⓒ 歌单综合自 Billboard JAPAN、Oricon、B站全年代动漫歌曲榜、美国动画歌曲盘点 [citation:2]、2026春夏番主题歌特集 [citation:6] 及 Bangumi 信息 [citation:1][citation:3]。 30首涵盖现象级、经典、2026新曲。<br>
+        🎧 每一首都值得加入播放列表 · 网页为静态展示 2026.05
+    </div>
+</div>
+<div class="subpage-music-player hidden" id="subpageMusicPlayer">
+    <div class="subpage-player-header">
+        <span class="subpage-player-title"><i class="fas fa-music"></i> 次元播放器</span>
+        <button class="subpage-close-player" id="subpageClosePlayer"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="subpage-player-content">
+        <div class="subpage-song-info">
+            <span class="subpage-song-name" id="subpageCurrentSong">未播放</span>
+        </div>
+        <div class="subpage-progress-container">
+            <input type="range" class="subpage-progress-bar" id="subpageProgressBar" value="0" step="0.1">
+            <div class="subpage-time">
+                <span id="subpageCurrentTime">0:00</span> / <span id="subpageDuration">0:00</span>
+            </div>
+        </div>
+        <div class="subpage-player-controls">
+            <button id="subpagePrevBtn"><i class="fas fa-step-backward"></i></button>
+            <button id="subpagePlayPauseBtn"><i class="fas fa-play"></i></button>
+            <button id="subpageNextBtn"><i class="fas fa-step-forward"></i></button>
+        </div>
+    </div>
+</div>
+<script src="../scripts/subpage-theme.js"></script>
+<script src="../scripts/scroll.js"></script>
+<script src="../scripts/subpage-music.js"></script>
+
+</body></html>

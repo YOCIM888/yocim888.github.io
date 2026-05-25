@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>猎人射击 - Hunter Shooting</title>
+    <link rel="stylesheet" href="../../assets/css/game css/Hunter-shooting.css">
+</head>
+<body>
+    <div class="game-container" id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+        
+        <div class="game-header">
+            <div class="info-panel">
+                <div class="score-panel">
+                    <div class="panel-label">得分</div>
+                    <div class="panel-value" id="score">0</div>
+                </div>
+                <div class="time-panel">
+                    <div class="panel-label">时间</div>
+                    <div class="panel-value" id="time">120</div>
+                </div>
+                <div class="ammo-panel">
+                    <div class="panel-label">弹药</div>
+                    <div class="panel-value" id="ammo">999</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="crosshair" id="crosshair">
+            <div class="crosshair-line horizontal"></div>
+            <div class="crosshair-line vertical"></div>
+            <div class="crosshair-dot"></div>
+        </div>
+        
+        <div class="game-title" id="gameTitle">
+            <div class="main-title">🎯 猎人射击</div>
+            <div class="subtitle">瞄准猎物，享受狩猎的乐趣！</div>
+            <div class="start-hint">点击屏幕或按 ENTER 键开始游戏</div>
+        </div>
+        
+        <div class="instructions" id="instructions">
+            <div class="instructions-header">
+                <div class="instructions-title">操作指南</div>
+            </div>
+            <div class="controls-grid">
+                <div class="control-item">
+                    <span class="key-badge">鼠标</span>
+                    <span>移动瞄准</span>
+                </div>
+                <div class="control-item">
+                    <span class="key-badge">点击</span>
+                    <span>射击</span>
+                </div>
+                <div class="control-item">
+                    <span class="key-badge">R</span>
+                    <span>装弹</span>
+                </div>
+                <div class="control-item">
+                    <span class="key-badge">P</span>
+                    <span>暂停</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-over" id="gameOverScreen">
+            <h1>狩猎结束</h1>
+            <div class="final-stats">
+                <div class="stat-item">最终得分: <span class="stat-value" id="finalScore">0</span></div>
+                <div class="stat-item">命中猎物: <span class="stat-value" id="animalsHit">0</span></div>
+                <div class="stat-item">射击次数: <span class="stat-value" id="shotsFired">0</span></div>
+                <div class="stat-item">命中率: <span class="stat-value" id="accuracy">0%</span></div>
+            </div>
+            <div class="grade-display" id="gradeDisplay"></div>
+            <button class="btn" id="restartBtn">重新开始</button>
+        </div>
+        
+        <div class="pause-overlay" id="pauseOverlay">
+            <div class="pause-text">游戏暂停</div>
+        </div>
+        
+        <div class="notification" id="notification"></div>
+        
+        <div class="reload-indicator" id="reloadIndicator">
+            <div class="reload-text">装弹中...</div>
+            <div class="reload-bar">
+                <div class="reload-progress" id="reloadProgress"></div>
+            </div>
+        </div>
+        
+        <div class="landscape-hint" id="landscapeHint">
+            <div class="landscape-icon">📱</div>
+            <div class="landscape-text">请旋转设备至横屏以获得最佳体验</div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/game js/Hunter-shooting.js"></script>
+</body>
+</html>

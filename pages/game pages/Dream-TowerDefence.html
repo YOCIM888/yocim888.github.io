@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梦幻塔防</title>
+    <link rel="stylesheet" href="../../assets/css/game css/Dream-TowerDefence.css">
+</head>
+<body>
+    <div class="cyberpunk-header">
+    </div>
+    
+    <div class="game-container">
+        <div class="game-board">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+        </div>
+
+        <div class="right-panel">
+            <div class="sidebar sidebar-top">
+                <div class="stat-panel">
+                    <h3>游戏状态</h3>
+                    <div class="stat-item">
+                        <span>💰 金币:</span>
+                        <span id="gold">100</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>❤️ 生命值:</span>
+                        <span id="lives">20</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>🌊 波次:</span>
+                        <span id="wave">1</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>💀 击杀:</span>
+                        <span id="kills">0</span>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button class="control-btn" onclick="startGame()">开始游戏</button>
+                    <button class="control-btn" onclick="nextWave()">下一波</button>
+                    <button class="control-btn" onclick="resetGame()">重置</button>
+                </div>
+            </div>
+
+            <div class="sidebar sidebar-bottom">
+                <div class="tower-selection">
+                    <h3>选择防御塔</h3>
+                    <button class="tower-btn" id="tower1" onclick="selectTower(0)">
+                        🔵 激光塔 - 50金<br>
+                        <small>伤害: 10 | 射程: 100</small>
+                    </button>
+                    <button class="tower-btn" id="tower2" onclick="selectTower(1)">
+                        🟣 等离子塔 - 100金<br>
+                        <small>伤害: 20 | 射程: 80</small>
+                    </button>
+                    <button class="tower-btn" id="tower3" onclick="selectTower(2)">
+                        🟡 电磁塔 - 150金<br>
+                        <small>伤害: 15 | 范围攻击</small>
+                    </button>
+                    <button class="tower-btn" id="tower4" onclick="selectTower(3)">
+                        🔷 零度塔 - 120金<br>
+                        <small>伤害: 5 | 减速50%</small>
+                    </button>
+                </div>
+
+                <div class="instructions">
+                    <h4>操作说明</h4>
+                    <p>1. 选择防御塔类型</p>
+                    <p>2. 点击地图放置</p>
+                    <p>3. 消灭敌人获得金币</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../assets/js/game js/Dream-TowerDefence.js"></script>
+</body>
+</html>

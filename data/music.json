@@ -1,0 +1,54 @@
+{
+  "pageTitle": "🎶 二次元回声 · 30首入坑必听/新曲推荐",
+  "headerTitle": "♪ 30首二次元·珍藏歌单 ♪",
+  "badges": ["🔥 现象级神曲", "📀 时代经典", "✨ 2026春夏新曲"],
+  "introNote": "⭐ 每首均附「推荐理由」—— 综合公告牌/ORICON/B站收藏/海外口碑",
+  "sections": [
+    {
+      "title": "✨ Part 1 · 现象级爆款 / 近年霸权",
+      "songs": [
+        {"id": "music-0", "label": "🏆 全球爆红", "labelClass": "gold", "year": "2023-2026", "title": "アイドル", "artist": "YOASOBI", "animeSource": "【我推的孩子】OP", "recommendation": "Billboard Global Excl. U.S. 日音首次夺冠。急速变化的曲风完美演绎演艺圈光与影，跨越语言的现象级神曲 [citation:2]。", "tags": ["YOASOBI", "#1 推子"], "link": "https://y.qq.com/n/ryqq/search?w=アイドル YOASOBI"},
+        {"id": "music-1", "label": "🔥 2024年霸", "labelClass": "gold", "year": "", "title": "Bling-Bang-Bang-Born", "artist": "Creepy Nuts", "animeSource": "肌肉魔法使 MASHLE 第二季OP", "recommendation": "Billboard Japan 年榜第一，中毒性副歌引发全球BBBB舞蹈，一响就想跟着跳 [citation:2]。", "tags": ["说唱摇滚", "肌肉魔法"], "link": "https://y.qq.com/n/ryqq/search?w=Bling-Bang-Bang-Born Creepy Nuts"},
+        {"id": "music-2", "label": "📈 2亿播放", "labelClass": "gold", "year": "", "title": "剪影 (シルエット)", "artist": "KANA-BOON", "animeSource": "火影忍者 疾风传 OP16", "recommendation": "2026年3月达成自身首次累计2亿播放 [citation:9]。跨越时代的火影国歌，海外粉丝大合唱定番 [citation:2]。", "tags": ["NARUTO", "摇滚"], "link": "https://y.qq.com/n/ryqq/search?w=剪影 (シルエット) KANA-BOON"},
+        {"id": "music-3", "label": "🎬 剧场版主题曲", "labelClass": "", "year": "", "title": "IRIS", "artist": "米津玄师", "animeSource": "电锯人 蕾塞篇", "recommendation": "米津紧盯原作漫画创作，激烈战斗与哀伤交织。2025年9月上映前在美国活动率先公开，引爆期待 [citation:2]。", "tags": ["米津玄师", "MAPPA"], "link": "https://y.qq.com/n/ryqq/search?w=IRIS 米津玄师"},
+        {"id": "music-4", "label": "⚡ 永恒经典", "labelClass": "", "year": "", "title": "遥か彼方", "artist": "ASIAN KUNG-FU GENERATION", "animeSource": "火影忍者 OP", "recommendation": "2002年独立时期作品，被选为火影OP后在海外获得压倒性支持，2024年重新录制，依然撼动灵魂 [citation:2]。", "tags": ["热血摇滚", "火影"], "link": "https://y.qq.com/n/ryqq/search?w=遥か彼方 ASIAN KUNG-FU GENERATION"},
+        {"id": "music-5", "label": "🏅 20周年", "labelClass": "", "year": "", "title": "GO!!!", "artist": "FLOW", "animeSource": "火影忍者 OP4", "recommendation": "2004年单曲，2024年4月推出20周年纪念8cm CD。充满能量，现场大合唱必备 [citation:2]。", "tags": ["FLOW", "青春"], "link": "https://y.qq.com/n/ryqq/search?w=GO!!! FLOW"},
+        {"id": "music-6", "label": "💕 心动神曲", "labelClass": "", "year": "", "title": "燦々デイズ", "artist": "Spira Spica", "animeSource": "恋上换装娃娃 OP", "recommendation": "二选一榜单胜率57.7% [citation:4]。轻快旋律完美配合海边的恋爱氛围，漫改天花板级OP。", "tags": ["可爱摇滚", "纯爱"], "link": "https://y.qq.com/n/ryqq/search?w=燦々デイズ Spira Spica"},
+        {"id": "music-7", "label": "🕯️ 暗黑系", "labelClass": "", "year": "", "title": "ないない", "artist": "ReoNa", "animeSource": "SHADOWS HOUSE-影宅- ED", "recommendation": "二选一榜单57.6%胜率 [citation:4]。ReoNa的\u201c绝望嗓音\u201d与哥特世界绝配，耐人寻味。", "tags": ["ReoNa", "影宅"], "link": "https://y.qq.com/n/ryqq/search?w=ないない ReoNa"},
+        {"id": "music-8", "label": "🌍 哲学OP", "labelClass": "", "year": "", "title": "アポリア", "artist": "ヨルシカ", "animeSource": "地。-关于地球的运动- OP", "recommendation": "二选一榜57.5%胜率 [citation:4]。摇滚与真理追寻的共鸣，充满知性热血。", "tags": ["ヨルシカ"], "link": "https://y.qq.com/n/ryqq/search?w=アポリア ヨルシカ"},
+        {"id": "music-9", "label": "💧 催泪神", "labelClass": "", "year": "", "title": "Stay Alive", "artist": "高橋李依", "animeSource": "Re：从零开始的异世界生活 ED", "recommendation": "二选一榜57.4%胜率 [citation:4]。艾米莉娅角色歌，温柔的嗓音治愈无数人。", "tags": ["高橋李依"], "link": "https://y.qq.com/n/ryqq/search?w=Stay Alive 高橋李依"}
+      ]
+    },
+    {
+      "title": "📀 Part 2 · 时代经典 · 跨世代名曲",
+      "songs": [
+        {"id": "music-10", "label": "🌙 传奇", "labelClass": "", "year": "", "title": "月光传说 (ムーンライト伝説)", "artist": "DALI", "animeSource": "美少女战士 OP", "recommendation": "1992年单曲，美国漫展引发大合唱的日本代表动画歌。前奏一出即刻心跳 [citation:2]。", "tags": ["美战", "黄金年代"], "link": "https://y.qq.com/n/ryqq/search?w=月光传说 (ムーンライト伝説) DALI"},
+        {"id": "music-11", "label": "🤖 高达神曲", "labelClass": "", "year": "", "title": "Trust You", "artist": "伊藤由奈", "animeSource": "机动战士高达00 第二季 ED", "recommendation": "二选一榜57.7%胜率 [citation:4]。温柔而坚定的歌声，代表高达系列柔情一面。", "tags": ["高达00"], "link": "https://y.qq.com/n/ryqq/search?w=Trust You 伊藤由奈"},
+        {"id": "music-12", "label": "🎸 毕业神曲", "labelClass": "", "year": "", "title": "天使にふれたよ!", "artist": "放課後ティータイム", "animeSource": "K-ON!! 轻音少女 插曲", "recommendation": "二选一榜57.6%胜率 [citation:4]。轻音部毕业季的催泪弹，无数人的入坑回忆。", "tags": ["K-ON", "HTT"], "link": "https://y.qq.com/n/ryqq/search?w=天使にふれたよ! 放課後ティータイム"},
+        {"id": "music-13", "label": "🏐 排球国歌", "labelClass": "", "year": "", "title": "イマジネーション", "artist": "SPYAIR", "animeSource": "排球少年!! OP1", "recommendation": "二选一榜57.6% [citation:4]。只要前奏响起，乌野的翅膀就开始飞翔，热血代名词。", "tags": ["排球少年", "SPYAIR"], "link": "https://y.qq.com/n/ryqq/search?w=イマジネーション SPYAIR"},
+        {"id": "music-14", "label": "👑 泽野神曲", "labelClass": "", "year": "", "title": "エウテルペ", "artist": "EGOIST", "animeSource": "罪恶王冠 插曲", "recommendation": "二选一57.5% [citation:4]。chelly空灵的声音，樱满集与祈的悲歌。", "tags": ["EGOIST", "罪恶王冠"], "link": "https://y.qq.com/n/ryqq/search?w=エウテルペ EGOIST"},
+        {"id": "music-15", "label": "❤️ 辉夜名曲", "labelClass": "", "year": "", "title": "センチメンタルクライシス", "artist": "halca", "animeSource": "辉夜姬想让人告白 OP2", "recommendation": "二选一57.4% [citation:4]。少女心爆发，完美诠释辉夜大小姐的傲娇。", "tags": ["halca"], "link": "https://y.qq.com/n/ryqq/search?w=センチメンタルクライシス halca"},
+        {"id": "music-16", "label": "🦇 经典暗黑", "labelClass": "", "year": "", "title": "ふたつの鼓動と赤い罪", "artist": "ON/OFF", "animeSource": "吸血鬼骑士 OP", "recommendation": "很多人的哥特启蒙，双胞胎组合的迷人声线，优姬与枢的宿命。", "tags": ["吸血鬼骑士"], "link": "https://y.qq.com/n/ryqq/search?w=ふたつの鼓動と赤い罪 ON/OFF"},
+        {"id": "music-17", "label": "⭐ 神前晓", "labelClass": "", "year": "", "title": "君の知らない物語", "artist": "supercell", "animeSource": "化物语 ED", "recommendation": "星空下的告白曲，nagi清澈嗓音，十年后依然在耳边回响。", "tags": ["nagi", "化物语"], "link": "https://y.qq.com/n/ryqq/search?w=君の知らない物語 supercell"},
+        {"id": "music-18", "label": "🦁 燃尽神曲", "labelClass": "", "year": "", "title": "ライオン", "artist": "May\"n / 中野愛子", "animeSource": "超时空要塞F OP2", "recommendation": "菅野洋子神级作曲，May\"n的爆发力，雪露女王的霸气巅峰。", "tags": ["MF", "May\"n"], "link": "https://y.qq.com/n/ryqq/search?w=ライオン May'n / 中野愛子"},
+        {"id": "music-19", "label": "⚾ 元气满满", "labelClass": "", "year": "", "title": "心絵", "artist": "ロードオブメジャー", "animeSource": "棒球大联盟 OP1", "recommendation": "充满希望与勇气，无数人的童年应援曲，一听就充满力量。", "tags": ["MAJOR"], "link": "https://y.qq.com/n/ryqq/search?w=心絵 ロードオブメジャー"}
+      ]
+    },
+    {
+      "title": "✨ Part 3 · 2026 最新动画歌曲 · 5月精选",
+      "songs": [
+        {"id": "music-20", "label": "🏆 QQ音乐动漫榜第1", "labelClass": "gold", "year": "", "title": "AIZO", "artist": "King Gnu", "animeSource": "咒术回战 死灭回游 前篇 OP", "recommendation": "King Gnu再临咒术回战，震撼弦乐与爆发力嗓音，QQ音乐动漫榜登顶第1，2026年度最强OP有力候补。[citation:6]", "tags": ["King Gnu", "咒术回战"], "link": "https://y.qq.com/n/ryqq/search?w=AIZO King Gnu"},
+        {"id": "music-21", "label": "K-POP", "labelClass": "blue", "year": "", "title": "ATTITUDE", "artist": "aespa", "animeSource": "杀手青春 OP", "recommendation": "aespa为杀手青春献唱OP，K-POP与动画的跨界碰撞，中毒性旋律与酷炫编曲。[citation:6]", "tags": ["aespa", "杀手青春"], "link": "https://y.qq.com/n/ryqq/search?w=ATTITUDE aespa"},
+        {"id": "music-22", "label": "🔥 王道回归", "labelClass": "blue", "year": "", "title": "Recollect", "artist": "铃木このみ / Ashnikko", "animeSource": "Re:从零开始的异世界生活 第四季 OP", "recommendation": "铃木このみ携手Ashnikko，Re:零第四季OP，史诗级交响摇滚与异世界再会，粉丝泪目。[citation:6]", "tags": ["铃木このみ", "Re:零"], "link": "https://y.qq.com/n/ryqq/search?w=Recollect 铃木このみ / Ashnikko"},
+        {"id": "music-23", "label": "泽野", "labelClass": "blue", "year": "", "title": "PROVANT", "artist": "SawanoHiroyuki[nZk]", "animeSource": "命运/奇异赝品 OP", "recommendation": "泽野弘之再度出击，命运系列新作OP，宏大管弦与电子融合，型月世界配乐新巅峰。[citation:6]", "tags": ["泽野弘之", "Fate"], "link": "https://y.qq.com/n/ryqq/search?w=PROVANT SawanoHiroyuki[nZk]"},
+        {"id": "music-24", "label": "ヨルシカ", "labelClass": "blue", "year": "", "title": "あぶく", "artist": "ヨルシカ", "animeSource": "欺诈游戏 OP", "recommendation": "ヨルシカ为欺诈游戏献唱OP，轻快旋律下暗藏心机，泡沫般虚幻的博弈世界。[citation:6]", "tags": ["ヨルシカ", "欺诈游戏"], "link": "https://y.qq.com/n/ryqq/search?w=あぶく ヨルシカ"},
+        {"id": "music-25", "label": "京阿尼", "labelClass": "", "year": "", "title": "Eureka Evrika", "artist": "Luna Goami", "animeSource": "京阿尼新作 Sparks of Tomorrow OP", "recommendation": "京阿尼2026全新原创动画OP，Luna Goami清澈声线，充满希望与光芒的旋律。[citation:6]", "tags": ["京阿尼", "Sparks of Tomorrow"], "link": "https://y.qq.com/n/ryqq/search?w=Eureka Evrika Luna Goami"},
+        {"id": "music-26", "label": "剧场版", "labelClass": "blue", "year": "", "title": "茜", "artist": "ヨルシカ", "animeSource": "我心里危险的东西 剧场版主题曲", "recommendation": "ヨルシカ双杀5月新番，剧场版主题曲「茜」，茜色黄昏下的青春告白，催泪神曲。[citation:6]", "tags": ["ヨルシカ", "我心里危险的东西"], "link": "https://y.qq.com/n/ryqq/search?w=茜 ヨルシカ"},
+        {"id": "music-27", "label": "清新", "labelClass": "blue", "year": "", "title": "芽吹くとき", "artist": "yonige", "animeSource": "上伊那牡丹 OP", "recommendation": "yonige为上伊那牡丹献唱OP，萌芽时刻的清新摇滚，少女与花朵的物语。[citation:6]", "tags": ["yonige", "上伊那牡丹"], "link": "https://y.qq.com/n/ryqq/search?w=芽吹くとき yonige"},
+        {"id": "music-28", "label": "K-POP", "labelClass": "blue", "year": "", "title": "KILL SHOT", "artist": "RIIZE", "animeSource": "杀手青春 ED", "recommendation": "RIIZE为杀手青春献唱ED，与aespa的OP形成双K-POP阵容，利落节拍与帅气和声。[citation:6]", "tags": ["RIIZE", "杀手青春"], "link": "https://y.qq.com/n/ryqq/search?w=KILL SHOT RIIZE"},
+        {"id": "music-29", "label": "竞技", "labelClass": "blue", "year": "", "title": "Cold Night", "artist": "HANA", "animeSource": "金牌得主 第二季 OP", "recommendation": "HANA为金牌得主第二季献唱OP，寒夜中的热血花滑，清澈高音与冰上旋转共鸣。[citation:6]", "tags": ["HANA", "金牌得主"], "link": "https://y.qq.com/n/ryqq/search?w=Cold Night HANA"}
+      ]
+    }
+  ],
+  "footerNote": "Ⓒ 歌单综合自 Billboard JAPAN、Oricon、B站全年代动漫歌曲榜、美国动画歌曲盘点 [citation:2]、2026春夏番主题歌特集 [citation:6] 及 Bangumi 信息 [citation:1][citation:3]。 30首涵盖现象级、经典、2026新曲。\n🎧 每一首都值得加入播放列表 · 网页为静态展示 2026.05"
+}

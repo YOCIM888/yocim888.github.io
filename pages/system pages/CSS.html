@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛博朋克CSS特效库</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/system css/CSS.css">
+</head>
+<body>
+    <div class="cyber-container">
+        <div class="main-layout">
+            <aside class="effects-panel">
+                <input type="checkbox" id="effectsToggle" hidden>
+                <label for="effectsToggle" class="effects-toggle-btn">
+                    <i class="fas fa-code"></i>
+                    <span>CSS特效库</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </label>
+                <div class="effects-panel-content">
+                    <div class="panel-header">
+                        <h2 class="cyber-title"><i class="fas fa-code"></i> CSS特效库</h2>
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchEffect" placeholder="搜索特效...">
+                        </div>
+                    </div>
+                    <div class="effects-list"></div>
+                    <div class="panel-footer">
+                        <div class="stats">
+                            <i class="fas fa-database"></i>
+                            <span id="effectsCount">0</span> 个特效加载
+                        </div>
+                        <button id="randomEffect" class="cyber-button">
+                            <i class="fas fa-random"></i> 随机特效
+                        </button>
+                    </div>
+                </div>
+            </aside>
+            <main class="preview-panel">
+                <div class="preview-header">
+                    <h2 id="effectTitle" class="cyber-title">特效预览</h2>
+                    <div class="control-buttons">
+                        <button id="copyCSS" class="cyber-button small">
+                            <i class="far fa-copy"></i> 复制CSS
+                        </button>
+                        <button id="resetEffect" class="cyber-button small">
+                            <i class="fas fa-redo"></i> 重置
+                        </button>
+                        <button id="fullscreen" class="cyber-button small">
+                            <i class="fas fa-expand"></i> 全屏
+                        </button>
+                    </div>
+                </div>
+                <div class="preview-area">
+                    <div id="effectPreview" class="effect-display">
+                        <div class="default-preview">
+                            <div class="cyber-grid-bg"></div>
+                            <div class="welcome-text">
+                                <i class="fas fa-star"></i>
+                                <h3>选择左侧特效开始体验</h3>
+                                <p>点击任意特效查看预览并编辑参数</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="parameters-panel">
+                        <h3><i class="fas fa-sliders-h"></i> 参数调整</h3>
+                        <div class="params-container"></div>
+                    </div>
+                </div>
+                <div class="code-panel">
+                    <div class="code-header">
+                        <h3><i class="fas fa-file-code"></i> CSS代码</h3>
+                        <div class="code-actions">
+                            <button id="toggleComments" class="cyber-button tiny">
+                                <i class="far fa-comment"></i> 注释
+                            </button>
+                            <button id="minifyCSS" class="cyber-button tiny">
+                                <i class="fas fa-compress"></i> 压缩
+                            </button>
+                        </div>
+                    </div>
+                    <div class="code-editor">
+                        <textarea id="cssCode" spellcheck="false">/* 选择特效后CSS代码将显示在这里 */</textarea>
+                        <div id="codeHighlight" class="code-highlight"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div id="notification" class="cyber-notification">
+            <i class="fas fa-info-circle"></i>
+            <span id="notificationText">CSS代码已复制到剪贴板</span>
+        </div>
+        <div class="cyber-background">
+            <div class="grid-lines"></div>
+            <div class="grid-dots"></div>
+            <div class="scan-line"></div>
+        </div>
+    </div>
+    <script src="../../assets/js/system js/CSS.js"></script>
+</body>
+</html>

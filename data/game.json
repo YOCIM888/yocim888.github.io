@@ -1,0 +1,67 @@
+{
+  "pageTitle": "🎮 2026 游戏大选 · 3A/端游/手游 各10款",
+  "headerTitle": "⚡ 2026年5月 强势游戏·三十⏐选 ⚡",
+  "subLine": "🎯 3A ⨯ 10 · 端游 ⨯ 10 · 手游 ⨯ 10 （不含米哈游）",
+  "ruleBadges": [
+    {"label": "🔥 3A", "text": "殿堂级/续作/全新IP"},
+    {"label": "💻 端游", "text": "PC/主机独立或非3A但瞩目"},
+    {"label": "📱 手游", "text": "2026新作/海外大作(无米哈游)"}
+  ],
+  "tabs": [
+    {"text": "🎮 3A 大作", "count": "10款", "active": true},
+    {"text": "🖥️ 端游 (PC/主机)", "count": "10款", "active": false},
+    {"text": "📱 手游", "count": "10款", "active": false}
+  ],
+  "sections": [
+    {
+      "title": "▸ 3A 级 · 年度重磅",
+      "badgeClass": "badge-3a",
+      "games": [
+        {"id": "Game-0", "platform": "PS5/XSX", "developer": "Rockstar", "title": "侠盗猎车手6", "subtitle": "Grand Theft Auto VI", "recommendation": "开放世界天花板，Vice City回归，规模与细节传闻达\u201c5A\u201d级。2026年最受期待，没有之一。[citation:5]", "tags": ["2026.11.19", "犯罪·开放世界"], "link": "https://www.rockstargames.com/"},
+        {"id": "Game-1", "platform": "全平台", "developer": "Capcom", "title": "生化危机 Requiem", "subtitle": "Resident Evil Requiem", "recommendation": "FBI新主角格蕾丝，可切换第一/三人称，重返浣熊市。经典生存恐怖新章，已发售。[citation:1][citation:5]", "tags": ["已发售", "恐怖·射击"], "link": "https://www.capcom.com/"},
+        {"id": "Game-2", "platform": "PS5/PC", "developer": "Team Ninja", "title": "仁王3", "subtitle": "Nioh 3", "recommendation": "继承前作深度战斗与战国题材，动作系统再进化，Team Ninja 刀剑哲♂学新高度。已发售。[citation:5]", "tags": ["已发售", "战国·动作RPG"], "link": "https://www.teamninja.jp/"},
+        {"id": "Game-3", "platform": "PC/Xbox", "developer": "Unknown Worlds", "title": "深海迷航2", "subtitle": "Subnautica 2", "recommendation": "水下生存神作续篇，5月14日EA开启，全新外星海洋探索，建造与生存体验全面升级。[citation:5]", "tags": ["2026.5.14 EA", "水下生存"], "link": "https://www.gamersky.com/z/subnautica-2/"},
+        {"id": "Game-4", "platform": "PC/PS5/XSX", "developer": "IO Interactive", "title": "007：初露锋芒", "subtitle": "007 First Light", "recommendation": "年轻邦德起源故事，延续《HITMAN》多途径暗杀设计，电影级间谍沙盒。5月27日发售。[citation:1]", "tags": ["2026.5.27", "潜行·动作"], "link": "https://www.gamersky.com/z/james-bond-007-first-light/"},
+        {"id": "Game-5", "platform": "全平台", "developer": "Pearl Abyss", "title": "赤血沙漠", "subtitle": "Crimson Desert", "recommendation": "开放世界奇幻史诗，佣兵团战斗、攀爬、魔法，多次展会惊艳，3A级韩系新IP。已发售。[citation:5]", "tags": ["已发售", "奇幻·开放世界"], "link": "https://www.crimsondesert.com/"},
+        {"id": "Game-6", "platform": "PS5/XSX/PC", "developer": "Capcom", "title": "鬼武者：剑之道", "subtitle": "Onimusha: Way of the Sword", "recommendation": "宫本武藏为主角，一闪系统回归，江户初期幻魔剑斗，系列重生之作。[citation:5]", "tags": ["2026年", "剑戟·战国"], "link": "https://www.capcom.com/"},
+        {"id": "Game-7", "platform": "PS5/XSX/PC", "developer": "Remedy", "title": "控制：共鸣", "subtitle": "Control: Resonant", "recommendation": "迪伦视角，超自然曼哈顿，变异近战武器\u201cAberrant\u201d，Remedy式怪诞叙事。[citation:1][citation:5]", "tags": ["2026年", "超自然·动作"], "link": "https://www.remedygames.com/"},
+        {"id": "Game-8", "platform": "PS5/XSX/PC", "developer": "Grimlore Games", "title": "泰坦之旅2", "subtitle": "Titan Quest II", "recommendation": "神话ARPG经典续作，职业搭配+希腊/埃及神话，刷宝玩法升级。[citation:5]", "tags": ["2026年", "神话·刷宝"], "link": "https://www.thq.com/"},
+        {"id": "Game-9", "platform": "Xbox/PC", "developer": "Playground Games", "title": "极限竞速：地平线6", "subtitle": "Forza Horizon 6", "recommendation": "日本虚构地图，风光与改装文化极致融合，5月19日已发售，地平线嘉年华再临。[citation:5]", "tags": ["2026.5.19 已发售", "开放世界·赛车"], "link": "https://www.gamersky.com/z/forza-horizon-6/"}
+      ]
+    },
+    {
+      "title": "▸ 端游 · 潜力/独立/创意",
+      "badgeClass": "badge-pc",
+      "games": [
+        {"id": "Game-10", "platform": "PC/Steam", "developer": "NEKO WORKs", "title": "巧克力与香兰子 世界链接", "subtitle": "NEKOPARA 世界链接", "recommendation": "系列最新作，猫娘新故事+餐车战斗，全语音Live2D，温馨喜剧。[citation:2]", "tags": ["2026秋", "恋爱冒险·养成"], "link": "https://store.steampowered.com/"},
+        {"id": "Game-11", "platform": "PC/XSX/PS5", "developer": "Pushka Studios", "title": "无尽猎杀", "subtitle": "Endless Hunt", "recommendation": "肉鸽+幸存者like，地狱恶魔猎手，武器类型丰富(深渊/炼狱/腥血)，爽快弹幕。已发售。[citation:10]", "tags": ["已发售", "肉鸽·射击"], "link": "https://store.steampowered.com/"},
+        {"id": "Game-12", "platform": "PC/移动", "developer": "光子R", "title": "雪中悍刀行", "subtitle": "武侠夺金撤离", "recommendation": "知名IP改编，武侠撤离玩法+近战系统，UE5打造，PVPVE博弈。[citation:9]", "tags": ["待定", "武侠·撤离"], "link": "https://store.steampowered.com/"},
+        {"id": "Game-13", "platform": "PC", "developer": "光子R", "title": "剑来", "subtitle": "仙侠单机3A", "recommendation": "UE5仙侠单机，动作RPG，基于烽火戏诸侯小说，视觉全新演绎。[citation:9]", "tags": ["开发中", "仙侠·动作"], "link": "https://store.steampowered.com/"},
+        {"id": "Game-14", "platform": "全平台", "developer": "Square Glade", "title": "拾光旅人", "subtitle": "Outbound", "recommendation": "开放世界休闲冒险，5月11日发售，治愈系探索与建造，轻松惬意的新世界之旅。[citation:1]", "tags": ["2026.5.11", "开放世界·休闲"], "link": "https://www.gamersky.com/z/outbound/"},
+        {"id": "Game-15", "platform": "PC", "developer": "独立开发", "title": "月之深渊", "subtitle": "Moon Abyss", "recommendation": "弹幕射击+黑暗探索，5月21日发售，独特美术风格与紧张战斗体验。[citation:1]", "tags": ["2026.5.21", "弹幕射击·黑暗探索"], "link": "https://store.steampowered.com/"},
+        {"id": "Game-16", "platform": "PC/PS5/Switch2/XSX", "developer": "TT Games", "title": "乐高蝙蝠侠：黑暗骑士之遗", "subtitle": "LEGO Batman: The Dark Knight's Legacy", "recommendation": "乐高蝙蝠侠系列全新作品，5月23日发售，经典乐高幽默与DC暗黑风格融合。[citation:1]", "tags": ["2026.5.23", "乐高·动作冒险"], "link": "https://store.steampowered.com/"},
+        {"id": "Game-17", "platform": "PC", "developer": "Ghost Ship Games", "title": "深岩银河：异动核心", "subtitle": "Deep Rock Galactic: Rogue Core", "recommendation": "深岩银河宇宙肉鸽衍生作，5月21日EA，合作射击+肉鸽进程，矮人再出发。[citation:1]", "tags": ["2026.5.21 EA", "肉鸽·合作射击"], "link": "https://store.steampowered.com/"},
+        {"id": "Game-18", "platform": "PC/PS5", "developer": "ZA/UM", "title": "归零巡礼：亡谍镇魂曲", "subtitle": "Zero Axiom: Requiem", "recommendation": "ZA/UM最新叙事RPG，5月21日发售，深邃政治叙事与选择驱动，极乐迪斯科精神续作。[citation:1]", "tags": ["2026.5.21", "叙事RPG"], "link": "https://store.steampowered.com/"},
+        {"id": "Game-19", "platform": "PC/主机", "developer": "Bit Reactor/Respawn", "title": "星球大战：零号连队", "subtitle": "Star Wars: Zero Company", "recommendation": "XCOM式战术+星战，回合制策略小队战斗，光剑+爆能枪协同。[citation:1]", "tags": ["2026年", "回合战术·星战"], "link": "https://store.steampowered.com/"}
+      ]
+    },
+    {
+      "title": "▸ 手游 · 新作/热门",
+      "badgeClass": "badge-mobile",
+      "games": [
+        {"id": "Game-20", "platform": "iOS/Android", "developer": "Ubisoft", "title": "全境封锁：曙光", "subtitle": "The Division: Dawn", "recommendation": "开放世界刷宝射击，暗区+PVEvP，填补1代与2代之间的剧情。已发售。[citation:7]", "tags": ["已发售", "TPS·刷宝"], "link": "https://www.ubisoft.com/"},
+        {"id": "Game-21", "platform": "iOS/Android", "developer": "NEKO WORKs", "title": "巧克力与香兰子 世界链接", "subtitle": "手游版", "recommendation": "猫娘新作，全语音+餐车战斗，世界各地新猫娘登场。[citation:2]", "tags": ["2026.4.14", "AVG·休闲"], "link": "https://www.taptap.cn/"},
+        {"id": "Game-22", "platform": "iOS/Android/PC", "developer": "网石", "title": "血之继承者", "subtitle": "VAMPIR: Blood Inheritor", "recommendation": "吸血鬼题材MMO，限制级暗黑风格，PK团战为核心，分阶段保底抽卡。已发售。[citation:6]", "tags": ["已发售", "MMO·PK"], "link": "https://www.taptap.cn/"},
+        {"id": "Game-23", "platform": "iOS/Android", "developer": "尤达科技", "title": "不可思议的刀剑与魔法", "subtitle": "Q版竖屏卡牌", "recommendation": "竖屏放置，孙悟空宙斯同框，送1000抽，真·摸鱼神器。已发售。[citation:3]", "tags": ["已发售", "卡牌·放置"], "link": "https://www.taptap.cn/"},
+        {"id": "Game-24", "platform": "iOS/Android", "developer": "未知", "title": "凡人灵境游", "subtitle": "东方仙侠放置", "recommendation": "竖屏仙侠，赛季制+轮回，云海渲染，佛系修仙首选。[citation:4]", "tags": ["2026年", "放置·修真"], "link": "https://www.taptap.cn/"},
+        {"id": "Game-25", "platform": "iOS/Android", "developer": "腾讯", "title": "逆战：未来", "subtitle": "近未来机甲FPS", "recommendation": "IP续作，时空追猎+大地图射击，赛季更新。[citation:4]", "tags": ["2026年", "FPS·机甲"], "link": "https://www.taptap.cn/"},
+        {"id": "Game-26", "platform": "iOS/Android/PC", "developer": "鹰角网络", "title": "明日方舟：终末地", "subtitle": "3D即时策略RPG", "recommendation": "方舟宇宙续作，3D箱庭探索+实时战术，干员连携。已发售。[citation:4][citation:5]", "tags": ["已发售", "策略·RPG"], "link": "https://endfield.hypergryph.com/"},
+        {"id": "Game-27", "platform": "iOS/Android", "developer": "未知", "title": "三国：百将牌", "subtitle": "国风卡牌", "recommendation": "三国题材国风卡牌手游，5月5日上线，武将收集与策略对战，国风美术精美。[citation:8]", "tags": ["2026.5.5", "国风·卡牌"], "link": "https://www.taptap.cn/"},
+        {"id": "Game-28", "platform": "iOS/Android", "developer": "未知", "title": "遮天：帝路争锋", "subtitle": "修仙卡牌", "recommendation": "遮天IP改编修仙卡牌手游，5月13日上线，修真世界与卡牌策略融合。[citation:8]", "tags": ["2026.5.13", "修仙·卡牌"], "link": "https://www.taptap.cn/"},
+        {"id": "Game-29", "platform": "iOS/Android", "developer": "未知", "title": "卡厄斯梦境", "subtitle": "肉鸽卡牌RPG", "recommendation": "肉鸽+卡牌RPG手游，5月28日上线，随机地城与卡牌构建，策略深度出色。[citation:8]", "tags": ["2026.5.28", "肉鸽·卡牌RPG"], "link": "https://www.taptap.cn/"}
+      ]
+    }
+  ],
+  "warnBadge": "🚫 本页面内容来自于网络收集。",
+  "footerNote": "📆 信息综合自 Epic游戏商城、橘子集团、九游、网易、新浪等 2026年1月-5月前瞻/上线情报。<br>\n3A参考[citation:1][citation:5]；端游[citation:2][citation:9][citation:10]；手游[citation:3][citation:4][citation:6]。 仅作文化展示。"
+}

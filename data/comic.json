@@ -1,0 +1,273 @@
+{
+  "pageTitle": "20部热门漫画 · 2026新潮榜 | 推荐理由全收录",
+  "headerTitle": "热门漫画·20部大推荐",
+  "badges": [
+    "这本漫画真厉害！2026",
+    "最想动画化排行榜",
+    "官方衍生/新连载",
+    "⭐ 编辑部精选"
+  ],
+  "intro": "综合宝岛社、AnimeJapan、小学馆、角川等近期情报",
+  "comics": [
+    {
+      "id": "Comic-0",
+      "title": "孤独摇滚！",
+      "author": "はまじあき",
+      "rankBadgeClass": "badge-gold",
+      "rankText": "🔥 漫画恢复连载",
+      "recommendation": "时隔长期休载，5月18日官方宣布漫画恢复连载！后藤一里与结束乐队的故事再开，全网沸腾。[citation:1]",
+      "tags": [
+        "恢复连载",
+        "结束乐队",
+        "芳文社"
+      ],
+      "link": "https://bgm.tv/subject_search/%E5%AD%A4%E7%8B%AC%E6%91%87%E6%BB%9A%EF%BC%81?cat=1"
+    },
+    {
+      "id": "Comic-1",
+      "title": "人狼とエルフ",
+      "author": "（别册少年Magazine 新连载）",
+      "rankBadgeClass": "badge-purple",
+      "rankText": "✨ 5月新连载",
+      "recommendation": "别册少年Magazine 5月号新连载开启，人狼与精灵的奇幻物语，备受瞩目的全新作品。[citation:1]",
+      "tags": [
+        "新连载",
+        "讲谈社"
+      ],
+      "link": "https://bgm.tv/subject_search/%E4%BA%BA%E7%8B%BC%E3%81%A8%E3%82%A8%E3%83%AB%E3%83%95?cat=1"
+    },
+    {
+      "id": "Comic-2",
+      "title": "姫騎士は蛮族の嫁 11",
+      "author": "（讲谈社）",
+      "rankBadgeClass": "",
+      "rankText": "📺 TV动画4月开播",
+      "recommendation": "姬骑士与蛮族首领的异文化婚姻喜剧，TV动画2026年4月开播，第11卷5月发售，动画效应带动人气飙升。[citation:1]",
+      "tags": [
+        "动画热播",
+        "讲谈社"
+      ],
+      "link": "https://bgm.tv/subject_search/%E5%A7%AB%E9%A8%8E%E5%A3%AB%E3%81%AF%E8%9B%AE%E6%97%8F%E3%81%AE%E5%AB%81%2011?cat=1"
+    },
+    {
+      "id": "Comic-3",
+      "title": "SAKAMOTO DAYS 27",
+      "author": "铃木祐斗",
+      "rankBadgeClass": "",
+      "rankText": "📖 5月1日发售",
+      "recommendation": "退隐杀手坂本的日常与战斗，第27卷5月1日发售，系列累计突破500万册，动画热播中。[citation:1]",
+      "tags": [
+        "动作喜剧",
+        "集英社"
+      ],
+      "link": "https://bgm.tv/subject_search/SAKAMOTO%20DAYS%2027?cat=1"
+    },
+    {
+      "id": "Comic-4",
+      "title": "アオのハコ 25",
+      "author": "三浦糀",
+      "rankBadgeClass": "",
+      "rankText": "📖 5月1日发售",
+      "recommendation": "青春恋爱运动漫画天花板，第25卷5月1日发售，动画第二季热播中，系列累计突破1000万册。[citation:1]",
+      "tags": [
+        "青春恋爱",
+        "集英社"
+      ],
+      "link": "https://bgm.tv/subject_search/%E3%82%A2%E3%82%AA%E3%81%AE%E3%83%8F%E3%82%B3%2025?cat=1"
+    },
+    {
+      "id": "Comic-5",
+      "title": "隙間",
+      "author": "高妍",
+      "rankBadgeClass": "",
+      "rankText": "女生榜 No.2",
+      "recommendation": "台湾漫画家高妍作品。女大生赴冲绳交换，在祖母离世与失恋后重新寻找“自我”。画面诗意，细腻疗愈 [citation:1][citation:8]。",
+      "tags": [
+        "疗愈",
+        "台湾作家"
+      ],
+      "link": "https://bgm.tv/subject_search/%E9%9A%99%E9%96%93?cat=1"
+    },
+    {
+      "id": "Comic-6",
+      "title": "Strikeout Pitch",
+      "author": "住吉九",
+      "rankBadgeClass": "badge-gold",
+      "rankText": "男生榜 No.2 / 动画希望 No.2",
+      "recommendation": "传说中的“球队终结者”只能投三球？无法参与正式比赛的天才投手，三周最后的夏天。热血又惆怅，双榜认证 [citation:1][citation:4]。",
+      "tags": [
+        "棒球",
+        "青春泪点"
+      ],
+      "link": "https://bgm.tv/subject_search/Strikeout%20Pitch?cat=1"
+    },
+    {
+      "id": "Comic-7",
+      "title": "屁股戰士",
+      "author": "高出なおたか",
+      "rankBadgeClass": "",
+      "rankText": "动画希望 No.3",
+      "recommendation": "名字离谱但意外燃到爆的搞笑战斗漫画，用臀部必杀技拯救世界？AnimeJapan票选第三，可见人气多魔性 [citation:4]。",
+      "tags": [
+        "搞笑热血",
+        "cult"
+      ],
+      "link": "https://bgm.tv/subject_search/%E5%B1%81%E8%82%A1%E6%88%B0%E5%A3%AB?cat=1"
+    },
+    {
+      "id": "Comic-8",
+      "title": "魔法咪路咪路New",
+      "author": "篠塚廣夢",
+      "rankBadgeClass": "badge-blue",
+      "rankText": "✨ 童年回归",
+      "recommendation": "时隔20年完全新作！2026年3月3日小学馆Ciao开始连载。咪路、枫的日常全新展开，老粉狂喜，新一代也能入坑 [citation:2]。",
+      "tags": [
+        "童年回忆",
+        "新连载"
+      ],
+      "link": "https://bgm.tv/subject_search/%E9%AD%94%E6%B3%95%E5%92%AA%E8%B7%AF%E5%92%AA%E8%B7%AFNew?cat=1"
+    },
+    {
+      "id": "Comic-9",
+      "title": "藥師少女的獨語：小蘭的故事",
+      "author": "日向夏 (原作) / 七緒一綺 (作画)",
+      "rankBadgeClass": "",
+      "rankText": "官方衍生",
+      "recommendation": "猫猫背后的好友小兰视角！从贫穷少女到后宫宫女，与猫猫相遇的轨迹。2026年10月英文版发售，粉丝必读 [citation:5]。",
+      "tags": [
+        "衍生故事",
+        "猫猫好友"
+      ],
+      "link": "https://bgm.tv/subject_search/%E8%97%A5%E5%B8%AB%E5%B0%91%E5%A5%B3%E7%9A%84%E7%8D%A8%E8%AA%9E%EF%BC%9A%E5%B0%8F%E8%98%AD%E7%9A%84%E6%95%85%E4%BA%8B?cat=1"
+    },
+    {
+      "id": "Comic-10",
+      "title": "最喜歡大食！望月小姐",
+      "author": "ドカ食いダイスキ! もちづきさん",
+      "rankBadgeClass": "",
+      "rankText": "男生榜 No.6",
+      "recommendation": "暴食漫画的新境界！看似温柔的女性私下追求热量巅峰，大份量美食的搞笑冲击，禁忌的美食题材 [citation:1][citation:8]。",
+      "tags": [
+        "美食",
+        "搞笑"
+      ],
+      "link": "https://bgm.tv/subject_search/%E6%9C%80%E5%96%9C%E6%AD%A1%E5%A4%A7%E9%A3%9F%EF%BC%81%E6%9C%9B%E6%9C%88%E5%B0%8F%E5%A7%90?cat=1"
+    },
+    {
+      "id": "Comic-11",
+      "title": "靈靈總總拍不到",
+      "author": "コノシマルカ",
+      "rankBadgeClass": "",
+      "rankText": "动画希望 No.4",
+      "recommendation": "以灵异节目为舞台，拍不到的诡异存在却逐渐侵蚀现实。新锐恐怖漫画，氛围绝佳 [citation:4]。",
+      "tags": [
+        "恐怖悬疑"
+      ],
+      "link": "https://bgm.tv/subject_search/%E9%9D%88%E9%9D%88%E7%B8%BD%E7%B8%BD%E6%8B%8D%E4%B8%8D%E5%88%B0?cat=1"
+    },
+    {
+      "id": "Comic-12",
+      "title": "#辣妹與辣妹的百合",
+      "author": "イノウエ",
+      "rankBadgeClass": "",
+      "rankText": "动画希望 No.5",
+      "recommendation": "两个辣妹之间纯粹的百合故事，SNS风格分镜，甜度爆表又时髦。年轻人气爆棚 [citation:4]。",
+      "tags": [
+        "百合",
+        "SNS感"
+      ],
+      "link": "https://bgm.tv/subject_search/%23%E8%BE%A3%E5%A6%B9%E8%88%87%E8%BE%A3%E5%A6%B9%E7%9A%84%E7%99%BE%E5%90%88?cat=1"
+    },
+    {
+      "id": "Comic-13",
+      "title": "公司和私生活－ON AND OFF－",
+      "author": "金沢真之介",
+      "rankBadgeClass": "",
+      "rankText": "动画希望 No.6",
+      "recommendation": "冷酷职场前辈与宅女后辈的双面生活共鸣喜剧。社畜共鸣+甜蜜日常 [citation:4]。",
+      "tags": [
+        "职场恋爱"
+      ],
+      "link": "https://bgm.tv/subject_search/%E5%85%AC%E5%8F%B8%E5%92%8C%E7%A7%81%E7%94%9F%E6%B4%BB%EF%BC%8DON%20AND%20OFF%EF%BC%8D?cat=1"
+    },
+    {
+      "id": "Comic-14",
+      "title": "My Ex-Boyfriend Loves Boys‘ Love",
+      "author": "（元カレがBL好きです）",
+      "rankBadgeClass": "",
+      "rankText": "Square Enix",
+      "recommendation": "前男友在书店BL区重逢！两人因BL再燃奇妙缘分的温馨喜剧。设定脑洞清奇，2026年9月英文版 [citation:5]。",
+      "tags": [
+        "BL题材",
+        "喜剧"
+      ],
+      "link": "https://bgm.tv/subject_search/My%20Ex-Boyfriend%20Loves%20Boys%E2%80%98%20Love?cat=1"
+    },
+    {
+      "id": "Comic-15",
+      "title": "恐龍庇護所",
+      "author": "木下いたる",
+      "rankBadgeClass": "",
+      "rankText": "动画希望 No.8",
+      "recommendation": "在恐龙庇护所工作的青年与形形色色古生物的温情日常。治愈且充满想象力 [citation:4]。",
+      "tags": [
+        "奇幻治愈"
+      ],
+      "link": "https://bgm.tv/subject_search/%E6%81%90%E9%BE%8D%E5%BA%87%E8%AD%B7%E6%89%80?cat=1"
+    },
+    {
+      "id": "Comic-16",
+      "title": "極樂街",
+      "author": "佐乃夕斗",
+      "rankBadgeClass": "",
+      "rankText": "动画希望 No.9",
+      "recommendation": "混乱街区里处理“不该存在之物”的两人，动作场面与妖异氛围极佳，JUMP+系新星 [citation:4]。",
+      "tags": [
+        "动作",
+        "奇幻"
+      ],
+      "link": "https://bgm.tv/subject_search/%E6%A5%B5%E6%A8%82%E8%A1%97?cat=1"
+    },
+    {
+      "id": "Comic-17",
+      "title": "百人魂",
+      "author": "暗森透",
+      "rankBadgeClass": "",
+      "rankText": "动画希望 No.10",
+      "recommendation": "继承神社的少年与一百个灵魂的共存战斗。灵异+青春，2026备受期待 [citation:4]。",
+      "tags": [
+        "灵异"
+      ],
+      "link": "https://bgm.tv/subject_search/%E7%99%BE%E4%BA%BA%E9%AD%82?cat=1"
+    },
+    {
+      "id": "Comic-18",
+      "title": "怪獣を解剖する",
+      "author": "（解剖怪兽）",
+      "rankBadgeClass": "",
+      "rankText": "男生榜 No.10",
+      "recommendation": "怪兽学者解剖巨大怪兽尸体，遇见能听见怪兽鸣叫的鱼贩。知识欲与神秘交错，哲学科幻佳作 [citation:1][citation:8]。",
+      "tags": [
+        "科幻",
+        "怪兽"
+      ],
+      "link": "https://bgm.tv/subject_search/%E6%80%AA%E7%8D%A3%E3%82%92%E8%A7%A3%E5%89%96%E3%81%99%E3%82%8B?cat=1"
+    },
+    {
+      "id": "Comic-19",
+      "title": "Boyish Girlfriend",
+      "author": "（男友力女友）",
+      "rankBadgeClass": "",
+      "rankText": "新作",
+      "recommendation": "从小像男生的女友，在学校穿猫耳女仆装被男友发现！反差萌恋爱喜剧，9月英文版 [citation:5]。",
+      "tags": [
+        "反差恋爱"
+      ],
+      "link": "https://bgm.tv/subject_search/Boyish%20Girlfriend?cat=1"
+    }
+  ],
+  "sourceLine": "资料来源：《这本漫画真厉害！2026》、AnimeJapan 2026“最想动画化”排行榜、小学馆、Square Enix官方、台湾漫画家高妍报道等 [citation:1][citation:2][citation:4]",
+  "footerNote": "🧾 每部漫画均附推荐理由，聚焦2025-2026新作、话题作与经典续篇。基于3月中旬前情报整理。",
+  "updateDate": "2026年5月",
+  "comicCount": 20
+}

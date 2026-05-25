@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>赛博刺客：霓虹潜行 | 终极版</title>
+    <link rel="stylesheet" href="../../assets/css/game css/cycber-assassin.css">
+</head>
+<body>
+<div id="orientation-alert" class="orientation-alert hidden">
+    <div class="orientation-content">
+        <h2>📱 请切换到横屏模式</h2>
+        <p>为了获得最佳游戏体验，请将设备旋转至横屏</p>
+        <div class="rotate-icon">🔄</div>
+    </div>
+</div>
+<div id="game-container">
+    <canvas id="gameCanvas"></canvas>
+    <div id="ui-panel">
+        <div class="ui-card">
+            🔻 节点 <span id="level-num">1</span> &nbsp;| 威胁等级 <span id="difficulty-val">见习</span>
+        </div>
+        <div class="ui-card hp-bar">
+            <span class="hp-icon">⚡ 神经能量</span>
+            <span class="hp-value" id="hp-display">4</span> &nbsp;| 
+            <span id="stealth-status">🗡️ 暗杀 [E] | 🥷 隐身 [Q]</span>
+        </div>
+        <div class="ui-card" id="status-msg">
+            ⟡ 信号接入 | 从背后接近按 E 暗杀
+        </div>
+    </div>
+    <div class="alert-bar">
+        <div class="alert-label">警觉协议</div>
+        <div class="alert-fill" id="alert-fill"></div>
+    </div>
+    <div id="hack-modal" class="overlay hidden">
+        <div class="hack-box">
+            <h2>⚠️ 深度入侵 ⚠️</h2>
+            <div id="puzzle-area"></div>
+            <div class="btn-group">
+                <button class="cyber-btn" id="cancel-hack">✖ 中断链接</button>
+            </div>
+        </div>
+    </div>
+    <div id="game-over" class="overlay hidden">
+        <div class="gameover-box">
+            <h1 id="end-title">神经链接断裂</h1>
+            <button class="cyber-btn restart-btn">⟳ 重启协议</button>
+        </div>
+    </div>
+    <div id="mobile-controls" class="mobile-controls">
+        <div class="joystick-container" id="joystick-container">
+            <div class="joystick-base" id="joystick-base"></div>
+            <div class="joystick-stick" id="joystick-stick"></div>
+        </div>
+        <div class="action-buttons">
+            <button class="action-btn" id="btn-assassinate">🗡️ 暗杀</button>
+            <button class="action-btn" id="btn-stealth">🥷 隐身</button>
+            <button class="action-btn" id="btn-interact">🔌 入侵</button>
+        </div>
+    </div>
+</div>
+<script src="../../assets/js/game js/cycber-assassin.js"></script>
+</body>
+</html>
