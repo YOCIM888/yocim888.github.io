@@ -197,6 +197,7 @@ py/__pycache__/
 *.backup.json
 
 # 公共资源（音频/图片等大文件，避免仓库膨胀）
+public/
 
 # Trae specs
 .trae
