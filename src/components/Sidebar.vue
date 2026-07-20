@@ -9,7 +9,7 @@
     <!-- Logo 区域 -->
     <div class="sidebar-logo">
       <div class="logo-ring">
-        <img src="/yocim.jpg" alt="YOCIM" class="logo-avatar" />
+        <img src="/yocim.png" alt="YOCIM" class="logo-avatar" />
       </div>
       <h1 class="logo-text" data-text="YOCIM星枢">YOCIM星枢</h1>
       <p class="logo-sub">NEXUS TERMINAL</p>
