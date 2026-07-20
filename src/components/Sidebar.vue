@@ -74,6 +74,13 @@ const buttons = [
     url: 'https://links.yocim.top',
     variant: 'gold',
   },
+  {
+    label: 'Email',
+    sub: '联系我',
+    icon: '✉️',
+    url: 'mailto:yocim666@outlook.com',
+    variant: 'cyan',
+  },
 ]
 
 const playHoverSound = () => {
