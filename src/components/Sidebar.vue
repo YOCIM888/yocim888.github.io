@@ -174,12 +174,15 @@ const playHoverSound = () => {
 .logo-text::after {
   content: attr(data-text);
   position: absolute;
-  left: 2px;
+  left: 0;
   top: 0;
+  width: 100%;
+  height: 100%;
   color: var(--magenta);
   opacity: 0.5;
-  clip-path: inset(0 0 50% 0);
+  clip-path: inset(40% 0 0 0);
   animation: glitch-text 3s infinite reverse;
+  pointer-events: none;
 }
 .logo-sub {
   font-family: var(--font-display);

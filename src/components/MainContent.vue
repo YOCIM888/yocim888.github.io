@@ -22,12 +22,19 @@
 
       <!-- 功能卡片网格 -->
       <div class="feature-grid">
-        <div class="feature-card" v-for="card in featureCards" :key="card.title">
+        <a
+          class="feature-card"
+          v-for="card in featureCards"
+          :key="card.title"
+          :href="card.url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div class="feature-icon">{{ card.icon }}</div>
           <h3 class="feature-title">{{ card.title }}</h3>
           <p class="feature-desc">{{ card.desc }}</p>
           <div class="feature-bar"></div>
-        </div>
+        </a>
       </div>
     </section>
 
@@ -76,7 +83,9 @@
     <footer class="main-footer">
       <div class="footer-deco-line"></div>
       <p>「 连接万物，归于星枢 」</p>
-      <p class="footer-sub">YOCIM NEXUS · CYBERPUNK EDITION · {{ currentYear }}</p>
+      <p class="footer-sub">
+        已运行 <span class="run-days">{{ runDays }}</span> 天 · YOCIM NEXUS · CYBERPUNK EDITION · {{ currentYear }}
+      </p>
     </footer>
   </main>
 </template>
@@ -93,10 +102,10 @@ const startTime = Date.now()
 const fullText = '欢迎来到 YOCIM星枢 —— 您的个人数字中枢。在这里，一切皆可连接，万物皆可掌控。'
 
 const featureCards = [
-  { icon: '🌐', title: 'Workbench', desc: '集成开发工作台，一站式项目管理与协作平台' },
-  { icon: '🖥️', title: 'System', desc: '系统监控与控制中心，实时掌握各项服务运行状态' },
-  { icon: '🛠️', title: 'Tools', desc: '实用工具集合，从代码生成到数据分析一应俱全' },
-  { icon: '🔗', title: 'Links', desc: '精选导航链接，快速访问常用资源与外部服务' },
+  { icon: '🌐', title: 'Workbench', desc: '集成开发工作台，一站式项目管理与协作平台', url: 'https://workbench.yocim.top' },
+  { icon: '🖥️', title: 'System', desc: '系统监控与控制中心，实时掌握各项服务运行状态', url: 'https://system.yocim.top' },
+  { icon: '🛠️', title: 'Tools', desc: '实用工具集合，从代码生成到数据分析一应俱全', url: 'https://tools.yocim.top' },
+  { icon: '🔗', title: 'Links', desc: '精选导航链接，快速访问常用资源与外部服务', url: 'https://links.yocim.top' },
 ]
 
 const logs = [
@@ -124,6 +133,16 @@ onMounted(() => {
     latency.value = Math.floor(Math.random() * 30 + 5)
   }, 3000)
   latency.value = Math.floor(Math.random() * 30 + 5)
+
+  // 站点运行天数 (从 2025-12-13 起)
+const SITE_START = new Date('2025-12-13')
+const runDays = ref(0)
+const updateRunDays = () => {
+  const now = new Date()
+  const diff = Math.floor((now - SITE_START) / (1000 * 60 * 60 * 24))
+  runDays.value = diff
+}
+updateRunDays()
 
   // 运行时间
   setInterval(() => {
@@ -254,6 +273,9 @@ onUnmounted(() => {
 }
 
 .feature-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   background: var(--bg-panel);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 6px;
@@ -432,6 +454,11 @@ onUnmounted(() => {
   letter-spacing: 3px !important;
   color: var(--text-secondary) !important;
   margin-top: 6px !important;
+}
+.run-days {
+  color: var(--cyan);
+  font-weight: 700;
+  text-shadow: 0 0 6px var(--cyan);
 }
 
 /* ---- 响应式 ---- */
