@@ -1,0 +1,150 @@
+/* ============================================================
+   YOCIM星枢 — Cyberpunk × Sci-Fi × Anime 主题样式
+   ============================================================ */
+
+:root {
+  --cyan: #00f0ff;
+  --cyan-dim: #00a0b0;
+  --magenta: #ff00ff;
+  --magenta-dim: #b000b0;
+  --purple: #8b00ff;
+  --gold: #ffd700;
+  --bg-deep: #0a0a0f;
+  --bg-panel: rgba(10, 10, 25, 0.85);
+  --border-glow: 0 0 8px var(--cyan), 0 0 20px rgba(0, 240, 255, 0.3);
+  --text-primary: #e0e0ff;
+  --text-secondary: #8899bb;
+  --font-display: 'Orbitron', 'Noto Sans SC', sans-serif;
+  --font-body: 'Noto Sans SC', 'Orbitron', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* ============================================================
+   星空粒子背景 Canvas
+   ============================================================ */
+canvas#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ============================================================
+   扫描线效果 (CRT feel)
+   ============================================================ */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ============================================================
+   全局滚动条
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cyan-dim);
+  border-radius: 3px;
+  box-shadow: 0 0 6px var(--cyan);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan);
+}
+
+/* ============================================================
+   动画 Keyframes
+   ============================================================ */
+
+/* 霓虹脉冲 */
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--cyan), 0 0 15px rgba(0, 240, 255, 0.4), inset 0 0 5px rgba(0, 240, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--cyan), 0 0 30px rgba(0, 240, 255, 0.7), inset 0 0 10px rgba(0, 240, 255, 0.2);
+  }
+}
+
+/* 文字故障闪烁 */
+@keyframes glitch-text {
+  0%, 100% { text-shadow: 0 0 5px var(--cyan), 0 0 10px var(--cyan); }
+  2% { text-shadow: 2px 0 3px var(--magenta), -2px 0 3px var(--cyan); }
+  4% { text-shadow: -2px 0 3px var(--magenta), 2px 0 3px var(--cyan); }
+  6% { text-shadow: 0 0 5px var(--cyan), 0 0 10px var(--cyan); }
+}
+
+/* 缓慢漂移 */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* 旋转光晕 */
+@keyframes spin-glow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 淡入出现 */
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 边框彩虹 */
+@keyframes border-rainbow {
+  0%   { border-color: var(--cyan); }
+  25%  { border-color: var(--magenta); }
+  50%  { border-color: var(--purple); }
+  75%  { border-color: var(--gold); }
+  100% { border-color: var(--cyan); }
+}
+
+/* 打字闪烁光标 */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
