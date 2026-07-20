@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - SIGNAL LOST // YOCIM星枢</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #020208;
+      color: #e0e0ff;
+      font-family: 'Orbitron', 'Noto Sans SC', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.04) 2px, rgba(0,0,0,0.04) 4px);
+      pointer-events: none; z-index: 99;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.6) 100%);
+      pointer-events: none; z-index: 98;
+    }
+    canvas { position: fixed; top: 0; left: 0; z-index: 0; }
+    .container { position: relative; z-index: 1; text-align: center; }
+    .glitch {
+      font-size: clamp(5rem, 15vw, 10rem);
+      font-weight: 900;
+      color: #ff00ff;
+      text-shadow: 0 0 20px #ff00ff, 0 0 60px rgba(255,0,255,0.5);
+      position: relative;
+      animation: glitch 1.5s infinite;
+    }
+    .glitch::before, .glitch::after {
+      content: '404';
+      position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+    }
+    .glitch::before {
+      color: #00f0ff;
+      clip-path: inset(0 0 50% 0);
+      animation: glitch 2s infinite reverse;
+    }
+    .glitch::after {
+      color: #ff00ff;
+      clip-path: inset(50% 0 0 0);
+      animation: glitch 1.8s infinite;
+    }
+    @keyframes glitch {
+      0%, 100% { text-shadow: 0 0 20px #ff00ff, 0 0 60px rgba(255,0,255,0.5); }
+      10% { text-shadow: -3px 0 #00f0ff, 3px 0 #ff00ff; }
+      12% { text-shadow: 3px 0 #00f0ff, -3px 0 #ff00ff; }
+      14% { text-shadow: 0 0 20px #ff00ff, 0 0 60px rgba(255,0,255,0.5); }
+    }
+    .msg { font-size: 1.2rem; letter-spacing: 6px; color: #556; margin: 16px 0 32px; }
+    .sub { font-size: 0.7rem; letter-spacing: 4px; color: #448; margin-bottom: 40px; }
+    .btn {
+      display: inline-block; padding: 12px 32px;
+      border: 1px solid #00f0ff; color: #00f0ff;
+      text-decoration: none; font-size: 0.8rem; letter-spacing: 3px;
+      transition: all 0.3s; clip-path: polygon(0 6px, 6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%);
+    }
+    .btn:hover { background: rgba(0,240,255,0.1); box-shadow: 0 0 20px rgba(0,240,255,0.4); }
+    .scan { position: fixed; top: 0; left: 0; width: 100%; height: 2px; background: rgba(0,240,255,0.3); box-shadow: 0 0 10px #00f0ff; z-index: 100; pointer-events: none; animation: scan-down 3s linear infinite; }
+    @keyframes scan-down { 0% { top: -2px; } 100% { top: 100%; } }
+    .dec { font-size: 0.55rem; color: #1a3; letter-spacing: 2px; margin-top: 24px; font-family: 'Courier New', monospace; }
+  </style>
+</head>
+<body>
+  <div class="scan"></div>
+  <canvas id="c"></canvas>
+  <div class="container">
+    <div class="glitch">404</div>
+    <p class="msg">SIGNAL LOST</p>
+    <p class="sub">信号丢失 · 该节点不存在或已断开连接</p>
+    <a href="/" class="btn">◀ RETURN TO NEXUS</a>
+    <p class="dec" id="hex"></p>
+  </div>
+  <script>
+    // 迷你星空
+    const c = document.getElementById('c');
+    const ctx = c.getContext('2d');
+    let w, h, stars = [];
+    function resize() { w = c.width = window.innerWidth; h = c.height = window.innerHeight; }
+    resize(); window.addEventListener('resize', resize);
+    for (let i = 0; i < 120; i++) stars.push({ x: Math.random() * w, y: Math.random() * h, r: Math.random() * 1.5 + 0.3, s: Math.random() * 0.02 + 0.005, a: Math.random() * Math.PI * 2, o: Math.random() * 0.5 + 0.3 });
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      for (const s of stars) { s.a += s.s; ctx.beginPath(); ctx.fillStyle = `rgba(200,220,255,${s.o * (0.6 + 0.4 * Math.sin(s.a))})`; ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2); ctx.fill(); }
+      requestAnimationFrame(draw);
+    }
+    draw();
+    // 随机 hex
+    setInterval(() => { document.getElementById('hex').textContent = '0x' + Math.random().toString(16).slice(2, 10).toUpperCase(); }, 200);
+  </script>
+</body>
+</html>

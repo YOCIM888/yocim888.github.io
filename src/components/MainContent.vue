@@ -20,6 +20,14 @@
         <span class="typing-cursor">_</span>
       </p>
 
+      <!-- 一言格言 -->
+      <div class="hero-motto">
+        <Transition name="motto-fade" mode="out-in">
+          <p class="motto-text" :key="currentMotto">「 {{ currentMotto }} 」</p>
+        </Transition>
+        <p class="motto-source" v-if="mottoSource">—— {{ mottoSource }}</p>
+      </div>
+
       <!-- 功能卡片网格 -->
       <div class="feature-grid">
         <a
@@ -84,7 +92,7 @@
       <div class="footer-deco-line"></div>
       <p>「 连接万物，归于星枢 」</p>
       <p class="footer-sub">
-        已运行 <span class="run-days">{{ runDays }}</span> 天 · YOCIM NEXUS · CYBERPUNK EDITION · {{ currentYear }}
+        已运行 <span class="run-days">{{ runDays }}</span> 天 · 访客 <span class="visitor-count">{{ formattedVisitors }}</span> · YOCIM NEXUS · CYBERPUNK EDITION · {{ currentYear }}
       </p>
     </footer>
   </main>
@@ -107,6 +115,45 @@ const featureCards = [
   { icon: '🛠️', title: 'Tools', desc: '实用工具集合，从代码生成到数据分析一应俱全', url: 'https://tools.yocim.top' },
   { icon: '🔗', title: 'Links', desc: '精选导航链接，快速访问常用资源与外部服务', url: 'https://links.yocim.top' },
 ]
+
+// 一言格言
+const mottoes = [
+  { text: '代码是诗，逻辑是韵律，在二进制的星空下我们皆是造物主', source: 'YOCIM' },
+  { text: '不要温和地走进那个良夜，老年应当在日暮时燃烧咆哮', source: 'Dylan Thomas' },
+  { text: '未来已来，只是分布不均', source: 'William Gibson' },
+  { text: '现实不过是共识的幻觉，数据才是宇宙的真相', source: 'Nexus' },
+  { text: '整个宇宙都在等着你去探索，你的冒险才刚刚开始', source: 'YOCIM' },
+  { text: '技术的尽头不是机器，而是人心', source: 'Nexus' },
+  { text: '我们都是星尘，在赛博空间中重新凝聚', source: 'YOCIM' },
+  { text: '前路漫漫，但星辰永远指引方向', source: 'Nexus' },
+  { text: '世界上只有一种真正的英雄主义，那就是认清生活的真相后依然热爱生活', source: 'Romain Rolland' },
+  { text: '想象力比知识更重要，因为知识是有限的', source: 'Einstein' },
+  { text: '数据流经之处，皆是疆土', source: 'Nexus' },
+  { text: '生于赛博，归于星海', source: 'YOCIM' },
+  { text: '愿我们永远年轻，永远热泪盈眶', source: 'Kerouac' },
+  { text: '网络是新的海洋，我们是新的航海家', source: 'Nexus' },
+  { text: '你所见的每一行代码，都是某人写给未来的情书', source: 'YOCIM' },
+]
+const currentMotto = ref(mottoes[0].text)
+const mottoSource = ref(mottoes[0].source)
+let mottoTimer = null
+
+const rotateMotto = () => {
+  const next = mottoes[Math.floor(Math.random() * mottoes.length)]
+  currentMotto.value = next.text
+  mottoSource.value = next.source
+}
+
+// 装饰访客计数 (10M+)
+const visitorBase = 10_000_000 + Math.floor(Math.random() * 500_000)
+const visitors = ref(visitorBase)
+const formattedVisitors = ref('')
+
+const formatVisitors = (n) => {
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M'
+  if (n >= 1_000) return (n / 1_000).toFixed(1) + 'K'
+  return n.toLocaleString()
+}
 
 const logs = [
   { time: '12:34:56', msg: '系统初始化完成，所有服务正常运行' },
@@ -144,6 +191,16 @@ const updateRunDays = () => {
 }
 updateRunDays()
 
+  // 格言轮播 (每 5 秒)
+  mottoTimer = setInterval(rotateMotto, 5000)
+
+  // 访客计数缓慢增长
+  formattedVisitors.value = formatVisitors(visitors.value)
+  setInterval(() => {
+    visitors.value += Math.floor(Math.random() * 3)
+    formattedVisitors.value = formatVisitors(visitors.value)
+  }, 8000)
+
   // 运行时间
   setInterval(() => {
     const elapsed = Math.floor((Date.now() - startTime) / 1000)
@@ -156,6 +213,7 @@ updateRunDays()
 
 onUnmounted(() => {
   if (typingTimer) clearInterval(typingTimer)
+  if (mottoTimer) clearInterval(mottoTimer)
 })
 </script>
 
@@ -460,16 +518,73 @@ onUnmounted(() => {
   font-weight: 700;
   text-shadow: 0 0 6px var(--cyan);
 }
+.visitor-count {
+  color: var(--gold);
+  font-weight: 700;
+  text-shadow: 0 0 6px var(--gold);
+}
+
+/* ---- 格言 ---- */
+.hero-motto {
+  margin-bottom: 36px;
+  min-height: 3em;
+  position: relative;
+}
+.motto-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #ccd;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  transition: none;
+}
+.motto-source {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  color: #556;
+  margin-top: 6px;
+}
+.motto-fade-enter-active,
+.motto-fade-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.motto-fade-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.motto-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
 
 /* ---- 响应式 ---- */
 @media (max-width: 768px) {
   .main-content {
-    margin-left: 60px;
-    padding: 24px 20px;
+    margin-left: 0;
+    padding: 20px 16px 100px;
+    max-height: 100vh;
   }
   .hero-title-main { font-size: 1.8rem; letter-spacing: 3px; }
-  .feature-grid { grid-template-columns: 1fr; }
-  .info-panels { grid-template-columns: 1fr; }
-  .hex-grid { width: calc(100% - 60px); }
+  .hero-title-line { font-size: 0.65rem; letter-spacing: 4px; }
+  .feature-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .feature-card { padding: 18px 14px; }
+  .feature-icon { font-size: 1.4rem; margin-bottom: 8px; }
+  .feature-title { font-size: 0.8rem; letter-spacing: 1px; }
+  .feature-desc { font-size: 0.68rem; }
+  .info-panels { grid-template-columns: 1fr; gap: 14px; }
+  .hex-grid { width: 100%; }
+  .hero-badge { font-size: 0.55rem; padding: 4px 10px; }
+  .motto-text { font-size: 0.8rem; }
+  .hero-desc { font-size: 0.85rem; }
+}
+@media (max-width: 480px) {
+  .main-content { padding: 14px 10px 90px; }
+  .hero-title-main { font-size: 1.4rem; letter-spacing: 2px; }
+  .feature-grid { grid-template-columns: 1fr; gap: 10px; }
+  .feature-card { padding: 14px 12px; }
+  .hero-desc { font-size: 0.75rem; }
+  .motto-text { font-size: 0.72rem; }
+  .main-footer p { font-size: 0.6rem !important; letter-spacing: 2px !important; }
 }
 </style>

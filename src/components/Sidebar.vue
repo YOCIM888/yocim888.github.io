@@ -334,13 +334,51 @@ const playHoverSound = () => {
 /* ---- 响应式 ---- */
 @media (max-width: 768px) {
   .sidebar {
-    width: 60px;
-    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: auto;
+    width: 100%;
+    height: 64px;
+    flex-direction: row;
+    padding: 0;
+    border-right: none;
+    border-top: 1px solid rgba(0, 240, 255, 0.2);
+    box-shadow: 0 -3px 20px rgba(0, 240, 255, 0.08);
+    background: rgba(8, 8, 20, 0.97);
+    z-index: 1000;
   }
   .sidebar-logo { display: none; }
-  .nav-btn-label, .nav-btn-sub { display: none; }
-  .nav-btn { justify-content: center; padding: 14px; }
-  .sidebar-footer { justify-content: center; }
-  .status-text, .footer-deco { display: none; }
+  .sidebar-nav {
+    flex: 1;
+    flex-direction: row;
+    gap: 0;
+    padding: 0;
+    justify-content: space-around;
+  }
+  .nav-btn {
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 6px;
+    border-radius: 0;
+    border: none;
+    clip-path: none;
+    min-width: 0;
+    flex: 1;
+    justify-content: center;
+  }
+  .nav-btn:hover { transform: none; box-shadow: none; background: rgba(0, 240, 255, 0.05); }
+  .nav-btn-label { font-size: 0.55rem; letter-spacing: 1px; }
+  .nav-btn-sub { display: none; }
+  .nav-btn-icon { font-size: 1.1rem; width: auto; }
+  .nav-btn-glow { display: none; }
+  .sidebar-footer { display: none; }
+  .sidebar-corner { display: none; }
+}
+@media (max-width: 480px) {
+  .sidebar { height: 56px; }
+  .nav-btn { padding: 6px 4px; }
+  .nav-btn-icon { font-size: 1rem; }
+  .nav-btn-label { font-size: 0.5rem; letter-spacing: 0; }
 }
 </style>

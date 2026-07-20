@@ -107,6 +107,9 @@ const onMouseDown = () => {
 }
 
 onMounted(() => {
+  // 触摸设备不显示自定义光标
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return
+
   // 初始化光标位置
   cursorX = window.innerWidth / 2
   cursorY = window.innerHeight / 2
