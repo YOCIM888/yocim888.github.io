@@ -155,6 +155,16 @@ const formatVisitors = (n) => {
   return n.toLocaleString()
 }
 
+// 站点运行天数 (从 2025-12-13 起)
+const SITE_START = new Date('2025-12-13')
+const runDays = ref(0)
+const updateRunDays = () => {
+  const now = new Date()
+  const diff = Math.floor((now - SITE_START) / (1000 * 60 * 60 * 24))
+  runDays.value = diff
+}
+updateRunDays()
+
 const logs = [
   { time: '12:34:56', msg: '系统初始化完成，所有服务正常运行' },
   { time: '12:35:02', msg: 'Nexus 核心模块加载成功' },
@@ -180,16 +190,6 @@ onMounted(() => {
     latency.value = Math.floor(Math.random() * 30 + 5)
   }, 3000)
   latency.value = Math.floor(Math.random() * 30 + 5)
-
-  // 站点运行天数 (从 2025-12-13 起)
-const SITE_START = new Date('2025-12-13')
-const runDays = ref(0)
-const updateRunDays = () => {
-  const now = new Date()
-  const diff = Math.floor((now - SITE_START) / (1000 * 60 * 60 * 24))
-  runDays.value = diff
-}
-updateRunDays()
 
   // 格言轮播 (每 5 秒)
   mottoTimer = setInterval(rotateMotto, 5000)
