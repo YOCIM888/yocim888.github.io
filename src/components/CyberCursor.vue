@@ -50,11 +50,14 @@ const neonColors = [
   '#00f0ff', '#ff00ff', '#8b00ff', '#00ff88', '#ffd700',
 ]
 
-const lerp = (a, b, t) => a + (b - a) * t
-
 const animate = () => {
-  cursorX = lerp(cursorX, mouseX, 0.12)
-  cursorY = lerp(cursorY, mouseY, 0.12)
+  // 动态缓动：距离越远越快，保证跟手
+  const dx = mouseX - cursorX
+  const dy = mouseY - cursorY
+  const dist = Math.sqrt(dx * dx + dy * dy)
+  const speed = Math.min(0.55, 0.18 + dist * 0.002)
+  cursorX += dx * speed
+  cursorY += dy * speed
   if (cursor.value) {
     cursor.value.style.left = cursorX + 'px'
     cursor.value.style.top = cursorY + 'px'
