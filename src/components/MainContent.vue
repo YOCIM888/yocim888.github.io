@@ -68,7 +68,7 @@
           </div>
           <div class="stat-row">
             <span class="stat-label">CONNECTIONS</span>
-            <span class="stat-value">4 ACTIVE</span>
+            <span class="stat-value">5 ACTIVE</span>
           </div>
         </div>
       </div>
@@ -114,6 +114,7 @@ const featureCards = [
   { icon: '🖥️', title: 'System', desc: '系统监控与控制中心，实时掌握各项服务运行状态', url: 'https://system.yocim.top' },
   { icon: '🛠️', title: 'Tools', desc: '实用工具集合，从代码生成到数据分析一应俱全', url: 'https://tools.yocim.top' },
   { icon: '🔗', title: 'Links', desc: '精选导航链接，快速访问常用资源与外部服务', url: 'https://links.yocim.top' },
+  { icon: '📦', title: 'Early', desc: '早期网站存档，回顾最初的数字足迹与起点', url: 'https://early.yocim.top' },
 ]
 
 // 一言格言
@@ -351,6 +352,7 @@ onUnmounted(() => {
 .feature-card:nth-child(2) { animation-delay: 0.35s; }
 .feature-card:nth-child(3) { animation-delay: 0.45s; }
 .feature-card:nth-child(4) { animation-delay: 0.55s; }
+.feature-card:nth-child(5) { animation-delay: 0.65s; }
 
 .feature-card:hover {
   transform: translateY(-6px);
