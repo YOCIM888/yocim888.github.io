@@ -1,18 +1,21 @@
 <template>
   <main class="main-content">
     <!-- 顶部 Hex 网格装饰 -->
-    <div class="hex-grid"></div>
+    <div class="hex-grid" />
 
     <!-- Hero 区域 -->
     <section class="hero">
       <div class="hero-badge">
-        <span class="badge-dot"></span>
+        <span class="badge-dot" />
         v1.0.0 DEMO
       </div>
 
       <h2 class="hero-title">
         <span class="hero-title-line">WELCOME TO</span>
-        <span class="hero-title-main" data-text="YOCIM NEXUS">YOCIM NEXUS</span>
+        <span
+          class="hero-title-main"
+          data-text="YOCIM NEXUS"
+        >YOCIM NEXUS</span>
       </h2>
 
       <p class="hero-desc">
@@ -22,18 +25,31 @@
 
       <!-- 一言格言 -->
       <div class="hero-motto">
-        <Transition name="motto-fade" mode="out-in">
-          <p class="motto-text" :key="currentMotto">「 {{ currentMotto }} 」</p>
+        <Transition
+          name="motto-fade"
+          mode="out-in"
+        >
+          <p
+            :key="currentMotto"
+            class="motto-text"
+          >
+            「 {{ currentMotto }} 」
+          </p>
         </Transition>
-        <p class="motto-source" v-if="mottoSource">—— {{ mottoSource }}</p>
+        <p
+          v-if="mottoSource"
+          class="motto-source"
+        >
+          —— {{ mottoSource }}
+        </p>
       </div>
 
       <!-- 功能卡片网格 -->
       <div class="feature-grid">
         <a
-          class="feature-card"
           v-for="card in featureCards"
           :key="card.title"
+          class="feature-card"
           :href="card.url"
           target="_blank"
           rel="noopener noreferrer"
@@ -41,7 +57,7 @@
           <div class="feature-icon">{{ card.icon }}</div>
           <h3 class="feature-title">{{ card.title }}</h3>
           <p class="feature-desc">{{ card.desc }}</p>
-          <div class="feature-bar"></div>
+          <div class="feature-bar" />
         </a>
       </div>
     </section>
@@ -79,7 +95,12 @@
           <span class="panel-title">TERMINAL LOG</span>
         </div>
         <div class="panel-body">
-          <div class="log-entry" v-for="(log, i) in logs" :key="i" :style="{ animationDelay: i * 0.5 + 's' }">
+          <div
+            v-for="(log, i) in logs"
+            :key="i"
+            class="log-entry"
+            :style="{ animationDelay: i * 0.5 + 's' }"
+          >
             <span class="log-time">{{ log.time }}</span>
             <span class="log-msg">{{ log.msg }}</span>
           </div>
@@ -89,7 +110,7 @@
 
     <!-- 底部引用 -->
     <footer class="main-footer">
-      <div class="footer-deco-line"></div>
+      <div class="footer-deco-line" />
       <p>「 连接万物，归于星枢 」</p>
       <p class="footer-sub">
         已运行 <span class="run-days">{{ runDays }}</span> 天 · 访客 <span class="visitor-count">{{ formattedVisitors }}</span> · YOCIM NEXUS · CYBERPUNK EDITION · {{ currentYear }}
@@ -100,6 +121,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { sites } from '../data/sites.js'
 
 const currentYear = new Date().getFullYear()
 const latency = ref(0)
@@ -109,13 +131,7 @@ const startTime = Date.now()
 
 const fullText = '欢迎来到 YOCIM星枢 —— 您的个人数字中枢。在这里，一切皆可连接，万物皆可掌控。'
 
-const featureCards = [
-  { icon: '🌐', title: 'Workbench', desc: '集成开发工作台，一站式项目管理与协作平台', url: 'https://workbench.yocim.top' },
-  { icon: '🖥️', title: 'System', desc: '系统监控与控制中心，实时掌握各项服务运行状态', url: 'https://system.yocim.top' },
-  { icon: '🛠️', title: 'Tools', desc: '实用工具集合，从代码生成到数据分析一应俱全', url: 'https://tools.yocim.top' },
-  { icon: '🔗', title: 'Links', desc: '精选导航链接，快速访问常用资源与外部服务', url: 'https://links.yocim.top' },
-  { icon: '📦', title: 'Early', desc: '早期网站存档，回顾最初的数字足迹与起点', url: 'https://early.yocim.top' },
-]
+const featureCards = sites
 
 // 一言格言
 const mottoes = [

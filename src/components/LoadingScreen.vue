@@ -1,30 +1,41 @@
 <template>
   <Transition name="loading-fade">
-    <div v-if="visible" class="loading-screen">
+    <div
+      v-if="visible"
+      class="loading-screen"
+    >
       <!-- 背景扫描线 -->
-      <div class="loading-scanlines"></div>
+      <div class="loading-scanlines" />
 
       <!-- 角标装饰 -->
-      <div class="loading-corner tl"></div>
-      <div class="loading-corner tr"></div>
-      <div class="loading-corner bl"></div>
-      <div class="loading-corner br"></div>
+      <div class="loading-corner tl" />
+      <div class="loading-corner tr" />
+      <div class="loading-corner bl" />
+      <div class="loading-corner br" />
 
       <!-- 中央内容 -->
       <div class="loading-center">
         <!-- Logo Glitch -->
         <div class="loading-logo">
-          <span class="logo-glitch" data-text="YOCIM星枢">YOCIM星枢</span>
+          <span
+            class="logo-glitch"
+            data-text="YOCIM星枢"
+          >YOCIM星枢</span>
         </div>
 
-        <p class="loading-sub">NEXUS TERMINAL // INITIALIZING</p>
+        <p class="loading-sub">
+          NEXUS TERMINAL // INITIALIZING
+        </p>
 
         <!-- 进度条 -->
         <div class="loading-bar-track">
-          <div class="loading-bar-fill" :style="{ width: progress + '%' }">
-            <div class="loading-bar-glow"></div>
+          <div
+            class="loading-bar-fill"
+            :style="{ width: progress + '%' }"
+          >
+            <div class="loading-bar-glow" />
           </div>
-          <div class="loading-bar-scan"></div>
+          <div class="loading-bar-scan" />
         </div>
 
         <!-- 状态字符 -->
@@ -36,7 +47,11 @@
 
         <!-- 随机 Hex 数据 -->
         <div class="loading-hex">
-          <span v-for="i in 8" :key="i" class="hex-block">{{ randomHex() }}</span>
+          <span
+            v-for="i in 8"
+            :key="i"
+            class="hex-block"
+          >{{ randomHex() }}</span>
         </div>
       </div>
     </div>
@@ -70,11 +85,16 @@ const randomHex = () => {
 }
 
 onMounted(() => {
+  // 减弱动态偏好或同一会话重复访问时，大幅缩短加载动画
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const revisiting = sessionStorage.getItem('nexus-booted') === '1'
+  const duration = reducedMotion ? 300 : revisiting ? 800 : props.duration
+
   const startTime = Date.now()
 
   const tick = () => {
     const elapsed = Date.now() - startTime
-    const pct = Math.min((elapsed / props.duration) * 100, 100)
+    const pct = Math.min((elapsed / duration) * 100, 100)
 
     // 非线性进度（前快后慢）
     const eased = 100 - (100 - pct) * Math.pow(1 - pct / 100, 1.5)
@@ -90,9 +110,10 @@ onMounted(() => {
 
     if (progress.value >= 100) {
       setTimeout(() => {
+        sessionStorage.setItem('nexus-booted', '1')
         visible.value = false
         emit('complete')
-      }, 300)
+      }, reducedMotion ? 0 : 300)
       return
     }
     requestAnimationFrame(tick)

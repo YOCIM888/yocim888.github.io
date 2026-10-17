@@ -179,3 +179,17 @@ body::before {
   50% { box-shadow: 0 0 10px var(--magenta), 0 0 25px var(--magenta), 0 0 50px var(--magenta); }
   100% { box-shadow: 0 0 5px var(--cyan), 0 0 10px var(--cyan), 0 0 20px var(--cyan); }
 }
+
+/* ============================================================
+   无障碍：尊重系统「减弱动态效果」偏好
+   （JS 侧动画在 ParticleBackground / LoadingScreen 中单独处理）
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,19 +1,30 @@
 <template>
   <aside class="sidebar">
     <!-- 装饰角标 -->
-    <div class="sidebar-corner top-left"></div>
-    <div class="sidebar-corner top-right"></div>
-    <div class="sidebar-corner bottom-left"></div>
-    <div class="sidebar-corner bottom-right"></div>
+    <div class="sidebar-corner top-left" />
+    <div class="sidebar-corner top-right" />
+    <div class="sidebar-corner bottom-left" />
+    <div class="sidebar-corner bottom-right" />
 
     <!-- Logo 区域 -->
     <div class="sidebar-logo">
       <div class="logo-ring">
-        <img src="/yocim.png" alt="YOCIM" class="logo-avatar" />
+        <img
+          src="/yocim.png"
+          alt="YOCIM"
+          class="logo-avatar"
+        >
       </div>
-      <h1 class="logo-text" data-text="YOCIM星枢">YOCIM星枢</h1>
-      <p class="logo-sub">NEXUS TERMINAL</p>
-      <div class="logo-line"></div>
+      <h1
+        class="logo-text"
+        data-text="YOCIM星枢"
+      >
+        YOCIM星枢
+      </h1>
+      <p class="logo-sub">
+        NEXUS TERMINAL
+      </p>
+      <div class="logo-line" />
     </div>
 
     <!-- 导航按钮 -->
@@ -31,49 +42,33 @@
         <span class="nav-btn-icon">{{ btn.icon }}</span>
         <span class="nav-btn-label">{{ btn.label }}</span>
         <span class="nav-btn-sub">{{ btn.sub }}</span>
-        <span class="nav-btn-glow"></span>
+        <span class="nav-btn-glow" />
       </a>
     </nav>
 
     <!-- 底部状态 -->
     <div class="sidebar-footer">
-      <div class="status-dot"></div>
+      <div class="status-dot" />
       <span class="status-text">SYS ONLINE</span>
-      <div class="footer-deco">◆</div>
+      <div class="footer-deco">
+        ◆
+      </div>
     </div>
   </aside>
 </template>
 
 <script setup>
+import { sites } from '../data/sites.js'
+
+// 站点导航与主页卡片共享同一数据源；Email 为独立联系方式入口
 const buttons = [
-  {
-    label: 'Workbench',
-    sub: '工作台',
-    icon: '⚙️',
-    url: 'https://workbench.yocim.top',
-    variant: 'cyan',
-  },
-  {
-    label: 'System',
-    sub: '系统中心',
-    icon: '🖥️',
-    url: 'https://system.yocim.top',
-    variant: 'magenta',
-  },
-  {
-    label: 'Tools',
-    sub: '工具集',
-    icon: '🔧',
-    url: 'https://tools.yocim.top',
-    variant: 'purple',
-  },
-  {
-    label: 'Links',
-    sub: '导航链',
-    icon: '🔗',
-    url: 'https://links.yocim.top',
-    variant: 'gold',
-  },
+  ...sites.map(({ icon, title, sub, url, variant }) => ({
+    icon,
+    label: title,
+    sub,
+    url,
+    variant,
+  })),
   {
     label: 'Email',
     sub: '联系我',

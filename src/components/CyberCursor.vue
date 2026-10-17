@@ -1,11 +1,15 @@
 <template>
   <Teleport to="body">
     <!-- 自定义光标 -->
-    <div class="cyber-cursor" ref="cursor" :class="{ clicking: isClicking }">
-      <div class="cursor-core"></div>
-      <div class="cursor-ring"></div>
-      <div class="cursor-cross cross-h"></div>
-      <div class="cursor-cross cross-v"></div>
+    <div
+      ref="cursor"
+      class="cyber-cursor"
+      :class="{ clicking: isClicking }"
+    >
+      <div class="cursor-core" />
+      <div class="cursor-ring" />
+      <div class="cursor-cross cross-h" />
+      <div class="cursor-cross cross-v" />
     </div>
 
     <!-- 点击涟漪 -->
@@ -18,7 +22,7 @@
         top: ripple.y + 'px',
         '--ripple-color': ripple.color,
       }"
-    ></div>
+    />
 
     <!-- hover 电磁脉冲 -->
     <div
@@ -29,7 +33,7 @@
         left: pulse.x + 'px',
         top: pulse.y + 'px',
       }"
-    ></div>
+    />
   </Teleport>
 </template>
 
@@ -106,6 +110,15 @@ const onMouseDown = () => {
   }, 700)
 }
 
+// 页面不可见时暂停动画循环
+const onVis = () => {
+  if (document.hidden) {
+    cancelAnimationFrame(rafId)
+  } else {
+    rafId = requestAnimationFrame(animate)
+  }
+}
+
 onMounted(() => {
   // 触摸设备不显示自定义光标
   if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return
@@ -113,6 +126,8 @@ onMounted(() => {
   // 初始化光标位置
   cursorX = window.innerWidth / 2
   cursorY = window.innerHeight / 2
+
+  document.addEventListener('visibilitychange', onVis)
 
   document.addEventListener('mousemove', onMouseMove)
   document.addEventListener('mousedown', onMouseDown)
@@ -124,6 +139,7 @@ onUnmounted(() => {
   cancelAnimationFrame(rafId)
   document.removeEventListener('mousemove', onMouseMove)
   document.removeEventListener('mousedown', onMouseDown)
+  document.removeEventListener('visibilitychange', onVis)
   document.body.classList.remove('cyber-mode', 'cursor-hover')
 })
 </script>

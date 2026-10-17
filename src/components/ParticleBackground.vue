@@ -1,5 +1,8 @@
 <template>
-  <canvas ref="canvas" class="particle-canvas"></canvas>
+  <canvas
+    ref="canvas"
+    class="particle-canvas"
+  />
 </template>
 
 <script setup>
@@ -8,7 +11,6 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const canvas = ref(null)
 let ctx = null
 let animId = null
-let mouseX = 0, mouseY = 0
 let w = 0, h = 0
 let time = 0
 
@@ -311,10 +313,22 @@ const animate = () => {
   animId = requestAnimationFrame(animate)
 }
 
+// 静态渲染一帧（减弱动态模式下使用）
+const renderStaticFrame = () => {
+  ctx.clearRect(0, 0, w, h)
+  drawDataParticles()
+  drawGeo()
+  drawRain()
+  for (const s of stars) drawStar(s)
+}
+
 // ---- 生命周期 ----
 onMounted(() => {
   const c = canvas.value
   ctx = c.getContext('2d')
+
+  // 用户偏好减弱动态时：只渲染静态一帧，不跑动画循环
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   const resize = () => {
     const dpr = Math.min(window.devicePixelRatio || 1, 2)
@@ -330,32 +344,32 @@ onMounted(() => {
     initRain()
     initGeo()
     initDataParticles()
+
+    // 静态模式下重绘当前帧
+    if (reducedMotion) renderStaticFrame()
   }
   resize()
   window.addEventListener('resize', resize)
-
-  const onMouse = (e) => {
-    mouseX = e.clientX
-    mouseY = e.clientY
-  }
-  window.addEventListener('mousemove', onMouse)
 
   // 页面不可见时暂停
   const onVis = () => {
     if (document.hidden) {
       cancelAnimationFrame(animId)
-    } else {
+    } else if (!reducedMotion) {
       animId = requestAnimationFrame(animate)
     }
   }
   document.addEventListener('visibilitychange', onVis)
 
-  animId = requestAnimationFrame(animate)
+  if (reducedMotion) {
+    renderStaticFrame()
+  } else {
+    animId = requestAnimationFrame(animate)
+  }
 
   onUnmounted(() => {
     cancelAnimationFrame(animId)
     window.removeEventListener('resize', resize)
-    window.removeEventListener('mousemove', onMouse)
     document.removeEventListener('visibilitychange', onVis)
   })
 })

@@ -3,7 +3,10 @@
   <LoadingScreen @complete="onLoadingComplete" />
 
   <!-- 主应用 (加载完成后显示) -->
-  <div class="app-container" :class="{ 'app-ready': !loading }">
+  <div
+    class="app-container"
+    :class="{ 'app-ready': !loading }"
+  >
     <!-- 增强粒子背景 -->
     <ParticleBackground />
 
