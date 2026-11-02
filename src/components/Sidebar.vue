@@ -27,23 +27,22 @@
       <div class="logo-line" />
     </div>
 
-    <!-- 导航按钮 -->
+    <!-- 分类导航（点击筛选主内容，不再跳转外链） -->
     <nav class="sidebar-nav">
-      <a
-        v-for="btn in buttons"
-        :key="btn.label"
-        :href="btn.url"
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        v-for="btn in navItems"
+        :key="btn.key"
+        type="button"
         class="nav-btn"
-        :class="btn.variant"
-        @mouseenter="playHoverSound"
+        :class="[btn.variant, { active: btn.key === active }]"
+        @click="emit('select', btn.key)"
       >
         <span class="nav-btn-icon">{{ btn.icon }}</span>
         <span class="nav-btn-label">{{ btn.label }}</span>
         <span class="nav-btn-sub">{{ btn.sub }}</span>
+        <span class="nav-btn-count">{{ btn.count }}</span>
         <span class="nav-btn-glow" />
-      </a>
+      </button>
     </nav>
 
     <!-- 底部状态 -->
@@ -58,29 +57,29 @@
 </template>
 
 <script setup>
-import { sites } from '../data/sites.js'
+import { computed } from 'vue'
+import { categories, sites } from '../data/sites.js'
 
-// 站点导航与主页卡片共享同一数据源；Email 为独立联系方式入口
-const buttons = [
-  ...sites.map(({ icon, title, sub, url, variant }) => ({
-    icon,
-    label: title,
-    sub,
-    url,
-    variant,
+defineProps({
+  active: { type: String, default: 'all' },
+})
+const emit = defineEmits(['select'])
+
+// 各分类下的站点数量
+const counts = computed(() => {
+  const map = { all: sites.length }
+  for (const site of sites) {
+    map[site.category] = (map[site.category] || 0) + 1
+  }
+  return map
+})
+
+const navItems = computed(() =>
+  categories.map((category) => ({
+    ...category,
+    count: counts.value[category.key] || 0,
   })),
-  {
-    label: 'Email',
-    sub: '联系我',
-    icon: '✉️',
-    url: 'mailto:yocim666@outlook.com',
-    variant: 'cyan',
-  },
-]
-
-const playHoverSound = () => {
-  // 可选：添加微妙的悬停音效
-}
+)
 </script>
 
 <style scoped>
@@ -214,11 +213,15 @@ const playHoverSound = () => {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  width: 100%;
   padding: 14px 16px;
   border-radius: 4px;
   text-decoration: none;
   color: var(--text-primary);
+  font-family: var(--font-body);
+  text-align: left;
+  cursor: pointer;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
   overflow: hidden;
@@ -251,10 +254,26 @@ const playHoverSound = () => {
 }
 .nav-btn:hover::before { opacity: 1; }
 
-.nav-btn.cyan:hover   { --hover-color: var(--cyan); }
-.nav-btn.magenta:hover { --hover-color: var(--magenta); }
-.nav-btn.purple:hover  { --hover-color: var(--purple); }
-.nav-btn.gold:hover    { --hover-color: var(--gold); }
+/* 当前选中的分类 */
+.nav-btn.active {
+  transform: translateX(4px);
+  border-color: var(--hover-color, var(--cyan));
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 0 18px rgba(255, 255, 255, 0.03),
+    0 0 14px color-mix(in srgb, var(--hover-color, var(--cyan)) 25%, transparent);
+}
+.nav-btn.active::before { opacity: 1; }
+.nav-btn.active .nav-btn-label { color: var(--hover-color, var(--cyan)); }
+.nav-btn.active .nav-btn-glow {
+  opacity: 1;
+  box-shadow: 0 0 10px var(--hover-color, var(--cyan));
+}
+
+.nav-btn.cyan    { --hover-color: var(--cyan); }
+.nav-btn.magenta { --hover-color: var(--magenta); }
+.nav-btn.purple  { --hover-color: var(--purple); }
+.nav-btn.gold    { --hover-color: var(--gold); }
 
 .nav-btn-icon {
   font-size: 1.3rem;
@@ -275,16 +294,33 @@ const playHoverSound = () => {
 .nav-btn:hover .nav-btn-label { color: var(--hover-color, var(--cyan)); }
 
 .nav-btn-sub {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   color: var(--text-secondary);
   margin-left: auto;
-  opacity: 0;
-  transform: translateX(-8px);
-  transition: all 0.35s;
+  opacity: 0.55;
+  transition: opacity 0.3s;
+  white-space: nowrap;
 }
-.nav-btn:hover .nav-btn-sub {
-  opacity: 0.8;
-  transform: translateX(0);
+.nav-btn:hover .nav-btn-sub,
+.nav-btn.active .nav-btn-sub { opacity: 0.9; }
+
+.nav-btn-count {
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  line-height: 1;
+  min-width: 20px;
+  padding: 4px 5px;
+  text-align: center;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+.nav-btn:hover .nav-btn-count,
+.nav-btn.active .nav-btn-count {
+  color: var(--hover-color, var(--cyan));
+  border-color: color-mix(in srgb, var(--hover-color, var(--cyan)) 40%, transparent);
 }
 
 .nav-btn-glow {
@@ -370,8 +406,15 @@ const playHoverSound = () => {
     justify-content: center;
   }
   .nav-btn:hover { transform: none; box-shadow: none; background: rgba(0, 240, 255, 0.05); }
+  .nav-btn.active {
+    transform: none;
+    border: none;
+    background: rgba(0, 240, 255, 0.08);
+    box-shadow: inset 0 2px 0 var(--hover-color, var(--cyan));
+  }
   .nav-btn-label { font-size: 0.55rem; letter-spacing: 1px; }
   .nav-btn-sub { display: none; }
+  .nav-btn-count { display: none; }
   .nav-btn-icon { font-size: 1.1rem; width: auto; }
   .nav-btn-glow { display: none; }
   .sidebar-footer { display: none; }

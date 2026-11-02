@@ -13,11 +13,14 @@
     <!-- 自定义光标 -->
     <CyberCursor />
 
-    <!-- 侧边栏 -->
-    <Sidebar />
+    <!-- 侧边栏（分类筛选） -->
+    <Sidebar
+      :active="activeCategory"
+      @select="activeCategory = $event"
+    />
 
     <!-- 主内容 -->
-    <MainContent />
+    <MainContent :active-category="activeCategory" />
   </div>
 </template>
 
@@ -30,6 +33,7 @@ import Sidebar from './components/Sidebar.vue'
 import MainContent from './components/MainContent.vue'
 
 const loading = ref(true)
+const activeCategory = ref('all')
 
 const onLoadingComplete = () => {
   loading.value = false

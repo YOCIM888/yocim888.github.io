@@ -44,16 +44,28 @@
         </p>
       </div>
 
-      <!-- 功能卡片网格 -->
-      <div class="feature-grid">
+      <!-- 当前分类标题 -->
+      <div class="section-head">
+        <span class="section-label">{{ activeInfo.label }}</span>
+        <span class="section-sub">{{ activeInfo.sub }}</span>
+        <span class="section-count">{{ filteredSites.length }} MODULES</span>
+      </div>
+
+      <!-- 功能卡片网格（按侧边栏分类筛选） -->
+      <div
+        :key="activeCategory"
+        class="feature-grid"
+      >
         <a
-          v-for="card in featureCards"
-          :key="card.title"
+          v-for="(card, i) in filteredSites"
+          :key="card.key"
           class="feature-card"
           :href="card.url"
           target="_blank"
           rel="noopener noreferrer"
+          :style="{ animationDelay: (0.2 + i * 0.07) + 's' }"
         >
+          <span class="feature-tag">{{ categoryName(card.category) }}</span>
           <div class="feature-icon">{{ card.icon }}</div>
           <h3 class="feature-title">{{ card.title }}</h3>
           <p class="feature-desc">{{ card.desc }}</p>
@@ -84,7 +96,7 @@
           </div>
           <div class="stat-row">
             <span class="stat-label">CONNECTIONS</span>
-            <span class="stat-value">5 ACTIVE</span>
+            <span class="stat-value">{{ sites.length }} ACTIVE</span>
           </div>
         </div>
       </div>
@@ -120,8 +132,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import { sites } from '../data/sites.js'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { categories, sites } from '../data/sites.js'
+
+const props = defineProps({
+  activeCategory: { type: String, default: 'all' },
+})
 
 const currentYear = new Date().getFullYear()
 const latency = ref(0)
@@ -131,7 +147,18 @@ const startTime = Date.now()
 
 const fullText = '欢迎来到 YOCIM星枢 —— 您的个人数字中枢。在这里，一切皆可连接，万物皆可掌控。'
 
-const featureCards = sites
+// 按当前分类筛选卡片
+const filteredSites = computed(() =>
+  props.activeCategory === 'all'
+    ? sites
+    : sites.filter((site) => site.category === props.activeCategory),
+)
+
+const activeInfo = computed(
+  () => categories.find((category) => category.key === props.activeCategory) || categories[0],
+)
+
+const categoryName = (key) => categories.find((category) => category.key === key)?.sub ?? ''
 
 // 一言格言
 const mottoes = [
@@ -340,6 +367,37 @@ onUnmounted(() => {
   font-weight: 700;
 }
 
+/* ---- 分类标题栏 ---- */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.12);
+  animation: fade-in-up 0.6s ease-out both;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--cyan);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.35);
+}
+.section-sub {
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+}
+.section-count {
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: var(--cyan-dim);
+}
+
 /* ---- 功能卡片 ---- */
 .feature-grid {
   display: grid;
@@ -364,11 +422,26 @@ onUnmounted(() => {
     calc(100% - 8px) 100%, 0 100%
   );
 }
-.feature-card:nth-child(1) { animation-delay: 0.25s; }
-.feature-card:nth-child(2) { animation-delay: 0.35s; }
-.feature-card:nth-child(3) { animation-delay: 0.45s; }
-.feature-card:nth-child(4) { animation-delay: 0.55s; }
-.feature-card:nth-child(5) { animation-delay: 0.65s; }
+
+.feature-tag {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  padding: 2px 7px;
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  letter-spacing: 1px;
+  color: var(--cyan-dim);
+  border: 1px solid rgba(0, 240, 255, 0.18);
+  border-radius: 2px;
+  opacity: 0.75;
+  transition: all 0.4s;
+}
+.feature-card:hover .feature-tag {
+  color: var(--cyan);
+  border-color: rgba(0, 240, 255, 0.4);
+  opacity: 1;
+}
 
 .feature-card:hover {
   transform: translateY(-6px);
