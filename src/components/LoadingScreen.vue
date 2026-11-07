@@ -59,7 +59,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const props = defineProps({
   duration: { type: Number, default: 2200 },
@@ -69,6 +69,8 @@ const emit = defineEmits(['complete'])
 const visible = ref(true)
 const progress = ref(0)
 const statusText = ref('ESTABLISHING CONNECTION...')
+let rafId = null
+let finishTimer = null
 
 const statusSequence = [
   { at: 10, text: 'ESTABLISHING CONNECTION...' },
@@ -109,16 +111,22 @@ onMounted(() => {
     }
 
     if (progress.value >= 100) {
-      setTimeout(() => {
+      finishTimer = setTimeout(() => {
         sessionStorage.setItem('nexus-booted', '1')
         visible.value = false
         emit('complete')
       }, reducedMotion ? 0 : 300)
       return
     }
-    requestAnimationFrame(tick)
+    rafId = requestAnimationFrame(tick)
   }
-  requestAnimationFrame(tick)
+  rafId = requestAnimationFrame(tick)
+})
+
+onUnmounted(() => {
+  // 用户中途关闭载入动画时，清理动画帧与完成定时器
+  if (rafId) cancelAnimationFrame(rafId)
+  if (finishTimer) clearTimeout(finishTimer)
 })
 </script>
 
