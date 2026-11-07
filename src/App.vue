@@ -109,8 +109,8 @@ const toggleLoading = () => {
 /* ---- 载入动画开关 ---- */
 .loading-toggle {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  left: 10px;
+  bottom: 10px;
   z-index: 100001;
   display: flex;
   align-items: center;
@@ -180,7 +180,7 @@ const toggleLoading = () => {
 
 .toggle-tip {
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: calc(100% + 8px);
   padding: 6px 10px;
   white-space: nowrap;
@@ -203,8 +203,8 @@ const toggleLoading = () => {
 
 @media (max-width: 768px) {
   .loading-toggle {
-    right: 12px;
-    bottom: 12px;
+    left: 12px;
+    bottom: 76px;
     padding: 7px 10px;
   }
   .toggle-tip { display: none; }

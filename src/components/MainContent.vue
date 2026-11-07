@@ -584,7 +584,8 @@ onUnmounted(() => {
   position: relative;
   z-index: 1;
   text-align: center;
-  padding: 32px 0 20px;
+  /* 底部预留空间，避免左下角载入动画开关遮挡页脚 */
+  padding: 32px 0 56px;
 }
 .footer-deco-line {
   width: 120px;

@@ -11,6 +11,7 @@
     "format": "prettier --write \"src/**/*.{vue,js,css}\" \"*.{js,json,md}\""
   },
   "dependencies": {
+    "@fontsource-variable/orbitron": "^5.3.0",
     "vue": "^3.5.39"
   },
   "devDependencies": {

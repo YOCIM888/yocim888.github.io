@@ -14,8 +14,9 @@
   --border-glow: 0 0 8px var(--cyan), 0 0 20px rgba(0, 240, 255, 0.3);
   --text-primary: #e0e0ff;
   --text-secondary: #8899bb;
-  --font-display: 'Orbitron', 'Noto Sans SC', sans-serif;
-  --font-body: 'Noto Sans SC', 'Orbitron', sans-serif;
+  /* 英文展示字体本地自托管；中文走系统字体栈，避免加载数 MB 中文字体 */
+  --font-display: 'Orbitron Variable', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
+  --font-body: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', system-ui, 'Orbitron Variable', sans-serif;
 }
 
 * {
