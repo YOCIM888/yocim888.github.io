@@ -27,22 +27,88 @@
       <div class="logo-line" />
     </div>
 
-    <!-- 分类导航（点击筛选主内容，不再跳转外链） -->
+    <!-- 侧边栏入口：搜索 / GitHub / 邮箱 -->
     <nav class="sidebar-nav">
-      <button
-        v-for="btn in navItems"
-        :key="btn.key"
-        type="button"
-        class="nav-btn"
-        :class="[btn.variant, { active: btn.key === active }]"
-        @click="emit('select', btn.key)"
+      <div class="nav-search">
+        <button
+          type="button"
+          class="nav-btn cyan"
+          :class="{ active: searchOpen }"
+          :aria-expanded="searchOpen"
+          @click="toggleSearch"
+        >
+          <span class="nav-btn-icon">🔍</span>
+          <span class="nav-btn-label">SEARCH</span>
+          <span class="nav-btn-sub">搜索</span>
+          <span class="nav-btn-glow" />
+        </button>
+
+        <Transition name="panel-slide">
+          <div
+            v-if="searchOpen"
+            class="search-panel"
+          >
+            <div class="search-field">
+              <span class="search-prompt">&gt;</span>
+              <input
+                ref="searchInput"
+                v-model="query"
+                type="text"
+                class="search-input"
+                placeholder="站点名称 / 关键词"
+                autocomplete="off"
+                spellcheck="false"
+                @input="feedback = ''"
+                @keydown.enter.prevent="submitSearch"
+                @keydown.esc.prevent="closeSearch"
+              >
+              <button
+                type="button"
+                class="search-go"
+                aria-label="执行搜索"
+                @click="submitSearch"
+              >
+                ↵
+              </button>
+            </div>
+            <p
+              v-if="feedback"
+              class="search-feedback"
+              :class="{ 'is-error': !feedbackOk }"
+            >
+              {{ feedback }}
+            </p>
+            <p
+              v-else
+              class="search-hint"
+            >
+              回车跳转并高亮卡片
+            </p>
+          </div>
+        </Transition>
+      </div>
+
+      <a
+        class="nav-btn purple"
+        href="https://github.com/YOCIM888"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <span class="nav-btn-icon">{{ btn.icon }}</span>
-        <span class="nav-btn-label">{{ btn.label }}</span>
-        <span class="nav-btn-sub">{{ btn.sub }}</span>
-        <span class="nav-btn-count">{{ btn.count }}</span>
+        <span class="nav-btn-icon">🐙</span>
+        <span class="nav-btn-label">GITHUB</span>
+        <span class="nav-btn-sub">主页</span>
         <span class="nav-btn-glow" />
-      </button>
+      </a>
+
+      <a
+        class="nav-btn gold"
+        href="mailto:yocim666@outlook.com"
+      >
+        <span class="nav-btn-icon">✉️</span>
+        <span class="nav-btn-label">EMAIL</span>
+        <span class="nav-btn-sub">邮件</span>
+        <span class="nav-btn-glow" />
+      </a>
     </nav>
 
     <!-- 底部状态 -->
@@ -57,29 +123,73 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { categories, sites } from '../data/sites.js'
+import { ref, nextTick } from 'vue'
+import { sites, categories } from '../data/sites.js'
 
-defineProps({
-  active: { type: String, default: 'all' },
-})
-const emit = defineEmits(['select'])
+const emit = defineEmits(['search'])
 
-// 各分类下的站点数量
-const counts = computed(() => {
-  const map = { all: sites.length }
-  for (const site of sites) {
-    map[site.category] = (map[site.category] || 0) + 1
+const searchOpen = ref(false)
+const query = ref('')
+const feedback = ref('')
+const feedbackOk = ref(true)
+const searchInput = ref(null)
+let searchToken = 0
+
+const toggleSearch = async () => {
+  searchOpen.value = !searchOpen.value
+  if (searchOpen.value) {
+    await nextTick()
+    searchInput.value?.focus()
+  } else {
+    feedback.value = ''
   }
-  return map
-})
+}
 
-const navItems = computed(() =>
-  categories.map((category) => ({
-    ...category,
-    count: counts.value[category.key] || 0,
-  })),
-)
+const closeSearch = () => {
+  searchOpen.value = false
+  feedback.value = ''
+}
+
+// 在标题 / 代号 / 副标题 / 网址 / 描述 / 分类中匹配，标题与代号优先
+const findSite = (raw) => {
+  const q = raw.trim().toLowerCase()
+  if (!q) return null
+
+  let best = null
+  for (const site of sites) {
+    const primary = [site.title, site.sub, site.key].map((v) => String(v || '').toLowerCase())
+    const category = categories.find((c) => c.key === site.category)?.sub ?? ''
+    const fields = [
+      ...primary,
+      site.url,
+      site.desc,
+      category,
+      categories.find((c) => c.key === site.category)?.label ?? '',
+    ].map((v) => String(v || '').toLowerCase())
+
+    let score = 0
+    if (primary.some((v) => v === q)) score = 100
+    else if (primary.some((v) => v.startsWith(q))) score = 70
+    else if (fields.some((v) => v.includes(q))) score = 30
+
+    if (score > 0 && (!best || score > best.score)) best = { site, score }
+  }
+  return best?.site ?? null
+}
+
+const submitSearch = () => {
+  const keyword = query.value.trim()
+  const hit = findSite(keyword)
+  if (!hit) {
+    feedbackOk.value = false
+    feedback.value = keyword ? `未找到「${keyword}」` : '请输入关键词'
+    return
+  }
+
+  feedbackOk.value = true
+  feedback.value = `已定位 · ${hit.title}`
+  emit('search', { key: hit.key, token: ++searchToken })
+}
 </script>
 
 <style scoped>
@@ -207,6 +317,11 @@ const navItems = computed(() =>
   gap: 8px;
   padding: 20px 16px;
   overflow-y: auto;
+  overflow-x: visible;
+}
+
+.nav-search {
+  position: relative;
 }
 
 .nav-btn {
@@ -241,8 +356,7 @@ const navItems = computed(() =>
   z-index: -1;
 }
 
-.nav-btn.cyan::before   { background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), transparent); }
-.nav-btn.magenta::before { background: linear-gradient(135deg, rgba(255, 0, 255, 0.1), transparent); }
+.nav-btn.cyan::before    { background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), transparent); }
 .nav-btn.purple::before  { background: linear-gradient(135deg, rgba(139, 0, 255, 0.1), transparent); }
 .nav-btn.gold::before    { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), transparent); }
 
@@ -254,7 +368,6 @@ const navItems = computed(() =>
 }
 .nav-btn:hover::before { opacity: 1; }
 
-/* 当前选中的分类 */
 .nav-btn.active {
   transform: translateX(4px);
   border-color: var(--hover-color, var(--cyan));
@@ -270,10 +383,9 @@ const navItems = computed(() =>
   box-shadow: 0 0 10px var(--hover-color, var(--cyan));
 }
 
-.nav-btn.cyan    { --hover-color: var(--cyan); }
-.nav-btn.magenta { --hover-color: var(--magenta); }
-.nav-btn.purple  { --hover-color: var(--purple); }
-.nav-btn.gold    { --hover-color: var(--gold); }
+.nav-btn.cyan   { --hover-color: var(--cyan); }
+.nav-btn.purple { --hover-color: var(--purple); }
+.nav-btn.gold   { --hover-color: var(--gold); }
 
 .nav-btn-icon {
   font-size: 1.3rem;
@@ -304,25 +416,6 @@ const navItems = computed(() =>
 .nav-btn:hover .nav-btn-sub,
 .nav-btn.active .nav-btn-sub { opacity: 0.9; }
 
-.nav-btn-count {
-  font-family: var(--font-display);
-  font-size: 0.58rem;
-  line-height: 1;
-  min-width: 20px;
-  padding: 4px 5px;
-  text-align: center;
-  color: var(--text-secondary);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 3px;
-  transition: all 0.3s;
-}
-.nav-btn:hover .nav-btn-count,
-.nav-btn.active .nav-btn-count {
-  color: var(--hover-color, var(--cyan));
-  border-color: color-mix(in srgb, var(--hover-color, var(--cyan)) 40%, transparent);
-}
-
 .nav-btn-glow {
   position: absolute;
   bottom: 0;
@@ -336,6 +429,87 @@ const navItems = computed(() =>
 .nav-btn:hover .nav-btn-glow {
   opacity: 1;
   box-shadow: 0 0 10px var(--hover-color, var(--cyan));
+}
+
+/* ---- 搜索面板 ---- */
+.search-panel {
+  margin: 6px 0 4px;
+  padding: 10px;
+  background: rgba(6, 10, 22, 0.95);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%);
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(0, 240, 255, 0.18);
+  background: rgba(0, 240, 255, 0.04);
+  padding: 4px 6px;
+}
+.search-field:focus-within {
+  border-color: rgba(0, 240, 255, 0.55);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.15);
+}
+.search-prompt {
+  font-family: var(--font-display);
+  color: var(--cyan);
+  font-size: 0.8rem;
+  flex: none;
+}
+.search-input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+}
+.search-input::placeholder { color: var(--text-secondary); opacity: 0.6; }
+.search-input::-webkit-search-cancel-button { display: none; }
+
+.search-go {
+  flex: none;
+  width: 24px;
+  height: 22px;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  background: rgba(0, 240, 255, 0.08);
+  color: var(--cyan);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.search-go:hover {
+  background: rgba(0, 240, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.35);
+}
+
+.search-hint,
+.search-feedback {
+  margin: 7px 2px 1px;
+  font-size: 0.58rem;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  opacity: 0.75;
+}
+.search-feedback { color: var(--cyan); opacity: 1; }
+.search-feedback.is-error { color: var(--magenta); }
+
+.panel-slide-enter-active,
+.panel-slide-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.panel-slide-enter-from,
+.panel-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
 }
 
 /* ---- 底部状态 ---- */
@@ -393,7 +567,10 @@ const navItems = computed(() =>
     gap: 0;
     padding: 0;
     justify-content: space-around;
+    overflow: visible;
   }
+  .nav-search { flex: 1; min-width: 0; }
+  .sidebar-nav > .nav-btn { min-width: 0; flex: 1; }
   .nav-btn {
     flex-direction: column;
     gap: 4px;
@@ -401,8 +578,6 @@ const navItems = computed(() =>
     border-radius: 0;
     border: none;
     clip-path: none;
-    min-width: 0;
-    flex: 1;
     justify-content: center;
   }
   .nav-btn:hover { transform: none; box-shadow: none; background: rgba(0, 240, 255, 0.05); }
@@ -414,9 +589,16 @@ const navItems = computed(() =>
   }
   .nav-btn-label { font-size: 0.55rem; letter-spacing: 1px; }
   .nav-btn-sub { display: none; }
-  .nav-btn-count { display: none; }
   .nav-btn-icon { font-size: 1.1rem; width: auto; }
   .nav-btn-glow { display: none; }
+  .search-panel {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 72px;
+    margin: 0;
+    z-index: 1001;
+  }
   .sidebar-footer { display: none; }
   .sidebar-corner { display: none; }
 }
@@ -425,5 +607,6 @@ const navItems = computed(() =>
   .nav-btn { padding: 6px 4px; }
   .nav-btn-icon { font-size: 1rem; }
   .nav-btn-label { font-size: 0.5rem; letter-spacing: 0; }
+  .search-panel { bottom: 64px; }
 }
 </style>

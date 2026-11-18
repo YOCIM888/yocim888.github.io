@@ -39,14 +39,11 @@
     <!-- 自定义光标 -->
     <CyberCursor />
 
-    <!-- 侧边栏（分类筛选） -->
-    <Sidebar
-      :active="activeCategory"
-      @select="activeCategory = $event"
-    />
+    <!-- 侧边栏：搜索 / GitHub / 邮箱 -->
+    <Sidebar @search="onSearch" />
 
     <!-- 主内容 -->
-    <MainContent :active-category="activeCategory" />
+    <MainContent :search-hit="searchHit" />
   </div>
 </template>
 
@@ -72,7 +69,11 @@ const readLoadingPref = () => {
 const loadingEnabled = ref(readLoadingPref())
 const loading = ref(loadingEnabled.value)
 const showLoading = ref(loadingEnabled.value)
-const activeCategory = ref('all')
+const searchHit = ref(null)
+
+const onSearch = (payload) => {
+  searchHit.value = payload
+}
 
 const onLoadingComplete = () => {
   loading.value = false

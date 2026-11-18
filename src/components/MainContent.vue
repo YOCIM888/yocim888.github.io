@@ -44,22 +44,21 @@
         </p>
       </div>
 
-      <!-- 当前分类标题 -->
+      <!-- 模块标题 -->
       <div class="section-head">
-        <span class="section-label">{{ activeInfo.label }}</span>
-        <span class="section-sub">{{ activeInfo.sub }}</span>
-        <span class="section-count">{{ filteredSites.length }} MODULES</span>
+        <span class="section-label">ALL</span>
+        <span class="section-sub">全部模块</span>
+        <span class="section-count">{{ sites.length }} MODULES</span>
       </div>
 
-      <!-- 功能卡片网格（按侧边栏分类筛选） -->
-      <div
-        :key="activeCategory"
-        class="feature-grid"
-      >
+      <!-- 功能卡片网格（搜索命中时滚动定位并高亮） -->
+      <div class="feature-grid">
         <a
-          v-for="(card, i) in filteredSites"
+          v-for="(card, i) in sites"
+          :id="`site-${card.key}`"
           :key="card.key"
           class="feature-card"
+          :class="{ 'is-highlighted': highlightedKey === card.key }"
           :href="card.url"
           target="_blank"
           rel="noopener noreferrer"
@@ -132,11 +131,11 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { categories, sites } from '../data/sites.js'
 
 const props = defineProps({
-  activeCategory: { type: String, default: 'all' },
+  searchHit: { type: Object, default: null },
 })
 
 const currentYear = new Date().getFullYear()
@@ -147,18 +146,29 @@ const startTime = Date.now()
 
 const fullText = '欢迎来到 YOCIM星枢 —— 您的个人数字中枢。在这里，一切皆可连接，万物皆可掌控。'
 
-// 按当前分类筛选卡片
-const filteredSites = computed(() =>
-  props.activeCategory === 'all'
-    ? sites
-    : sites.filter((site) => site.category === props.activeCategory),
-)
-
-const activeInfo = computed(
-  () => categories.find((category) => category.key === props.activeCategory) || categories[0],
-)
-
 const categoryName = (key) => categories.find((category) => category.key === key)?.sub ?? ''
+
+// 搜索命中：平滑滚动到对应卡片并短暂高亮
+const highlightedKey = ref('')
+let highlightTimer = null
+
+watch(
+  () => props.searchHit?.token,
+  async (token) => {
+    if (!token || !props.searchHit) return
+    const key = props.searchHit.key
+    highlightedKey.value = key
+    await new Promise((resolve) => requestAnimationFrame(resolve))
+    document.getElementById(`site-${key}`)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    })
+    clearTimeout(highlightTimer)
+    highlightTimer = setTimeout(() => {
+      highlightedKey.value = ''
+    }, 3200)
+  },
+)
 
 // 一言格言
 const mottoes = [
@@ -258,6 +268,7 @@ onMounted(() => {
 onUnmounted(() => {
   if (typingTimer) clearInterval(typingTimer)
   if (mottoTimer) clearInterval(mottoTimer)
+  if (highlightTimer) clearTimeout(highlightTimer)
 })
 </script>
 
@@ -492,6 +503,34 @@ onUnmounted(() => {
   box-shadow: 0 0 8px var(--cyan);
 }
 .feature-card:hover .feature-bar { width: 60px; }
+
+/* ---- 搜索命中高亮 ---- */
+.feature-card.is-highlighted {
+  border-color: rgba(255, 215, 0, 0.75);
+  box-shadow: 0 0 28px rgba(255, 215, 0, 0.22);
+}
+.feature-card.is-highlighted::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: 2;
+  pointer-events: none;
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  box-shadow:
+    0 0 14px rgba(255, 215, 0, 0.7),
+    inset 0 0 20px rgba(255, 215, 0, 0.12);
+  animation: locate-glow 1s ease-in-out 3;
+}
+.feature-card.is-highlighted .feature-bar {
+  width: 60px;
+  background: var(--gold);
+  box-shadow: 0 0 10px var(--gold);
+}
+@keyframes locate-glow {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 1; }
+}
 
 /* ---- 信息面板 ---- */
 .info-panels {
